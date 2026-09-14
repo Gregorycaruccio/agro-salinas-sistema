@@ -29,10 +29,10 @@ function initSeller() {
     const urlParams = new URLSearchParams(window.location.search);
     const sellerParam = urlParams.get("v") || urlParams.get("vendedor") || urlParams.get("ref");
 
-    // Vendedor padrão caso não haja indicação (William - Agro Salinas)
+    // Vendedor padrão caso não haja indicação (Grégory)
     const fallbackSeller = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.defaultVendedor) 
         ? VENDAS_CONFIG.defaultVendedor 
-        : { code: "WILLIAM", name: "William (Agro Salinas)", whatsapp: "5551995624230" };
+        : { code: "GREG", name: "Grégory", whatsapp: "5551982199486" };
 
     if (sellerParam) {
         const inputCode = decodeURIComponent(sellerParam).trim().toUpperCase();

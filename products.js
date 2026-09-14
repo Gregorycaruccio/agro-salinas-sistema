@@ -6,9 +6,9 @@ const STORE_CONFIG = {
     "slogan": "Unindo a cidade ao campo!",
     "whatsappNumber": "5551995624230",
     "defaultSeller": {
-        "code": "WILLIAM",
-        "name": "William (Agro Salinas)",
-        "tag": "#OFICIAL"
+        "code": "GREG",
+        "name": "Grégory",
+        "tag": "#GREG"
     }
 };
 

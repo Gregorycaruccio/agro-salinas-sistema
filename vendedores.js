@@ -22,11 +22,11 @@ const VENDAS_CONFIG = {
     lojaWhatsApp: "5551995624230",
     lojaNome: "Agro Salinas (William & Meire)",
     
-    // Vendedor padrão caso o cliente acerte o link sem indicação
+    // Vendedor padrão caso o cliente acerte o link sem indicação (Grégory)
     defaultVendedor: {
-        code: "WILLIAM",
-        name: "William (Agro Salinas)",
-        whatsapp: "5551995624230"
+        code: "GREG",
+        name: "Grégory",
+        whatsapp: "5551982199486"
     }
 };
 
