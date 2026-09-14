@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1B432E">
+    <title>Catálogo Digital | Agro Salinas</title>
+    <link rel="stylesheet" href="style.css?v=3.1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body>
+
+    <!-- BANNER DE CONSULTORIA / VENDEDOR (Exibição sutil e limpa apenas com identificação do consultor) -->
+    <div class="seller-banner" id="seller-banner" style="display: none;">
+        <div class="seller-info">
+            <span>🧑‍💼</span>
+            <div>
+                <span>Seu Consultor(a): <strong id="seller-name">Agro Salinas</strong></span>
+                <span class="seller-badge" id="seller-tag">#OFICIAL</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER DA AGRO SALINAS -->
+    <header>
+        <div class="header-content">
+            <img src="assets/logo.png" alt="Agro Salinas" class="brand-logo" onerror="this.style.display='none'">
+            <p class="slogan">Unindo a cidade ao campo!</p>
+        </div>
+    </header>
+
+    <!-- NAVEGAÇÃO FIXA (STICKY HEADER) -->
+    <div class="sticky-nav-wrapper" id="sticky-nav-wrapper">
+        <!-- BARRA DE PESQUISA & FAVORITOS & CESTO -->
+        <div class="controls-container">
+            <div class="search-row">
+                <button id="btn-open-sidebar" class="btn-sidebar-toggle" onclick="openSidebarDrawer()" title="Abrir Menu de Categorias e Filtros">
+                    <span class="hamburger-lines">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="sidebar-toggle-text">Menu</span>
+                    <span class="sidebar-active-dot" id="sidebar-active-dot" style="display: none;"></span>
+                </button>
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Buscar ração, produto ou código...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <button id="btn-view-favorites" class="btn-favorites-toggle" onclick="toggleFavoritesFilter()" title="Ver Meus Favoritos">
+                    <span class="fav-icon">❤️</span>
+                    <span class="fav-text">Favoritos</span>
+                    <span class="fav-badge" id="fav-count">0</span>
+                </button>
+                <button id="btn-view-cart" class="btn-cart-toggle" onclick="openCartDrawer()" title="Ver Cesto de Compras">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-top-text">Cesto</span>
+                    <span class="cart-top-badge" id="cart-top-count">0</span>
+                </button>
+            </div>
+
+            <!-- FILTROS RÁPIDOS POR NECESSIDADE DO PET (DESKTOP) -->
+            <div class="quick-tags-wrapper desktop-only-tags">
+                <div class="quick-tags-list">
+                    <button class="quick-tag-pill" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this)">
+                        <span>🔥</span> Mais Vendidos
+                    </button>
+                    <button class="quick-tag-pill" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this)">
+                        <span>🍼</span> Para Filhotes
+                    </button>
+                    <button class="quick-tag-pill" data-tag="castrados" onclick="toggleQuickTag('castrados', this)">
+                        <span>✂️</span> Castrados
+                    </button>
+                    <button class="quick-tag-pill" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this)">
+                        <span>🌾</span> Hipoalergênico / Sensíveis
+                    </button>
+                    <button class="quick-tag-pill" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this)">
+                        <span>🐾</span> Raças Pequenas
+                    </button>
+                    <button class="quick-tag-pill" data-tag="senior" onclick="toggleQuickTag('senior', this)">
+                        <span>👴</span> Sênior (+7 anos)
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARROSSEL DE CATEGORIAS PRINCIPAIS (DESKTOP) -->
+        <div class="categories-wrapper desktop-only-categories">
+            <div class="categories-list" id="categories-list">
+                <!-- Injetado via JS -->
+            </div>
+        </div>
+
+        <!-- SUBCATEGORIAS DINÂMICAS (DESKTOP) -->
+        <div class="subcategories-wrapper desktop-only-subcategories" id="subcategories-wrapper" style="display: none;">
+            <div class="subcategories-list" id="subcategories-list">
+                <!-- Injetado via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- BARRA DE FILTROS & ORDENAÇÃO (DESKTOP) -->
+    <div class="filters-container desktop-only-filters">
+        <div class="filters-bar">
+            <!-- Ordenação -->
+            <div class="filter-dropdown-group">
+                <span class="filter-label">↕️ Ordenar:</span>
+                <select id="sort-select" class="filter-select">
+                    <option value="default">⭐ Destaques & Relevância</option>
+                    <option value="price_asc">💲 Menor Preço</option>
+                    <option value="price_desc">💎 Maior Preço</option>
+                    <option value="name_asc">🔤 Nome (A-Z)</option>
+                </select>
+            </div>
+
+            <!-- Faixa de Preço -->
+            <div class="filter-dropdown-group">
+                <span class="filter-label">💰 Faixa de Valor:</span>
+                <select id="price-range-select" class="filter-select">
+                    <option value="all">Todas as Faixas</option>
+                    <option value="under_20">Até R$ 20,00</option>
+                    <option value="20_60">R$ 20,00 a R$ 60,00</option>
+                    <option value="60_150">R$ 60,00 a R$ 150,00</option>
+                    <option value="above_150">Acima de R$ 150,00</option>
+                </select>
+            </div>
+
+            <!-- Botão Limpar Filtros -->
+            <button id="btn-clear-filters" class="btn-clear-filters" style="display: none;" onclick="resetAllFilters()">
+                ✕ Limpar Filtros
+            </button>
+        </div>
+    </div>
+
+    <!-- BARRA LATERAL / MENU DRAWER OFF-CANVAS (ESPECIALMENTE NO MOBILE) -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="closeSidebarDrawer()"></div>
+    <aside class="sidebar-drawer" id="sidebar-drawer" aria-label="Menu de Categorias e Filtros">
+        <div class="sidebar-header">
+            <div class="sidebar-header-title">
+                <img src="assets/logo.png" alt="Agro Salinas" class="sidebar-brand-logo" onerror="this.style.display='none'">
+                <div>
+                    <h3>Menu & Filtros</h3>
+                    <p class="sidebar-subtitle">Agro Salinas</p>
+                </div>
+            </div>
+            <button class="btn-close-sidebar" onclick="closeSidebarDrawer()" aria-label="Fechar menu">✕</button>
+        </div>
+
+        <div class="sidebar-body">
+            <!-- BOTÃO LIMPAR FILTROS ATIVOS -->
+            <div id="sidebar-clear-box" class="sidebar-section" style="display: none; padding-top: 0; padding-bottom: 8px;">
+                <button class="btn-sidebar-reset" onclick="resetAllFilters(); closeSidebarDrawer();">
+                    ✕ Limpar Todos os Filtros
+                </button>
+            </div>
+
+            <!-- SEÇÃO: FILTROS RÁPIDOS DO PET -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>⚡</span>
+                    <span>Necessidade do Pet</span>
+                </div>
+                <div class="sidebar-quick-tags" id="sidebar-quick-tags">
+                    <button class="sidebar-tag-btn" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this); closeSidebarDrawer();">
+                        <span>🔥</span> Mais Vendidos
+                    </button>
+                    <button class="sidebar-tag-btn" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this); closeSidebarDrawer();">
+                        <span>🍼</span> Para Filhotes
+                    </button>
+                    <button class="sidebar-tag-btn" data-tag="castrados" onclick="toggleQuickTag('castrados', this); closeSidebarDrawer();">
+                        <span>✂️</span> Castrados
+                    </button>
+                    <button class="sidebar-tag-btn" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this); closeSidebarDrawer();">
+                        <span>🌾</span> Hipoalergênico / Sensíveis
+                    </button>
+                    <button class="sidebar-tag-btn" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this); closeSidebarDrawer();">
+                        <span>🐾</span> Raças Pequenas
+                    </button>
+                    <button class="sidebar-tag-btn" data-tag="senior" onclick="toggleQuickTag('senior', this); closeSidebarDrawer();">
+                        <span>👴</span> Sênior (+7 anos)
+                    </button>
+                </div>
+            </div>
+
+            <!-- SEÇÃO: CATEGORIAS PRINCIPAIS -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>📂</span>
+                    <span>Categorias</span>
+                </div>
+                <div class="sidebar-categories-list" id="sidebar-categories-list">
+                    <!-- Injetado via JS -->
+                </div>
+            </div>
+
+            <!-- SEÇÃO: SUBCATEGORIAS DINÂMICAS -->
+            <div class="sidebar-section" id="sidebar-subcategories-section" style="display: none;">
+                <div class="sidebar-section-title">
+                    <span>🏷️</span>
+                    <span id="sidebar-subcategories-title">Subcategorias</span>
+                </div>
+                <div class="sidebar-subcategories-list" id="sidebar-subcategories-list">
+                    <!-- Injetado via JS -->
+                </div>
+            </div>
+
+            <!-- SEÇÃO: ORDENAR E FAIXA DE PREÇO -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>⚙️</span>
+                    <span>Ajustes & Valores</span>
+                </div>
+                
+                <div class="sidebar-field-group">
+                    <label class="sidebar-field-label">↕️ Ordenação:</label>
+                    <select id="sidebar-sort-select" class="sidebar-select" onchange="syncSortFromSidebar(this.value)">
+                        <option value="default">⭐ Destaques & Relevância</option>
+                        <option value="price_asc">💲 Menor Preço</option>
+                        <option value="price_desc">💎 Maior Preço</option>
+                        <option value="name_asc">🔤 Nome (A-Z)</option>
+                    </select>
+                </div>
+
+                <div class="sidebar-field-group" style="margin-top: 12px;">
+                    <label class="sidebar-field-label">💰 Faixa de Valor:</label>
+                    <select id="sidebar-price-select" class="sidebar-select" onchange="syncPriceFromSidebar(this.value)">
+                        <option value="all">Todas as Faixas</option>
+                        <option value="under_20">Até R$ 20,00</option>
+                        <option value="20_60">R$ 20,00 a R$ 60,00</option>
+                        <option value="60_150">R$ 60,00 a R$ 150,00</option>
+                        <option value="above_150">Acima de R$ 150,00</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar-footer">
+            <button class="btn-sidebar-apply" onclick="closeSidebarDrawer()">
+                Ver Produtos Filtrados ➔
+            </button>
+        </div>
+    </aside>
+
+    <!-- LISTAGEM DE PRODUTOS -->
+    <main class="products-section">
+        <div class="section-header">
+            <h2 class="section-title" id="section-title">Produtos Disponíveis</h2>
+            <span class="products-count" id="products-count">Carregando...</span>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+            <!-- Cards injetados via JS -->
+        </div>
+    </main>
+
+    <!-- BARRA DE CARRINHO FLUTUANTE (ESTILO DELIVERY) -->
+    <div class="floating-cart-bar" id="floating-cart-bar" style="display: none;" onclick="openCartDrawer()">
+        <div class="cart-summary">
+            <div class="cart-icon-wrapper">
+                <span class="cart-floating-icon">🛒</span>
+                <span class="cart-count-badge" id="cart-count-badge">0</span>
+            </div>
+            <div class="cart-text-details">
+                <span class="cart-sublabel">Total do Pedido</span>
+                <span class="cart-total-text" id="cart-total-text">R$ 0,00</span>
+            </div>
+        </div>
+        <div class="cart-bar-arrow-indicator">
+            <span style="font-size: 13px; font-weight: 700; color: #FFF; opacity: 0.9;">Ver Sacola</span>
+            <span style="font-size: 16px; color: var(--accent);">➔</span>
+        </div>
+    </div>
+
+    <!-- MODAL / DRAWER DO CARRINHO -->
+    <div class="modal-overlay" id="cart-modal" onclick="if(event.target === this) closeCartDrawer()">
+        <div class="cart-drawer">
+            <div class="drawer-header">
+                <h3 class="drawer-title">🛒 Sua Sacola de Compras</h3>
+                <button class="btn-close-drawer" onclick="closeCartDrawer()">✕</button>
+            </div>
+            
+            <div class="cart-items-list" id="cart-items-list">
+                <!-- Itens injetados via JS -->
+            </div>
+
+            <div class="drawer-footer">
+                <!-- FORMAS DE PAGAMENTO PREFERIDAS -->
+                <div class="payment-method-selector">
+                    <label class="payment-selector-label">💳 Como você pretende pagar?</label>
+                    <div class="payment-options-grid">
+                        <label class="payment-option">
+                            <input type="radio" name="checkout_payment" value="PIX" checked>
+                            <span class="payment-pill">
+                                <span class="pay-icon">⚡</span>
+                                <span class="pay-name">Pix</span>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="checkout_payment" value="Cartão de Crédito">
+                            <span class="payment-pill">
+                                <span class="pay-icon">💳</span>
+                                <span class="pay-name">Crédito</span>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="checkout_payment" value="Cartão de Débito">
+                            <span class="payment-pill">
+                                <span class="pay-icon">🏦</span>
+                                <span class="pay-name">Débito</span>
+                            </span>
+                        </label>
+                        <label class="payment-option">
+                            <input type="radio" name="checkout_payment" value="Dinheiro">
+                            <span class="payment-pill">
+                                <span class="pay-icon">💵</span>
+                                <span class="pay-name">Dinheiro</span>
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="total-row">
+                    <span>Total Estimado:</span>
+                    <span id="drawer-total-price">R$ 0,00</span>
+                </div>
+                <button class="btn-send-whatsapp" id="btn-cart-checkout" onclick="checkoutWhatsApp()">
+                    <span id="btn-checkout-text">Pedir no WhatsApp</span>
+                    <span style="font-size: 20px;">💬</span>
+                </button>
+                <div class="cart-seller-notice" id="cart-seller-notice" style="margin-top: 8px; text-align: center; font-size: 11.5px; color: var(--text-muted);">
+                    Atendimento por: <strong id="cart-notice-seller-name" style="color: var(--primary);">William</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Agro Salinas</strong> • WhatsApp: (51) 99562-4230</p>
+        <p style="margin-top: 4px;">Atendimento de Segunda a Sábado</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="vendedores.js?v=3.1"></script>
+    <script src="products.js?v=3.1"></script>
+    <script src="app.js?v=3.1"></script>
+</body>
+</html>

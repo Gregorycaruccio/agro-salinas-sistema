@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#1B432E">
+    <title>Portal do Vendedor | Agro Salinas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1B432E;
+            --primary-light: #2D6A4F;
+            --accent: #52B788;
+            --accent-soft: #D8F3DC;
+            --bg: #F4F6F8;
+            --card-bg: #FFFFFF;
+            --text-main: #1A202C;
+            --text-muted: #718096;
+            --border: #E2E8F0;
+            --danger: #E53E3E;
+            --radius: 14px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 14px 40px;
+        }
+
+        .header-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .header-brand img {
+            max-height: 60px;
+            object-fit: contain;
+            margin-bottom: 8px;
+        }
+
+        .portal-title {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+        }
+
+        .portal-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 2px;
+        }
+
+        .card-container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+        }
+
+        .form-select, .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main);
+            background: #FAFAFA;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .form-select:focus, .form-input:focus, .form-textarea:focus {
+            border-color: var(--primary);
+            background: #FFF;
+            box-shadow: 0 0 0 3px rgba(27, 67, 46, 0.1);
+        }
+
+        .pin-inputs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 12px 0 20px;
+        }
+
+        .pin-digit {
+            width: 52px;
+            height: 56px;
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            background: #FAFAFA;
+            color: var(--primary);
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .pin-digit:focus {
+            border-color: var(--primary);
+            background: #FFF;
+            box-shadow: 0 0 0 3px rgba(27, 67, 46, 0.15);
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            box-shadow: 0 4px 12px rgba(27, 67, 46, 0.25);
+            transition: all 0.2s;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-1px);
+        }
+
+        .alert-box {
+            padding: 12px 14px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 16px;
+            display: none;
+        }
+
+        .alert-error {
+            background: #FFF5F5;
+            color: #C53030;
+            border: 1px solid #FEB2B2;
+        }
+
+        .alert-success {
+            background: #F0FFF4;
+            color: #22543D;
+            border: 1px solid #9AE6B4;
+        }
+
+        .link-text {
+            display: inline-block;
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 14px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .seller-badge-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .seller-welcome {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .avatar-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 800;
+        }
+
+        .seller-details h3 {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .seller-details p {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .btn-logout {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 12px;
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+        }
+
+        .panel-section-title {
+            font-size: 14px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 18px 0 10px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .link-share-box {
+            background: #F8FAFC;
+            border: 1.5px dashed #CBD5E1;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 12px;
+            word-break: break-all;
+            font-size: 13px;
+            color: var(--primary);
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .action-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .btn-action-share {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 13px;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .btn-copy-url {
+            background: var(--accent-soft);
+            color: var(--primary);
+        }
+
+        .btn-whatsapp-share {
+            background: #25D366;
+            color: white;
+        }
+
+        .forward-card {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 14px;
+        }
+
+        .toast-notify {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1A202C;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            opacity: 0;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .toast-notify.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-brand">
+        <img src="assets/logo.png" alt="Agro Salinas" onerror="this.style.display='none'">
+        <h1 class="portal-title">Portal do Vendedor</h1>
+        <p class="portal-subtitle">Agro Salinas • Área Restrita e Segura</p>
+    </div>
+
+    <!-- TELA 1: LOGIN / DEFINIÇÃO DE PIN -->
+    <div class="card-container" id="screen-login">
+        <div class="alert-box alert-error" id="login-error"></div>
+        <div class="alert-box alert-success" id="login-success"></div>
+
+        <h2 id="login-title" style="font-size: 18px; font-weight: 800; margin-bottom: 6px; color: var(--primary);">
+            Acessar Meu Painel
+        </h2>
+        <p id="login-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
+            Selecione seu perfil e digite seu PIN de 4 dígitos.
+        </p>
+
+        <div class="form-group">
+            <label class="form-label">Quem é você?</label>
+            <select class="form-select" id="select-seller" onchange="onSellerSelectChange()">
+                <option value="">-- Selecione seu nome --</option>
+            </select>
+        </div>
+
+        <div class="form-group" id="pin-container">
+            <label class="form-label" id="pin-label">Seu PIN (4 dígitos):</label>
+            <div class="pin-inputs">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p1" onkeyup="handlePinInput(this, 'p2', '')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p2" onkeyup="handlePinInput(this, 'p3', 'p1')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p3" onkeyup="handlePinInput(this, 'p4', 'p2')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p4" onkeyup="handlePinInput(this, '', 'p3')">
+            </div>
+        </div>
+
+        <div class="form-group" id="pin-confirm-container" style="display: none;">
+            <label class="form-label">Confirme o PIN (4 dígitos):</label>
+            <div class="pin-inputs">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c1" onkeyup="handlePinInput(this, 'c2', '')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c2" onkeyup="handlePinInput(this, 'c3', 'c1')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c3" onkeyup="handlePinInput(this, 'c4', 'c2')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c4" onkeyup="handlePinInput(this, '', 'c3')">
+            </div>
+        </div>
+
+        <button class="btn-primary" id="btn-submit-auth" onclick="handleAuthSubmit()">
+            <span>Entrar no Painel</span> ➔
+        </button>
+
+        <a class="link-text" id="link-forgot-pin" onclick="handleForgotPin()" style="display: none;">Esqueci meu PIN</a>
+        <a class="link-text" href="index.html" style="color: var(--text-muted); margin-top: 10px;">← Voltar ao Catálogo</a>
+    </div>
+
+    <!-- TELA 2: PAINEL DO VENDEDOR LOGADO -->
+    <div class="card-container" id="screen-dashboard" style="display: none;">
+        <div class="seller-badge-bar">
+            <div class="seller-welcome">
+                <div class="avatar-circle" id="dash-avatar">G</div>
+                <div class="seller-details">
+                    <h3 id="dash-name">Grégory</h3>
+                    <p>Consultor Oficial <span id="dash-code" style="color: var(--accent); font-weight: 700;">#GREG</span></p>
+                </div>
+            </div>
+            <button class="btn-logout" onclick="logoutSeller()">Sair</button>
+        </div>
+
+        <div class="panel-section-title">
+            <span>🔗</span> Seu Link Exclusivo de Vendas
+        </div>
+        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">
+            Envie este link para seus clientes. Todos os pedidos enviados por eles cairão <strong>diretamente no seu WhatsApp</strong>!
+        </p>
+
+        <div class="link-share-box" id="dash-exclusive-link">
+            Carregando...
+        </div>
+
+        <div class="action-grid">
+            <button class="btn-action-share btn-copy-url" onclick="copyMyLink()">
+                📋 Copiar Link
+            </button>
+            <button class="btn-action-share btn-whatsapp-share" onclick="shareOnWhatsApp()">
+                💬 Mandar no Zap
+            </button>
+        </div>
+
+        <a class="link-text" href="index.html" style="color: var(--primary); margin-top: 20px; display: block;">
+            🛍️ Ver Catálogo como Cliente
+        </a>
+    </div>
+
+    <div class="toast-notify" id="toast">Aviso</div>
+
+    <script src="vendedores.js?v=3.0"></script>
+    <script>
+        let currentLoggedSeller = null;
+        let isCreatingPinMode = false;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            populateSellerOptions();
+            checkExistingSession();
+            handleUrlActions();
+        });
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        function populateSellerOptions() {
+            const sel = document.getElementById('select-seller');
+            if (!sel || typeof VENDEDORES === 'undefined') return;
+
+            VENDEDORES.forEach(v => {
+                const opt = document.createElement('option');
+                opt.value = v.code;
+                opt.textContent = v.name;
+                sel.appendChild(opt);
+            });
+        }
+
+        function handleUrlActions() {
+            const params = new URLSearchParams(window.location.search);
+            const resetCode = params.get('reset');
+            if (resetCode) {
+                const clean = resetCode.trim().toUpperCase();
+                localStorage.removeItem(`pin_${clean}`);
+                localStorage.removeItem('logged_seller_code');
+                showToast('PIN redefinido! Crie seu novo PIN.');
+                const sel = document.getElementById('select-seller');
+                if (sel) {
+                    sel.value = clean;
+                    onSellerSelectChange();
+                }
+            }
+        }
+
+        function onSellerSelectChange() {
+            const sel = document.getElementById('select-seller');
+            const code = sel.value;
+            const errBox = document.getElementById('login-error');
+            errBox.style.display = 'none';
+
+            if (!code) {
+                resetPinFields();
+                return;
+            }
+
+            const storedPin = localStorage.getItem(`pin_${code}`);
+            const titleEl = document.getElementById('login-title');
+            const descEl = document.getElementById('login-desc');
+            const pinLabel = document.getElementById('pin-label');
+            const confirmCont = document.getElementById('pin-confirm-container');
+            const forgotLink = document.getElementById('link-forgot-pin');
+            const btnSubmit = document.getElementById('btn-submit-auth');
+
+            if (!storedPin) {
+                isCreatingPinMode = true;
+                titleEl.textContent = 'Criar seu PIN Pessoal';
+                descEl.textContent = 'Este é o seu primeiro acesso neste aparelho. Defina um PIN de 4 dígitos para proteger seu painel:';
+                pinLabel.textContent = 'Crie seu PIN de 4 dígitos:';
+                confirmCont.style.display = 'block';
+                forgotLink.style.display = 'none';
+                btnSubmit.innerHTML = '<span>Salvar PIN e Acessar</span> ➔';
+            } else {
+                isCreatingPinMode = false;
+                titleEl.textContent = 'Acessar Meu Painel';
+                descEl.textContent = 'Digite seu PIN de 4 dígitos para entrar:';
+                pinLabel.textContent = 'Seu PIN (4 dígitos):';
+                confirmCont.style.display = 'none';
+                forgotLink.style.display = 'block';
+                btnSubmit.innerHTML = '<span>Entrar no Painel</span> ➔';
+            }
+
+            resetPinFields();
+            document.getElementById('p1').focus();
+        }
+
+        function handlePinInput(current, nextId, prevId) {
+            if (current.value.length >= 1) {
+                current.value = current.value.slice(0, 1);
+                if (nextId) {
+                    const nextEl = document.getElementById(nextId);
+                    if (nextEl) nextEl.focus();
+                }
+            }
+        }
+
+        function getEnteredPin(prefix) {
+            prefix = prefix || 'p';
+            const d1 = document.getElementById(prefix + '1').value;
+            const d2 = document.getElementById(prefix + '2').value;
+            const d3 = document.getElementById(prefix + '3').value;
+            const d4 = document.getElementById(prefix + '4').value;
+            return '' + d1 + d2 + d3 + d4;
+        }
+
+        function resetPinFields() {
+            ['p1','p2','p3','p4','c1','c2','c3','c4'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.value = '';
+            });
+        }
+
+        function handleAuthSubmit() {
+            const errBox = document.getElementById('login-error');
+            errBox.style.display = 'none';
+
+            const sel = document.getElementById('select-seller');
+            const code = sel.value;
+            if (!code) {
+                errBox.textContent = 'Por favor, selecione seu nome.';
+                errBox.style.display = 'block';
+                return;
+            }
+
+            const enteredPin = getEnteredPin('p');
+            if (enteredPin.length < 4) {
+                errBox.textContent = 'Digite os 4 dígitos do seu PIN.';
+                errBox.style.display = 'block';
+                return;
+            }
+
+            if (isCreatingPinMode) {
+                const confirmPin = getEnteredPin('c');
+                if (confirmPin.length < 4) {
+                    errBox.textContent = 'Por favor, confirme os 4 dígitos do PIN.';
+                    errBox.style.display = 'block';
+                    return;
+                }
+                if (enteredPin !== confirmPin) {
+                    errBox.textContent = 'Os PINs digitados não são iguais. Tente novamente.';
+                    errBox.style.display = 'block';
+                    return;
+                }
+
+                localStorage.setItem(`pin_${code}`, enteredPin);
+                localStorage.setItem('logged_seller_code', code);
+                showToast('PIN criado com sucesso!');
+                loginSuccess(code);
+            } else {
+                const storedPin = localStorage.getItem(`pin_${code}`);
+                if (enteredPin !== storedPin) {
+                    errBox.textContent = 'PIN incorreto. Tente novamente ou use Esqueci meu PIN.';
+                    errBox.style.display = 'block';
+                    resetPinFields();
+                    document.getElementById('p1').focus();
+                    return;
+                }
+
+                localStorage.setItem('logged_seller_code', code);
+                loginSuccess(code);
+            }
+        }
+
+        function handleForgotPin() {
+            const sel = document.getElementById('select-seller');
+            const code = sel.value;
+            const seller = VENDEDORES.find(v => v.code === code);
+            const nome = seller ? seller.name : 'Vendedor';
+
+            const msg = 'Olá Grégory! Sou o ' + nome + ' (' + code + '). Esqueci meu PIN no Portal do Vendedor da Agro Salinas. Poderia me enviar o link de redefinição?';
+            const gregWhatsapp = '5551982199486';
+            const url = 'https://wa.me/' + gregWhatsapp + '?text=' + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        }
+
+        function checkExistingSession() {
+            const savedCode = localStorage.getItem('logged_seller_code');
+            if (savedCode) {
+                const seller = VENDEDORES.find(v => v.code === savedCode && v.active);
+                if (seller) {
+                    loginSuccess(savedCode);
+                }
+            }
+        }
+
+        function loginSuccess(code) {
+            const seller = VENDEDORES.find(v => v.code === code);
+            if (!seller) return;
+
+            currentLoggedSeller = seller;
+
+            document.getElementById('screen-login').style.display = 'none';
+            document.getElementById('screen-dashboard').style.display = 'block';
+
+            document.getElementById('dash-avatar').textContent = seller.name.charAt(0).toUpperCase();
+            document.getElementById('dash-name').textContent = seller.name;
+            document.getElementById('dash-code').textContent = '#' + seller.code;
+
+            const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
+            const myLink = fullBaseUrl + '/?v=' + seller.code.toLowerCase();
+            document.getElementById('dash-exclusive-link').textContent = myLink;
+        }
+
+        function logoutSeller() {
+            localStorage.removeItem('logged_seller_code');
+            currentLoggedSeller = null;
+            document.getElementById('screen-dashboard').style.display = 'none';
+            document.getElementById('screen-login').style.display = 'block';
+            resetPinFields();
+            showToast('Você saiu do painel.');
+        }
+
+        function copyMyLink() {
+            const linkText = document.getElementById('dash-exclusive-link').textContent.trim();
+            navigator.clipboard.writeText(linkText).then(() => {
+                showToast('Link copiado com sucesso! 📋');
+            }).catch(() => {
+                prompt('Copie seu link:', linkText);
+            });
+        }
+
+        function shareOnWhatsApp() {
+            if (!currentLoggedSeller) return;
+            const linkText = document.getElementById('dash-exclusive-link').textContent.trim();
+            const msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui: ' + linkText + '\n\nEscolha seus produtos e me mande seu pedido que organizo sua entrega rapidinho!';
+            const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
