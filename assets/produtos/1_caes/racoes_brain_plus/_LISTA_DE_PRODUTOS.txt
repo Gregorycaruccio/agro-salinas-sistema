@@ -1,0 +1,11 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 226.jpg ou 226.png)
+=======================================================
+
+- [CÓD: 226] Ração Brainplus Cão Porte Peq 10.1kg
+- [CÓD: 240] Ração Brainplus Cão Power Supreme 15kg
+- [CÓD: 236] Ração Brainplus Prime 15kg
+- [CÓD: 238] Ração Brainplus Prime 20kg
+- [CÓD: 233] Ração Brainplus Senior10.1kg
+- [CÓD: 237] Ração Luxbrain Adulto 20kg
+- [CÓD: 241] Ração Luxbrain Cão Adulto 25kg

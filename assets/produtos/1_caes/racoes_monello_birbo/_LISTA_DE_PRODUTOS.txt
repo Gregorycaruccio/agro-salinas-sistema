@@ -1,0 +1,10 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 277.jpg ou 277.png)
+=======================================================
+
+- [CÓD: 277] Ração Birbo Cão Tradicional 15kg
+- [CÓD: 278] Ração Birbo Cão Tradicional 25kg
+- [CÓD: 283] Ração Monello Cão Filhote 15kg
+- [CÓD: 284] Ração Monello Cão Racas Pequenas 15kg
+- [CÓD: 285] Ração Monello Cão Tradicional 15kg
+- [CÓD: 286] Ração Monello Go Carne 15kg

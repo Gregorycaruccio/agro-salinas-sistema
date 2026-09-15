@@ -1,0 +1,23 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 362.jpg ou 362.png)
+=======================================================
+
+- [CÓD: 362] Cama Europa Oxford Azul Pequena
+- [CÓD: 363] Cama Europa Oxford Branca e Rosa Media
+- [CÓD: 364] Cama Europa Oxford Cinza Media
+- [CÓD: 365] Cama Europa Oxford Vermelha Grande
+- [CÓD: 361] Cama Europa Oxford Vermelha Pequena
+- [CÓD: 367] Cama Plush Color
+- [CÓD: 712] Cama Soft Tamanho g Azul
+- [CÓD: 709] Cama Soft Tamanho g Rosa
+- [CÓD: 711] Cama Soft Tamanho M Azul
+- [CÓD: 708] Cama Soft Tamanho M Rosa
+- [CÓD: 710] Cama Soft Tamanho P Azul
+- [CÓD: 707] Cama Soft Tamanho P Rosa
+- [CÓD: 703] Casa Durahouse n 1
+- [CÓD: 327] Casa Durahouse Numero 3 Rosa
+- [CÓD: 326] Casa Durahouse Numero 4 Preta
+- [CÓD: 538] Casa Durahouse Numero 5 Caramelo
+- [CÓD: 704] Casa Durahouse Preta n 2
+- [CÓD: 705] Casa Durahouse Preta n 3
+- [CÓD: 706] Casa Durahouse Preta n 4

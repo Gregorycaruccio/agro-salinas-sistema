@@ -1,0 +1,11 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 724.jpg ou 724.png)
+=======================================================
+
+- [CÓD: 724] Chicote Pesca Papa Terra Numero 14
+- [CÓD: 723] Chicote Pesca Papa Terra un
+- [CÓD: 726] Chicote Pesca Peixe Rei Duplo Numero 14
+- [CÓD: 725] Chicote Pesca Peixe Rei Numero 12
+- [CÓD: 727] Chicote Pesca Peixe Rei Numero 14
+- [CÓD: 728] Chicote Pesca Pescada Numero 18
+- [CÓD: 729] Chicote Pesca Pescada Numero 20

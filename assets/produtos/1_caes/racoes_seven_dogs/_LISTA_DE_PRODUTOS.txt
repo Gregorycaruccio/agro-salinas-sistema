@@ -1,0 +1,11 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 541.jpg ou 541.png)
+=======================================================
+
+- [CÓD: 541] Ração Seven Cats Castrados Frango e Carne 10.1kg
+- [CÓD: 669] Ração Seven Dogs Cordeiro R Medias e Grandes 14kg
+- [CÓD: 670] Ração Seven Dogs Frango e Batata Doce 14kg
+- [CÓD: 542] Ração Seven Dogs P Pequeno Cordeiro 10.1kg
+- [CÓD: 751] Ração Seven Dogs P Pequeno Frango e Carne 10.1kg
+- [CÓD: 749] Ração Seven Dogs Power Active 14kg
+- [CÓD: 748] Ração Seven Dogs Senior P Pequeno10.1kg

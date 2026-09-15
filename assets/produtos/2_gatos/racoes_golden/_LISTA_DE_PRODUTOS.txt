@@ -1,0 +1,9 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 63.jpg ou 63.png)
+=======================================================
+
+- [CÓD: 63] Golden Gato Castrado Carne 10.1kg
+- [CÓD: 52] Golden Gato Castrado Salmão 10.1kg
+- [CÓD: 50] Golden Gato Castrados Frango 10.1kg
+- [CÓD: 26] Sache Golden Gato Castrado Carne 70g
+- [CÓD: 25] Sache Golden Gato Castrado Frango 70g

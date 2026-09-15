@@ -1,0 +1,25 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 411.jpg ou 411.png)
+=======================================================
+
+- [CÓD: 411] Arranhador Animal Print
+- [CÓD: 370] Arranhador Bangalo Grande Caramelo
+- [CÓD: 371] Arranhador Bangalo Grande Caramelo e Preto
+- [CÓD: 410] Arranhador Canto Sofa Sisal Cinza
+- [CÓD: 369] Arranhador Pata Caramelo e Preto 3 Andares
+- [CÓD: 409] Arranhador Poste Sisal Caramelo
+- [CÓD: 343] Bandeja Sanitaria Gato Azul Pequena
+- [CÓD: 340] Bandeja Sanitaria Gato Grande Azul
+- [CÓD: 341] Bandeja Sanitaria Gato Grande Rosa
+- [CÓD: 342] Bandeja Sanitaria Gato Grande Vermelha
+- [CÓD: 347] Bandeja Sanitaria Gato Preta Pequena
+- [CÓD: 346] Bandeja Sanitaria Gato Rosa Pequena
+- [CÓD: 345] Bandeja Sanitaria Gato Verde Pequena
+- [CÓD: 344] Bandeja Sanitaria Gato Vermelha Pequena
+- [CÓD: 392] Pa Higienica  Inox para Gatos
+- [CÓD: 390] Pa Higienica Gato Color
+- [CÓD: 552] Pa Higienica Gato Plas Pet Azul
+- [CÓD: 555] Pa Higienica Gato Plas Pet Cinza
+- [CÓD: 553] Pa Higienica Gato Plas Pet Gold
+- [CÓD: 551] Pa Higienica Gato Plas Pet Rosa
+- [CÓD: 554] Pa Higienica Gato Plas Pet Vermelha

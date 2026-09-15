@@ -1,0 +1,15 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 170.jpg ou 170.png)
+=======================================================
+
+- [CÓD: 170] Bloco Roedores Cartela 1 un
+- [CÓD: 155] Gaiola Coelho Branca e Amarela
+- [CÓD: 147] Gaiola Hamster Capela Branca e Verde
+- [CÓD: 156] Gaiola Hamster Capela Preta e Amarela
+- [CÓD: 154] Gaiola Hamster Globo Branca e Vermelha
+- [CÓD: 152] Gaiola Hamster Rosa
+- [CÓD: 130] Ração Coelho Paletizada 5kg
+- [CÓD: 182] Ração Hamster 500g
+- [CÓD: 159] Ração Roedores 1.3kg
+- [CÓD: 557] Ração Roedores 100g
+- [CÓD: 158] Ração Roedores 400g

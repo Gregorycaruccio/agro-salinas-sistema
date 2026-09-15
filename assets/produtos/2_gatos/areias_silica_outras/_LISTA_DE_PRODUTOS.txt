@@ -1,0 +1,17 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 750.jpg ou 750.png)
+=======================================================
+
+- [CÓD: 750] Areia Gatozim Extra Fina 4kg
+- [CÓD: 138] Areia Sanitaria Bionature Mandioca Perform 4kg
+- [CÓD: 136] Areia Sanitaria Bionature Mandioca Sensitive 2kg
+- [CÓD: 137] Areia Sanitaria Bionature Mandioca Sensitive 4kg
+- [CÓD: 139] Areia Sanitaria Bionature Super Premium 2kg
+- [CÓD: 140] Areia Sanitaria Bionature Super Premium 4kg
+- [CÓD: 730] Areia Sanitaria Gato Gats 4kg
+- [CÓD: 408] Areia Sanitaria Gato Mitzi 12kg
+- [CÓD: 407] Areia Sanitaria Gato Mitzi 4kg
+- [CÓD: 76] Areia Sanitaria Gato Progato 4kg
+- [CÓD: 85] Areia Silica Grossa Gato 1.6kg
+- [CÓD: 86] Areia Silica Grossa Lavanda Gato 1.6kg
+- [CÓD: 87] Areia Silica Micro Gato 1.6kg

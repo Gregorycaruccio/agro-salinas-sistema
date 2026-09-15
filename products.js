@@ -2487,7 +2487,8 @@ const PRODUCTS = [
         "price": 19.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/66.jpg"
     },
     {
         "id": "71",
@@ -2498,7 +2499,8 @@ const PRODUCTS = [
         "price": 18.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/71.jpg"
     },
     {
         "id": "70",
@@ -2509,7 +2511,8 @@ const PRODUCTS = [
         "price": 19.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/70.jpg"
     },
     {
         "id": "69",
@@ -3174,7 +3177,8 @@ const PRODUCTS = [
         "price": 144.7,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/58.jpg"
     },
     {
         "id": "59",
@@ -3185,7 +3189,8 @@ const PRODUCTS = [
         "price": 175.25,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/59.jpg"
     },
     {
         "id": "436",
@@ -3196,7 +3201,8 @@ const PRODUCTS = [
         "price": 175.25,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/436.jpg"
     },
     {
         "id": "63",
@@ -3240,7 +3246,8 @@ const PRODUCTS = [
         "price": 144.2,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/57.jpg"
     },
     {
         "id": "54",
@@ -3251,7 +3258,8 @@ const PRODUCTS = [
         "price": 187.25,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/54.jpg"
     },
     {
         "id": "104",
@@ -6927,7 +6935,8 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/51.jpg"
     },
     {
         "id": "73",
@@ -6971,7 +6980,8 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/74.jpg"
     },
     {
         "id": "75",
@@ -6982,7 +6992,8 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "assets/produtos/1_caes/racoes_golden/75.jpg"
     },
     {
         "id": "650",

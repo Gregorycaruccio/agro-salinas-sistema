@@ -1,0 +1,996 @@
+GUIA PRÁTICO PARA SALVAR AS FOTOS DOS PRODUTOS
+Instrução: Salve a imagem com o código do produto (Exemplo: 58.jpg ou 58.png)
+===============================================================================
+
+
+===============================================================================
+🐶 1. CÃES (279 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: HIGIENE & BELEZA
+--------------------------------------------------
+[CÓD: 333] => Salve como: 333.jpg  => Perfume Animalissimo Femea 120ml
+[CÓD: 334] => Salve como: 334.jpg  => Perfume Animalissimo Macho 120ml
+[CÓD: 335] => Salve como: 335.jpg  => Perfume Animalissimo Filhote 120ml
+[CÓD: 349] => Salve como: 349.jpg  => Bandeja Sanitaria Cão Xixidog 60x40 Azul
+[CÓD: 350] => Salve como: 350.jpg  => Bandeja Sanitaria Cão Xixidog 60x40 Vermelho
+[CÓD: 351] => Salve como: 351.jpg  => Bandeja Sanitaria Cão Xixidog 60x40 Rosa
+[CÓD: 385] => Salve como: 385.jpg  => Banho a Seco 500ml
+[CÓD: 739] => Salve como: 739.jpg  => Alicate Unha Tradicional Media
+
+--------------------------------------------------
+CATEGORIA: RAÇÕES SECAS
+--------------------------------------------------
+[CÓD: 111] => Salve como: 111.jpg  => Ração Cavalo Passeio 30kg
+[CÓD: 114] => Salve como: 114.jpg  => Ração Frango do Campo 20kg
+[CÓD: 117] => Salve como: 117.jpg  => Ração Codorna do Campo 5kg
+[CÓD: 118] => Salve como: 118.jpg  => Ração Ovelha Melacada Paletizada 25kg
+[CÓD: 119] => Salve como: 119.jpg  => Ração Suinos Terminacao Farelada 25kg
+[CÓD: 120] => Salve como: 120.jpg  => Ração Suinos Terminacao Paletizada 25kg
+[CÓD: 122] => Salve como: 122.jpg  => Ração Cão Vicato 20kg
+[CÓD: 129] => Salve como: 129.jpg  => Ração Cavalo Premium Melacada 25kg
+[CÓD: 131] => Salve como: 131.jpg  => Ração Codorna Postura Farelada 5kg
+[CÓD: 132] => Salve como: 132.jpg  => Ração Crescimento e Final Ave Corte 25kg
+[CÓD: 133] => Salve como: 133.jpg  => Ração Aves Postura Farelada 25kg
+[CÓD: 134] => Salve como: 134.jpg  => Ração Aves Postura Paletizada 25kg
+[CÓD: 14] => Salve como: 14.jpg  => Ração Tutano Porte Peq Frango 15kg
+[CÓD: 141] => Salve como: 141.jpg  => Ração Cavalo Sport 30kg
+[CÓD: 178] => Salve como: 178.jpg  => Ração Cardeal 500g
+[CÓD: 180] => Salve como: 180.jpg  => Ração Curio 500g
+[CÓD: 223] => Salve como: 223.jpg  => Ração Dodi Cão 5kg
+[CÓD: 226] => Salve como: 226.jpg  => Ração Brainplus Cão Porte Peq 10.1kg
+[CÓD: 233] => Salve como: 233.jpg  => Ração Brainplus Senior10.1kg
+[CÓD: 236] => Salve como: 236.jpg  => Ração Brainplus Prime 15kg
+[CÓD: 237] => Salve como: 237.jpg  => Ração Luxbrain Adulto 20kg
+[CÓD: 238] => Salve como: 238.jpg  => Ração Brainplus Prime 20kg
+[CÓD: 240] => Salve como: 240.jpg  => Ração Brainplus Cão Power Supreme 15kg
+[CÓD: 241] => Salve como: 241.jpg  => Ração Luxbrain Cão Adulto 25kg
+[CÓD: 248] => Salve como: 248.jpg  => Ração Royal Cão Satiety 1.5kg
+[CÓD: 250] => Salve como: 250.jpg  => Ração Urinary Cão Small Dog 2kg
+[CÓD: 256] => Salve como: 256.jpg  => Ração Royal Cão Small Adulto 1kg
+[CÓD: 259] => Salve como: 259.jpg  => Ração Hipoalergenica Cão Small Dog 2kg
+[CÓD: 261] => Salve como: 261.jpg  => Ração Cão Mini Indor Senior 1kg
+[CÓD: 262] => Salve como: 262.jpg  => Ração Royal Cão Mini Light 1kg
+[CÓD: 263] => Salve como: 263.jpg  => Ração Royal Cão Mini Indoor Puppy 1kg
+[CÓD: 264] => Salve como: 264.jpg  => Ração Royal Cão Mini Puppy 1kg
+[CÓD: 267] => Salve como: 267.jpg  => Ração Royal Cão Ageing 12+ 1kg
+[CÓD: 268] => Salve como: 268.jpg  => Ração Royal Cão Shih Tzu 1kg
+[CÓD: 269] => Salve como: 269.jpg  => Ração Royal Cão Mini Adulto 1kg
+[CÓD: 270] => Salve como: 270.jpg  => Ração Royal Cão Mini Indoor Senior 2.5kg
+[CÓD: 271] => Salve como: 271.jpg  => Ração Royal Cão Mini Indoor Adulto 2.5kg
+[CÓD: 273] => Salve como: 273.jpg  => Ração Royal Satiety Cão 1.5kg
+[CÓD: 277] => Salve como: 277.jpg  => Ração Birbo Cão Tradicional 15kg
+[CÓD: 278] => Salve como: 278.jpg  => Ração Birbo Cão Tradicional 25kg
+[CÓD: 279] => Salve como: 279.jpg  => Ração Bolt Cão 7kg
+[CÓD: 280] => Salve como: 280.jpg  => Ração Bolt Cão 15kg
+[CÓD: 283] => Salve como: 283.jpg  => Ração Monello Cão Filhote 15kg
+[CÓD: 284] => Salve como: 284.jpg  => Ração Monello Cão Racas Pequenas 15kg
+[CÓD: 285] => Salve como: 285.jpg  => Ração Monello Cão Tradicional 15kg
+[CÓD: 286] => Salve como: 286.jpg  => Ração Monello Go Carne 15kg
+[CÓD: 287] => Salve como: 287.jpg  => Ração Cão Martin Dog 5kg
+[CÓD: 288] => Salve como: 288.jpg  => Ração Cão Martin Dog 25kg
+[CÓD: 289] => Salve como: 289.jpg  => Ração Cão Quartz Traning 15kg
+[CÓD: 29] => Salve como: 29.jpg  => Dog Chow Ad Porte Mini e Peq Carne e Frango 2.5kg
+[CÓD: 290] => Salve como: 290.jpg  => Ração Cão Billi Dog Ossinho 7kg
+[CÓD: 291] => Salve como: 291.jpg  => Ração Cão Billi Dog Ossinho 25kg
+[CÓD: 292] => Salve como: 292.jpg  => Ração Cão Billi Dog Filhote 10.1kg
+[CÓD: 293] => Salve como: 293.jpg  => Ração Cão Billi Dog Racas Pequenas 10.1kg
+[CÓD: 296] => Salve como: 296.jpg  => Ração Cão Quartz Premium Bacon 10.1kg
+[CÓD: 299] => Salve como: 299.jpg  => Ração Cão Quartz Senior R Peq 10.1kg
+[CÓD: 302] => Salve como: 302.jpg  => Ração Quartz Cão Senior R Peq 15kg
+[CÓD: 303] => Salve como: 303.jpg  => Ração Quartz Cão Premium Bacon 15kg
+[CÓD: 304] => Salve como: 304.jpg  => Ração Quartz Cão R Peq Carne Frango e Arroz 15kg
+[CÓD: 305] => Salve como: 305.jpg  => Ração Billi Cat Castrado Salmão e Frango 15kg
+[CÓD: 306] => Salve como: 306.jpg  => Ração Billi Cat Adulto Frango 15kg
+[CÓD: 307] => Salve como: 307.jpg  => Ração Billi Cat Filhote 15kg
+[CÓD: 308] => Salve como: 308.jpg  => Ração Billi Dog R Pequenas 15kg
+[CÓD: 309] => Salve como: 309.jpg  => Ração Billi Dog Filhotes 15kg
+[CÓD: 310] => Salve como: 310.jpg  => Ração Tutano Adultos Porte Peq 15kg
+[CÓD: 311] => Salve como: 311.jpg  => Ração Tutano Cães Sensiveis 10.1kg
+[CÓD: 312] => Salve como: 312.jpg  => Ração Tutano Cães Melhor Idade 15kg
+[CÓD: 315] => Salve como: 315.jpg  => Ração Tutano Especial Cão 15kg
+[CÓD: 316] => Salve como: 316.jpg  => Ração Tutano Porte Pequeno 1kg
+[CÓD: 317] => Salve como: 317.jpg  => Ração Tutano Porte Pequeno Adultos 3kg
+[CÓD: 318] => Salve como: 318.jpg  => Ração Tutano Filhotes Porte Peq 1kg
+[CÓD: 319] => Salve como: 319.jpg  => Ração Tutano Filhotes Porte Peq 3kg
+[CÓD: 323] => Salve como: 323.jpg  => Ração Tutano Cães Sensiveis 3kg
+[CÓD: 324] => Salve como: 324.jpg  => Ração Tutano Cães Melhor Idade 3kg
+[CÓD: 436] => Salve como: 436.jpg  => Golden Adulto Mini B Frango e Arroz 15kg
+[CÓD: 45] => Salve como: 45.jpg  => Premier Ambientes Internos Ad Porte Peq Frango e Salmão 1kg
+[CÓD: 46] => Salve como: 46.jpg  => Premier Ambientes Internos Filhotes Pp Frango e Salmão 1kg
+[CÓD: 49] => Salve como: 49.jpg  => Premier Yorkshire Frango 1kg
+[CÓD: 53] => Salve como: 53.jpg  => Premier Shihtzu Frango 1kg
+[CÓD: 54] => Salve como: 54.jpg  => Golden Senior Adulto Frango e Arroz 15kg
+[CÓD: 541] => Salve como: 541.jpg  => Ração Seven Cats Castrados Frango e Carne 10.1kg
+[CÓD: 542] => Salve como: 542.jpg  => Ração Seven Dogs P Pequeno Cordeiro 10.1kg
+[CÓD: 543] => Salve como: 543.jpg  => Mandala Cão Adulto Carne e Arroz 20kg
+[CÓD: 544] => Salve como: 544.jpg  => Mandala Cão Adulto Carne e Arroz 10kg
+[CÓD: 567] => Salve como: 567.jpg  => Allcanis Senior Racas Medias e Grandes 15kg
+[CÓD: 568] => Salve como: 568.jpg  => Allcanis Senior Racas Pequenas 10.1 kg
+[CÓD: 57] => Salve como: 57.jpg  => Golden Senior Ad Mini B Carne 10.1kg
+[CÓD: 58] => Salve como: 58.jpg  => Golden Adulto Light Frango e Arroz 10.1kg
+[CÓD: 59] => Salve como: 59.jpg  => Golden Adulto Mini B Carne 15kg
+[CÓD: 60] => Salve como: 60.jpg  => Premier Ambientes Internos Ligth Frango e Salmão 1kg
+[CÓD: 609] => Salve como: 609.jpg  => Especial Psitacideos Selecao Natural 500g
+[CÓD: 61] => Salve como: 61.jpg  => Premier Ambientes Internos Senior Frango e Salmão 1kg
+[CÓD: 62] => Salve como: 62.jpg  => Premier Ambientes Internos Spitz Alemao Frango 1kg
+[CÓD: 631] => Salve como: 631.jpg  => Bomba para Aplicacao Pulverizante
+[CÓD: 660] => Salve como: 660.jpg  => Colar para Cães Tamanho 8
+[CÓD: 661] => Salve como: 661.jpg  => Colar para Cães Tamanho 6
+[CÓD: 662] => Salve como: 662.jpg  => Colar para Cães Tamanho 4
+[CÓD: 663] => Salve como: 663.jpg  => Colar para Cães Tamanho 2
+[CÓD: 669] => Salve como: 669.jpg  => Ração Seven Dogs Cordeiro R Medias e Grandes 14kg
+[CÓD: 670] => Salve como: 670.jpg  => Ração Seven Dogs Frango e Batata Doce 14kg
+[CÓD: 671] => Salve como: 671.jpg  => Mandala Cão Adulto Cordeiro 15kg
+[CÓD: 684] => Salve como: 684.jpg  => Ração Personal Dog Premium 20kg
+[CÓD: 685] => Salve como: 685.jpg  => Ração Personal Dog Premium 10.1kg
+[CÓD: 686] => Salve como: 686.jpg  => Ração Patrulha Original 5kg
+[CÓD: 687] => Salve como: 687.jpg  => Ração Patrulha Original 10.1kg
+[CÓD: 746] => Salve como: 746.jpg  => Mandala Cão Adulto Cordeiro 20kg
+[CÓD: 747] => Salve como: 747.jpg  => Ração Cão Kocker 25kg
+[CÓD: 748] => Salve como: 748.jpg  => Ração Seven Dogs Senior P Pequeno10.1kg
+[CÓD: 749] => Salve como: 749.jpg  => Ração Seven Dogs Power Active 14kg
+[CÓD: 751] => Salve como: 751.jpg  => Ração Seven Dogs P Pequeno Frango e Carne 10.1kg
+[CÓD: 754] => Salve como: 754.jpg  => Ração Tutano Cão Porte Grande e Gigante 15kg
+
+--------------------------------------------------
+CATEGORIA: COMEDOUROS & BEBEDOUROS
+--------------------------------------------------
+[CÓD: 198] => Salve como: 198.jpg  => Comedouro Lateral com Poleiro
+[CÓD: 200] => Salve como: 200.jpg  => Comedouro Automatico Malha Fina 120ml
+[CÓD: 201] => Salve como: 201.jpg  => Comedouro Automatico Malha Larga 120ml
+[CÓD: 352] => Salve como: 352.jpg  => Comedouro/bebedoro Anti Formiga
+[CÓD: 353] => Salve como: 353.jpg  => Comedouro Pata Luxo Grande Color
+[CÓD: 354] => Salve como: 354.jpg  => Comedouro Pata Luxo Medio Color
+[CÓD: 355] => Salve como: 355.jpg  => Comedouro Pata Luxo Pequeno Color
+[CÓD: 356] => Salve como: 356.jpg  => Comedouro Pata Luxo Filhote Color
+[CÓD: 357] => Salve como: 357.jpg  => Comedouro Aluminio Pesado 700ml
+[CÓD: 358] => Salve como: 358.jpg  => Comedouro Aluminio Pesado 900ml
+[CÓD: 359] => Salve como: 359.jpg  => Comedouro Aluminio Pesado 1200ml
+[CÓD: 372] => Salve como: 372.jpg  => Comedouro/bebedouro Flex Color
+[CÓD: 388] => Salve como: 388.jpg  => Comedouro Automatico Black 8 l
+[CÓD: 389] => Salve como: 389.jpg  => Bebedouro Automatico Garrafao Preto 10 l
+[CÓD: 741] => Salve como: 741.jpg  => Comedouro Calha 50cm
+[CÓD: 742] => Salve como: 742.jpg  => Comedouro Tubu 3kg Prato Plastico
+
+--------------------------------------------------
+CATEGORIA: PETISCOS & COOKIES
+--------------------------------------------------
+[CÓD: 127] => Salve como: 127.jpg  => Milho Integral Moido Grosso 25kg
+[CÓD: 212] => Salve como: 212.jpg  => Biscoito Biscrok Cão R Grandes 500g
+[CÓD: 213] => Salve como: 213.jpg  => Biscoito Biscrok Cão R Pequenas 500g
+[CÓD: 3] => Salve como: 3.jpg  => Bifinho Sabor Frango 65g
+[CÓD: 4] => Salve como: 4.jpg  => Bifinho Sabor Carne 65g
+[CÓD: 437] => Salve como: 437.jpg  => Pacote Bife Keldog Sabor Churrasco
+[CÓD: 438] => Salve como: 438.jpg  => Petisco Osso Natural Grande Unidade
+[CÓD: 439] => Salve como: 439.jpg  => Petisco Osso Natural Medio Unidade
+[CÓD: 440] => Salve como: 440.jpg  => Petisco Osso Natural Pequeno Unidade
+[CÓD: 545] => Salve como: 545.jpg  => Natural Stick Salmão 15g
+[CÓD: 546] => Salve como: 546.jpg  => Natural Stick Frango 15g
+[CÓD: 547] => Salve como: 547.jpg  => Natural Stick Carne15g
+[CÓD: 595] => Salve como: 595.jpg  => Biscoito Biscrok Cão Adulto Multi 500g
+[CÓD: 605] => Salve como: 605.jpg  => Pedigree Dentastix Racas Pequenas 3 un
+[CÓD: 606] => Salve como: 606.jpg  => Pedigree Dentastix Racas Medias 3 un
+[CÓD: 65] => Salve como: 65.jpg  => Cookie Premier Porte Peq Frutas Vermelhas e Aveia 250g
+[CÓD: 66] => Salve como: 66.jpg  => Cookie Golden Banana Aveia e Mel 350g
+[CÓD: 682] => Salve como: 682.jpg  => Cookie Premier Porte Peq Original 250g
+[CÓD: 69] => Salve como: 69.jpg  => Cookie Golden Racas Peq Original 350g
+[CÓD: 70] => Salve como: 70.jpg  => Cookie Golden Racas Peq Maca e Aveia 350g
+[CÓD: 71] => Salve como: 71.jpg  => Cookie Golden Racas Peq Carne Cenoura e Esp 350g
+[CÓD: 72] => Salve como: 72.jpg  => Cookie Premier Racas Peq Frutas Vermelhas  e Aveia 50g
+[CÓD: 745] => Salve como: 745.jpg  => Bife Premier Nattu 60g
+
+--------------------------------------------------
+CATEGORIA: BRINQUEDOS
+--------------------------------------------------
+[CÓD: 115] => Salve como: 115.jpg  => Ração Galinha do Campo Quintal 20kg
+[CÓD: 116] => Salve como: 116.jpg  => Ração Galinha do Campo Ovos 20kg
+[CÓD: 231] => Salve como: 231.jpg  => Ração Mimos Cat Bolas de Pelo 10.1kg
+[CÓD: 336] => Salve como: 336.jpg  => Brinquedo Galinha Sonora Media
+[CÓD: 366] => Salve como: 366.jpg  => Bola Cravo Pequena 45mm
+[CÓD: 387] => Salve como: 387.jpg  => Bola Cravinho Mini Color
+[CÓD: 402] => Salve como: 402.jpg  => Ratinho Brinquedo Cinza
+[CÓD: 412] => Salve como: 412.jpg  => Brinquedo Bola Snacks com Corda Vinil
+[CÓD: 413] => Salve como: 413.jpg  => Brinquedo Ossinho Pequeno Vinil Rosa
+[CÓD: 414] => Salve como: 414.jpg  => Brinquedo Salsicha com Corda Vinil
+[CÓD: 415] => Salve como: 415.jpg  => Brinquedo Salsicha Pequeno com Corda Vinil
+[CÓD: 416] => Salve como: 416.jpg  => Brinquedo Bolinha Pequena com Corda Vinil
+[CÓD: 417] => Salve como: 417.jpg  => Brinquedo Joaninha Pequena Vinil
+[CÓD: 418] => Salve como: 418.jpg  => Brinquedo Elefantinho Vinil Pequeno
+[CÓD: 419] => Salve como: 419.jpg  => Brinquedo Vaquinha Vinil Pequena
+[CÓD: 420] => Salve como: 420.jpg  => Brinquedo X Burguer Vinil
+[CÓD: 421] => Salve como: 421.jpg  => Brinquedo Hot Dog Vinil
+[CÓD: 422] => Salve como: 422.jpg  => Brinquedo Bola Cravo Grande com Apito Vinil
+[CÓD: 423] => Salve como: 423.jpg  => Brinquedo Jacare com Corda Vinil Pequeno
+[CÓD: 424] => Salve como: 424.jpg  => Mordedor Plastico
+[CÓD: 425] => Salve como: 425.jpg  => Mordedor Plastico
+[CÓD: 426] => Salve como: 426.jpg  => Mordedor Plastico Ossinho
+[CÓD: 427] => Salve como: 427.jpg  => Mordedor Plastico Ancora
+[CÓD: 428] => Salve como: 428.jpg  => Mordedor Plastico Espinha de Peixe
+[CÓD: 429] => Salve como: 429.jpg  => Mordedor Plastico Chupeta
+[CÓD: 432] => Salve como: 432.jpg  => Cartela com 1 Ratinho + 1 Bola com Pena e 1 com Guizo
+[CÓD: 434] => Salve como: 434.jpg  => Cartela com 1 Ratinho + 2 Bolas com Guizo e 1 Bola com Pena
+[CÓD: 675] => Salve como: 675.jpg  => Optimun Bola de Pelo Carne e Linhaca 80g
+
+--------------------------------------------------
+CATEGORIA: TRANSPORTE
+--------------------------------------------------
+[CÓD: 221] => Salve como: 221.jpg  => Caixa de Transporte Numero 3 Rosa
+[CÓD: 222] => Salve como: 222.jpg  => Caixa de Transporte Numero 3 Azul
+[CÓD: 435] => Salve como: 435.jpg  => Caixa de Transporte Numero 2 Amarela e Preta
+
+--------------------------------------------------
+CATEGORIA: CASINHAS & CAMAS
+--------------------------------------------------
+[CÓD: 326] => Salve como: 326.jpg  => Casa Durahouse Numero 4 Preta
+[CÓD: 327] => Salve como: 327.jpg  => Casa Durahouse Numero 3 Rosa
+[CÓD: 361] => Salve como: 361.jpg  => Cama Europa Oxford Vermelha Pequena
+[CÓD: 362] => Salve como: 362.jpg  => Cama Europa Oxford Azul Pequena
+[CÓD: 363] => Salve como: 363.jpg  => Cama Europa Oxford Branca e Rosa Media
+[CÓD: 364] => Salve como: 364.jpg  => Cama Europa Oxford Cinza Media
+[CÓD: 365] => Salve como: 365.jpg  => Cama Europa Oxford Vermelha Grande
+[CÓD: 367] => Salve como: 367.jpg  => Cama Plush Color
+[CÓD: 538] => Salve como: 538.jpg  => Casa Durahouse Numero 5 Caramelo
+[CÓD: 703] => Salve como: 703.jpg  => Casa Durahouse n 1
+[CÓD: 704] => Salve como: 704.jpg  => Casa Durahouse Preta n 2
+[CÓD: 705] => Salve como: 705.jpg  => Casa Durahouse Preta n 3
+[CÓD: 706] => Salve como: 706.jpg  => Casa Durahouse Preta n 4
+[CÓD: 707] => Salve como: 707.jpg  => Cama Soft Tamanho P Rosa
+[CÓD: 708] => Salve como: 708.jpg  => Cama Soft Tamanho M Rosa
+[CÓD: 709] => Salve como: 709.jpg  => Cama Soft Tamanho g Rosa
+[CÓD: 710] => Salve como: 710.jpg  => Cama Soft Tamanho P Azul
+[CÓD: 711] => Salve como: 711.jpg  => Cama Soft Tamanho M Azul
+[CÓD: 712] => Salve como: 712.jpg  => Cama Soft Tamanho g Azul
+
+--------------------------------------------------
+CATEGORIA: PASSEIO & GUIAS
+--------------------------------------------------
+[CÓD: 202] => Salve como: 202.jpg  => Guia Seda com Peitoral Cão Passeio
+[CÓD: 203] => Salve como: 203.jpg  => Guia de Corda Media com Mola Cão Passeio
+[CÓD: 204] => Salve como: 204.jpg  => Guia de Corda Curta Sem Mola Cão Passeio
+[CÓD: 205] => Salve como: 205.jpg  => Cinto de Seguranca Cão
+[CÓD: 206] => Salve como: 206.jpg  => Coleira Couro Cão Numero 3
+[CÓD: 207] => Salve como: 207.jpg  => Coleira Couro Cão Numero 4
+[CÓD: 208] => Salve como: 208.jpg  => Coleira Couro Cão Numero 5
+[CÓD: 209] => Salve como: 209.jpg  => Coleira Couro Cão Numero 7
+[CÓD: 27] => Salve como: 27.jpg  => Corrente Cão Numero 4 1.50m
+[CÓD: 28] => Salve como: 28.jpg  => Corrente Cão Numero 6 1.50m
+[CÓD: 441] => Salve como: 441.jpg  => Guia Seda com Peitoral Cão Passeio Neon n 0
+[CÓD: 442] => Salve como: 442.jpg  => Guia Seda com Peitoral Cão Passeio Neon n 1
+[CÓD: 443] => Salve como: 443.jpg  => Guia Seda com Peitoral Cão Passeio Neon n 2
+[CÓD: 444] => Salve como: 444.jpg  => Guia Seda com Peitoral Cão Passeio Neon n 3
+[CÓD: 445] => Salve como: 445.jpg  => Guia Seda com Peitoral Cão Passeio Neon n 4
+[CÓD: 500] => Salve como: 500.jpg  => Coleira Couro Preta n 01
+[CÓD: 501] => Salve como: 501.jpg  => Coleira Couro Preta n 03
+[CÓD: 502] => Salve como: 502.jpg  => Coleira Couro Preta n 05
+[CÓD: 527] => Salve como: 527.jpg  => Coleira Couro Preta n 08
+[CÓD: 528] => Salve como: 528.jpg  => Coleira Couro Preta n 10
+[CÓD: 573] => Salve como: 573.jpg  => Guia Seda com Peitoral n 0
+[CÓD: 574] => Salve como: 574.jpg  => Guia Seda com Peitoral n 1
+[CÓD: 575] => Salve como: 575.jpg  => Guia Seda com Peitoral n 2
+[CÓD: 576] => Salve como: 576.jpg  => Guia Seda com Peitoral n 3
+[CÓD: 577] => Salve como: 577.jpg  => Guia Seda com Peitoral n 4
+[CÓD: 578] => Salve como: 578.jpg  => Guia Corda Passeio Color
+[CÓD: 579] => Salve como: 579.jpg  => Guia Corda Longa Passeio
+[CÓD: 580] => Salve como: 580.jpg  => Guia Corda Longa Passeio 1.05x14mm
+[CÓD: 581] => Salve como: 581.jpg  => Guia Corda Longa Passeio 40x16mm
+[CÓD: 608] => Salve como: 608.jpg  => Coleira Cão Herois com Pingente
+[CÓD: 633] => Salve como: 633.jpg  => Coleira Couro Gladeador com Spike
+[CÓD: 634] => Salve como: 634.jpg  => Focinheira Couro Gladiador 35x10
+[CÓD: 639] => Salve como: 639.jpg  => Guia Corda com Enforcador
+[CÓD: 77] => Salve como: 77.jpg  => Corrente Cão Numero 1 2.50m
+[CÓD: 78] => Salve como: 78.jpg  => Corrente Cão Numero 3 2.50m
+
+--------------------------------------------------
+CATEGORIA: PATÊS & SACHÊS
+--------------------------------------------------
+[CÓD: 2] => Salve como: 2.jpg  => Sache Cão Cordeiro 85g
+[CÓD: 210] => Salve como: 210.jpg  => Sache Optimum Cão Carne 100g
+[CÓD: 211] => Salve como: 211.jpg  => Sache Optimum Cão Frango 100g
+[CÓD: 214] => Salve como: 214.jpg  => Sache Cão Adulto Pedigree Frango 100g
+[CÓD: 215] => Salve como: 215.jpg  => Sache Cão Pedigree Adulto R Pequenas Cordeiro 100g
+[CÓD: 216] => Salve como: 216.jpg  => Sache Cão Adulto R Pequenas Carne 100g
+[CÓD: 252] => Salve como: 252.jpg  => Ração Royal Gastrointestinal Cão  1.5kg
+[CÓD: 257] => Salve como: 257.jpg  => Pate Royal Gastrointestinal Cão 400g
+[CÓD: 258] => Salve como: 258.jpg  => Pate Royal Gastrointestinal Cão 420g
+[CÓD: 30] => Salve como: 30.jpg  => Sache Dog Chow Mini e Peq Carne 100g
+[CÓD: 31] => Salve como: 31.jpg  => Sache Dog Chow Mini e Peq Frango 100g
+[CÓD: 32] => Salve como: 32.jpg  => Sache Dog Chow Todos os Tam Frango 100g
+[CÓD: 33] => Salve como: 33.jpg  => Sache Dog Chow Todos os Tam Carne 100g
+[CÓD: 5] => Salve como: 5.jpg  => Sache Cão Filhote Frango 100g
+[CÓD: 51] => Salve como: 51.jpg  => Sache Golden Filhote Frango e Vegetais 70g
+[CÓD: 513] => Salve como: 513.jpg  => Molho para Ração Cão Sabor Frango
+[CÓD: 514] => Salve como: 514.jpg  => Molho para Ração Cão Sabor Carne
+[CÓD: 515] => Salve como: 515.jpg  => Molho para Ração Cão Sabor Churrasco
+[CÓD: 650] => Salve como: 650.jpg  => Sache Gran Plus Cão Adulto Carne 100g
+[CÓD: 651] => Salve como: 651.jpg  => Sache Gran Plus Cão Adulto Frango 100g
+[CÓD: 67] => Salve como: 67.jpg  => Nutricao Clinica Gastrointestinal Peq Porte 2kg
+[CÓD: 73] => Salve como: 73.jpg  => Sache Golden Filhote Frango e Vegetais 85g
+[CÓD: 74] => Salve como: 74.jpg  => Sache Golden Peq Porte Carne e Vegetais 85g
+[CÓD: 75] => Salve como: 75.jpg  => Sache Golden Peq Porte Frango e Vegetais 85g
+[CÓD: 79] => Salve como: 79.jpg  => Pate Lata Casspet  Figado 290g
+[CÓD: 80] => Salve como: 80.jpg  => Pate Lata Casspet  Carne 290g
+[CÓD: 81] => Salve como: 81.jpg  => Pate Lata Casspet Frango 290g
+[CÓD: 90] => Salve como: 90.jpg  => Sache Gran Plus Cão Adulto Ovelha 100g
+[CÓD: 91] => Salve como: 91.jpg  => Sache Cão Filhote Frango 100g
+[CÓD: 97] => Salve como: 97.jpg  => Sache Primocao Cão Filhote Frango 100g
+[CÓD: 98] => Salve como: 98.jpg  => Sache Cão Adulto Carne 100g
+
+--------------------------------------------------
+CATEGORIA: NUTRIÇÃO CLÍNICA
+--------------------------------------------------
+[CÓD: 55] => Salve como: 55.jpg  => Premier Nutricao Clinica Urinario 500g
+[CÓD: 56] => Salve como: 56.jpg  => Premier Nutricao Clinica Urinario 1.5kg
+[CÓD: 64] => Salve como: 64.jpg  => Nutricao Clinica Obesidade 2kg
+[CÓD: 68] => Salve como: 68.jpg  => Nutricao Clinica Hipoalergenica Porte Peq Filhote e Ad 2kg
+[CÓD: 683] => Salve como: 683.jpg  => Premier Nutricao Clinica Cordeiro10kg
+
+
+
+===============================================================================
+🐱 2. GATOS (147 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: AREIAS SANITÁRIAS
+--------------------------------------------------
+[CÓD: 136] => Salve como: 136.jpg  => Areia Sanitaria Bionature Mandioca Sensitive 2kg
+[CÓD: 137] => Salve como: 137.jpg  => Areia Sanitaria Bionature Mandioca Sensitive 4kg
+[CÓD: 138] => Salve como: 138.jpg  => Areia Sanitaria Bionature Mandioca Perform 4kg
+[CÓD: 139] => Salve como: 139.jpg  => Areia Sanitaria Bionature Super Premium 2kg
+[CÓD: 140] => Salve como: 140.jpg  => Areia Sanitaria Bionature Super Premium 4kg
+[CÓD: 227] => Salve como: 227.jpg  => Ração Famil Cão Porte Peq 10.1kg
+[CÓD: 228] => Salve como: 228.jpg  => Ração Famil Cão Filhote 10.1kg
+[CÓD: 229] => Salve como: 229.jpg  => Ração Famil Gato Castrado Salmão e Arroz 10.1kg
+[CÓD: 230] => Salve como: 230.jpg  => Ração Famil Cão Premium Tradicional 15kg
+[CÓD: 232] => Salve como: 232.jpg  => Ração Famil Premium Tradicional 7kg
+[CÓD: 235] => Salve como: 235.jpg  => Ração Famil Premium Tradicional 20kg
+[CÓD: 407] => Salve como: 407.jpg  => Areia Sanitaria Gato Mitzi 4kg
+[CÓD: 408] => Salve como: 408.jpg  => Areia Sanitaria Gato Mitzi 12kg
+[CÓD: 508] => Salve como: 508.jpg  => Areia Sanitaria Famil Premium 4kg
+[CÓD: 618] => Salve como: 618.jpg  => Areia Sanitaria Pipicat Classic 4kg
+[CÓD: 619] => Salve como: 619.jpg  => Areia Sanitaria Pipicat Floral 4kg
+[CÓD: 730] => Salve como: 730.jpg  => Areia Sanitaria Gato Gats 4kg
+[CÓD: 732] => Salve como: 732.jpg  => Granulado Higienico de Madeira 4kg
+[CÓD: 750] => Salve como: 750.jpg  => Areia Gatozim Extra Fina 4kg
+[CÓD: 76] => Salve como: 76.jpg  => Areia Sanitaria Gato Progato 4kg
+[CÓD: 85] => Salve como: 85.jpg  => Areia Silica Grossa Gato 1.6kg
+[CÓD: 86] => Salve como: 86.jpg  => Areia Silica Grossa Lavanda Gato 1.6kg
+[CÓD: 87] => Salve como: 87.jpg  => Areia Silica Micro Gato 1.6kg
+
+--------------------------------------------------
+CATEGORIA: ARRANHADORES
+--------------------------------------------------
+[CÓD: 369] => Salve como: 369.jpg  => Arranhador Pata Caramelo e Preto 3 Andares
+[CÓD: 370] => Salve como: 370.jpg  => Arranhador Bangalo Grande Caramelo
+[CÓD: 371] => Salve como: 371.jpg  => Arranhador Bangalo Grande Caramelo e Preto
+[CÓD: 409] => Salve como: 409.jpg  => Arranhador Poste Sisal Caramelo
+[CÓD: 410] => Salve como: 410.jpg  => Arranhador Canto Sofa Sisal Cinza
+[CÓD: 411] => Salve como: 411.jpg  => Arranhador Animal Print
+
+--------------------------------------------------
+CATEGORIA: BANDEJAS & HIGIENE
+--------------------------------------------------
+[CÓD: 340] => Salve como: 340.jpg  => Bandeja Sanitaria Gato Grande Azul
+[CÓD: 341] => Salve como: 341.jpg  => Bandeja Sanitaria Gato Grande Rosa
+[CÓD: 342] => Salve como: 342.jpg  => Bandeja Sanitaria Gato Grande Vermelha
+[CÓD: 343] => Salve como: 343.jpg  => Bandeja Sanitaria Gato Azul Pequena
+[CÓD: 344] => Salve como: 344.jpg  => Bandeja Sanitaria Gato Vermelha Pequena
+[CÓD: 345] => Salve como: 345.jpg  => Bandeja Sanitaria Gato Verde Pequena
+[CÓD: 346] => Salve como: 346.jpg  => Bandeja Sanitaria Gato Rosa Pequena
+[CÓD: 347] => Salve como: 347.jpg  => Bandeja Sanitaria Gato Preta Pequena
+[CÓD: 390] => Salve como: 390.jpg  => Pa Higienica Gato Color
+[CÓD: 392] => Salve como: 392.jpg  => Pa Higienica  Inox para Gatos
+[CÓD: 551] => Salve como: 551.jpg  => Pa Higienica Gato Plas Pet Rosa
+[CÓD: 552] => Salve como: 552.jpg  => Pa Higienica Gato Plas Pet Azul
+[CÓD: 553] => Salve como: 553.jpg  => Pa Higienica Gato Plas Pet Gold
+[CÓD: 554] => Salve como: 554.jpg  => Pa Higienica Gato Plas Pet Vermelha
+[CÓD: 555] => Salve como: 555.jpg  => Pa Higienica Gato Plas Pet Cinza
+
+--------------------------------------------------
+CATEGORIA: BRINQUEDOS
+--------------------------------------------------
+[CÓD: 348] => Salve como: 348.jpg  => Brinquedo Varinha para Gato
+
+--------------------------------------------------
+CATEGORIA: RAÇÕES SECAS
+--------------------------------------------------
+[CÓD: 105] => Salve como: 105.jpg  => Gp Gato Castrado Carne 10.1kg
+[CÓD: 106] => Salve como: 106.jpg  => Gp Gato Castrado Frango e Arroz 10.1kg
+[CÓD: 107] => Salve como: 107.jpg  => Gp Gato Castrado Salmão e Arroz 10.1kg
+[CÓD: 108] => Salve como: 108.jpg  => Primogato Castrados Frango 15kg
+[CÓD: 109] => Salve como: 109.jpg  => Primogato Blend 20kg
+[CÓD: 11] => Salve como: 11.jpg  => Shampo Cães e Gatos Melancia 500ml
+[CÓD: 12] => Salve como: 12.jpg  => Shampo Cães e Gatos Uva 500ml
+[CÓD: 121] => Salve como: 121.jpg  => Ração Gato Vicato 20kg
+[CÓD: 13] => Salve como: 13.jpg  => Shampo Cães e Gatos Tuti Fruti 500ml
+[CÓD: 220] => Salve como: 220.jpg  => Ração Wiskas Gato Castrado Carne 10.1kg
+[CÓD: 224] => Salve como: 224.jpg  => Ração Brainplus Gato Castrado Carne 10kg
+[CÓD: 225] => Salve como: 225.jpg  => Ração Brainplus Gato Castrado Frango e Salmão 10kg
+[CÓD: 234] => Salve como: 234.jpg  => Ração Brainplus Gato Filhote 10.1kg
+[CÓD: 239] => Salve como: 239.jpg  => Ração Kiara Gato Peixe e Frango 10.1kg
+[CÓD: 242] => Salve como: 242.jpg  => Lata Royal Recovery Cão e Gato 195g
+[CÓD: 246] => Salve como: 246.jpg  => Ração Royal Gato Exigent 400g
+[CÓD: 247] => Salve como: 247.jpg  => Ração Royal Gato Exigent 1.5kg
+[CÓD: 251] => Salve como: 251.jpg  => Ração Urinary Gato Feline 400g
+[CÓD: 253] => Salve como: 253.jpg  => Ração Royal Gato Urinary 1.5kg
+[CÓD: 254] => Salve como: 254.jpg  => Ração Royal Gato Gastrointestinal 400g
+[CÓD: 255] => Salve como: 255.jpg  => Ração Royal Gato Sterilised 7+ 400g
+[CÓD: 260] => Salve como: 260.jpg  => Ração Gastrointestinal Gato Feline 1.5kg
+[CÓD: 265] => Salve como: 265.jpg  => Ração Royal Sterilised Gato Castrado 12+ 400g
+[CÓD: 266] => Salve como: 266.jpg  => Ração Royal Sterilised Gato Castrado 12+ 1.5kg
+[CÓD: 272] => Salve como: 272.jpg  => Ração Royal Gato Mother e Baby Cat 400g
+[CÓD: 274] => Salve como: 274.jpg  => Ração Royal Gato Sensible 400g
+[CÓD: 275] => Salve como: 275.jpg  => Ração Royal Gato Sensible 1.5kg
+[CÓD: 276] => Salve como: 276.jpg  => Ração Royal Gato  Castrados Sterilised 1.5kg
+[CÓD: 281] => Salve como: 281.jpg  => Ração Monello Gato Castrado 10.1kg
+[CÓD: 282] => Salve como: 282.jpg  => Ração Monello Gato Adulto Salmão 10.1kg
+[CÓD: 294] => Salve como: 294.jpg  => Ração Gato Billi Cat Castrado 10.1kg
+[CÓD: 295] => Salve como: 295.jpg  => Ração Gato Billi Cat Adulto Frango 10.1kg
+[CÓD: 297] => Salve como: 297.jpg  => Ração Gato Castrado Quartz Frango 10.1kg
+[CÓD: 298] => Salve como: 298.jpg  => Ração Gato Castrado Quartz Salmão 10.1kg
+[CÓD: 300] => Salve como: 300.jpg  => Ração Quartz Gato Castrado Frango 15kg
+[CÓD: 301] => Salve como: 301.jpg  => Ração Quartz Gato Adulto Frango 15kg
+[CÓD: 313] => Salve como: 313.jpg  => Ração Tutano Gatos Adultos Carne 10.1kg
+[CÓD: 314] => Salve como: 314.jpg  => Ração Tutano Gatos Castrados Frango 10.1kg
+[CÓD: 320] => Salve como: 320.jpg  => Ração Tutano Gatos Carne 1kg
+[CÓD: 321] => Salve como: 321.jpg  => Ração Tutano Gatos Carne 3kg
+[CÓD: 322] => Salve como: 322.jpg  => Ração Tutano Gatos Castrados Frango 1kg
+[CÓD: 325] => Salve como: 325.jpg  => Ração Tutano Gatos Castrados Frango 3kg
+[CÓD: 338] => Salve como: 338.jpg  => Sanitario Gato Amarelo
+[CÓD: 339] => Salve como: 339.jpg  => Sanitario Gato Vermelho
+[CÓD: 34] => Salve como: 34.jpg  => Cat Chow Castrados Peixe 2.7kg
+[CÓD: 35] => Salve como: 35.jpg  => Cat Chow Castrados Frango 2.7kg
+[CÓD: 360] => Salve como: 360.jpg  => Comedouro Duplo Automatico Gatinho
+[CÓD: 391] => Salve como: 391.jpg  => Comedouro Alto para Gato Postura Correta
+[CÓD: 394] => Salve como: 394.jpg  => Coleira Gato com Pingente Gatinhos
+[CÓD: 395] => Salve como: 395.jpg  => Coleira Gato com Pingente Guizo
+[CÓD: 50] => Salve como: 50.jpg  => Golden Gato Castrados Frango 10.1kg
+[CÓD: 52] => Salve como: 52.jpg  => Golden Gato Castrado Salmão 10.1kg
+[CÓD: 623] => Salve como: 623.jpg  => Coleira Gato com Peiteira
+[CÓD: 63] => Salve como: 63.jpg  => Golden Gato Castrado Carne 10.1kg
+[CÓD: 641] => Salve como: 641.jpg  => Ração Gato Castrado Croc 10.1kg
+[CÓD: 676] => Salve como: 676.jpg  => Ração Wiskas Gato Adulto Carne 900g
+[CÓD: 677] => Salve como: 677.jpg  => Ração Wiskas Gato Adulto Frango 2.7kg
+[CÓD: 744] => Salve como: 744.jpg  => Primogato Original 15kg
+[CÓD: 752] => Salve como: 752.jpg  => Ração Tutano Gatos Castrados Carne 10.1kg
+[CÓD: 753] => Salve como: 753.jpg  => Ração Tutano Gatos Castrados Salmão 10.1kg
+
+--------------------------------------------------
+CATEGORIA: FONTES & BEBEDOUROS
+--------------------------------------------------
+[CÓD: 396] => Salve como: 396.jpg  => Fonte Redonda para Gato Vermelha
+[CÓD: 397] => Salve como: 397.jpg  => Fonte Redonda para Gato Rosa
+[CÓD: 398] => Salve como: 398.jpg  => Fonte Redonda para Gato Azul
+[CÓD: 399] => Salve como: 399.jpg  => Fonte Gato Cascata Vermelha
+[CÓD: 400] => Salve como: 400.jpg  => Fonte Gato Cascata Rosa
+[CÓD: 401] => Salve como: 401.jpg  => Fonte Gato Cascata Azul
+
+--------------------------------------------------
+CATEGORIA: PATÊS & SACHÊS
+--------------------------------------------------
+[CÓD: 217] => Salve como: 217.jpg  => Sache Wiskas Gato Frango 85g
+[CÓD: 218] => Salve como: 218.jpg  => Sache Wiskas Gato Salmão 85g
+[CÓD: 219] => Salve como: 219.jpg  => Sache Wiskas Gato Carne 85g
+[CÓD: 243] => Salve como: 243.jpg  => Sache Royal Gato Castrado 85g
+[CÓD: 249] => Salve como: 249.jpg  => Sache Royal Gato Urinary 85g
+[CÓD: 25] => Salve como: 25.jpg  => Sache Golden Gato Castrado Frango 70g
+[CÓD: 26] => Salve como: 26.jpg  => Sache Golden Gato Castrado Carne 70g
+[CÓD: 36] => Salve como: 36.jpg  => Sache Cat Chow Castrado Carne 85g
+[CÓD: 37] => Salve como: 37.jpg  => Sache Cat Chow Castrado Peixe 85g
+[CÓD: 548] => Salve como: 548.jpg  => Sache Optimum Gato Frango 85g
+[CÓD: 549] => Salve como: 549.jpg  => Sache Optimum Gato Salmão 85g
+[CÓD: 558] => Salve como: 558.jpg  => Molho para Ração Gato Sabor Carne 250g
+[CÓD: 559] => Salve como: 559.jpg  => Molho para Ração Gato Sabor Peixe 250g
+[CÓD: 6] => Salve como: 6.jpg  => Sache Gato Castrado Salmão 85g
+[CÓD: 646] => Salve como: 646.jpg  => Sache Gran Plus Gato Castrado Frango 85g
+[CÓD: 647] => Salve como: 647.jpg  => Sache Gran Plus Gato Carne 85g
+[CÓD: 648] => Salve como: 648.jpg  => Sache Gran Plus Gato Atum 85g
+[CÓD: 649] => Salve como: 649.jpg  => Sache Gran Plus Gato Castrado Frango e Salmão 85g
+[CÓD: 672] => Salve como: 672.jpg  => Sache Wiskas Gato Atum 85g
+[CÓD: 674] => Salve como: 674.jpg  => Sache Wiskas Gato Peixe 85g
+[CÓD: 7] => Salve como: 7.jpg  => Sache Gato Adulto Carne 85g
+[CÓD: 720] => Salve como: 720.jpg  => Sache Cat Chow Filhote Frango 85g
+[CÓD: 721] => Salve como: 721.jpg  => Sache Cat Chow Castrado Frango  85g
+[CÓD: 735] => Salve como: 735.jpg  => Pate Lata Wiskas Carne 290g
+[CÓD: 736] => Salve como: 736.jpg  => Pate Lata Wiskas Atum 290g
+[CÓD: 737] => Salve como: 737.jpg  => Pate Lata Wiskas Frango 290g
+[CÓD: 738] => Salve como: 738.jpg  => Pate Lata Wiskas Peixe 290g
+[CÓD: 8] => Salve como: 8.jpg  => Sache Gato Filhote Frango 85g
+[CÓD: 82] => Salve como: 82.jpg  => Pate Lata Gato Casspet Peixe 290g
+[CÓD: 83] => Salve como: 83.jpg  => Pate Lata Gato Casspet Carne 290g
+[CÓD: 84] => Salve como: 84.jpg  => Pate Lata Gato Casspet Frango 290g
+[CÓD: 92] => Salve como: 92.jpg  => Sache Gran Plus Gato Filhote Frango 85g
+[CÓD: 93] => Salve como: 93.jpg  => Sache Gran Plus Gato Trato Urinario Frango 85g
+[CÓD: 94] => Salve como: 94.jpg  => Sache Gato Adulto Peixe 85g
+[CÓD: 95] => Salve como: 95.jpg  => Sache Gato Adulto Carne 85g
+[CÓD: 96] => Salve como: 96.jpg  => Sache Gato Filhote Peru e Frango 85g
+
+
+
+===============================================================================
+💊 3. FARMÁCIA VETERINÁRIA (46 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: MEDICAMENTOS
+--------------------------------------------------
+[CÓD: 162] => Salve como: 162.jpg  => Averin Antibiotico 20ml
+[CÓD: 22] => Salve como: 22.jpg  => Hidra Reflex Locao Hidratante 50g
+[CÓD: 23] => Salve como: 23.jpg  => Pet Glove Luva Invisivel para Coxins 50g
+[CÓD: 24] => Salve como: 24.jpg  => Gel Dental Mordisco de Carinho 40g
+[CÓD: 380] => Salve como: 380.jpg  => Sabonete Matacura Antiseptico Verde 90g
+[CÓD: 381] => Salve como: 381.jpg  => Sabonete Matacura Anti Pulga/sarna Amarelo 90g
+[CÓD: 406] => Salve como: 406.jpg  => Vermivet Composto Vermifugo Cães e Gatos
+[CÓD: 524] => Salve como: 524.jpg  => Colosso Pulverizacao 25 ml
+[CÓD: 596] => Salve como: 596.jpg  => Creolina Pearson 50ml
+[CÓD: 597] => Salve como: 597.jpg  => Biodex Comprimido com 20 Comp
+[CÓD: 598] => Salve como: 598.jpg  => Carbovet com 20 Comp
+[CÓD: 599] => Salve como: 599.jpg  => Fluido Ibasa Spray 100ml
+[CÓD: 600] => Salve como: 600.jpg  => Fluido Ibasa Spray 200ml
+[CÓD: 601] => Salve como: 601.jpg  => Allax Ivermectina Pássaros 5ml
+[CÓD: 621] => Salve como: 621.jpg  => Spray Prata Silverbac 300ml
+[CÓD: 624] => Salve como: 624.jpg  => Rifotrat Spray 20ml
+[CÓD: 625] => Salve como: 625.jpg  => Otolin 15ml
+[CÓD: 643] => Salve como: 643.jpg  => Insetcida Liquido Lambda Spray 500ml
+[CÓD: 654] => Salve como: 654.jpg  => Neotopic Spray 125ml
+[CÓD: 666] => Salve como: 666.jpg  => Mata Escorpiao Inseticida Spray400ml
+
+--------------------------------------------------
+CATEGORIA: SUPLEMENTOS & VITAMINAS
+--------------------------------------------------
+[CÓD: 160] => Salve como: 160.jpg  => Biotrin Vet Ps 100 20ml
+[CÓD: 161] => Salve como: 161.jpg  => Biotrin Vet Complexo Vitaminico 20ml
+[CÓD: 163] => Salve como: 163.jpg  => Biotrin Vet Calcio B12 20ml
+[CÓD: 627] => Salve como: 627.jpg  => Florafarm Pet Probiotico + Vit 4x1
+
+--------------------------------------------------
+CATEGORIA: ANTIPULGAS & CARRAPATOS
+--------------------------------------------------
+[CÓD: 15] => Salve como: 15.jpg  => Coleira Ectofend Azul 48cm
+[CÓD: 16] => Salve como: 16.jpg  => Coleira Ectofend Rosa 48cm
+[CÓD: 17] => Salve como: 17.jpg  => Coleira Ectofend Azul 65cm
+[CÓD: 18] => Salve como: 18.jpg  => Coleira Ectofend Rosa 65cm
+[CÓD: 19] => Salve como: 19.jpg  => Simparic Caixa 20mg com 3 Comprimidos
+[CÓD: 20] => Salve como: 20.jpg  => Simparic Caixa 40mg com 3 Comprimidos
+[CÓD: 21] => Salve como: 21.jpg  => Simparic Caixa 80mg com 3 Comprimidos
+[CÓD: 405] => Salve como: 405.jpg  => Defend Pro Gato Pipeta Anti Pulga
+[CÓD: 530] => Salve como: 530.jpg  => Nexgard Cão 2 a 4kg Unidade
+[CÓD: 531] => Salve como: 531.jpg  => Nexgard Cão 4 a 10kg Unidade
+[CÓD: 532] => Salve como: 532.jpg  => Nexgard Cão 10 a 25kg Unidade
+[CÓD: 533] => Salve como: 533.jpg  => Nexgard Cão 25 a 50kg Unidade
+[CÓD: 534] => Salve como: 534.jpg  => Nexgard Combo Gato 2.5 a 7.5kg - 1 Pipeta
+[CÓD: 535] => Salve como: 535.jpg  => Defenza 200mg Cães 10 a 20kg
+[CÓD: 536] => Salve como: 536.jpg  => Defenza 400mg Cães 20 a 40kg
+[CÓD: 560] => Salve como: 560.jpg  => Coleira Antipulgas e Carrapatos Dugs
+[CÓD: 602] => Salve como: 602.jpg  => Confront Plus 0.67ml 2 a 10kg Pipeta
+[CÓD: 603] => Salve como: 603.jpg  => Confront Plus 1.34 ml 10 a 20kg Pipeta
+[CÓD: 604] => Salve como: 604.jpg  => Confront Plus 2.68 ml 20 a 40kg Pipeta
+[CÓD: 652] => Salve como: 652.jpg  => Defend Pro Cão Pipeta 10 a 20kg
+[CÓD: 653] => Salve como: 653.jpg  => Defend Pro Cão Pipeta 1 a 10kg
+[CÓD: 88] => Salve como: 88.jpg  => Invicto Anti Pulga 11.4mg
+
+
+
+===============================================================================
+🦜 4. PÁSSAROS E ROEDORES (57 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: PEIXES & AQUÁRIO
+--------------------------------------------------
+[CÓD: 556] => Salve como: 556.jpg  => Alimento para Peixes Nutriflakes 12g
+
+--------------------------------------------------
+CATEGORIA: SEMENTES & ALIMENTOS
+--------------------------------------------------
+[CÓD: 157] => Salve como: 157.jpg  => Azulao 500g
+[CÓD: 181] => Salve como: 181.jpg  => Girassol Miudo 250g
+[CÓD: 183] => Salve como: 183.jpg  => Niger 200g
+[CÓD: 184] => Salve como: 184.jpg  => Painco 500g
+[CÓD: 187] => Salve como: 187.jpg  => Papa de Ovo Amarela 200g
+[CÓD: 521] => Salve como: 521.jpg  => Raticida Girassol Imbativel 25g Unidade
+[CÓD: 610] => Salve como: 610.jpg  => Nutribird Natural 600g
+[CÓD: 611] => Salve como: 611.jpg  => Girassol Miudo 10kg
+
+--------------------------------------------------
+CATEGORIA: PÁSSAROS
+--------------------------------------------------
+[CÓD: 142] => Salve como: 142.jpg  => Tratador Silvestre Pássaros
+[CÓD: 173] => Salve como: 173.jpg  => Ração Calopsita e Algapornis 500g
+[CÓD: 174] => Salve como: 174.jpg  => Ração Calopsita e Periquito 10kg
+[CÓD: 175] => Salve como: 175.jpg  => Ração Pássaros Jardim 5g
+[CÓD: 176] => Salve como: 176.jpg  => Ração Canário Belga 10kg
+[CÓD: 177] => Salve como: 177.jpg  => Ração Canário da Terra 500g
+[CÓD: 179] => Salve como: 179.jpg  => Ração Coleiro 500g
+[CÓD: 185] => Salve como: 185.jpg  => Ração Trinca Ferro Super Trinca 500g
+[CÓD: 186] => Salve como: 186.jpg  => Ração Papagaio Top 400g
+[CÓD: 188] => Salve como: 188.jpg  => Ninho para Calopsita
+[CÓD: 193] => Salve como: 193.jpg  => Banheira para Pássaros Grande
+[CÓD: 194] => Salve como: 194.jpg  => Banheira Redonda Pequena para Pássaros
+[CÓD: 195] => Salve como: 195.jpg  => Comedouro para Papagaio Color
+[CÓD: 197] => Salve como: 197.jpg  => Bebedouro Pequeno para Pássaros Malha Fina
+[CÓD: 561] => Salve como: 561.jpg  => Pássaros Livres Comum 25kg
+[CÓD: 628] => Salve como: 628.jpg  => Bebedouro Beija Flor Gold un Color
+[CÓD: 638] => Salve como: 638.jpg  => Bebedouro Passaro Color un
+[CÓD: 659] => Salve como: 659.jpg  => Porta Fruta Pássaros Unidade
+[CÓD: 740] => Salve como: 740.jpg  => Bebedouro Passaro  Pequeno Color un
+[CÓD: 743] => Salve como: 743.jpg  => Bebedouro Frango 2l
+
+--------------------------------------------------
+CATEGORIA: CÁLCIO & MINERAIS
+--------------------------------------------------
+[CÓD: 164] => Salve como: 164.jpg  => Bloco Siba Calcio Pequeno Cartela 1 un
+[CÓD: 165] => Salve como: 165.jpg  => Bloco Siba Calcio Grande Cartela 1 un
+[CÓD: 166] => Salve como: 166.jpg  => Bloco Papagaio e Arara Cartela 1 un
+[CÓD: 167] => Salve como: 167.jpg  => Bloco Calopsita e Periquito Cartela 1 un
+[CÓD: 168] => Salve como: 168.jpg  => Bloco Canário Cartela 1 un
+[CÓD: 169] => Salve como: 169.jpg  => Bloco Trinca Ferro Pixarro Cartela 1 un
+[CÓD: 171] => Salve como: 171.jpg  => Pedra Calcio Pequena 1 un
+[CÓD: 172] => Salve como: 172.jpg  => Pedra Calcio Grande 1 un
+
+--------------------------------------------------
+CATEGORIA: ROEDORES & COELHOS
+--------------------------------------------------
+[CÓD: 130] => Salve como: 130.jpg  => Ração Coelho Paletizada 5kg
+[CÓD: 147] => Salve como: 147.jpg  => Gaiola Hamster Capela Branca e Verde
+[CÓD: 151] => Salve como: 151.jpg  => Gaiola Porquinho da India Branca
+[CÓD: 152] => Salve como: 152.jpg  => Gaiola Hamster Rosa
+[CÓD: 154] => Salve como: 154.jpg  => Gaiola Hamster Globo Branca e Vermelha
+[CÓD: 155] => Salve como: 155.jpg  => Gaiola Coelho Branca e Amarela
+[CÓD: 156] => Salve como: 156.jpg  => Gaiola Hamster Capela Preta e Amarela
+[CÓD: 158] => Salve como: 158.jpg  => Ração Roedores 400g
+[CÓD: 159] => Salve como: 159.jpg  => Ração Roedores 1.3kg
+[CÓD: 170] => Salve como: 170.jpg  => Bloco Roedores Cartela 1 un
+[CÓD: 182] => Salve como: 182.jpg  => Ração Hamster 500g
+[CÓD: 557] => Salve como: 557.jpg  => Ração Roedores 100g
+[CÓD: 571] => Salve como: 571.jpg  => Funny Bunny Blend 500g
+[CÓD: 629] => Salve como: 629.jpg  => Feno Prensado 500g
+
+--------------------------------------------------
+CATEGORIA: GAIOLAS & VIVEIROS
+--------------------------------------------------
+[CÓD: 143] => Salve como: 143.jpg  => Gaiola Sabia Trinca Ferro Prata
+[CÓD: 144] => Salve como: 144.jpg  => Gaiola Periquito Ferro
+[CÓD: 145] => Salve como: 145.jpg  => Gaiola M Filha Canário Prata
+[CÓD: 150] => Salve como: 150.jpg  => Gaiola Duplex Calopsita Prata
+[CÓD: 189] => Salve como: 189.jpg  => Gaiola Coleiro Malha Fina
+[CÓD: 190] => Salve como: 190.jpg  => Gaiola Madeira Fibra Trinca Ferro Malha Grossa
+
+
+
+===============================================================================
+⚖️ 5. RAÇÕES A GRANEL (JÁ POSSUEM FOTO) (43 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: PÁSSAROS & AGRO
+--------------------------------------------------
+[CÓD: GRA01] => Salve como: GRA01.jpg  => CANJICA PARA PASSARINHO
+[CÓD: GRA02] => Salve como: GRA02.jpg  => COMIDA CANARIO BELGA
+[CÓD: GRA03] => Salve como: GRA03.jpg  => COMIDA CATURRITA E CALOPSITA
+[CÓD: GRA04] => Salve como: GRA04.jpg  => COMIDA PASSAROS DE JARDIM KICANTO
+[CÓD: GRA05] => Salve como: GRA05.jpg  => GIRASSOL MIUDO PASSAROS
+[CÓD: GRA06] => Salve como: GRA06.jpg  => MILHO GRAOS
+[CÓD: GRA28] => Salve como: GRA28.jpg  => RAÇÃO PASSAROS DE JARDIM BICOFINO PACOTE 5KG
+
+--------------------------------------------------
+CATEGORIA: CÃES
+--------------------------------------------------
+[CÓD: GRA07] => Salve como: GRA07.jpg  => RAÇÃO ALLCANIS PORTE MINI E PEQUENO FRANGO CARNE E ARROZ
+[CÓD: GRA08] => Salve como: GRA08.jpg  => RAÇÃO ALLCANIS SENIOR PORTE MEDIO E GIGANTE FRANGO CARNE E ARROZ
+[CÓD: GRA09] => Salve como: GRA09.jpg  => RAÇÃO BRAIN PLUS FILHOTE E PORTE PEQUENO CARNE E VEGETAIS
+[CÓD: GRA12] => Salve como: GRA12.jpg  => RAÇÃO BRAIN PLUS SENIOR CORDEIRO
+[CÓD: GRA13] => Salve como: GRA13.jpg  => RAÇÃO FAMIL FILHOTE LEITE EM PO
+[CÓD: GRA15] => Salve como: GRA15.jpg  => RAÇÃO FAMIL PORTE PEQUENO
+[CÓD: GRA16] => Salve como: GRA16.jpg  => RAÇÃO GOLDEN CARNE
+[CÓD: GRA17] => Salve como: GRA17.jpg  => RAÇÃO GOLDEN CARNE MINI BITS PORTE PEQUENO
+[CÓD: GRA18] => Salve como: GRA18.jpg  => RAÇÃO GOLDEN FRANGO
+[CÓD: GRA19] => Salve como: GRA19.jpg  => RAÇÃO GOLDEN FRANGO E ARROZ MINI BITS PORTE PEQUENO
+[CÓD: GRA20] => Salve como: GRA20.jpg  => RAÇÃO GOLDEN SALMAO
+[CÓD: GRA21] => Salve como: GRA21.jpg  => RAÇÃO GRAN PLUS CARNE E ARROZ
+[CÓD: GRA22] => Salve como: GRA22.jpg  => RAÇÃO GRAN PLUS FRANGO E ARROZ
+[CÓD: GRA26] => Salve como: GRA26.jpg  => RAÇÃO MONELLO RACAS PEQUENAS
+[CÓD: GRA27] => Salve como: GRA27.jpg  => RAÇÃO MONELLO TODAS AS RACAS
+[CÓD: GRA33] => Salve como: GRA33.jpg  => RAÇÃO SEVEN DOGS CARNE E FRANGO RACAS PEQUENAS
+[CÓD: GRA34] => Salve como: GRA34.jpg  => RAÇÃO SEVEN DOGS PORTE PEQUENO CORDEIRO
+[CÓD: GRA35] => Salve como: GRA35.jpg  => RAÇÃO SEVEN DOGS SENIOR RACAS PEQUENAS FRANGO BATATA DOCE E BETERRABA
+[CÓD: GRA36] => Salve como: GRA36.jpg  => RAÇÃO TUTANO CAES PORTE PEQUENO FRANGO
+[CÓD: GRA37] => Salve como: GRA37.jpg  => RAÇÃO TUTANO CAES SENSIVEIS SALMAO
+[CÓD: GRA38] => Salve como: GRA38.jpg  => RAÇÃO TUTANO ESPECIAL CARNE E FRANGO
+
+--------------------------------------------------
+CATEGORIA: GATOS
+--------------------------------------------------
+[CÓD: GRA10] => Salve como: GRA10.jpg  => RAÇÃO BRAIN PLUS GATO CASTRADO CARNE
+[CÓD: GRA11] => Salve como: GRA11.jpg  => RAÇÃO BRAIN PLUS GATO CASTRADO SALMAO E FRANGO
+[CÓD: GRA14] => Salve como: GRA14.jpg  => RAÇÃO FAMIL GATO CASTRADO SALMAO
+[CÓD: GRA23] => Salve como: GRA23.jpg  => RAÇÃO KIARA GATO PEIXE E FRANGO
+[CÓD: GRA24] => Salve como: GRA24.jpg  => RAÇÃO MIMOS CATS NUGGETS RECHEADOS
+[CÓD: GRA25] => Salve como: GRA25.jpg  => RAÇÃO MONELLO GATO CASTRADO PERU E SALMAO
+[CÓD: GRA29] => Salve como: GRA29.jpg  => RAÇÃO PRIMOGATO BLEND CARNE FRANGO E PEIXE
+[CÓD: GRA30] => Salve como: GRA30.jpg  => RAÇÃO PRIMOGATO CASTRADO
+[CÓD: GRA31] => Salve como: GRA31.jpg  => RAÇÃO PRIMOGATO CASTRADO FRANGO
+[CÓD: GRA32] => Salve como: GRA32.jpg  => RAÇÃO PRIMOGATO ORIGINAL CARNE E FRANGO
+[CÓD: GRA39] => Salve como: GRA39.jpg  => RAÇÃO TUTANO GATO CASTRADO CARNE
+[CÓD: GRA40] => Salve como: GRA40.jpg  => RAÇÃO TUTANO GATO CASTRADO FRANGO
+[CÓD: GRA41] => Salve como: GRA41.jpg  => RAÇÃO TUTANO GATO CASTRADO SALMAO
+[CÓD: GRA42] => Salve como: GRA42.jpg  => RAÇÃO VIT CAT CARNE E VEGETAIS
+[CÓD: GRA43] => Salve como: GRA43.jpg  => RAÇÃO WHISKAS CARNE
+
+
+
+===============================================================================
+🌿 6. JARDIM, CAMPO E CASA (216 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: ADUBOS & FERTILIZANTES
+--------------------------------------------------
+[CÓD: 467] => Salve como: 467.jpg  => Adubo Fertilizante Npk 10 10 10 1kg
+[CÓD: 495] => Salve como: 495.jpg  => Terra Vegetal Pcte 1.6kg
+[CÓD: 496] => Salve como: 496.jpg  => Substrato Vegetal Pcte 1.6kg
+[CÓD: 499] => Salve como: 499.jpg  => Terra para Vasos e Floreiras 2kg Classe a
+[CÓD: 537] => Salve como: 537.jpg  => Terra Vegetal para Plantas Pcte 10kg
+[CÓD: 562] => Salve como: 562.jpg  => Terra Preta para Plantas Pcte 20kg
+[CÓD: 563] => Salve como: 563.jpg  => Fertilizante Mineral Simples Ureia 150g
+[CÓD: 564] => Salve como: 564.jpg  => Fertilizante Mineral Simples Ureia 800g
+[CÓD: 589] => Salve como: 589.jpg  => Beterraba Muda
+[CÓD: 640] => Salve como: 640.jpg  => Terra Adubada Composto Organico 20kg
+[CÓD: 688] => Salve como: 688.jpg  => Calcario kg
+
+--------------------------------------------------
+CATEGORIA: MUDAS & PLANTAS
+--------------------------------------------------
+[CÓD: 588] => Salve como: 588.jpg  => Alface Crespa Unidade
+[CÓD: 590] => Salve como: 590.jpg  => Cebolinha Tempero Unidade
+[CÓD: 592] => Salve como: 592.jpg  => Couve Manteiga Unidade
+[CÓD: 593] => Salve como: 593.jpg  => Frutiferas Unidade Sem Fruta ( Limao e Bergamoteiras)
+[CÓD: 594] => Salve como: 594.jpg  => Frutiferas Pitanga Unidade
+[CÓD: 607] => Salve como: 607.jpg  => Frutiferas Pitanga + Vaso Unidade
+[CÓD: 612] => Salve como: 612.jpg  => Flores Mudas Unidade
+[CÓD: 613] => Salve como: 613.jpg  => Chas Mudas Unidade
+[CÓD: 614] => Salve como: 614.jpg  => Morangunhos Muda Unidade
+[CÓD: 668] => Salve como: 668.jpg  => Arruda Mudas Unidade
+[CÓD: 722] => Salve como: 722.jpg  => Frutiferas Unidade com Fruta ( Limao e Bergamoteiras)
+
+--------------------------------------------------
+CATEGORIA: CONTROLE DE PRAGAS
+--------------------------------------------------
+[CÓD: 135] => Salve como: 135.jpg  => Mata Mato Glifosato 1l
+[CÓD: 516] => Salve como: 516.jpg  => Armadilha Adesiva Gel Pega Barata 1 un
+[CÓD: 518] => Salve como: 518.jpg  => Jimo Incolor Cupim Aerosol 400ml
+[CÓD: 519] => Salve como: 519.jpg  => Jimo Mata Barata Aerosol 300 ml
+[CÓD: 520] => Salve como: 520.jpg  => Formicida Gel Imbativel 10g
+[CÓD: 523] => Salve como: 523.jpg  => Formicida Grao Verde Granulada 50g
+[CÓD: 525] => Salve como: 525.jpg  => Jimo Gas Dedetizador com 2un 35g Cada
+[CÓD: 529] => Salve como: 529.jpg  => K-othrine 30ml
+[CÓD: 622] => Salve como: 622.jpg  => Mata Moscas Atratex 25g un
+[CÓD: 630] => Salve como: 630.jpg  => Formicida Kelldrin Granulada 50g
+[CÓD: 679] => Salve como: 679.jpg  => Matt Roseta Tiririca 8x10ml
+[CÓD: 731] => Salve como: 731.jpg  => Mata Mato Glifosato 100ml
+[CÓD: 733] => Salve como: 733.jpg  => Formicida em Po Citromax 250g
+
+--------------------------------------------------
+CATEGORIA: GERAL
+--------------------------------------------------
+[CÓD: 1] => Salve como: 1.jpg  => Sache Carne 100g
+[CÓD: 100] => Salve como: 100.jpg  => Gp Adulto Porte Mini Carne e Arroz 10.1kg
+[CÓD: 101] => Salve como: 101.jpg  => Gp Adulto R Med e Grandes Carne a Arroz 10.1kg
+[CÓD: 102] => Salve como: 102.jpg  => Gp Adulto Porte Mini Frango e Arroz 10.1kg
+[CÓD: 103] => Salve como: 103.jpg  => Gp Adulto Porte Mini Ovelha 10.1kg
+[CÓD: 104] => Salve como: 104.jpg  => Gp Adulto Choice Carne e Arroz 20kg
+[CÓD: 110] => Salve como: 110.jpg  => Tree Cats Original Castrados 10.1kg
+[CÓD: 146] => Salve como: 146.jpg  => Gaiola Oval Prata
+[CÓD: 148] => Salve como: 148.jpg  => Gaiola Redonda Ferro Prata
+[CÓD: 149] => Salve como: 149.jpg  => Viveiro Oval Fixo Ferro Prata
+[CÓD: 153] => Salve como: 153.jpg  => Viveiro Popular Prata com Pes
+[CÓD: 191] => Salve como: 191.jpg  => Gaiola Madeira Fibra Numero 3 Malha Fina
+[CÓD: 192] => Salve como: 192.jpg  => Gaiola Madeira Fibra Numero 5 Malha Fina
+[CÓD: 196] => Salve como: 196.jpg  => Porta Ovo
+[CÓD: 199] => Salve como: 199.jpg  => Porta Vitamina Medio Cristal com Preto
+[CÓD: 244] => Salve como: 244.jpg  => Sache Royal Mini Puppy 85g
+[CÓD: 245] => Salve como: 245.jpg  => Sache Royal Mini Adulto 85g
+[CÓD: 328] => Salve como: 328.jpg  => Shampo Animalissimo Cheiro de Bebe 500ml
+[CÓD: 329] => Salve como: 329.jpg  => Shampo Animalissimo Coco e Caramelo 500ml
+[CÓD: 330] => Salve como: 330.jpg  => Shampo Animalissimo Maca Verde 500ml
+[CÓD: 331] => Salve como: 331.jpg  => Shampo Petclean Neutro 700ml
+[CÓD: 332] => Salve como: 332.jpg  => Shampo Petclean 5 em 1 700ml
+[CÓD: 337] => Salve como: 337.jpg  => Bolinha/ratinho
+[CÓD: 368] => Salve como: 368.jpg  => Rranhador Pata  Caramelo 3 Andares
+[CÓD: 373] => Salve como: 373.jpg  => Tapete Hig Durapets com 7 un
+[CÓD: 374] => Salve como: 374.jpg  => Tapete Hig Good Pad 60x60 com 30 un
+[CÓD: 375] => Salve como: 375.jpg  => Tapete Hig Ultrapas com 30 un
+[CÓD: 376] => Salve como: 376.jpg  => Bandeja Sanitaria 3x1 Vermelha
+[CÓD: 377] => Salve como: 377.jpg  => Bandeja Sanitaria 3x1 Rosa
+[CÓD: 378] => Salve como: 378.jpg  => Bandeja Sanitaria 3x1 Azul
+[CÓD: 379] => Salve como: 379.jpg  => Shampo Condicionador Matt 6x1 500ml
+[CÓD: 38] => Salve como: 38.jpg  => Sache Friskies Carne Ao Molho 85g
+[CÓD: 382] => Salve como: 382.jpg  => Rasqueadeira Media Cabo Plastico
+[CÓD: 383] => Salve como: 383.jpg  => Rasqueadeira Grande Cabo Plastico
+[CÓD: 384] => Salve como: 384.jpg  => Xixi Pode/nao Pode Casadinho
+[CÓD: 386] => Salve como: 386.jpg  => Bolinha Colorida com Guizo e Pena
+[CÓD: 39] => Salve como: 39.jpg  => Sache Friskies Frango Ao Molho 85g
+[CÓD: 393] => Salve como: 393.jpg  => Luva Removedora de Pelos Azul un
+[CÓD: 40] => Salve como: 40.jpg  => Sache Friskies Salmão Ao Molho 85g
+[CÓD: 403] => Salve como: 403.jpg  => Petisco Palito Colorido 1kg
+[CÓD: 404] => Salve como: 404.jpg  => Petisco Palito Natural 1kg
+[CÓD: 41] => Salve como: 41.jpg  => Sache Friskies Peru Ao Molho 85g
+[CÓD: 42] => Salve como: 42.jpg  => Petisco Friskies Salmão Camarao e Atum 40g
+[CÓD: 430] => Salve como: 430.jpg  => Cartela com 3 Ratinhos
+[CÓD: 431] => Salve como: 431.jpg  => Cartela com 2 Ratinhos + 2 Bolinhas com Guizo
+[CÓD: 433] => Salve como: 433.jpg  => Cartela com 2 Ratinhos e 1 Bolinha com Guizo
+[CÓD: 44] => Salve como: 44.jpg  => Petisco Friskies Carne Cordeiro e Suino 40g
+[CÓD: 464] => Salve como: 464.jpg  => Suporte de Parede em a Medio
+[CÓD: 465] => Salve como: 465.jpg  => Suporte de Parede Luxo Medio
+[CÓD: 469] => Salve como: 469.jpg  => Prato Plastico Ceramica n 05
+[CÓD: 47] => Salve como: 47.jpg  => Special Adulto Carne e Frango15kg
+[CÓD: 470] => Salve como: 470.jpg  => Prato Plastico Preto n 02
+[CÓD: 471] => Salve como: 471.jpg  => Prato Plastico Ceramica n 11
+[CÓD: 472] => Salve como: 472.jpg  => Prato Plastico Preto n 05
+[CÓD: 48] => Salve como: 48.jpg  => Special Carne e Frango 20kg
+[CÓD: 511] => Salve como: 511.jpg  => Tapete Higienico Lavanda 70x60 7 un
+[CÓD: 512] => Salve como: 512.jpg  => Tapete Higienico Lavanda 70x60 30 un
+[CÓD: 517] => Salve como: 517.jpg  => Nitrocid / Neocid Pulgas e Formigas 50g
+[CÓD: 522] => Salve como: 522.jpg  => Raticida Bloco Soft Ideal 200g
+[CÓD: 526] => Salve como: 526.jpg  => Lambda Hidrosoluvel 25g
+[CÓD: 550] => Salve como: 550.jpg  => Raticida Cola Rato Kellmat Unidade
+[CÓD: 565] => Salve como: 565.jpg  => Qualiday Cat Castrado Carne 10.1kg
+[CÓD: 566] => Salve como: 566.jpg  => Qualiday Cat Castrado Salmão 10.1kg
+[CÓD: 569] => Salve como: 569.jpg  => Special Croc Castrado Frango10.1 kg
+[CÓD: 582] => Salve como: 582.jpg  => Vassoura Nylon Grande com Capa Color
+[CÓD: 583] => Salve como: 583.jpg  => Vassoura Nylon Media Sem Capa Color
+[CÓD: 584] => Salve como: 584.jpg  => Vassoura Nylon Grande e Larga para Calçada Sem Capa Color
+[CÓD: 585] => Salve como: 585.jpg  => Rodo Grande
+[CÓD: 586] => Salve como: 586.jpg  => Rodo Pequeno
+[CÓD: 591] => Salve como: 591.jpg  => Salsa Unidade
+[CÓD: 615] => Salve como: 615.jpg  => Raticida Bloco 20g Kellmat Unidade
+[CÓD: 616] => Salve como: 616.jpg  => Matt Pulgoes 500ml
+[CÓD: 617] => Salve como: 617.jpg  => Oleo de Neem 8x10ml
+[CÓD: 626] => Salve como: 626.jpg  => Supressor de Cio Oral 12 Comp
+[CÓD: 635] => Salve como: 635.jpg  => Saia Alta de Voal n 3
+[CÓD: 636] => Salve como: 636.jpg  => Saia Alta de Voal n 4
+[CÓD: 637] => Salve como: 637.jpg  => Saia Alta de Voal n 5
+[CÓD: 642] => Salve como: 642.jpg  => Repelente e Desalojante Pronto Uso 500ml
+[CÓD: 644] => Salve como: 644.jpg  => Insetcida Liquido Soberano 60ml
+[CÓD: 645] => Salve como: 645.jpg  => Insetcida Liquido Protege 60ml
+[CÓD: 655] => Salve como: 655.jpg  => Shampo Dugs Anti Pulgas 500ml
+[CÓD: 656] => Salve como: 656.jpg  => Shampo Matacura Sarnicida e Anti Pulgas 200ml
+[CÓD: 657] => Salve como: 657.jpg  => Shampo Matacura Antisseptico 200ml
+[CÓD: 658] => Salve como: 658.jpg  => Shampo Matacura Hipoalergenico 200ml
+[CÓD: 664] => Salve como: 664.jpg  => Vermicanis 3mg Caixa com 4comp
+[CÓD: 665] => Salve como: 665.jpg  => Vermicanis 6mg Caixa com 4comp
+[CÓD: 667] => Salve como: 667.jpg  => Rucula Unidade
+[CÓD: 673] => Salve como: 673.jpg  => Sache Kitekat Carne 70g
+[CÓD: 680] => Salve como: 680.jpg  => Vacina Anticion Injetavel Unidade
+[CÓD: 681] => Salve como: 681.jpg  => Vacina Anti Cio Inibidex Unidade un
+[CÓD: 691] => Salve como: 691.jpg  => Roupa Soft Tamanho Exgg 80cm
+[CÓD: 692] => Salve como: 692.jpg  => Roupa Soft Tamanho Xgg 70cm
+[CÓD: 693] => Salve como: 693.jpg  => Roupa Soft Tamanho Gg 46cm
+[CÓD: 694] => Salve como: 694.jpg  => Roupa Soft Tamanho g 43cm
+[CÓD: 695] => Salve como: 695.jpg  => Roupa Soft Tamanho Xg 50cm
+[CÓD: 696] => Salve como: 696.jpg  => Roupa Soft Tamanho P 29cm
+[CÓD: 697] => Salve como: 697.jpg  => Roupa Soft Tamanho Pp 23cm
+[CÓD: 698] => Salve como: 698.jpg  => Roupa Soft Tamanho M 35cm
+[CÓD: 699] => Salve como: 699.jpg  => Roupa Ovelha Tamanho P
+[CÓD: 700] => Salve como: 700.jpg  => Roupa Ovelha Tamanho M
+[CÓD: 701] => Salve como: 701.jpg  => Roupa Ovelha Tamanho g
+[CÓD: 702] => Salve como: 702.jpg  => Roupa Ovelha Tamanho Gg
+[CÓD: 713] => Salve como: 713.jpg  => Talfon Po 100g
+[CÓD: 714] => Salve como: 714.jpg  => Sache Friskies Filhote Carne Ao Molho 85g
+[CÓD: 715] => Salve como: 715.jpg  => Sache Friskies Atum Ao Molho 85g
+[CÓD: 716] => Salve como: 716.jpg  => Sache Friskies Peixe Branco Ao Molho 85g
+[CÓD: 717] => Salve como: 717.jpg  => Sache Friskies Cordeiro Ao Molho 85g
+[CÓD: 718] => Salve como: 718.jpg  => Sache Friskies Mix de Carnes Ao Molho 85g
+[CÓD: 719] => Salve como: 719.jpg  => Sache Friskies Mar de Sabores 85g
+[CÓD: 734] => Salve como: 734.jpg  => Raticida Cereais Citromax 25g Unidade
+[CÓD: 9] => Salve como: 9.jpg  => Shampo e Condicionador Clorexidina 500ml
+[CÓD: 99] => Salve como: 99.jpg  => Gp Filhote R Med e Grandes Carne e Arroz 15kg
+
+--------------------------------------------------
+CATEGORIA: CHURRASCO & CARVÃO
+--------------------------------------------------
+[CÓD: 509] => Salve como: 509.jpg  => Carvao Vegetal Especial de Acacia 3kg
+[CÓD: 510] => Salve como: 510.jpg  => Carvao Vegetal Especial de Acacia 4kg
+[CÓD: 539] => Salve como: 539.jpg  => Carvao Vegetal Especial de Acacia 5kg
+[CÓD: 540] => Salve como: 540.jpg  => Carvao Vegetal Especial de Acacia 8kg
+[CÓD: 570] => Salve como: 570.jpg  => Carvao Vegetal Especial de Acacia 10kg
+[CÓD: 89] => Salve como: 89.jpg  => Tapete Hig Carvao Ativado 60x60 7 un
+
+--------------------------------------------------
+CATEGORIA: DECORAÇÃO & VASOS
+--------------------------------------------------
+[CÓD: 446] => Salve como: 446.jpg  => Suporte Cuia com 3 Vasos Cabo de Aco
+[CÓD: 447] => Salve como: 447.jpg  => Vaso Redondo Rattan n 3 Colorido
+[CÓD: 448] => Salve como: 448.jpg  => Vaso Barroco Polido n 01 Marrom
+[CÓD: 449] => Salve como: 449.jpg  => Vaso Barroco Polido Marrom n 2
+[CÓD: 450] => Salve como: 450.jpg  => Vaso Preto com Cabo de Aco Unitario
+[CÓD: 451] => Salve como: 451.jpg  => Vaso Especial 17 Preto  Unitario
+[CÓD: 452] => Salve como: 452.jpg  => Vaso 17 com Prato Preto Unitario
+[CÓD: 453] => Salve como: 453.jpg  => Vaso Asteca n 01 42x31
+[CÓD: 454] => Salve como: 454.jpg  => Vaso Orquidea Oitavado n 21
+[CÓD: 455] => Salve como: 455.jpg  => Vaso Granada n 02 32x30
+[CÓD: 456] => Salve como: 456.jpg  => Vaso Esmeralda n 01 45x30
+[CÓD: 457] => Salve como: 457.jpg  => Vaso Cuia Completa n 01 Preto
+[CÓD: 458] => Salve como: 458.jpg  => Vaso Bacia Polido n 01 13x36
+[CÓD: 459] => Salve como: 459.jpg  => Vaso Trevo n 03 42x17
+[CÓD: 462] => Salve como: 462.jpg  => Floreira Grande 60cm Preta
+[CÓD: 463] => Salve como: 463.jpg  => Vaso Esmeralda n 03
+[CÓD: 466] => Salve como: 466.jpg  => Cuia Completa n 01 Ceramica
+[CÓD: 468] => Salve como: 468.jpg  => Vaso Barroco n 04
+[CÓD: 473] => Salve como: 473.jpg  => Vaso Cuia Preto n 21 Unitario
+[CÓD: 474] => Salve como: 474.jpg  => Vaso Cuia Preto n 32
+[CÓD: 475] => Salve como: 475.jpg  => Vaso Cuia Ceramica n 25
+[CÓD: 476] => Salve como: 476.jpg  => Vaso Cuia Ceramica n 40
+[CÓD: 477] => Salve como: 477.jpg  => Vaso Nobre Ceramica 42
+[CÓD: 478] => Salve como: 478.jpg  => Prato para Floreira Preto Pequeno
+[CÓD: 479] => Salve como: 479.jpg  => Prato para Floreira Preto Grande
+[CÓD: 480] => Salve como: 480.jpg  => Vaso Diamante n 03 60x58
+[CÓD: 481] => Salve como: 481.jpg  => Vaso Cachepo Colorido com Pe n 13
+[CÓD: 482] => Salve como: 482.jpg  => Vaso Cachepo Colorido com Pe n 15
+[CÓD: 483] => Salve como: 483.jpg  => Vaso Trevo n 01 Verde
+[CÓD: 484] => Salve como: 484.jpg  => Vaso Trevo n 02 Preto
+[CÓD: 485] => Salve como: 485.jpg  => Vaso Colonial Polido n 01 37x32
+[CÓD: 486] => Salve como: 486.jpg  => Vaso Colonial Polido n 3 61x32
+[CÓD: 487] => Salve como: 487.jpg  => Kit Anti Dengue Ceramica com Haste n 01
+[CÓD: 488] => Salve como: 488.jpg  => Kit Anti Dengue Preto com Haste n 01
+[CÓD: 489] => Salve como: 489.jpg  => Vaso Nobre Ceramica n 24
+[CÓD: 490] => Salve como: 490.jpg  => Vaso Bacia n 02 17x50
+[CÓD: 491] => Salve como: 491.jpg  => Vaso Bacia n 04 20x77
+[CÓD: 492] => Salve como: 492.jpg  => Vaso Bacia n 03 23x67
+[CÓD: 493] => Salve como: 493.jpg  => Tela Lua Parede Madeira com 2 Vasos
+[CÓD: 494] => Salve como: 494.jpg  => Tela Lua Parede Madeira com 3 Vasos
+[CÓD: 497] => Salve como: 497.jpg  => Vaso Diamante n 02 48x48
+[CÓD: 498] => Salve como: 498.jpg  => Casca de Pinus Decorativa M 700g
+[CÓD: 689] => Salve como: 689.jpg  => Pedra Seixo Bege n 1
+[CÓD: 690] => Salve como: 690.jpg  => Pedra Seixo Branca n 2
+
+--------------------------------------------------
+CATEGORIA: NUTRIÇÃO ANIMAL & CAMPO
+--------------------------------------------------
+[CÓD: 112] => Salve como: 112.jpg  => Sal Mineral Cavalo Ultra 10kg
+[CÓD: 113] => Salve como: 113.jpg  => Sal Mineral Cavalo Tropa 25kg
+[CÓD: 123] => Salve como: 123.jpg  => Milho Grao Inteiro 25 kg
+[CÓD: 124] => Salve como: 124.jpg  => Milho Grao Vicato 5kg
+[CÓD: 125] => Salve como: 125.jpg  => Milho Moido Vicato 5kg
+[CÓD: 126] => Salve como: 126.jpg  => Milho Integral Moido 25kg
+[CÓD: 128] => Salve como: 128.jpg  => Sal Mineral Bovino 5kg
+[CÓD: 43] => Salve como: 43.jpg  => Petisco Friskies Frango Figado e Peru 40g
+[CÓD: 460] => Salve como: 460.jpg  => Regador 10l
+[CÓD: 461] => Salve como: 461.jpg  => Regador 5l
+[CÓD: 572] => Salve como: 572.jpg  => Milho Quebrado Fino e Ventilado 25kg
+[CÓD: 587] => Salve como: 587.jpg  => Milho Quebrado Fino e Ventilado Ferreira 25kg
+[CÓD: 620] => Salve como: 620.jpg  => Casca de Soja Grauda 20kg
+
+--------------------------------------------------
+CATEGORIA: CHIMARRÃO & TERERÉ
+--------------------------------------------------
+[CÓD: 504] => Salve como: 504.jpg  => Erva Mate Seiva do Chimarrao 1kg
+[CÓD: 505] => Salve como: 505.jpg  => Erva Mate Moida Grossa Seiva do Mate 500g
+[CÓD: 506] => Salve como: 506.jpg  => Erva Mate Amizade Tradicional 1kg
+[CÓD: 507] => Salve como: 507.jpg  => Erva Mate Terere Limao e Menta 500g
+
+--------------------------------------------------
+CATEGORIA: FERRAMENTAS DE JARDIM
+--------------------------------------------------
+[CÓD: 632] => Salve como: 632.jpg  => Kit Jardinagem
+[CÓD: 678] => Salve como: 678.jpg  => Tesoura para Pet Porte Pequeno Unidade
+
+
+
+===============================================================================
+🎣 7. PESCA (7 produtos)
+===============================================================================
+
+--------------------------------------------------
+CATEGORIA: PESCA
+--------------------------------------------------
+[CÓD: 723] => Salve como: 723.jpg  => Chicote Pesca Papa Terra un
+[CÓD: 724] => Salve como: 724.jpg  => Chicote Pesca Papa Terra Numero 14
+[CÓD: 725] => Salve como: 725.jpg  => Chicote Pesca Peixe Rei Numero 12
+[CÓD: 726] => Salve como: 726.jpg  => Chicote Pesca Peixe Rei Duplo Numero 14
+[CÓD: 727] => Salve como: 727.jpg  => Chicote Pesca Peixe Rei Numero 14
+[CÓD: 728] => Salve como: 728.jpg  => Chicote Pesca Pescada Numero 18
+[CÓD: 729] => Salve como: 729.jpg  => Chicote Pesca Pescada Numero 20
+

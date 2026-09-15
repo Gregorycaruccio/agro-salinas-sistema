@@ -1,0 +1,18 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 745.jpg ou 745.png)
+=======================================================
+
+- [CÓD: 745] Bife Premier Nattu 60g
+- [CÓD: 65] Cookie Premier Porte Peq Frutas Vermelhas e Aveia 250g
+- [CÓD: 682] Cookie Premier Porte Peq Original 250g
+- [CÓD: 72] Cookie Premier Racas Peq Frutas Vermelhas  e Aveia 50g
+- [CÓD: 45] Premier Ambientes Internos Ad Porte Peq Frango e Salmão 1kg
+- [CÓD: 46] Premier Ambientes Internos Filhotes Pp Frango e Salmão 1kg
+- [CÓD: 60] Premier Ambientes Internos Ligth Frango e Salmão 1kg
+- [CÓD: 61] Premier Ambientes Internos Senior Frango e Salmão 1kg
+- [CÓD: 62] Premier Ambientes Internos Spitz Alemao Frango 1kg
+- [CÓD: 683] Premier Nutricao Clinica Cordeiro10kg
+- [CÓD: 56] Premier Nutricao Clinica Urinario 1.5kg
+- [CÓD: 55] Premier Nutricao Clinica Urinario 500g
+- [CÓD: 53] Premier Shihtzu Frango 1kg
+- [CÓD: 49] Premier Yorkshire Frango 1kg

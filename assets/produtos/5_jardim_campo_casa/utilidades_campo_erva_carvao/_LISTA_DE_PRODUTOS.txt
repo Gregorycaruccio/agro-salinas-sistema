@@ -1,0 +1,170 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 588.jpg ou 588.png)
+=======================================================
+
+- [CÓD: 588] Alface Crespa Unidade
+- [CÓD: 516] Armadilha Adesiva Gel Pega Barata 1 un
+- [CÓD: 668] Arruda Mudas Unidade
+- [CÓD: 378] Bandeja Sanitaria 3x1 Azul
+- [CÓD: 377] Bandeja Sanitaria 3x1 Rosa
+- [CÓD: 376] Bandeja Sanitaria 3x1 Vermelha
+- [CÓD: 386] Bolinha Colorida com Guizo e Pena
+- [CÓD: 337] Bolinha/ratinho
+- [CÓD: 688] Calcario kg
+- [CÓD: 431] Cartela com 2 Ratinhos + 2 Bolinhas com Guizo
+- [CÓD: 433] Cartela com 2 Ratinhos e 1 Bolinha com Guizo
+- [CÓD: 430] Cartela com 3 Ratinhos
+- [CÓD: 570] Carvao Vegetal Especial de Acacia 10kg
+- [CÓD: 509] Carvao Vegetal Especial de Acacia 3kg
+- [CÓD: 510] Carvao Vegetal Especial de Acacia 4kg
+- [CÓD: 539] Carvao Vegetal Especial de Acacia 5kg
+- [CÓD: 540] Carvao Vegetal Especial de Acacia 8kg
+- [CÓD: 498] Casca de Pinus Decorativa M 700g
+- [CÓD: 620] Casca de Soja Grauda 20kg
+- [CÓD: 590] Cebolinha Tempero Unidade
+- [CÓD: 613] Chas Mudas Unidade
+- [CÓD: 592] Couve Manteiga Unidade
+- [CÓD: 506] Erva Mate Amizade Tradicional 1kg
+- [CÓD: 505] Erva Mate Moida Grossa Seiva do Mate 500g
+- [CÓD: 504] Erva Mate Seiva do Chimarrao 1kg
+- [CÓD: 507] Erva Mate Terere Limao e Menta 500g
+- [CÓD: 563] Fertilizante Mineral Simples Ureia 150g
+- [CÓD: 564] Fertilizante Mineral Simples Ureia 800g
+- [CÓD: 462] Floreira Grande 60cm Preta
+- [CÓD: 612] Flores Mudas Unidade
+- [CÓD: 733] Formicida em Po Citromax 250g
+- [CÓD: 520] Formicida Gel Imbativel 10g
+- [CÓD: 523] Formicida Grao Verde Granulada 50g
+- [CÓD: 630] Formicida Kelldrin Granulada 50g
+- [CÓD: 594] Frutiferas Pitanga Unidade
+- [CÓD: 722] Frutiferas Unidade com Fruta ( Limao e Bergamoteiras)
+- [CÓD: 593] Frutiferas Unidade Sem Fruta ( Limao e Bergamoteiras)
+- [CÓD: 191] Gaiola Madeira Fibra Numero 3 Malha Fina
+- [CÓD: 192] Gaiola Madeira Fibra Numero 5 Malha Fina
+- [CÓD: 146] Gaiola Oval Prata
+- [CÓD: 148] Gaiola Redonda Ferro Prata
+- [CÓD: 104] Gp Adulto Choice Carne e Arroz 20kg
+- [CÓD: 100] Gp Adulto Porte Mini Carne e Arroz 10.1kg
+- [CÓD: 102] Gp Adulto Porte Mini Frango e Arroz 10.1kg
+- [CÓD: 103] Gp Adulto Porte Mini Ovelha 10.1kg
+- [CÓD: 101] Gp Adulto R Med e Grandes Carne a Arroz 10.1kg
+- [CÓD: 99] Gp Filhote R Med e Grandes Carne e Arroz 15kg
+- [CÓD: 645] Insetcida Liquido Protege 60ml
+- [CÓD: 644] Insetcida Liquido Soberano 60ml
+- [CÓD: 525] Jimo Gas Dedetizador com 2un 35g Cada
+- [CÓD: 518] Jimo Incolor Cupim Aerosol 400ml
+- [CÓD: 519] Jimo Mata Barata Aerosol 300 ml
+- [CÓD: 529] K-othrine 30ml
+- [CÓD: 487] Kit Anti Dengue Ceramica com Haste n 01
+- [CÓD: 488] Kit Anti Dengue Preto com Haste n 01
+- [CÓD: 632] Kit Jardinagem
+- [CÓD: 526] Lambda Hidrosoluvel 25g
+- [CÓD: 393] Luva Removedora de Pelos Azul un
+- [CÓD: 731] Mata Mato Glifosato 100ml
+- [CÓD: 135] Mata Mato Glifosato 1l
+- [CÓD: 622] Mata Moscas Atratex 25g un
+- [CÓD: 616] Matt Pulgoes 500ml
+- [CÓD: 679] Matt Roseta Tiririca 8x10ml
+- [CÓD: 123] Milho Grao Inteiro 25 kg
+- [CÓD: 124] Milho Grao Vicato 5kg
+- [CÓD: 126] Milho Integral Moido 25kg
+- [CÓD: 125] Milho Moido Vicato 5kg
+- [CÓD: 572] Milho Quebrado Fino e Ventilado 25kg
+- [CÓD: 587] Milho Quebrado Fino e Ventilado Ferreira 25kg
+- [CÓD: 614] Morangunhos Muda Unidade
+- [CÓD: 517] Nitrocid / Neocid Pulgas e Formigas 50g
+- [CÓD: 617] Oleo de Neem 8x10ml
+- [CÓD: 689] Pedra Seixo Bege n 1
+- [CÓD: 690] Pedra Seixo Branca n 2
+- [CÓD: 44] Petisco Friskies Carne Cordeiro e Suino 40g
+- [CÓD: 43] Petisco Friskies Frango Figado e Peru 40g
+- [CÓD: 42] Petisco Friskies Salmão Camarao e Atum 40g
+- [CÓD: 403] Petisco Palito Colorido 1kg
+- [CÓD: 404] Petisco Palito Natural 1kg
+- [CÓD: 196] Porta Ovo
+- [CÓD: 199] Porta Vitamina Medio Cristal com Preto
+- [CÓD: 565] Qualiday Cat Castrado Carne 10.1kg
+- [CÓD: 566] Qualiday Cat Castrado Salmão 10.1kg
+- [CÓD: 383] Rasqueadeira Grande Cabo Plastico
+- [CÓD: 382] Rasqueadeira Media Cabo Plastico
+- [CÓD: 615] Raticida Bloco 20g Kellmat Unidade
+- [CÓD: 522] Raticida Bloco Soft Ideal 200g
+- [CÓD: 734] Raticida Cereais Citromax 25g Unidade
+- [CÓD: 550] Raticida Cola Rato Kellmat Unidade
+- [CÓD: 460] Regador 10l
+- [CÓD: 461] Regador 5l
+- [CÓD: 642] Repelente e Desalojante Pronto Uso 500ml
+- [CÓD: 585] Rodo Grande
+- [CÓD: 586] Rodo Pequeno
+- [CÓD: 701] Roupa Ovelha Tamanho g
+- [CÓD: 702] Roupa Ovelha Tamanho Gg
+- [CÓD: 700] Roupa Ovelha Tamanho M
+- [CÓD: 699] Roupa Ovelha Tamanho P
+- [CÓD: 691] Roupa Soft Tamanho Exgg 80cm
+- [CÓD: 694] Roupa Soft Tamanho g 43cm
+- [CÓD: 693] Roupa Soft Tamanho Gg 46cm
+- [CÓD: 698] Roupa Soft Tamanho M 35cm
+- [CÓD: 696] Roupa Soft Tamanho P 29cm
+- [CÓD: 697] Roupa Soft Tamanho Pp 23cm
+- [CÓD: 695] Roupa Soft Tamanho Xg 50cm
+- [CÓD: 692] Roupa Soft Tamanho Xgg 70cm
+- [CÓD: 368] Rranhador Pata  Caramelo 3 Andares
+- [CÓD: 667] Rucula Unidade
+- [CÓD: 1] Sache Carne 100g
+- [CÓD: 715] Sache Friskies Atum Ao Molho 85g
+- [CÓD: 38] Sache Friskies Carne Ao Molho 85g
+- [CÓD: 717] Sache Friskies Cordeiro Ao Molho 85g
+- [CÓD: 714] Sache Friskies Filhote Carne Ao Molho 85g
+- [CÓD: 39] Sache Friskies Frango Ao Molho 85g
+- [CÓD: 719] Sache Friskies Mar de Sabores 85g
+- [CÓD: 718] Sache Friskies Mix de Carnes Ao Molho 85g
+- [CÓD: 716] Sache Friskies Peixe Branco Ao Molho 85g
+- [CÓD: 41] Sache Friskies Peru Ao Molho 85g
+- [CÓD: 40] Sache Friskies Salmão Ao Molho 85g
+- [CÓD: 673] Sache Kitekat Carne 70g
+- [CÓD: 245] Sache Royal Mini Adulto 85g
+- [CÓD: 244] Sache Royal Mini Puppy 85g
+- [CÓD: 635] Saia Alta de Voal n 3
+- [CÓD: 636] Saia Alta de Voal n 4
+- [CÓD: 637] Saia Alta de Voal n 5
+- [CÓD: 128] Sal Mineral Bovino 5kg
+- [CÓD: 113] Sal Mineral Cavalo Tropa 25kg
+- [CÓD: 112] Sal Mineral Cavalo Ultra 10kg
+- [CÓD: 591] Salsa Unidade
+- [CÓD: 328] Shampo Animalissimo Cheiro de Bebe 500ml
+- [CÓD: 329] Shampo Animalissimo Coco e Caramelo 500ml
+- [CÓD: 330] Shampo Animalissimo Maca Verde 500ml
+- [CÓD: 379] Shampo Condicionador Matt 6x1 500ml
+- [CÓD: 655] Shampo Dugs Anti Pulgas 500ml
+- [CÓD: 9] Shampo e Condicionador Clorexidina 500ml
+- [CÓD: 657] Shampo Matacura Antisseptico 200ml
+- [CÓD: 658] Shampo Matacura Hipoalergenico 200ml
+- [CÓD: 656] Shampo Matacura Sarnicida e Anti Pulgas 200ml
+- [CÓD: 332] Shampo Petclean 5 em 1 700ml
+- [CÓD: 331] Shampo Petclean Neutro 700ml
+- [CÓD: 47] Special Adulto Carne e Frango15kg
+- [CÓD: 48] Special Carne e Frango 20kg
+- [CÓD: 569] Special Croc Castrado Frango10.1 kg
+- [CÓD: 496] Substrato Vegetal Pcte 1.6kg
+- [CÓD: 464] Suporte de Parede em a Medio
+- [CÓD: 465] Suporte de Parede Luxo Medio
+- [CÓD: 626] Supressor de Cio Oral 12 Comp
+- [CÓD: 713] Talfon Po 100g
+- [CÓD: 89] Tapete Hig Carvao Ativado 60x60 7 un
+- [CÓD: 373] Tapete Hig Durapets com 7 un
+- [CÓD: 374] Tapete Hig Good Pad 60x60 com 30 un
+- [CÓD: 375] Tapete Hig Ultrapas com 30 un
+- [CÓD: 512] Tapete Higienico Lavanda 70x60 30 un
+- [CÓD: 511] Tapete Higienico Lavanda 70x60 7 un
+- [CÓD: 678] Tesoura para Pet Porte Pequeno Unidade
+- [CÓD: 110] Tree Cats Original Castrados 10.1kg
+- [CÓD: 681] Vacina Anti Cio Inibidex Unidade un
+- [CÓD: 680] Vacina Anticion Injetavel Unidade
+- [CÓD: 582] Vassoura Nylon Grande com Capa Color
+- [CÓD: 584] Vassoura Nylon Grande e Larga para Calçada Sem Capa Color
+- [CÓD: 583] Vassoura Nylon Media Sem Capa Color
+- [CÓD: 664] Vermicanis 3mg Caixa com 4comp
+- [CÓD: 665] Vermicanis 6mg Caixa com 4comp
+- [CÓD: 149] Viveiro Oval Fixo Ferro Prata
+- [CÓD: 153] Viveiro Popular Prata com Pes
+- [CÓD: 384] Xixi Pode/nao Pode Casadinho

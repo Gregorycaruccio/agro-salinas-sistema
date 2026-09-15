@@ -1,0 +1,36 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 556.jpg ou 556.png)
+=======================================================
+
+- [CÓD: 556] Alimento para Peixes Nutriflakes 12g
+- [CÓD: 157] Azulao 500g
+- [CÓD: 167] Bloco Calopsita e Periquito Cartela 1 un
+- [CÓD: 168] Bloco Canário Cartela 1 un
+- [CÓD: 166] Bloco Papagaio e Arara Cartela 1 un
+- [CÓD: 165] Bloco Siba Calcio Grande Cartela 1 un
+- [CÓD: 164] Bloco Siba Calcio Pequeno Cartela 1 un
+- [CÓD: 169] Bloco Trinca Ferro Pixarro Cartela 1 un
+- [CÓD: 195] Comedouro para Papagaio Color
+- [CÓD: 629] Feno Prensado 500g
+- [CÓD: 571] Funny Bunny Blend 500g
+- [CÓD: 611] Girassol Miudo 10kg
+- [CÓD: 181] Girassol Miudo 250g
+- [CÓD: 183] Niger 200g
+- [CÓD: 188] Ninho para Calopsita
+- [CÓD: 610] Nutribird Natural 600g
+- [CÓD: 184] Painco 500g
+- [CÓD: 187] Papa de Ovo Amarela 200g
+- [CÓD: 561] Pássaros Livres Comum 25kg
+- [CÓD: 172] Pedra Calcio Grande 1 un
+- [CÓD: 171] Pedra Calcio Pequena 1 un
+- [CÓD: 659] Porta Fruta Pássaros Unidade
+- [CÓD: 173] Ração Calopsita e Algapornis 500g
+- [CÓD: 174] Ração Calopsita e Periquito 10kg
+- [CÓD: 176] Ração Canário Belga 10kg
+- [CÓD: 177] Ração Canário da Terra 500g
+- [CÓD: 179] Ração Coleiro 500g
+- [CÓD: 186] Ração Papagaio Top 400g
+- [CÓD: 175] Ração Pássaros Jardim 5g
+- [CÓD: 185] Ração Trinca Ferro Super Trinca 500g
+- [CÓD: 521] Raticida Girassol Imbativel 25g Unidade
+- [CÓD: 142] Tratador Silvestre Pássaros

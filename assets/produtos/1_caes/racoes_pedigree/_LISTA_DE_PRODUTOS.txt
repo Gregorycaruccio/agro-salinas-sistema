@@ -1,0 +1,8 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 606.jpg ou 606.png)
+=======================================================
+
+- [CÓD: 606] Pedigree Dentastix Racas Medias 3 un
+- [CÓD: 605] Pedigree Dentastix Racas Pequenas 3 un
+- [CÓD: 214] Sache Cão Adulto Pedigree Frango 100g
+- [CÓD: 215] Sache Cão Pedigree Adulto R Pequenas Cordeiro 100g

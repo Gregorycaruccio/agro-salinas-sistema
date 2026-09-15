@@ -1,0 +1,18 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 257.jpg ou 257.png)
+=======================================================
+
+- [CÓD: 257] Pate Royal Gastrointestinal Cão 400g
+- [CÓD: 258] Pate Royal Gastrointestinal Cão 420g
+- [CÓD: 267] Ração Royal Cão Ageing 12+ 1kg
+- [CÓD: 269] Ração Royal Cão Mini Adulto 1kg
+- [CÓD: 271] Ração Royal Cão Mini Indoor Adulto 2.5kg
+- [CÓD: 263] Ração Royal Cão Mini Indoor Puppy 1kg
+- [CÓD: 270] Ração Royal Cão Mini Indoor Senior 2.5kg
+- [CÓD: 262] Ração Royal Cão Mini Light 1kg
+- [CÓD: 264] Ração Royal Cão Mini Puppy 1kg
+- [CÓD: 248] Ração Royal Cão Satiety 1.5kg
+- [CÓD: 268] Ração Royal Cão Shih Tzu 1kg
+- [CÓD: 256] Ração Royal Cão Small Adulto 1kg
+- [CÓD: 252] Ração Royal Gastrointestinal Cão  1.5kg
+- [CÓD: 273] Ração Royal Satiety Cão 1.5kg

@@ -1,0 +1,9 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 29.jpg ou 29.png)
+=======================================================
+
+- [CÓD: 29] Dog Chow Ad Porte Mini e Peq Carne e Frango 2.5kg
+- [CÓD: 30] Sache Dog Chow Mini e Peq Carne 100g
+- [CÓD: 31] Sache Dog Chow Mini e Peq Frango 100g
+- [CÓD: 33] Sache Dog Chow Todos os Tam Carne 100g
+- [CÓD: 32] Sache Dog Chow Todos os Tam Frango 100g

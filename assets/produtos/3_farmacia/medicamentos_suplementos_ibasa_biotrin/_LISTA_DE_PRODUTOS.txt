@@ -1,0 +1,29 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 601.jpg ou 601.png)
+=======================================================
+
+- [CÓD: 601] Allax Ivermectina Pássaros 5ml
+- [CÓD: 162] Averin Antibiotico 20ml
+- [CÓD: 597] Biodex Comprimido com 20 Comp
+- [CÓD: 163] Biotrin Vet Calcio B12 20ml
+- [CÓD: 161] Biotrin Vet Complexo Vitaminico 20ml
+- [CÓD: 160] Biotrin Vet Ps 100 20ml
+- [CÓD: 598] Carbovet com 20 Comp
+- [CÓD: 524] Colosso Pulverizacao 25 ml
+- [CÓD: 596] Creolina Pearson 50ml
+- [CÓD: 535] Defenza 200mg Cães 10 a 20kg
+- [CÓD: 536] Defenza 400mg Cães 20 a 40kg
+- [CÓD: 627] Florafarm Pet Probiotico + Vit 4x1
+- [CÓD: 599] Fluido Ibasa Spray 100ml
+- [CÓD: 600] Fluido Ibasa Spray 200ml
+- [CÓD: 24] Gel Dental Mordisco de Carinho 40g
+- [CÓD: 22] Hidra Reflex Locao Hidratante 50g
+- [CÓD: 643] Insetcida Liquido Lambda Spray 500ml
+- [CÓD: 88] Invicto Anti Pulga 11.4mg
+- [CÓD: 666] Mata Escorpiao Inseticida Spray400ml
+- [CÓD: 654] Neotopic Spray 125ml
+- [CÓD: 625] Otolin 15ml
+- [CÓD: 23] Pet Glove Luva Invisivel para Coxins 50g
+- [CÓD: 624] Rifotrat Spray 20ml
+- [CÓD: 621] Spray Prata Silverbac 300ml
+- [CÓD: 406] Vermivet Composto Vermifugo Cães e Gatos

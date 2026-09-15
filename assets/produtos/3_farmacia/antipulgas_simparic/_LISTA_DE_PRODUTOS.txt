@@ -1,0 +1,7 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 19.jpg ou 19.png)
+=======================================================
+
+- [CÓD: 19] Simparic Caixa 20mg com 3 Comprimidos
+- [CÓD: 20] Simparic Caixa 40mg com 3 Comprimidos
+- [CÓD: 21] Simparic Caixa 80mg com 3 Comprimidos

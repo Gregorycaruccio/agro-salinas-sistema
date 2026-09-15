@@ -1,0 +1,20 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 389.jpg ou 389.png)
+=======================================================
+
+- [CÓD: 389] Bebedouro Automatico Garrafao Preto 10 l
+- [CÓD: 359] Comedouro Aluminio Pesado 1200ml
+- [CÓD: 357] Comedouro Aluminio Pesado 700ml
+- [CÓD: 358] Comedouro Aluminio Pesado 900ml
+- [CÓD: 388] Comedouro Automatico Black 8 l
+- [CÓD: 200] Comedouro Automatico Malha Fina 120ml
+- [CÓD: 201] Comedouro Automatico Malha Larga 120ml
+- [CÓD: 741] Comedouro Calha 50cm
+- [CÓD: 198] Comedouro Lateral com Poleiro
+- [CÓD: 356] Comedouro Pata Luxo Filhote Color
+- [CÓD: 353] Comedouro Pata Luxo Grande Color
+- [CÓD: 354] Comedouro Pata Luxo Medio Color
+- [CÓD: 355] Comedouro Pata Luxo Pequeno Color
+- [CÓD: 742] Comedouro Tubu 3kg Prato Plastico
+- [CÓD: 352] Comedouro/bebedoro Anti Formiga
+- [CÓD: 372] Comedouro/bebedouro Flex Color

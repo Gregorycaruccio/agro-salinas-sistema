@@ -1,0 +1,9 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 532.jpg ou 532.png)
+=======================================================
+
+- [CÓD: 532] Nexgard Cão 10 a 25kg Unidade
+- [CÓD: 530] Nexgard Cão 2 a 4kg Unidade
+- [CÓD: 533] Nexgard Cão 25 a 50kg Unidade
+- [CÓD: 531] Nexgard Cão 4 a 10kg Unidade
+- [CÓD: 534] Nexgard Combo Gato 2.5 a 7.5kg - 1 Pipeta

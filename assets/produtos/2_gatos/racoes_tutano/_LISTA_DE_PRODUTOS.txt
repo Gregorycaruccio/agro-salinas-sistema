@@ -1,0 +1,12 @@
+LISTA DE PRODUTOS DESTA PASTA:
+(Dica: salve a imagem com o código do produto, ex: 313.jpg ou 313.png)
+=======================================================
+
+- [CÓD: 313] Ração Tutano Gatos Adultos Carne 10.1kg
+- [CÓD: 320] Ração Tutano Gatos Carne 1kg
+- [CÓD: 321] Ração Tutano Gatos Carne 3kg
+- [CÓD: 752] Ração Tutano Gatos Castrados Carne 10.1kg
+- [CÓD: 314] Ração Tutano Gatos Castrados Frango 10.1kg
+- [CÓD: 322] Ração Tutano Gatos Castrados Frango 1kg
+- [CÓD: 325] Ração Tutano Gatos Castrados Frango 3kg
+- [CÓD: 753] Ração Tutano Gatos Castrados Salmão 10.1kg
