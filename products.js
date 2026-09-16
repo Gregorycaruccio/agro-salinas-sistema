@@ -5488,7 +5488,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 186.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/259.jpg"
     },
     {
         "id": "239",
@@ -5825,7 +5826,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 133.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/248.jpg"
     },
     {
         "id": "268",
@@ -5835,7 +5837,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 63.7,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/268.jpg"
     },
     {
         "id": "256",
@@ -5855,7 +5858,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 127.704,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/252.jpg"
     },
     {
         "id": "276",
@@ -6294,7 +6298,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 165.7,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/250.jpg"
     },
     {
         "id": "251",
@@ -7201,20 +7206,20 @@ const PRODUCTS = [
         "id": "245",
         "code": "245",
         "name": "Sache Royal Mini Adulto 85g",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
         "price": 10,
-        "unit": "frasco",
+        "unit": "sache",
         "featured": false
     },
     {
         "id": "244",
         "code": "244",
         "name": "Sache Royal Mini Puppy 85g",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
         "price": 10,
-        "unit": "frasco",
+        "unit": "sache",
         "featured": false
     },
     {
