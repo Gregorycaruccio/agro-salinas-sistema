@@ -1,18 +1,21 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 242.jpg ou 242.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_royal_canin
+📊 Total: 14 produtos (0 com foto, 14 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 242.jpg ou 242.png)
+===============================================================================
 
-- [CÓD: 242] Lata Royal Recovery Cão e Gato 195g
-- [CÓD: 276] Ração Royal Gato  Castrados Sterilised 1.5kg
-- [CÓD: 247] Ração Royal Gato Exigent 1.5kg
-- [CÓD: 246] Ração Royal Gato Exigent 400g
-- [CÓD: 254] Ração Royal Gato Gastrointestinal 400g
-- [CÓD: 272] Ração Royal Gato Mother e Baby Cat 400g
-- [CÓD: 275] Ração Royal Gato Sensible 1.5kg
-- [CÓD: 274] Ração Royal Gato Sensible 400g
-- [CÓD: 255] Ração Royal Gato Sterilised 7+ 400g
-- [CÓD: 253] Ração Royal Gato Urinary 1.5kg
-- [CÓD: 266] Ração Royal Sterilised Gato Castrado 12+ 1.5kg
-- [CÓD: 265] Ração Royal Sterilised Gato Castrado 12+ 400g
-- [CÓD: 243] Sache Royal Gato Castrado 85g
-- [CÓD: 249] Sache Royal Gato Urinary 85g
+⏳ [PENDENTE] [CÓD: 242] => Salve como: 242.jpg  =>  LATA ROYAL RECOVERY CAO E GATO 195G  |  R$ 42,00
+⏳ [PENDENTE] [CÓD: 243] => Salve como: 243.jpg  =>  SACHE ROYAL GATO CASTRADO 85G  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 246] => Salve como: 246.jpg  =>  RACAO ROYAL GATO EXIGENT 400G  |  R$ 37,50
+⏳ [PENDENTE] [CÓD: 247] => Salve como: 247.jpg  =>  RACAO ROYAL GATO EXIGENT 1.5KG  |  R$ 129,30
+⏳ [PENDENTE] [CÓD: 249] => Salve como: 249.jpg  =>  SACHE ROYAL GATO URINARY 85G  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 253] => Salve como: 253.jpg  =>  RACAO ROYAL GATO URINARY 1.5KG  |  R$ 158,50
+⏳ [PENDENTE] [CÓD: 254] => Salve como: 254.jpg  =>  RACAO ROYAL GATO GASTROINTESTINAL 400G  |  R$ 47,50
+⏳ [PENDENTE] [CÓD: 255] => Salve como: 255.jpg  =>  RACAO ROYAL GATO STERILISED 400G  |  R$ 37,50
+⏳ [PENDENTE] [CÓD: 265] => Salve como: 265.jpg  =>  RACAO ROYAL STERILISED GATO CASTRADO 12+ 400G  |  R$ 42,90
+⏳ [PENDENTE] [CÓD: 266] => Salve como: 266.jpg  =>  RACAO ROYAL STERILISED GATO CASTRADO 12+ 1.5KG  |  R$ 147,90
+⏳ [PENDENTE] [CÓD: 272] => Salve como: 272.jpg  =>  RACAO ROYAL GATO MOTHER E BABY CAT 400G  |  R$ 40,50
+⏳ [PENDENTE] [CÓD: 274] => Salve como: 274.jpg  =>  RACAO ROYAL GATO SENSIBLE 400G  |  R$ 37,50
+⏳ [PENDENTE] [CÓD: 275] => Salve como: 275.jpg  =>  RACAO ROYAL GATO SENSIBLE 1.5KG  |  R$ 128,60
+⏳ [PENDENTE] [CÓD: 276] => Salve como: 276.jpg  =>  RACAO ROYAL GATO CASTRADOS STERILISED 1.5KG  |  R$ 128,60

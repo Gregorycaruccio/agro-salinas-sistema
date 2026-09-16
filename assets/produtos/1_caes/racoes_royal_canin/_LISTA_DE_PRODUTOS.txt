@@ -1,18 +1,21 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 257.jpg ou 257.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_royal_canin
+📊 Total: 14 produtos (0 com foto, 14 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 248.jpg ou 248.png)
+===============================================================================
 
-- [CÓD: 257] Pate Royal Gastrointestinal Cão 400g
-- [CÓD: 258] Pate Royal Gastrointestinal Cão 420g
-- [CÓD: 267] Ração Royal Cão Ageing 12+ 1kg
-- [CÓD: 269] Ração Royal Cão Mini Adulto 1kg
-- [CÓD: 271] Ração Royal Cão Mini Indoor Adulto 2.5kg
-- [CÓD: 263] Ração Royal Cão Mini Indoor Puppy 1kg
-- [CÓD: 270] Ração Royal Cão Mini Indoor Senior 2.5kg
-- [CÓD: 262] Ração Royal Cão Mini Light 1kg
-- [CÓD: 264] Ração Royal Cão Mini Puppy 1kg
-- [CÓD: 248] Ração Royal Cão Satiety 1.5kg
-- [CÓD: 268] Ração Royal Cão Shih Tzu 1kg
-- [CÓD: 256] Ração Royal Cão Small Adulto 1kg
-- [CÓD: 252] Ração Royal Gastrointestinal Cão  1.5kg
-- [CÓD: 273] Ração Royal Satiety Cão 1.5kg
+⏳ [PENDENTE] [CÓD: 248] => Salve como: 248.jpg  =>  RACAO ROYAL CAO SATIETY 1.5KG  |  R$ 133,50
+⏳ [PENDENTE] [CÓD: 252] => Salve como: 252.jpg  =>  RACAO ROYAL GASTROINTESTINAL CAO 1.5KG  |  R$ 127,70
+⏳ [PENDENTE] [CÓD: 256] => Salve como: 256.jpg  =>  RACAO ROYAL CAO SMALL ADULTO 1KG  |  R$ 66,50
+⏳ [PENDENTE] [CÓD: 257] => Salve como: 257.jpg  =>  PATE ROYAL GASTROINTESTINAL CAO 400G  |  R$ 46,50
+⏳ [PENDENTE] [CÓD: 258] => Salve como: 258.jpg  =>  PATE ROYAL GASTROINTESTINAL CAO 420G  |  R$ 46,50
+⏳ [PENDENTE] [CÓD: 262] => Salve como: 262.jpg  =>  RACAO ROYAL CAO MINI LIGHT 1KG  |  R$ 67,50
+⏳ [PENDENTE] [CÓD: 263] => Salve como: 263.jpg  =>  RACAO ROYAL CAO MINI INDOOR PUPPY 1KG  |  R$ 58,50
+⏳ [PENDENTE] [CÓD: 264] => Salve como: 264.jpg  =>  RACAO ROYAL CAO MINI PUPPY 1KG  |  R$ 53,50
+⏳ [PENDENTE] [CÓD: 267] => Salve como: 267.jpg  =>  RACAO ROYAL CAO AGEING 12+ 1KG  |  R$ 76,90
+⏳ [PENDENTE] [CÓD: 268] => Salve como: 268.jpg  =>  RACAO ROYAL CAO SHIH TZU 1KG  |  R$ 63,70
+⏳ [PENDENTE] [CÓD: 269] => Salve como: 269.jpg  =>  RACAO ROYAL CAO MINI ADULTO 1KG  |  R$ 56,00
+⏳ [PENDENTE] [CÓD: 270] => Salve como: 270.jpg  =>  RACAO ROYAL CAO MINI INDOOR SENIOR 2.5KG  |  R$ 136,60
+⏳ [PENDENTE] [CÓD: 271] => Salve como: 271.jpg  =>  RACAO ROYAL CAO MINI INDOOR ADULTO 2.5KG  |  R$ 133,50
+⏳ [PENDENTE] [CÓD: 273] => Salve como: 273.jpg  =>  RACAO ROYAL SATIETY CAO 1.5KG  |  R$ 132,60

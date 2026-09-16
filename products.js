@@ -3682,7 +3682,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 42,
         "unit": "lata",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/242.jpg"
     },
     {
         "id": "393",
@@ -5406,7 +5407,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 162.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/260.jpg"
     },
     {
         "id": "295",
@@ -5746,7 +5748,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 76.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/267.jpg"
     },
     {
         "id": "269",
@@ -5756,7 +5759,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 56,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/269.jpg"
     },
     {
         "id": "271",
@@ -5766,7 +5770,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 133.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/271.jpg"
     },
     {
         "id": "263",
@@ -5776,7 +5781,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 58.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/263.jpg"
     },
     {
         "id": "270",
@@ -5786,7 +5792,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 136.6,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/270.jpg"
     },
     {
         "id": "262",
@@ -5796,7 +5803,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 67.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/262.jpg"
     },
     {
         "id": "264",
@@ -5806,7 +5814,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 53.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_royal_canin/264.jpg"
     },
     {
         "id": "248",
@@ -5856,7 +5865,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 128.6,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/276.jpg"
     },
     {
         "id": "247",
@@ -5866,7 +5876,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 129.3,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/247.jpg"
     },
     {
         "id": "246",
@@ -5876,7 +5887,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 37.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/246.jpg"
     },
     {
         "id": "254",
@@ -5886,7 +5898,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 47.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/254.jpg"
     },
     {
         "id": "272",
@@ -5906,7 +5919,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 128.6,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/275.jpg"
     },
     {
         "id": "274",
@@ -5921,12 +5935,13 @@ const PRODUCTS = [
     {
         "id": "255",
         "code": "255",
-        "name": "Ração Royal Gato Sterilised 7+ 400g",
+        "name": "Ração Royal Gato Sterilised 400g",
         "category": "gatos",
         "subcategory": "Rações Secas",
         "price": 37.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/255.jpg"
     },
     {
         "id": "253",
@@ -5936,7 +5951,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 158.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/253.jpg"
     },
     {
         "id": "273",
@@ -5956,7 +5972,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 147.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/266.jpg"
     },
     {
         "id": "265",
@@ -5966,7 +5983,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 42.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/265.jpg"
     },
     {
         "id": "541",
@@ -7165,7 +7183,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 10,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/243.jpg"
     },
     {
         "id": "249",
@@ -7175,7 +7194,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 18,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_royal_canin/249.jpg"
     },
     {
         "id": "245",
