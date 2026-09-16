@@ -1,18 +1,21 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 745.jpg ou 745.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_premier
+📊 Total: 14 produtos (0 com foto, 14 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 45.jpg ou 45.png)
+===============================================================================
 
-- [CÓD: 745] Bife Premier Nattu 60g
-- [CÓD: 65] Cookie Premier Porte Peq Frutas Vermelhas e Aveia 250g
-- [CÓD: 682] Cookie Premier Porte Peq Original 250g
-- [CÓD: 72] Cookie Premier Racas Peq Frutas Vermelhas  e Aveia 50g
-- [CÓD: 45] Premier Ambientes Internos Ad Porte Peq Frango e Salmão 1kg
-- [CÓD: 46] Premier Ambientes Internos Filhotes Pp Frango e Salmão 1kg
-- [CÓD: 60] Premier Ambientes Internos Ligth Frango e Salmão 1kg
-- [CÓD: 61] Premier Ambientes Internos Senior Frango e Salmão 1kg
-- [CÓD: 62] Premier Ambientes Internos Spitz Alemao Frango 1kg
-- [CÓD: 683] Premier Nutricao Clinica Cordeiro10kg
-- [CÓD: 56] Premier Nutricao Clinica Urinario 1.5kg
-- [CÓD: 55] Premier Nutricao Clinica Urinario 500g
-- [CÓD: 53] Premier Shihtzu Frango 1kg
-- [CÓD: 49] Premier Yorkshire Frango 1kg
+⏳ [PENDENTE] [CÓD: 45] => Salve como: 45.jpg  =>  PREMIER AMBIENTES INTERNOS AD PORTE PEQ FRANGO E SALMAO 1KG  |  R$ 47,50
+⏳ [PENDENTE] [CÓD: 46] => Salve como: 46.jpg  =>  PREMIER AMBIENTES INTERNOS FILHOTES PP FRANGO E SALMAO 1KG  |  R$ 49,99
+⏳ [PENDENTE] [CÓD: 49] => Salve como: 49.jpg  =>  PREMIER YORKSHIRE FRANGO 1KG  |  R$ 49,80
+⏳ [PENDENTE] [CÓD: 53] => Salve como: 53.jpg  =>  PREMIER SHIHTZU FRANGO 1KG  |  R$ 47,70
+⏳ [PENDENTE] [CÓD: 55] => Salve como: 55.jpg  =>  PREMIER NUTRICAO CLINICA URINARIO 500G  |  R$ 47,90
+⏳ [PENDENTE] [CÓD: 56] => Salve como: 56.jpg  =>  PREMIER NUTRICAO CLINICA URINARIO 1.5KG  |  R$ 108,90
+⏳ [PENDENTE] [CÓD: 60] => Salve como: 60.jpg  =>  PREMIER AMBIENTES INTERNOS LIGTH FRANGO E SALMAO 1KG  |  R$ 49,99
+⏳ [PENDENTE] [CÓD: 61] => Salve como: 61.jpg  =>  PREMIER AMBIENTES INTERNOS SENIOR FRANGO E SALMAO 1KG  |  R$ 51,80
+⏳ [PENDENTE] [CÓD: 62] => Salve como: 62.jpg  =>  PREMIER AMBIENTES INTERNOS SPITZ ALEMAO FRANGO 1KG  |  R$ 49,80
+⏳ [PENDENTE] [CÓD: 65] => Salve como: 65.jpg  =>  COOKIE PREMIER PORTE PEQ FRUTAS VERMELHAS E AVEIA 250G  |  R$ 19,99
+⏳ [PENDENTE] [CÓD: 72] => Salve como: 72.jpg  =>  COOKIE PREMIER RACAS PEQ FRUTAS VERMELHAS E AVEIA 50G  |  R$ 6,90
+⏳ [PENDENTE] [CÓD: 682] => Salve como: 682.jpg  =>  COOKIE PREMIER PORTE PEQ ORIGINAL 250G  |  R$ 19,99
+⏳ [PENDENTE] [CÓD: 683] => Salve como: 683.jpg  =>  PREMIER NUTRICAO CLINICA CORDEIRO10KG  |  R$ 365,00
+⏳ [PENDENTE] [CÓD: 745] => Salve como: 745.jpg  =>  BIFE PREMIER NATTU 60G  |  R$ 9,90
