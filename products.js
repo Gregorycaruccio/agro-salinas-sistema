@@ -4967,7 +4967,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 147,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/226.jpg"
     },
     {
         "id": "240",
@@ -4987,7 +4988,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 175.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_forte_brain/224.jpg"
     },
     {
         "id": "225",
@@ -4997,7 +4999,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 175.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_forte_brain/225.webp"
     },
     {
         "id": "234",
@@ -5037,7 +5040,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 158.6,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/233.webp"
     },
     {
         "id": "173",
@@ -5317,7 +5321,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 119.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/228.webp"
     },
     {
         "id": "227",
@@ -5327,7 +5332,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 111,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/227.jpg"
     },
     {
         "id": "230",
@@ -5337,7 +5343,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 127.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/230.jpg"
     },
     {
         "id": "229",
@@ -5347,7 +5354,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 141,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_forte_brain/229.webp"
     },
     {
         "id": "235",
@@ -5499,7 +5507,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 93.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_forte_brain/239.webp"
     },
     {
         "id": "237",
