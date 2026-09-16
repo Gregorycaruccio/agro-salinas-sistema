@@ -1,0 +1,10 @@
+LISTA OFICIAL DE PRODUTOS DESTA PASTA:
+📁 Pasta: assets/produtos/2_gatos/racoes_seven_cats
+📊 Total: 3 produtos (3 com foto)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 541.jpg ou 541.png)
+===============================================================================
+
+✅ [FOTO OK] [CÓD: 541] => Salve como: 541.png  =>  RACAO SEVEN CATS CASTRADOS FRANGO E CARNE 10.1KG  |  R$ 151,00
+✅ [FOTO OK] [CÓD: 796] => Salve como: 796.png  =>  RACAO SEVEN CATS CASTRADOS FRANGO INDOOR 10.1KG  |  R$ 151,00
+✅ [FOTO OK] [CÓD: 797] => Salve como: 797.png  =>  RACAO SEVEN CATS CASTRADOS SALMAO 10.1KG  |  R$ 151,00

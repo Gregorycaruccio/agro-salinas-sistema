@@ -1,5 +1,5 @@
 // Banco de Dados de Produtos - Agro Salinas
-// Total de itens: 795
+// Total de itens: 797
 
 const STORE_CONFIG = {
     "name": "Agro Salinas",
@@ -5311,7 +5311,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 26,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_forte_brain/223.webp"
     },
     {
         "id": "228",
@@ -6003,11 +6004,12 @@ const PRODUCTS = [
         "id": "541",
         "code": "541",
         "name": "Ração Seven Cats Castrados Frango e Carne 10.1kg",
-        "category": "caes",
+        "category": "gatos",
         "subcategory": "Rações Secas",
         "price": 151,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_seven_cats/541.png"
     },
     {
         "id": "669",
@@ -6037,7 +6039,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 134.99,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_seven_dogs/542.jpg"
     },
     {
         "id": "751",
@@ -6047,7 +6050,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 125.99,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_seven_dogs/751.jpg"
     },
     {
         "id": "749",
@@ -6057,7 +6061,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 169.99,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_seven_dogs/749.jpg"
     },
     {
         "id": "748",
@@ -6067,7 +6072,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 138.99,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_seven_dogs/748.jpg"
     },
     {
         "id": "119",
@@ -8230,6 +8236,28 @@ const PRODUCTS = [
         "price": 17.8,
         "unit": "un",
         "featured": false
+    },
+    {
+        "id": "796",
+        "code": "796",
+        "name": "Ração Seven Cats Castrados Frango Indoor 10.1kg",
+        "category": "gatos",
+        "subcategory": "Rações Secas",
+        "price": 151,
+        "unit": "pct",
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_seven_cats/796.png"
+    },
+    {
+        "id": "797",
+        "code": "797",
+        "name": "Ração Seven Cats Castrados Salmão 10.1kg",
+        "category": "gatos",
+        "subcategory": "Rações Secas",
+        "price": 151,
+        "unit": "pct",
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_seven_cats/797.png"
     }
 ];
 
