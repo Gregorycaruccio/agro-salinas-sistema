@@ -1,13 +1,16 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 306.jpg ou 306.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_billi_dog
+📊 Total: 9 produtos (0 com foto, 9 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 290.jpg ou 290.png)
+===============================================================================
 
-- [CÓD: 306] Ração Billi Cat Adulto Frango 15kg
-- [CÓD: 305] Ração Billi Cat Castrado Salmão e Frango 15kg
-- [CÓD: 307] Ração Billi Cat Filhote 15kg
-- [CÓD: 309] Ração Billi Dog Filhotes 15kg
-- [CÓD: 308] Ração Billi Dog R Pequenas 15kg
-- [CÓD: 292] Ração Cão Billi Dog Filhote 10.1kg
-- [CÓD: 291] Ração Cão Billi Dog Ossinho 25kg
-- [CÓD: 290] Ração Cão Billi Dog Ossinho 7kg
-- [CÓD: 293] Ração Cão Billi Dog Racas Pequenas 10.1kg
+⏳ [PENDENTE] [CÓD: 290] => Salve como: 290.jpg  =>  RACAO CAO BILLI DOG OSSINHO 7KG  |  R$ 49,50
+⏳ [PENDENTE] [CÓD: 291] => Salve como: 291.jpg  =>  RACAO CAO BILLI DOG OSSINHO 25KG  |  R$ 149,90
+⏳ [PENDENTE] [CÓD: 292] => Salve como: 292.jpg  =>  RACAO CAO BILLI DOG FILHOTE 10.1KG  |  R$ 80,60
+⏳ [PENDENTE] [CÓD: 293] => Salve como: 293.jpg  =>  RACAO CAO BILLI DOG RACAS PEQUENAS 10.1KG  |  R$ 96,50
+⏳ [PENDENTE] [CÓD: 305] => Salve como: 305.jpg  =>  RACAO BILLI CAT CASTRADO SALMAO E FRANGO 15KG  |  R$ 132,99
+⏳ [PENDENTE] [CÓD: 306] => Salve como: 306.jpg  =>  RACAO BILLI CAT ADULTO FRANGO 15KG  |  R$ 122,90
+⏳ [PENDENTE] [CÓD: 307] => Salve como: 307.jpg  =>  RACAO BILLI CAT FILHOTE 15KG  |  R$ 146,50
+⏳ [PENDENTE] [CÓD: 308] => Salve como: 308.jpg  =>  RACAO BILLI DOG R PEQUENAS 15KG  |  R$ 122,50
+⏳ [PENDENTE] [CÓD: 309] => Salve como: 309.jpg  =>  RACAO BILLI DOG FILHOTES 15KG  |  R$ 113,50

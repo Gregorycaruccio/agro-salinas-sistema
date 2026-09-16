@@ -1,11 +1,13 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 508.jpg ou 508.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_famil
+📊 Total: 6 produtos (0 com foto, 6 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 227.jpg ou 227.png)
+===============================================================================
 
-- [CÓD: 508] Areia Sanitaria Famil Premium 4kg
-- [CÓD: 228] Ração Famil Cão Filhote 10.1kg
-- [CÓD: 227] Ração Famil Cão Porte Peq 10.1kg
-- [CÓD: 230] Ração Famil Cão Premium Tradicional 15kg
-- [CÓD: 229] Ração Famil Gato Castrado Salmão e Arroz 10.1kg
-- [CÓD: 235] Ração Famil Premium Tradicional 20kg
-- [CÓD: 232] Ração Famil Premium Tradicional 7kg
+⏳ [PENDENTE] [CÓD: 227] => Salve como: 227.jpg  =>  RACAO FAMIL CAO PORTE PEQ 10.1KG  |  R$ 111,00
+⏳ [PENDENTE] [CÓD: 228] => Salve como: 228.jpg  =>  RACAO FAMIL CAO FILHOTE 10.1KG  |  R$ 119,90
+⏳ [PENDENTE] [CÓD: 229] => Salve como: 229.jpg  =>  RACAO FAMIL GATO CASTRADO SALMAO E ARROZ 10.1KG  |  R$ 141,00
+⏳ [PENDENTE] [CÓD: 230] => Salve como: 230.jpg  =>  RACAO FAMIL CAO PREMIUM TRADICIONAL 15KG  |  R$ 127,50
+⏳ [PENDENTE] [CÓD: 232] => Salve como: 232.jpg  =>  RACAO FAMIL PREMIUM TRADICIONAL 7KG  |  R$ 60,00
+⏳ [PENDENTE] [CÓD: 235] => Salve como: 235.jpg  =>  RACAO FAMIL PREMIUM TRADICIONAL 20KG  |  R$ 139,90

@@ -1,17 +1,22 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 750.jpg ou 750.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/areias_silica_outras
+📊 Total: 15 produtos (0 com foto, 15 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 76.jpg ou 76.png)
+===============================================================================
 
-- [CÓD: 750] Areia Gatozim Extra Fina 4kg
-- [CÓD: 138] Areia Sanitaria Bionature Mandioca Perform 4kg
-- [CÓD: 136] Areia Sanitaria Bionature Mandioca Sensitive 2kg
-- [CÓD: 137] Areia Sanitaria Bionature Mandioca Sensitive 4kg
-- [CÓD: 139] Areia Sanitaria Bionature Super Premium 2kg
-- [CÓD: 140] Areia Sanitaria Bionature Super Premium 4kg
-- [CÓD: 730] Areia Sanitaria Gato Gats 4kg
-- [CÓD: 408] Areia Sanitaria Gato Mitzi 12kg
-- [CÓD: 407] Areia Sanitaria Gato Mitzi 4kg
-- [CÓD: 76] Areia Sanitaria Gato Progato 4kg
-- [CÓD: 85] Areia Silica Grossa Gato 1.6kg
-- [CÓD: 86] Areia Silica Grossa Lavanda Gato 1.6kg
-- [CÓD: 87] Areia Silica Micro Gato 1.6kg
+⏳ [PENDENTE] [CÓD: 76] => Salve como: 76.jpg  =>  AREIA SANITARIA GATO PROGATO 4KG  |  R$ 55,90
+⏳ [PENDENTE] [CÓD: 85] => Salve como: 85.jpg  =>  AREIA SILICA GROSSA GATO 1.6KG  |  R$ 31,90
+⏳ [PENDENTE] [CÓD: 86] => Salve como: 86.jpg  =>  AREIA SILICA GROSSA LAVANDA GATO 1.6KG  |  R$ 31,90
+⏳ [PENDENTE] [CÓD: 87] => Salve como: 87.jpg  =>  AREIA SILICA MICRO GATO 1.6KG  |  R$ 31,90
+⏳ [PENDENTE] [CÓD: 136] => Salve como: 136.jpg  =>  AREIA SANITARIA BIONATURE MANDIOCA SENSITIVE 2KG  |  R$ 27,90
+⏳ [PENDENTE] [CÓD: 137] => Salve como: 137.jpg  =>  AREIA SANITARIA BIONATURE MANDIOCA SENSITIVE 4KG  |  R$ 56,00
+⏳ [PENDENTE] [CÓD: 138] => Salve como: 138.jpg  =>  AREIA SANITARIA BIONATURE MANDIOCA PERFORM 4KG  |  R$ 56,00
+⏳ [PENDENTE] [CÓD: 139] => Salve como: 139.jpg  =>  AREIA SANITARIA BIONATURE SUPER PREMIUM 2KG  |  R$ 27,90
+⏳ [PENDENTE] [CÓD: 140] => Salve como: 140.jpg  =>  AREIA SANITARIA BIONATURE SUPER PREMIUM 4KG  |  R$ 56,00
+⏳ [PENDENTE] [CÓD: 407] => Salve como: 407.jpg  =>  AREIA SANITARIA GATO MITZI 4KG  |  R$ 12,60
+⏳ [PENDENTE] [CÓD: 408] => Salve como: 408.jpg  =>  AREIA SANITARIA GATO MITZI 12KG  |  R$ 33,50
+⏳ [PENDENTE] [CÓD: 508] => Salve como: 508.jpg  =>  AREIA SANITARIA FAMIL PREMIUM 4KG  |  R$ 11,50
+⏳ [PENDENTE] [CÓD: 730] => Salve como: 730.jpg  =>  AREIA SANITARIA GATO GATS 4KG  |  R$ 8,90
+⏳ [PENDENTE] [CÓD: 732] => Salve como: 732.jpg  =>  GRANULADO HIGIENICO DE MADEIRA 4KG  |  R$ 15,90
+⏳ [PENDENTE] [CÓD: 750] => Salve como: 750.jpg  =>  AREIA GATOZIM EXTRA FINA 4KG  |  R$ 11,50

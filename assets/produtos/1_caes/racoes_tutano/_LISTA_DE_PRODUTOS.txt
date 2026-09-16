@@ -1,16 +1,19 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 310.jpg ou 310.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_tutano
+📊 Total: 12 produtos (0 com foto, 12 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 14.jpg ou 14.png)
+===============================================================================
 
-- [CÓD: 310] Ração Tutano Adultos Porte Peq 15kg
-- [CÓD: 312] Ração Tutano Cães Melhor Idade 15kg
-- [CÓD: 324] Ração Tutano Cães Melhor Idade 3kg
-- [CÓD: 311] Ração Tutano Cães Sensiveis 10.1kg
-- [CÓD: 323] Ração Tutano Cães Sensiveis 3kg
-- [CÓD: 754] Ração Tutano Cão Porte Grande e Gigante 15kg
-- [CÓD: 315] Ração Tutano Especial Cão 15kg
-- [CÓD: 318] Ração Tutano Filhotes Porte Peq 1kg
-- [CÓD: 319] Ração Tutano Filhotes Porte Peq 3kg
-- [CÓD: 14] Ração Tutano Porte Peq Frango 15kg
-- [CÓD: 316] Ração Tutano Porte Pequeno 1kg
-- [CÓD: 317] Ração Tutano Porte Pequeno Adultos 3kg
+⏳ [PENDENTE] [CÓD: 14] => Salve como: 14.jpg  =>  RACAO TUTANO PORTE PEQ FRANGO 15KG  |  R$ 159,00
+⏳ [PENDENTE] [CÓD: 310] => Salve como: 310.jpg  =>  RACAO TUTANO ADULTOS PORTE PEQ 15KG  |  R$ 174,90
+⏳ [PENDENTE] [CÓD: 311] => Salve como: 311.jpg  =>  RACAO TUTANO CAES SENSIVEIS 10.1KG  |  R$ 149,90
+⏳ [PENDENTE] [CÓD: 312] => Salve como: 312.jpg  =>  RACAO TUTANO CAES MELHOR IDADE 15KG  |  R$ 186,90
+⏳ [PENDENTE] [CÓD: 315] => Salve como: 315.jpg  =>  RACAO TUTANO ESPECIAL CAO 15KG  |  R$ 155,90
+⏳ [PENDENTE] [CÓD: 316] => Salve como: 316.jpg  =>  RACAO TUTANO PORTE PEQUENO 1KG  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 317] => Salve como: 317.jpg  =>  RACAO TUTANO PORTE PEQUENO ADULTOS 3KG  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 318] => Salve como: 318.jpg  =>  RACAO TUTANO FILHOTES PORTE PEQ 1KG  |  R$ 21,00
+⏳ [PENDENTE] [CÓD: 319] => Salve como: 319.jpg  =>  RACAO TUTANO FILHOTES PORTE PEQ 3KG  |  R$ 52,90
+⏳ [PENDENTE] [CÓD: 323] => Salve como: 323.jpg  =>  RACAO TUTANO CAES SENSIVEIS 3KG  |  R$ 68,20
+⏳ [PENDENTE] [CÓD: 324] => Salve como: 324.jpg  =>  RACAO TUTANO CAES MELHOR IDADE 3KG  |  R$ 51,50
+⏳ [PENDENTE] [CÓD: 754] => Salve como: 754.jpg  =>  RACAO TUTANO CAO PORTE GRANDE E GIGANTE 15KG  |  R$ 174,90

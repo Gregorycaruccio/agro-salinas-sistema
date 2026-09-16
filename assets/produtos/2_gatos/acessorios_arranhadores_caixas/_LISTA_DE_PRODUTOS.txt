@@ -1,25 +1,22 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 411.jpg ou 411.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/acessorios_arranhadores_caixas
+📊 Total: 15 produtos (0 com foto, 15 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 340.jpg ou 340.png)
+===============================================================================
 
-- [CÓD: 411] Arranhador Animal Print
-- [CÓD: 370] Arranhador Bangalo Grande Caramelo
-- [CÓD: 371] Arranhador Bangalo Grande Caramelo e Preto
-- [CÓD: 410] Arranhador Canto Sofa Sisal Cinza
-- [CÓD: 369] Arranhador Pata Caramelo e Preto 3 Andares
-- [CÓD: 409] Arranhador Poste Sisal Caramelo
-- [CÓD: 343] Bandeja Sanitaria Gato Azul Pequena
-- [CÓD: 340] Bandeja Sanitaria Gato Grande Azul
-- [CÓD: 341] Bandeja Sanitaria Gato Grande Rosa
-- [CÓD: 342] Bandeja Sanitaria Gato Grande Vermelha
-- [CÓD: 347] Bandeja Sanitaria Gato Preta Pequena
-- [CÓD: 346] Bandeja Sanitaria Gato Rosa Pequena
-- [CÓD: 345] Bandeja Sanitaria Gato Verde Pequena
-- [CÓD: 344] Bandeja Sanitaria Gato Vermelha Pequena
-- [CÓD: 392] Pa Higienica  Inox para Gatos
-- [CÓD: 390] Pa Higienica Gato Color
-- [CÓD: 552] Pa Higienica Gato Plas Pet Azul
-- [CÓD: 555] Pa Higienica Gato Plas Pet Cinza
-- [CÓD: 553] Pa Higienica Gato Plas Pet Gold
-- [CÓD: 551] Pa Higienica Gato Plas Pet Rosa
-- [CÓD: 554] Pa Higienica Gato Plas Pet Vermelha
+⏳ [PENDENTE] [CÓD: 340] => Salve como: 340.jpg  =>  BANDEJA SANITARIA GATO GRANDE AZUL  |  R$ 39,00
+⏳ [PENDENTE] [CÓD: 341] => Salve como: 341.jpg  =>  BANDEJA SANITARIA GATO GRANDE ROSA  |  R$ 39,00
+⏳ [PENDENTE] [CÓD: 342] => Salve como: 342.jpg  =>  BANDEJA SANITARIA GATO GRANDE VERMELHA  |  R$ 39,00
+⏳ [PENDENTE] [CÓD: 343] => Salve como: 343.jpg  =>  BANDEJA SANITARIA GATO AZUL PEQUENA  |  R$ 13,50
+⏳ [PENDENTE] [CÓD: 344] => Salve como: 344.jpg  =>  BANDEJA SANITARIA GATO VERMELHA PEQUENA  |  R$ 13,49
+⏳ [PENDENTE] [CÓD: 345] => Salve como: 345.jpg  =>  BANDEJA SANITARIA GATO VERDE PEQUENA  |  R$ 13,49
+⏳ [PENDENTE] [CÓD: 346] => Salve como: 346.jpg  =>  BANDEJA SANITARIA GATO ROSA PEQUENA  |  R$ 13,49
+⏳ [PENDENTE] [CÓD: 347] => Salve como: 347.jpg  =>  BANDEJA SANITARIA GATO PRETA PEQUENA  |  R$ 13,49
+⏳ [PENDENTE] [CÓD: 348] => Salve como: 348.jpg  =>  BRINQUEDO VARINHA PARA GATO  |  R$ 12,50
+⏳ [PENDENTE] [CÓD: 369] => Salve como: 369.jpg  =>  ARRANHADOR PATA CARAMELO E PRETO 3 ANDARES  |  R$ 225,00
+⏳ [PENDENTE] [CÓD: 370] => Salve como: 370.jpg  =>  ARRANHADOR BANGALO GRANDE CARAMELO  |  R$ 337,80
+⏳ [PENDENTE] [CÓD: 371] => Salve como: 371.jpg  =>  ARRANHADOR BANGALO GRANDE CARAMELO E PRETO  |  R$ 337,80
+⏳ [PENDENTE] [CÓD: 409] => Salve como: 409.jpg  =>  ARRANHADOR POSTE SISAL CARAMELO  |  R$ 92,50
+⏳ [PENDENTE] [CÓD: 410] => Salve como: 410.jpg  =>  ARRANHADOR CANTO SOFA SISAL CINZA  |  R$ 126,50
+⏳ [PENDENTE] [CÓD: 411] => Salve como: 411.jpg  =>  ARRANHADOR ANIMAL PRINT  |  R$ 146,90

@@ -1,10 +1,12 @@
 LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
-📁 Pasta: assets/produtos/1_caes/racoes_brain_plus
-📊 Total: 7 produtos (0 com foto, 7 pendentes)
+📁 Pasta: assets/produtos/1_caes/racoes_forte_brain
+Linha: Forte Brain (Brain Plus, Luxbrain, Famil e Dodi)
+📊 Total: 13 produtos (0 com foto, 13 pendentes)
 -------------------------------------------------------------------------------
 Instrução: Salve a imagem com o CÓDIGO do produto (ex: 226.jpg ou 226.png)
 ===============================================================================
 
+--- BRAIN PLUS & LUXBRAIN ---
 ⏳ [PENDENTE] [CÓD: 226] => Salve como: 226.jpg  =>  RACAO BRAINPLUS CAO PORTE PEQ 10.1KG  |  R$ 147,00
 ⏳ [PENDENTE] [CÓD: 233] => Salve como: 233.jpg  =>  RACAO BRAINPLUS SENIOR10.1KG  |  R$ 158,60
 ⏳ [PENDENTE] [CÓD: 236] => Salve como: 236.jpg  =>  RACAO BRAINPLUS PRIME 15KG  |  R$ 125,00
@@ -12,3 +14,13 @@ Instrução: Salve a imagem com o CÓDIGO do produto (ex: 226.jpg ou 226.png)
 ⏳ [PENDENTE] [CÓD: 238] => Salve como: 238.jpg  =>  RACAO BRAINPLUS PRIME 20KG  |  R$ 152,99
 ⏳ [PENDENTE] [CÓD: 240] => Salve como: 240.jpg  =>  RACAO BRAINPLUS CAO POWER SUPREME 15KG  |  R$ 157,50
 ⏳ [PENDENTE] [CÓD: 241] => Salve como: 241.jpg  =>  RACAO LUXBRAIN CAO ADULTO 25KG  |  R$ 153,00
+
+--- FAMIL CÃES ---
+⏳ [PENDENTE] [CÓD: 227] => Salve como: 227.jpg  =>  RACAO FAMIL CAO PORTE PEQ 10.1KG  |  R$ 111,00
+⏳ [PENDENTE] [CÓD: 228] => Salve como: 228.jpg  =>  RACAO FAMIL CAO FILHOTE 10.1KG  |  R$ 119,90
+⏳ [PENDENTE] [CÓD: 230] => Salve como: 230.jpg  =>  RACAO FAMIL CAO PREMIUM TRADICIONAL 15KG  |  R$ 127,50
+⏳ [PENDENTE] [CÓD: 232] => Salve como: 232.jpg  =>  RACAO FAMIL PREMIUM TRADICIONAL 7KG  |  R$ 60,00
+⏳ [PENDENTE] [CÓD: 235] => Salve como: 235.jpg  =>  RACAO FAMIL PREMIUM TRADICIONAL 20KG  |  R$ 139,90
+
+--- DODI CÃES ---
+⏳ [PENDENTE] [CÓD: 223] => Salve como: 223.jpg  =>  RACAO DODI CAO 5KG  |  R$ 26,00

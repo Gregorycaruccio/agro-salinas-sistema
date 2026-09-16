@@ -1,170 +1,164 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 588.jpg ou 588.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/5_jardim_campo_casa/utilidades_campo_erva_carvao
+📊 Total: 157 produtos (0 com foto, 157 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 1.jpg ou 1.png)
+===============================================================================
 
-- [CÓD: 588] Alface Crespa Unidade
-- [CÓD: 516] Armadilha Adesiva Gel Pega Barata 1 un
-- [CÓD: 668] Arruda Mudas Unidade
-- [CÓD: 378] Bandeja Sanitaria 3x1 Azul
-- [CÓD: 377] Bandeja Sanitaria 3x1 Rosa
-- [CÓD: 376] Bandeja Sanitaria 3x1 Vermelha
-- [CÓD: 386] Bolinha Colorida com Guizo e Pena
-- [CÓD: 337] Bolinha/ratinho
-- [CÓD: 688] Calcario kg
-- [CÓD: 431] Cartela com 2 Ratinhos + 2 Bolinhas com Guizo
-- [CÓD: 433] Cartela com 2 Ratinhos e 1 Bolinha com Guizo
-- [CÓD: 430] Cartela com 3 Ratinhos
-- [CÓD: 570] Carvao Vegetal Especial de Acacia 10kg
-- [CÓD: 509] Carvao Vegetal Especial de Acacia 3kg
-- [CÓD: 510] Carvao Vegetal Especial de Acacia 4kg
-- [CÓD: 539] Carvao Vegetal Especial de Acacia 5kg
-- [CÓD: 540] Carvao Vegetal Especial de Acacia 8kg
-- [CÓD: 498] Casca de Pinus Decorativa M 700g
-- [CÓD: 620] Casca de Soja Grauda 20kg
-- [CÓD: 590] Cebolinha Tempero Unidade
-- [CÓD: 613] Chas Mudas Unidade
-- [CÓD: 592] Couve Manteiga Unidade
-- [CÓD: 506] Erva Mate Amizade Tradicional 1kg
-- [CÓD: 505] Erva Mate Moida Grossa Seiva do Mate 500g
-- [CÓD: 504] Erva Mate Seiva do Chimarrao 1kg
-- [CÓD: 507] Erva Mate Terere Limao e Menta 500g
-- [CÓD: 563] Fertilizante Mineral Simples Ureia 150g
-- [CÓD: 564] Fertilizante Mineral Simples Ureia 800g
-- [CÓD: 462] Floreira Grande 60cm Preta
-- [CÓD: 612] Flores Mudas Unidade
-- [CÓD: 733] Formicida em Po Citromax 250g
-- [CÓD: 520] Formicida Gel Imbativel 10g
-- [CÓD: 523] Formicida Grao Verde Granulada 50g
-- [CÓD: 630] Formicida Kelldrin Granulada 50g
-- [CÓD: 594] Frutiferas Pitanga Unidade
-- [CÓD: 722] Frutiferas Unidade com Fruta ( Limao e Bergamoteiras)
-- [CÓD: 593] Frutiferas Unidade Sem Fruta ( Limao e Bergamoteiras)
-- [CÓD: 191] Gaiola Madeira Fibra Numero 3 Malha Fina
-- [CÓD: 192] Gaiola Madeira Fibra Numero 5 Malha Fina
-- [CÓD: 146] Gaiola Oval Prata
-- [CÓD: 148] Gaiola Redonda Ferro Prata
-- [CÓD: 104] Gp Adulto Choice Carne e Arroz 20kg
-- [CÓD: 100] Gp Adulto Porte Mini Carne e Arroz 10.1kg
-- [CÓD: 102] Gp Adulto Porte Mini Frango e Arroz 10.1kg
-- [CÓD: 103] Gp Adulto Porte Mini Ovelha 10.1kg
-- [CÓD: 101] Gp Adulto R Med e Grandes Carne a Arroz 10.1kg
-- [CÓD: 99] Gp Filhote R Med e Grandes Carne e Arroz 15kg
-- [CÓD: 645] Insetcida Liquido Protege 60ml
-- [CÓD: 644] Insetcida Liquido Soberano 60ml
-- [CÓD: 525] Jimo Gas Dedetizador com 2un 35g Cada
-- [CÓD: 518] Jimo Incolor Cupim Aerosol 400ml
-- [CÓD: 519] Jimo Mata Barata Aerosol 300 ml
-- [CÓD: 529] K-othrine 30ml
-- [CÓD: 487] Kit Anti Dengue Ceramica com Haste n 01
-- [CÓD: 488] Kit Anti Dengue Preto com Haste n 01
-- [CÓD: 632] Kit Jardinagem
-- [CÓD: 526] Lambda Hidrosoluvel 25g
-- [CÓD: 393] Luva Removedora de Pelos Azul un
-- [CÓD: 731] Mata Mato Glifosato 100ml
-- [CÓD: 135] Mata Mato Glifosato 1l
-- [CÓD: 622] Mata Moscas Atratex 25g un
-- [CÓD: 616] Matt Pulgoes 500ml
-- [CÓD: 679] Matt Roseta Tiririca 8x10ml
-- [CÓD: 123] Milho Grao Inteiro 25 kg
-- [CÓD: 124] Milho Grao Vicato 5kg
-- [CÓD: 126] Milho Integral Moido 25kg
-- [CÓD: 125] Milho Moido Vicato 5kg
-- [CÓD: 572] Milho Quebrado Fino e Ventilado 25kg
-- [CÓD: 587] Milho Quebrado Fino e Ventilado Ferreira 25kg
-- [CÓD: 614] Morangunhos Muda Unidade
-- [CÓD: 517] Nitrocid / Neocid Pulgas e Formigas 50g
-- [CÓD: 617] Oleo de Neem 8x10ml
-- [CÓD: 689] Pedra Seixo Bege n 1
-- [CÓD: 690] Pedra Seixo Branca n 2
-- [CÓD: 44] Petisco Friskies Carne Cordeiro e Suino 40g
-- [CÓD: 43] Petisco Friskies Frango Figado e Peru 40g
-- [CÓD: 42] Petisco Friskies Salmão Camarao e Atum 40g
-- [CÓD: 403] Petisco Palito Colorido 1kg
-- [CÓD: 404] Petisco Palito Natural 1kg
-- [CÓD: 196] Porta Ovo
-- [CÓD: 199] Porta Vitamina Medio Cristal com Preto
-- [CÓD: 565] Qualiday Cat Castrado Carne 10.1kg
-- [CÓD: 566] Qualiday Cat Castrado Salmão 10.1kg
-- [CÓD: 383] Rasqueadeira Grande Cabo Plastico
-- [CÓD: 382] Rasqueadeira Media Cabo Plastico
-- [CÓD: 615] Raticida Bloco 20g Kellmat Unidade
-- [CÓD: 522] Raticida Bloco Soft Ideal 200g
-- [CÓD: 734] Raticida Cereais Citromax 25g Unidade
-- [CÓD: 550] Raticida Cola Rato Kellmat Unidade
-- [CÓD: 460] Regador 10l
-- [CÓD: 461] Regador 5l
-- [CÓD: 642] Repelente e Desalojante Pronto Uso 500ml
-- [CÓD: 585] Rodo Grande
-- [CÓD: 586] Rodo Pequeno
-- [CÓD: 701] Roupa Ovelha Tamanho g
-- [CÓD: 702] Roupa Ovelha Tamanho Gg
-- [CÓD: 700] Roupa Ovelha Tamanho M
-- [CÓD: 699] Roupa Ovelha Tamanho P
-- [CÓD: 691] Roupa Soft Tamanho Exgg 80cm
-- [CÓD: 694] Roupa Soft Tamanho g 43cm
-- [CÓD: 693] Roupa Soft Tamanho Gg 46cm
-- [CÓD: 698] Roupa Soft Tamanho M 35cm
-- [CÓD: 696] Roupa Soft Tamanho P 29cm
-- [CÓD: 697] Roupa Soft Tamanho Pp 23cm
-- [CÓD: 695] Roupa Soft Tamanho Xg 50cm
-- [CÓD: 692] Roupa Soft Tamanho Xgg 70cm
-- [CÓD: 368] Rranhador Pata  Caramelo 3 Andares
-- [CÓD: 667] Rucula Unidade
-- [CÓD: 1] Sache Carne 100g
-- [CÓD: 715] Sache Friskies Atum Ao Molho 85g
-- [CÓD: 38] Sache Friskies Carne Ao Molho 85g
-- [CÓD: 717] Sache Friskies Cordeiro Ao Molho 85g
-- [CÓD: 714] Sache Friskies Filhote Carne Ao Molho 85g
-- [CÓD: 39] Sache Friskies Frango Ao Molho 85g
-- [CÓD: 719] Sache Friskies Mar de Sabores 85g
-- [CÓD: 718] Sache Friskies Mix de Carnes Ao Molho 85g
-- [CÓD: 716] Sache Friskies Peixe Branco Ao Molho 85g
-- [CÓD: 41] Sache Friskies Peru Ao Molho 85g
-- [CÓD: 40] Sache Friskies Salmão Ao Molho 85g
-- [CÓD: 673] Sache Kitekat Carne 70g
-- [CÓD: 245] Sache Royal Mini Adulto 85g
-- [CÓD: 244] Sache Royal Mini Puppy 85g
-- [CÓD: 635] Saia Alta de Voal n 3
-- [CÓD: 636] Saia Alta de Voal n 4
-- [CÓD: 637] Saia Alta de Voal n 5
-- [CÓD: 128] Sal Mineral Bovino 5kg
-- [CÓD: 113] Sal Mineral Cavalo Tropa 25kg
-- [CÓD: 112] Sal Mineral Cavalo Ultra 10kg
-- [CÓD: 591] Salsa Unidade
-- [CÓD: 328] Shampo Animalissimo Cheiro de Bebe 500ml
-- [CÓD: 329] Shampo Animalissimo Coco e Caramelo 500ml
-- [CÓD: 330] Shampo Animalissimo Maca Verde 500ml
-- [CÓD: 379] Shampo Condicionador Matt 6x1 500ml
-- [CÓD: 655] Shampo Dugs Anti Pulgas 500ml
-- [CÓD: 9] Shampo e Condicionador Clorexidina 500ml
-- [CÓD: 657] Shampo Matacura Antisseptico 200ml
-- [CÓD: 658] Shampo Matacura Hipoalergenico 200ml
-- [CÓD: 656] Shampo Matacura Sarnicida e Anti Pulgas 200ml
-- [CÓD: 332] Shampo Petclean 5 em 1 700ml
-- [CÓD: 331] Shampo Petclean Neutro 700ml
-- [CÓD: 47] Special Adulto Carne e Frango15kg
-- [CÓD: 48] Special Carne e Frango 20kg
-- [CÓD: 569] Special Croc Castrado Frango10.1 kg
-- [CÓD: 496] Substrato Vegetal Pcte 1.6kg
-- [CÓD: 464] Suporte de Parede em a Medio
-- [CÓD: 465] Suporte de Parede Luxo Medio
-- [CÓD: 626] Supressor de Cio Oral 12 Comp
-- [CÓD: 713] Talfon Po 100g
-- [CÓD: 89] Tapete Hig Carvao Ativado 60x60 7 un
-- [CÓD: 373] Tapete Hig Durapets com 7 un
-- [CÓD: 374] Tapete Hig Good Pad 60x60 com 30 un
-- [CÓD: 375] Tapete Hig Ultrapas com 30 un
-- [CÓD: 512] Tapete Higienico Lavanda 70x60 30 un
-- [CÓD: 511] Tapete Higienico Lavanda 70x60 7 un
-- [CÓD: 678] Tesoura para Pet Porte Pequeno Unidade
-- [CÓD: 110] Tree Cats Original Castrados 10.1kg
-- [CÓD: 681] Vacina Anti Cio Inibidex Unidade un
-- [CÓD: 680] Vacina Anticion Injetavel Unidade
-- [CÓD: 582] Vassoura Nylon Grande com Capa Color
-- [CÓD: 584] Vassoura Nylon Grande e Larga para Calçada Sem Capa Color
-- [CÓD: 583] Vassoura Nylon Media Sem Capa Color
-- [CÓD: 664] Vermicanis 3mg Caixa com 4comp
-- [CÓD: 665] Vermicanis 6mg Caixa com 4comp
-- [CÓD: 149] Viveiro Oval Fixo Ferro Prata
-- [CÓD: 153] Viveiro Popular Prata com Pes
-- [CÓD: 384] Xixi Pode/nao Pode Casadinho
+⏳ [PENDENTE] [CÓD: 1] => Salve como: 1.jpg  =>  SACHE CARNE 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 9] => Salve como: 9.jpg  =>  SHAMPO E CONDICIONADOR CLOREXIDINA 500ML  |  R$ 26,50
+⏳ [PENDENTE] [CÓD: 10] => Salve como: 10.jpg  =>  RACAO A GRANEL  |  R$ 0,00
+⏳ [PENDENTE] [CÓD: 38] => Salve como: 38.jpg  =>  SACHE FRISKIES CARNE AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 39] => Salve como: 39.jpg  =>  SACHE FRISKIES FRANGO AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 40] => Salve como: 40.jpg  =>  SACHE FRISKIES SALMAO AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 41] => Salve como: 41.jpg  =>  SACHE FRISKIES PERU AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 42] => Salve como: 42.jpg  =>  PETISCO FRISKIES SALMAO CAMARAO E ATUM 40G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 43] => Salve como: 43.jpg  =>  PETISCO FRISKIES FRANGO FIGADO E PERU 40G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 44] => Salve como: 44.jpg  =>  PETISCO FRISKIES CARNE CORDEIRO E SUINO 40G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 47] => Salve como: 47.jpg  =>  SPECIAL ADULTO CARNE E FRANGO15KG  |  R$ 160,00
+⏳ [PENDENTE] [CÓD: 48] => Salve como: 48.jpg  =>  SPECIAL CARNE E FRANGO 20KG  |  R$ 205,00
+⏳ [PENDENTE] [CÓD: 89] => Salve como: 89.jpg  =>  TAPETE HIG CARVAO ATIVADO 60X60 7 UN  |  R$ 17,50
+⏳ [PENDENTE] [CÓD: 99] => Salve como: 99.jpg  =>  GP FILHOTE R MED E GRANDES CARNE E ARROZ 15KG  |  R$ 183,80
+⏳ [PENDENTE] [CÓD: 100] => Salve como: 100.jpg  =>  GP ADULTO PORTE MINI CARNE E ARROZ 10.1KG  |  R$ 137,50
+⏳ [PENDENTE] [CÓD: 101] => Salve como: 101.jpg  =>  GP ADULTO R MED E GRANDES CARNE A ARROZ 10.1KG  |  R$ 119,80
+⏳ [PENDENTE] [CÓD: 102] => Salve como: 102.jpg  =>  GP ADULTO PORTE MINI FRANGO E ARROZ 10.1KG  |  R$ 137,50
+⏳ [PENDENTE] [CÓD: 103] => Salve como: 103.jpg  =>  GP ADULTO PORTE MINI OVELHA 10.1KG  |  R$ 159,70
+⏳ [PENDENTE] [CÓD: 104] => Salve como: 104.jpg  =>  GP ADULTO CHOICE CARNE E ARROZ 20KG  |  R$ 205,90
+⏳ [PENDENTE] [CÓD: 110] => Salve como: 110.jpg  =>  TREE CATS ORIGINAL CASTRADOS 10.1KG  |  R$ 156,70
+⏳ [PENDENTE] [CÓD: 112] => Salve como: 112.jpg  =>  SAL MINERAL CAVALO ULTRA 10KG  |  R$ 87,00
+⏳ [PENDENTE] [CÓD: 113] => Salve como: 113.jpg  =>  SAL MINERAL CAVALO TROPA 25KG  |  R$ 149,00
+⏳ [PENDENTE] [CÓD: 123] => Salve como: 123.jpg  =>  MILHO GRAO INTEIRO 25 KG  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 124] => Salve como: 124.jpg  =>  MILHO GRAO VICATO 5KG  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 125] => Salve como: 125.jpg  =>  MILHO MOIDO VICATO 5KG  |  R$ 12,60
+⏳ [PENDENTE] [CÓD: 126] => Salve como: 126.jpg  =>  MILHO INTEGRAL MOIDO 25KG  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 128] => Salve como: 128.jpg  =>  SAL MINERAL BOVINO 5KG  |  R$ 22,90
+⏳ [PENDENTE] [CÓD: 135] => Salve como: 135.jpg  =>  MATA MATO GLIFOSATO 1L  |  R$ 28,50
+⏳ [PENDENTE] [CÓD: 196] => Salve como: 196.jpg  =>  PORTA OVO  |  R$ 2,50
+⏳ [PENDENTE] [CÓD: 199] => Salve como: 199.jpg  =>  PORTA VITAMINA MEDIO CRISTAL COM PRETO  |  R$ 4,00
+⏳ [PENDENTE] [CÓD: 244] => Salve como: 244.jpg  =>  SACHE ROYAL MINI PUPPY 85G  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 245] => Salve como: 245.jpg  =>  SACHE ROYAL MINI ADULTO 85G  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 328] => Salve como: 328.jpg  =>  SHAMPO ANIMALISSIMO CHEIRO DE BEBE 500ML  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 329] => Salve como: 329.jpg  =>  SHAMPO ANIMALISSIMO COCO E CARAMELO 500ML  |  R$ 18,50
+⏳ [PENDENTE] [CÓD: 330] => Salve como: 330.jpg  =>  SHAMPO ANIMALISSIMO MACA VERDE 500ML  |  R$ 18,50
+⏳ [PENDENTE] [CÓD: 331] => Salve como: 331.jpg  =>  SHAMPO PETCLEAN NEUTRO 700ML  |  R$ 13,90
+⏳ [PENDENTE] [CÓD: 332] => Salve como: 332.jpg  =>  SHAMPO PETCLEAN 5 EM 1 700ML  |  R$ 13,90
+⏳ [PENDENTE] [CÓD: 337] => Salve como: 337.jpg  =>  BOLINHA/RATINHO  |  R$ 3,75
+⏳ [PENDENTE] [CÓD: 368] => Salve como: 368.jpg  =>  RRANHADOR PATA CARAMELO 3 ANDARES  |  R$ 225,00
+⏳ [PENDENTE] [CÓD: 373] => Salve como: 373.jpg  =>  TAPETE HIG DURAPETS COM 7 UN  |  R$ 18,50
+⏳ [PENDENTE] [CÓD: 374] => Salve como: 374.jpg  =>  TAPETE HIG GOOD PAD 60X60 COM 30 UN  |  R$ 43,50
+⏳ [PENDENTE] [CÓD: 375] => Salve como: 375.jpg  =>  TAPETE HIG ULTRAPAS COM 30 UN  |  R$ 76,90
+⏳ [PENDENTE] [CÓD: 376] => Salve como: 376.jpg  =>  BANDEJA SANITARIA 3X1 VERMELHA  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 377] => Salve como: 377.jpg  =>  BANDEJA SANITARIA 3X1 ROSA  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 378] => Salve como: 378.jpg  =>  BANDEJA SANITARIA 3X1 AZUL  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 379] => Salve como: 379.jpg  =>  SHAMPO CONDICIONADOR MATT 6X1 500ML  |  R$ 19,00
+⏳ [PENDENTE] [CÓD: 382] => Salve como: 382.jpg  =>  RASQUEADEIRA MEDIA CABO PLASTICO  |  R$ 16,50
+⏳ [PENDENTE] [CÓD: 383] => Salve como: 383.jpg  =>  RASQUEADEIRA GRANDE CABO PLASTICO  |  R$ 17,60
+⏳ [PENDENTE] [CÓD: 384] => Salve como: 384.jpg  =>  XIXI PODE/NAO PODE CASADINHO  |  R$ 17,80
+⏳ [PENDENTE] [CÓD: 386] => Salve como: 386.jpg  =>  BOLINHA COLORIDA COM GUIZO E PENA  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 393] => Salve como: 393.jpg  =>  LUVA REMOVEDORA DE PELOS AZUL UN  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 403] => Salve como: 403.jpg  =>  PETISCO PALITO COLORIDO 1KG  |  R$ 29,90
+⏳ [PENDENTE] [CÓD: 404] => Salve como: 404.jpg  =>  PETISCO PALITO NATURAL 1KG  |  R$ 29,90
+⏳ [PENDENTE] [CÓD: 430] => Salve como: 430.jpg  =>  CARTELA COM 3 RATINHOS  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 431] => Salve como: 431.jpg  =>  CARTELA COM 2 RATINHOS + 2 BOLINHAS COM GUIZO  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 433] => Salve como: 433.jpg  =>  CARTELA COM 2 RATINHOS E 1 BOLINHA COM GUIZO  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 462] => Salve como: 462.jpg  =>  FLOREIRA GRANDE 60CM PRETA  |  R$ 23,00
+⏳ [PENDENTE] [CÓD: 464] => Salve como: 464.jpg  =>  SUPORTE DE PAREDE EM A MEDIO  |  R$ 11,60
+⏳ [PENDENTE] [CÓD: 465] => Salve como: 465.jpg  =>  SUPORTE DE PAREDE LUXO MEDIO  |  R$ 12,70
+⏳ [PENDENTE] [CÓD: 487] => Salve como: 487.jpg  =>  KIT ANTI DENGUE CERAMICA COM HASTE N 01  |  R$ 19,00
+⏳ [PENDENTE] [CÓD: 488] => Salve como: 488.jpg  =>  KIT ANTI DENGUE PRETO COM HASTE N 01  |  R$ 19,00
+⏳ [PENDENTE] [CÓD: 498] => Salve como: 498.jpg  =>  CASCA DE PINUS DECORATIVA M 700G  |  R$ 10,90
+⏳ [PENDENTE] [CÓD: 503] => Salve como: 503.jpg  =>  DIVERSOS  |  R$ 0,00
+⏳ [PENDENTE] [CÓD: 504] => Salve como: 504.jpg  =>  ERVA MATE SEIVA DO CHIMARRAO 1KG  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 505] => Salve como: 505.jpg  =>  ERVA MATE MOIDA GROSSA SEIVA DO MATE 500G  |  R$ 11,00
+⏳ [PENDENTE] [CÓD: 506] => Salve como: 506.jpg  =>  ERVA MATE AMIZADE TRADICIONAL 1KG  |  R$ 14,50
+⏳ [PENDENTE] [CÓD: 507] => Salve como: 507.jpg  =>  ERVA MATE TERERE LIMAO E MENTA 500G  |  R$ 14,50
+⏳ [PENDENTE] [CÓD: 509] => Salve como: 509.jpg  =>  CARVAO VEGETAL ESPECIAL DE ACACIA 3KG  |  R$ 17,50
+⏳ [PENDENTE] [CÓD: 510] => Salve como: 510.jpg  =>  CARVAO VEGETAL ESPECIAL DE ACACIA 4KG  |  R$ 22,50
+⏳ [PENDENTE] [CÓD: 511] => Salve como: 511.jpg  =>  TAPETE HIGIENICO LAVANDA 70X60 7 UN  |  R$ 14,99
+⏳ [PENDENTE] [CÓD: 512] => Salve como: 512.jpg  =>  TAPETE HIGIENICO LAVANDA 70X60 30 UN  |  R$ 65,00
+⏳ [PENDENTE] [CÓD: 516] => Salve como: 516.jpg  =>  ARMADILHA ADESIVA GEL PEGA BARATA 1 UN  |  R$ 5,50
+⏳ [PENDENTE] [CÓD: 517] => Salve como: 517.jpg  =>  NITROCID / NEOCID PULGAS E FORMIGAS 50G  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 518] => Salve como: 518.jpg  =>  JIMO INCOLOR CUPIM AEROSOL 400ML  |  R$ 42,00
+⏳ [PENDENTE] [CÓD: 519] => Salve como: 519.jpg  =>  JIMO MATA BARATA AEROSOL 300 ML  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 520] => Salve como: 520.jpg  =>  FORMICIDA GEL IMBATIVEL 10G  |  R$ 13,50
+⏳ [PENDENTE] [CÓD: 522] => Salve como: 522.jpg  =>  RATICIDA BLOCO SOFT IDEAL 200G  |  R$ 1,00
+⏳ [PENDENTE] [CÓD: 523] => Salve como: 523.jpg  =>  FORMICIDA GRAO VERDE GRANULADA 50G  |  R$ 2,00
+⏳ [PENDENTE] [CÓD: 525] => Salve como: 525.jpg  =>  JIMO GAS DEDETIZADOR COM 2UN 35G CADA  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 526] => Salve como: 526.jpg  =>  LAMBDA HIDROSOLUVEL 25G  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 529] => Salve como: 529.jpg  =>  K-OTHRINE 30ML  |  R$ 17,50
+⏳ [PENDENTE] [CÓD: 539] => Salve como: 539.jpg  =>  CARVAO VEGETAL ESPECIAL DE ACACIA 5KG  |  R$ 26,50
+⏳ [PENDENTE] [CÓD: 540] => Salve como: 540.jpg  =>  CARVAO VEGETAL ESPECIAL DE ACACIA 8KG  |  R$ 40,00
+⏳ [PENDENTE] [CÓD: 550] => Salve como: 550.jpg  =>  RATICIDA COLA RATO KELLMAT UNIDADE  |  R$ 6,99
+⏳ [PENDENTE] [CÓD: 565] => Salve como: 565.jpg  =>  QUALIDAY CAT CASTRADO CARNE 10.1KG  |  R$ 168,90
+⏳ [PENDENTE] [CÓD: 566] => Salve como: 566.jpg  =>  QUALIDAY CAT CASTRADO SALMAO 10.1KG  |  R$ 168,90
+⏳ [PENDENTE] [CÓD: 569] => Salve como: 569.jpg  =>  SPECIAL CROC CASTRADO FRANGO10.1 KG  |  R$ 118,90
+⏳ [PENDENTE] [CÓD: 570] => Salve como: 570.jpg  =>  CARVAO VEGETAL ESPECIAL DE ACACIA 10KG  |  R$ 48,00
+⏳ [PENDENTE] [CÓD: 572] => Salve como: 572.jpg  =>  MILHO QUEBRADO FINO E VENTILADO 25KG  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 582] => Salve como: 582.jpg  =>  VASSOURA NYLON GRANDE COM CAPA COLOR  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 583] => Salve como: 583.jpg  =>  VASSOURA NYLON MEDIA SEM CAPA COLOR  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 584] => Salve como: 584.jpg  =>  VASSOURA NYLON GRANDE E LARGA PARA CALÇADA SEM CAPA COLOR  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 585] => Salve como: 585.jpg  =>  RODO GRANDE  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 586] => Salve como: 586.jpg  =>  RODO PEQUENO  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 587] => Salve como: 587.jpg  =>  MILHO QUEBRADO FINO E VENTILADO FERREIRA 25KG  |  R$ 56,70
+⏳ [PENDENTE] [CÓD: 588] => Salve como: 588.jpg  =>  ALFACE CRESPA UNIDADE  |  R$ 0,40
+⏳ [PENDENTE] [CÓD: 590] => Salve como: 590.jpg  =>  CEBOLINHA TEMPERO UNIDADE  |  R$ 0,40
+⏳ [PENDENTE] [CÓD: 591] => Salve como: 591.jpg  =>  SALSA UNIDADE  |  R$ 0,40
+⏳ [PENDENTE] [CÓD: 592] => Salve como: 592.jpg  =>  COUVE MANTEIGA UNIDADE  |  R$ 0,35
+⏳ [PENDENTE] [CÓD: 593] => Salve como: 593.jpg  =>  FRUTIFERAS UNIDADE SEM FRUTA ( LIMAO E BERGAMOTEIRAS)  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 594] => Salve como: 594.jpg  =>  FRUTIFERAS PITANGA UNIDADE  |  R$ 59,90
+⏳ [PENDENTE] [CÓD: 612] => Salve como: 612.jpg  =>  FLORES MUDAS UNIDADE  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 613] => Salve como: 613.jpg  =>  CHAS MUDAS UNIDADE  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 614] => Salve como: 614.jpg  =>  MORANGUNHOS MUDA UNIDADE  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 615] => Salve como: 615.jpg  =>  RATICIDA BLOCO 20G KELLMAT UNIDADE  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 616] => Salve como: 616.jpg  =>  MATT PULGOES 500ML  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 617] => Salve como: 617.jpg  =>  OLEO DE NEEM 8X10ML  |  R$ 39,90
+⏳ [PENDENTE] [CÓD: 620] => Salve como: 620.jpg  =>  CASCA DE SOJA GRAUDA 20KG  |  R$ 59,90
+⏳ [PENDENTE] [CÓD: 622] => Salve como: 622.jpg  =>  MATA MOSCAS ATRATEX 25G UN  |  R$ 4,00
+⏳ [PENDENTE] [CÓD: 626] => Salve como: 626.jpg  =>  SUPRESSOR DE CIO ORAL 12 COMP  |  R$ 73,90
+⏳ [PENDENTE] [CÓD: 630] => Salve como: 630.jpg  =>  FORMICIDA KELLDRIN GRANULADA 50G  |  R$ 1,50
+⏳ [PENDENTE] [CÓD: 632] => Salve como: 632.jpg  =>  KIT JARDINAGEM  |  R$ 25,50
+⏳ [PENDENTE] [CÓD: 635] => Salve como: 635.jpg  =>  SAIA ALTA DE VOAL N 3  |  R$ 23,50
+⏳ [PENDENTE] [CÓD: 636] => Salve como: 636.jpg  =>  SAIA ALTA DE VOAL N 4  |  R$ 26,70
+⏳ [PENDENTE] [CÓD: 637] => Salve como: 637.jpg  =>  SAIA ALTA DE VOAL N 5  |  R$ 27,50
+⏳ [PENDENTE] [CÓD: 642] => Salve como: 642.jpg  =>  REPELENTE E DESALOJANTE PRONTO USO 500ML  |  R$ 59,90
+⏳ [PENDENTE] [CÓD: 644] => Salve como: 644.jpg  =>  INSETCIDA LIQUIDO SOBERANO 60ML  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 645] => Salve como: 645.jpg  =>  INSETCIDA LIQUIDO PROTEGE 60ML  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 655] => Salve como: 655.jpg  =>  SHAMPO DUGS ANTI PULGAS 500ML  |  R$ 17,50
+⏳ [PENDENTE] [CÓD: 656] => Salve como: 656.jpg  =>  SHAMPO MATACURA SARNICIDA E ANTI PULGAS 200ML  |  R$ 22,50
+⏳ [PENDENTE] [CÓD: 657] => Salve como: 657.jpg  =>  SHAMPO MATACURA ANTISSePTICO 200ML  |  R$ 20,50
+⏳ [PENDENTE] [CÓD: 658] => Salve como: 658.jpg  =>  SHAMPO MATACURA HIPOALERGENICO 200ML  |  R$ 20,50
+⏳ [PENDENTE] [CÓD: 664] => Salve como: 664.jpg  =>  VERMICANIS 3MG CAIXA COM 4COMP  |  R$ 14,99
+⏳ [PENDENTE] [CÓD: 665] => Salve como: 665.jpg  =>  VERMICANIS 6MG CAIXA COM 4COMP  |  R$ 16,99
+⏳ [PENDENTE] [CÓD: 667] => Salve como: 667.jpg  =>  RUCULA UNIDADE  |  R$ 0,35
+⏳ [PENDENTE] [CÓD: 668] => Salve como: 668.jpg  =>  ARRUDA MUDAS UNIDADE  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 673] => Salve como: 673.jpg  =>  SACHE KITEKAT CARNE 70G  |  R$ 2,50
+⏳ [PENDENTE] [CÓD: 678] => Salve como: 678.jpg  =>  TESOURA PARA PET PORTE PEQUENO UNIDADE  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 679] => Salve como: 679.jpg  =>  MATT ROSETA TIRIRICA 8X10ML  |  R$ 22,00
+⏳ [PENDENTE] [CÓD: 680] => Salve como: 680.jpg  =>  VACINA ANTICION INJETAVEL UNIDADE  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 681] => Salve como: 681.jpg  =>  VACINA ANTI CIO INIBIDEX UNIDADE UN  |  R$ 7,80
+⏳ [PENDENTE] [CÓD: 688] => Salve como: 688.jpg  =>  CALCARIO KG  |  R$ 8,00
+⏳ [PENDENTE] [CÓD: 689] => Salve como: 689.jpg  =>  PEDRA SEIXO BEGE N 1  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 690] => Salve como: 690.jpg  =>  PEDRA SEIXO BRANCA N 2  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 691] => Salve como: 691.jpg  =>  ROUPA SOFT TAMANHO EXGG 80CM  |  R$ 50,00
+⏳ [PENDENTE] [CÓD: 692] => Salve como: 692.jpg  =>  ROUPA SOFT TAMANHO XGG 70CM  |  R$ 45,00
+⏳ [PENDENTE] [CÓD: 693] => Salve como: 693.jpg  =>  ROUPA SOFT TAMANHO GG 46CM  |  R$ 33,00
+⏳ [PENDENTE] [CÓD: 694] => Salve como: 694.jpg  =>  ROUPA SOFT TAMANHO G 43CM  |  R$ 29,50
+⏳ [PENDENTE] [CÓD: 695] => Salve como: 695.jpg  =>  ROUPA SOFT TAMANHO XG 50CM  |  R$ 38,50
+⏳ [PENDENTE] [CÓD: 696] => Salve como: 696.jpg  =>  ROUPA SOFT TAMANHO P 29CM  |  R$ 19,99
+⏳ [PENDENTE] [CÓD: 697] => Salve como: 697.jpg  =>  ROUPA SOFT TAMANHO PP 23CM  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 698] => Salve como: 698.jpg  =>  ROUPA SOFT TAMANHO M 35CM  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 699] => Salve como: 699.jpg  =>  ROUPA OVELHA TAMANHO P  |  R$ 48,00
+⏳ [PENDENTE] [CÓD: 700] => Salve como: 700.jpg  =>  ROUPA OVELHA TAMANHO M  |  R$ 54,90
+⏳ [PENDENTE] [CÓD: 701] => Salve como: 701.jpg  =>  ROUPA OVELHA TAMANHO G  |  R$ 59,90
+⏳ [PENDENTE] [CÓD: 702] => Salve como: 702.jpg  =>  ROUPA OVELHA TAMANHO GG  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 713] => Salve como: 713.jpg  =>  TALFON PO 100G  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 714] => Salve como: 714.jpg  =>  SACHE FRISKIES FILHOTE CARNE AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 715] => Salve como: 715.jpg  =>  SACHE FRISKIES ATUM AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 716] => Salve como: 716.jpg  =>  SACHE FRISKIES PEIXE BRANCO AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 717] => Salve como: 717.jpg  =>  SACHE FRISKIES CORDEIRO AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 718] => Salve como: 718.jpg  =>  SACHE FRISKIES MIX DE CARNES AO MOLHO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 719] => Salve como: 719.jpg  =>  SACHE FRISKIES MAR DE SABORES 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 722] => Salve como: 722.jpg  =>  FRUTIFERAS UNIDADE COM FRUTA ( LIMAO E BERGAMOTEIRAS)  |  R$ 89,90
+⏳ [PENDENTE] [CÓD: 731] => Salve como: 731.jpg  =>  MATA MATO GLIFOSATO 100ML  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 733] => Salve como: 733.jpg  =>  FORMICIDA EM PO CITROMAX 250G  |  R$ 6,00
+⏳ [PENDENTE] [CÓD: 734] => Salve como: 734.jpg  =>  RATICIDA CEREAIS CITROMAX 25G UNIDADE  |  R$ 2,50

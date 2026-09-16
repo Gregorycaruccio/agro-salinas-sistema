@@ -1,10 +1,13 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 648.jpg ou 648.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_granplus
+📊 Total: 6 produtos (0 com foto, 6 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 92.jpg ou 92.png)
+===============================================================================
 
-- [CÓD: 648] Sache Gran Plus Gato Atum 85g
-- [CÓD: 647] Sache Gran Plus Gato Carne 85g
-- [CÓD: 646] Sache Gran Plus Gato Castrado Frango 85g
-- [CÓD: 649] Sache Gran Plus Gato Castrado Frango e Salmão 85g
-- [CÓD: 92] Sache Gran Plus Gato Filhote Frango 85g
-- [CÓD: 93] Sache Gran Plus Gato Trato Urinario Frango 85g
+⏳ [PENDENTE] [CÓD: 92] => Salve como: 92.jpg  =>  SACHE GRAN PLUS GATO FILHOTE FRANGO 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 93] => Salve como: 93.jpg  =>  SACHE GRAN PLUS GATO TRATO URINARIO FRANGO 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 646] => Salve como: 646.jpg  =>  SACHE GRAN PLUS GATO CASTRADO FRANGO 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 647] => Salve como: 647.jpg  =>  SACHE GRAN PLUS GATO CARNE 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 648] => Salve como: 648.jpg  =>  SACHE GRAN PLUS GATO ATUM 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 649] => Salve como: 649.jpg  =>  SACHE GRAN PLUS GATO CASTRADO FRANGO E SALMAO 85G  |  R$ 3,00

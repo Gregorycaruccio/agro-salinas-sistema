@@ -1,16 +1,19 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 736.jpg ou 736.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_whiskas
+📊 Total: 12 produtos (0 com foto, 12 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 217.jpg ou 217.png)
+===============================================================================
 
-- [CÓD: 736] Pate Lata Wiskas Atum 290g
-- [CÓD: 735] Pate Lata Wiskas Carne 290g
-- [CÓD: 737] Pate Lata Wiskas Frango 290g
-- [CÓD: 738] Pate Lata Wiskas Peixe 290g
-- [CÓD: 676] Ração Wiskas Gato Adulto Carne 900g
-- [CÓD: 677] Ração Wiskas Gato Adulto Frango 2.7kg
-- [CÓD: 220] Ração Wiskas Gato Castrado Carne 10.1kg
-- [CÓD: 672] Sache Wiskas Gato Atum 85g
-- [CÓD: 219] Sache Wiskas Gato Carne 85g
-- [CÓD: 217] Sache Wiskas Gato Frango 85g
-- [CÓD: 674] Sache Wiskas Gato Peixe 85g
-- [CÓD: 218] Sache Wiskas Gato Salmão 85g
+⏳ [PENDENTE] [CÓD: 217] => Salve como: 217.jpg  =>  SACHE WISKAS GATO FRANGO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 218] => Salve como: 218.jpg  =>  SACHE WISKAS GATO SALMAO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 219] => Salve como: 219.jpg  =>  SACHE WISKAS GATO CARNE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 220] => Salve como: 220.jpg  =>  RACAO WISKAS GATO CASTRADO CARNE 10.1KG  |  R$ 192,90
+⏳ [PENDENTE] [CÓD: 672] => Salve como: 672.jpg  =>  SACHE WISKAS GATO ATUM 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 674] => Salve como: 674.jpg  =>  SACHE WISKAS GATO PEIXE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 676] => Salve como: 676.jpg  =>  RACAO WISKAS GATO ADULTO CARNE 900G  |  R$ 24,00
+⏳ [PENDENTE] [CÓD: 677] => Salve como: 677.jpg  =>  RACAO WISKAS GATO ADULTO FRANGO 2.7KG  |  R$ 62,50
+⏳ [PENDENTE] [CÓD: 735] => Salve como: 735.jpg  =>  PATE LATA WISKAS CARNE 290G  |  R$ 12,99
+⏳ [PENDENTE] [CÓD: 736] => Salve como: 736.jpg  =>  PATE LATA WISKAS ATUM 290G  |  R$ 12,99
+⏳ [PENDENTE] [CÓD: 737] => Salve como: 737.jpg  =>  PATE LATA WISKAS FRANGO 290G  |  R$ 12,99
+⏳ [PENDENTE] [CÓD: 738] => Salve como: 738.jpg  =>  PATE LATA WISKAS PEIXE 290G  |  R$ 12,99

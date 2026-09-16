@@ -1,36 +1,47 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 556.jpg ou 556.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/4_passaros_roedores/alimentos_sementes_passaros
+📊 Total: 40 produtos (0 com foto, 40 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 142.jpg ou 142.png)
+===============================================================================
 
-- [CÓD: 556] Alimento para Peixes Nutriflakes 12g
-- [CÓD: 157] Azulao 500g
-- [CÓD: 167] Bloco Calopsita e Periquito Cartela 1 un
-- [CÓD: 168] Bloco Canário Cartela 1 un
-- [CÓD: 166] Bloco Papagaio e Arara Cartela 1 un
-- [CÓD: 165] Bloco Siba Calcio Grande Cartela 1 un
-- [CÓD: 164] Bloco Siba Calcio Pequeno Cartela 1 un
-- [CÓD: 169] Bloco Trinca Ferro Pixarro Cartela 1 un
-- [CÓD: 195] Comedouro para Papagaio Color
-- [CÓD: 629] Feno Prensado 500g
-- [CÓD: 571] Funny Bunny Blend 500g
-- [CÓD: 611] Girassol Miudo 10kg
-- [CÓD: 181] Girassol Miudo 250g
-- [CÓD: 183] Niger 200g
-- [CÓD: 188] Ninho para Calopsita
-- [CÓD: 610] Nutribird Natural 600g
-- [CÓD: 184] Painco 500g
-- [CÓD: 187] Papa de Ovo Amarela 200g
-- [CÓD: 561] Pássaros Livres Comum 25kg
-- [CÓD: 172] Pedra Calcio Grande 1 un
-- [CÓD: 171] Pedra Calcio Pequena 1 un
-- [CÓD: 659] Porta Fruta Pássaros Unidade
-- [CÓD: 173] Ração Calopsita e Algapornis 500g
-- [CÓD: 174] Ração Calopsita e Periquito 10kg
-- [CÓD: 176] Ração Canário Belga 10kg
-- [CÓD: 177] Ração Canário da Terra 500g
-- [CÓD: 179] Ração Coleiro 500g
-- [CÓD: 186] Ração Papagaio Top 400g
-- [CÓD: 175] Ração Pássaros Jardim 5g
-- [CÓD: 185] Ração Trinca Ferro Super Trinca 500g
-- [CÓD: 521] Raticida Girassol Imbativel 25g Unidade
-- [CÓD: 142] Tratador Silvestre Pássaros
+⏳ [PENDENTE] [CÓD: 142] => Salve como: 142.jpg  =>  TRATADOR SILVESTRE PASSAROS  |  R$ 62,00
+⏳ [PENDENTE] [CÓD: 157] => Salve como: 157.jpg  =>  AZULAO 500G  |  R$ 7,80
+⏳ [PENDENTE] [CÓD: 158] => Salve como: 158.jpg  =>  RACAO ROEDORES 400G  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 159] => Salve como: 159.jpg  =>  RACAO ROEDORES 1.3KG  |  R$ 25,50
+⏳ [PENDENTE] [CÓD: 164] => Salve como: 164.jpg  =>  BLOCO SIBA CALCIO PEQUENO CARTELA 1 UN  |  R$ 7,50
+⏳ [PENDENTE] [CÓD: 165] => Salve como: 165.jpg  =>  BLOCO SIBA CALCIO GRANDE CARTELA 1 UN  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 166] => Salve como: 166.jpg  =>  BLOCO PAPAGAIO E ARARA CARTELA 1 UN  |  R$ 12,50
+⏳ [PENDENTE] [CÓD: 167] => Salve como: 167.jpg  =>  BLOCO CALOPSITA E PERIQUITO CARTELA 1 UN  |  R$ 7,90
+⏳ [PENDENTE] [CÓD: 168] => Salve como: 168.jpg  =>  BLOCO CANARIO CARTELA 1 UN  |  R$ 7,90
+⏳ [PENDENTE] [CÓD: 169] => Salve como: 169.jpg  =>  BLOCO TRINCA FERRO PIXARRO CARTELA 1 UN  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 170] => Salve como: 170.jpg  =>  BLOCO ROEDORES CARTELA 1 UN  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 171] => Salve como: 171.jpg  =>  PEDRA CALCIO PEQUENA 1 UN  |  R$ 2,50
+⏳ [PENDENTE] [CÓD: 172] => Salve como: 172.jpg  =>  PEDRA CALCIO GRANDE 1 UN  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 173] => Salve como: 173.jpg  =>  RACAO CALOPSITA E ALGAPORNIS 500G  |  R$ 5,50
+⏳ [PENDENTE] [CÓD: 174] => Salve como: 174.jpg  =>  RACAO CALOPSITA E PERIQUITO 10KG  |  R$ 69,00
+⏳ [PENDENTE] [CÓD: 175] => Salve como: 175.jpg  =>  RACAO PASSAROS JARDIM 5G  |  R$ 26,80
+⏳ [PENDENTE] [CÓD: 176] => Salve como: 176.jpg  =>  RACAO CANARIO BELGA 10KG  |  R$ 120,00
+⏳ [PENDENTE] [CÓD: 177] => Salve como: 177.jpg  =>  RACAO CANARIO DA TERRA 500G  |  R$ 6,60
+⏳ [PENDENTE] [CÓD: 179] => Salve como: 179.jpg  =>  RACAO COLEIRO 500G  |  R$ 6,70
+⏳ [PENDENTE] [CÓD: 181] => Salve como: 181.jpg  =>  GIRASSOL MIUDO 250G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 183] => Salve como: 183.jpg  =>  NIGER 200G  |  R$ 6,50
+⏳ [PENDENTE] [CÓD: 184] => Salve como: 184.jpg  =>  PAINCO 500G  |  R$ 5,50
+⏳ [PENDENTE] [CÓD: 185] => Salve como: 185.jpg  =>  RACAO TRINCA FERRO SUPER TRINCA 500G  |  R$ 11,60
+⏳ [PENDENTE] [CÓD: 186] => Salve como: 186.jpg  =>  RACAO PAPAGAIO TOP 400G  |  R$ 9,00
+⏳ [PENDENTE] [CÓD: 187] => Salve como: 187.jpg  =>  PAPA DE OVO AMARELA 200G  |  R$ 6,50
+⏳ [PENDENTE] [CÓD: 193] => Salve como: 193.jpg  =>  BANHEIRA PARA PASSAROS GRANDE  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 194] => Salve como: 194.jpg  =>  BANHEIRA REDONDA PEQUENA PARA PASSAROS  |  R$ 3,70
+⏳ [PENDENTE] [CÓD: 195] => Salve como: 195.jpg  =>  COMEDOURO PARA PAPAGAIO COLOR  |  R$ 4,70
+⏳ [PENDENTE] [CÓD: 197] => Salve como: 197.jpg  =>  BEBEDOURO PEQUENO PARA PASSAROS MALHA FINA  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 521] => Salve como: 521.jpg  =>  RATICIDA GIRASSOL IMBATIVEL 25G UNIDADE  |  R$ 2,00
+⏳ [PENDENTE] [CÓD: 556] => Salve como: 556.jpg  =>  ALIMENTO PARA PEIXES NUTRIFLAKES 12G  |  R$ 7,80
+⏳ [PENDENTE] [CÓD: 557] => Salve como: 557.jpg  =>  RACAO ROEDORES 100G  |  R$ 10,80
+⏳ [PENDENTE] [CÓD: 561] => Salve como: 561.jpg  =>  PASSAROS LIVRES COMUM 25KG  |  R$ 148,70
+⏳ [PENDENTE] [CÓD: 571] => Salve como: 571.jpg  =>  FUNNY BUNNY BLEND 500G  |  R$ 16,80
+⏳ [PENDENTE] [CÓD: 610] => Salve como: 610.jpg  =>  NUTRIBIRD NATURAL 600G  |  R$ 26,50
+⏳ [PENDENTE] [CÓD: 611] => Salve como: 611.jpg  =>  GIRASSOL MIUDO 10KG  |  R$ 105,00
+⏳ [PENDENTE] [CÓD: 628] => Salve como: 628.jpg  =>  BEBEDOURO BEIJA FLOR GOLD UN COLOR  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 629] => Salve como: 629.jpg  =>  FENO PRENSADO 500G  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 659] => Salve como: 659.jpg  =>  PORTA FRUTA PASSAROS UNIDADE  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 743] => Salve como: 743.jpg  =>  BEBEDOURO FRANGO 2L  |  R$ 16,50

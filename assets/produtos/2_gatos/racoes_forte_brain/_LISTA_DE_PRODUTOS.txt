@@ -1,0 +1,19 @@
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_forte_brain
+Linha: Forte Brain (Brain Plus Gatos, Kiara e Famil Gatos)
+📊 Total: 6 produtos (0 com foto, 6 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 224.jpg ou 224.png)
+===============================================================================
+
+--- BRAIN PLUS GATOS ---
+⏳ [PENDENTE] [CÓD: 224] => Salve como: 224.jpg  =>  RACAO BRAINPLUS GATO CASTRADO CARNE 10KG  |  R$ 175,50
+⏳ [PENDENTE] [CÓD: 225] => Salve como: 225.jpg  =>  RACAO BRAINPLUS GATO CASTRADO FRANGO E SALMAO 10KG  |  R$ 175,50
+⏳ [PENDENTE] [CÓD: 234] => Salve como: 234.jpg  =>  RACAO BRAINPLUS GATO FILHOTE 10.1KG  |  R$ 165,00
+
+--- KIARA GATOS ---
+⏳ [PENDENTE] [CÓD: 239] => Salve como: 239.jpg  =>  RACAO KIARA GATO PEIXE E FRANGO 10.1KG  |  R$ 93,50
+
+--- FAMIL GATOS & AREIA ---
+⏳ [PENDENTE] [CÓD: 229] => Salve como: 229.jpg  =>  RACAO FAMIL GATO CASTRADO SALMAO E ARROZ 10.1KG  |  R$ 141,00
+⏳ [PENDENTE] [CÓD: 508] => Salve como: 508.jpg  =>  AREIA SANITARIA FAMIL PREMIUM 4KG  |  R$ 11,50

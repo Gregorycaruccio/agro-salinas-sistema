@@ -1,9 +1,12 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 29.jpg ou 29.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_dog_chow
+📊 Total: 5 produtos (0 com foto, 5 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 29.jpg ou 29.png)
+===============================================================================
 
-- [CÓD: 29] Dog Chow Ad Porte Mini e Peq Carne e Frango 2.5kg
-- [CÓD: 30] Sache Dog Chow Mini e Peq Carne 100g
-- [CÓD: 31] Sache Dog Chow Mini e Peq Frango 100g
-- [CÓD: 33] Sache Dog Chow Todos os Tam Carne 100g
-- [CÓD: 32] Sache Dog Chow Todos os Tam Frango 100g
+⏳ [PENDENTE] [CÓD: 29] => Salve como: 29.jpg  =>  DOG CHOW AD PORTE MINI E PEQ CARNE E FRANGO 2.5KG  |  R$ 52,50
+⏳ [PENDENTE] [CÓD: 30] => Salve como: 30.jpg  =>  SACHE DOG CHOW MINI E PEQ CARNE 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 31] => Salve como: 31.jpg  =>  SACHE DOG CHOW MINI E PEQ FRANGO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 32] => Salve como: 32.jpg  =>  SACHE DOG CHOW TODOS OS TAM FRANGO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 33] => Salve como: 33.jpg  =>  SACHE DOG CHOW TODOS OS TAM CARNE 100G  |  R$ 3,50

@@ -1,23 +1,26 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 362.jpg ou 362.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/acessorios_camas_casas
+📊 Total: 19 produtos (0 com foto, 19 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 326.jpg ou 326.png)
+===============================================================================
 
-- [CÓD: 362] Cama Europa Oxford Azul Pequena
-- [CÓD: 363] Cama Europa Oxford Branca e Rosa Media
-- [CÓD: 364] Cama Europa Oxford Cinza Media
-- [CÓD: 365] Cama Europa Oxford Vermelha Grande
-- [CÓD: 361] Cama Europa Oxford Vermelha Pequena
-- [CÓD: 367] Cama Plush Color
-- [CÓD: 712] Cama Soft Tamanho g Azul
-- [CÓD: 709] Cama Soft Tamanho g Rosa
-- [CÓD: 711] Cama Soft Tamanho M Azul
-- [CÓD: 708] Cama Soft Tamanho M Rosa
-- [CÓD: 710] Cama Soft Tamanho P Azul
-- [CÓD: 707] Cama Soft Tamanho P Rosa
-- [CÓD: 703] Casa Durahouse n 1
-- [CÓD: 327] Casa Durahouse Numero 3 Rosa
-- [CÓD: 326] Casa Durahouse Numero 4 Preta
-- [CÓD: 538] Casa Durahouse Numero 5 Caramelo
-- [CÓD: 704] Casa Durahouse Preta n 2
-- [CÓD: 705] Casa Durahouse Preta n 3
-- [CÓD: 706] Casa Durahouse Preta n 4
+⏳ [PENDENTE] [CÓD: 326] => Salve como: 326.jpg  =>  CASA DURAHOUSE NUMERO 4 PRETA  |  R$ 195,50
+⏳ [PENDENTE] [CÓD: 327] => Salve como: 327.jpg  =>  CASA DURAHOUSE NUMERO 3 ROSA  |  R$ 129,90
+⏳ [PENDENTE] [CÓD: 361] => Salve como: 361.jpg  =>  CAMA EUROPA OXFORD VERMELHA PEQUENA  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 362] => Salve como: 362.jpg  =>  CAMA EUROPA OXFORD AZUL PEQUENA  |  R$ 41,60
+⏳ [PENDENTE] [CÓD: 363] => Salve como: 363.jpg  =>  CAMA EUROPA OXFORD BRANCA E ROSA MEDIA  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 364] => Salve como: 364.jpg  =>  CAMA EUROPA OXFORD CINZA MEDIA  |  R$ 55,00
+⏳ [PENDENTE] [CÓD: 365] => Salve como: 365.jpg  =>  CAMA EUROPA OXFORD VERMELHA GRANDE  |  R$ 60,00
+⏳ [PENDENTE] [CÓD: 367] => Salve como: 367.jpg  =>  CAMA PLUSH COLOR  |  R$ 79,90
+⏳ [PENDENTE] [CÓD: 538] => Salve como: 538.jpg  =>  CASA DURAHOUSE NUMERO 5 CARAMELO  |  R$ 320,00
+⏳ [PENDENTE] [CÓD: 703] => Salve como: 703.jpg  =>  CASA DURAHOUSE N 1  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 704] => Salve como: 704.jpg  =>  CASA DURAHOUSE PRETA N 2  |  R$ 89,90
+⏳ [PENDENTE] [CÓD: 705] => Salve como: 705.jpg  =>  CASA DURAHOUSE PRETA N 3  |  R$ 129,90
+⏳ [PENDENTE] [CÓD: 706] => Salve como: 706.jpg  =>  CASA DURAHOUSE PRETA N 4  |  R$ 189,90
+⏳ [PENDENTE] [CÓD: 707] => Salve como: 707.jpg  =>  CAMA SOFT TAMANHO P ROSA  |  R$ 99,00
+⏳ [PENDENTE] [CÓD: 708] => Salve como: 708.jpg  =>  CAMA SOFT TAMANHO M ROSA  |  R$ 149,90
+⏳ [PENDENTE] [CÓD: 709] => Salve como: 709.jpg  =>  CAMA SOFT TAMANHO G ROSA  |  R$ 189,90
+⏳ [PENDENTE] [CÓD: 710] => Salve como: 710.jpg  =>  CAMA SOFT TAMANHO P AZUL  |  R$ 99,00
+⏳ [PENDENTE] [CÓD: 711] => Salve como: 711.jpg  =>  CAMA SOFT TAMANHO M AZUL  |  R$ 149,90
+⏳ [PENDENTE] [CÓD: 712] => Salve como: 712.jpg  =>  CAMA SOFT TAMANHO G AZUL  |  R$ 189,90

@@ -1,15 +1,19 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 560.jpg ou 560.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/3_farmacia/antipulgas_coleiras_pipetas
+📊 Total: 12 produtos (0 com foto, 12 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 15.jpg ou 15.png)
+===============================================================================
 
-- [CÓD: 560] Coleira Antipulgas e Carrapatos Dugs
-- [CÓD: 15] Coleira Ectofend Azul 48cm
-- [CÓD: 17] Coleira Ectofend Azul 65cm
-- [CÓD: 16] Coleira Ectofend Rosa 48cm
-- [CÓD: 18] Coleira Ectofend Rosa 65cm
-- [CÓD: 602] Confront Plus 0.67ml 2 a 10kg Pipeta
-- [CÓD: 603] Confront Plus 1.34 ml 10 a 20kg Pipeta
-- [CÓD: 604] Confront Plus 2.68 ml 20 a 40kg Pipeta
-- [CÓD: 653] Defend Pro Cão Pipeta 1 a 10kg
-- [CÓD: 652] Defend Pro Cão Pipeta 10 a 20kg
-- [CÓD: 405] Defend Pro Gato Pipeta Anti Pulga
+⏳ [PENDENTE] [CÓD: 15] => Salve como: 15.jpg  =>  COLEIRA ECTOFEND AZUL 48CM  |  R$ 131,50
+⏳ [PENDENTE] [CÓD: 16] => Salve como: 16.jpg  =>  COLEIRA ECTOFEND ROSA 48CM  |  R$ 131,50
+⏳ [PENDENTE] [CÓD: 17] => Salve como: 17.jpg  =>  COLEIRA ECTOFEND AZUL 65CM  |  R$ 148,80
+⏳ [PENDENTE] [CÓD: 18] => Salve como: 18.jpg  =>  COLEIRA ECTOFEND ROSA 65CM  |  R$ 148,80
+⏳ [PENDENTE] [CÓD: 88] => Salve como: 88.jpg  =>  INVICTO ANTI PULGA 11.4MG  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 405] => Salve como: 405.jpg  =>  DEFEND PRO GATO PIPETA ANTI PULGA  |  R$ 34,50
+⏳ [PENDENTE] [CÓD: 560] => Salve como: 560.jpg  =>  COLEIRA ANTIPULGAS E CARRAPATOS DUGS  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 602] => Salve como: 602.jpg  =>  CONFRONT PLUS 0.67ML 2 A 10KG PIPETA  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 603] => Salve como: 603.jpg  =>  CONFRONT PLUS 1.34 ML 10 A 20KG PIPETA  |  R$ 21,50
+⏳ [PENDENTE] [CÓD: 604] => Salve como: 604.jpg  =>  CONFRONT PLUS 2.68 ML 20 A 40KG PIPETA  |  R$ 28,50
+⏳ [PENDENTE] [CÓD: 652] => Salve como: 652.jpg  =>  DEFEND PRO CAO PIPETA 10 A 20KG  |  R$ 34,50
+⏳ [PENDENTE] [CÓD: 653] => Salve como: 653.jpg  =>  DEFEND PRO CAO PIPETA 1 A 10KG  |  R$ 34,50

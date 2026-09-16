@@ -1,99 +1,98 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 739.jpg ou 739.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_outras_marcas
+📊 Total: 91 produtos (0 com foto, 91 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 2.jpg ou 2.png)
+===============================================================================
 
-- [CÓD: 739] Alicate Unha Tradicional Media
-- [CÓD: 567] Allcanis Senior Racas Medias e Grandes 15kg
-- [CÓD: 568] Allcanis Senior Racas Pequenas 10.1 kg
-- [CÓD: 349] Bandeja Sanitaria Cão Xixidog 60x40 Azul
-- [CÓD: 351] Bandeja Sanitaria Cão Xixidog 60x40 Rosa
-- [CÓD: 350] Bandeja Sanitaria Cão Xixidog 60x40 Vermelho
-- [CÓD: 385] Banho a Seco 500ml
-- [CÓD: 4] Bifinho Sabor Carne 65g
-- [CÓD: 3] Bifinho Sabor Frango 65g
-- [CÓD: 595] Biscoito Biscrok Cão Adulto Multi 500g
-- [CÓD: 212] Biscoito Biscrok Cão R Grandes 500g
-- [CÓD: 213] Biscoito Biscrok Cão R Pequenas 500g
-- [CÓD: 631] Bomba para Aplicacao Pulverizante
-- [CÓD: 435] Caixa de Transporte Numero 2 Amarela e Preta
-- [CÓD: 222] Caixa de Transporte Numero 3 Azul
-- [CÓD: 221] Caixa de Transporte Numero 3 Rosa
-- [CÓD: 205] Cinto de Seguranca Cão
-- [CÓD: 663] Colar para Cães Tamanho 2
-- [CÓD: 662] Colar para Cães Tamanho 4
-- [CÓD: 661] Colar para Cães Tamanho 6
-- [CÓD: 660] Colar para Cães Tamanho 8
-- [CÓD: 77] Corrente Cão Numero 1 2.50m
-- [CÓD: 78] Corrente Cão Numero 3 2.50m
-- [CÓD: 27] Corrente Cão Numero 4 1.50m
-- [CÓD: 28] Corrente Cão Numero 6 1.50m
-- [CÓD: 609] Especial Psitacideos Selecao Natural 500g
-- [CÓD: 634] Focinheira Couro Gladiador 35x10
-- [CÓD: 544] Mandala Cão Adulto Carne e Arroz 10kg
-- [CÓD: 543] Mandala Cão Adulto Carne e Arroz 20kg
-- [CÓD: 671] Mandala Cão Adulto Cordeiro 15kg
-- [CÓD: 746] Mandala Cão Adulto Cordeiro 20kg
-- [CÓD: 127] Milho Integral Moido Grosso 25kg
-- [CÓD: 514] Molho para Ração Cão Sabor Carne
-- [CÓD: 515] Molho para Ração Cão Sabor Churrasco
-- [CÓD: 513] Molho para Ração Cão Sabor Frango
-- [CÓD: 547] Natural Stick Carne15g
-- [CÓD: 546] Natural Stick Frango 15g
-- [CÓD: 545] Natural Stick Salmão 15g
-- [CÓD: 67] Nutricao Clinica Gastrointestinal Peq Porte 2kg
-- [CÓD: 68] Nutricao Clinica Hipoalergenica Porte Peq Filhote e Ad 2kg
-- [CÓD: 64] Nutricao Clinica Obesidade 2kg
-- [CÓD: 437] Pacote Bife Keldog Sabor Churrasco
-- [CÓD: 80] Pate Lata Casspet  Carne 290g
-- [CÓD: 79] Pate Lata Casspet  Figado 290g
-- [CÓD: 81] Pate Lata Casspet Frango 290g
-- [CÓD: 333] Perfume Animalissimo Femea 120ml
-- [CÓD: 335] Perfume Animalissimo Filhote 120ml
-- [CÓD: 334] Perfume Animalissimo Macho 120ml
-- [CÓD: 438] Petisco Osso Natural Grande Unidade
-- [CÓD: 439] Petisco Osso Natural Medio Unidade
-- [CÓD: 440] Petisco Osso Natural Pequeno Unidade
-- [CÓD: 133] Ração Aves Postura Farelada 25kg
-- [CÓD: 134] Ração Aves Postura Paletizada 25kg
-- [CÓD: 280] Ração Bolt Cão 15kg
-- [CÓD: 279] Ração Bolt Cão 7kg
-- [CÓD: 747] Ração Cão Kocker 25kg
-- [CÓD: 288] Ração Cão Martin Dog 25kg
-- [CÓD: 287] Ração Cão Martin Dog 5kg
-- [CÓD: 261] Ração Cão Mini Indor Senior 1kg
-- [CÓD: 296] Ração Cão Quartz Premium Bacon 10.1kg
-- [CÓD: 299] Ração Cão Quartz Senior R Peq 10.1kg
-- [CÓD: 289] Ração Cão Quartz Traning 15kg
-- [CÓD: 122] Ração Cão Vicato 20kg
-- [CÓD: 178] Ração Cardeal 500g
-- [CÓD: 111] Ração Cavalo Passeio 30kg
-- [CÓD: 129] Ração Cavalo Premium Melacada 25kg
-- [CÓD: 141] Ração Cavalo Sport 30kg
-- [CÓD: 117] Ração Codorna do Campo 5kg
-- [CÓD: 131] Ração Codorna Postura Farelada 5kg
-- [CÓD: 132] Ração Crescimento e Final Ave Corte 25kg
-- [CÓD: 180] Ração Curio 500g
-- [CÓD: 223] Ração Dodi Cão 5kg
-- [CÓD: 114] Ração Frango do Campo 20kg
-- [CÓD: 116] Ração Galinha do Campo Ovos 20kg
-- [CÓD: 115] Ração Galinha do Campo Quintal 20kg
-- [CÓD: 259] Ração Hipoalergenica Cão Small Dog 2kg
-- [CÓD: 118] Ração Ovelha Melacada Paletizada 25kg
-- [CÓD: 687] Ração Patrulha Original 10.1kg
-- [CÓD: 686] Ração Patrulha Original 5kg
-- [CÓD: 685] Ração Personal Dog Premium 10.1kg
-- [CÓD: 684] Ração Personal Dog Premium 20kg
-- [CÓD: 303] Ração Quartz Cão Premium Bacon 15kg
-- [CÓD: 304] Ração Quartz Cão R Peq Carne Frango e Arroz 15kg
-- [CÓD: 302] Ração Quartz Cão Senior R Peq 15kg
-- [CÓD: 119] Ração Suinos Terminacao Farelada 25kg
-- [CÓD: 120] Ração Suinos Terminacao Paletizada 25kg
-- [CÓD: 250] Ração Urinary Cão Small Dog 2kg
-- [CÓD: 98] Sache Cão Adulto Carne 100g
-- [CÓD: 216] Sache Cão Adulto R Pequenas Carne 100g
-- [CÓD: 2] Sache Cão Cordeiro 85g
-- [CÓD: 5] Sache Cão Filhote Frango 100g
-- [CÓD: 91] Sache Cão Filhote Frango 100g
-- [CÓD: 210] Sache Optimum Cão Carne 100g
-- [CÓD: 211] Sache Optimum Cão Frango 100g
-- [CÓD: 97] Sache Primocao Cão Filhote Frango 100g
+⏳ [PENDENTE] [CÓD: 2] => Salve como: 2.jpg  =>  SACHE CAO CORDEIRO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 3] => Salve como: 3.jpg  =>  BIFINHO SABOR FRANGO 65G  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 4] => Salve como: 4.jpg  =>  BIFINHO SABOR CARNE 65G  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 5] => Salve como: 5.jpg  =>  SACHE CAO FILHOTE FRANGO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 27] => Salve como: 27.jpg  =>  CORRENTE CAO NUMERO 4 1.50M  |  R$ 11,70
+⏳ [PENDENTE] [CÓD: 28] => Salve como: 28.jpg  =>  CORRENTE CAO NUMERO 6 1.50M  |  R$ 7,80
+⏳ [PENDENTE] [CÓD: 64] => Salve como: 64.jpg  =>  NUTRICAO CLINICA OBESIDADE 2KG  |  R$ 108,70
+⏳ [PENDENTE] [CÓD: 67] => Salve como: 67.jpg  =>  NUTRICAO CLINICA GASTROINTESTINAL PEQ PORTE 2KG  |  R$ 104,50
+⏳ [PENDENTE] [CÓD: 68] => Salve como: 68.jpg  =>  NUTRICAO CLINICA HIPOALERGENICA PORTE PEQ FILHOTE E AD 2KG  |  R$ 108,70
+⏳ [PENDENTE] [CÓD: 77] => Salve como: 77.jpg  =>  CORRENTE CAO NUMERO 1 2.50M  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 78] => Salve como: 78.jpg  =>  CORRENTE CAO NUMERO 3 2.50M  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 79] => Salve como: 79.jpg  =>  PATE LATA CASSPET FIGADO 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 80] => Salve como: 80.jpg  =>  PATE LATA CASSPET CARNE 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 81] => Salve como: 81.jpg  =>  PATE LATA CASSPET FRANGO 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 91] => Salve como: 91.jpg  =>  SACHE CAO FILHOTE FRANGO 100G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 97] => Salve como: 97.jpg  =>  SACHE PRIMOCAO CAO FILHOTE FRANGO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 98] => Salve como: 98.jpg  =>  SACHE CAO ADULTO CARNE 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 111] => Salve como: 111.jpg  =>  RACAO CAVALO PASSEIO 30KG  |  R$ 64,00
+⏳ [PENDENTE] [CÓD: 114] => Salve como: 114.jpg  =>  RACAO FRANGO DO CAMPO 20KG  |  R$ 44,50
+⏳ [PENDENTE] [CÓD: 115] => Salve como: 115.jpg  =>  RACAO GALINHA DO CAMPO QUINTAL 20KG  |  R$ 61,00
+⏳ [PENDENTE] [CÓD: 116] => Salve como: 116.jpg  =>  RACAO GALINHA DO CAMPO OVOS 20KG  |  R$ 48,50
+⏳ [PENDENTE] [CÓD: 117] => Salve como: 117.jpg  =>  RACAO CODORNA DO CAMPO 5KG  |  R$ 14,90
+⏳ [PENDENTE] [CÓD: 118] => Salve como: 118.jpg  =>  RACAO OVELHA MELACADA PALETIZADA 25KG  |  R$ 91,00
+⏳ [PENDENTE] [CÓD: 119] => Salve como: 119.jpg  =>  RACAO SUINOS TERMINACAO FARELADA 25KG  |  R$ 65,00
+⏳ [PENDENTE] [CÓD: 120] => Salve como: 120.jpg  =>  RACAO SUINOS TERMINACAO PALETIZADA 25KG  |  R$ 67,00
+⏳ [PENDENTE] [CÓD: 122] => Salve como: 122.jpg  =>  RACAO CAO VICATO 20KG  |  R$ 119,00
+⏳ [PENDENTE] [CÓD: 127] => Salve como: 127.jpg  =>  MILHO INTEGRAL MOIDO GROSSO 25KG  |  R$ 52,00
+⏳ [PENDENTE] [CÓD: 129] => Salve como: 129.jpg  =>  RACAO CAVALO PREMIUM MELACADA 25KG  |  R$ 66,50
+⏳ [PENDENTE] [CÓD: 131] => Salve como: 131.jpg  =>  RACAO CODORNA POSTURA FARELADA 5KG  |  R$ 16,90
+⏳ [PENDENTE] [CÓD: 132] => Salve como: 132.jpg  =>  RACAO CRESCIMENTO E FINAL AVE CORTE 25KG  |  R$ 73,70
+⏳ [PENDENTE] [CÓD: 133] => Salve como: 133.jpg  =>  RACAO AVES POSTURA FARELADA 25KG  |  R$ 66,70
+⏳ [PENDENTE] [CÓD: 134] => Salve como: 134.jpg  =>  RACAO AVES POSTURA PALETIZADA 25KG  |  R$ 64,50
+⏳ [PENDENTE] [CÓD: 141] => Salve como: 141.jpg  =>  RACAO CAVALO SPORT 30KG  |  R$ 76,50
+⏳ [PENDENTE] [CÓD: 178] => Salve como: 178.jpg  =>  RACAO CARDEAL 500G  |  R$ 7,80
+⏳ [PENDENTE] [CÓD: 180] => Salve como: 180.jpg  =>  RACAO CURIO 500G  |  R$ 8,00
+⏳ [PENDENTE] [CÓD: 205] => Salve como: 205.jpg  =>  CINTO DE SEGURANCA CAO  |  R$ 33,00
+⏳ [PENDENTE] [CÓD: 210] => Salve como: 210.jpg  =>  SACHE OPTIMUM CAO CARNE 100G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 211] => Salve como: 211.jpg  =>  SACHE OPTIMUM CAO FRANGO 100G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 212] => Salve como: 212.jpg  =>  BISCOITO BISCROK CAO R GRANDES 500G  |  R$ 25,90
+⏳ [PENDENTE] [CÓD: 213] => Salve como: 213.jpg  =>  BISCOITO BISCROK CAO R PEQUENAS 500G  |  R$ 26,00
+⏳ [PENDENTE] [CÓD: 216] => Salve como: 216.jpg  =>  SACHE CAO ADULTO R PEQUENAS CARNE 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 221] => Salve como: 221.jpg  =>  CAIXA DE TRANSPORTE NUMERO 3 ROSA  |  R$ 75,00
+⏳ [PENDENTE] [CÓD: 222] => Salve como: 222.jpg  =>  CAIXA DE TRANSPORTE NUMERO 3 AZUL  |  R$ 75,00
+⏳ [PENDENTE] [CÓD: 223] => Salve como: 223.jpg  =>  RACAO DODI CAO 5KG  |  R$ 26,00
+⏳ [PENDENTE] [CÓD: 250] => Salve como: 250.jpg  =>  RACAO URINARY CAO SMALL DOG 2KG  |  R$ 165,70
+⏳ [PENDENTE] [CÓD: 259] => Salve como: 259.jpg  =>  RACAO HIPOALERGENICA CAO SMALL DOG 2KG  |  R$ 186,50
+⏳ [PENDENTE] [CÓD: 261] => Salve como: 261.jpg  =>  RACAO CAO MINI INDOR SENIOR 1KG  |  R$ 62,90
+⏳ [PENDENTE] [CÓD: 279] => Salve como: 279.jpg  =>  RACAO BOLT CAO 7KG  |  R$ 46,00
+⏳ [PENDENTE] [CÓD: 280] => Salve como: 280.jpg  =>  RACAO BOLT CAO 15KG  |  R$ 85,00
+⏳ [PENDENTE] [CÓD: 287] => Salve como: 287.jpg  =>  RACAO CAO MARTIN DOG 5KG  |  R$ 26,00
+⏳ [PENDENTE] [CÓD: 288] => Salve como: 288.jpg  =>  RACAO CAO MARTIN DOG 25KG  |  R$ 124,70
+⏳ [PENDENTE] [CÓD: 289] => Salve como: 289.jpg  =>  RACAO CAO QUARTZ TRANING 15KG  |  R$ 135,00
+⏳ [PENDENTE] [CÓD: 296] => Salve como: 296.jpg  =>  RACAO CAO QUARTZ PREMIUM BACON 10.1KG  |  R$ 86,90
+⏳ [PENDENTE] [CÓD: 299] => Salve como: 299.jpg  =>  RACAO CAO QUARTZ SENIOR R PEQ 10.1KG  |  R$ 104,70
+⏳ [PENDENTE] [CÓD: 302] => Salve como: 302.jpg  =>  RACAO QUARTZ CAO SENIOR R PEQ 15KG  |  R$ 135,00
+⏳ [PENDENTE] [CÓD: 303] => Salve como: 303.jpg  =>  RACAO QUARTZ CAO PREMIUM BACON 15KG  |  R$ 135,00
+⏳ [PENDENTE] [CÓD: 304] => Salve como: 304.jpg  =>  RACAO QUARTZ CAO R PEQ CARNE FRANGO E ARROZ 15KG  |  R$ 135,00
+⏳ [PENDENTE] [CÓD: 333] => Salve como: 333.jpg  =>  PERFUME ANIMALISSIMO FEMEA 120ML  |  R$ 15,90
+⏳ [PENDENTE] [CÓD: 334] => Salve como: 334.jpg  =>  PERFUME ANIMALISSIMO MACHO 120ML  |  R$ 15,90
+⏳ [PENDENTE] [CÓD: 335] => Salve como: 335.jpg  =>  PERFUME ANIMALISSIMO FILHOTE 120ML  |  R$ 15,90
+⏳ [PENDENTE] [CÓD: 385] => Salve como: 385.jpg  =>  BANHO A SECO 500ML  |  R$ 18,90
+⏳ [PENDENTE] [CÓD: 435] => Salve como: 435.jpg  =>  CAIXA DE TRANSPORTE NUMERO 2 AMARELA E PRETA  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 437] => Salve como: 437.jpg  =>  PACOTE BIFE KELDOG SABOR CHURRASCO  |  R$ 35,99
+⏳ [PENDENTE] [CÓD: 438] => Salve como: 438.jpg  =>  PETISCO OSSO NATURAL GRANDE UNIDADE  |  R$ 14,70
+⏳ [PENDENTE] [CÓD: 439] => Salve como: 439.jpg  =>  PETISCO OSSO NATURAL MEDIO UNIDADE  |  R$ 8,00
+⏳ [PENDENTE] [CÓD: 440] => Salve como: 440.jpg  =>  PETISCO OSSO NATURAL PEQUENO UNIDADE  |  R$ 4,00
+⏳ [PENDENTE] [CÓD: 513] => Salve como: 513.jpg  =>  MOLHO PARA RACAO CAO SABOR FRANGO  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 514] => Salve como: 514.jpg  =>  MOLHO PARA RACAO CAO SABOR CARNE  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 515] => Salve como: 515.jpg  =>  MOLHO PARA RACAO CAO SABOR CHURRASCO  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 543] => Salve como: 543.jpg  =>  MANDALA CAO ADULTO CARNE E ARROZ 20KG  |  R$ 142,00
+⏳ [PENDENTE] [CÓD: 544] => Salve como: 544.jpg  =>  MANDALA CAO ADULTO CARNE E ARROZ 10KG  |  R$ 78,50
+⏳ [PENDENTE] [CÓD: 545] => Salve como: 545.jpg  =>  NATURAL STICK SALMAO 15G  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 546] => Salve como: 546.jpg  =>  NATURAL STICK FRANGO 15G  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 547] => Salve como: 547.jpg  =>  NATURAL STICK CARNE15G  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 567] => Salve como: 567.jpg  =>  ALLCANIS SENIOR RACAS MEDIAS E GRANDES 15KG  |  R$ 237,90
+⏳ [PENDENTE] [CÓD: 568] => Salve como: 568.jpg  =>  ALLCANIS SENIOR RACAS PEQUENAS 10.1 KG  |  R$ 167,90
+⏳ [PENDENTE] [CÓD: 595] => Salve como: 595.jpg  =>  BISCOITO BISCROK CAO ADULTO MULTI 500G  |  R$ 26,00
+⏳ [PENDENTE] [CÓD: 609] => Salve como: 609.jpg  =>  ESPECIAL PSITACIDEOS SELECAO NATURAL 500G  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 631] => Salve como: 631.jpg  =>  BOMBA PARA APLICACAO PULVERIZANTE  |  R$ 15,90
+⏳ [PENDENTE] [CÓD: 660] => Salve como: 660.jpg  =>  COLAR PARA CAES TAMANHO 8  |  R$ 38,50
+⏳ [PENDENTE] [CÓD: 661] => Salve como: 661.jpg  =>  COLAR PARA CAES TAMANHO 6  |  R$ 28,99
+⏳ [PENDENTE] [CÓD: 662] => Salve como: 662.jpg  =>  COLAR PARA CAES TAMANHO 4  |  R$ 24,00
+⏳ [PENDENTE] [CÓD: 663] => Salve como: 663.jpg  =>  COLAR PARA CAES TAMANHO 2  |  R$ 21,50
+⏳ [PENDENTE] [CÓD: 671] => Salve como: 671.jpg  =>  MANDALA CAO ADULTO CORDEIRO 15KG  |  R$ 139,99
+⏳ [PENDENTE] [CÓD: 684] => Salve como: 684.jpg  =>  RACAO PERSONAL DOG PREMIUM 20KG  |  R$ 139,90
+⏳ [PENDENTE] [CÓD: 685] => Salve como: 685.jpg  =>  RACAO PERSONAL DOG PREMIUM 10.1KG  |  R$ 79,90
+⏳ [PENDENTE] [CÓD: 686] => Salve como: 686.jpg  =>  RACAO PATRULHA ORIGINAL 5KG  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 687] => Salve como: 687.jpg  =>  RACAO PATRULHA ORIGINAL 10.1KG  |  R$ 65,00
+⏳ [PENDENTE] [CÓD: 739] => Salve como: 739.jpg  =>  ALICATE UNHA TRADICIONAL MEDIA  |  R$ 36,50
+⏳ [PENDENTE] [CÓD: 746] => Salve como: 746.jpg  =>  MANDALA CAO ADULTO CORDEIRO 20KG  |  R$ 144,99
+⏳ [PENDENTE] [CÓD: 747] => Salve como: 747.jpg  =>  RACAO CAO KOCKER 25KG  |  R$ 169,99

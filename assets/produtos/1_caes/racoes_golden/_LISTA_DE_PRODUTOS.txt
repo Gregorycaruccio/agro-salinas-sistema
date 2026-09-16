@@ -1,17 +1,20 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 66.jpg ou 66.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_golden
+📊 Total: 13 produtos (11 com foto, 2 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 51.jpg ou 51.png)
+===============================================================================
 
-- [CÓD: 66] Cookie Golden Banana Aveia e Mel 350g
-- [CÓD: 71] Cookie Golden Racas Peq Carne Cenoura e Esp 350g
-- [CÓD: 70] Cookie Golden Racas Peq Maca e Aveia 350g
-- [CÓD: 69] Cookie Golden Racas Peq Original 350g
-- [CÓD: 58] Golden Adulto Light Frango e Arroz 10.1kg
-- [CÓD: 59] Golden Adulto Mini B Carne 15kg
-- [CÓD: 436] Golden Adulto Mini B Frango e Arroz 15kg
-- [CÓD: 57] Golden Senior Ad Mini B Carne 10.1kg
-- [CÓD: 54] Golden Senior Adulto Frango e Arroz 15kg
-- [CÓD: 51] Sache Golden Filhote Frango e Vegetais 70g
-- [CÓD: 73] Sache Golden Filhote Frango e Vegetais 85g
-- [CÓD: 74] Sache Golden Peq Porte Carne e Vegetais 85g
-- [CÓD: 75] Sache Golden Peq Porte Frango e Vegetais 85g
+✅ [FOTO OK] [CÓD: 51] => Salve como: 51.jpg  =>  SACHE GOLDEN FILHOTE FRANGO E VEGETAIS 70G  |  R$ 3,00
+✅ [FOTO OK] [CÓD: 54] => Salve como: 54.jpg  =>  GOLDEN SENIOR ADULTO FRANGO E ARROZ 15KG  |  R$ 187,25
+✅ [FOTO OK] [CÓD: 57] => Salve como: 57.jpg  =>  GOLDEN SENIOR AD MINI B CARNE 10.1KG  |  R$ 144,20
+✅ [FOTO OK] [CÓD: 58] => Salve como: 58.jpg  =>  GOLDEN ADULTO LIGHT FRANGO E ARROZ 10.1KG  |  R$ 144,70
+✅ [FOTO OK] [CÓD: 59] => Salve como: 59.jpg  =>  GOLDEN ADULTO MINI B CARNE 15KG  |  R$ 175,25
+✅ [FOTO OK] [CÓD: 66] => Salve como: 66.jpg  =>  COOKIE GOLDEN BANANA AVEIA E MEL 350G  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 69] => Salve como: 69.jpg  =>  COOKIE GOLDEN RACAS PEQ ORIGINAL 350G  |  R$ 18,90
+✅ [FOTO OK] [CÓD: 70] => Salve como: 70.jpg  =>  COOKIE GOLDEN RACAS PEQ MACA E AVEIA 350G  |  R$ 19,90
+✅ [FOTO OK] [CÓD: 71] => Salve como: 71.jpg  =>  COOKIE GOLDEN RACAS PEQ CARNE CENOURA E ESP 350G  |  R$ 18,90
+⏳ [PENDENTE] [CÓD: 73] => Salve como: 73.jpg  =>  SACHE GOLDEN FILHOTE FRANGO E VEGETAIS 85G  |  R$ 3,50
+✅ [FOTO OK] [CÓD: 74] => Salve como: 74.jpg  =>  SACHE GOLDEN PEQ PORTE CARNE E VEGETAIS 85G  |  R$ 3,50
+✅ [FOTO OK] [CÓD: 75] => Salve como: 75.jpg  =>  SACHE GOLDEN PEQ PORTE FRANGO E VEGETAIS 85G  |  R$ 3,50
+✅ [FOTO OK] [CÓD: 436] => Salve como: 436.jpg  =>  GOLDEN ADULTO MINI B FRANGO E ARROZ 15KG  |  R$ 175,25

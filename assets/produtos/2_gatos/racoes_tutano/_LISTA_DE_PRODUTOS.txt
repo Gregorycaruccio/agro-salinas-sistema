@@ -1,12 +1,15 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 313.jpg ou 313.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_tutano
+📊 Total: 8 produtos (0 com foto, 8 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 313.jpg ou 313.png)
+===============================================================================
 
-- [CÓD: 313] Ração Tutano Gatos Adultos Carne 10.1kg
-- [CÓD: 320] Ração Tutano Gatos Carne 1kg
-- [CÓD: 321] Ração Tutano Gatos Carne 3kg
-- [CÓD: 752] Ração Tutano Gatos Castrados Carne 10.1kg
-- [CÓD: 314] Ração Tutano Gatos Castrados Frango 10.1kg
-- [CÓD: 322] Ração Tutano Gatos Castrados Frango 1kg
-- [CÓD: 325] Ração Tutano Gatos Castrados Frango 3kg
-- [CÓD: 753] Ração Tutano Gatos Castrados Salmão 10.1kg
+⏳ [PENDENTE] [CÓD: 313] => Salve como: 313.jpg  =>  RACAO TUTANO GATOS ADULTOS CARNE 10.1KG  |  R$ 142,90
+⏳ [PENDENTE] [CÓD: 314] => Salve como: 314.jpg  =>  RACAO TUTANO GATOS CASTRADOS FRANGO 10.1KG  |  R$ 162,90
+⏳ [PENDENTE] [CÓD: 320] => Salve como: 320.jpg  =>  RACAO TUTANO GATOS CARNE 1KG  |  R$ 24,50
+⏳ [PENDENTE] [CÓD: 321] => Salve como: 321.jpg  =>  RACAO TUTANO GATOS CARNE 3KG  |  R$ 58,90
+⏳ [PENDENTE] [CÓD: 322] => Salve como: 322.jpg  =>  RACAO TUTANO GATOS CASTRADOS FRANGO 1KG  |  R$ 25,50
+⏳ [PENDENTE] [CÓD: 325] => Salve como: 325.jpg  =>  RACAO TUTANO GATOS CASTRADOS FRANGO 3KG  |  R$ 65,50
+⏳ [PENDENTE] [CÓD: 752] => Salve como: 752.jpg  =>  RACAO TUTANO GATOS CASTRADOS CARNE 10.1KG  |  R$ 178,90
+⏳ [PENDENTE] [CÓD: 753] => Salve como: 753.jpg  =>  RACAO TUTANO GATOS CASTRADOS SALMAO 10.1KG  |  R$ 186,90

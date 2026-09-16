@@ -1,30 +1,33 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 387.jpg ou 387.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/acessorios_brinquedos_mordedores
+📊 Total: 26 produtos (0 com foto, 26 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 231.jpg ou 231.png)
+===============================================================================
 
-- [CÓD: 387] Bola Cravinho Mini Color
-- [CÓD: 366] Bola Cravo Pequena 45mm
-- [CÓD: 422] Brinquedo Bola Cravo Grande com Apito Vinil
-- [CÓD: 412] Brinquedo Bola Snacks com Corda Vinil
-- [CÓD: 416] Brinquedo Bolinha Pequena com Corda Vinil
-- [CÓD: 418] Brinquedo Elefantinho Vinil Pequeno
-- [CÓD: 336] Brinquedo Galinha Sonora Media
-- [CÓD: 421] Brinquedo Hot Dog Vinil
-- [CÓD: 423] Brinquedo Jacare com Corda Vinil Pequeno
-- [CÓD: 417] Brinquedo Joaninha Pequena Vinil
-- [CÓD: 413] Brinquedo Ossinho Pequeno Vinil Rosa
-- [CÓD: 414] Brinquedo Salsicha com Corda Vinil
-- [CÓD: 415] Brinquedo Salsicha Pequeno com Corda Vinil
-- [CÓD: 419] Brinquedo Vaquinha Vinil Pequena
-- [CÓD: 420] Brinquedo X Burguer Vinil
-- [CÓD: 432] Cartela com 1 Ratinho + 1 Bola com Pena e 1 com Guizo
-- [CÓD: 434] Cartela com 1 Ratinho + 2 Bolas com Guizo e 1 Bola com Pena
-- [CÓD: 424] Mordedor Plastico
-- [CÓD: 425] Mordedor Plastico
-- [CÓD: 427] Mordedor Plastico Ancora
-- [CÓD: 429] Mordedor Plastico Chupeta
-- [CÓD: 428] Mordedor Plastico Espinha de Peixe
-- [CÓD: 426] Mordedor Plastico Ossinho
-- [CÓD: 675] Optimun Bola de Pelo Carne e Linhaca 80g
-- [CÓD: 231] Ração Mimos Cat Bolas de Pelo 10.1kg
-- [CÓD: 402] Ratinho Brinquedo Cinza
+⏳ [PENDENTE] [CÓD: 231] => Salve como: 231.jpg  =>  RACAO MIMOS CAT BOLAS DE PELO 10.1KG  |  R$ 193,70
+⏳ [PENDENTE] [CÓD: 336] => Salve como: 336.jpg  =>  BRINQUEDO GALINHA SONORA MEDIA  |  R$ 11,50
+⏳ [PENDENTE] [CÓD: 366] => Salve como: 366.jpg  =>  BOLA CRAVO PEQUENA 45MM  |  R$ 7,50
+⏳ [PENDENTE] [CÓD: 387] => Salve como: 387.jpg  =>  BOLA CRAVINHO MINI COLOR  |  R$ 6,50
+⏳ [PENDENTE] [CÓD: 402] => Salve como: 402.jpg  =>  RATINHO BRINQUEDO CINZA  |  R$ 4,50
+⏳ [PENDENTE] [CÓD: 412] => Salve como: 412.jpg  =>  BRINQUEDO BOLA SNACKS COM CORDA VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 413] => Salve como: 413.jpg  =>  BRINQUEDO OSSINHO PEQUENO VINIL ROSA  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 414] => Salve como: 414.jpg  =>  BRINQUEDO SALSICHA COM CORDA VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 415] => Salve como: 415.jpg  =>  BRINQUEDO SALSICHA PEQUENO COM CORDA VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 416] => Salve como: 416.jpg  =>  BRINQUEDO BOLINHA PEQUENA COM CORDA VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 417] => Salve como: 417.jpg  =>  BRINQUEDO JOANINHA PEQUENA VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 418] => Salve como: 418.jpg  =>  BRINQUEDO ELEFANTINHO VINIL PEQUENO  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 419] => Salve como: 419.jpg  =>  BRINQUEDO VAQUINHA VINIL PEQUENA  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 420] => Salve como: 420.jpg  =>  BRINQUEDO X BURGUER VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 421] => Salve como: 421.jpg  =>  BRINQUEDO HOT DOG VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 422] => Salve como: 422.jpg  =>  BRINQUEDO BOLA CRAVO GRANDE COM APITO VINIL  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 423] => Salve como: 423.jpg  =>  BRINQUEDO JACARE COM CORDA VINIL PEQUENO  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 424] => Salve como: 424.jpg  =>  MORDEDOR PLASTICO  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 425] => Salve como: 425.jpg  =>  MORDEDOR PLASTICO  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 426] => Salve como: 426.jpg  =>  MORDEDOR PLASTICO OSSINHO  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 427] => Salve como: 427.jpg  =>  MORDEDOR PLASTICO ANCORA  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 428] => Salve como: 428.jpg  =>  MORDEDOR PLASTICO ESPINHA DE PEIXE  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 429] => Salve como: 429.jpg  =>  MORDEDOR PLASTICO CHUPETA  |  R$ 8,99
+⏳ [PENDENTE] [CÓD: 432] => Salve como: 432.jpg  =>  CARTELA COM 1 RATINHO + 1 BOLA COM PENA E 1 COM GUIZO  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 434] => Salve como: 434.jpg  =>  CARTELA COM 1 RATINHO + 2 BOLAS COM GUIZO E 1 BOLA COM PENA  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 675] => Salve como: 675.jpg  =>  OPTIMUN BOLA DE PELO CARNE E LINHACA 80G  |  R$ 6,90

@@ -1,29 +1,31 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 601.jpg ou 601.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/3_farmacia/medicamentos_suplementos_ibasa_biotrin
+📊 Total: 24 produtos (0 com foto, 24 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 22.jpg ou 22.png)
+===============================================================================
 
-- [CÓD: 601] Allax Ivermectina Pássaros 5ml
-- [CÓD: 162] Averin Antibiotico 20ml
-- [CÓD: 597] Biodex Comprimido com 20 Comp
-- [CÓD: 163] Biotrin Vet Calcio B12 20ml
-- [CÓD: 161] Biotrin Vet Complexo Vitaminico 20ml
-- [CÓD: 160] Biotrin Vet Ps 100 20ml
-- [CÓD: 598] Carbovet com 20 Comp
-- [CÓD: 524] Colosso Pulverizacao 25 ml
-- [CÓD: 596] Creolina Pearson 50ml
-- [CÓD: 535] Defenza 200mg Cães 10 a 20kg
-- [CÓD: 536] Defenza 400mg Cães 20 a 40kg
-- [CÓD: 627] Florafarm Pet Probiotico + Vit 4x1
-- [CÓD: 599] Fluido Ibasa Spray 100ml
-- [CÓD: 600] Fluido Ibasa Spray 200ml
-- [CÓD: 24] Gel Dental Mordisco de Carinho 40g
-- [CÓD: 22] Hidra Reflex Locao Hidratante 50g
-- [CÓD: 643] Insetcida Liquido Lambda Spray 500ml
-- [CÓD: 88] Invicto Anti Pulga 11.4mg
-- [CÓD: 666] Mata Escorpiao Inseticida Spray400ml
-- [CÓD: 654] Neotopic Spray 125ml
-- [CÓD: 625] Otolin 15ml
-- [CÓD: 23] Pet Glove Luva Invisivel para Coxins 50g
-- [CÓD: 624] Rifotrat Spray 20ml
-- [CÓD: 621] Spray Prata Silverbac 300ml
-- [CÓD: 406] Vermivet Composto Vermifugo Cães e Gatos
+⏳ [PENDENTE] [CÓD: 22] => Salve como: 22.jpg  =>  HIDRA REFLEX LOCAO HIDRATANTE 50G  |  R$ 70,80
+⏳ [PENDENTE] [CÓD: 23] => Salve como: 23.jpg  =>  PET GLOVE LUVA INVISIVEL PARA COXINS 50G  |  R$ 79,80
+⏳ [PENDENTE] [CÓD: 24] => Salve como: 24.jpg  =>  GEL DENTAL MORDISCO DE CARINHO 40G  |  R$ 33,50
+⏳ [PENDENTE] [CÓD: 160] => Salve como: 160.jpg  =>  BIOTRIN VET PS 100 20ML  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 161] => Salve como: 161.jpg  =>  BIOTRIN VET COMPLEXO VITAMINICO 20ML  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 162] => Salve como: 162.jpg  =>  AVERIN ANTIBIOTICO 20ML  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 163] => Salve como: 163.jpg  =>  BIOTRIN VET CALCIO B12 20ML  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 406] => Salve como: 406.jpg  =>  VERMIVET COMPOSTO VERMIFUGO CAES E GATOS  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 524] => Salve como: 524.jpg  =>  COLOSSO PULVERIZACAO 25 ML  |  R$ 13,50
+⏳ [PENDENTE] [CÓD: 535] => Salve como: 535.jpg  =>  DEFENZA 200MG CAES 10 A 20KG  |  R$ 101,00
+⏳ [PENDENTE] [CÓD: 536] => Salve como: 536.jpg  =>  DEFENZA 400MG CAES 20 A 40KG  |  R$ 117,00
+⏳ [PENDENTE] [CÓD: 596] => Salve como: 596.jpg  =>  CREOLINA PEARSON 50ML  |  R$ 19,50
+⏳ [PENDENTE] [CÓD: 597] => Salve como: 597.jpg  =>  BIODEX COMPRIMIDO COM 20 COMP  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 598] => Salve como: 598.jpg  =>  CARBOVET COM 20 COMP  |  R$ 37,00
+⏳ [PENDENTE] [CÓD: 599] => Salve como: 599.jpg  =>  FLUIDO IBASA SPRAY 100ML  |  R$ 24,99
+⏳ [PENDENTE] [CÓD: 600] => Salve como: 600.jpg  =>  FLUIDO IBASA SPRAY 200ML  |  R$ 42,90
+⏳ [PENDENTE] [CÓD: 601] => Salve como: 601.jpg  =>  ALLAX IVERMECTINA PASSAROS 5ML  |  R$ 29,90
+⏳ [PENDENTE] [CÓD: 621] => Salve como: 621.jpg  =>  SPRAY PRATA SILVERBAC 300ML  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 624] => Salve como: 624.jpg  =>  RIFOTRAT SPRAY 20ML  |  R$ 24,99
+⏳ [PENDENTE] [CÓD: 625] => Salve como: 625.jpg  =>  OTOLIN 15ML  |  R$ 49,90
+⏳ [PENDENTE] [CÓD: 627] => Salve como: 627.jpg  =>  FLORAFARM PET PROBIOTICO + VIT 4X1  |  R$ 26,50
+⏳ [PENDENTE] [CÓD: 643] => Salve como: 643.jpg  =>  INSETCIDA LIQUIDO LAMBDA SPRAY 500ML  |  R$ 39,90
+⏳ [PENDENTE] [CÓD: 654] => Salve como: 654.jpg  =>  NEOTOPIC SPRAY 125ML  |  R$ 42,50
+⏳ [PENDENTE] [CÓD: 666] => Salve como: 666.jpg  =>  MATA ESCORPIAO INSETICIDA SPRAY400ML  |  R$ 16,50

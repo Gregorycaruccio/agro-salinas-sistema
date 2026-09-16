@@ -1,10 +1,13 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 277.jpg ou 277.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_monello_birbo
+📊 Total: 6 produtos (0 com foto, 6 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 277.jpg ou 277.png)
+===============================================================================
 
-- [CÓD: 277] Ração Birbo Cão Tradicional 15kg
-- [CÓD: 278] Ração Birbo Cão Tradicional 25kg
-- [CÓD: 283] Ração Monello Cão Filhote 15kg
-- [CÓD: 284] Ração Monello Cão Racas Pequenas 15kg
-- [CÓD: 285] Ração Monello Cão Tradicional 15kg
-- [CÓD: 286] Ração Monello Go Carne 15kg
+⏳ [PENDENTE] [CÓD: 277] => Salve como: 277.jpg  =>  RACAO BIRBO CAO TRADICIONAL 15KG  |  R$ 110,00
+⏳ [PENDENTE] [CÓD: 278] => Salve como: 278.jpg  =>  RACAO BIRBO CAO TRADICIONAL 25KG  |  R$ 156,00
+⏳ [PENDENTE] [CÓD: 283] => Salve como: 283.jpg  =>  RACAO MONELLO CAO FILHOTE 15KG  |  R$ 233,00
+⏳ [PENDENTE] [CÓD: 284] => Salve como: 284.jpg  =>  RACAO MONELLO CAO RACAS PEQUENAS 15KG  |  R$ 200,17
+⏳ [PENDENTE] [CÓD: 285] => Salve como: 285.jpg  =>  RACAO MONELLO CAO TRADICIONAL 15KG  |  R$ 150,00
+⏳ [PENDENTE] [CÓD: 286] => Salve como: 286.jpg  =>  RACAO MONELLO GO CARNE 15KG  |  R$ 141,90

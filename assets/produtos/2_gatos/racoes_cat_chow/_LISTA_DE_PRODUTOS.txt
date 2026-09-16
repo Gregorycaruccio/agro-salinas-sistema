@@ -1,10 +1,13 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 35.jpg ou 35.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_cat_chow
+📊 Total: 6 produtos (0 com foto, 6 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 34.jpg ou 34.png)
+===============================================================================
 
-- [CÓD: 35] Cat Chow Castrados Frango 2.7kg
-- [CÓD: 34] Cat Chow Castrados Peixe 2.7kg
-- [CÓD: 36] Sache Cat Chow Castrado Carne 85g
-- [CÓD: 721] Sache Cat Chow Castrado Frango  85g
-- [CÓD: 37] Sache Cat Chow Castrado Peixe 85g
-- [CÓD: 720] Sache Cat Chow Filhote Frango 85g
+⏳ [PENDENTE] [CÓD: 34] => Salve como: 34.jpg  =>  CAT CHOW CASTRADOS PEIXE 2.7KG  |  R$ 64,00
+⏳ [PENDENTE] [CÓD: 35] => Salve como: 35.jpg  =>  CAT CHOW CASTRADOS FRANGO 2.7KG  |  R$ 64,00
+⏳ [PENDENTE] [CÓD: 36] => Salve como: 36.jpg  =>  SACHE CAT CHOW CASTRADO CARNE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 37] => Salve como: 37.jpg  =>  SACHE CAT CHOW CASTRADO PEIXE 85G  |  R$ 3,90
+⏳ [PENDENTE] [CÓD: 720] => Salve como: 720.jpg  =>  SACHE CAT CHOW FILHOTE FRANGO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 721] => Salve como: 721.jpg  =>  SACHE CAT CHOW CASTRADO FRANGO 85G  |  R$ 3,50

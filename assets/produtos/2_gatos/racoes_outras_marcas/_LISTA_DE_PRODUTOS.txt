@@ -1,57 +1,65 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 348.jpg ou 348.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/racoes_outras_marcas
+📊 Total: 58 produtos (0 com foto, 58 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 6.jpg ou 6.png)
+===============================================================================
 
-- [CÓD: 348] Brinquedo Varinha para Gato
-- [CÓD: 623] Coleira Gato com Peiteira
-- [CÓD: 394] Coleira Gato com Pingente Gatinhos
-- [CÓD: 395] Coleira Gato com Pingente Guizo
-- [CÓD: 391] Comedouro Alto para Gato Postura Correta
-- [CÓD: 360] Comedouro Duplo Automatico Gatinho
-- [CÓD: 401] Fonte Gato Cascata Azul
-- [CÓD: 400] Fonte Gato Cascata Rosa
-- [CÓD: 399] Fonte Gato Cascata Vermelha
-- [CÓD: 398] Fonte Redonda para Gato Azul
-- [CÓD: 397] Fonte Redonda para Gato Rosa
-- [CÓD: 396] Fonte Redonda para Gato Vermelha
-- [CÓD: 105] Gp Gato Castrado Carne 10.1kg
-- [CÓD: 106] Gp Gato Castrado Frango e Arroz 10.1kg
-- [CÓD: 107] Gp Gato Castrado Salmão e Arroz 10.1kg
-- [CÓD: 732] Granulado Higienico de Madeira 4kg
-- [CÓD: 558] Molho para Ração Gato Sabor Carne 250g
-- [CÓD: 559] Molho para Ração Gato Sabor Peixe 250g
-- [CÓD: 83] Pate Lata Gato Casspet Carne 290g
-- [CÓD: 84] Pate Lata Gato Casspet Frango 290g
-- [CÓD: 82] Pate Lata Gato Casspet Peixe 290g
-- [CÓD: 109] Primogato Blend 20kg
-- [CÓD: 108] Primogato Castrados Frango 15kg
-- [CÓD: 744] Primogato Original 15kg
-- [CÓD: 224] Ração Brainplus Gato Castrado Carne 10kg
-- [CÓD: 225] Ração Brainplus Gato Castrado Frango e Salmão 10kg
-- [CÓD: 234] Ração Brainplus Gato Filhote 10.1kg
-- [CÓD: 260] Ração Gastrointestinal Gato Feline 1.5kg
-- [CÓD: 295] Ração Gato Billi Cat Adulto Frango 10.1kg
-- [CÓD: 294] Ração Gato Billi Cat Castrado 10.1kg
-- [CÓD: 641] Ração Gato Castrado Croc 10.1kg
-- [CÓD: 297] Ração Gato Castrado Quartz Frango 10.1kg
-- [CÓD: 298] Ração Gato Castrado Quartz Salmão 10.1kg
-- [CÓD: 121] Ração Gato Vicato 20kg
-- [CÓD: 239] Ração Kiara Gato Peixe e Frango 10.1kg
-- [CÓD: 282] Ração Monello Gato Adulto Salmão 10.1kg
-- [CÓD: 281] Ração Monello Gato Castrado 10.1kg
-- [CÓD: 301] Ração Quartz Gato Adulto Frango 15kg
-- [CÓD: 300] Ração Quartz Gato Castrado Frango 15kg
-- [CÓD: 251] Ração Urinary Gato Feline 400g
-- [CÓD: 7] Sache Gato Adulto Carne 85g
-- [CÓD: 95] Sache Gato Adulto Carne 85g
-- [CÓD: 94] Sache Gato Adulto Peixe 85g
-- [CÓD: 6] Sache Gato Castrado Salmão 85g
-- [CÓD: 8] Sache Gato Filhote Frango 85g
-- [CÓD: 96] Sache Gato Filhote Peru e Frango 85g
-- [CÓD: 548] Sache Optimum Gato Frango 85g
-- [CÓD: 549] Sache Optimum Gato Salmão 85g
-- [CÓD: 338] Sanitario Gato Amarelo
-- [CÓD: 339] Sanitario Gato Vermelho
-- [CÓD: 11] Shampo Cães e Gatos Melancia 500ml
-- [CÓD: 13] Shampo Cães e Gatos Tuti Fruti 500ml
-- [CÓD: 12] Shampo Cães e Gatos Uva 500ml
+⏳ [PENDENTE] [CÓD: 6] => Salve como: 6.jpg  =>  SACHE GATO CASTRADO SALMAO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 7] => Salve como: 7.jpg  =>  SACHE GATO ADULTO CARNE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 8] => Salve como: 8.jpg  =>  SACHE GATO FILHOTE FRANGO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 11] => Salve como: 11.jpg  =>  SHAMPO CAES E GATOS MELANCIA 500ML  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 12] => Salve como: 12.jpg  =>  SHAMPO CAES E GATOS UVA 500ML  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 13] => Salve como: 13.jpg  =>  SHAMPO CAES E GATOS TUTI FRUTI 500ML  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 82] => Salve como: 82.jpg  =>  PATE LATA GATO CASSPET PEIXE 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 83] => Salve como: 83.jpg  =>  PATE LATA GATO CASSPET CARNE 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 84] => Salve como: 84.jpg  =>  PATE LATA GATO CASSPET FRANGO 290G  |  R$ 9,99
+⏳ [PENDENTE] [CÓD: 94] => Salve como: 94.jpg  =>  SACHE GATO ADULTO PEIXE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 95] => Salve como: 95.jpg  =>  SACHE GATO ADULTO CARNE 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 96] => Salve como: 96.jpg  =>  SACHE GATO FILHOTE PERU E FRANGO 85G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 105] => Salve como: 105.jpg  =>  GP GATO CASTRADO CARNE 10.1KG  |  R$ 179,80
+⏳ [PENDENTE] [CÓD: 106] => Salve como: 106.jpg  =>  GP GATO CASTRADO FRANGO E ARROZ 10.1KG  |  R$ 179,80
+⏳ [PENDENTE] [CÓD: 107] => Salve como: 107.jpg  =>  GP GATO CASTRADO SALMAO E ARROZ 10.1KG  |  R$ 180,80
+⏳ [PENDENTE] [CÓD: 108] => Salve como: 108.jpg  =>  PRIMOGATO CASTRADOS FRANGO 15KG  |  R$ 202,60
+⏳ [PENDENTE] [CÓD: 109] => Salve como: 109.jpg  =>  PRIMOGATO BLEND 20KG  |  R$ 291,15
+⏳ [PENDENTE] [CÓD: 121] => Salve como: 121.jpg  =>  RACAO GATO VICATO 20KG  |  R$ 166,50
+⏳ [PENDENTE] [CÓD: 224] => Salve como: 224.jpg  =>  RACAO BRAINPLUS GATO CASTRADO CARNE 10KG  |  R$ 175,50
+⏳ [PENDENTE] [CÓD: 225] => Salve como: 225.jpg  =>  RACAO BRAINPLUS GATO CASTRADO FRANGO E SALMAO 10KG  |  R$ 175,50
+⏳ [PENDENTE] [CÓD: 234] => Salve como: 234.jpg  =>  RACAO BRAINPLUS GATO FILHOTE 10.1KG  |  R$ 165,00
+⏳ [PENDENTE] [CÓD: 239] => Salve como: 239.jpg  =>  RACAO KIARA GATO PEIXE E FRANGO 10.1KG  |  R$ 93,50
+⏳ [PENDENTE] [CÓD: 251] => Salve como: 251.jpg  =>  RACAO URINARY GATO FELINE 400G  |  R$ 45,60
+⏳ [PENDENTE] [CÓD: 260] => Salve como: 260.jpg  =>  RACAO GASTROINTESTINAL GATO FELINE 1.5KG  |  R$ 162,50
+⏳ [PENDENTE] [CÓD: 281] => Salve como: 281.jpg  =>  RACAO MONELLO GATO CASTRADO 10.1KG  |  R$ 179,90
+⏳ [PENDENTE] [CÓD: 282] => Salve como: 282.jpg  =>  RACAO MONELLO GATO ADULTO SALMAO 10.1KG  |  R$ 179,60
+⏳ [PENDENTE] [CÓD: 294] => Salve como: 294.jpg  =>  RACAO GATO BILLI CAT CASTRADO 10.1KG  |  R$ 102,50
+⏳ [PENDENTE] [CÓD: 295] => Salve como: 295.jpg  =>  RACAO GATO BILLI CAT ADULTO FRANGO 10.1KG  |  R$ 89,90
+⏳ [PENDENTE] [CÓD: 297] => Salve como: 297.jpg  =>  RACAO GATO CASTRADO QUARTZ FRANGO 10.1KG  |  R$ 119,90
+⏳ [PENDENTE] [CÓD: 298] => Salve como: 298.jpg  =>  RACAO GATO CASTRADO QUARTZ SALMAO 10.1KG  |  R$ 119,90
+⏳ [PENDENTE] [CÓD: 300] => Salve como: 300.jpg  =>  RACAO QUARTZ GATO CASTRADO FRANGO 15KG  |  R$ 175,00
+⏳ [PENDENTE] [CÓD: 301] => Salve como: 301.jpg  =>  RACAO QUARTZ GATO ADULTO FRANGO 15KG  |  R$ 169,90
+⏳ [PENDENTE] [CÓD: 338] => Salve como: 338.jpg  =>  SANITARIO GATO AMARELO  |  R$ 99,90
+⏳ [PENDENTE] [CÓD: 339] => Salve como: 339.jpg  =>  SANITARIO GATO VERMELHO  |  R$ 99,90
+⏳ [PENDENTE] [CÓD: 360] => Salve como: 360.jpg  =>  COMEDOURO DUPLO AUTOMATICO GATINHO  |  R$ 32,00
+⏳ [PENDENTE] [CÓD: 390] => Salve como: 390.jpg  =>  PA HIGIENICA GATO COLOR  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 391] => Salve como: 391.jpg  =>  COMEDOURO ALTO PARA GATO POSTURA CORRETA  |  R$ 9,00
+⏳ [PENDENTE] [CÓD: 392] => Salve como: 392.jpg  =>  PA HIGIENICA INOX PARA GATOS  |  R$ 24,90
+⏳ [PENDENTE] [CÓD: 394] => Salve como: 394.jpg  =>  COLEIRA GATO COM PINGENTE GATINHOS  |  R$ 9,80
+⏳ [PENDENTE] [CÓD: 395] => Salve como: 395.jpg  =>  COLEIRA GATO COM PINGENTE GUIZO  |  R$ 9,80
+⏳ [PENDENTE] [CÓD: 396] => Salve como: 396.jpg  =>  FONTE REDONDA PARA GATO VERMELHA  |  R$ 49,50
+⏳ [PENDENTE] [CÓD: 397] => Salve como: 397.jpg  =>  FONTE REDONDA PARA GATO ROSA  |  R$ 49,50
+⏳ [PENDENTE] [CÓD: 398] => Salve como: 398.jpg  =>  FONTE REDONDA PARA GATO AZUL  |  R$ 49,50
+⏳ [PENDENTE] [CÓD: 399] => Salve como: 399.jpg  =>  FONTE GATO CASCATA VERMELHA  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 400] => Salve como: 400.jpg  =>  FONTE GATO CASCATA ROSA  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 401] => Salve como: 401.jpg  =>  FONTE GATO CASCATA AZUL  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 548] => Salve como: 548.jpg  =>  SACHE OPTIMUM GATO FRANGO 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 549] => Salve como: 549.jpg  =>  SACHE OPTIMUM GATO SALMAO 85G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 551] => Salve como: 551.jpg  =>  PA HIGIENICA GATO PLAS PET ROSA  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 552] => Salve como: 552.jpg  =>  PA HIGIENICA GATO PLAS PET AZUL  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 553] => Salve como: 553.jpg  =>  PA HIGIENICA GATO PLAS PET GOLD  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 554] => Salve como: 554.jpg  =>  PA HIGIENICA GATO PLAS PET VERMELHA  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 555] => Salve como: 555.jpg  =>  PA HIGIENICA GATO PLAS PET CINZA  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 558] => Salve como: 558.jpg  =>  MOLHO PARA RACAO GATO SABOR CARNE 250G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 559] => Salve como: 559.jpg  =>  MOLHO PARA RACAO GATO SABOR PEIXE 250G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 623] => Salve como: 623.jpg  =>  COLEIRA GATO COM PEITEIRA  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 641] => Salve como: 641.jpg  =>  RACAO GATO CASTRADO CROC 10.1KG  |  R$ 118,90
+⏳ [PENDENTE] [CÓD: 744] => Salve como: 744.jpg  =>  PRIMOGATO ORIGINAL 15KG  |  R$ 186,04

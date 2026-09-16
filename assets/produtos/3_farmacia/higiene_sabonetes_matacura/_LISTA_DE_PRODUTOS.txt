@@ -1,6 +1,9 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 381.jpg ou 381.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/3_farmacia/higiene_sabonetes_matacura
+📊 Total: 2 produtos (0 com foto, 2 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 380.jpg ou 380.png)
+===============================================================================
 
-- [CÓD: 381] Sabonete Matacura Anti Pulga/sarna Amarelo 90g
-- [CÓD: 380] Sabonete Matacura Antiseptico Verde 90g
+⏳ [PENDENTE] [CÓD: 380] => Salve como: 380.jpg  =>  SABONETE MATACURA ANTISEPTICO VERDE 90G  |  R$ 8,50
+⏳ [PENDENTE] [CÓD: 381] => Salve como: 381.jpg  =>  SABONETE MATACURA ANTI PULGA/SARNA AMARELO 90G  |  R$ 10,00

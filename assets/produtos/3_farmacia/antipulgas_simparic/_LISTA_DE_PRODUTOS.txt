@@ -1,7 +1,10 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 19.jpg ou 19.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/3_farmacia/antipulgas_simparic
+📊 Total: 3 produtos (0 com foto, 3 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 19.jpg ou 19.png)
+===============================================================================
 
-- [CÓD: 19] Simparic Caixa 20mg com 3 Comprimidos
-- [CÓD: 20] Simparic Caixa 40mg com 3 Comprimidos
-- [CÓD: 21] Simparic Caixa 80mg com 3 Comprimidos
+⏳ [PENDENTE] [CÓD: 19] => Salve como: 19.jpg  =>  SIMPARIC CAIXA 20MG COM 3 COMPRIMIDOS  |  R$ 226,50
+⏳ [PENDENTE] [CÓD: 20] => Salve como: 20.jpg  =>  SIMPARIC CAIXA 40MG COM 3 COMPRIMIDOS  |  R$ 269,00
+⏳ [PENDENTE] [CÓD: 21] => Salve como: 21.jpg  =>  SIMPARIC CAIXA 80MG COM 3 COMPRIMIDOS  |  R$ 333,00

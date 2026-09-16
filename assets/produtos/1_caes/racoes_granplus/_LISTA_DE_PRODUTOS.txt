@@ -1,7 +1,10 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 650.jpg ou 650.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_granplus
+📊 Total: 3 produtos (0 com foto, 3 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 90.jpg ou 90.png)
+===============================================================================
 
-- [CÓD: 650] Sache Gran Plus Cão Adulto Carne 100g
-- [CÓD: 651] Sache Gran Plus Cão Adulto Frango 100g
-- [CÓD: 90] Sache Gran Plus Cão Adulto Ovelha 100g
+⏳ [PENDENTE] [CÓD: 90] => Salve como: 90.jpg  =>  SACHE GRAN PLUS CAO ADULTO OVELHA 100G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 650] => Salve como: 650.jpg  =>  SACHE GRAN PLUS CAO ADULTO CARNE 100G  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 651] => Salve como: 651.jpg  =>  SACHE GRAN PLUS CAO ADULTO FRANGO 100G  |  R$ 3,00

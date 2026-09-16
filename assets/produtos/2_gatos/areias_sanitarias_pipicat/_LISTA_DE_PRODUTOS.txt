@@ -1,6 +1,9 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 618.jpg ou 618.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/2_gatos/areias_sanitarias_pipicat
+📊 Total: 2 produtos (0 com foto, 2 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 618.jpg ou 618.png)
+===============================================================================
 
-- [CÓD: 618] Areia Sanitaria Pipicat Classic 4kg
-- [CÓD: 619] Areia Sanitaria Pipicat Floral 4kg
+⏳ [PENDENTE] [CÓD: 618] => Salve como: 618.jpg  =>  AREIA SANITARIA PIPICAT CLASSIC 4KG  |  R$ 16,25
+⏳ [PENDENTE] [CÓD: 619] => Salve como: 619.jpg  =>  AREIA SANITARIA PIPICAT FLORAL 4KG  |  R$ 23,00

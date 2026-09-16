@@ -1,11 +1,14 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 724.jpg ou 724.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/6_pesca/linhas_anzis_chicotes
+📊 Total: 7 produtos (0 com foto, 7 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 723.jpg ou 723.png)
+===============================================================================
 
-- [CÓD: 724] Chicote Pesca Papa Terra Numero 14
-- [CÓD: 723] Chicote Pesca Papa Terra un
-- [CÓD: 726] Chicote Pesca Peixe Rei Duplo Numero 14
-- [CÓD: 725] Chicote Pesca Peixe Rei Numero 12
-- [CÓD: 727] Chicote Pesca Peixe Rei Numero 14
-- [CÓD: 728] Chicote Pesca Pescada Numero 18
-- [CÓD: 729] Chicote Pesca Pescada Numero 20
+⏳ [PENDENTE] [CÓD: 723] => Salve como: 723.jpg  =>  CHICOTE PESCA PAPA TERRA UN  |  R$ 7,00
+⏳ [PENDENTE] [CÓD: 724] => Salve como: 724.jpg  =>  CHICOTE PESCA PAPA TERRA NUMERO 14  |  R$ 7,00
+⏳ [PENDENTE] [CÓD: 725] => Salve como: 725.jpg  =>  CHICOTE PESCA PEIXE REI NUMERO 12  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 726] => Salve como: 726.jpg  =>  CHICOTE PESCA PEIXE REI DUPLO NUMERO 14  |  R$ 21,00
+⏳ [PENDENTE] [CÓD: 727] => Salve como: 727.jpg  =>  CHICOTE PESCA PEIXE REI NUMERO 14  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 728] => Salve como: 728.jpg  =>  CHICOTE PESCA PESCADA NUMERO 18  |  R$ 16,00
+⏳ [PENDENTE] [CÓD: 729] => Salve como: 729.jpg  =>  CHICOTE PESCA PESCADA NUMERO 20  |  R$ 16,00

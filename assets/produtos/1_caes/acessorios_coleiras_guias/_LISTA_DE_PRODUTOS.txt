@@ -1,33 +1,37 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 608.jpg ou 608.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/acessorios_coleiras_guias
+📊 Total: 30 produtos (0 com foto, 30 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 202.jpg ou 202.png)
+===============================================================================
 
-- [CÓD: 608] Coleira Cão Herois com Pingente
-- [CÓD: 206] Coleira Couro Cão Numero 3
-- [CÓD: 207] Coleira Couro Cão Numero 4
-- [CÓD: 208] Coleira Couro Cão Numero 5
-- [CÓD: 209] Coleira Couro Cão Numero 7
-- [CÓD: 633] Coleira Couro Gladeador com Spike
-- [CÓD: 500] Coleira Couro Preta n 01
-- [CÓD: 501] Coleira Couro Preta n 03
-- [CÓD: 502] Coleira Couro Preta n 05
-- [CÓD: 527] Coleira Couro Preta n 08
-- [CÓD: 528] Coleira Couro Preta n 10
-- [CÓD: 639] Guia Corda com Enforcador
-- [CÓD: 579] Guia Corda Longa Passeio
-- [CÓD: 580] Guia Corda Longa Passeio 1.05x14mm
-- [CÓD: 581] Guia Corda Longa Passeio 40x16mm
-- [CÓD: 578] Guia Corda Passeio Color
-- [CÓD: 204] Guia de Corda Curta Sem Mola Cão Passeio
-- [CÓD: 203] Guia de Corda Media com Mola Cão Passeio
-- [CÓD: 202] Guia Seda com Peitoral Cão Passeio
-- [CÓD: 441] Guia Seda com Peitoral Cão Passeio Neon n 0
-- [CÓD: 442] Guia Seda com Peitoral Cão Passeio Neon n 1
-- [CÓD: 443] Guia Seda com Peitoral Cão Passeio Neon n 2
-- [CÓD: 444] Guia Seda com Peitoral Cão Passeio Neon n 3
-- [CÓD: 445] Guia Seda com Peitoral Cão Passeio Neon n 4
-- [CÓD: 573] Guia Seda com Peitoral n 0
-- [CÓD: 574] Guia Seda com Peitoral n 1
-- [CÓD: 575] Guia Seda com Peitoral n 2
-- [CÓD: 576] Guia Seda com Peitoral n 3
-- [CÓD: 577] Guia Seda com Peitoral n 4
+⏳ [PENDENTE] [CÓD: 202] => Salve como: 202.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO  |  R$ 33,00
+⏳ [PENDENTE] [CÓD: 203] => Salve como: 203.jpg  =>  GUIA DE CORDA MEDIA COM MOLA CAO PASSEIO  |  R$ 33,00
+⏳ [PENDENTE] [CÓD: 204] => Salve como: 204.jpg  =>  GUIA DE CORDA CURTA SEM MOLA CAO PASSEIO  |  R$ 27,00
+⏳ [PENDENTE] [CÓD: 206] => Salve como: 206.jpg  =>  COLEIRA COURO CAO NUMERO 3  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 207] => Salve como: 207.jpg  =>  COLEIRA COURO CAO NUMERO 4  |  R$ 18,00
+⏳ [PENDENTE] [CÓD: 208] => Salve como: 208.jpg  =>  COLEIRA COURO CAO NUMERO 5  |  R$ 22,50
+⏳ [PENDENTE] [CÓD: 209] => Salve como: 209.jpg  =>  COLEIRA COURO CAO NUMERO 7  |  R$ 30,00
+⏳ [PENDENTE] [CÓD: 441] => Salve como: 441.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO NEON N 0  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 442] => Salve como: 442.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO NEON N 1  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 443] => Salve como: 443.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO NEON N 2  |  R$ 35,00
+⏳ [PENDENTE] [CÓD: 444] => Salve como: 444.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO NEON N 3  |  R$ 43,90
+⏳ [PENDENTE] [CÓD: 445] => Salve como: 445.jpg  =>  GUIA SEDA COM PEITORAL CAO PASSEIO NEON N 4  |  R$ 58,90
+⏳ [PENDENTE] [CÓD: 500] => Salve como: 500.jpg  =>  COLEIRA COURO PRETA N 01  |  R$ 12,00
+⏳ [PENDENTE] [CÓD: 501] => Salve como: 501.jpg  =>  COLEIRA COURO PRETA N 03  |  R$ 17,00
+⏳ [PENDENTE] [CÓD: 502] => Salve como: 502.jpg  =>  COLEIRA COURO PRETA N 05  |  R$ 20,00
+⏳ [PENDENTE] [CÓD: 527] => Salve como: 527.jpg  =>  COLEIRA COURO PRETA N 08  |  R$ 32,00
+⏳ [PENDENTE] [CÓD: 528] => Salve como: 528.jpg  =>  COLEIRA COURO PRETA N 10  |  R$ 42,50
+⏳ [PENDENTE] [CÓD: 573] => Salve como: 573.jpg  =>  GUIA SEDA COM PEITORAL N 0  |  R$ 24,90
+⏳ [PENDENTE] [CÓD: 574] => Salve como: 574.jpg  =>  GUIA SEDA COM PEITORAL N 1  |  R$ 25,90
+⏳ [PENDENTE] [CÓD: 575] => Salve como: 575.jpg  =>  GUIA SEDA COM PEITORAL N 2  |  R$ 26,90
+⏳ [PENDENTE] [CÓD: 576] => Salve como: 576.jpg  =>  GUIA SEDA COM PEITORAL N 3  |  R$ 28,90
+⏳ [PENDENTE] [CÓD: 577] => Salve como: 577.jpg  =>  GUIA SEDA COM PEITORAL N 4  |  R$ 33,00
+⏳ [PENDENTE] [CÓD: 578] => Salve como: 578.jpg  =>  GUIA CORDA PASSEIO COLOR  |  R$ 19,90
+⏳ [PENDENTE] [CÓD: 579] => Salve como: 579.jpg  =>  GUIA CORDA LONGA PASSEIO  |  R$ 28,90
+⏳ [PENDENTE] [CÓD: 580] => Salve como: 580.jpg  =>  GUIA CORDA LONGA PASSEIO 1.05X14MM  |  R$ 26,90
+⏳ [PENDENTE] [CÓD: 581] => Salve como: 581.jpg  =>  GUIA CORDA LONGA PASSEIO 40X16MM  |  R$ 23,90
+⏳ [PENDENTE] [CÓD: 608] => Salve como: 608.jpg  =>  COLEIRA CAO HEROIS COM PINGENTE  |  R$ 12,90
+⏳ [PENDENTE] [CÓD: 633] => Salve como: 633.jpg  =>  COLEIRA COURO GLADEADOR COM SPIKE  |  R$ 74,90
+⏳ [PENDENTE] [CÓD: 634] => Salve como: 634.jpg  =>  FOCINHEIRA COURO GLADIADOR 35X10  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 639] => Salve como: 639.jpg  =>  GUIA CORDA COM ENFORCADOR  |  R$ 43,50

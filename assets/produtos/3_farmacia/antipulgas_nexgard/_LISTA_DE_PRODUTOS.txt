@@ -1,9 +1,12 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 532.jpg ou 532.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/3_farmacia/antipulgas_nexgard
+📊 Total: 5 produtos (0 com foto, 5 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 530.jpg ou 530.png)
+===============================================================================
 
-- [CÓD: 532] Nexgard Cão 10 a 25kg Unidade
-- [CÓD: 530] Nexgard Cão 2 a 4kg Unidade
-- [CÓD: 533] Nexgard Cão 25 a 50kg Unidade
-- [CÓD: 531] Nexgard Cão 4 a 10kg Unidade
-- [CÓD: 534] Nexgard Combo Gato 2.5 a 7.5kg - 1 Pipeta
+⏳ [PENDENTE] [CÓD: 530] => Salve como: 530.jpg  =>  NEXGARD CAO 2 A 4KG UNIDADE  |  R$ 76,50
+⏳ [PENDENTE] [CÓD: 531] => Salve como: 531.jpg  =>  NEXGARD CAO 4 A 10KG UNIDADE  |  R$ 85,00
+⏳ [PENDENTE] [CÓD: 532] => Salve como: 532.jpg  =>  NEXGARD CAO 10 A 25KG UNIDADE  |  R$ 98,90
+⏳ [PENDENTE] [CÓD: 533] => Salve como: 533.jpg  =>  NEXGARD CAO 25 A 50KG UNIDADE  |  R$ 116,50
+⏳ [PENDENTE] [CÓD: 534] => Salve como: 534.jpg  =>  NEXGARD COMBO GATO 2.5 A 7.5KG - 1 PIPETA  |  R$ 79,90

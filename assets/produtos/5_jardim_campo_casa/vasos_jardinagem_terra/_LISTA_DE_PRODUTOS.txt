@@ -1,54 +1,62 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 467.jpg ou 467.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra
+📊 Total: 55 produtos (0 com foto, 55 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 446.jpg ou 446.png)
+===============================================================================
 
-- [CÓD: 467] Adubo Fertilizante Npk 10 10 10 1kg
-- [CÓD: 589] Beterraba Muda
-- [CÓD: 466] Cuia Completa n 01 Ceramica
-- [CÓD: 607] Frutiferas Pitanga + Vaso Unidade
-- [CÓD: 479] Prato para Floreira Preto Grande
-- [CÓD: 478] Prato para Floreira Preto Pequeno
-- [CÓD: 469] Prato Plastico Ceramica n 05
-- [CÓD: 471] Prato Plastico Ceramica n 11
-- [CÓD: 470] Prato Plastico Preto n 02
-- [CÓD: 472] Prato Plastico Preto n 05
-- [CÓD: 446] Suporte Cuia com 3 Vasos Cabo de Aco
-- [CÓD: 493] Tela Lua Parede Madeira com 2 Vasos
-- [CÓD: 494] Tela Lua Parede Madeira com 3 Vasos
-- [CÓD: 640] Terra Adubada Composto Organico 20kg
-- [CÓD: 499] Terra para Vasos e Floreiras 2kg Classe a
-- [CÓD: 562] Terra Preta para Plantas Pcte 20kg
-- [CÓD: 537] Terra Vegetal para Plantas Pcte 10kg
-- [CÓD: 495] Terra Vegetal Pcte 1.6kg
-- [CÓD: 452] Vaso 17 com Prato Preto Unitario
-- [CÓD: 453] Vaso Asteca n 01 42x31
-- [CÓD: 490] Vaso Bacia n 02 17x50
-- [CÓD: 492] Vaso Bacia n 03 23x67
-- [CÓD: 491] Vaso Bacia n 04 20x77
-- [CÓD: 458] Vaso Bacia Polido n 01 13x36
-- [CÓD: 468] Vaso Barroco n 04
-- [CÓD: 449] Vaso Barroco Polido Marrom n 2
-- [CÓD: 448] Vaso Barroco Polido n 01 Marrom
-- [CÓD: 481] Vaso Cachepo Colorido com Pe n 13
-- [CÓD: 482] Vaso Cachepo Colorido com Pe n 15
-- [CÓD: 485] Vaso Colonial Polido n 01 37x32
-- [CÓD: 486] Vaso Colonial Polido n 3 61x32
-- [CÓD: 475] Vaso Cuia Ceramica n 25
-- [CÓD: 476] Vaso Cuia Ceramica n 40
-- [CÓD: 457] Vaso Cuia Completa n 01 Preto
-- [CÓD: 473] Vaso Cuia Preto n 21 Unitario
-- [CÓD: 474] Vaso Cuia Preto n 32
-- [CÓD: 497] Vaso Diamante n 02 48x48
-- [CÓD: 480] Vaso Diamante n 03 60x58
-- [CÓD: 456] Vaso Esmeralda n 01 45x30
-- [CÓD: 463] Vaso Esmeralda n 03
-- [CÓD: 451] Vaso Especial 17 Preto  Unitario
-- [CÓD: 455] Vaso Granada n 02 32x30
-- [CÓD: 477] Vaso Nobre Ceramica 42
-- [CÓD: 489] Vaso Nobre Ceramica n 24
-- [CÓD: 454] Vaso Orquidea Oitavado n 21
-- [CÓD: 450] Vaso Preto com Cabo de Aco Unitario
-- [CÓD: 447] Vaso Redondo Rattan n 3 Colorido
-- [CÓD: 483] Vaso Trevo n 01 Verde
-- [CÓD: 484] Vaso Trevo n 02 Preto
-- [CÓD: 459] Vaso Trevo n 03 42x17
+⏳ [PENDENTE] [CÓD: 446] => Salve como: 446.jpg  =>  SUPORTE CUIA COM 3 VASOS CABO DE ACO  |  R$ 21,80
+⏳ [PENDENTE] [CÓD: 447] => Salve como: 447.jpg  =>  VASO REDONDO RATTAN N 3 COLORIDO  |  R$ 9,90
+⏳ [PENDENTE] [CÓD: 448] => Salve como: 448.jpg  =>  VASO BARROCO POLIDO N 01 MARROM  |  R$ 62,50
+⏳ [PENDENTE] [CÓD: 449] => Salve como: 449.jpg  =>  VASO BARROCO POLIDO MARROM N 2  |  R$ 99,90
+⏳ [PENDENTE] [CÓD: 450] => Salve como: 450.jpg  =>  VASO PRETO COM CABO DE ACO UNITARIO  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 451] => Salve como: 451.jpg  =>  VASO ESPECIAL 17 PRETO UNITARIO  |  R$ 5,00
+⏳ [PENDENTE] [CÓD: 452] => Salve como: 452.jpg  =>  VASO 17 COM PRATO PRETO UNITARIO  |  R$ 8,00
+⏳ [PENDENTE] [CÓD: 453] => Salve como: 453.jpg  =>  VASO ASTECA N 01 42X31  |  R$ 104,50
+⏳ [PENDENTE] [CÓD: 454] => Salve como: 454.jpg  =>  VASO ORQUIDEA OITAVADO N 21  |  R$ 10,50
+⏳ [PENDENTE] [CÓD: 455] => Salve como: 455.jpg  =>  VASO GRANADA N 02 32X30  |  R$ 92,00
+⏳ [PENDENTE] [CÓD: 456] => Salve como: 456.jpg  =>  VASO ESMERALDA N 01 45X30  |  R$ 80,50
+⏳ [PENDENTE] [CÓD: 457] => Salve como: 457.jpg  =>  VASO CUIA COMPLETA N 01 PRETO  |  R$ 11,50
+⏳ [PENDENTE] [CÓD: 458] => Salve como: 458.jpg  =>  VASO BACIA POLIDO N 01 13X36  |  R$ 40,00
+⏳ [PENDENTE] [CÓD: 459] => Salve como: 459.jpg  =>  VASO TREVO N 03 42X17  |  R$ 29,90
+⏳ [PENDENTE] [CÓD: 460] => Salve como: 460.jpg  =>  REGADOR 10L  |  R$ 39,00
+⏳ [PENDENTE] [CÓD: 461] => Salve como: 461.jpg  =>  REGADOR 5L  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 463] => Salve como: 463.jpg  =>  VASO ESMERALDA N 03  |  R$ 292,00
+⏳ [PENDENTE] [CÓD: 466] => Salve como: 466.jpg  =>  CUIA COMPLETA N 01 CERAMICA  |  R$ 12,70
+⏳ [PENDENTE] [CÓD: 467] => Salve como: 467.jpg  =>  ADUBO FERTILIZANTE NPK 10 10 10 1KG  |  R$ 15,50
+⏳ [PENDENTE] [CÓD: 468] => Salve como: 468.jpg  =>  VASO BARROCO N 04  |  R$ 289,90
+⏳ [PENDENTE] [CÓD: 469] => Salve como: 469.jpg  =>  PRATO PLASTICO CERAMICA N 05  |  R$ 5,70
+⏳ [PENDENTE] [CÓD: 470] => Salve como: 470.jpg  =>  PRATO PLASTICO PRETO N 02  |  R$ 3,00
+⏳ [PENDENTE] [CÓD: 471] => Salve como: 471.jpg  =>  PRATO PLASTICO CERAMICA N 11  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 472] => Salve como: 472.jpg  =>  PRATO PLASTICO PRETO N 05  |  R$ 4,50
+⏳ [PENDENTE] [CÓD: 473] => Salve como: 473.jpg  =>  VASO CUIA PRETO N 21 UNITARIO  |  R$ 4,50
+⏳ [PENDENTE] [CÓD: 474] => Salve como: 474.jpg  =>  VASO CUIA PRETO N 32  |  R$ 9,90
+⏳ [PENDENTE] [CÓD: 475] => Salve como: 475.jpg  =>  VASO CUIA CERAMICA N 25  |  R$ 9,90
+⏳ [PENDENTE] [CÓD: 476] => Salve como: 476.jpg  =>  VASO CUIA CERAMICA N 40  |  R$ 25,00
+⏳ [PENDENTE] [CÓD: 477] => Salve como: 477.jpg  =>  VASO NOBRE CERAMICA 42  |  R$ 39,90
+⏳ [PENDENTE] [CÓD: 478] => Salve como: 478.jpg  =>  PRATO PARA FLOREIRA PRETO PEQUENO  |  R$ 6,00
+⏳ [PENDENTE] [CÓD: 479] => Salve como: 479.jpg  =>  PRATO PARA FLOREIRA PRETO GRANDE  |  R$ 9,90
+⏳ [PENDENTE] [CÓD: 480] => Salve como: 480.jpg  =>  VASO DIAMANTE N 03 60X58  |  R$ 289,90
+⏳ [PENDENTE] [CÓD: 481] => Salve como: 481.jpg  =>  VASO CACHEPO COLORIDO COM PE N 13  |  R$ 15,00
+⏳ [PENDENTE] [CÓD: 482] => Salve como: 482.jpg  =>  VASO CACHEPO COLORIDO COM PE N 15  |  R$ 22,00
+⏳ [PENDENTE] [CÓD: 483] => Salve como: 483.jpg  =>  VASO TREVO N 01 VERDE  |  R$ 72,90
+⏳ [PENDENTE] [CÓD: 484] => Salve como: 484.jpg  =>  VASO TREVO N 02 PRETO  |  R$ 97,50
+⏳ [PENDENTE] [CÓD: 485] => Salve como: 485.jpg  =>  VASO COLONIAL POLIDO N 01 37X32  |  R$ 62,00
+⏳ [PENDENTE] [CÓD: 486] => Salve como: 486.jpg  =>  VASO COLONIAL POLIDO N 3 61X32  |  R$ 115,60
+⏳ [PENDENTE] [CÓD: 489] => Salve como: 489.jpg  =>  VASO NOBRE CERAMICA N 24  |  R$ 19,00
+⏳ [PENDENTE] [CÓD: 490] => Salve como: 490.jpg  =>  VASO BACIA N 02 17X50  |  R$ 93,50
+⏳ [PENDENTE] [CÓD: 491] => Salve como: 491.jpg  =>  VASO BACIA N 04 20X77  |  R$ 283,50
+⏳ [PENDENTE] [CÓD: 492] => Salve como: 492.jpg  =>  VASO BACIA N 03 23X67  |  R$ 202,50
+⏳ [PENDENTE] [CÓD: 493] => Salve como: 493.jpg  =>  TELA LUA PAREDE MADEIRA COM 2 VASOS  |  R$ 69,90
+⏳ [PENDENTE] [CÓD: 494] => Salve como: 494.jpg  =>  TELA LUA PAREDE MADEIRA COM 3 VASOS  |  R$ 139,90
+⏳ [PENDENTE] [CÓD: 495] => Salve como: 495.jpg  =>  TERRA VEGETAL PCTE 1.6KG  |  R$ 11,00
+⏳ [PENDENTE] [CÓD: 496] => Salve como: 496.jpg  =>  SUBSTRATO VEGETAL PCTE 1.6KG  |  R$ 11,00
+⏳ [PENDENTE] [CÓD: 497] => Salve como: 497.jpg  =>  VASO DIAMANTE N 02 48X48  |  R$ 168,90
+⏳ [PENDENTE] [CÓD: 499] => Salve como: 499.jpg  =>  TERRA PARA VASOS E FLOREIRAS 2KG CLASSE A  |  R$ 11,00
+⏳ [PENDENTE] [CÓD: 537] => Salve como: 537.jpg  =>  TERRA VEGETAL PARA PLANTAS PCTE 10KG  |  R$ 10,00
+⏳ [PENDENTE] [CÓD: 562] => Salve como: 562.jpg  =>  TERRA PRETA PARA PLANTAS PCTE 20KG  |  R$ 19,00
+⏳ [PENDENTE] [CÓD: 563] => Salve como: 563.jpg  =>  FERTILIZANTE MINERAL SIMPLES UREIA 150G  |  R$ 7,50
+⏳ [PENDENTE] [CÓD: 564] => Salve como: 564.jpg  =>  FERTILIZANTE MINERAL SIMPLES UREIA 800G  |  R$ 19,99
+⏳ [PENDENTE] [CÓD: 589] => Salve como: 589.jpg  =>  BETERRABA MUDA  |  R$ 0,40
+⏳ [PENDENTE] [CÓD: 607] => Salve como: 607.jpg  =>  FRUTIFERAS PITANGA + VASO UNIDADE  |  R$ 29,90
+⏳ [PENDENTE] [CÓD: 640] => Salve como: 640.jpg  =>  TERRA ADUBADA COMPOSTO ORGANICO 20KG  |  R$ 27,00

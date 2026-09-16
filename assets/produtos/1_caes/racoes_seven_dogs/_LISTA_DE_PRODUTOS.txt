@@ -1,11 +1,14 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 541.jpg ou 541.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_seven_dogs
+📊 Total: 7 produtos (0 com foto, 7 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 541.jpg ou 541.png)
+===============================================================================
 
-- [CÓD: 541] Ração Seven Cats Castrados Frango e Carne 10.1kg
-- [CÓD: 669] Ração Seven Dogs Cordeiro R Medias e Grandes 14kg
-- [CÓD: 670] Ração Seven Dogs Frango e Batata Doce 14kg
-- [CÓD: 542] Ração Seven Dogs P Pequeno Cordeiro 10.1kg
-- [CÓD: 751] Ração Seven Dogs P Pequeno Frango e Carne 10.1kg
-- [CÓD: 749] Ração Seven Dogs Power Active 14kg
-- [CÓD: 748] Ração Seven Dogs Senior P Pequeno10.1kg
+⏳ [PENDENTE] [CÓD: 541] => Salve como: 541.jpg  =>  RACAO SEVEN CATS CASTRADOS FRANGO E CARNE 10.1KG  |  R$ 151,00
+⏳ [PENDENTE] [CÓD: 542] => Salve como: 542.jpg  =>  RACAO SEVEN DOGS P PEQUENO CORDEIRO 10.1KG  |  R$ 134,99
+⏳ [PENDENTE] [CÓD: 669] => Salve como: 669.jpg  =>  RACAO SEVEN DOGS CORDEIRO R MEDIAS E GRANDES 14KG  |  R$ 165,00
+⏳ [PENDENTE] [CÓD: 670] => Salve como: 670.jpg  =>  RACAO SEVEN DOGS FRANGO E BATATA DOCE 14KG  |  R$ 135,00
+⏳ [PENDENTE] [CÓD: 748] => Salve como: 748.jpg  =>  RACAO SEVEN DOGS SENIOR P PEQUENO10.1KG  |  R$ 138,99
+⏳ [PENDENTE] [CÓD: 749] => Salve como: 749.jpg  =>  RACAO SEVEN DOGS POWER ACTIVE 14KG  |  R$ 169,99
+⏳ [PENDENTE] [CÓD: 751] => Salve como: 751.jpg  =>  RACAO SEVEN DOGS P PEQUENO FRANGO E CARNE 10.1KG  |  R$ 125,99

@@ -1,8 +1,11 @@
-LISTA DE PRODUTOS DESTA PASTA:
-(Dica: salve a imagem com o código do produto, ex: 606.jpg ou 606.png)
-=======================================================
+LISTA OFICIAL DE PRODUTOS DESTA PASTA (Extraída de Itens 2.ods):
+📁 Pasta: assets/produtos/1_caes/racoes_pedigree
+📊 Total: 4 produtos (0 com foto, 4 pendentes)
+-------------------------------------------------------------------------------
+Instrução: Salve a imagem com o CÓDIGO do produto (ex: 214.jpg ou 214.png)
+===============================================================================
 
-- [CÓD: 606] Pedigree Dentastix Racas Medias 3 un
-- [CÓD: 605] Pedigree Dentastix Racas Pequenas 3 un
-- [CÓD: 214] Sache Cão Adulto Pedigree Frango 100g
-- [CÓD: 215] Sache Cão Pedigree Adulto R Pequenas Cordeiro 100g
+⏳ [PENDENTE] [CÓD: 214] => Salve como: 214.jpg  =>  SACHE CAO ADULTO PEDIGREE FRANGO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 215] => Salve como: 215.jpg  =>  SACHE CAO PEDIGREE ADULTO R PEQUENAS CORDEIRO 100G  |  R$ 3,50
+⏳ [PENDENTE] [CÓD: 605] => Salve como: 605.jpg  =>  PEDIGREE DENTASTIX RACAS PEQUENAS 3 UN  |  R$ 10,90
+⏳ [PENDENTE] [CÓD: 606] => Salve como: 606.jpg  =>  PEDIGREE DENTASTIX RACAS MEDIAS 3 UN  |  R$ 12,50
