@@ -369,25 +369,27 @@ header {
 }
 
 .quick-tag-pill {
-    background: #F1F5F9;
-    border: 1px solid #CBD5E1;
-    color: #334155;
-    padding: 5px 12px;
+    background: #FFA048;
+    border: 1.5px solid #EA580C;
+    color: #1E293B;
+    padding: 6px 13px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 750;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 5px;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     user-select: none;
+    box-shadow: 0 2px 6px rgba(234, 88, 12, 0.2);
 }
 
 .quick-tag-pill:hover {
-    background: #E2E8F0;
-    border-color: #94A3B8;
-    transform: translateY(-1px);
+    background: #FF8A24;
+    border-color: #C2410C;
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 10px rgba(234, 88, 12, 0.3);
 }
 
 .quick-tag-pill:active {
@@ -395,10 +397,10 @@ header {
 }
 
 .quick-tag-pill.active {
-    background: linear-gradient(135deg, #1B432E, #2D6A4F);
+    background: #1B432E;
     color: white;
-    border-color: #1B432E;
-    box-shadow: 0 3px 8px rgba(27, 67, 46, 0.3);
+    border-color: #123020;
+    box-shadow: 0 3px 10px rgba(27, 67, 46, 0.35);
 }
 
 /* --- FILTROS DE CATEGORIA (RESPONSIVO: WRAP NO DESKTOP, SCROLL NO MOBILE) --- */
@@ -1792,31 +1794,32 @@ footer {
 }
 
 .sidebar-tag-btn {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    color: #334155;
+    background: #FFA048;
+    border: 1.5px solid #EA580C;
+    color: #1E293B;
     padding: 7px 12px;
     border-radius: 20px;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 750;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
     gap: 6px;
     transition: all 0.2s ease;
     user-select: none;
+    box-shadow: 0 2px 5px rgba(234, 88, 12, 0.2);
 }
 
 .sidebar-tag-btn:hover {
-    border-color: var(--primary);
-    background: #F4FAF6;
+    background: #FF8A24;
+    border-color: #C2410C;
 }
 
 .sidebar-tag-btn.active {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    background: #1B432E;
     color: white;
-    border-color: var(--primary);
-    box-shadow: 0 3px 8px rgba(27, 67, 46, 0.25);
+    border-color: #123020;
+    box-shadow: 0 3px 8px rgba(27, 67, 46, 0.3);
 }
 
 /* CATEGORIAS VERTICAIS NO DRAWER */
