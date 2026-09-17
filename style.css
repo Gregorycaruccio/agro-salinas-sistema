@@ -416,33 +416,36 @@ header {
 }
 
 .category-pill {
-    background: white;
-    border: 1.5px solid var(--border-color);
-    padding: 7px 14px;
+    background: var(--primary);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 15px;
     border-radius: 30px;
     font-size: 13px;
-    font-weight: 600;
-    color: var(--text-main);
+    font-weight: 700;
+    color: #FFFFFF;
     cursor: pointer;
     transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 2px 6px rgba(27, 67, 46, 0.25);
     user-select: none;
     white-space: nowrap;
 }
 
 .category-pill:hover {
-    border-color: var(--primary-light);
-    transform: translateY(-1px);
+    background: var(--primary-light);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-1.5px);
+    box-shadow: 0 4px 12px rgba(27, 67, 46, 0.35);
 }
 
 .category-pill.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-    box-shadow: 0 4px 12px rgba(27, 67, 46, 0.25);
+    background: #0E291B;
+    border: 1.5px solid #52B788;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 2px rgba(82, 183, 136, 0.4), 0 4px 12px rgba(14, 41, 27, 0.4);
+    transform: translateY(-1px);
 }
 
 /* --- SUBCATEGORIAS DINÂMICAS --- */
