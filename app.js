@@ -450,12 +450,13 @@ function renderProducts() {
                 </div>
                 ${product.badge ? `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>` : ''}
                 ${imageHtml}
-                <div>
+                <div class="card-info-wrap">
                     <div class="card-top-tags">
                         <span class="product-code">Cód: ${product.code}</span>
                         <span class="product-sub-pill">${product.subcategory}</span>
                     </div>
                     <h3 class="product-name">${product.name}</h3>
+                    ${!isGranel ? `<div class="product-trust-mini"><span>✓ Pronta Entrega</span><span>•</span><span>Original</span></div>` : ''}
                 </div>
                 
                 <div class="product-footer">
