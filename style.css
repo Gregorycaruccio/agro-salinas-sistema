@@ -366,9 +366,18 @@ header {
     }
 
     .categories-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        min-width: max-content;
+    }
+
+    .categories-row {
         display: inline-flex;
         flex-wrap: nowrap;
         gap: 6px;
+        justify-content: center;
     }
 
     .category-pill {
@@ -495,10 +504,18 @@ header {
 
 .categories-list {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.categories-row {
+    display: flex;
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 
 .category-pill {
@@ -595,7 +612,21 @@ header {
         display: none;
     }
 
-    .categories-list,
+    .categories-list {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        align-items: center;
+        min-width: max-content;
+    }
+
+    .categories-row {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+        justify-content: center;
+    }
+
     .subcategories-list {
         display: inline-flex;
         flex-wrap: nowrap;

@@ -202,14 +202,26 @@ function renderCategories() {
     const desktopContainer = document.getElementById("categories-list");
     const sidebarContainer = document.getElementById("sidebar-categories-list");
 
-    // HTML Desktop (Pills horizontais)
+    // HTML Desktop (Pills horizontais: 4 em cima e 4 embaixo)
     if (desktopContainer) {
-        desktopContainer.innerHTML = CATEGORIES.map(cat => `
+        const row1 = CATEGORIES.slice(0, 4);
+        const row2 = CATEGORIES.slice(4, 8);
+
+        const buildPill = (cat) => `
             <button class="category-pill ${cat.id === currentCategory ? 'active' : ''}" data-cat="${cat.id}">
                 <span>${cat.icon}</span>
                 <span>${cat.name}</span>
             </button>
-        `).join("");
+        `;
+
+        desktopContainer.innerHTML = `
+            <div class="categories-row">
+                ${row1.map(buildPill).join("")}
+            </div>
+            <div class="categories-row">
+                ${row2.map(buildPill).join("")}
+            </div>
+        `;
 
         desktopContainer.querySelectorAll(".category-pill").forEach(btn => {
             btn.addEventListener("click", () => {
