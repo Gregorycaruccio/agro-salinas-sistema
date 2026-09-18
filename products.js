@@ -81,7 +81,7 @@ const PRODUCTS = [
         "unit": "pct (1,442 kg)",
         "featured": true,
         "badge": "Pacote 1,442 kg",
-        "image": "assets/granel/Comida Canário Belga - 1.442kg - 13.90kg - 20.04.png",
+        "image": "assets/granel/Comida Canario Belga - 1.442kg - 13.90kg - 20.04.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,90/kg)"
     },
     {
@@ -107,7 +107,7 @@ const PRODUCTS = [
         "unit": "pct (1,974 kg)",
         "featured": true,
         "badge": "Pacote 1,974 kg",
-        "image": "assets/granel/Comida Pássaros de Jardim Kicanto - 1.974kg - 7.60kg - 15.00.png",
+        "image": "assets/granel/Comida Passaros de Jardim Kicanto - 1.974kg - 7.60kg - 15.00.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 7,60/kg)"
     },
     {
@@ -120,7 +120,7 @@ const PRODUCTS = [
         "unit": "pct (1,022 kg)",
         "featured": true,
         "badge": "Pacote 1,022 kg",
-        "image": "assets/granel/Girassol Miudo Pássaros - 1.022kg - 11.80kg - 12.06.png",
+        "image": "assets/granel/Girassol Miudo Passaros - 1.022kg - 11.80kg - 12.06.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 11,80/kg)"
     },
     {
@@ -146,7 +146,7 @@ const PRODUCTS = [
         "unit": "pct (1,060 kg)",
         "featured": true,
         "badge": "Pacote 1,060 kg",
-        "image": "assets/granel/Ração Allcanis Porte Mini e Pequeno Frango Carne e Arroz - 1.060kg - 18.99kg - 20.13.png",
+        "image": "assets/granel/Racao Allcanis Porte Mini e Pequeno Frango Carne e Arroz - 1.060kg - 18.99kg - 20.13.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
     },
     {
@@ -159,7 +159,7 @@ const PRODUCTS = [
         "unit": "pct (1,054 kg)",
         "featured": true,
         "badge": "Pacote 1,054 kg",
-        "image": "assets/granel/Ração Allcanis Senior Porte Medio e Gigante Frango Carne e Arroz - 1.054kg - 18.99kg - 20.02.png",
+        "image": "assets/granel/Racao Allcanis Senior Porte Medio e Gigante Frango Carne e Arroz - 1.054kg - 18.99kg - 20.02.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
     },
     {
@@ -172,7 +172,7 @@ const PRODUCTS = [
         "unit": "pct (1,145 kg)",
         "featured": true,
         "badge": "Pacote 1,145 kg",
-        "image": "assets/granel/Ração Brain Plus Filhote e Porte Pequeno Carne e Vegetais - 1.145kg - 17.50kg - 20.06.png",
+        "image": "assets/granel/Racao Brain Plus Filhote e Porte Pequeno Carne e Vegetais - 1.145kg - 17.50kg - 20.06.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 17,50/kg)"
     },
     {
@@ -185,7 +185,7 @@ const PRODUCTS = [
         "unit": "pct (1,048 kg)",
         "featured": true,
         "badge": "Pacote 1,048 kg",
-        "image": "assets/granel/Ração Brain Plus Gato Castrado Carne - 1.048kg - 21.00kg - 22.01.png",
+        "image": "assets/granel/Racao Brain Plus Gato Castrado Carne - 1.048kg - 21.00kg - 22.01.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
     },
     {
@@ -198,7 +198,7 @@ const PRODUCTS = [
         "unit": "pct (1,050 kg)",
         "featured": true,
         "badge": "Pacote 1,050 kg",
-        "image": "assets/granel/Ração Brain Plus Gato Castrado Salmão e Frango - 1.050kg - 21.00kg - 22.05.png",
+        "image": "assets/granel/Racao Brain Plus Gato Castrado Salmao e Frango - 1.050kg - 21.00kg - 22.05.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
     },
     {
@@ -211,7 +211,7 @@ const PRODUCTS = [
         "unit": "pct (1,084 kg)",
         "featured": true,
         "badge": "Pacote 1,084 kg",
-        "image": "assets/granel/Ração Brain Plus Senior Cordeiro - 1.084kg - 18.50kg - 20.50.png",
+        "image": "assets/granel/Racao Brain Plus Senior Cordeiro - 1.084kg - 18.50kg - 20.50.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,50/kg)"
     },
     {
@@ -224,7 +224,7 @@ const PRODUCTS = [
         "unit": "pct (1,244 kg)",
         "featured": true,
         "badge": "Pacote 1,244 kg",
-        "image": "assets/granel/Ração Famil Filhote Leite em Po - 1.244kg - 14.50kg - 18.04.png",
+        "image": "assets/granel/Racao Famil Filhote Leite em Po - 1.244kg - 14.50kg - 18.04.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 14,50/kg)"
     },
     {
@@ -237,7 +237,7 @@ const PRODUCTS = [
         "unit": "pct (1,072 kg)",
         "featured": true,
         "badge": "Pacote 1,072 kg",
-        "image": "assets/granel/Ração Famil Gato Castrado Salmão - 1.072kg - 16.80kg - 18.01.png",
+        "image": "assets/granel/Racao Famil Gato Castrado Salmao - 1.072kg - 16.80kg - 18.01.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 16,80/kg)"
     },
     {
@@ -250,7 +250,7 @@ const PRODUCTS = [
         "unit": "pct (1,116 kg)",
         "featured": true,
         "badge": "Pacote 1,116 kg",
-        "image": "assets/granel/Ração Famil Porte Pequeno - 1.116kg - 13.50kg - 15.07.png",
+        "image": "assets/granel/Racao Famil Porte Pequeno - 1.116kg - 13.50kg - 15.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,50/kg)"
     },
     {
@@ -263,7 +263,7 @@ const PRODUCTS = [
         "unit": "pct (1,242 kg)",
         "featured": true,
         "badge": "Pacote 1,242 kg",
-        "image": "assets/granel/Ração Golden Carne - 1.242kg - 21.00kg - 26.08.png",
+        "image": "assets/granel/Racao Golden Carne - 1.242kg - 21.00kg - 26.08.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
     },
     {
@@ -276,7 +276,7 @@ const PRODUCTS = [
         "unit": "pct (1,218 kg)",
         "featured": true,
         "badge": "Pacote 1,218 kg",
-        "image": "assets/granel/Ração Golden Carne Mini Bits Porte Pequeno - 1.218kg - 13.99kg - 17.04.png",
+        "image": "assets/granel/Racao Golden Carne Mini Bits Porte Pequeno - 1.218kg - 13.99kg - 17.04.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)"
     },
     {
@@ -289,7 +289,7 @@ const PRODUCTS = [
         "unit": "pct (1,192 kg)",
         "featured": true,
         "badge": "Pacote 1,192 kg",
-        "image": "assets/granel/Ração Golden Frango - 1.192kg - 21.00kg - 25.03.png",
+        "image": "assets/granel/Racao Golden Frango - 1.192kg - 21.00kg - 25.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
     },
     {
@@ -302,7 +302,7 @@ const PRODUCTS = [
         "unit": "pct (1,290 kg)",
         "featured": true,
         "badge": "Pacote 1,290 kg",
-        "image": "assets/granel/Ração Golden Frango e Arroz Mini Bits Porte Pequeno - 1.290kg - 13.99kg - 18.05.png",
+        "image": "assets/granel/Racao Golden Frango e Arroz Mini Bits Porte Pequeno - 1.290kg - 13.99kg - 18.05.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)"
     },
     {
@@ -315,7 +315,7 @@ const PRODUCTS = [
         "unit": "pct (1,274 kg)",
         "featured": true,
         "badge": "Pacote 1,274 kg",
-        "image": "assets/granel/Ração Golden Salmão - 1.274kg - 22.00kg - 28.03.png",
+        "image": "assets/granel/Racao Golden Salmao - 1.274kg - 22.00kg - 28.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 22,00/kg)"
     },
     {
@@ -328,7 +328,7 @@ const PRODUCTS = [
         "unit": "pct (1,318 kg)",
         "featured": true,
         "badge": "Pacote 1,318 kg",
-        "image": "assets/granel/Ração Gran Plus Carne e Arroz - 1.318kg - 18.99kg - 25.03.png",
+        "image": "assets/granel/Racao Gran Plus Carne e Arroz - 1.318kg - 18.99kg - 25.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
     },
     {
@@ -341,7 +341,7 @@ const PRODUCTS = [
         "unit": "pct (1,320 kg)",
         "featured": true,
         "badge": "Pacote 1,320 kg",
-        "image": "assets/granel/Ração Gran Plus Frango e Arroz - 1.320kg - 18.99kg - 25.07.png",
+        "image": "assets/granel/Racao Gran Plus Frango e Arroz - 1.320kg - 18.99kg - 25.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
     },
     {
@@ -354,7 +354,7 @@ const PRODUCTS = [
         "unit": "pct (1,090 kg)",
         "featured": true,
         "badge": "Pacote 1,090 kg",
-        "image": "assets/granel/Ração Kiara Gato Peixe e Frango - 1.090kg - 11.90kg - 13.04.png",
+        "image": "assets/granel/Racao Kiara Gato Peixe e Frango - 1.090kg - 11.90kg - 13.04.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 11,90/kg)"
     },
     {
@@ -367,7 +367,7 @@ const PRODUCTS = [
         "unit": "pct (1,090 kg)",
         "featured": true,
         "badge": "Pacote 1,090 kg",
-        "image": "assets/granel/Ração Mimos Cats Nuggets Recheados - 1.090kg - 23.00kg - 25.07.png",
+        "image": "assets/granel/Racao Mimos Cats Nuggets Recheados - 1.090kg - 23.00kg - 25.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 23,00/kg)"
     },
     {
@@ -380,7 +380,7 @@ const PRODUCTS = [
         "unit": "pct (1,104 kg)",
         "featured": true,
         "badge": "Pacote 1,104 kg",
-        "image": "assets/granel/Ração Monello Gato Castrado Peru e Salmão - 1.104kg - 19.99kg - 22.07.png",
+        "image": "assets/granel/Racao Monello Gato Castrado Peru e Salmao - 1.104kg - 19.99kg - 22.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 19,99/kg)"
     },
     {
@@ -393,7 +393,7 @@ const PRODUCTS = [
         "unit": "pct (1,260 kg)",
         "featured": true,
         "badge": "Pacote 1,260 kg",
-        "image": "assets/granel/Ração Monello Racas Pequenas - 1.260kg - 15.90kg - 20.03.png",
+        "image": "assets/granel/Racao Monello Racas Pequenas - 1.260kg - 15.90kg - 20.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 15,90/kg)"
     },
     {
@@ -406,7 +406,7 @@ const PRODUCTS = [
         "unit": "pct (1,158 kg)",
         "featured": true,
         "badge": "Pacote 1,158 kg",
-        "image": "assets/granel/Ração Monello Todas as Racas - 1.158kg - 11.30kg - 13.09.png",
+        "image": "assets/granel/Racao Monello Todas as Racas - 1.158kg - 11.30kg - 13.09.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 11,30/kg)"
     },
     {
@@ -419,7 +419,7 @@ const PRODUCTS = [
         "unit": "pct (5,000 kg)",
         "featured": true,
         "badge": "Pacote 5,000 kg",
-        "image": "assets/granel/Ração Pássaros de Jardim Bicofino Pacote 5kg - 5.000kg - 5.36kg - 26.80.png",
+        "image": "assets/granel/Racao Passaros de Jardim Bicofino Pacote 5kg - 5.000kg - 5.36kg - 26.80.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 5,36/kg)"
     },
     {
@@ -432,7 +432,7 @@ const PRODUCTS = [
         "unit": "pct (1,258 kg)",
         "featured": true,
         "badge": "Pacote 1,258 kg",
-        "image": "assets/granel/Ração Primogato Blend Carne Frango e Peixe - 1.258kg - 15.90kg - 20.00.png",
+        "image": "assets/granel/Racao Primogato Blend Carne Frango e Peixe - 1.258kg - 15.90kg - 20.00.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 15,90/kg)"
     },
     {
@@ -445,7 +445,7 @@ const PRODUCTS = [
         "unit": "pct (1,180 kg)",
         "featured": true,
         "badge": "Pacote 1,180 kg",
-        "image": "assets/granel/Ração Primogato Castrado - 1.180kg - 16.99kg - 20.05.png",
+        "image": "assets/granel/Racao Primogato Castrado - 1.180kg - 16.99kg - 20.05.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 16,99/kg)"
     },
     {
@@ -458,7 +458,7 @@ const PRODUCTS = [
         "unit": "pct (1,182 kg)",
         "featured": true,
         "badge": "Pacote 1,182 kg",
-        "image": "assets/granel/Ração Primogato Castrado Frango - 1.182kg - 16.99kg - 20.08.png",
+        "image": "assets/granel/Racao Primogato Castrado Frango - 1.182kg - 16.99kg - 20.08.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 16,99/kg)"
     },
     {
@@ -471,7 +471,7 @@ const PRODUCTS = [
         "unit": "pct (1,292 kg)",
         "featured": true,
         "badge": "Pacote 1,292 kg",
-        "image": "assets/granel/Ração Primogato Original Carne e Frango - 1.292kg - 13.99kg - 18.08.png",
+        "image": "assets/granel/Racao Primogato Original Carne e Frango - 1.292kg - 13.99kg - 18.08.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)"
     },
     {
@@ -484,7 +484,7 @@ const PRODUCTS = [
         "unit": "pct (1,104 kg)",
         "featured": true,
         "badge": "Pacote 1,104 kg",
-        "image": "assets/granel/Ração Seven Dogs Carne e Frango Racas Pequenas - 1.104kg - 14.50kg - 16.01.png",
+        "image": "assets/granel/Racao Seven Dogs Carne e Frango Racas Pequenas - 1.104kg - 14.50kg - 16.01.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 14,50/kg)"
     },
     {
@@ -497,7 +497,7 @@ const PRODUCTS = [
         "unit": "pct (1,130 kg)",
         "featured": true,
         "badge": "Pacote 1,130 kg",
-        "image": "assets/granel/Ração Seven Dogs Porte Pequeno Cordeiro - 1.130kg - 15.99kg - 18.07.png",
+        "image": "assets/granel/Racao Seven Dogs Porte Pequeno Cordeiro - 1.130kg - 15.99kg - 18.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 15,99/kg)"
     },
     {
@@ -510,7 +510,7 @@ const PRODUCTS = [
         "unit": "pct (1,218 kg)",
         "featured": true,
         "badge": "Pacote 1,218 kg",
-        "image": "assets/granel/Ração Seven Dogs Senior Racas Pequenas Frango Batata Doce e Beterraba - 1.218kg - 16.50kg - 20.10.png",
+        "image": "assets/granel/Racao Seven Dogs Senior Racas Pequenas Frango Batata Doce e Beterraba - 1.218kg - 16.50kg - 20.10.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 16,50/kg)"
     },
     {
@@ -523,7 +523,7 @@ const PRODUCTS = [
         "unit": "pct (1,104 kg)",
         "featured": true,
         "badge": "Pacote 1,104 kg",
-        "image": "assets/granel/Ração Tutano Cães Porte Pequeno Frango - 1.104kg - 14.50kg - 16.01.png",
+        "image": "assets/granel/Racao Tutano Caes Porte Pequeno Frango - 1.104kg - 14.50kg - 16.01.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 14,50/kg)"
     },
     {
@@ -536,7 +536,7 @@ const PRODUCTS = [
         "unit": "pct (1,082 kg)",
         "featured": true,
         "badge": "Pacote 1,082 kg",
-        "image": "assets/granel/Ração Tutano Cães Sensiveis Salmão - 1.082kg - 18.50kg - 20.02.png",
+        "image": "assets/granel/Racao Tutano Caes Sensiveis Salmao - 1.082kg - 18.50kg - 20.02.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 18,50/kg)"
     },
     {
@@ -549,7 +549,7 @@ const PRODUCTS = [
         "unit": "pct (1,220 kg)",
         "featured": true,
         "badge": "Pacote 1,220 kg",
-        "image": "assets/granel/Ração Tutano Especial Carne e Frango - 1.220kg - 11.50kg - 14.03.png",
+        "image": "assets/granel/Racao Tutano Especial Carne e Frango - 1.220kg - 11.50kg - 14.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 11,50/kg)"
     },
     {
@@ -562,7 +562,7 @@ const PRODUCTS = [
         "unit": "pct (1,102 kg)",
         "featured": true,
         "badge": "Pacote 1,102 kg",
-        "image": "assets/granel/Ração Tutano Gato Castrado Carne - 1.102kg - 19.99kg - 22.03.png",
+        "image": "assets/granel/Racao Tutano Gato Castrado Carne - 1.102kg - 19.99kg - 22.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 19,99/kg)"
     },
     {
@@ -575,7 +575,7 @@ const PRODUCTS = [
         "unit": "pct (1,104 kg)",
         "featured": true,
         "badge": "Pacote 1,104 kg",
-        "image": "assets/granel/Ração Tutano Gato Castrado Frango - 1.104kg - 19.99kg - 22.07.png",
+        "image": "assets/granel/Racao Tutano Gato Castrado Frango - 1.104kg - 19.99kg - 22.07.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 19,99/kg)"
     },
     {
@@ -588,7 +588,7 @@ const PRODUCTS = [
         "unit": "pct (1,102 kg)",
         "featured": true,
         "badge": "Pacote 1,102 kg",
-        "image": "assets/granel/Ração Tutano Gato Castrado Salmão - 1.102kg - 19.99kg - 22.03.png",
+        "image": "assets/granel/Racao Tutano Gato Castrado Salmao - 1.102kg - 19.99kg - 22.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 19,99/kg)"
     },
     {
@@ -601,7 +601,7 @@ const PRODUCTS = [
         "unit": "pct (1,184 kg)",
         "featured": true,
         "badge": "Pacote 1,184 kg",
-        "image": "assets/granel/Ração Vit Cat Carne e Vegetais - 1.184kg - 10.99kg - 13.01.png",
+        "image": "assets/granel/Racao Vit Cat Carne e Vegetais - 1.184kg - 10.99kg - 13.01.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 10,99/kg)"
     },
     {
@@ -614,7 +614,7 @@ const PRODUCTS = [
         "unit": "pct (1,112 kg)",
         "featured": true,
         "badge": "Pacote 1,112 kg",
-        "image": "assets/granel/Ração Whiskas Carne - 1.112kg - 22.50kg - 25.02.png",
+        "image": "assets/granel/Racao Whiskas Carne - 1.112kg - 22.50kg - 25.02.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 22,50/kg)"
     },
     {

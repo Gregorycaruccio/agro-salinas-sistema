@@ -284,7 +284,11 @@ function renderSubcategories() {
 
     // Obter todas as subcategorias únicas desta categoria com base nos produtos ativos
     const activeProducts = getCatalogProducts();
-    const categoryProducts = activeProducts.filter(p => p.category === currentCategory);
+    const categoryProducts = activeProducts.filter(p => {
+        if (p.category !== currentCategory) return false;
+        if (currentCategory === "granel" && (!p.image || !p.image.startsWith("assets/granel/"))) return false;
+        return true;
+    });
     const subcats = Array.from(new Set(categoryProducts.map(p => p.subcategory).filter(Boolean)));
     const catObj = CATEGORIES.find(c => c.id === currentCategory);
     const catShortName = catObj ? catObj.name.split(' ')[0] : 'Categoria';
@@ -564,6 +568,11 @@ function renderProducts() {
 
         // Categoria Principal
         if (currentCategory !== "todos" && p.category !== currentCategory) {
+            return false;
+        }
+
+        // No menu de Rações a Granel, exibir exclusivamente os itens com imagem desta pasta
+        if (currentCategory === "granel" && (!p.image || !p.image.startsWith("assets/granel/"))) {
             return false;
         }
         
