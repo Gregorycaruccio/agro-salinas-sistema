@@ -962,6 +962,9 @@ function toggleFulfillmentFields(type) {
 function renderCartDrawerItems() {
     const container = document.getElementById("cart-items-list");
     const totalEl = document.getElementById("drawer-total-price");
+    const fulfillmentSection = document.getElementById("checkout-fulfillment-section");
+    const paymentSection = document.getElementById("payment-method-selector");
+    const checkoutBtn = document.getElementById("btn-cart-checkout");
     if (!container) return;
 
     const { totalCount, totalPrice } = getCartStats();
@@ -969,12 +972,28 @@ function renderCartDrawerItems() {
     if (totalCount === 0) {
         container.innerHTML = `
             <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
-                <p style="font-size: 32px; margin-bottom: 8px;">🛒</p>
-                <p>Seu cesto está vazio.</p>
+                <p style="font-size: 36px; margin-bottom: 8px;">🛒</p>
+                <p style="font-weight: 600; font-size: 15px; color: var(--primary-dark);">Sua sacola está vazia</p>
+                <p style="font-size: 13px; margin-top: 4px;">Adicione produtos do catálogo para concluir seu pedido!</p>
             </div>
         `;
         if (totalEl) totalEl.textContent = "R$ 0,00";
+        if (fulfillmentSection) fulfillmentSection.style.display = "none";
+        if (paymentSection) paymentSection.style.display = "none";
+        if (checkoutBtn) {
+            checkoutBtn.disabled = true;
+            checkoutBtn.style.opacity = "0.5";
+            checkoutBtn.style.cursor = "not-allowed";
+        }
         return;
+    }
+
+    if (fulfillmentSection) fulfillmentSection.style.display = "block";
+    if (paymentSection) paymentSection.style.display = "block";
+    if (checkoutBtn) {
+        checkoutBtn.disabled = false;
+        checkoutBtn.style.opacity = "1";
+        checkoutBtn.style.cursor = "pointer";
     }
 
     let itemsHtml = "";
@@ -996,9 +1015,9 @@ function renderCartDrawerItems() {
                         <div class="cart-item-price">${priceDisplay}</div>
                     </div>
                     <div class="cart-item-controls">
-                        <button class="qty-btn" onclick="updateCartQty('${product.id}', -1)">-</button>
+                        <button class="qty-btn" onclick="updateCartQty('${product.id}', -1)" title="Diminuir quantidade">−</button>
                         <span class="qty-display">${qty}</span>
-                        <button class="qty-btn" onclick="updateCartQty('${product.id}', 1)">+</button>
+                        <button class="qty-btn" onclick="updateCartQty('${product.id}', 1)" title="Aumentar quantidade">+</button>
                     </div>
                 </div>
             `;

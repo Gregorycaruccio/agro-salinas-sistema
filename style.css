@@ -1451,6 +1451,7 @@ header {
 }
 
 /* --- MODAL / DRAWER DO CARRINHO --- */
+/* --- MODAL / DRAWER DO CARRINHO (CHECKOUT RESPONSIVO & ROBUSTO) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -1459,6 +1460,7 @@ header {
     height: 100%;
     background: rgba(0,0,0,0.65);
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     z-index: 3000;
     display: none;
     justify-content: center;
@@ -1472,12 +1474,17 @@ header {
 .cart-drawer {
     background: white;
     width: 100%;
-    max-width: 600px;
-    max-height: 85vh;
+    max-width: 560px;
+    height: 90vh;
+    height: 90dvh;
+    max-height: 90vh;
+    max-height: 90dvh;
     border-top-left-radius: var(--radius-lg);
     border-top-right-radius: var(--radius-lg);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.28);
     animation: drawerSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -1486,111 +1493,161 @@ header {
     to { transform: translateY(0); }
 }
 
+@media (min-width: 769px) {
+    .modal-overlay {
+        align-items: center;
+        padding: 20px;
+    }
+
+    .cart-drawer {
+        border-radius: var(--radius-lg);
+        height: auto;
+        max-height: 86vh;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+    }
+}
+
 .drawer-header {
-    padding: 18px 20px;
+    flex-shrink: 0;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #FFFFFF;
+    z-index: 5;
 }
 
 .drawer-title {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17.5px;
+    font-weight: 800;
     color: var(--primary-dark);
 }
 
 .btn-close-drawer {
     background: #F1F5F9;
     border: none;
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
     color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
 }
 
-.cart-items-list {
-    padding: 16px 20px;
+.btn-close-drawer:hover {
+    background: #E2E8F0;
+    color: #0F172A;
+}
+
+/* CORPO ROLÁVEL COM CONTEÚDO INTEGRAL */
+.drawer-scrollable-body {
+    flex: 1 1 auto;
+    min-height: 0;
     overflow-y: auto;
-    flex: 1;
+    overflow-x: hidden;
+    padding: 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* LISTA DE PRODUTOS: NUNCA ESMAGADA, SEM SCROLL INTERNO NO CARD OU TÍTULO */
+.cart-items-list {
+    padding: 0;
+    overflow: visible; /* Elimina qualquer scroll interno nos produtos */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0; /* Impede esmagamento quando opções de entrega se expandem */
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 12px;
+    padding: 8px 0 12px;
     border-bottom: 1px solid #F1F5F9;
+    flex-shrink: 0;
+    width: 100%;
 }
 
 .cart-item-info {
     flex: 1;
+    min-width: 0;
+    padding-right: 12px;
 }
 
 .cart-item-name {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 13.5px;
+    font-weight: 700;
     color: var(--text-main);
+    line-height: 1.35;
+    word-break: break-word;
+    overflow: visible;
 }
 
 .cart-item-price {
     font-size: 13px;
     color: var(--primary);
     font-weight: 700;
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .cart-item-controls {
     display: flex;
     align-items: center;
     gap: 8px;
+    flex-shrink: 0;
 }
 
 .qty-btn {
     background: #F1F5F9;
     border: 1px solid var(--border-color);
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     border-radius: 6px;
-    font-weight: 700;
+    font-size: 15px;
+    font-weight: 800;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.15s ease;
+}
+
+.qty-btn:active {
+    background: #E2E8F0;
 }
 
 .qty-display {
     font-size: 14px;
-    font-weight: 700;
-    min-width: 20px;
+    font-weight: 800;
+    min-width: 22px;
     text-align: center;
-}
-
-.drawer-footer {
-    padding: 18px 20px 20px;
-    background: #F8FAFC;
-    border-top: 1px solid var(--border-color);
 }
 
 /* SELETOR VISUAL DE PAGAMENTO */
 .payment-method-selector {
-    margin-bottom: 16px;
+    margin-bottom: 0;
     background: white;
     padding: 12px;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    border: 1.5px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .payment-selector-label {
     display: block;
     font-size: 12px;
-    font-weight: 700;
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-weight: 800;
+    color: var(--primary-dark);
     margin-bottom: 8px;
 }
 
@@ -1639,13 +1696,36 @@ header {
     transform: translateY(-1px);
 }
 
+/* RODAPÉ FIXO: PERFEITAMENTE VISÍVEL, NUNCA CORTADO */
+.drawer-footer {
+    flex-shrink: 0;
+    padding: 14px 20px 16px;
+    background: #FFFFFF;
+    border-top: 1.5px solid var(--border-color);
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+}
+
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+    .drawer-footer {
+        padding-bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+}
+
 .total-row {
     display: flex;
     justify-content: space-between;
-    font-size: 18px;
+    align-items: center;
+    font-size: 16px;
     font-weight: 800;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
     color: var(--primary-dark);
+}
+
+#drawer-total-price {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--primary);
 }
 
 .btn-send-whatsapp {
@@ -1655,19 +1735,32 @@ header {
     border: none;
     padding: 14px;
     border-radius: var(--radius-md);
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 15.5px;
+    font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
     transition: all 0.2s ease;
 }
 
 .btn-send-whatsapp:hover {
     background: #1EBE5D;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
+}
+
+.btn-send-whatsapp:active {
+    transform: scale(0.98);
+}
+
+.cart-seller-notice {
+    margin-top: 8px;
+    text-align: center;
+    font-size: 11.5px;
+    color: var(--text-muted);
 }
 
 /* --- MODAL DO VENDEDOR --- */
