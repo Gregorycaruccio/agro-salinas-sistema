@@ -248,6 +248,21 @@
 
     <!-- LISTAGEM DE PRODUTOS -->
     <main class="products-section">
+        <!-- BARRA EVIDENTE DE FILTROS ATIVOS (DESKTOP & MOBILE) -->
+        <div class="active-filters-bar" id="active-filters-bar" style="display: none;">
+            <div class="active-filters-content">
+                <div class="active-filters-label">
+                    <span>⚡ Filtros:</span>
+                </div>
+                <div class="active-filters-chips" id="active-filters-chips">
+                    <!-- Injetado dinamicamente via JS -->
+                </div>
+            </div>
+            <button class="btn-clear-active-filters" onclick="resetAllFilters()" title="Redefinir filtros e exibir todos os produtos">
+                ✕ Limpar Filtros
+            </button>
+        </div>
+
         <div class="section-header">
             <h2 class="section-title" id="section-title">Produtos Disponíveis</h2>
             <span class="products-count" id="products-count">Carregando...</span>
@@ -257,6 +272,12 @@
             <!-- Cards injetados via JS -->
         </div>
     </main>
+
+    <!-- BOTÃO FLUTUANTE VOLTAR AO TOPO -->
+    <button id="btn-back-to-top" class="btn-back-to-top" onclick="scrollToTop()" title="Voltar ao início da página" aria-label="Voltar ao topo">
+        <span class="top-arrow">↑</span>
+        <span class="top-text">Topo</span>
+    </button>
 
     <!-- BARRA DE CARRINHO FLUTUANTE (ESTILO DELIVERY) -->
     <div class="floating-cart-bar" id="floating-cart-bar" style="display: none;" onclick="openCartDrawer()">
@@ -289,6 +310,58 @@
             </div>
 
             <div class="drawer-footer">
+                <!-- OPÇÃO DE RECEBIMENTO: ENTREGA OU RETIRADA -->
+                <div class="checkout-fulfillment-section">
+                    <label class="checkout-section-label">📍 Como deseja receber seu pedido?</label>
+                    <div class="fulfillment-options-grid">
+                        <label class="fulfillment-option">
+                            <input type="radio" name="checkout_fulfillment" value="entrega" checked onchange="toggleFulfillmentFields('entrega')">
+                            <span class="fulfillment-pill">
+                                <span class="ful-icon">🚚</span>
+                                <span class="ful-text">Entrega</span>
+                            </span>
+                        </label>
+                        <label class="fulfillment-option">
+                            <input type="radio" name="checkout_fulfillment" value="retirada" onchange="toggleFulfillmentFields('retirada')">
+                            <span class="fulfillment-pill">
+                                <span class="ful-icon">🏪</span>
+                                <span class="ful-text">Retirar no Balcão</span>
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- CAMPOS DE ENDEREÇO DE ENTREGA -->
+                    <div id="delivery-fields-box" class="delivery-fields-box">
+                        <div class="form-row-compact">
+                            <div class="form-group-compact">
+                                <label for="checkout-neighborhood">Bairro *</label>
+                                <input type="text" id="checkout-neighborhood" placeholder="Ex: Salinas, Centro, etc." autocomplete="address-level2">
+                            </div>
+                        </div>
+                        <div class="form-row-compact">
+                            <div class="form-group-compact">
+                                <label for="checkout-address">Endereço Completo (Rua e Nº) *</label>
+                                <input type="text" id="checkout-address" placeholder="Ex: Rua das Palmeiras, 150" autocomplete="street-address">
+                            </div>
+                        </div>
+                        <div class="form-row-compact">
+                            <div class="form-group-compact">
+                                <label for="checkout-complement">Complemento / Ponto de Referência (opcional)</label>
+                                <input type="text" id="checkout-complement" placeholder="Ex: Apto 102, próx. ao colégio">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NOTA INFORMATIVA: RETIRADA NO BALCÃO -->
+                    <div id="pickup-notice-box" class="pickup-notice-box" style="display: none;">
+                        <span class="pickup-icon">📍</span>
+                        <div class="pickup-text">
+                            <strong>Retirada na Loja Agro Salinas</strong>
+                            <p>Seu pedido será separado e embalado para retirada rápida no balcão!</p>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- FORMAS DE PAGAMENTO PREFERIDAS -->
                 <div class="payment-method-selector">
                     <label class="payment-selector-label">💳 Como você pretende pagar?</label>
@@ -336,6 +409,13 @@
                     Atendimento por: <strong id="cart-notice-seller-name" style="color: var(--primary);">William</strong>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- MODAL DE DETALHES RÁPIDOS (QUICK VIEW) -->
+    <div class="modal-overlay quickview-modal-overlay" id="quickview-modal" onclick="if(event.target === this) closeQuickViewModal()">
+        <div class="quickview-modal-card" id="quickview-modal-card">
+            <!-- Injetado dinamicamente via JS -->
         </div>
     </div>
 

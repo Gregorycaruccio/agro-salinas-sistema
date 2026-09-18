@@ -382,11 +382,11 @@ function buildProductCardHtml(product) {
     `;
 
     const imageHtml = product.image ? `
-        <div class="product-image-container">
+        <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
             <img src="${product.image}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><svg class=\\'placeholder-svg\\' viewBox=\\'0 0 64 64\\' fill=\\'none\\' stroke=\\'currentColor\\' xmlns=\\'http://www.w3.org/2000/svg\\'><path d=\\'M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M20 12 L24 8 L40 8 L44 12\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M16 22 L48 22\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\'/><circle cx=\\'32\\' cy=\\'38\\' r=\\'8\\' stroke-width=\\'2\\' opacity=\\'0.35\\'/></svg><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
         </div>
     ` : `
-        <div class="product-image-container">
+        <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
             ${placeholderSvg}
         </div>
     `;
@@ -409,7 +409,7 @@ function buildProductCardHtml(product) {
                     <span class="meta-sep">•</span>
                     <span class="meta-cat">${product.subcategory || catName}</span>
                 </div>
-                <h3 class="product-name" title="${productName}">${productName}</h3>
+                <h3 class="product-name" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">${productName}</h3>
             </div>
             
             <div class="product-footer">
@@ -588,6 +588,9 @@ function renderProducts() {
         sidebarClearBox.style.display = isFiltered ? "block" : "none";
     }
 
+    // Atualiza a barra evidente de filtros no topo da listagem (Desktop e Mobile)
+    updateActiveFiltersBar(isFiltered);
+
     // Contador
     if (countEl) {
         countEl.textContent = `${allFilteredProducts.length} produto${allFilteredProducts.length === 1 ? '' : 's'}`;
@@ -672,6 +675,116 @@ function setupScrollObserver() {
     scrollObserver.observe(sentinel);
 }
 
+// --- BARRA EVIDENTE DE FILTROS ATIVOS (REDEFINIÇÃO EM 1 CLIQUE) ---
+function updateActiveFiltersBar(isFiltered) {
+    const bar = document.getElementById("active-filters-bar");
+    const chipsContainer = document.getElementById("active-filters-chips");
+    if (!bar || !chipsContainer) return;
+
+    if (!isFiltered) {
+        bar.style.display = "none";
+        chipsContainer.innerHTML = "";
+        return;
+    }
+
+    let chipsHtml = "";
+
+    // Categoria
+    if (currentCategory !== "todos") {
+        const cat = CATEGORIES.find(c => c.id === currentCategory);
+        const catName = cat ? `${cat.icon} ${cat.name}` : currentCategory;
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="selectCategory('todos')" title="Remover filtro de categoria">
+                <span>${catName}</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    // Subcategoria
+    if (currentSubcategory !== "todas") {
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="selectSubcategory('todas')" title="Remover filtro de subcategoria">
+                <span>🏷️ ${currentSubcategory}</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    // Filtro Rápido (Necessidade do Pet)
+    if (currentQuickTag) {
+        const tagLabels = {
+            mais_vendidos: "🔥 Mais Vendidos",
+            filhotes: "🍼 Filhotes",
+            castrados: "✂️ Castrados",
+            sensivel: "🌾 Sensíveis",
+            porte_pequeno: "🐾 Raças Pequenas",
+            senior: "👴 Sênior (+7)"
+        };
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="toggleQuickTag('${currentQuickTag}', null)" title="Remover filtro rápido">
+                <span>${tagLabels[currentQuickTag] || currentQuickTag}</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    // Faixa de Preço
+    if (currentPriceRange !== "all") {
+        const priceLabels = {
+            under_20: "Até R$ 20",
+            "20_60": "R$ 20 a R$ 60",
+            "60_150": "R$ 60 a R$ 150",
+            above_150: "Acima de R$ 150"
+        };
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="resetPriceFilter()" title="Remover filtro de valor">
+                <span>💰 ${priceLabels[currentPriceRange] || currentPriceRange}</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    // Busca textual
+    if (searchQuery.trim() !== "") {
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="clearSearchQuery()" title="Limpar busca">
+                <span>🔍 "${searchQuery}"</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    // Favoritos
+    if (showOnlyFavorites) {
+        chipsHtml += `
+            <div class="active-filter-chip" onclick="toggleFavoritesFilter()" title="Remover filtro de favoritos">
+                <span>❤️ Apenas Favoritos</span>
+                <span class="active-filter-chip-remove">✕</span>
+            </div>
+        `;
+    }
+
+    chipsContainer.innerHTML = chipsHtml;
+    bar.style.display = "flex";
+}
+
+function resetPriceFilter() {
+    currentPriceRange = "all";
+    const select = document.getElementById("price-range-select");
+    if (select) select.value = "all";
+    const sidebarSelect = document.getElementById("sidebar-price-select");
+    if (sidebarSelect) sidebarSelect.value = "all";
+    renderProducts();
+}
+
+function clearSearchQuery() {
+    searchQuery = "";
+    const input = document.getElementById("search-input");
+    if (input) input.value = "";
+    renderProducts();
+}
+
 // Atualização pontual do botão de um card sem re-renderizar todo o catálogo
 function updateCardActionUI(productId) {
     const card = document.getElementById(`card-${productId}`);
@@ -712,6 +825,7 @@ function addToCart(productId, event) {
     
     updateCartUI();
     updateCardActionUI(productId);
+    refreshQuickViewActions(productId);
     showToast("✓ Adicionado ao cesto de compras!");
 }
 
@@ -729,6 +843,7 @@ function updateCartQty(productId, delta, event) {
     saveCart();
     updateCartUI();
     updateCardActionUI(productId);
+    refreshQuickViewActions(productId);
     renderCartDrawerItems();
 }
 
@@ -791,6 +906,18 @@ function openCartDrawer() {
     renderCartDrawerItems();
     modal.classList.add("active");
 
+    // Restaura dados salvos de entrega se existirem
+    try {
+        const savedBairro = localStorage.getItem("agro_salinas_neighborhood");
+        const savedEnd = localStorage.getItem("agro_salinas_address");
+        const inputBairro = document.getElementById("checkout-neighborhood");
+        const inputEnd = document.getElementById("checkout-address");
+        if (savedBairro && inputBairro && !inputBairro.value) inputBairro.value = savedBairro;
+        if (savedEnd && inputEnd && !inputEnd.value) inputEnd.value = savedEnd;
+    } catch (e) {
+        console.warn("Storage de endereço inacessível:", e);
+    }
+
     // Oculta a barra flutuante para nunca sobrepor o modal e os botões
     const floatingBar = document.getElementById("floating-cart-bar");
     if (floatingBar) floatingBar.style.setProperty("display", "none", "important");
@@ -815,6 +942,20 @@ function closeCartDrawer() {
     const floatingBar = document.getElementById("floating-cart-bar");
     if (floatingBar && totalCount > 0) {
         floatingBar.style.display = "flex";
+    }
+}
+
+function toggleFulfillmentFields(type) {
+    const deliveryBox = document.getElementById("delivery-fields-box");
+    const pickupBox = document.getElementById("pickup-notice-box");
+    if (!deliveryBox || !pickupBox) return;
+
+    if (type === "entrega") {
+        deliveryBox.style.display = "flex";
+        pickupBox.style.display = "none";
+    } else {
+        deliveryBox.style.display = "none";
+        pickupBox.style.display = "flex";
     }
 }
 
@@ -876,6 +1017,54 @@ function checkoutWhatsApp() {
         return;
     }
 
+    // Modalidade de Atendimento: Entrega a Domicílio vs Retirada no Balcão
+    const selectedFulfillmentInput = document.querySelector('input[name="checkout_fulfillment"]:checked');
+    const fulfillmentType = selectedFulfillmentInput ? selectedFulfillmentInput.value : "entrega";
+
+    let fulfillmentDetailsText = "";
+
+    if (fulfillmentType === "entrega") {
+        const inputNeighborhood = document.getElementById("checkout-neighborhood");
+        const inputAddress = document.getElementById("checkout-address");
+        const inputComplement = document.getElementById("checkout-complement");
+
+        const neighborhood = inputNeighborhood ? inputNeighborhood.value.trim() : "";
+        const address = inputAddress ? inputAddress.value.trim() : "";
+        const complement = inputComplement ? inputComplement.value.trim() : "";
+
+        if (!neighborhood || !address) {
+            showToast("⚠️ Por favor, informe Bairro e Endereço para entrega!");
+            if (!neighborhood && inputNeighborhood) {
+                inputNeighborhood.focus();
+                inputNeighborhood.style.borderColor = "#DC2626";
+                setTimeout(() => inputNeighborhood.style.borderColor = "", 2500);
+            } else if (!address && inputAddress) {
+                inputAddress.focus();
+                inputAddress.style.borderColor = "#DC2626";
+                setTimeout(() => inputAddress.style.borderColor = "", 2500);
+            }
+            return;
+        }
+
+        // Salva dados no localStorage para agilizar compras futuras
+        try {
+            localStorage.setItem("agro_salinas_neighborhood", neighborhood);
+            localStorage.setItem("agro_salinas_address", address);
+        } catch (e) {
+            console.warn("Storage inacessível:", e);
+        }
+
+        fulfillmentDetailsText = 
+`🚚 *Modalidade:* Entrega a Domicílio
+📍 *Bairro:* ${neighborhood}
+🏠 *Endereço:* ${address}${complement ? `\n📌 *Complemento/Ref:* ${complement}` : ''}`;
+
+    } else {
+        fulfillmentDetailsText = 
+`🏪 *Modalidade:* Retirada no Balcão (Loja Agro Salinas)
+📦 *Separação:* Aguardando confirmação para retirar no balcão`;
+    }
+
     let itemsText = "";
     for (let id in cart) {
         const qty = cart[id];
@@ -917,12 +1106,14 @@ function checkoutWhatsApp() {
 ----------------------------------
 ${itemsText}----------------------------------
 *💰 TOTAL DO PEDIDO: R$ ${totalPrice.toFixed(2).replace('.', ',')}*
-💳 *Pretendo Pagar com:* ${paymentMethod}
+💳 *Forma de Pagamento:* ${paymentMethod}
+
+${fulfillmentDetailsText}
 
 👤 *Consultor(a) Atendente:* ${currentSeller.name} (${currentSeller.tag})
 📱 *Origem:* Catálogo Digital Agro Salinas
 
-Poderia me confirmar a disponibilidade e o prazo de entrega? Obrigado!`;
+Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obrigado!`;
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -1219,3 +1410,338 @@ function showToast(message) {
         toast.style.transform = "translateX(-50%) translateY(0)";
     }, 2000);
 }
+
+// --- MODAL DE DETALHES RÁPIDOS (QUICK VIEW) ---
+function openQuickView(productId) {
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return;
+
+    const modal = document.getElementById("quickview-modal");
+    const modalContent = document.getElementById("quickview-modal-card");
+    if (!modal || !modalContent) return;
+
+    const title = toTitleCase(product.name);
+    const cat = CATEGORIES.find(c => c.id === product.category);
+    const catName = cat ? `${cat.icon} ${cat.name}` : (product.category || "Pet");
+    const subcatName = product.subcategory || catName;
+    const isGranel = product.category === 'granel';
+    const unitPrice = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
+    const unitText = product.unit ? `/ ${product.unit}` : (isGranel ? '/ pct' : '/ un');
+    const granelBadge = isGranel && product.badge ? `<span style="font-size: 12px; background: #E8F5EE; color: var(--primary); padding: 2px 8px; border-radius: 6px; font-weight: 800;">⚖️ ${product.badge}</span>` : '';
+
+    // Imagem do produto com fallback limpo
+    const placeholderSvg = `
+        <div class="product-placeholder-box" style="padding: 20px;">
+            <svg class="placeholder-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 54px; height: 54px;">
+                <path d="M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12 L24 8 L40 8 L44 12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 22 L48 22" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="38" r="8" stroke-width="2" opacity="0.35"/>
+            </svg>
+            <span class="product-placeholder-tag" style="margin-top: 6px;">${catName}</span>
+        </div>
+    `;
+
+    const imageHtml = product.image ? `
+        <div class="quickview-image-wrap">
+            <img src="${product.image}" alt="${title}" class="quickview-img" onerror="this.onerror=null; this.parentElement.innerHTML='${placeholderSvg.replace(/'/g, "\\'")}';">
+        </div>
+    ` : `
+        <div class="quickview-image-wrap">
+            ${placeholderSvg}
+        </div>
+    `;
+
+    // Inferência de Tags e Porte/Idade
+    const lower = (product.name + " " + (product.subcategory || "")).toLowerCase();
+    const tags = [];
+    
+    // Espécie
+    if (product.category === 'caes' || lower.includes('cão') || lower.includes('cao') || lower.includes('cães') || lower.includes('dog') || lower.includes('canino')) {
+        tags.push('<span class="profile-tag">🐶 Cão</span>');
+    } else if (product.category === 'gatos' || lower.includes('gato') || lower.includes('cat') || lower.includes('felino') || lower.includes('pipicat')) {
+        tags.push('<span class="profile-tag">🐱 Gato</span>');
+    } else if (product.category === 'passaros' || lower.includes('canario') || lower.includes('calopsita') || lower.includes('passaro') || lower.includes('ave')) {
+        tags.push('<span class="profile-tag">🦜 Pássaro / Ave</span>');
+    } else if (product.category === 'peixes' || lower.includes('peixe') || lower.includes('aquario')) {
+        tags.push('<span class="profile-tag">🐟 Peixe</span>');
+    } else if (product.category === 'farmacia') {
+        tags.push('<span class="profile-tag">💊 Linha Farmacêutica</span>');
+    }
+
+    // Fase da vida
+    if (lower.includes('filhote') || lower.includes('puppy') || lower.includes('junior')) {
+        tags.push('<span class="profile-tag highlight">🍼 Filhote</span>');
+    } else if (lower.includes('senior') || lower.includes('sênior') || lower.includes('+7') || lower.includes('maduro')) {
+        tags.push('<span class="profile-tag highlight">👴 Sênior (+7 Anos)</span>');
+    } else if (lower.includes('adulto') || lower.includes('adult')) {
+        tags.push('<span class="profile-tag">🐕 Adulto</span>');
+    }
+
+    // Porte
+    if (lower.includes('pequeno') || lower.includes('mini') || lower.includes('pequenas') || lower.includes('small')) {
+        tags.push('<span class="profile-tag">🐾 Raças Pequenas</span>');
+    } else if (lower.includes('medio') || lower.includes('médio') || lower.includes('medium')) {
+        tags.push('<span class="profile-tag">🐕 Raças Médias</span>');
+    } else if (lower.includes('grande') || lower.includes('gigante') || lower.includes('maxi')) {
+        tags.push('<span class="profile-tag">🐾 Raças Grandes / Gigantes</span>');
+    }
+
+    // Necessidade especial
+    if (lower.includes('castrado') || lower.includes('castrados') || lower.includes('steril')) {
+        tags.push('<span class="profile-tag highlight">✂️ Castrados / Peso Ideal</span>');
+    }
+    if (lower.includes('pele sensivel') || lower.includes('sensivel') || lower.includes('sensível') || lower.includes('sensitive')) {
+        tags.push('<span class="profile-tag highlight">🌾 Pele & Digestão Sensível</span>');
+    }
+
+    // Bloco de Orientação e Dosagem
+    let guideSectionHtml = "";
+    const isDog = product.category === 'caes' || lower.includes('cão') || lower.includes('cao') || lower.includes('cães') || lower.includes('dog');
+    const isCat = product.category === 'gatos' || lower.includes('gato') || lower.includes('cat') || lower.includes('felino') || lower.includes('pipicat');
+    const isLitter = lower.includes('areia') || lower.includes('pipicat') || lower.includes('sanit') || lower.includes('granulado');
+    const isPharmacy = product.category === 'farmacia' || lower.includes('shampoo') || lower.includes('sabonete') || lower.includes('vermif') || lower.includes('coleira') || lower.includes('pipeta');
+
+    if (isLitter) {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>🚽 Modo de Uso e Higiene</span>
+                </div>
+                <div style="font-size: 12px; color: #334155; line-height: 1.5; padding: 4px 0;">
+                    <p>1. Preencha a caixa de areia com uma camada uniforme de <strong>5cm a 7cm</strong> de altura.</p>
+                    <p style="margin-top: 4px;">2. O produto forma torrões firmes que facilitam a remoção diária das fezes e urina com uma pá higiênica.</p>
+                    <p style="margin-top: 4px;">3. Complete o nível para manter a altura inicial. Substitua todo o conteúdo periodicamente lavando a bandeja com água morna e sabão neutro.</p>
+                </div>
+                <div class="quickview-tip">
+                    💡 <em>Rendimento Máximo:</em> Manter a camada na altura ideal evita que a urina atinja o fundo da bandeja, controlando odores com muito mais eficiência.
+                </div>
+            </div>
+        `;
+    } else if (isPharmacy) {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>💊 Orientação e Uso Veterinário</span>
+                </div>
+                <div style="font-size: 12px; color: #334155; line-height: 1.5; padding: 4px 0;">
+                    <p>• Produto veterinário sujeito à dosagem por peso corporal do pet.</p>
+                    <p style="margin-top: 4px;">• Consulte a bula do fabricante ou seu médico-veterinário de confiança para determinar a dosagem exata e o tempo de uso indicado.</p>
+                    <p style="margin-top: 4px;">• Em caso de dúvidas sobre qual o produto ideal para o peso e idade do seu pet, chame nossos atendentes no WhatsApp!</p>
+                </div>
+                <div class="quickview-tip">
+                    💡 <em>Dúvida no Peso ou Dosagem?</em> Nosso consultor no WhatsApp pode te orientar na escolha do antiparasitário ou medicamento correto!
+                </div>
+            </div>
+        `;
+    } else if (isDog) {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>🥣 Guia de Consumo Diário Recomendado</span>
+                </div>
+                <table class="quickview-dosage-table">
+                    <thead>
+                        <tr>
+                            <th>Porte / Peso do Cão</th>
+                            <th>Quantidade Indicada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Mini / Toy (1 a 5 kg)</td>
+                            <td><strong>35g a 95g</strong> / dia</td>
+                        </tr>
+                        <tr>
+                            <td>Pequeno (5 a 10 kg)</td>
+                            <td><strong>95g a 160g</strong> / dia</td>
+                        </tr>
+                        <tr>
+                            <td>Médio (10 a 25 kg)</td>
+                            <td><strong>160g a 310g</strong> / dia</td>
+                        </tr>
+                        <tr>
+                            <td>Grande (25 a 45 kg+)</td>
+                            <td><strong>310g a 490g+</strong> / dia</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="quickview-tip">
+                    💡 <em>Dica Agro Salinas:</em> Fracione em 2 a 3 porções ao longo do dia. Mantenha um pote de água limpa e fresca sempre acessível ao pet.
+                </div>
+            </div>
+        `;
+    } else if (isCat) {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>🥣 Guia de Consumo Diário Recomendado</span>
+                </div>
+                <table class="quickview-dosage-table">
+                    <thead>
+                        <tr>
+                            <th>Perfil / Peso do Gato</th>
+                            <th>Quantidade Indicada</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Gato Pequeno (2 a 3 kg)</td>
+                            <td><strong>35g a 50g</strong> / dia</td>
+                        </tr>
+                        <tr>
+                            <td>Gato Médio (3 a 5 kg)</td>
+                            <td><strong>50g a 75g</strong> / dia</td>
+                        </tr>
+                        <tr>
+                            <td>Castrado ou Porte Maior (5 a 7 kg)</td>
+                            <td><strong>60g a 80g</strong> / dia</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="quickview-tip">
+                    💡 <em>Dica Agro Salinas:</em> Gatos gostam de frescor! Sirva em tigelas largas para não encostar os bigodes e mantenha a água distante da comida.
+                </div>
+            </div>
+        `;
+    } else if (isGranel) {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>⚖️ Selagem e Qualidade Agro Salinas</span>
+                </div>
+                <div style="font-size: 12px; color: #334155; line-height: 1.5; padding: 4px 0;">
+                    <p>• <strong>Pacote Selado:</strong> Pesado na medida exata com selagem higiênica que impede a entrada de umidade.</p>
+                    <p style="margin-top: 4px;">• <strong>Nutrientes Preservados:</strong> Aroma, textura crocante e integridade nutricional idênticos ao pacote lacrado de fábrica.</p>
+                    <p style="margin-top: 4px;">• <strong>Economia Inteligente:</strong> A melhor ração para o seu companheiro com preço muito mais acessível por quilo.</p>
+                </div>
+                <div class="quickview-tip">
+                    💡 <em>Armazenamento:</em> Mantenha em local seco e arejado, fechando bem após o uso diário.
+                </div>
+            </div>
+        `;
+    } else {
+        guideSectionHtml = `
+            <div class="quickview-section-card">
+                <div class="quickview-section-title">
+                    <span>🌱 Cuidados e Modo de Servir</span>
+                </div>
+                <div style="font-size: 12px; color: #334155; line-height: 1.5; padding: 4px 0;">
+                    <p>• Fornecer diariamente em comedouro limpo, higienizado e seco.</p>
+                    <p style="margin-top: 4px;">• Descartar as sobras e cascas antes de abastecer com nova porção.</p>
+                    <p style="margin-top: 4px;">• Água potável, fresca e limpa deve estar permanentemente à disposição.</p>
+                </div>
+            </div>
+        `;
+    }
+
+    modalContent.innerHTML = `
+        <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)">✕</button>
+        <div class="quickview-grid">
+            ${imageHtml}
+            <div class="quickview-header-info">
+                <div class="quickview-meta-row">
+                    <span class="quickview-code-tag">CÓD ${product.code}</span>
+                    <span class="quickview-cat-tag">${subcatName}</span>
+                    ${granelBadge}
+                </div>
+                <h2 class="quickview-title">${title}</h2>
+                ${tags.length > 0 ? `<div class="quickview-profile-tags">${tags.join('')}</div>` : ''}
+            </div>
+
+            <div class="quickview-price-box">
+                <div>
+                    <span style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Preço Agro Salinas:</span>
+                    <div class="quickview-price-main">
+                        <span class="quickview-curr">R$</span>
+                        <span class="quickview-price-val">${product.price.toFixed(2).replace('.', ',')}</span>
+                        <span class="quickview-unit">${unitText}</span>
+                    </div>
+                </div>
+            </div>
+
+            ${guideSectionHtml}
+
+            <div class="quickview-actions-bar" id="quickview-actions-${product.id}">
+                <!-- Atualizado via refreshQuickViewActions -->
+            </div>
+        </div>
+    `;
+
+    refreshQuickViewActions(product.id);
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeQuickViewModal() {
+    const modal = document.getElementById("quickview-modal");
+    if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+}
+
+function refreshQuickViewActions(productId) {
+    const container = document.getElementById(`quickview-actions-${productId}`);
+    if (!container) return;
+
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return;
+
+    const qtyInCart = cart[productId] || 0;
+    const isGranel = product.category === 'granel';
+
+    let cartActionHtml = "";
+    if (qtyInCart > 0) {
+        cartActionHtml = `
+            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" style="width: 100%; justify-content: space-between; height: 44px;">
+                <button class="card-qty-btn minus" style="width: 44px; height: 44px; font-size: 20px;" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                <span class="card-qty-display">
+                    <span class="card-qty-val" style="font-size: 16px;">${qtyInCart}</span>
+                    <span class="card-qty-label" style="font-size: 11px;">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                </span>
+                <button class="card-qty-btn plus" style="width: 44px; height: 44px; font-size: 20px;" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+            </div>
+        `;
+    } else {
+        cartActionHtml = `
+            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" style="width: 100%; height: 44px; font-size: 14px; font-weight: 800;" onclick="addToCart('${product.id}', event)">
+                <span class="btn-cart-icon">🛒</span>
+                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+            </button>
+        `;
+    }
+
+    container.innerHTML = `
+        ${cartActionHtml}
+        <button class="quickview-btn-zap" onclick="quickBuyWhatsApp('${product.id}')" title="Falar com consultor sobre este produto">
+            <span>💬</span>
+            <span>Tirar Dúvida ou Pedir no WhatsApp</span>
+        </button>
+    `;
+}
+
+// --- BOTÃO VOLTAR AO TOPO & CONTROLE DE SCROLL ---
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener("scroll", () => {
+    const btn = document.getElementById("btn-back-to-top");
+    if (btn) {
+        if (window.scrollY > 350) {
+            btn.classList.add("visible");
+        } else {
+            btn.classList.remove("visible");
+        }
+    }
+}, { passive: true });
+
+// Tecla ESC para fechar qualquer gaveta ou modal ativo
+document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" || e.keyCode === 27) {
+        closeQuickViewModal();
+        closeCartDrawer();
+        closeSidebarDrawer();
+    }
+});

@@ -6213,7 +6213,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 24.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_tutano/320.jpg"
     },
     {
         "id": "321",
@@ -6223,7 +6224,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 58.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_tutano/321.jpg"
     },
     {
         "id": "752",
@@ -6243,7 +6245,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 162.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_tutano/314.jpg"
     },
     {
         "id": "322",
@@ -6263,7 +6266,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 65.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_tutano/325.jpg"
     },
     {
         "id": "753",
