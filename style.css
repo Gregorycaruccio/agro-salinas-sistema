@@ -311,20 +311,96 @@ header {
 }
 
 @media (max-width: 768px) {
-    /* No celular/tablet, ocultamos os carrosséis e barras horizontais do topo */
+    /* Header compacto no mobile para exibir produtos "above the fold" */
+    header {
+        padding: 8px 14px 4px 14px;
+    }
+
+    .brand-logo {
+        max-height: 38px;
+    }
+
+    .slogan {
+        font-size: 10.5px;
+        letter-spacing: 0.3px;
+        margin-top: 1px;
+    }
+
+    .seller-banner {
+        padding: 6px 12px;
+        font-size: 11.5px;
+    }
+
+    /* Ocultamos apenas tags e dropdowns complexos do topo no mobile (disponíveis no menu) */
     .desktop-only-tags,
-    .desktop-only-categories,
-    .desktop-only-subcategories,
     .desktop-only-filters {
         display: none !important;
     }
 
     .sticky-nav-wrapper {
-        padding: 8px 0;
+        padding: 5px 0 4px 0;
     }
 
     .controls-container {
-        margin-bottom: 0;
+        margin-bottom: 2px;
+        padding: 0 10px;
+    }
+
+    .search-row {
+        gap: 6px;
+    }
+
+    /* Categorias principais com rolagem horizontal suave no mobile */
+    .categories-wrapper {
+        display: block !important;
+        margin: 4px 0 2px 0;
+        padding: 0 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .categories-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .categories-list {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        gap: 6px;
+    }
+
+    .category-pill {
+        padding: 6px 12px;
+        font-size: 12px;
+        border-radius: 20px;
+    }
+
+    /* Subcategorias com rolagem horizontal compacta */
+    .subcategories-wrapper {
+        display: block !important;
+        margin: 2px 0 3px 0;
+        padding: 0 10px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .subcategories-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+    .subcategories-list {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
+
+    .subcat-pill {
+        padding: 4px 10px;
+        font-size: 11.5px;
     }
 }
 
@@ -653,16 +729,16 @@ header {
 @media (max-width: 540px) {
     .products-grid {
         grid-template-columns: 1fr;
-        gap: 14px;
+        gap: 12px;
     }
     .product-name {
-        font-size: 17px;
-        text-transform: uppercase;
+        font-size: 15px;
+        text-transform: none;
         text-align: center;
     }
     .product-card-granel .product-name {
-        font-size: 18.5px;
-        text-transform: uppercase;
+        font-size: 15.5px;
+        text-transform: none;
         text-align: center;
     }
 }
@@ -765,6 +841,7 @@ header {
     transform: scale(1.06);
 }
 
+/* PLACEHOLDER VETORIAL MODERNO E ELEGANTE */
 .product-placeholder-box {
     display: flex;
     flex-direction: column;
@@ -773,59 +850,64 @@ header {
     gap: 8px;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at center, #FFFFFF 0%, #F1F5F9 100%);
+    background: linear-gradient(145deg, #F8FAFC 0%, #EDF2F7 100%);
     user-select: none;
+    padding: 14px;
 }
 
-.product-placeholder-icon {
-    font-size: 46px;
-    filter: drop-shadow(0 2px 6px rgba(0,0,0,0.08));
-    transition: transform 0.3s ease;
+.placeholder-svg {
+    width: 48px;
+    height: 48px;
+    color: #94A3B8;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(148, 163, 184, 0.2));
+}
+
+.product-card:hover .placeholder-svg {
+    color: var(--primary);
+    transform: scale(1.08) translateY(-2px);
 }
 
 .product-placeholder-tag {
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     color: #64748B;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 3px 10px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 2px 9px;
     border-radius: 12px;
     border: 1px solid #E2E8F0;
     letter-spacing: 0.3px;
 }
 
-.product-card:hover .product-placeholder-icon {
-    transform: scale(1.18);
-}
-
-.card-top-tags {
+/* LINHA DE METADADOS DISCRETA (CÓDIGO • SUBCATEGORIA) */
+.product-meta-line {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 6px;
+    font-size: 11px;
+    color: #64748B;
     margin-bottom: 6px;
     flex-wrap: wrap;
 }
 
-.product-code {
-    font-size: 11px;
-    font-weight: 800;
+.meta-code {
+    font-weight: 750;
     color: var(--primary);
     background: #EBF3EE;
-    display: inline-block;
-    padding: 2px 7px;
+    padding: 1.5px 6px;
     border-radius: 4px;
-    width: fit-content;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
-.product-sub-pill {
-    font-size: 11px;
-    font-weight: 700;
+.meta-sep {
+    color: #CBD5E1;
+    font-size: 10px;
+}
+
+.meta-cat {
+    font-weight: 600;
     color: #64748B;
-    background: #F1F5F9;
-    padding: 2px 7px;
-    border-radius: 4px;
 }
 
 .card-info-wrap {
@@ -836,31 +918,16 @@ header {
     margin: 4px 0 6px 0;
 }
 
-.product-trust-mini {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    font-size: 10.5px;
-    font-weight: 700;
-    color: #15803D;
-    background: #F0FDF4;
-    border: 1px solid #BBF7D0;
-    border-radius: 12px;
-    padding: 3px 9px;
-    margin: 2px auto 0 auto;
-    width: fit-content;
-}
-
+/* TÍTULO DO PRODUTO EM TITLE CASE (LEVE, MODERNO E SEM POLUIÇÃO) */
 .product-name {
-    font-size: 15px;
-    font-weight: 800;
-    color: #123020;
-    line-height: 1.3;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E293B;
+    line-height: 1.35;
     margin-bottom: 6px;
-    text-transform: uppercase;
+    text-transform: none; /* Title Case */
     text-align: center;
-    letter-spacing: 0.2px;
+    letter-spacing: -0.1px;
     min-height: 38px;
     display: flex;
     align-items: center;
@@ -868,10 +935,10 @@ header {
 }
 
 .product-card-granel .product-name {
-    font-size: 15.5px;
-    font-weight: 800;
-    color: #1B432E;
-    text-transform: uppercase;
+    font-size: 14.5px;
+    font-weight: 750;
+    color: #123020;
+    text-transform: none; /* Title Case */
     text-align: center;
 }
 
@@ -1116,13 +1183,14 @@ header {
 /* --- SELETOR DINÂMICO DE QUANTIDADE NO CARD (+ / -) --- */
 .card-qty-selector {
     width: 100%;
+    min-height: 48px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: #E8F5EE;
     border: 1.5px solid var(--primary);
     border-radius: var(--radius-sm);
-    padding: 4px 8px;
+    padding: 2px 6px;
     box-shadow: 0 2px 8px rgba(27, 67, 46, 0.12);
     animation: popIn 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -1146,30 +1214,34 @@ header {
     to { transform: scale(1); opacity: 1; }
 }
 
+/* TOUCH TARGET DE NO MÍNIMO 44x44px PARA MOBILE E ACESSIBILIDADE WCAG */
 .card-qty-btn {
-    width: 36px;
-    height: 36px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
     border: none;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 800;
     cursor: pointer;
     transition: all 0.15s ease;
     user-select: none;
+    touch-action: manipulation;
 }
 
 .card-qty-btn.minus {
     background: white;
     color: #DC2626;
-    border: 1px solid #FECACA;
+    border: 1.5px solid #FECACA;
 }
 
 .card-qty-btn.minus:hover {
     background: #FEE2E2;
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 .card-qty-btn.minus:active {
@@ -1183,7 +1255,7 @@ header {
 
 .card-qty-btn.plus:hover {
     background: var(--primary-light);
-    transform: scale(1.08);
+    transform: scale(1.06);
 }
 
 .card-qty-btn.plus:active {
@@ -1195,7 +1267,7 @@ header {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 0 6px;
+    padding: 0 4px;
     line-height: 1;
 }
 
@@ -1206,12 +1278,49 @@ header {
 }
 
 .card-qty-label {
-    font-size: 9.5px;
+    font-size: 9px;
     font-weight: 700;
     color: #166534;
     text-transform: uppercase;
     letter-spacing: 0.3px;
-    margin-top: 1px;
+    margin-top: 2px;
+}
+
+/* SENTINELA DE RENDERIZAÇÃO INCREMENTAL (INFINITE SCROLL) */
+.scroll-sentinel {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0 16px 0;
+    min-height: 50px;
+}
+
+.sentinel-loader {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.loader-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: dotPulse 1.2s infinite ease-in-out;
+}
+
+.loader-dot:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loader-dot:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+    0%, 80%, 100% { transform: scale(0.6); opacity: 0.35; }
+    40% { transform: scale(1.15); opacity: 1; }
 }
 
 /* --- BARRA DE CARRINHO FLUTUANTE (ESTILO DELIVERY MODERNO) --- */

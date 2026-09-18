@@ -1,3 +1,4 @@
+// --- ESTADO GLOBAL & PERSISTÊNCIA ---
 let currentCategory = "todos";
 let currentSubcategory = "todas";
 let currentSort = "default";
@@ -5,13 +6,86 @@ let currentPriceRange = "all";
 let searchQuery = "";
 let showOnlyFavorites = false;
 let currentQuickTag = null;
-let favorites = JSON.parse(localStorage.getItem("agro_salinas_favs") || "[]");
-let cart = JSON.parse(localStorage.getItem("agro_salinas_cart") || "{}"); // { [productId]: quantity }
+
+// Renderização incremental / Infinite scroll
+let allFilteredProducts = [];
+let renderedCount = 0;
+const BATCH_SIZE = 28;
+let scrollObserver = null;
+let searchDebounceTimer = null;
+
+// Recuperação segura do localStorage com fallback
+let favorites = [];
+try {
+    favorites = JSON.parse(localStorage.getItem("agro_salinas_favs") || "[]");
+    if (!Array.isArray(favorites)) favorites = [];
+} catch (e) {
+    favorites = [];
+}
+
+let cart = {};
+try {
+    cart = JSON.parse(localStorage.getItem("agro_salinas_cart") || "{}");
+    if (typeof cart !== "object" || cart === null || Array.isArray(cart)) cart = {};
+} catch (e) {
+    cart = {};
+}
+
 let currentSeller = {
     code: STORE_CONFIG.defaultSeller.code,
     name: STORE_CONFIG.defaultSeller.name,
     tag: STORE_CONFIG.defaultSeller.tag
 };
+
+// Funções seguras de persistência
+function saveCart() {
+    try {
+        localStorage.setItem("agro_salinas_cart", JSON.stringify(cart));
+    } catch (e) {
+        console.warn("Falha ao salvar carrinho no localStorage:", e);
+    }
+}
+
+function saveFavorites() {
+    try {
+        localStorage.setItem("agro_salinas_favs", JSON.stringify(favorites));
+    } catch (e) {
+        console.warn("Falha ao salvar favoritos no localStorage:", e);
+    }
+}
+
+// Utilitário para conversão de ALL CAPS para Title Case (ex: Areia Sanitaria Pipicat Classic 4kg)
+function toTitleCase(str) {
+    if (!str) return "";
+    const lowerWords = new Set(["de", "da", "do", "das", "dos", "e", "em", "para", "com", "por", "sem", "a", "o", "as", "os", "na", "no", "nas", "nos", "pra", "pro"]);
+    const keepUpper = new Set(["NPK", "BHT", "DHA", "EPA", "PH", "AD", "BB", "SR", "UI", "IV", "SC", "IM"]);
+    
+    return str
+        .toLowerCase()
+        .replace(/([^\s\/\-\+\(\)]+)/g, (match, word, offset) => {
+            const upper = word.toUpperCase();
+            if (keepUpper.has(upper)) return upper;
+            if (/^\d+(\.\d+)?(kg|g|mg|ml|l|cm|mm|un|pct)$/i.test(word)) {
+                return word.toLowerCase();
+            }
+            const lower = word.toLowerCase();
+            if (offset > 0 && lowerWords.has(lower)) {
+                return lower;
+            }
+            return lower.charAt(0).toUpperCase() + lower.slice(1);
+        });
+}
+
+// Normalizador para buscas insensíveis a acentos e caixa alta/baixa
+function normalizeText(str) {
+    if (!str) return "";
+    return str
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase()
+        .trim();
+}
 
 // --- INICIALIZAÇÃO ---
 document.addEventListener("DOMContentLoaded", () => {
@@ -285,7 +359,112 @@ function getCategoryIcon(catId) {
     return icons[catId] || "🌾";
 }
 
-// --- RENDERIZAÇÃO DOS PRODUTOS ---
+// --- CONSTRUÇÃO DO CARD DO PRODUTO (LAYOUT LIMPO, TITLE CASE, SVG FALLBACK) ---
+function buildProductCardHtml(product) {
+    const qtyInCart = cart[product.id] || 0;
+    const isFav = favorites.includes(product.id.toString());
+    const catName = CATEGORIES.find(c => c.id === product.category)?.name.split(' ')[0] || 'Agro';
+    const isGranel = product.category === 'granel';
+    const productName = toTitleCase(product.name);
+
+    // Placeholder Vetorial Minimalista e Limpo (sem emojis infantis gigantes)
+    const placeholderSvg = `
+        <div class="product-placeholder-box">
+            <svg class="placeholder-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20 12 L24 8 L40 8 L44 12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M16 22 L48 22" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="32" cy="38" r="8" stroke-width="2" opacity="0.35"/>
+                <path d="M29 38 L35 38 M32 35 L32 41" stroke-width="1.8" stroke-linecap="round" opacity="0.45"/>
+            </svg>
+            <span class="product-placeholder-tag">${catName}</span>
+        </div>
+    `;
+
+    const imageHtml = product.image ? `
+        <div class="product-image-container">
+            <img src="${product.image}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><svg class=\\'placeholder-svg\\' viewBox=\\'0 0 64 64\\' fill=\\'none\\' stroke=\\'currentColor\\' xmlns=\\'http://www.w3.org/2000/svg\\'><path d=\\'M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M20 12 L24 8 L40 8 L44 12\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M16 22 L48 22\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\'/><circle cx=\\'32\\' cy=\\'38\\' r=\\'8\\' stroke-width=\\'2\\' opacity=\\'0.35\\'/></svg><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
+        </div>
+    ` : `
+        <div class="product-image-container">
+            ${placeholderSvg}
+        </div>
+    `;
+
+    return `
+        <div class="product-card ${isGranel ? 'product-card-granel' : ''}" id="card-${product.id}">
+            <div class="card-top-actions">
+                <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}" aria-label="Favoritar">
+                    ${isFav ? '❤️' : '🤍'}
+                </button>
+                <button class="btn-zap-card" onclick="quickBuyWhatsApp('${product.id}')" title="Tirar dúvidas ou pedir este item no WhatsApp" aria-label="Pedir no WhatsApp">
+                    <span>💬</span>
+                </button>
+            </div>
+            ${product.badge ? `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>` : ''}
+            ${imageHtml}
+            <div class="card-info-wrap">
+                <div class="product-meta-line">
+                    <span class="meta-code">Cód: ${product.code}</span>
+                    <span class="meta-sep">•</span>
+                    <span class="meta-cat">${product.subcategory || catName}</span>
+                </div>
+                <h3 class="product-name" title="${productName}">${productName}</h3>
+            </div>
+            
+            <div class="product-footer">
+                ${isGranel ? `
+                    <div class="granel-highlight-card">
+                        <div class="granel-top-info">
+                            <span class="granel-weight-pill">⚖️ Pacote: <strong>${product.badge ? product.badge.replace('Pacote ', '') : (product.unit || 'Kg')}</strong></span>
+                            ${product.extraInfo ? `<span class="granel-kg-pill">${product.extraInfo.replace(/.*?\(/, '').replace(')', '')}</span>` : ''}
+                        </div>
+                        
+                        <div class="granel-price-banner">
+                            <span class="granel-price-label">VALOR DO PACOTE FECHADO:</span>
+                            <div class="granel-price-number">
+                                <span class="granel-curr">R$</span>
+                                <span class="granel-val">${product.price.toFixed(2).replace('.', ',')}</span>
+                            </div>
+                            <div class="granel-trust-tag">
+                                <span class="trust-icon">✓</span>
+                                <span>Embalagem pesada e selada</span>
+                            </div>
+                        </div>
+                    </div>
+                ` : `
+                    <div class="price-row">
+                        <div>
+                            <span class="price-label">PREÇO</span>
+                            <div class="price-value">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
+                        </div>
+                        <span class="price-unit">/${product.unit || 'un'}</span>
+                    </div>
+                `}
+
+                <div class="card-actions">
+                    ${qtyInCart > 0 ? `
+                        <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
+                            <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                            <span class="card-qty-display">
+                                <span class="card-qty-val">${qtyInCart}</span>
+                                <span class="card-qty-label">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                            </span>
+                            <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                    ` : `
+                        <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
+                            <span class="btn-cart-icon">🛒</span>
+                            <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+                        </button>
+                    `}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// --- RENDERIZAÇÃO PROGRESSIVA & INCREMENTAL DOS PRODUTOS (PERFORMANCE MÁXIMA) ---
 function renderProducts() {
     const grid = document.getElementById("products-grid");
     const countEl = document.getElementById("products-count");
@@ -321,8 +500,11 @@ function renderProducts() {
         }
     }
 
-    // Filtragem
-    let filtered = PRODUCTS.filter(p => {
+    const normQuery = normalizeText(searchQuery);
+    const queryTokens = normQuery ? normQuery.split(/\s+/).filter(Boolean) : [];
+
+    // Filtragem com normalização sem acentos e busca unificada por nome, código e subcategoria
+    allFilteredProducts = PRODUCTS.filter(p => {
         // Filtro de Favoritos
         if (showOnlyFavorites && !favorites.includes(p.id.toString())) {
             return false;
@@ -330,7 +512,7 @@ function renderProducts() {
 
         // Filtro Rápido por Necessidade do Pet
         if (currentQuickTag) {
-            const fullText = (p.name + " " + (p.subcategory || "") + " " + (p.badge || "")).toLowerCase();
+            const fullText = normalizeText(p.name + " " + (p.subcategory || "") + " " + (p.badge || ""));
             if (currentQuickTag === "mais_vendidos") {
                 if (!p.featured && p.price < 50 && !p.id.toString().startsWith("granel")) return false;
             } else if (currentQuickTag === "filhotes") {
@@ -342,43 +524,49 @@ function renderProducts() {
             } else if (currentQuickTag === "porte_pequeno") {
                 if (!fullText.includes("pequen") && !fullText.includes("mini") && !fullText.includes("small")) return false;
             } else if (currentQuickTag === "senior") {
-                if (!fullText.includes("senior") && !fullText.includes("sênior") && !fullText.includes("idade") && !fullText.includes("+7") && !fullText.includes("maduro")) return false;
+                if (!fullText.includes("senior") && !fullText.includes("idade") && !fullText.includes("+7") && !fullText.includes("maduro")) return false;
             }
         }
 
         // Categoria Principal
-        const matchesCat = currentCategory === "todos" || p.category === currentCategory;
+        if (currentCategory !== "todos" && p.category !== currentCategory) {
+            return false;
+        }
         
         // Subcategoria
-        const matchesSubcat = currentSubcategory === "todas" || p.subcategory === currentSubcategory;
+        if (currentSubcategory !== "todas" && p.subcategory !== currentSubcategory) {
+            return false;
+        }
         
         // Faixa de Preço
-        let matchesPrice = true;
-        if (currentPriceRange === "under_20") matchesPrice = p.price <= 20;
-        else if (currentPriceRange === "20_60") matchesPrice = p.price > 20 && p.price <= 60;
-        else if (currentPriceRange === "60_150") matchesPrice = p.price > 60 && p.price <= 150;
-        else if (currentPriceRange === "above_150") matchesPrice = p.price > 150;
+        if (currentPriceRange === "under_20" && p.price > 20) return false;
+        if (currentPriceRange === "20_60" && (p.price <= 20 || p.price > 60)) return false;
+        if (currentPriceRange === "60_150" && (p.price <= 60 || p.price > 150)) return false;
+        if (currentPriceRange === "above_150" && p.price <= 150) return false;
 
-        // Busca textual
-        const query = searchQuery.toLowerCase().trim();
-        const matchesQuery = !query || 
-            p.name.toLowerCase().includes(query) || 
-            p.code.toLowerCase().includes(query) ||
-            p.subcategory.toLowerCase().includes(query);
+        // Busca textual inteligente (ignora acentos, maiúsculas/minúsculas, pesquisa por nome ou código)
+        if (queryTokens.length > 0) {
+            const normName = normalizeText(p.name);
+            const normCode = normalizeText(p.code);
+            const normSubcat = normalizeText(p.subcategory);
+            const combined = `${normName} ${normCode} ${normSubcat}`;
+            const matchesAllTokens = queryTokens.every(tok => combined.includes(tok));
+            if (!matchesAllTokens) return false;
+        }
 
-        return matchesCat && matchesSubcat && matchesPrice && matchesQuery;
+        return true;
     });
 
     // Ordenação
     if (currentSort === "price_asc") {
-        filtered.sort((a, b) => a.price - b.price);
+        allFilteredProducts.sort((a, b) => a.price - b.price);
     } else if (currentSort === "price_desc") {
-        filtered.sort((a, b) => b.price - a.price);
+        allFilteredProducts.sort((a, b) => b.price - a.price);
     } else if (currentSort === "name_asc") {
-        filtered.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
+        allFilteredProducts.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
     } else {
         // default: Destaques primeiro, depois alfabético
-        filtered.sort((a, b) => {
+        allFilteredProducts.sort((a, b) => {
             if (a.featured && !b.featured) return -1;
             if (!a.featured && b.featured) return 1;
             return a.name.localeCompare(b.name, 'pt-BR');
@@ -391,7 +579,6 @@ function renderProducts() {
         clearBtn.style.display = isFiltered ? "inline-block" : "none";
     }
 
-    // Indicador no botão do menu hambúrguer e na barra lateral
     const activeDot = document.getElementById("sidebar-active-dot");
     if (activeDot) {
         activeDot.style.display = isFiltered ? "block" : "none";
@@ -403,10 +590,12 @@ function renderProducts() {
 
     // Contador
     if (countEl) {
-        countEl.textContent = `${filtered.length} produto${filtered.length === 1 ? '' : 's'}`;
+        countEl.textContent = `${allFilteredProducts.length} produto${allFilteredProducts.length === 1 ? '' : 's'}`;
     }
 
-    if (filtered.length === 0) {
+    // Estado Vazio
+    if (allFilteredProducts.length === 0) {
+        if (scrollObserver) scrollObserver.disconnect();
         grid.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px; background: white; border-radius: 14px; border: 1px dashed var(--border-color); box-shadow: var(--shadow-sm);">
                 <p style="font-size: 36px; margin-bottom: 8px;">${showOnlyFavorites ? '❤️' : '🔍'}</p>
@@ -420,106 +609,109 @@ function renderProducts() {
         return;
     }
 
-    grid.innerHTML = filtered.map(product => {
-        const qtyInCart = cart[product.id] || 0;
-        const isFav = favorites.includes(product.id.toString());
-        const icon = getCategoryIcon(product.category);
-        const catName = CATEGORIES.find(c => c.id === product.category)?.name.split(' ')[0] || 'Agro';
-        const imageHtml = product.image ? 
-            `<div class="product-image-container">
-                <img src="${product.image}" alt="${product.name}" class="product-img" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><span class=\\'product-placeholder-icon\\'>${icon}</span><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
-            </div>` : 
-            `<div class="product-image-container">
-                <div class="product-placeholder-box">
-                    <span class="product-placeholder-icon">${icon}</span>
-                    <span class="product-placeholder-tag">${catName}</span>
-                </div>
-            </div>`;
-
-        const isGranel = product.category === 'granel';
-
-        return `
-            <div class="product-card ${isGranel ? 'product-card-granel' : ''}" id="card-${product.id}">
-                <div class="card-top-actions">
-                    <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}">
-                        ${isFav ? '❤️' : '🤍'}
-                    </button>
-                    <button class="btn-zap-card" onclick="quickBuyWhatsApp('${product.id}')" title="Tirar dúvidas ou pedir este item no WhatsApp">
-                        <span>💬</span>
-                    </button>
-                </div>
-                ${product.badge ? `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>` : ''}
-                ${imageHtml}
-                <div class="card-info-wrap">
-                    <div class="card-top-tags">
-                        <span class="product-code">Cód: ${product.code}</span>
-                        <span class="product-sub-pill">${product.subcategory}</span>
-                    </div>
-                    <h3 class="product-name">${product.name}</h3>
-                    ${!isGranel ? `<div class="product-trust-mini"><span>✓ Pronta Entrega</span><span>•</span><span>Original</span></div>` : ''}
-                </div>
-                
-                <div class="product-footer">
-                    ${isGranel ? `
-                        <div class="granel-highlight-card">
-                            <div class="granel-top-info">
-                                <span class="granel-weight-pill">⚖️ Pacote: <strong>${product.badge ? product.badge.replace('Pacote ', '') : (product.unit || 'Kg')}</strong></span>
-                                ${product.extraInfo ? `<span class="granel-kg-pill">${product.extraInfo.replace(/.*?\(/, '').replace(')', '')}</span>` : ''}
-                            </div>
-                            
-                            <div class="granel-price-banner">
-                                <span class="granel-price-label">VALOR DO PACOTE FECHADO:</span>
-                                <div class="granel-price-number">
-                                    <span class="granel-curr">R$</span>
-                                    <span class="granel-val">${product.price.toFixed(2).replace('.', ',')}</span>
-                                </div>
-                                <div class="granel-trust-tag">
-                                    <span class="trust-icon">✓</span>
-                                    <span>Embalagem pesada e selada</span>
-                                </div>
-                            </div>
-                        </div>
-                    ` : `
-                        <div class="price-row">
-                            <div>
-                                <span class="price-label">PREÇO</span>
-                                <div class="price-value">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
-                            </div>
-                            <span class="price-unit">/${product.unit}</span>
-                        </div>
-                    `}
-
-                    <div class="card-actions">
-                        ${qtyInCart > 0 ? `
-                            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
-                                <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade">−</button>
-                                <span class="card-qty-display">
-                                    <span class="card-qty-val">${qtyInCart}</span>
-                                    <span class="card-qty-label">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
-                                </span>
-                                <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade">+</button>
-                            </div>
-                        ` : `
-                            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
-                                <span class="btn-cart-icon">🛒</span>
-                                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
-                            </button>
-                        `}
-                    </div>
-                </div>
-            </div>
-        `;
-    }).join("");
+    // Limpa o grid, reseta o contador e renderiza o primeiro lote
+    grid.innerHTML = "";
+    renderedCount = 0;
+    renderNextBatch();
+    setupScrollObserver();
 }
 
-// --- CONTROLE DE CARRINHO ---
+// Renderização incremental em lotes de 28 produtos via Virtual Scroll / Observer
+function renderNextBatch() {
+    const grid = document.getElementById("products-grid");
+    if (!grid || renderedCount >= allFilteredProducts.length) return;
+
+    // Remove sentinela anterior antes de injetar novo lote
+    const oldSentinel = document.getElementById("scroll-sentinel");
+    if (oldSentinel) oldSentinel.remove();
+
+    const nextBatch = allFilteredProducts.slice(renderedCount, renderedCount + BATCH_SIZE);
+    const htmlChunk = nextBatch.map(p => buildProductCardHtml(p)).join("");
+    grid.insertAdjacentHTML("beforeend", htmlChunk);
+    renderedCount += nextBatch.length;
+
+    // Se ainda restarem itens a carregar, injeta sentinela e observa
+    if (renderedCount < allFilteredProducts.length) {
+        const sentinel = document.createElement("div");
+        sentinel.id = "scroll-sentinel";
+        sentinel.className = "scroll-sentinel";
+        sentinel.innerHTML = `
+            <div class="sentinel-loader">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+            </div>
+        `;
+        grid.appendChild(sentinel);
+        if (scrollObserver) {
+            scrollObserver.observe(sentinel);
+        }
+    }
+}
+
+// Configuração do IntersectionObserver para scroll suave
+function setupScrollObserver() {
+    if (scrollObserver) {
+        scrollObserver.disconnect();
+    }
+    const sentinel = document.getElementById("scroll-sentinel");
+    if (!sentinel) return;
+
+    scrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && renderedCount < allFilteredProducts.length) {
+                renderNextBatch();
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: "350px",
+        threshold: 0.05
+    });
+
+    scrollObserver.observe(sentinel);
+}
+
+// Atualização pontual do botão de um card sem re-renderizar todo o catálogo
+function updateCardActionUI(productId) {
+    const card = document.getElementById(`card-${productId}`);
+    if (!card) return;
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return;
+    const qtyInCart = cart[productId] || 0;
+    const isGranel = product.category === 'granel';
+    const actionsContainer = card.querySelector('.card-actions');
+    if (!actionsContainer) return;
+
+    if (qtyInCart > 0) {
+        actionsContainer.innerHTML = `
+            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
+                <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                <span class="card-qty-display">
+                    <span class="card-qty-val">${qtyInCart}</span>
+                    <span class="card-qty-label">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                </span>
+                <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+            </div>
+        `;
+    } else {
+        actionsContainer.innerHTML = `
+            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
+                <span class="btn-cart-icon">🛒</span>
+                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+            </button>
+        `;
+    }
+}
+
+// --- CONTROLE DE CARRINHO & PERSISTÊNCIA ---
 function addToCart(productId, event) {
     if (event) event.stopPropagation();
     cart[productId] = (cart[productId] || 0) + 1;
-    localStorage.setItem("agro_salinas_cart", JSON.stringify(cart));
+    saveCart();
     
     updateCartUI();
-    renderProducts();
+    updateCardActionUI(productId);
     showToast("✓ Adicionado ao cesto de compras!");
 }
 
@@ -534,9 +726,9 @@ function updateCartQty(productId, delta, event) {
             delete cart[productId];
         }
     }
-    localStorage.setItem("agro_salinas_cart", JSON.stringify(cart));
+    saveCart();
     updateCartUI();
-    renderProducts();
+    updateCardActionUI(productId);
     renderCartDrawerItems();
 }
 
@@ -637,7 +829,7 @@ function renderCartDrawerItems() {
         container.innerHTML = `
             <div style="text-align: center; padding: 40px 20px; color: var(--text-muted);">
                 <p style="font-size: 32px; margin-bottom: 8px;">🛒</p>
-                <p>Seu carrinho está vazio.</p>
+                <p>Seu cesto está vazio.</p>
             </div>
         `;
         if (totalEl) totalEl.textContent = "R$ 0,00";
@@ -649,14 +841,17 @@ function renderCartDrawerItems() {
         const qty = cart[id];
         const product = PRODUCTS.find(p => p.id.toString() === id.toString());
         if (product) {
+            const isGranel = product.category === 'granel';
             const unitPrice = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
             const subtotal = `R$ ${(product.price * qty).toFixed(2).replace('.', ',')}`;
             const priceDisplay = qty > 1 ? `${unitPrice} un. • <strong>Total: ${subtotal}</strong>` : unitPrice;
+            const title = toTitleCase(product.name);
+            const granelBadge = isGranel && product.badge ? `<span style="font-size: 11px; background: #E8F5EE; color: var(--primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 4px;">⚖️ ${product.badge}</span>` : '';
 
             itemsHtml += `
                 <div class="cart-item">
                     <div class="cart-item-info">
-                        <div class="cart-item-name">[${product.code}] ${product.name}</div>
+                        <div class="cart-item-name">[${product.code}] ${title} ${granelBadge}</div>
                         <div class="cart-item-price">${priceDisplay}</div>
                     </div>
                     <div class="cart-item-controls">
@@ -673,11 +868,11 @@ function renderCartDrawerItems() {
     if (totalEl) totalEl.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
 }
 
-// --- GERAÇÃO DE MENSAGEM DO WHATSAPP (ROTEAMENTO INTELIGENTE POR VENDEDOR) ---
+// --- GERAÇÃO DE MENSAGEM DO WHATSAPP (PRESERVA TODAS AS REGRAS DE GRANEL & ENCODE SEGURO) ---
 function checkoutWhatsApp() {
     const { totalCount, totalPrice } = getCartStats();
     if (totalCount === 0) {
-        alert("Seu carrinho está vazio!");
+        showToast("Seu cesto está vazio!");
         return;
     }
 
@@ -686,23 +881,35 @@ function checkoutWhatsApp() {
         const qty = cart[id];
         const product = PRODUCTS.find(p => p.id.toString() === id.toString());
         if (product) {
+            const isGranel = product.category === 'granel';
             const unitPriceStr = product.price.toFixed(2).replace('.', ',');
             const subtotal = product.price * qty;
             const subtotalStr = subtotal.toFixed(2).replace('.', ',');
+            const prodTitle = toTitleCase(product.name);
 
-            if (qty > 1) {
-                itemsText += `📦 *${qty}x* [CÓD ${product.code}] ${product.name}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+            if (isGranel) {
+                const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
+                const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
+                if (qty > 1) {
+                    itemsText += `⚖️ *${qty}x* [CÓD ${product.code}] ${prodTitle}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+                } else {
+                    itemsText += `⚖️ *1x* [CÓD ${product.code}] ${prodTitle}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo} — *R$ ${unitPriceStr}*\n`;
+                }
             } else {
-                itemsText += `📦 *1x* [CÓD ${product.code}] ${product.name} — *R$ ${unitPriceStr}*\n`;
+                if (qty > 1) {
+                    itemsText += `📦 *${qty}x* [CÓD ${product.code}] ${prodTitle}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+                } else {
+                    itemsText += `📦 *1x* [CÓD ${product.code}] ${prodTitle} — *R$ ${unitPriceStr}*\n`;
+                }
             }
         }
     }
 
-    // Identifica a forma de pagamento ilustrada pelo cliente
+    // Identifica a forma de pagamento selecionada pelo cliente
     const selectedPayInput = document.querySelector('input[name="checkout_payment"]:checked');
     const paymentMethod = selectedPayInput ? selectedPayInput.value : "A combinar";
 
-    // Identifica o WhatsApp de destino: se o cliente veio por um vendedor (Grégory ou Rodrigo), vai para o vendedor!
+    // Identifica o WhatsApp de destino: se o cliente veio por vendedor, vai para ele
     const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
 
     const message = 
@@ -726,15 +933,32 @@ function quickBuyWhatsApp(productId) {
     if (!product) return;
 
     const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
+    const isGranel = product.category === 'granel';
+    const prodTitle = toTitleCase(product.name);
 
-    const message = 
+    let message = "";
+    if (isGranel) {
+        const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
+        const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
+        message = 
 `*👋 Olá, ${currentSeller.name}!*
-Tenho interesse no seguinte produto do catálogo Agro Salinas:
+Tenho interesse neste produto a granel do catálogo Agro Salinas:
 
-📦 *[CÓD ${product.code}] ${product.name}*
+⚖️ *[CÓD ${product.code}] ${prodTitle}*
+📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
 💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+    } else {
+        message = 
+`*👋 Olá, ${currentSeller.name}!*
+Tenho interesse no seguinte produto do catálogo Agro Salinas:
+
+📦 *[CÓD ${product.code}] ${prodTitle}*
+💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+
+🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+    }
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -779,13 +1003,16 @@ function copySellerLink() {
     });
 }
 
-// --- EVENTOS & BUSCA ---
+// --- EVENTOS & BUSCA (COM DEBOUNCE DE 300MS) ---
 function setupEventListeners() {
     const searchInput = document.getElementById("search-input");
     if (searchInput) {
         searchInput.addEventListener("input", (e) => {
-            searchQuery = e.target.value;
-            renderProducts();
+            clearTimeout(searchDebounceTimer);
+            searchDebounceTimer = setTimeout(() => {
+                searchQuery = e.target.value;
+                renderProducts();
+            }, 300);
         });
     }
 
@@ -825,9 +1052,22 @@ function toggleFavorite(productId, event) {
         showToast("Salvo nos favoritos! ❤️");
     }
 
-    localStorage.setItem("agro_salinas_favs", JSON.stringify(favorites));
+    saveFavorites();
     updateFavoritesUI();
-    renderProducts();
+
+    // Se estiver na tela exclusiva de favoritos, re-renderiza a lista filtrada
+    if (showOnlyFavorites) {
+        renderProducts();
+    } else {
+        // Atualiza somente o ícone do card específico sem refazer o DOM
+        const cardFavBtn = document.querySelector(`#card-${productId} .btn-fav-card`);
+        if (cardFavBtn) {
+            const isFav = favorites.includes(idStr);
+            cardFavBtn.classList.toggle("active", isFav);
+            cardFavBtn.innerHTML = isFav ? '❤️' : '🤍';
+            cardFavBtn.title = isFav ? 'Remover dos favoritos' : 'Favoritar produto';
+        }
+    }
 }
 
 function toggleFavoritesFilter() {
