@@ -54,12 +54,22 @@ function saveFavorites() {
     }
 }
 
-// Filtro mestre de catálogo: oculta itens sem imagem quando hideWithoutImage estiver ativo
+// Catálogo mestre: exibe os produtos e controla itens disponíveis
 function getCatalogProducts() {
     if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.hideWithoutImage) {
         return PRODUCTS.filter(p => !!p.image && typeof p.image === 'string' && p.image.trim() !== '');
     }
     return PRODUCTS;
+}
+
+// Verifica se o item pode ser escolhido/comprado no site
+// Itens sem foto ficam com botão "Indisponível" (ativam sozinhos assim que adicionada a imagem)
+function isProductAvailable(product) {
+    if (!product) return false;
+    if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.requireImageForPurchase) {
+        return !!product.image && typeof product.image === 'string' && product.image.trim() !== '';
+    }
+    return true;
 }
 
 // Utilitário para conversão de ALL CAPS para Title Case (ex: Areia Sanitaria Pipicat Classic 4kg)
@@ -401,8 +411,16 @@ function buildProductCardHtml(product) {
         </div>
     `;
 
+    const isAvailable = isProductAvailable(product);
+    let badgeHtml = '';
+    if (!isAvailable) {
+        badgeHtml = `<span class="product-badge badge-unavailable">🚫 Indisponível</span>`;
+    } else if (product.badge) {
+        badgeHtml = `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>`;
+    }
+
     return `
-        <div class="product-card ${isGranel ? 'product-card-granel' : ''}" id="card-${product.id}">
+        <div class="product-card ${isGranel ? 'product-card-granel' : ''} ${!isAvailable ? 'card-unavailable' : ''}" id="card-${product.id}">
             <div class="card-top-actions">
                 <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}" aria-label="Favoritar">
                     ${isFav ? '❤️' : '🤍'}
@@ -411,7 +429,7 @@ function buildProductCardHtml(product) {
                     <span>💬</span>
                 </button>
             </div>
-            ${product.badge ? `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>` : ''}
+            ${badgeHtml}
             ${imageHtml}
             <div class="card-info-wrap">
                 <div class="product-meta-line">
@@ -453,7 +471,12 @@ function buildProductCardHtml(product) {
                 `}
 
                 <div class="card-actions">
-                    ${qtyInCart > 0 ? `
+                    ${!isAvailable ? `
+                        <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item indisponível para pedidos no momento">
+                            <span class="btn-cart-icon">🚫</span>
+                            <span class="btn-cart-text">Indisponível</span>
+                        </button>
+                    ` : qtyInCart > 0 ? `
                         <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
                             <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                             <span class="card-qty-display">
@@ -802,10 +825,21 @@ function updateCardActionUI(productId) {
     if (!card) return;
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
-    const qtyInCart = cart[productId] || 0;
-    const isGranel = product.category === 'granel';
     const actionsContainer = card.querySelector('.card-actions');
     if (!actionsContainer) return;
+
+    if (!isProductAvailable(product)) {
+        actionsContainer.innerHTML = `
+            <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item indisponível para pedidos no momento">
+                <span class="btn-cart-icon">🚫</span>
+                <span class="btn-cart-text">Indisponível</span>
+            </button>
+        `;
+        return;
+    }
+
+    const qtyInCart = cart[productId] || 0;
+    const isGranel = product.category === 'granel';
 
     if (qtyInCart > 0) {
         actionsContainer.innerHTML = `
@@ -831,6 +865,11 @@ function updateCardActionUI(productId) {
 // --- CONTROLE DE CARRINHO & PERSISTÊNCIA ---
 function addToCart(productId, event) {
     if (event) event.stopPropagation();
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (product && !isProductAvailable(product)) {
+        showToast("⚠️ Este produto está indisponível para pedidos no momento.");
+        return;
+    }
     cart[productId] = (cart[productId] || 0) + 1;
     saveCart();
     
@@ -842,6 +881,13 @@ function addToCart(productId, event) {
 
 function updateCartQty(productId, delta, event) {
     if (event) event.stopPropagation();
+    if (delta > 0) {
+        const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+        if (product && !isProductAvailable(product)) {
+            showToast("⚠️ Este produto está indisponível para pedidos no momento.");
+            return;
+        }
+    }
     if (!cart[productId]) {
         if (delta > 0) cart[productId] = delta;
         else return;
@@ -1156,12 +1202,24 @@ function quickBuyWhatsApp(productId) {
     const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
     const isGranel = product.category === 'granel';
     const prodTitle = toTitleCase(product.name);
+    const isAvailable = isProductAvailable(product);
 
     let message = "";
     if (isGranel) {
         const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
         const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
-        message = 
+        if (!isAvailable) {
+            message = 
+`*👋 Olá, ${currentSeller.name}!*
+Gostaria de saber a previsão de disponibilidade deste produto a granel no catálogo Agro Salinas:
+
+⚖️ *[CÓD ${product.code}] ${prodTitle}*
+📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
+💰 *Preço de referência:* R$ ${product.price.toFixed(2).replace('.', ',')}
+
+🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+        } else {
+            message = 
 `*👋 Olá, ${currentSeller.name}!*
 Tenho interesse neste produto a granel do catálogo Agro Salinas:
 
@@ -1170,8 +1228,19 @@ Tenho interesse neste produto a granel do catálogo Agro Salinas:
 💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+        }
     } else {
-        message = 
+        if (!isAvailable) {
+            message = 
+`*👋 Olá, ${currentSeller.name}!*
+Gostaria de saber a previsão de disponibilidade deste produto no catálogo Agro Salinas:
+
+📦 *[CÓD ${product.code}] ${prodTitle}*
+💰 *Preço de referência:* R$ ${product.price.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+
+🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+        } else {
+            message = 
 `*👋 Olá, ${currentSeller.name}!*
 Tenho interesse no seguinte produto do catálogo Agro Salinas:
 
@@ -1179,6 +1248,7 @@ Tenho interesse no seguinte produto do catálogo Agro Salinas:
 💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+        }
     }
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
@@ -1665,6 +1735,9 @@ function openQuickView(productId) {
         `;
     }
 
+    const isAvailable = isProductAvailable(product);
+    const unavailableBadge = !isAvailable ? `<span class="quickview-unavailable-tag">🚫 Indisponível no Momento</span>` : '';
+
     modalContent.innerHTML = `
         <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)">✕</button>
         <div class="quickview-grid">
@@ -1674,6 +1747,7 @@ function openQuickView(productId) {
                     <span class="quickview-code-tag">CÓD ${product.code}</span>
                     <span class="quickview-cat-tag">${subcatName}</span>
                     ${granelBadge}
+                    ${unavailableBadge}
                 </div>
                 <h2 class="quickview-title">${title}</h2>
                 ${tags.length > 0 ? `<div class="quickview-profile-tags">${tags.join('')}</div>` : ''}
@@ -1718,11 +1792,19 @@ function refreshQuickViewActions(productId) {
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
 
+    const isAvailable = isProductAvailable(product);
     const qtyInCart = cart[productId] || 0;
     const isGranel = product.category === 'granel';
 
     let cartActionHtml = "";
-    if (qtyInCart > 0) {
+    if (!isAvailable) {
+        cartActionHtml = `
+            <button class="btn-add-cart btn-unavailable" style="width: 100%; height: 44px; font-size: 14px; font-weight: 800;" disabled title="Item indisponível para pedidos no momento">
+                <span class="btn-cart-icon">🚫</span>
+                <span class="btn-cart-text">Indisponível para Compra</span>
+            </button>
+        `;
+    } else if (qtyInCart > 0) {
         cartActionHtml = `
             <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" style="width: 100%; justify-content: space-between; height: 44px;">
                 <button class="card-qty-btn minus" style="width: 44px; height: 44px; font-size: 20px;" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
@@ -1742,11 +1824,13 @@ function refreshQuickViewActions(productId) {
         `;
     }
 
+    const zapBtnText = isAvailable ? "Tirar Dúvida ou Pedir no WhatsApp" : "Consultar Previsão no WhatsApp";
+
     container.innerHTML = `
         ${cartActionHtml}
-        <button class="quickview-btn-zap" onclick="quickBuyWhatsApp('${product.id}')" title="Falar com consultor sobre este produto">
+        <button class="quickview-btn-zap" onclick="quickBuyWhatsApp('${product.id}')" title="${isAvailable ? 'Falar com consultor sobre este produto' : 'Consultar previsão com consultor'}">
             <span>💬</span>
-            <span>Tirar Dúvida ou Pedir no WhatsApp</span>
+            <span>${zapBtnText}</span>
         </button>
     `;
 }
