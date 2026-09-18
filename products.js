@@ -5,6 +5,7 @@ const STORE_CONFIG = {
     "name": "Agro Salinas",
     "slogan": "Unindo a cidade ao campo!",
     "whatsappNumber": "5551995624230",
+    "hideWithoutImage": true, // Ocultar temporariamente produtos sem foto (ativam sozinhos ao adicionar imagem)
     "defaultSeller": {
         "code": "GREG",
         "name": "Grégory",

@@ -54,6 +54,14 @@ function saveFavorites() {
     }
 }
 
+// Filtro mestre de catálogo: oculta itens sem imagem quando hideWithoutImage estiver ativo
+function getCatalogProducts() {
+    if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.hideWithoutImage) {
+        return PRODUCTS.filter(p => !!p.image && typeof p.image === 'string' && p.image.trim() !== '');
+    }
+    return PRODUCTS;
+}
+
 // Utilitário para conversão de ALL CAPS para Title Case (ex: Areia Sanitaria Pipicat Classic 4kg)
 function toTitleCase(str) {
     if (!str) return "";
@@ -202,10 +210,11 @@ function renderCategories() {
 
     // HTML Sidebar Drawer (Itens verticais completos com contagem de produtos)
     if (sidebarContainer) {
+        const activeList = getCatalogProducts();
         sidebarContainer.innerHTML = CATEGORIES.map(cat => {
             const count = cat.id === 'todos' 
-                ? PRODUCTS.length 
-                : PRODUCTS.filter(p => p.category === cat.id).length;
+                ? activeList.length 
+                : activeList.filter(p => p.category === cat.id).length;
 
             return `
                 <button class="sidebar-cat-btn ${cat.id === currentCategory ? 'active' : ''}" data-cat="${cat.id}">
@@ -263,8 +272,9 @@ function renderSubcategories() {
         return;
     }
 
-    // Obter todas as subcategorias únicas desta categoria
-    const categoryProducts = PRODUCTS.filter(p => p.category === currentCategory);
+    // Obter todas as subcategorias únicas desta categoria com base nos produtos ativos
+    const activeProducts = getCatalogProducts();
+    const categoryProducts = activeProducts.filter(p => p.category === currentCategory);
     const subcats = Array.from(new Set(categoryProducts.map(p => p.subcategory).filter(Boolean)));
     const catObj = CATEGORIES.find(c => c.id === currentCategory);
     const catShortName = catObj ? catObj.name.split(' ')[0] : 'Categoria';
@@ -504,7 +514,8 @@ function renderProducts() {
     const queryTokens = normQuery ? normQuery.split(/\s+/).filter(Boolean) : [];
 
     // Filtragem com normalização sem acentos e busca unificada por nome, código e subcategoria
-    allFilteredProducts = PRODUCTS.filter(p => {
+    const baseProducts = getCatalogProducts();
+    allFilteredProducts = baseProducts.filter(p => {
         // Filtro de Favoritos
         if (showOnlyFavorites && !favorites.includes(p.id.toString())) {
             return false;
