@@ -600,21 +600,26 @@ function renderProducts() {
         return true;
     });
 
-    // Ordenação
-    if (currentSort === "price_asc") {
-        allFilteredProducts.sort((a, b) => a.price - b.price);
-    } else if (currentSort === "price_desc") {
-        allFilteredProducts.sort((a, b) => b.price - a.price);
-    } else if (currentSort === "name_asc") {
-        allFilteredProducts.sort((a, b) => a.name.localeCompare(b.name, 'pt-BR'));
-    } else {
-        // default: Destaques primeiro, depois alfabético
-        allFilteredProducts.sort((a, b) => {
+    // Ordenação: Produtos disponíveis com imagem sempre primeiro, itens sem imagem/indisponíveis abaixo
+    allFilteredProducts.sort((a, b) => {
+        const aAvail = isProductAvailable(a);
+        const bAvail = isProductAvailable(b);
+        if (aAvail && !bAvail) return -1;
+        if (!aAvail && bAvail) return 1;
+
+        if (currentSort === "price_asc") {
+            return a.price - b.price;
+        } else if (currentSort === "price_desc") {
+            return b.price - a.price;
+        } else if (currentSort === "name_asc") {
+            return a.name.localeCompare(b.name, 'pt-BR');
+        } else {
+            // default: Destaques primeiro, depois alfabético
             if (a.featured && !b.featured) return -1;
             if (!a.featured && b.featured) return 1;
             return a.name.localeCompare(b.name, 'pt-BR');
-        });
-    }
+        }
+    });
 
     // Botão Limpar Filtros e Indicador Ativo
     const isFiltered = currentCategory !== "todos" || currentSubcategory !== "todas" || searchQuery !== "" || currentPriceRange !== "all" || currentSort !== "default" || showOnlyFavorites || currentQuickTag !== null;
