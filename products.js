@@ -6113,7 +6113,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 174.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/310.jpg"
     },
     {
         "id": "312",
@@ -6123,7 +6124,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 186.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/312.jpg"
     },
     {
         "id": "324",
@@ -6133,7 +6135,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 51.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/324.jpg"
     },
     {
         "id": "311",
@@ -6143,7 +6146,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 149.903,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/311.jpg"
     },
     {
         "id": "323",
@@ -6153,7 +6157,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 68.2,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/323.jpg"
     },
     {
         "id": "754",
@@ -6163,7 +6168,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 174.902,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/754.jpg"
     },
     {
         "id": "315",
@@ -6173,7 +6179,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 155.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/315.jpg"
     },
     {
         "id": "318",
@@ -6183,7 +6190,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 21,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/318.jpg"
     },
     {
         "id": "319",
@@ -6307,7 +6315,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 49.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_tutano/317.jpg"
     },
     {
         "id": "250",
