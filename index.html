@@ -161,11 +161,33 @@
                 </button>
             </div>
 
+            <!-- SEÇÃO: CATEGORIAS PRINCIPAIS (NO TOPO) -->
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>📂</span>
+                    <span>Categorias do Catálogo</span>
+                </div>
+                <div class="sidebar-categories-list" id="sidebar-categories-list">
+                    <!-- Injetado via JS -->
+                </div>
+            </div>
+
+            <!-- SEÇÃO: SUBCATEGORIAS DINÂMICAS -->
+            <div class="sidebar-section" id="sidebar-subcategories-section" style="display: none;">
+                <div class="sidebar-section-title">
+                    <span>🏷️</span>
+                    <span id="sidebar-subcategories-title">Subcategorias</span>
+                </div>
+                <div class="sidebar-subcategories-list" id="sidebar-subcategories-list">
+                    <!-- Injetado via JS -->
+                </div>
+            </div>
+
             <!-- SEÇÃO: FILTROS RÁPIDOS DO PET -->
             <div class="sidebar-section">
                 <div class="sidebar-section-title">
                     <span>⚡</span>
-                    <span>Necessidade do Pet</span>
+                    <span>Filtros Especiais do Pet</span>
                 </div>
                 <div class="sidebar-quick-tags" id="sidebar-quick-tags">
                     <button class="sidebar-tag-btn" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this); closeSidebarDrawer();">
@@ -186,28 +208,6 @@
                     <button class="sidebar-tag-btn" data-tag="senior" onclick="toggleQuickTag('senior', this); closeSidebarDrawer();">
                         <span>👴</span> Sênior (+7 anos)
                     </button>
-                </div>
-            </div>
-
-            <!-- SEÇÃO: CATEGORIAS PRINCIPAIS -->
-            <div class="sidebar-section">
-                <div class="sidebar-section-title">
-                    <span>📂</span>
-                    <span>Categorias</span>
-                </div>
-                <div class="sidebar-categories-list" id="sidebar-categories-list">
-                    <!-- Injetado via JS -->
-                </div>
-            </div>
-
-            <!-- SEÇÃO: SUBCATEGORIAS DINÂMICAS -->
-            <div class="sidebar-section" id="sidebar-subcategories-section" style="display: none;">
-                <div class="sidebar-section-title">
-                    <span>🏷️</span>
-                    <span id="sidebar-subcategories-title">Subcategorias</span>
-                </div>
-                <div class="sidebar-subcategories-list" id="sidebar-subcategories-list">
-                    <!-- Injetado via JS -->
                 </div>
             </div>
 

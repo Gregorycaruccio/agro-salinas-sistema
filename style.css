@@ -1998,7 +1998,7 @@ footer {
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 16px 18px 24px 18px;
+    padding: 16px 16px 95px 16px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -2080,27 +2080,29 @@ footer {
     box-shadow: 0 3px 8px rgba(27, 67, 46, 0.3);
 }
 
-/* CATEGORIAS VERTICAIS NO DRAWER */
+/* CATEGORIAS VERTICAIS NO DRAWER (IDENTIDADE VERDE DO SITE) */
 .sidebar-categories-list {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
 }
 
 .sidebar-cat-btn {
-    background: #F8FAFC;
-    border: 1.5px solid #E2E8F0;
-    padding: 10px 14px;
+    background: #F4FAF6;
+    border: 1.5px solid #C8E2D2;
+    border-left: 4.5px solid var(--primary);
+    padding: 11px 14px;
     border-radius: var(--radius-sm);
     font-size: 13.5px;
-    font-weight: 600;
-    color: var(--text-main);
+    font-weight: 700;
+    color: #123020;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: space-between;
     transition: all 0.2s ease;
     user-select: none;
+    box-shadow: 0 1px 3px rgba(27, 67, 46, 0.06);
 }
 
 .sidebar-cat-btn .cat-left {
@@ -2118,42 +2120,45 @@ footer {
 .sidebar-cat-btn .cat-count {
     font-size: 11px;
     font-weight: 700;
-    color: var(--text-muted);
-    background: #E2E8F0;
+    color: var(--primary);
+    background: #D8EDE1;
     padding: 2px 8px;
     border-radius: 10px;
 }
 
 .sidebar-cat-btn:hover {
     border-color: var(--primary);
-    background: #F4FAF6;
+    background: #EAF6EE;
+    transform: translateX(2px);
 }
 
 .sidebar-cat-btn.active {
-    background: #EBF7EE;
+    background: var(--primary);
     border-color: var(--primary);
-    color: var(--primary-dark);
+    border-left: 4.5px solid #52B788;
+    color: #FFFFFF;
     font-weight: 800;
+    box-shadow: 0 3px 8px rgba(27, 67, 46, 0.25);
 }
 
 .sidebar-cat-btn.active .cat-count {
-    background: var(--primary);
-    color: white;
+    background: rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
 }
 
 /* SUBCATEGORIAS NO DRAWER */
 .sidebar-subcategories-list {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding-left: 8px;
-    border-left: 2.5px solid #E2E8F0;
+    gap: 6px;
+    padding-left: 10px;
+    border-left: 2.5px solid #52B788;
 }
 
 .sidebar-subcat-btn {
     background: white;
-    border: 1px solid #E2E8F0;
-    padding: 8px 12px;
+    border: 1.5px solid #D8E4DC;
+    padding: 9px 12px;
     border-radius: 6px;
     font-size: 12.5px;
     font-weight: 600;
@@ -2167,13 +2172,13 @@ footer {
 }
 
 .sidebar-subcat-btn:hover {
-    border-color: var(--accent);
-    background: #FFFDFB;
+    border-color: var(--primary);
+    background: #F4FAF6;
 }
 
 .sidebar-subcat-btn.active {
-    background: var(--accent);
-    border-color: var(--accent);
+    background: var(--primary);
+    border-color: var(--primary);
     color: white;
     font-weight: 700;
 }
