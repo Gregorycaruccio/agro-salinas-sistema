@@ -26,19 +26,17 @@
         </div>
     </div>
 
-    <!-- HEADER DA AGRO SALINAS -->
-    <header>
-        <div class="header-content">
-            <img src="assets/logo.png" alt="Agro Salinas" class="brand-logo" onerror="this.style.display='none'">
-            <p class="slogan">Unindo a cidade ao campo!</p>
-        </div>
-    </header>
-
-    <!-- NAVEGAÇÃO FIXA (STICKY HEADER) -->
-    <div class="sticky-nav-wrapper" id="sticky-nav-wrapper">
+    <!-- HEADER & NAVEGAÇÃO FIXA (STICKY HEADER COMPACTO) -->
+    <header class="sticky-nav-wrapper" id="sticky-nav-wrapper">
         <!-- BARRA DE PESQUISA & FAVORITOS & CARRINHO -->
         <div class="controls-container">
             <div class="search-row">
+                <!-- BRAND LOGO & SLOGAN DISCRETO -->
+                <a href="#" class="brand-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" title="Agro Salinas - Início">
+                    <img src="assets/logo.png" alt="Agro Salinas" class="brand-logo" onerror="this.style.display='none'">
+                    <span class="slogan-discreet">Unindo a cidade ao campo!</span>
+                </a>
+
                 <button id="btn-open-sidebar" class="btn-sidebar-toggle" onclick="openSidebarDrawer()" title="Abrir Menu de Categorias e Filtros">
                     <span class="hamburger-lines">
                         <span></span>
@@ -104,7 +102,7 @@
                 <!-- Injetado via JS -->
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- BARRA DE FILTROS & ORDENAÇÃO (DESKTOP) -->
     <div class="filters-container desktop-only-filters">
