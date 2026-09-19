@@ -448,26 +448,18 @@ function buildProductCardHtml(product) {
             </div>
             
             <div class="product-footer">
-                ${isGranel ? `
-                    <div class="granel-highlight-card">
-                        <div class="granel-top-info">
-                            <span class="granel-weight-pill">⚖️ Pacote: <strong>${product.badge ? product.badge.replace('Pacote ', '') : (product.unit || 'Kg')}</strong></span>
-                            ${product.extraInfo ? `<span class="granel-kg-pill">${product.extraInfo.replace(/.*?\(/, '').replace(')', '')}</span>` : ''}
+                ${isGranel ? (() => {
+                    const pkgWeight = product.badge ? product.badge.replace(/^Pacote\s+/i, '') : (product.unit || 'Kg');
+                    const matchKg = product.extraInfo ? product.extraInfo.match(/R\$\s*[\d,.]+\/kg/i) : null;
+                    const kgRate = matchKg ? matchKg[0] : (product.extraInfo ? product.extraInfo.replace(/.*?\(/, '').replace(')', '') : '');
+                    const subText = `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
+                    return `
+                        <div class="granel-compact-price">
+                            <div class="granel-main-price">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
+                            <div class="granel-sub-text">${subText}</div>
                         </div>
-                        
-                        <div class="granel-price-banner">
-                            <span class="granel-price-label">VALOR DO PACOTE FECHADO:</span>
-                            <div class="granel-price-number">
-                                <span class="granel-curr">R$</span>
-                                <span class="granel-val">${product.price.toFixed(2).replace('.', ',')}</span>
-                            </div>
-                            <div class="granel-trust-tag">
-                                <span class="trust-icon">✓</span>
-                                <span>Embalagem pesada e selada</span>
-                            </div>
-                        </div>
-                    </div>
-                ` : `
+                    `;
+                })() : `
                     <div class="price-row">
                         <div>
                             <span class="price-label">PREÇO</span>
@@ -488,14 +480,14 @@ function buildProductCardHtml(product) {
                             <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                             <span class="card-qty-display">
                                 <span class="card-qty-val">${qtyInCart}</span>
-                                <span class="card-qty-label">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
+                                <span class="card-qty-label">${isGranel ? 'no carrinho' : 'no carrinho'}</span>
                             </span>
                             <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
                         </div>
                     ` : `
                         <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
                             <span class="btn-cart-icon">${CART_ICON_SVG}</span>
-                            <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Carrinho' : 'Adicionar ao Carrinho'}</span>
+                            <span class="btn-cart-text">Adicionar</span>
                         </button>
                     `}
                 </div>

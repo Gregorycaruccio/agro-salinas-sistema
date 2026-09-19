@@ -135,6 +135,20 @@ body {
     gap: 12px;
 }
 
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
 .search-box {
     position: relative;
     flex: 1;
@@ -308,13 +322,79 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Header compacto no mobile para exibir produtos "above the fold" */
+    /* 1. HEADER & BUSCA NO MOBILE */
+    .controls-container {
+        padding: 6px 12px 6px 12px;
+        margin: 0 auto;
+    }
+
+    .search-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px 0;
+    }
+
+    /* Linha Superior Esquerda: Menu & Logo */
+    .header-left {
+        order: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
     .brand-logo {
         max-height: 38px;
+        width: auto;
     }
 
     .slogan-discreet {
-        display: none;
+        display: none !important;
+    }
+
+    /* Linha Superior Direita: Favoritos & Carrinho (apenas ícones e badge) */
+    .header-right {
+        order: 2;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-left: auto;
+    }
+
+    .sidebar-toggle-text,
+    .fav-text,
+    .cart-top-text {
+        display: none !important;
+    }
+
+    /* Touch Targets Mínimos de 44x44px */
+    .btn-sidebar-toggle,
+    .btn-favorites-toggle,
+    .btn-cart-toggle {
+        min-width: 44px;
+        min-height: 44px;
+        height: 44px;
+        padding: 0 10px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: var(--radius-sm);
+    }
+
+    /* Linha Própria da Barra de Busca: 100% width, visível e clicável */
+    .search-box {
+        order: 3;
+        width: 100%;
+        flex: 1 1 100%;
+        margin-top: 4px;
+    }
+
+    .search-box input {
+        height: 44px;
+        width: 100%;
+        padding: 10px 42px 10px 14px;
+        font-size: 14px;
     }
 
     .seller-banner {
@@ -329,27 +409,7 @@ body {
     }
 
     .sticky-nav-wrapper {
-        padding: 4px 0 3px 0;
-    }
-
-    .controls-container {
-        margin-bottom: 2px;
-        padding: 0 10px;
-    }
-
-    .search-row {
-        gap: 6px;
-    }
-
-    .search-box input {
-        padding: 9px 36px 9px 12px;
-        font-size: 13.5px;
-    }
-
-    .btn-favorites-toggle,
-    .btn-cart-toggle,
-    .btn-sidebar-toggle {
-        padding: 9px 11px;
+        padding: 4px 0 6px 0;
     }
 
     /* Categorias principais: ocultadas no mobile pois já aparecem completas no menu lateral sanduíche */
@@ -379,31 +439,103 @@ body {
     }
 
     .subcat-pill {
-        padding: 4px 10px;
-        font-size: 11.5px;
+        padding: 6px 12px;
+        min-height: 38px;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* 2. GRADE DE PRODUTOS COMPACTA (GRID 2 COLUNAS NO CELULAR) */
+    .products-section {
+        padding: 0 10px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+        padding: 4px 0 20px 0;
+    }
+
+    .product-card {
+        padding: 8px 8px 10px 8px !important;
+        border-radius: 10px;
+    }
+
+    .product-image-container {
+        aspect-ratio: 1 / 1;
+        max-height: 145px;
+        margin-bottom: 6px;
+    }
+
+    .product-img {
+        object-fit: contain;
+        padding: 4px;
+    }
+
+    .product-name {
+        font-size: 12.5px;
+        min-height: 32px;
+        line-height: 1.25;
+        margin-bottom: 4px;
+    }
+
+    .product-card-granel .product-name {
+        font-size: 12.5px;
+    }
+
+    .price-value {
+        font-size: 16px;
+    }
+
+    .btn-add-cart {
+        min-height: 44px;
+        padding: 8px 6px;
+        font-size: 12.5px;
+        gap: 4px;
     }
 }
 
 @media (min-width: 769px) {
-    /* No desktop, o botão de hambúrguer pode ser mantido ou visualmente secundário */
+    /* No desktop, o botão de hambúrguer fica oculto */
     .btn-sidebar-toggle {
-        display: none; /* No desktop já existem as barras abertas */
+        display: none;
     }
 }
 
 @media (max-width: 480px) {
     .brand-logo {
-        max-height: 34px;
+        max-height: 36px;
     }
-    .sidebar-toggle-text,
-    .fav-text,
-    .cart-top-text {
-        display: none;
-    }
+
     .btn-sidebar-toggle,
     .btn-favorites-toggle,
     .btn-cart-toggle {
-        padding: 9px 9px;
+        min-width: 44px;
+        min-height: 44px;
+        height: 44px;
+        padding: 0 8px;
+    }
+
+    .products-section {
+        padding: 0 8px;
+    }
+
+    .products-grid {
+        gap: 8px !important;
+    }
+
+    .product-card {
+        padding: 6px 6px 8px 6px !important;
+    }
+
+    .product-image-container {
+        max-height: 135px;
+    }
+
+    .product-name {
+        font-size: 12px;
+        min-height: 30px;
     }
 }
 
@@ -734,22 +866,22 @@ body {
 @media (max-width: 820px) {
     .products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        gap: 10px;
     }
 }
 
 @media (max-width: 540px) {
     .products-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
     }
     .product-name {
-        font-size: 15px;
+        font-size: 12.5px;
         text-transform: none;
         text-align: center;
     }
     .product-card-granel .product-name {
-        font-size: 15.5px;
+        font-size: 12.5px;
         text-transform: none;
         text-align: center;
     }
@@ -984,115 +1116,36 @@ body {
     box-shadow: 0 8px 24px rgba(27, 67, 46, 0.14);
 }
 
-.granel-highlight-card {
-    background: #F8FAFC;
-    border: 1.5px solid #CBD5E1;
-    border-radius: var(--radius-sm);
-    padding: 6px 10px;
-    margin-bottom: 2px;
+/* COMPACTAÇÃO DE PREÇO A GRANEL (SEM MOLDURAS DUPLAS) */
+.granel-compact-price {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-}
-
-.granel-top-info {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
-}
-
-.granel-weight-pill {
-    background: #1B432E;
-    color: white;
-    font-size: 11px;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 600;
-}
-
-.granel-weight-pill strong {
-    font-weight: 800;
-    color: #4ADE80;
-}
-
-.granel-kg-pill {
-    font-size: 10.5px;
-    font-weight: 700;
-    color: #334155;
-    background: #E2E8F0;
-    border: 1px solid #CBD5E1;
-    padding: 2px 6px;
-    border-radius: 6px;
-}
-
-.granel-price-banner {
-    background: white;
-    border: 1.5px solid #94A3B8;
-    border-radius: 8px;
-    padding: 5px 8px;
+    justify-content: center;
+    margin: 2px 0 6px 0;
     text-align: center;
-    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    gap: 2px;
 }
 
-.granel-price-label {
-    display: block;
-    font-size: 9px;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    color: #475569;
-    margin-bottom: 1px;
-}
-
-.granel-price-number {
-    display: flex;
-    align-items: baseline;
-    justify-content: center;
-    gap: 3px;
-    color: #0F172A;
-}
-
-.granel-curr {
-    font-size: 13px;
-    font-weight: 800;
-    color: var(--accent);
-}
-
-.granel-val {
-    font-size: 21px;
+.granel-main-price {
+    font-size: 20px;
     font-weight: 900;
-    color: #1B432E;
-    line-height: 1;
+    color: var(--primary);
+    line-height: 1.1;
 }
 
-.granel-trust-tag {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    background: #ECFDF5;
-    border: 1px solid #A7F3D0;
-    color: #047857;
-    font-size: 10px;
+.granel-sub-text {
+    font-size: 11px;
     font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 20px;
-    margin-top: 3px;
-}
-
-.granel-trust-tag .trust-icon {
-    font-size: 10.5px;
-    font-weight: 900;
-    color: #10B981;
+    color: var(--text-muted);
+    line-height: 1.2;
 }
 
 .badge-granel {
     background: linear-gradient(135deg, #F35B16, #E04D09) !important;
     font-size: 11px !important;
     font-weight: 800 !important;
-    padding: 4px 10px !important;
+    padding: 3px 8px !important;
     box-shadow: 0 2px 6px rgba(243, 91, 22, 0.35);
 }
 
@@ -1105,10 +1158,10 @@ body {
 .product-footer {
     margin-top: auto;
     border-top: 1px solid #F1F5F9;
-    padding-top: 12px;
+    padding-top: 8px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .price-label {
@@ -1128,7 +1181,7 @@ body {
 }
 
 .price-value {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 900;
     color: var(--primary-dark);
     line-height: 1;
@@ -1143,8 +1196,8 @@ body {
 /* BOTÕES DE AÇÕES SECUNDÁRIAS NO TOPO DO CARD */
 .card-top-actions {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 6px;
+    left: 6px;
     display: flex;
     gap: 6px;
     z-index: 5;
@@ -1154,9 +1207,24 @@ body {
     position: static;
 }
 
+.btn-fav-card,
 .btn-zap-card {
-    width: 32px;
-    height: 32px;
+    position: relative;
+}
+
+.btn-fav-card::after,
+.btn-zap-card::after {
+    content: '';
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    right: -6px;
+    bottom: -6px;
+}
+
+.btn-zap-card {
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.94);
     border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1184,27 +1252,28 @@ body {
 
 .btn-add-cart {
     width: 100%;
+    min-height: 44px;
     background: var(--primary);
     color: white;
     border: none;
-    padding: 12px 14px;
+    padding: 10px 12px;
     border-radius: var(--radius-sm);
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 800;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    gap: 6px;
+    transition: all 0.2s ease;
     user-select: none;
-    box-shadow: 0 3px 8px rgba(27, 67, 46, 0.2);
+    box-shadow: 0 2px 6px rgba(27, 67, 46, 0.2);
 }
 
 .btn-add-cart:hover {
     background: var(--primary-light);
     transform: translateY(-1px);
-    box-shadow: 0 5px 12px rgba(27, 67, 46, 0.3);
+    box-shadow: 0 4px 10px rgba(27, 67, 46, 0.25);
 }
 
 .btn-add-cart:active {
@@ -1214,7 +1283,7 @@ body {
 /* --- SELETOR DINÂMICO DE QUANTIDADE NO CARD (+ / -) --- */
 .card-qty-selector {
     width: 100%;
-    min-height: 48px;
+    min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: space-between;

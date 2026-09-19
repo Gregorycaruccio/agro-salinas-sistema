@@ -31,37 +31,45 @@
         <!-- BARRA DE PESQUISA & FAVORITOS & CARRINHO -->
         <div class="controls-container">
             <div class="search-row">
-                <!-- BRAND LOGO & SLOGAN DISCRETO -->
-                <a href="#" class="brand-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" title="Agro Salinas - Início">
-                    <img src="assets/logo.png" alt="Agro Salinas" class="brand-logo" onerror="this.style.display='none'">
-                    <span class="slogan-discreet">Unindo a cidade ao campo!</span>
-                </a>
+                <!-- LINHA SUPERIOR ESQUERDA: MENU & LOGO -->
+                <div class="header-left">
+                    <button id="btn-open-sidebar" class="btn-sidebar-toggle" onclick="openSidebarDrawer()" title="Abrir Menu de Categorias e Filtros">
+                        <span class="hamburger-lines">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                        <span class="sidebar-toggle-text">Menu</span>
+                        <span class="sidebar-active-dot" id="sidebar-active-dot" style="display: none;"></span>
+                    </button>
 
-                <button id="btn-open-sidebar" class="btn-sidebar-toggle" onclick="openSidebarDrawer()" title="Abrir Menu de Categorias e Filtros">
-                    <span class="hamburger-lines">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                    <span class="sidebar-toggle-text">Menu</span>
-                    <span class="sidebar-active-dot" id="sidebar-active-dot" style="display: none;"></span>
-                </button>
+                    <a href="#" class="brand-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" title="Agro Salinas - Início">
+                        <img src="assets/logo.png" alt="Agro Salinas" class="brand-logo" onerror="this.style.display='none'">
+                        <span class="slogan-discreet">Unindo a cidade ao campo!</span>
+                    </a>
+                </div>
+
+                <!-- BARRA DE BUSCA (DESKTOP: AO CENTRO; MOBILE: EM LINHA PRÓPRIA 100% ABAIXO) -->
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="Buscar ração, produto ou código...">
                     <span class="search-icon">🔍</span>
                 </div>
-                <button id="btn-view-favorites" class="btn-favorites-toggle" onclick="toggleFavoritesFilter()" title="Ver Meus Favoritos">
-                    <span class="fav-icon">🧡</span>
-                    <span class="fav-text">Favoritos</span>
-                    <span class="fav-badge" id="fav-count">0</span>
-                </button>
-                <button id="btn-view-cart" class="btn-cart-toggle" onclick="openCartDrawer()" title="Ver Carrinho de Compras">
-                    <span class="cart-icon">
-                        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="9" cy="21" r="1.2"></circle><circle cx="19" cy="21" r="1.2"></circle><path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
-                    </span>
-                    <span class="cart-top-text">Carrinho</span>
-                    <span class="cart-top-badge" id="cart-top-count">0</span>
-                </button>
+
+                <!-- LINHA SUPERIOR DIREITA: FAVORITOS & CARRINHO -->
+                <div class="header-right">
+                    <button id="btn-view-favorites" class="btn-favorites-toggle" onclick="toggleFavoritesFilter()" title="Ver Meus Favoritos">
+                        <span class="fav-icon">🧡</span>
+                        <span class="fav-text">Favoritos</span>
+                        <span class="fav-badge" id="fav-count">0</span>
+                    </button>
+                    <button id="btn-view-cart" class="btn-cart-toggle" onclick="openCartDrawer()" title="Ver Carrinho de Compras">
+                        <span class="cart-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="9" cy="21" r="1.2"></circle><circle cx="19" cy="21" r="1.2"></circle><path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L23 6H6"></path></svg>
+                        </span>
+                        <span class="cart-top-text">Carrinho</span>
+                        <span class="cart-top-badge" id="cart-top-count">0</span>
+                    </button>
+                </div>
             </div>
 
             <!-- FILTROS RÁPIDOS POR NECESSIDADE DO PET (DESKTOP) -->
