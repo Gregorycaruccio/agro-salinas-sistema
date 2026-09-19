@@ -37,6 +37,9 @@ let currentSeller = {
     tag: STORE_CONFIG.defaultSeller.tag
 };
 
+// Ícone SVG nítido e profissional de carrinho de supermercado
+const CART_ICON_SVG = `<svg class="btn-svg-cart" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="9" cy="21" r="1.2"></circle><circle cx="19" cy="21" r="1.2"></circle><path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L23 6H6"></path></svg>`;
+
 // Funções seguras de persistência
 function saveCart() {
     try {
@@ -497,14 +500,14 @@ function buildProductCardHtml(product) {
                             <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                             <span class="card-qty-display">
                                 <span class="card-qty-val">${qtyInCart}</span>
-                                <span class="card-qty-label">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                                <span class="card-qty-label">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
                             </span>
                             <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
                         </div>
                     ` : `
                         <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
-                            <span class="btn-cart-icon">🛒</span>
-                            <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+                            <span class="btn-cart-icon">${CART_ICON_SVG}</span>
+                            <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Carrinho' : 'Adicionar ao Carrinho'}</span>
                         </button>
                     `}
                 </div>
@@ -873,7 +876,7 @@ function updateCardActionUI(productId) {
                 <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                 <span class="card-qty-display">
                     <span class="card-qty-val">${qtyInCart}</span>
-                    <span class="card-qty-label">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                    <span class="card-qty-label">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
                 </span>
                 <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
             </div>
@@ -881,8 +884,8 @@ function updateCardActionUI(productId) {
     } else {
         actionsContainer.innerHTML = `
             <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
-                <span class="btn-cart-icon">🛒</span>
-                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+                <span class="btn-cart-icon">${CART_ICON_SVG}</span>
+                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Carrinho' : 'Adicionar ao Carrinho'}</span>
             </button>
         `;
     }
@@ -902,7 +905,7 @@ function addToCart(productId, event) {
     updateCartUI();
     updateCardActionUI(productId);
     refreshQuickViewActions(productId);
-    showToast("✓ Adicionado ao cesto de compras!");
+    showToast("✓ Adicionado ao carrinho de compras!");
 }
 
 function updateCartQty(productId, delta, event) {
@@ -1115,7 +1118,7 @@ function renderCartDrawerItems() {
 function checkoutWhatsApp() {
     const { totalCount, totalPrice } = getCartStats();
     if (totalCount === 0) {
-        showToast("Seu cesto está vazio!");
+        showToast("Seu carrinho está vazio!");
         return;
     }
 
@@ -1570,7 +1573,10 @@ function openQuickView(productId) {
 
     const imageHtml = product.image ? `
         <div class="quickview-image-wrap">
-            <img src="${product.image}" alt="${title}" class="quickview-img" onerror="this.onerror=null; this.parentElement.innerHTML='${placeholderSvg.replace(/'/g, "\\'")}';">
+            <img src="${product.image}" alt="${title}" class="quickview-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="quickview-fallback-wrap" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
+                ${placeholderSvg}
+            </div>
         </div>
     ` : `
         <div class="quickview-image-wrap">
@@ -1825,40 +1831,32 @@ function refreshQuickViewActions(productId) {
     let cartActionHtml = "";
     if (!isAvailable) {
         cartActionHtml = `
-            <button class="btn-add-cart btn-unavailable" style="width: 100%; height: 44px; font-size: 14px; font-weight: 800;" disabled title="Item indisponível para pedidos no momento">
+            <button class="btn-add-cart btn-unavailable" style="width: 100%; height: 46px; font-size: 15px; font-weight: 800;" disabled title="Item indisponível para pedidos no momento">
                 <span class="btn-cart-icon">🚫</span>
                 <span class="btn-cart-text">Indisponível para Compra</span>
             </button>
         `;
     } else if (qtyInCart > 0) {
         cartActionHtml = `
-            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" style="width: 100%; justify-content: space-between; height: 44px;">
-                <button class="card-qty-btn minus" style="width: 44px; height: 44px; font-size: 20px;" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" style="width: 100%; justify-content: space-between; height: 46px;">
+                <button class="card-qty-btn minus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                 <span class="card-qty-display">
-                    <span class="card-qty-val" style="font-size: 16px;">${qtyInCart}</span>
-                    <span class="card-qty-label" style="font-size: 11px;">${isGranel ? 'pct no cesto' : 'no cesto'}</span>
+                    <span class="card-qty-val" style="font-size: 17px;">${qtyInCart}</span>
+                    <span class="card-qty-label" style="font-size: 11px;">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
                 </span>
-                <button class="card-qty-btn plus" style="width: 44px; height: 44px; font-size: 20px;" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                <button class="card-qty-btn plus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
             </div>
         `;
     } else {
         cartActionHtml = `
-            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" style="width: 100%; height: 44px; font-size: 14px; font-weight: 800;" onclick="addToCart('${product.id}', event)">
-                <span class="btn-cart-icon">🛒</span>
-                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Cesto' : 'Adicionar ao Cesto'}</span>
+            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" style="width: 100%; height: 46px; font-size: 15px; font-weight: 800;" onclick="addToCart('${product.id}', event)">
+                <span class="btn-cart-icon">${CART_ICON_SVG}</span>
+                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Carrinho' : 'Adicionar ao Carrinho'}</span>
             </button>
         `;
     }
 
-    const zapBtnText = isAvailable ? "Tirar Dúvida ou Pedir no WhatsApp" : "Consultar Previsão no WhatsApp";
-
-    container.innerHTML = `
-        ${cartActionHtml}
-        <button class="quickview-btn-zap" onclick="quickBuyWhatsApp('${product.id}')" title="${isAvailable ? 'Falar com consultor sobre este produto' : 'Consultar previsão com consultor'}">
-            <span>💬</span>
-            <span>${zapBtnText}</span>
-        </button>
-    `;
+    container.innerHTML = cartActionHtml;
 }
 
 // --- BOTÃO VOLTAR AO TOPO & CONTROLE DE SCROLL ---
