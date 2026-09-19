@@ -350,40 +350,9 @@ header {
         gap: 6px;
     }
 
-    /* Categorias principais com rolagem horizontal suave no mobile */
+    /* Categorias principais: ocultadas no mobile pois já aparecem completas no menu lateral sanduíche */
     .categories-wrapper {
-        display: block !important;
-        margin: 4px 0 2px 0;
-        padding: 0 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .categories-wrapper::-webkit-scrollbar {
-        display: none;
-    }
-
-    .categories-list {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        align-items: center;
-        min-width: max-content;
-    }
-
-    .categories-row {
-        display: inline-flex;
-        flex-wrap: nowrap;
-        gap: 6px;
-        justify-content: center;
-    }
-
-    .category-pill {
-        padding: 6px 12px;
-        font-size: 12px;
-        border-radius: 20px;
+        display: none !important;
     }
 
     /* Subcategorias com rolagem horizontal compacta */
@@ -597,7 +566,10 @@ header {
 
 /* MODO MOBILE: ROLAGEM HORIZONTAL SUAVE COM TOQUE */
 @media (max-width: 680px) {
-    .categories-wrapper,
+    .categories-wrapper {
+        display: none !important;
+    }
+
     .subcategories-wrapper {
         overflow-x: auto;
         white-space: nowrap;
@@ -607,24 +579,8 @@ header {
         padding-bottom: 4px;
     }
 
-    .categories-wrapper::-webkit-scrollbar,
     .subcategories-wrapper::-webkit-scrollbar {
         display: none;
-    }
-
-    .categories-list {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-        align-items: center;
-        min-width: max-content;
-    }
-
-    .categories-row {
-        display: inline-flex;
-        flex-wrap: nowrap;
-        gap: 6px;
-        justify-content: center;
     }
 
     .subcategories-list {
