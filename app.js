@@ -885,6 +885,12 @@ function addToCart(productId, event) {
     updateCartUI();
     updateCardActionUI(productId);
     refreshQuickViewActions(productId);
+
+    const modal = document.getElementById("cart-modal");
+    if (modal && modal.classList.contains("active")) {
+        renderCartDrawerItems();
+    }
+
     showToast("✓ Adicionado ao carrinho de compras!");
 }
 
@@ -1046,6 +1052,8 @@ function renderCartDrawerItems() {
         if (totalEl) totalEl.textContent = "R$ 0,00";
         if (fulfillmentSection) fulfillmentSection.style.display = "none";
         if (paymentSection) paymentSection.style.display = "none";
+        const recSection = document.getElementById("cart-recommendations-section");
+        if (recSection) recSection.style.display = "none";
         if (checkoutBtn) {
             checkoutBtn.disabled = true;
             checkoutBtn.style.opacity = "0.5";
@@ -1092,6 +1100,126 @@ function renderCartDrawerItems() {
 
     container.innerHTML = itemsHtml;
     if (totalEl) totalEl.textContent = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+
+    // Renderiza sugestões inteligentes para aumentar o ticket médio
+    renderCartRecommendations();
+}
+
+// --- SUGESTÕES INTELIGENTES NO CARRINHO (AUMENTO DE TICKET MÉDIO) ---
+function getCartRecommendations(limit = 3) {
+    const cartProductIds = Object.keys(cart).filter(id => (cart[id] || 0) > 0);
+    if (cartProductIds.length === 0 || !Array.isArray(PRODUCTS)) return [];
+
+    const cartProducts = cartProductIds
+        .map(id => PRODUCTS.find(p => p.id.toString() === id.toString()))
+        .filter(Boolean);
+
+    // Mapeamento contextual do carrinho
+    const hasCaes = cartProducts.some(p => p.category === 'caes' || /c[aã]o|cachorro|puppy|filhote|allcanis|premier|golden|biscoito|cookie|petisco|bifinho/i.test(p.name));
+    const hasGatos = cartProducts.some(p => p.category === 'gatos' || /gato|feline|cat|felino|kiara/i.test(p.name));
+    const hasPassaros = cartProducts.some(p => p.category === 'passaros_roedores' || /passar|canario|calopsita|girassol|canjica/i.test(p.name));
+
+    // Produtos elegíveis: fora do carrinho, com estoque/disponível e com preço válido
+    const candidates = PRODUCTS.filter(p => {
+        if (!p || cart[p.id]) return false;
+        if (!isProductAvailable(p)) return false;
+        if (!p.price || p.price <= 0) return false;
+        return true;
+    });
+
+    if (candidates.length === 0) return [];
+
+    // Termos de produtos complementares de compra rápida / impulso
+    const impulseRegex = /cookie|biscoito|petisco|bifinho|snack|sach[eê]|lata|recovery|canjica|girassol|palito|osso|semente|areia/i;
+
+    const scored = candidates.map(p => {
+        let score = 0;
+        const nameLower = (p.name || '').toLowerCase();
+        const isImpulse = impulseRegex.test(nameLower);
+
+        if (isImpulse) score += 25;
+
+        if (hasCaes) {
+            if (p.category === 'caes') score += 15;
+            if (/c[aã]o|cachorro|puppy|filhote|golden|premier/i.test(nameLower)) score += 10;
+        }
+        if (hasGatos) {
+            if (p.category === 'gatos') score += 15;
+            if (/gato|cat|felino|kiara/i.test(nameLower)) score += 10;
+        }
+        if (hasPassaros) {
+            if (p.category === 'passaros_roedores') score += 15;
+            if (/passar|canario|calopsita|canjica|girassol/i.test(nameLower)) score += 10;
+        }
+
+        // Faixa de preço acessível para aumento de ticket médio no carrinho (itens de R$ 3 a R$ 35)
+        if (p.price <= 15) score += 12;
+        else if (p.price <= 25) score += 8;
+        else if (p.price <= 35) score += 4;
+        else if (p.price > 80) score -= 15;
+
+        if (p.featured) score += 3;
+
+        return { product: p, score };
+    });
+
+    scored.sort((a, b) => b.score - a.score || a.product.price - b.product.price);
+    return scored.slice(0, limit).map(s => s.product);
+}
+
+function renderCartRecommendations() {
+    const section = document.getElementById("cart-recommendations-section");
+    const list = document.getElementById("cart-recommendations-list");
+    if (!section || !list) return;
+
+    const { totalCount } = getCartStats();
+    if (totalCount === 0) {
+        section.style.display = "none";
+        list.innerHTML = "";
+        return;
+    }
+
+    const recommendations = getCartRecommendations(3);
+    if (!recommendations || recommendations.length === 0) {
+        section.style.display = "none";
+        list.innerHTML = "";
+        return;
+    }
+
+    let recsHtml = "";
+    recommendations.forEach(product => {
+        const title = toTitleCase(product.name);
+        const priceFormatted = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
+        const isGranel = product.category === 'granel';
+        const granelSub = isGranel && product.badge ? ` <span style="font-size: 10px; color: var(--text-muted); font-weight: 500;">(${product.badge})</span>` : '';
+        const imgHtml = product.image ? `
+            <img src="${product.image}" alt="${title}" class="cart-rec-img" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<span style=\\'font-size: 18px;\\'>🛍️</span>';">
+        ` : `<span style="font-size: 18px;">🛍️</span>`;
+
+        recsHtml += `
+            <div class="cart-rec-card">
+                <div class="cart-rec-img-wrap">
+                    ${imgHtml}
+                </div>
+                <div class="cart-rec-info" title="${title}">
+                    <div class="cart-rec-name">${title}</div>
+                    <div class="cart-rec-price">${priceFormatted}${granelSub}</div>
+                </div>
+                <button class="btn-rec-add" onclick="addRecommendationToCart('${product.id}', event)" title="Adicionar ${title} ao carrinho">
+                    + Adicionar
+                </button>
+            </div>
+        `;
+    });
+
+    list.innerHTML = recsHtml;
+    section.style.display = "block";
+}
+
+function addRecommendationToCart(productId, event) {
+    if (event) event.stopPropagation();
+    addToCart(productId, event);
+    renderCartDrawerItems();
 }
 
 // --- GERAÇÃO DE MENSAGEM DO WHATSAPP (PRESERVA TODAS AS REGRAS DE GRANEL & ENCODE SEGURO) ---
