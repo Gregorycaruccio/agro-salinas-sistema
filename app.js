@@ -430,7 +430,7 @@ function buildProductCardHtml(product) {
         <div class="product-card ${isGranel ? 'product-card-granel' : ''} ${!isAvailable ? 'card-unavailable' : ''}" id="card-${product.id}">
             <div class="card-top-actions">
                 <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}" aria-label="Favoritar">
-                    ${isFav ? '❤️' : '🤍'}
+                    ${isFav ? '🧡' : '🤍'}
                 </button>
                 <button class="btn-zap-card" onclick="quickBuyWhatsApp('${product.id}')" title="Tirar dúvidas ou pedir este item no WhatsApp" aria-label="Pedir no WhatsApp">
                     <span>💬</span>
@@ -515,7 +515,7 @@ function renderProducts() {
     // Atualizar Título da Seção
     if (titleEl) {
         if (showOnlyFavorites) {
-            titleEl.textContent = "❤️ Meus Produtos Favoritos";
+            titleEl.textContent = "🧡 Meus Produtos Favoritos";
         } else if (currentQuickTag) {
             const tagLabels = {
                 mais_vendidos: "🔥 Produtos Mais Vendidos",
@@ -652,7 +652,7 @@ function renderProducts() {
         if (scrollObserver) scrollObserver.disconnect();
         grid.innerHTML = `
             <div style="grid-column: 1/-1; text-align: center; padding: 50px 20px; background: white; border-radius: 14px; border: 1px dashed var(--border-color); box-shadow: var(--shadow-sm);">
-                <p style="font-size: 36px; margin-bottom: 8px;">${showOnlyFavorites ? '❤️' : '🔍'}</p>
+                <p style="font-size: 36px; margin-bottom: 8px;">${showOnlyFavorites ? '🧡' : '🔍'}</p>
                 <h3 style="color: var(--primary-dark); margin-bottom: 6px;">${showOnlyFavorites ? 'Nenhum favorito salvo ainda' : 'Nenhum produto encontrado'}</h3>
                 <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 16px;">${showOnlyFavorites ? 'Clique no coração dos produtos para salvá-los aqui!' : 'Tente ajustar sua busca ou limpar os filtros aplicados.'}</p>
                 <button onclick="resetAllFilters()" style="background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 20px; font-weight: 700; cursor: pointer;">
@@ -810,7 +810,7 @@ function updateActiveFiltersBar(isFiltered) {
     if (showOnlyFavorites) {
         chipsHtml += `
             <div class="active-filter-chip" onclick="toggleFavoritesFilter()" title="Remover filtro de favoritos">
-                <span>❤️ Apenas Favoritos</span>
+                <span>🧡 Apenas Favoritos</span>
                 <span class="active-filter-chip-remove">✕</span>
             </div>
         `;
@@ -1357,7 +1357,7 @@ function toggleFavorite(productId, event) {
         showToast("Removido dos favoritos");
     } else {
         favorites.push(idStr);
-        showToast("Salvo nos favoritos! ❤️");
+        showToast("Salvo nos favoritos! 🧡");
     }
 
     saveFavorites();
@@ -1372,7 +1372,7 @@ function toggleFavorite(productId, event) {
         if (cardFavBtn) {
             const isFav = favorites.includes(idStr);
             cardFavBtn.classList.toggle("active", isFav);
-            cardFavBtn.innerHTML = isFav ? '❤️' : '🤍';
+            cardFavBtn.innerHTML = isFav ? '🧡' : '🤍';
             cardFavBtn.title = isFav ? 'Remover dos favoritos' : 'Favoritar produto';
         }
     }

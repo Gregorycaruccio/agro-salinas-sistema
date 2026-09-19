@@ -189,19 +189,19 @@ header {
 }
 
 .btn-favorites-toggle:hover {
-    border-color: #FF6B6B;
-    background: #FFF5F5;
+    border-color: #EA580C;
+    background: #FFF7ED;
 }
 
 .btn-favorites-toggle.active {
-    background: #FF4757;
-    border-color: #FF4757;
+    background: #EA580C;
+    border-color: #EA580C;
     color: white;
-    box-shadow: 0 4px 12px rgba(255, 71, 87, 0.35);
+    box-shadow: 0 4px 12px rgba(234, 88, 12, 0.35);
 }
 
 .fav-badge {
-    background: #FF4757;
+    background: #EA580C;
     color: white;
     padding: 2px 7px;
     border-radius: 12px;
@@ -211,7 +211,7 @@ header {
 
 .btn-favorites-toggle.active .fav-badge {
     background: white;
-    color: #FF4757;
+    color: #EA580C;
 }
 
 .btn-cart-toggle {
@@ -778,11 +778,12 @@ header {
 .btn-fav-card:hover {
     transform: scale(1.15);
     background: white;
+    border-color: #EA580C;
 }
 
 .btn-fav-card.active {
-    background: #FFF0F2;
-    border-color: #FF4757;
+    background: #FFF7ED;
+    border-color: #EA580C;
     animation: heartBeat 0.3s ease-in-out;
 }
 
