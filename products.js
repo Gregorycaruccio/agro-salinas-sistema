@@ -147,7 +147,9 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,060 kg",
         "image": "assets/granel/Racao Allcanis Porte Mini e Pequeno Frango Carne e Arroz - 1.060kg - 18.99kg - 20.13.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)",
+        "description": "Ração Allcanis com grãos macios de fácil mastigação e alta palatabilidade, especialmente formulada para cães de porte mini e pequeno.",
+        "graoMacio": true
     },
     {
         "id": "granel_real_8",
@@ -160,7 +162,9 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,054 kg",
         "image": "assets/granel/Racao Allcanis Senior Porte Medio e Gigante Frango Carne e Arroz - 1.054kg - 18.99kg - 20.02.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 18,99/kg)",
+        "description": "Ração Allcanis Sênior com grãos macios desenvolvidos para facilitar a mastigação e digestão de cães de médio e grande porte.",
+        "graoMacio": true
     },
     {
         "id": "granel_real_9",
@@ -675,7 +679,9 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 237.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "description": "Ração Allcanis Sênior com grãos macios de fácil mastigação e alta absorção nutricional, ideal para cães sêniores de raças médias e grandes.",
+        "graoMacio": true
     },
     {
         "id": "568",
@@ -685,7 +691,9 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 167.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "description": "Ração Allcanis Sênior com grãos macios adaptados para a mordida e mastigação suave de cães sêniores de raças pequenas.",
+        "graoMacio": true
     },
     {
         "id": "750",

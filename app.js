@@ -419,11 +419,14 @@ function buildProductCardHtml(product) {
     `;
 
     const isAvailable = isProductAvailable(product);
+    const isAllcanis = (product.name && product.name.toLowerCase().includes('allcanis')) || !!product.graoMacio;
     let badgeHtml = '';
     if (!isAvailable) {
         badgeHtml = `<span class="product-badge badge-unavailable">🚫 Indisponível</span>`;
     } else if (product.badge) {
         badgeHtml = `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>`;
+    } else if (isAllcanis) {
+        badgeHtml = `<span class="product-badge badge-grao-macio">🌾 Grão Macio</span>`;
     }
 
     return `
@@ -443,6 +446,7 @@ function buildProductCardHtml(product) {
                     <span class="meta-code">Cód: ${product.code}</span>
                     <span class="meta-sep">•</span>
                     <span class="meta-cat">${product.subcategory || catName}</span>
+                    ${isAllcanis ? `<span class="meta-grao-macio-chip" title="Possui Grão Macio">🌾 Grão Macio</span>` : ''}
                 </div>
                 <h3 class="product-name" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">${productName}</h3>
             </div>
@@ -587,7 +591,9 @@ function renderProducts() {
             const normName = normalizeText(p.name);
             const normCode = normalizeText(p.code);
             const normSubcat = normalizeText(p.subcategory);
-            const combined = `${normName} ${normCode} ${normSubcat}`;
+            const normDesc = normalizeText(p.description || '');
+            const graoMacioTerms = (p.graoMacio || normName.includes('allcanis')) ? 'grao macio graos macios' : '';
+            const combined = `${normName} ${normCode} ${normSubcat} ${normDesc} ${graoMacioTerms}`;
             const matchesAllTokens = queryTokens.every(tok => combined.includes(tok));
             if (!matchesAllTokens) return false;
         }
@@ -1735,6 +1741,12 @@ function openQuickView(productId) {
         tags.push('<span class="profile-tag highlight">🌾 Pele & Digestão Sensível</span>');
     }
 
+    // Destaque Especial: Grão Macio (Allcanis)
+    const isAllcanis = lower.includes('allcanis') || !!product.graoMacio;
+    if (isAllcanis) {
+        tags.push('<span class="profile-tag highlight-grao-macio">🌾 Grão Macio</span>');
+    }
+
     // Bloco de Orientação e Dosagem
     let guideSectionHtml = "";
     const isDog = product.category === 'caes' || lower.includes('cão') || lower.includes('cao') || lower.includes('cães') || lower.includes('dog');
@@ -1775,6 +1787,10 @@ function openQuickView(productId) {
             </div>
         `;
     } else if (isDog) {
+        const tipDog = isAllcanis
+            ? `💡 <em>Dica Allcanis (Grão Macio):</em> Os grãos macios proporcionam conforto extra na mastigação de cães sêniores e de portes variados. Fracione em 2 a 3 porções diárias e mantenha água fresca sempre disponível.`
+            : `💡 <em>Dica Agro Salinas:</em> Fracione em 2 a 3 porções ao longo do dia. Mantenha um pote de água limpa e fresca sempre acessível ao pet.`;
+
         guideSectionHtml = `
             <div class="quickview-section-card">
                 <div class="quickview-section-title">
@@ -1807,7 +1823,7 @@ function openQuickView(productId) {
                     </tbody>
                 </table>
                 <div class="quickview-tip">
-                    💡 <em>Dica Agro Salinas:</em> Fracione em 2 a 3 porções ao longo do dia. Mantenha um pote de água limpa e fresca sempre acessível ao pet.
+                    ${tipDog}
                 </div>
             </div>
         `;
@@ -1845,6 +1861,10 @@ function openQuickView(productId) {
             </div>
         `;
     } else if (isGranel) {
+        const tipGranel = isAllcanis
+            ? `💡 <em>Grãos Macios Preservados:</em> A selagem especial Agro Salinas mantém a textura macia, o frescor e o aroma característico da Allcanis!`
+            : `💡 <em>Armazenamento:</em> Mantenha em local seco e arejado, fechando bem após o uso diário.`;
+
         guideSectionHtml = `
             <div class="quickview-section-card">
                 <div class="quickview-section-title">
@@ -1852,11 +1872,11 @@ function openQuickView(productId) {
                 </div>
                 <div style="font-size: 12px; color: #334155; line-height: 1.5; padding: 4px 0;">
                     <p>• <strong>Pacote Selado:</strong> Pesado na medida exata com selagem higiênica que impede a entrada de umidade.</p>
-                    <p style="margin-top: 4px;">• <strong>Nutrientes Preservados:</strong> Aroma, textura crocante e integridade nutricional idênticos ao pacote lacrado de fábrica.</p>
+                    <p style="margin-top: 4px;">• <strong>Nutrientes Preservados:</strong> Aroma, textura e integridade nutricional idênticos ao pacote lacrado de fábrica.</p>
                     <p style="margin-top: 4px;">• <strong>Economia Inteligente:</strong> A melhor ração para o seu companheiro com preço muito mais acessível por quilo.</p>
                 </div>
                 <div class="quickview-tip">
-                    💡 <em>Armazenamento:</em> Mantenha em local seco e arejado, fechando bem após o uso diário.
+                    ${tipGranel}
                 </div>
             </div>
         `;
@@ -1903,6 +1923,24 @@ function openQuickView(productId) {
                     </div>
                 </div>
             </div>
+
+            ${isAllcanis ? `
+                <div class="grao-macio-highlight-card">
+                    <div class="grao-macio-header">
+                        <span class="grao-macio-badge">⭐ DESTAQUE ALLCANIS</span>
+                        <span class="grao-macio-status">Grão Macio Comprovado</span>
+                    </div>
+                    <div class="grao-macio-content">
+                        <div class="grao-macio-title-row">
+                            <span class="grao-macio-icon">🌾</span>
+                            <h4 class="grao-macio-title">Possui Grão Macio de Fácil Mastigação</h4>
+                        </div>
+                        <p class="grao-macio-desc">
+                            Esta ração Allcanis conta com <strong>grãos macios</strong> de textura diferenciada e alta palatabilidade. Desenvolvida especialmente para facilitar a mastigação e favorecer uma digestão suave, sendo ideal para cães com sensibilidade bucal, animais sêniores ou que preferem alimentos com textura macia.
+                        </p>
+                    </div>
+                </div>
+            ` : ''}
 
             ${guideSectionHtml}
 
