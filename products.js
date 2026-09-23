@@ -692,6 +692,7 @@ const PRODUCTS = [
         "price": 167.9,
         "unit": "pct",
         "featured": false,
+        "image": "assets/produtos/1_caes/racoes_outras_marcas/568.png",
         "description": "Ração Allcanis Sênior com grãos macios adaptados para a mordida e mastigação suave de cães sêniores de raças pequenas.",
         "graoMacio": true
     },
