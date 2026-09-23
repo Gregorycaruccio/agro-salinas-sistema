@@ -275,7 +275,7 @@ Exemplo: Para o produto [CÓD: 45], salve como "45.jpg" dentro da pasta indicada
 ⏳ [PENDENTE] [CÓD: 686] => Salve como: 686.jpg  =>  RACAO PATRULHA ORIGINAL 5KG  |  R$ 35,00
 ⏳ [PENDENTE] [CÓD: 687] => Salve como: 687.jpg  =>  RACAO PATRULHA ORIGINAL 10.1KG  |  R$ 65,00
 ⏳ [PENDENTE] [CÓD: 739] => Salve como: 739.jpg  =>  ALICATE UNHA TRADICIONAL MEDIA  |  R$ 36,50
-⏳ [PENDENTE] [CÓD: 746] => Salve como: 746.jpg  =>  MANDALA CAO ADULTO CORDEIRO 20KG  |  R$ 144,99
+✅ [VINCULADO] [CÓD: 746] => Salve como: 746.png  =>  MANDALA CAO ADULTO CORDEIRO 20KG  |  R$ 144,99
 ⏳ [PENDENTE] [CÓD: 747] => Salve como: 747.jpg  =>  RACAO CAO KOCKER 25KG  |  R$ 169,99
 
 ===============================================================================
@@ -911,3 +911,25 @@ Exemplo: Para o produto [CÓD: 45], salve como "45.jpg" dentro da pasta indicada
 ⏳ [PENDENTE] [CÓD: 727] => Salve como: 727.jpg  =>  CHICOTE PESCA PEIXE REI NUMERO 14  |  R$ 15,00
 ⏳ [PENDENTE] [CÓD: 728] => Salve como: 728.jpg  =>  CHICOTE PESCA PESCADA NUMERO 18  |  R$ 16,00
 ⏳ [PENDENTE] [CÓD: 729] => Salve como: 729.jpg  =>  CHICOTE PESCA PESCADA NUMERO 20  |  R$ 16,00
+
+===============================================================================
+📁 PASTA: assets/produtos/1_caes e 2_gatos (NOVOS ITENS: SPECIAL DOG & SPECIAL CAT) (17 produtos | 0 com foto)
+===============================================================================
+⏳ [PENDENTE] [CÓD: 861] => Salve como: 861.jpg  =>  RACAO SPECIAL CAT CASTRADOS 10.1KG  |  R$ 122,50
+⏳ [PENDENTE] [CÓD: 862] => Salve como: 862.jpg  =>  RACAO SPECIAL CAO ADULTO 10.1KG  |  R$ 79,90
+⏳ [PENDENTE] [CÓD: 863] => Salve como: 863.jpg  =>  SACHE SPECIAL CAT FILHOTE CARNE 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 864] => Salve como: 864.jpg  =>  SACHE SPECIAL CAT CASTRADO SALMAO 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 865] => Salve como: 865.jpg  =>  SACHE SPECIAL CAT CASTRADO FRANGO 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 866] => Salve como: 866.jpg  =>  SACHE SPECIAL CAT ADULTO PEIXE 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 867] => Salve como: 867.jpg  =>  SACHE SPECIAL CAT ADULTO SALMAO 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 868] => Salve como: 868.jpg  =>  SACHE SPECIAL CAT ADULTO CARNE 85G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 869] => Salve como: 869.jpg  =>  SACHE SPECIAL DOG SENIOR 7+ CARNE 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 870] => Salve como: 870.jpg  =>  SACHE SPECIAL DOG FILHOTE CARNE 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 871] => Salve como: 871.jpg  =>  SACHE SPECIAL DOG RP FRANGO 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 872] => Salve como: 872.jpg  =>  SACHE SPECIAL DOG RP CORDEIRO 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 873] => Salve como: 873.jpg  =>  SACHE SPECIAL DOG RP CARNE 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 874] => Salve como: 874.jpg  =>  SACHE SPECIAL DOG ADULTO SALMAO 100G  |  R$ 2,99
+⏳ [PENDENTE] [CÓD: 875] => Salve como: 875.jpg  =>  BISCOITO SPECIAL CAO ADULTO BANANA E CHIA 250G  |  R$ 13,50
+⏳ [PENDENTE] [CÓD: 876] => Salve como: 876.jpg  =>  BISCOITO SPECIAL CAO ADULTO FRUTAS VERM 250G  |  R$ 13,50
+⏳ [PENDENTE] [CÓD: 877] => Salve como: 877.jpg  =>  BISCOITO SPECIAL CAO ADULTO ORIGINAL AVEIA 500G  |  R$ 23,00
+

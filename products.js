@@ -1,5 +1,5 @@
 // Banco de Dados de Produtos - Agro Salinas
-// Total de itens: 797
+// Total de itens: 814
 
 const STORE_CONFIG = {
     "name": "Agro Salinas",
@@ -3745,7 +3745,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 144.99,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/racoes_outras_marcas/746.png"
     },
     {
         "id": "666",
@@ -8283,6 +8284,177 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": false,
         "image": "assets/produtos/2_gatos/racoes_seven_cats/797.png"
+    }
+,
+    {
+        "id": "861",
+        "code": "861",
+        "name": "Ração Special Cat Castrados 10.1kg",
+        "category": "gatos",
+        "subcategory": "Rações Secas",
+        "price": 122.5,
+        "unit": "pct",
+        "featured": false
+    },
+    {
+        "id": "862",
+        "code": "862",
+        "name": "Ração Special Dog Adulto 10.1kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
+        "price": 79.9,
+        "unit": "pct",
+        "featured": false
+    },
+    {
+        "id": "863",
+        "code": "863",
+        "name": "Sachê Special Cat Filhote Carne 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "864",
+        "code": "864",
+        "name": "Sachê Special Cat Castrado Salmão 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "865",
+        "code": "865",
+        "name": "Sachê Special Cat Castrado Frango 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "866",
+        "code": "866",
+        "name": "Sachê Special Cat Adulto Peixe 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "867",
+        "code": "867",
+        "name": "Sachê Special Cat Adulto Salmão 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "868",
+        "code": "868",
+        "name": "Sachê Special Cat Adulto Carne 85g",
+        "category": "gatos",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "869",
+        "code": "869",
+        "name": "Sachê Special Dog Senior 7+ Carne 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "870",
+        "code": "870",
+        "name": "Sachê Special Dog Filhote Carne 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "871",
+        "code": "871",
+        "name": "Sachê Special Dog Raças Pequenas Frango 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "872",
+        "code": "872",
+        "name": "Sachê Special Dog Raças Pequenas Cordeiro 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "873",
+        "code": "873",
+        "name": "Sachê Special Dog Raças Pequenas Carne 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "874",
+        "code": "874",
+        "name": "Sachê Special Dog Adulto Salmão 100g",
+        "category": "caes",
+        "subcategory": "Patês & Sachês",
+        "price": 2.99,
+        "unit": "un",
+        "featured": true
+    },
+    {
+        "id": "875",
+        "code": "875",
+        "name": "Biscoito Special Cão Adulto Banana e Chia 250g",
+        "category": "caes",
+        "subcategory": "Petiscos & Cookies",
+        "price": 13.5,
+        "unit": "pct",
+        "featured": true
+    },
+    {
+        "id": "876",
+        "code": "876",
+        "name": "Biscoito Special Cão Adulto Frutas Vermelhas 250g",
+        "category": "caes",
+        "subcategory": "Petiscos & Cookies",
+        "price": 13.5,
+        "unit": "pct",
+        "featured": true
+    },
+    {
+        "id": "877",
+        "code": "877",
+        "name": "Biscoito Special Cão Adulto Original Aveia 500g",
+        "category": "caes",
+        "subcategory": "Petiscos & Cookies",
+        "price": 23,
+        "unit": "pct",
+        "featured": true
     }
 ];
 
