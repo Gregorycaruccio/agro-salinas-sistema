@@ -3193,7 +3193,9 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "assets/produtos/1_caes/racoes_golden/58.jpg"
+        "image": "assets/produtos/1_caes/racoes_golden/58.jpg",
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "59",
@@ -3262,7 +3264,9 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "assets/produtos/1_caes/racoes_golden/57.jpg"
+        "image": "assets/produtos/1_caes/racoes_golden/57.jpg",
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "54",
@@ -3274,7 +3278,9 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "assets/produtos/1_caes/racoes_golden/54.jpg"
+        "image": "assets/produtos/1_caes/racoes_golden/54.jpg",
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "104",
@@ -5325,7 +5331,9 @@ const PRODUCTS = [
         "price": 26,
         "unit": "pct",
         "featured": false,
-        "image": "assets/produtos/1_caes/racoes_forte_brain/223.webp"
+        "image": "assets/produtos/1_caes/racoes_forte_brain/223.webp",
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "228",
@@ -5336,7 +5344,9 @@ const PRODUCTS = [
         "price": 119.9,
         "unit": "pct",
         "featured": false,
-        "image": "assets/produtos/1_caes/racoes_forte_brain/228.webp"
+        "image": "assets/produtos/1_caes/racoes_forte_brain/228.webp",
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "227",

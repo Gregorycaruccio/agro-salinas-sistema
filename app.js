@@ -69,6 +69,7 @@ function getCatalogProducts() {
 // Itens sem foto ficam com botão "Indisponível" (ativam sozinhos assim que adicionada a imagem)
 function isProductAvailable(product) {
     if (!product) return false;
+    if (product.outOfStock || product.available === false || product.paused) return false;
     if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.requireImageForPurchase) {
         return !!product.image && typeof product.image === 'string' && product.image.trim() !== '';
     }
@@ -419,10 +420,11 @@ function buildProductCardHtml(product) {
     `;
 
     const isAvailable = isProductAvailable(product);
+    const isEsgotado = product.outOfStock || product.available === false;
     const isAllcanis = (product.name && product.name.toLowerCase().includes('allcanis')) || !!product.graoMacio;
     let badgeHtml = '';
     if (!isAvailable) {
-        badgeHtml = `<span class="product-badge badge-unavailable">🚫 Indisponível</span>`;
+        badgeHtml = `<span class="product-badge badge-unavailable">${isEsgotado ? '🚫 Esgotado' : '🚫 Indisponível'}</span>`;
     } else if (product.badge) {
         badgeHtml = `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>`;
     } else if (isAllcanis) {
@@ -475,9 +477,9 @@ function buildProductCardHtml(product) {
 
                 <div class="card-actions">
                     ${!isAvailable ? `
-                        <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item indisponível para pedidos no momento">
+                        <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
                             <span class="btn-cart-icon">🚫</span>
-                            <span class="btn-cart-text">Indisponível</span>
+                            <span class="btn-cart-text">${isEsgotado ? 'Esgotado' : 'Indisponível'}</span>
                         </button>
                     ` : qtyInCart > 0 ? `
                         <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
@@ -1896,7 +1898,8 @@ function openQuickView(productId) {
     }
 
     const isAvailable = isProductAvailable(product);
-    const unavailableBadge = !isAvailable ? `<span class="quickview-unavailable-tag">🚫 Indisponível no Momento</span>` : '';
+    const isEsgotado = product.outOfStock || product.available === false;
+    const unavailableBadge = !isAvailable ? `<span class="quickview-unavailable-tag">${isEsgotado ? '🚫 Esgotado na Loja' : '🚫 Indisponível no Momento'}</span>` : '';
 
     modalContent.innerHTML = `
         <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)">✕</button>
@@ -1975,11 +1978,12 @@ function refreshQuickViewActions(productId) {
     const isGranel = product.category === 'granel';
 
     let cartActionHtml = "";
+    const isEsgotado = product.outOfStock || product.available === false;
     if (!isAvailable) {
         cartActionHtml = `
-            <button class="btn-add-cart btn-unavailable" style="width: 100%; height: 46px; font-size: 15px; font-weight: 800;" disabled title="Item indisponível para pedidos no momento">
+            <button class="btn-add-cart btn-unavailable" style="width: 100%; height: 46px; font-size: 15px; font-weight: 800;" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
                 <span class="btn-cart-icon">🚫</span>
-                <span class="btn-cart-text">Indisponível para Compra</span>
+                <span class="btn-cart-text">${isEsgotado ? 'Esgotado na Loja' : 'Indisponível para Compra'}</span>
             </button>
         `;
     } else if (qtyInCart > 0) {
