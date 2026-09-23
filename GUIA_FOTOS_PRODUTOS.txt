@@ -260,7 +260,7 @@ Exemplo: Para o produto [CÓD: 45], salve como "45.jpg" dentro da pasta indicada
 ⏳ [PENDENTE] [CÓD: 545] => Salve como: 545.jpg  =>  NATURAL STICK SALMAO 15G  |  R$ 5,00
 ⏳ [PENDENTE] [CÓD: 546] => Salve como: 546.jpg  =>  NATURAL STICK FRANGO 15G  |  R$ 5,00
 ⏳ [PENDENTE] [CÓD: 547] => Salve como: 547.jpg  =>  NATURAL STICK CARNE15G  |  R$ 5,00
-⏳ [PENDENTE] [CÓD: 567] => Salve como: 567.jpg  =>  ALLCANIS SENIOR RACAS MEDIAS E GRANDES 15KG  |  R$ 237,90
+✅ [VINCULADO] [CÓD: 567] => Salve como: 567.png  =>  ALLCANIS SENIOR RACAS MEDIAS E GRANDES 15KG  |  R$ 237,90
 ✅ [VINCULADO] [CÓD: 568] => Salve como: 568.png  =>  ALLCANIS SENIOR RACAS PEQUENAS 10.1 KG  |  R$ 167,90
 ⏳ [PENDENTE] [CÓD: 595] => Salve como: 595.jpg  =>  BISCOITO BISCROK CAO ADULTO MULTI 500G  |  R$ 26,00
 ⏳ [PENDENTE] [CÓD: 609] => Salve como: 609.jpg  =>  ESPECIAL PSITACIDEOS SELECAO NATURAL 500G  |  R$ 19,90
