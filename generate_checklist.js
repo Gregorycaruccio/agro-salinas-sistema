@@ -8,11 +8,12 @@ vm.createContext(context);
 vm.runInContext(code + '\n; this.PRODUCTS = PRODUCTS;', context);
 const products = context.PRODUCTS;
 
-// Active products: has image and not outOfStock/available===false
+// Active products: has image, not outOfStock/available===false, and not grouped
 const activeProducts = products.filter(p => {
     const hasImg = !!p.image && typeof p.image === 'string' && p.image.trim() !== '';
     const notOut = !p.outOfStock && p.available !== false && !p.paused;
-    return hasImg && notOut;
+    const notGrouped = !p.grouped && !p.isVariantOf;
+    return hasImg && notOut && notGrouped;
 });
 
 console.log('Total active products:', activeProducts.length);
@@ -32,10 +33,12 @@ console.log('Outros:', outros.length);
 function formatRow(p) {
     const weight = p.packageWeight ? (p.category === 'granel' ? `Pacote ${p.packageWeight}` : p.packageWeight) : (p.unit || '');
     const price = `R$ ${p.price.toFixed(2).replace('.', ',')}`;
+    const isSize = p.variationType === 'size';
+    const varInfo = p.variations ? `<br><small style="color: #0284c7; font-weight: 600;">${isSize ? '📏 Tamanhos: ' : '🎨 Cores: '}${p.variations.map(v => v.label).join(', ')}</small>` : '';
     return `        <tr>
             <td class="check-box">[ &nbsp; ]</td>
             <td class="code-col"><strong>${p.code || p.id}</strong></td>
-            <td class="name-col">${p.name}</td>
+            <td class="name-col">${p.name}${varInfo}</td>
             <td class="weight-col">${weight}</td>
             <td class="price-col">${price}</td>
             <td class="obs-col"></td>

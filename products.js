@@ -5,8 +5,8 @@ const STORE_CONFIG = {
     "name": "Agro Salinas",
     "slogan": "Unindo a cidade ao campo!",
     "whatsappNumber": "5551995624230",
-    "hideWithoutImage": false, // Exibe o catálogo completo
-    "requireImageForPurchase": true, // Produtos sem imagem ficam indisponíveis para compra (ativam sozinhos ao adicionar foto)
+    "hideWithoutImage": false,
+    "requireImageForPurchase": true,
     "defaultSeller": {
         "code": "GREG",
         "name": "Grégory",
@@ -963,31 +963,53 @@ const PRODUCTS = [
         "id": "378",
         "code": "378",
         "name": "Bandeja Sanitaria 3x1 Azul",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "category": "gatos",
+        "subcategory": "Bandejas & Higiene",
         "price": 19.9,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "377"
     },
     {
         "id": "377",
         "code": "377",
-        "name": "Bandeja Sanitaria 3x1 Rosa",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "name": "Bandeja Sanitária 3x1 para Gatos",
+        "category": "gatos",
+        "subcategory": "Bandejas & Higiene",
         "price": 19.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "377",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            },
+            {
+                "code": "378",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            },
+            {
+                "code": "376",
+                "label": "Vermelho",
+                "colorHex": "#e11d48"
+            }
+        ]
     },
     {
         "id": "376",
         "code": "376",
         "name": "Bandeja Sanitaria 3x1 Vermelha",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "category": "gatos",
+        "subcategory": "Bandejas & Higiene",
         "price": 19.9,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "377"
     },
     {
         "id": "349",
@@ -997,7 +1019,9 @@ const PRODUCTS = [
         "subcategory": "Higiene & Beleza",
         "price": 28,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "350"
     },
     {
         "id": "351",
@@ -1007,17 +1031,32 @@ const PRODUCTS = [
         "subcategory": "Higiene & Beleza",
         "price": 28,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "350",
         "code": "350",
-        "name": "Bandeja Sanitaria Cão Xixidog 60x40 Vermelho",
+        "name": "Bandeja Sanitária Canina XixiDog (60x40 cm)",
         "category": "caes",
         "subcategory": "Higiene & Beleza",
         "price": 28,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "350",
+                "label": "Vermelho",
+                "colorHex": "#e11d48"
+            },
+            {
+                "code": "349",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            }
+        ]
     },
     {
         "id": "343",
@@ -1037,7 +1076,9 @@ const PRODUCTS = [
         "subcategory": "Bandejas & Higiene",
         "price": 39,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "342"
     },
     {
         "id": "341",
@@ -1047,17 +1088,39 @@ const PRODUCTS = [
         "subcategory": "Bandejas & Higiene",
         "price": 39,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "342"
     },
     {
         "id": "342",
         "code": "342",
-        "name": "Bandeja Sanitaria Gato Grande Vermelha",
+        "name": "Bandeja Sanitária Banheiro para Gatos Grande",
         "category": "gatos",
         "subcategory": "Bandejas & Higiene",
         "price": 39,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/342.png",
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "342",
+                "label": "Vermelha",
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/342.png"
+            },
+            {
+                "code": "340",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            },
+            {
+                "code": "341",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            }
+        ]
     },
     {
         "id": "347",
@@ -2285,10 +2348,18 @@ const PRODUCTS = [
         "code": "391",
         "name": "Comedouro Alto para Gato Postura Correta",
         "category": "gatos",
-        "subcategory": "Rações Secas",
+        "subcategory": "Comedouros & Bebedouros",
         "price": 9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "391",
+                "label": "Preto",
+                "colorHex": "#1e293b"
+            }
+        ]
     },
     {
         "id": "359",
@@ -2298,7 +2369,9 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 31.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "358"
     },
     {
         "id": "357",
@@ -2308,17 +2381,32 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 21,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "outOfStock": true,
+        "available": false
     },
     {
         "id": "358",
         "code": "358",
-        "name": "Comedouro Aluminio Pesado 900ml",
+        "name": "Comedouro Alumínio Pesado para Cães",
         "category": "caes",
         "subcategory": "Comedouros & Bebedouros",
         "price": 28.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "size",
+        "variations": [
+            {
+                "code": "358",
+                "label": "900 ml",
+                "price": 28.9
+            },
+            {
+                "code": "359",
+                "label": "1200 ml (1,2L)",
+                "price": 31.5
+            }
+        ]
     },
     {
         "id": "388",
@@ -2363,12 +2451,25 @@ const PRODUCTS = [
     {
         "id": "360",
         "code": "360",
-        "name": "Comedouro Duplo Automatico Gatinho",
+        "name": "Comedouro Duplo Automático Gatinho",
         "category": "gatos",
-        "subcategory": "Rações Secas",
+        "subcategory": "Comedouros & Bebedouros",
         "price": 32,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "360",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            },
+            {
+                "code": "360",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            }
+        ]
     },
     {
         "id": "198",
@@ -2413,12 +2514,25 @@ const PRODUCTS = [
     {
         "id": "354",
         "code": "354",
-        "name": "Comedouro Pata Luxo Medio Color",
+        "name": "Comedouro Pata Luxo Médio Color",
         "category": "caes",
         "subcategory": "Comedouros & Bebedouros",
         "price": 8,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "354",
+                "label": "Roxo",
+                "colorHex": "#9333ea"
+            },
+            {
+                "code": "354",
+                "label": "Laranja",
+                "colorHex": "#f97316"
+            }
+        ]
     },
     {
         "id": "355",
@@ -2428,7 +2542,20 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 6.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "355",
+                "label": "Amarelo",
+                "colorHex": "#eab308"
+            },
+            {
+                "code": "355",
+                "label": "Laranja",
+                "colorHex": "#f97316"
+            }
+        ]
     },
     {
         "id": "742",
@@ -2443,22 +2570,83 @@ const PRODUCTS = [
     {
         "id": "352",
         "code": "352",
-        "name": "Comedouro/bebedoro Anti Formiga",
+        "name": "Comedouro / Bebedouro Anti-Formiga",
         "category": "caes",
         "subcategory": "Comedouros & Bebedouros",
         "price": 9.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "352",
+                "label": "Vermelho",
+                "colorHex": "#e11d48"
+            },
+            {
+                "code": "352",
+                "label": "Verde",
+                "colorHex": "#16a34a"
+            },
+            {
+                "code": "352",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            },
+            {
+                "code": "352",
+                "label": "Preto",
+                "colorHex": "#1e293b"
+            },
+            {
+                "code": "352",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            }
+        ]
     },
     {
         "id": "372",
         "code": "372",
-        "name": "Comedouro/bebedouro Flex Color",
+        "name": "Comedouro / Bebedouro Flex Color",
         "category": "caes",
         "subcategory": "Comedouros & Bebedouros",
         "price": 17.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "372",
+                "label": "Laranja",
+                "colorHex": "#f97316"
+            },
+            {
+                "code": "372",
+                "label": "Vermelho",
+                "colorHex": "#e11d48"
+            },
+            {
+                "code": "372",
+                "label": "Verde",
+                "colorHex": "#16a34a"
+            },
+            {
+                "code": "372",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            },
+            {
+                "code": "372",
+                "label": "Preto",
+                "colorHex": "#1e293b"
+            },
+            {
+                "code": "372",
+                "label": "Roxo",
+                "colorHex": "#9333ea"
+            }
+        ]
     },
     {
         "id": "602",
@@ -2851,7 +3039,9 @@ const PRODUCTS = [
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "399"
     },
     {
         "id": "400",
@@ -2861,17 +3051,37 @@ const PRODUCTS = [
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "399"
     },
     {
         "id": "399",
         "code": "399",
-        "name": "Fonte Gato Cascata Vermelha",
+        "name": "Fonte Cascata para Gato",
         "category": "gatos",
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "399",
+                "label": "Vermelha",
+                "colorHex": "#e11d48"
+            },
+            {
+                "code": "400",
+                "label": "Rosa",
+                "colorHex": "#ec4899"
+            },
+            {
+                "code": "401",
+                "label": "Azul",
+                "colorHex": "#2563eb"
+            }
+        ]
     },
     {
         "id": "398",
@@ -8294,8 +8504,7 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": false,
         "image": "assets/produtos/2_gatos/racoes_seven_cats/797.png"
-    }
-,
+    },
     {
         "id": "861",
         "code": "861",

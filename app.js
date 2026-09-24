@@ -37,6 +37,8 @@ let currentSeller = {
     tag: STORE_CONFIG.defaultSeller.tag
 };
 
+let selectedVariants = {};
+
 // Ícone SVG nítido e profissional de carrinho de supermercado
 const CART_ICON_SVG = `<svg class="btn-svg-cart" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="9" cy="21" r="1.2"></circle><circle cx="19" cy="21" r="1.2"></circle><path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L23 6H6"></path></svg>`;
 
@@ -57,12 +59,127 @@ function saveFavorites() {
     }
 }
 
+// Recupera a variação selecionada para um produto (ou a primeira padrão)
+function getProductActiveVariant(product) {
+    if (!product || !product.variations || product.variations.length === 0) return null;
+    const selectedLabel = selectedVariants[product.id];
+    if (selectedLabel) {
+        const found = product.variations.find(v => v.label === selectedLabel);
+        if (found) return found;
+    }
+    return product.variations[0];
+}
+
+// Chave única para o item no carrinho (suporta variação, ex: "342__Vermelha")
+function getActiveCartKey(productId) {
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return productId.toString();
+    const variant = getProductActiveVariant(product);
+    if (variant) {
+        return `${product.id}__${variant.label}`;
+    }
+    return product.id.toString();
+}
+
+// Extrai informações do item a partir da chave do carrinho (ex: "342__Vermelha" ou "58")
+function getCartItemInfo(cartKey) {
+    if (!cartKey) return null;
+    let baseId = cartKey.toString();
+    let variantLabel = null;
+    if (baseId.includes("__")) {
+        const parts = baseId.split("__");
+        baseId = parts[0];
+        variantLabel = parts[1];
+    }
+    const baseProduct = PRODUCTS.find(p => p.id.toString() === baseId.toString());
+    if (!baseProduct) return null;
+
+    let product = { ...baseProduct };
+    let variant = null;
+
+    if (variantLabel && baseProduct.variations) {
+        variant = baseProduct.variations.find(v => v.label === variantLabel || v.code === variantLabel);
+        if (variant) {
+            if (variant.code) product.code = variant.code;
+            if (variant.price) product.price = variant.price;
+            if (variant.image) product.image = variant.image;
+            product.variantLabel = variant.label;
+        }
+    }
+    return { product, variant, baseProduct, cartKey };
+}
+
+// Seleciona a variação (cor/tamanho) do produto no card ou modal
+function selectProductVariant(productId, variantLabel, event) {
+    if (event) {
+        event.stopPropagation();
+        event.preventDefault();
+    }
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product || !product.variations) return;
+    const variant = product.variations.find(v => v.label === variantLabel);
+    if (!variant) return;
+
+    selectedVariants[productId] = variantLabel;
+
+    // Atualiza Card no catálogo se existir na tela
+    const card = document.getElementById(`card-${productId}`);
+    if (card) {
+        card.querySelectorAll('.variant-pill-btn').forEach(btn => {
+            if (btn.dataset.variant === variantLabel) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+        const labelEl = card.querySelector('.variants-selected-val');
+        if (labelEl) labelEl.textContent = variant.label;
+
+        if (variant.price) {
+            const priceValEl = card.querySelector('.price-value');
+            if (priceValEl) priceValEl.textContent = `R$ ${variant.price.toFixed(2).replace('.', ',')}`;
+        }
+        if (variant.code) {
+            const codeEl = card.querySelector('.meta-code');
+            if (codeEl) codeEl.textContent = `Cód: ${variant.code}`;
+        }
+        if (variant.image) {
+            const imgEl = card.querySelector('.product-image');
+            if (imgEl) imgEl.src = variant.image;
+        }
+        updateCardActionUI(productId);
+    }
+
+    // Atualiza Modal QuickView se estiver aberto para este produto
+    const qvModal = document.getElementById('quickview-modal');
+    if (qvModal && qvModal.classList.contains('active')) {
+        const qvCode = qvModal.querySelector('.quickview-code-tag');
+        if (qvCode && variant.code) qvCode.textContent = `CÓD ${variant.code}`;
+
+        const qvPrice = qvModal.querySelector('.quickview-price-val');
+        if (qvPrice && variant.price) qvPrice.textContent = variant.price.toFixed(2).replace('.', ',');
+
+        const qvSelectedLabel = qvModal.querySelector('.qv-variant-selected-val');
+        if (qvSelectedLabel) qvSelectedLabel.textContent = variant.label;
+
+        qvModal.querySelectorAll('.variant-pill-btn').forEach(btn => {
+            if (btn.dataset.variant === variantLabel) btn.classList.add('active');
+            else btn.classList.remove('active');
+        });
+
+        if (variant.image) {
+            const qvImg = qvModal.querySelector('.quickview-image');
+            if (qvImg) qvImg.src = variant.image;
+        }
+
+        refreshQuickViewActions(productId);
+    }
+}
+
 // Catálogo mestre: exibe os produtos e controla itens disponíveis
 function getCatalogProducts() {
+    let prods = PRODUCTS.filter(p => !p.grouped && !p.isVariantOf);
     if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.hideWithoutImage) {
-        return PRODUCTS.filter(p => !!p.image && typeof p.image === 'string' && p.image.trim() !== '');
+        return prods.filter(p => !!p.image && typeof p.image === 'string' && p.image.trim() !== '');
     }
-    return PRODUCTS;
+    return prods;
 }
 
 // Verifica se o item pode ser escolhido/comprado no site
@@ -389,11 +506,16 @@ function getCategoryIcon(catId) {
 
 // --- CONSTRUÇÃO DO CARD DO PRODUTO (LAYOUT LIMPO, TITLE CASE, SVG FALLBACK) ---
 function buildProductCardHtml(product) {
-    const qtyInCart = cart[product.id] || 0;
+    const activeVar = getProductActiveVariant(product);
+    const cartKey = getActiveCartKey(product.id);
+    const qtyInCart = cart[cartKey] || 0;
     const isFav = favorites.includes(product.id.toString());
     const catName = CATEGORIES.find(c => c.id === product.category)?.name.split(' ')[0] || 'Agro';
     const isGranel = product.category === 'granel';
     const productName = toTitleCase(product.name);
+    const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
+    const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
+    const displayImage = activeVar && activeVar.image ? activeVar.image : product.image;
 
     // Placeholder Vetorial Minimalista e Limpo (sem emojis infantis gigantes)
     const placeholderSvg = `
@@ -409,9 +531,9 @@ function buildProductCardHtml(product) {
         </div>
     `;
 
-    const imageHtml = product.image ? `
+    const imageHtml = displayImage ? `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
-            <img src="${product.image}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><svg class=\\'placeholder-svg\\' viewBox=\\'0 0 64 64\\' fill=\\'none\\' stroke=\\'currentColor\\' xmlns=\\'http://www.w3.org/2000/svg\\'><path d=\\'M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M20 12 L24 8 L40 8 L44 12\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M16 22 L48 22\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\'/><circle cx=\\'32\\' cy=\\'38\\' r=\\'8\\' stroke-width=\\'2\\' opacity=\\'0.35\\'/></svg><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
+            <img src="${displayImage}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><svg class=\\'placeholder-svg\\' viewBox=\\'0 0 64 64\\' fill=\\'none\\' stroke=\\'currentColor\\' xmlns=\\'http://www.w3.org/2000/svg\\'><path d=\\'M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M20 12 L24 8 L40 8 L44 12\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M16 22 L48 22\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\'/><circle cx=\\'32\\' cy=\\'38\\' r=\\'8\\' stroke-width=\\'2\\' opacity=\\'0.35\\'/></svg><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
         </div>
     ` : `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
@@ -431,6 +553,36 @@ function buildProductCardHtml(product) {
         badgeHtml = `<span class="product-badge badge-grao-macio">🌾 Grão Macio</span>`;
     }
 
+    let variationsHtml = '';
+    if (product.variations && product.variations.length > 0) {
+        const isSize = product.variationType === 'size';
+        variationsHtml = `
+            <div class="product-variants-container">
+                <div class="variants-header-title">
+                    <span>${isSize ? '📏 Tamanho:' : '🎨 Cor:'}</span>
+                    <span class="variants-selected-val">${activeVar ? activeVar.label : ''}</span>
+                </div>
+                <div class="variant-options-group">
+                    ${product.variations.map(v => {
+                        const isActive = activeVar && activeVar.label === v.label;
+                        const dotHtml = v.colorHex ? `<span class="variant-color-dot" style="background-color: ${v.colorHex};"></span>` : '';
+                        return `
+                            <button type="button" 
+                                    class="variant-pill-btn ${isSize ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
+                                    data-product-id="${product.id}" 
+                                    data-variant="${v.label}" 
+                                    onclick="selectProductVariant('${product.id}', '${v.label}', event)" 
+                                    title="${v.label}">
+                                ${dotHtml}
+                                <span>${v.label}</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+
     return `
         <div class="product-card ${isGranel ? 'product-card-granel' : ''} ${!isAvailable ? 'card-unavailable' : ''}" id="card-${product.id}">
             <div class="card-top-actions">
@@ -445,12 +597,13 @@ function buildProductCardHtml(product) {
             ${imageHtml}
             <div class="card-info-wrap">
                 <div class="product-meta-line">
-                    <span class="meta-code">Cód: ${product.code}</span>
+                    <span class="meta-code">Cód: ${displayCode}</span>
                     <span class="meta-sep">•</span>
                     <span class="meta-cat">${product.subcategory || catName}</span>
                     ${isAllcanis ? `<span class="meta-grao-macio-chip" title="Possui Grão Macio">🌾 Grão Macio</span>` : ''}
                 </div>
                 <h3 class="product-name" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">${productName}</h3>
+                ${variationsHtml}
             </div>
             
             <div class="product-footer">
@@ -461,7 +614,7 @@ function buildProductCardHtml(product) {
                     const subText = `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
                     return `
                         <div class="granel-compact-price">
-                            <div class="granel-main-price">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
+                            <div class="granel-main-price">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
                             <div class="granel-sub-text">${subText}</div>
                         </div>
                     `;
@@ -469,7 +622,7 @@ function buildProductCardHtml(product) {
                     <div class="price-row">
                         <div>
                             <span class="price-label">PREÇO</span>
-                            <div class="price-value">R$ ${product.price.toFixed(2).replace('.', ',')}</div>
+                            <div class="price-value">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
                         </div>
                         <span class="price-unit">/${product.unit || 'un'}</span>
                     </div>
@@ -483,12 +636,12 @@ function buildProductCardHtml(product) {
                         </button>
                     ` : qtyInCart > 0 ? `
                         <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
-                            <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                            <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                             <span class="card-qty-display">
                                 <span class="card-qty-val">${qtyInCart}</span>
                                 <span class="card-qty-label">${isGranel ? 'no carrinho' : 'no carrinho'}</span>
                             </span>
-                            <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                            <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
                         </div>
                     ` : `
                         <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
@@ -595,7 +748,8 @@ function renderProducts() {
             const normSubcat = normalizeText(p.subcategory);
             const normDesc = normalizeText(p.description || '');
             const graoMacioTerms = (p.graoMacio || normName.includes('allcanis')) ? 'grao macio graos macios' : '';
-            const combined = `${normName} ${normCode} ${normSubcat} ${normDesc} ${graoMacioTerms}`;
+            const variantTerms = p.variations ? p.variations.map(v => `${v.code || ''} ${v.label || ''}`).join(' ') : '';
+            const combined = `${normName} ${normCode} ${normSubcat} ${normDesc} ${graoMacioTerms} ${variantTerms}`;
             const matchesAllTokens = queryTokens.every(tok => combined.includes(tok));
             if (!matchesAllTokens) return false;
         }
@@ -846,34 +1000,36 @@ function updateCardActionUI(productId) {
     if (!actionsContainer) return;
 
     if (!isProductAvailable(product)) {
+        const isEsgotado = product.outOfStock || product.available === false;
         actionsContainer.innerHTML = `
-            <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item indisponível para pedidos no momento">
+            <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
                 <span class="btn-cart-icon">🚫</span>
-                <span class="btn-cart-text">Indisponível</span>
+                <span class="btn-cart-text">${isEsgotado ? 'Esgotado' : 'Indisponível'}</span>
             </button>
         `;
         return;
     }
 
-    const qtyInCart = cart[productId] || 0;
+    const cartKey = getActiveCartKey(productId);
+    const qtyInCart = cart[cartKey] || 0;
     const isGranel = product.category === 'granel';
 
     if (qtyInCart > 0) {
         actionsContainer.innerHTML = `
             <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
-                <button class="card-qty-btn minus" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                 <span class="card-qty-display">
                     <span class="card-qty-val">${qtyInCart}</span>
-                    <span class="card-qty-label">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
+                    <span class="card-qty-label">${isGranel ? 'no carrinho' : 'no carrinho'}</span>
                 </span>
-                <button class="card-qty-btn plus" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
             </div>
         `;
     } else {
         actionsContainer.innerHTML = `
             <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
                 <span class="btn-cart-icon">${CART_ICON_SVG}</span>
-                <span class="btn-cart-text">${isGranel ? 'Adicionar Pacote ao Carrinho' : 'Adicionar ao Carrinho'}</span>
+                <span class="btn-cart-text">Adicionar</span>
             </button>
         `;
     }
@@ -887,7 +1043,8 @@ function addToCart(productId, event) {
         showToast("⚠️ Este produto está indisponível para pedidos no momento.");
         return;
     }
-    cart[productId] = (cart[productId] || 0) + 1;
+    const cartKey = getActiveCartKey(productId);
+    cart[cartKey] = (cart[cartKey] || 0) + 1;
     saveCart();
     
     updateCartUI();
@@ -899,31 +1056,34 @@ function addToCart(productId, event) {
         renderCartDrawerItems();
     }
 
-    showToast("✓ Adicionado ao carrinho de compras!");
+    const activeVar = getProductActiveVariant(product);
+    const varText = activeVar ? ` (${activeVar.label})` : '';
+    showToast(`✓ Adicionado ao carrinho${varText}!`);
 }
 
-function updateCartQty(productId, delta, event) {
+function updateCartQty(cartKey, delta, event) {
     if (event) event.stopPropagation();
-    if (delta > 0) {
-        const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
-        if (product && !isProductAvailable(product)) {
-            showToast("⚠️ Este produto está indisponível para pedidos no momento.");
-            return;
-        }
+    const itemInfo = getCartItemInfo(cartKey);
+    const product = itemInfo ? itemInfo.product : null;
+    const baseId = itemInfo && itemInfo.baseProduct ? itemInfo.baseProduct.id : cartKey;
+
+    if (delta > 0 && product && !isProductAvailable(product)) {
+        showToast("⚠️ Este produto está indisponível para pedidos no momento.");
+        return;
     }
-    if (!cart[productId]) {
-        if (delta > 0) cart[productId] = delta;
+    if (!cart[cartKey]) {
+        if (delta > 0) cart[cartKey] = delta;
         else return;
     } else {
-        cart[productId] += delta;
-        if (cart[productId] <= 0) {
-            delete cart[productId];
+        cart[cartKey] += delta;
+        if (cart[cartKey] <= 0) {
+            delete cart[cartKey];
         }
     }
     saveCart();
     updateCartUI();
-    updateCardActionUI(productId);
-    refreshQuickViewActions(productId);
+    updateCardActionUI(baseId);
+    refreshQuickViewActions(baseId);
     renderCartDrawerItems();
 }
 
@@ -931,12 +1091,12 @@ function getCartStats() {
     let totalCount = 0;
     let totalPrice = 0;
 
-    for (let id in cart) {
-        const qty = cart[id];
-        const product = PRODUCTS.find(p => p.id.toString() === id.toString());
-        if (product) {
+    for (let cartKey in cart) {
+        const qty = cart[cartKey];
+        const itemInfo = getCartItemInfo(cartKey);
+        if (itemInfo && itemInfo.product) {
             totalCount += qty;
-            totalPrice += product.price * qty;
+            totalPrice += itemInfo.product.price * qty;
         }
     }
     return { totalCount, totalPrice };
@@ -1079,31 +1239,34 @@ function renderCartDrawerItems() {
     }
 
     let itemsHtml = "";
-    for (let id in cart) {
-        const qty = cart[id];
-        const product = PRODUCTS.find(p => p.id.toString() === id.toString());
-        if (product) {
-            const isGranel = product.category === 'granel';
-            const unitPrice = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
-            const subtotal = `R$ ${(product.price * qty).toFixed(2).replace('.', ',')}`;
-            const priceDisplay = qty > 1 ? `${unitPrice} un. • <strong>Total: ${subtotal}</strong>` : unitPrice;
-            const title = toTitleCase(product.name);
-            const granelBadge = isGranel && product.badge ? `<span style="font-size: 11px; background: #E8F5EE; color: var(--primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 4px;">⚖️ ${product.badge}</span>` : '';
+    for (let cartKey in cart) {
+        const qty = cart[cartKey];
+        const itemInfo = getCartItemInfo(cartKey);
+        if (!itemInfo || !itemInfo.product) continue;
+        const product = itemInfo.product;
+        const variant = itemInfo.variant;
+        const isGranel = product.category === 'granel';
+        const unitPrice = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
+        const subtotal = `R$ ${(product.price * qty).toFixed(2).replace('.', ',')}`;
+        const priceDisplay = qty > 1 ? `${unitPrice} un. • <strong>Total: ${subtotal}</strong>` : unitPrice;
+        const title = toTitleCase(product.name);
+        const granelBadge = isGranel && product.badge ? `<span style="font-size: 11px; background: #E8F5EE; color: var(--primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 4px;">⚖️ ${product.badge}</span>` : '';
+        const isSize = itemInfo.baseProduct && itemInfo.baseProduct.variationType === 'size';
+        const variantTag = variant ? `<span class="cart-variant-tag">${isSize ? '📏 ' : '🎨 '}${variant.label}</span>` : '';
 
-            itemsHtml += `
-                <div class="cart-item">
-                    <div class="cart-item-info">
-                        <div class="cart-item-name">[${product.code}] ${title} ${granelBadge}</div>
-                        <div class="cart-item-price">${priceDisplay}</div>
-                    </div>
-                    <div class="cart-item-controls">
-                        <button class="qty-btn" onclick="updateCartQty('${product.id}', -1)" title="Diminuir quantidade">−</button>
-                        <span class="qty-display">${qty}</span>
-                        <button class="qty-btn" onclick="updateCartQty('${product.id}', 1)" title="Aumentar quantidade">+</button>
-                    </div>
+        itemsHtml += `
+            <div class="cart-item">
+                <div class="cart-item-info">
+                    <div class="cart-item-name">[${product.code}] ${title} ${variantTag} ${granelBadge}</div>
+                    <div class="cart-item-price">${priceDisplay}</div>
                 </div>
-            `;
-        }
+                <div class="cart-item-controls">
+                    <button class="qty-btn" onclick="updateCartQty('${cartKey}', -1)" title="Diminuir quantidade">−</button>
+                    <span class="qty-display">${qty}</span>
+                    <button class="qty-btn" onclick="updateCartQty('${cartKey}', 1)" title="Aumentar quantidade">+</button>
+                </div>
+            </div>
+        `;
     }
 
     container.innerHTML = itemsHtml;
@@ -1287,30 +1450,33 @@ function checkoutWhatsApp() {
     }
 
     let itemsText = "";
-    for (let id in cart) {
-        const qty = cart[id];
-        const product = PRODUCTS.find(p => p.id.toString() === id.toString());
-        if (product) {
-            const isGranel = product.category === 'granel';
-            const unitPriceStr = product.price.toFixed(2).replace('.', ',');
-            const subtotal = product.price * qty;
-            const subtotalStr = subtotal.toFixed(2).replace('.', ',');
-            const prodTitle = toTitleCase(product.name);
+    for (let cartKey in cart) {
+        const qty = cart[cartKey];
+        const itemInfo = getCartItemInfo(cartKey);
+        if (!itemInfo || !itemInfo.product) continue;
+        const product = itemInfo.product;
+        const variant = itemInfo.variant;
+        const isGranel = product.category === 'granel';
+        const unitPriceStr = product.price.toFixed(2).replace('.', ',');
+        const subtotal = product.price * qty;
+        const subtotalStr = subtotal.toFixed(2).replace('.', ',');
+        const prodTitle = toTitleCase(product.name);
+        const isSize = itemInfo.baseProduct && itemInfo.baseProduct.variationType === 'size';
+        const variantDesc = variant ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${variant.label})` : '';
 
-            if (isGranel) {
-                const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
-                const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
-                if (qty > 1) {
-                    itemsText += `⚖️ *${qty}x* [CÓD ${product.code}] ${prodTitle}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
-                } else {
-                    itemsText += `⚖️ *1x* [CÓD ${product.code}] ${prodTitle}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo} — *R$ ${unitPriceStr}*\n`;
-                }
+        if (isGranel) {
+            const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
+            const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
+            if (qty > 1) {
+                itemsText += `⚖️ *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
             } else {
-                if (qty > 1) {
-                    itemsText += `📦 *${qty}x* [CÓD ${product.code}] ${prodTitle}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
-                } else {
-                    itemsText += `📦 *1x* [CÓD ${product.code}] ${prodTitle} — *R$ ${unitPriceStr}*\n`;
-                }
+                itemsText += `⚖️ *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo} — *R$ ${unitPriceStr}*\n`;
+            }
+        } else {
+            if (qty > 1) {
+                itemsText += `📦 *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+            } else {
+                itemsText += `📦 *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc} — *R$ ${unitPriceStr}*\n`;
             }
         }
     }
@@ -1346,6 +1512,11 @@ function quickBuyWhatsApp(productId) {
 
     const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
     const isGranel = product.category === 'granel';
+    const activeVar = getProductActiveVariant(product);
+    const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
+    const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
+    const isSize = product.variationType === 'size';
+    const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
 
@@ -1358,9 +1529,9 @@ function quickBuyWhatsApp(productId) {
 `*👋 Olá, ${currentSeller.name}!*
 Gostaria de saber a previsão de disponibilidade deste produto a granel no catálogo Agro Salinas:
 
-⚖️ *[CÓD ${product.code}] ${prodTitle}*
+⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
-💰 *Preço de referência:* R$ ${product.price.toFixed(2).replace('.', ',')}
+💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
         } else {
@@ -1368,9 +1539,9 @@ Gostaria de saber a previsão de disponibilidade deste produto a granel no catá
 `*👋 Olá, ${currentSeller.name}!*
 Tenho interesse neste produto a granel do catálogo Agro Salinas:
 
-⚖️ *[CÓD ${product.code}] ${prodTitle}*
+⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
-💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')}
+💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
         }
@@ -1380,8 +1551,8 @@ Tenho interesse neste produto a granel do catálogo Agro Salinas:
 `*👋 Olá, ${currentSeller.name}!*
 Gostaria de saber a previsão de disponibilidade deste produto no catálogo Agro Salinas:
 
-📦 *[CÓD ${product.code}] ${prodTitle}*
-💰 *Preço de referência:* R$ ${product.price.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
+💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
         } else {
@@ -1389,8 +1560,8 @@ Gostaria de saber a previsão de disponibilidade deste produto no catálogo Agro
 `*👋 Olá, ${currentSeller.name}!*
 Tenho interesse no seguinte produto do catálogo Agro Salinas:
 
-📦 *[CÓD ${product.code}] ${prodTitle}*
-💰 *Preço:* R$ ${product.price.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
+💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
 
 🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
         }
@@ -1901,13 +2072,47 @@ function openQuickView(productId) {
     const isEsgotado = product.outOfStock || product.available === false;
     const unavailableBadge = !isAvailable ? `<span class="quickview-unavailable-tag">${isEsgotado ? '🚫 Esgotado na Loja' : '🚫 Indisponível no Momento'}</span>` : '';
 
+    const activeVar = getProductActiveVariant(product);
+    const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
+    const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
+    const isSize = product.variationType === 'size';
+
+    let variationsHtml = '';
+    if (product.variations && product.variations.length > 0) {
+        variationsHtml = `
+            <div class="quickview-variants-box">
+                <div class="variants-header-title" style="margin-bottom: 8px;">
+                    <span>${isSize ? '📏 Selecione o Tamanho:' : '🎨 Selecione a Cor:'}</span>
+                    <span class="qv-variant-selected-val variants-selected-val">${activeVar ? activeVar.label : ''}</span>
+                </div>
+                <div class="variant-options-group">
+                    ${product.variations.map(v => {
+                        const isActive = activeVar && activeVar.label === v.label;
+                        const dotHtml = v.colorHex ? `<span class="variant-color-dot" style="background-color: ${v.colorHex};"></span>` : '';
+                        return `
+                            <button type="button" 
+                                    class="variant-pill-btn ${isSize ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
+                                    data-product-id="${product.id}" 
+                                    data-variant="${v.label}" 
+                                    onclick="selectProductVariant('${product.id}', '${v.label}', event)" 
+                                    title="${v.label}">
+                                ${dotHtml}
+                                <span>${v.label}</span>
+                            </button>
+                        `;
+                    }).join('')}
+                </div>
+            </div>
+        `;
+    }
+
     modalContent.innerHTML = `
         <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)">✕</button>
         <div class="quickview-grid">
             ${imageHtml}
             <div class="quickview-header-info">
                 <div class="quickview-meta-row">
-                    <span class="quickview-code-tag">CÓD ${product.code}</span>
+                    <span class="quickview-code-tag">CÓD ${displayCode}</span>
                     <span class="quickview-cat-tag">${subcatName}</span>
                     ${granelBadge}
                     ${unavailableBadge}
@@ -1921,11 +2126,13 @@ function openQuickView(productId) {
                     <span style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Preço Agro Salinas:</span>
                     <div class="quickview-price-main">
                         <span class="quickview-curr">R$</span>
-                        <span class="quickview-price-val">${product.price.toFixed(2).replace('.', ',')}</span>
+                        <span class="quickview-price-val">${displayPrice.toFixed(2).replace('.', ',')}</span>
                         <span class="quickview-unit">${unitText}</span>
                     </div>
                 </div>
             </div>
+
+            ${variationsHtml}
 
             ${isAllcanis ? `
                 <div class="grao-macio-highlight-card">
@@ -1974,7 +2181,8 @@ function refreshQuickViewActions(productId) {
     if (!product) return;
 
     const isAvailable = isProductAvailable(product);
-    const qtyInCart = cart[productId] || 0;
+    const cartKey = getActiveCartKey(productId);
+    const qtyInCart = cart[cartKey] || 0;
     const isGranel = product.category === 'granel';
 
     let cartActionHtml = "";
@@ -1989,12 +2197,12 @@ function refreshQuickViewActions(productId) {
     } else if (qtyInCart > 0) {
         cartActionHtml = `
             <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" style="width: 100%; justify-content: space-between; height: 46px;">
-                <button class="card-qty-btn minus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${product.id}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                <button class="card-qty-btn minus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${cartKey}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
                 <span class="card-qty-display">
                     <span class="card-qty-val" style="font-size: 17px;">${qtyInCart}</span>
                     <span class="card-qty-label" style="font-size: 11px;">${isGranel ? 'pct no carrinho' : 'no carrinho'}</span>
                 </span>
-                <button class="card-qty-btn plus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${product.id}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                <button class="card-qty-btn plus" style="width: 46px; height: 46px; font-size: 22px;" onclick="updateCartQty('${cartKey}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
             </div>
         `;
     } else {
