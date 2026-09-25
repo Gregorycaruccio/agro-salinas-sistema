@@ -2468,18 +2468,21 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 32,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/360.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "360",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/360_azul.png"
             },
             {
                 "code": "360",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/360_rosa.png"
             }
         ]
     },
@@ -2637,6 +2640,7 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 17.9,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372.png",
         "featured": false,
         "variationType": "color",
         "variations": [
@@ -2648,12 +2652,14 @@ const PRODUCTS = [
             {
                 "code": "372",
                 "label": "Vermelho",
-                "colorHex": "#e11d48"
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_vermelho.png"
             },
             {
                 "code": "372",
                 "label": "Verde",
-                "colorHex": "#16a34a"
+                "colorHex": "#16a34a",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_verde.png"
             },
             {
                 "code": "372",
