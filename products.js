@@ -2584,32 +2584,38 @@ const PRODUCTS = [
         "price": 9.9,
         "unit": "un",
         "featured": false,
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352.png",
         "variationType": "color",
         "variations": [
             {
                 "code": "352",
                 "label": "Vermelho",
-                "colorHex": "#e11d48"
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352_vermelho.png"
             },
             {
                 "code": "352",
                 "label": "Verde",
-                "colorHex": "#16a34a"
+                "colorHex": "#16a34a",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352_verde.png"
             },
             {
                 "code": "352",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352_azul.png"
             },
             {
                 "code": "352",
                 "label": "Preto",
-                "colorHex": "#1e293b"
+                "colorHex": "#1e293b",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352_preto.png"
             },
             {
                 "code": "352",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/352_rosa.png"
             }
         ]
     },
