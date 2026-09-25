@@ -2377,6 +2377,7 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 31.5,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/359.png",
         "featured": false,
         "grouped": true,
         "isVariantOf": "358"
@@ -2401,18 +2402,21 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 28.9,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/358.png",
         "featured": false,
         "variationType": "size",
         "variations": [
             {
                 "code": "358",
                 "label": "900 ml",
-                "price": 28.9
+                "price": 28.9,
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/358.png"
             },
             {
                 "code": "359",
                 "label": "1200 ml (1,2L)",
-                "price": 31.5
+                "price": 31.5,
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/359.png"
             }
         ]
     },
@@ -2527,18 +2531,21 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 8,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/354.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "354",
                 "label": "Roxo",
-                "colorHex": "#9333ea"
+                "colorHex": "#9333ea",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/354_roxo.png"
             },
             {
                 "code": "354",
                 "label": "Laranja",
-                "colorHex": "#f97316"
+                "colorHex": "#f97316",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/354_laranja.png"
             }
         ]
     },
@@ -2550,18 +2557,21 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 6.5,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/355.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "355",
                 "label": "Amarelo",
-                "colorHex": "#eab308"
+                "colorHex": "#eab308",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/355_amarelo.png"
             },
             {
                 "code": "355",
                 "label": "Laranja",
-                "colorHex": "#f97316"
+                "colorHex": "#f97316",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/355_laranja.png"
             }
         ]
     },
