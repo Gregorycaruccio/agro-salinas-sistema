@@ -141,7 +141,7 @@ function selectProductVariant(productId, variantLabel, event) {
             if (codeEl) codeEl.textContent = `Cód: ${variant.code}`;
         }
         if (variant.image) {
-            const imgEl = card.querySelector('.product-image');
+            const imgEl = card.querySelector('.product-img') || card.querySelector('.product-image');
             if (imgEl) imgEl.src = variant.image;
         }
         updateCardActionUI(productId);
@@ -165,8 +165,11 @@ function selectProductVariant(productId, variantLabel, event) {
         });
 
         if (variant.image) {
-            const qvImg = qvModal.querySelector('.quickview-image');
-            if (qvImg) qvImg.src = variant.image;
+            const qvImg = qvModal.querySelector('.quickview-img') || qvModal.querySelector('.quickview-image');
+            if (qvImg) {
+                qvImg.src = variant.image;
+                qvImg.style.display = 'block';
+            }
         }
 
         refreshQuickViewActions(productId);

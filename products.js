@@ -1021,7 +1021,8 @@ const PRODUCTS = [
         "unit": "un",
         "featured": false,
         "grouped": true,
-        "isVariantOf": "350"
+        "isVariantOf": "350",
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/349.png"
     },
     {
         "id": "351",
@@ -1049,14 +1050,17 @@ const PRODUCTS = [
             {
                 "code": "350",
                 "label": "Vermelho",
-                "colorHex": "#e11d48"
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/350.png"
             },
             {
                 "code": "349",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/349.png"
             }
-        ]
+        ],
+        "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/350.png"
     },
     {
         "id": "343",
@@ -1078,7 +1082,8 @@ const PRODUCTS = [
         "unit": "un",
         "featured": false,
         "grouped": true,
-        "isVariantOf": "342"
+        "isVariantOf": "342",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/340.png"
     },
     {
         "id": "341",
@@ -1090,7 +1095,8 @@ const PRODUCTS = [
         "unit": "un",
         "featured": false,
         "grouped": true,
-        "isVariantOf": "342"
+        "isVariantOf": "342",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/341.png"
     },
     {
         "id": "342",
@@ -1113,12 +1119,14 @@ const PRODUCTS = [
             {
                 "code": "340",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/340.png"
             },
             {
                 "code": "341",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/341.png"
             }
         ]
     },
