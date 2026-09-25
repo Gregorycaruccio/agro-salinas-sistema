@@ -1,7 +1,7 @@
 // --- ESTADO GLOBAL & PERSISTÊNCIA ---
 let currentCategory = "todos";
 let currentSubcategory = "todas";
-let currentSort = "default";
+let currentSort = "price_asc";
 let currentPriceRange = "all";
 let searchQuery = "";
 let showOnlyFavorites = false;
@@ -767,22 +767,18 @@ function renderProducts() {
         if (aAvail && !bAvail) return -1;
         if (!aAvail && bAvail) return 1;
 
-        if (currentSort === "price_asc") {
-            return a.price - b.price;
-        } else if (currentSort === "price_desc") {
+        if (currentSort === "price_desc") {
             return b.price - a.price;
         } else if (currentSort === "name_asc") {
             return a.name.localeCompare(b.name, 'pt-BR');
         } else {
-            // default: Destaques primeiro, depois alfabético
-            if (a.featured && !b.featured) return -1;
-            if (!a.featured && b.featured) return 1;
-            return a.name.localeCompare(b.name, 'pt-BR');
+            // price_asc (padrão): Menor Preço
+            return a.price - b.price;
         }
     });
 
     // Botão Limpar Filtros e Indicador Ativo
-    const isFiltered = currentCategory !== "todos" || currentSubcategory !== "todas" || searchQuery !== "" || currentPriceRange !== "all" || currentSort !== "default" || showOnlyFavorites || currentQuickTag !== null;
+    const isFiltered = currentCategory !== "todos" || currentSubcategory !== "todas" || searchQuery !== "" || currentPriceRange !== "all" || currentSort !== "price_asc" || showOnlyFavorites || currentQuickTag !== null;
     if (clearBtn) {
         clearBtn.style.display = isFiltered ? "inline-block" : "none";
     }
@@ -1704,7 +1700,7 @@ function updateFavoritesUI() {
 function resetAllFilters() {
     currentCategory = "todos";
     currentSubcategory = "todas";
-    currentSort = "default";
+    currentSort = "price_asc";
     currentPriceRange = "all";
     searchQuery = "";
     showOnlyFavorites = false;
@@ -1713,9 +1709,9 @@ function resetAllFilters() {
     if (searchInput) searchInput.value = "";
 
     const sortSelect = document.getElementById("sort-select");
-    if (sortSelect) sortSelect.value = "default";
+    if (sortSelect) sortSelect.value = "price_asc";
     const sidebarSortSelect = document.getElementById("sidebar-sort-select");
-    if (sidebarSortSelect) sidebarSortSelect.value = "default";
+    if (sidebarSortSelect) sidebarSortSelect.value = "price_asc";
 
     const priceRangeSelect = document.getElementById("price-range-select");
     if (priceRangeSelect) priceRangeSelect.value = "all";
