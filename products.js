@@ -966,7 +966,8 @@ const PRODUCTS = [
         "category": "gatos",
         "subcategory": "Bandejas & Higiene",
         "price": 19.9,
-        "unit": "frasco",
+        "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/378.png",
         "featured": false,
         "grouped": true,
         "isVariantOf": "377"
@@ -979,19 +980,21 @@ const PRODUCTS = [
         "subcategory": "Bandejas & Higiene",
         "price": 19.9,
         "unit": "un",
-        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/376.png",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/377.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "377",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/377_rosa.png"
             },
             {
                 "code": "378",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/377_azul.png"
             },
             {
                 "code": "376",
@@ -2362,13 +2365,15 @@ const PRODUCTS = [
         "subcategory": "Comedouros & Bebedouros",
         "price": 9,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/391.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "391",
                 "label": "Preto",
-                "colorHex": "#1e293b"
+                "colorHex": "#1e293b",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/391_preto.png"
             }
         ]
     },
@@ -3076,6 +3081,7 @@ const PRODUCTS = [
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/401.png",
         "featured": false,
         "grouped": true,
         "isVariantOf": "399"
@@ -3088,6 +3094,7 @@ const PRODUCTS = [
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/400.png",
         "featured": false,
         "grouped": true,
         "isVariantOf": "399"
@@ -3100,23 +3107,27 @@ const PRODUCTS = [
         "subcategory": "Fontes & Bebedouros",
         "price": 69.9,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/399.png",
         "featured": false,
         "variationType": "color",
         "variations": [
             {
                 "code": "399",
                 "label": "Vermelha",
-                "colorHex": "#e11d48"
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/399_vermelha.png"
             },
             {
                 "code": "400",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/399_rosa.png"
             },
             {
                 "code": "401",
                 "label": "Azul",
-                "colorHex": "#2563eb"
+                "colorHex": "#2563eb",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/399_azul.png"
             }
         ]
     },
