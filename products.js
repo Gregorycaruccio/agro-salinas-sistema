@@ -979,6 +979,7 @@ const PRODUCTS = [
         "subcategory": "Bandejas & Higiene",
         "price": 19.9,
         "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/376.png",
         "featured": false,
         "variationType": "color",
         "variations": [
@@ -995,7 +996,8 @@ const PRODUCTS = [
             {
                 "code": "376",
                 "label": "Vermelho",
-                "colorHex": "#e11d48"
+                "colorHex": "#e11d48",
+                "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/376.png"
             }
         ]
     },
@@ -1006,7 +1008,8 @@ const PRODUCTS = [
         "category": "gatos",
         "subcategory": "Bandejas & Higiene",
         "price": 19.9,
-        "unit": "frasco",
+        "unit": "un",
+        "image": "assets/produtos/2_gatos/acessorios_arranhadores_caixas/376.png",
         "featured": false,
         "grouped": true,
         "isVariantOf": "377"
@@ -2647,7 +2650,8 @@ const PRODUCTS = [
             {
                 "code": "372",
                 "label": "Laranja",
-                "colorHex": "#f97316"
+                "colorHex": "#f97316",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_laranja.png"
             },
             {
                 "code": "372",
@@ -2664,17 +2668,20 @@ const PRODUCTS = [
             {
                 "code": "372",
                 "label": "Rosa",
-                "colorHex": "#ec4899"
+                "colorHex": "#ec4899",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_rosa.png"
             },
             {
                 "code": "372",
                 "label": "Preto",
-                "colorHex": "#1e293b"
+                "colorHex": "#1e293b",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_preto.png"
             },
             {
                 "code": "372",
                 "label": "Roxo",
-                "colorHex": "#9333ea"
+                "colorHex": "#9333ea",
+                "image": "assets/produtos/1_caes/acessorios_comedouros_bebedouros/372_roxo.png"
             }
         ]
     },
