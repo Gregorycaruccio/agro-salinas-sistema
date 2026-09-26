@@ -1685,6 +1685,7 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 41.6,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/362.png",
         "featured": false
     },
     {
@@ -1695,6 +1696,7 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 49.9,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/363.png",
         "featured": false
     },
     {
@@ -1725,6 +1727,7 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 35,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/361.png",
         "featured": false
     },
     {
@@ -1735,27 +1738,21 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 79.9,
         "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/367.png",
         "featured": false
     },
     {
         "id": "712",
         "code": "712",
-        "name": "Cama Soft Tamanho g Azul",
+        "name": "Cama Soft Tamanho G Azul",
         "category": "caes",
         "subcategory": "Casinhas & Camas",
         "price": 189.9,
         "unit": "un",
-        "featured": false
-    },
-    {
-        "id": "709",
-        "code": "709",
-        "name": "Cama Soft Tamanho g Rosa",
-        "category": "caes",
-        "subcategory": "Casinhas & Camas",
-        "price": 189.9,
-        "unit": "un",
-        "featured": false
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/712.png",
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "710"
     },
     {
         "id": "711",
@@ -1765,7 +1762,55 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 149.9,
         "unit": "un",
-        "featured": false
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/711.png",
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "710"
+    },
+    {
+        "id": "710",
+        "code": "710",
+        "name": "Cama Soft para Cães e Gatos Azul",
+        "category": "caes",
+        "subcategory": "Casinhas & Camas",
+        "price": 99,
+        "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/710.png",
+        "featured": false,
+        "variationType": "size",
+        "variations": [
+            {
+                "code": "710",
+                "label": "P",
+                "price": 99,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/710.png"
+            },
+            {
+                "code": "711",
+                "label": "M",
+                "price": 149.9,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/711.png"
+            },
+            {
+                "code": "712",
+                "label": "G",
+                "price": 189.9,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/712.png"
+            }
+        ]
+    },
+    {
+        "id": "709",
+        "code": "709",
+        "name": "Cama Soft Tamanho G Rosa",
+        "category": "caes",
+        "subcategory": "Casinhas & Camas",
+        "price": 189.9,
+        "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/709.png",
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "707"
     },
     {
         "id": "708",
@@ -1775,27 +1820,42 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 149.9,
         "unit": "un",
-        "featured": false
-    },
-    {
-        "id": "710",
-        "code": "710",
-        "name": "Cama Soft Tamanho P Azul",
-        "category": "caes",
-        "subcategory": "Casinhas & Camas",
-        "price": 99,
-        "unit": "un",
-        "featured": false
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/708.png",
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "707"
     },
     {
         "id": "707",
         "code": "707",
-        "name": "Cama Soft Tamanho P Rosa",
+        "name": "Cama Soft para Cães e Gatos Rosa",
         "category": "caes",
         "subcategory": "Casinhas & Camas",
         "price": 99,
         "unit": "un",
-        "featured": false
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/707.png",
+        "featured": false,
+        "variationType": "size",
+        "variations": [
+            {
+                "code": "707",
+                "label": "P",
+                "price": 99,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/707.png"
+            },
+            {
+                "code": "708",
+                "label": "M",
+                "price": 149.9,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/708.png"
+            },
+            {
+                "code": "709",
+                "label": "G",
+                "price": 189.9,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/709.png"
+            }
+        ]
     },
     {
         "id": "598",
