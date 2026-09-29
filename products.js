@@ -1678,6 +1678,34 @@ const PRODUCTS = [
         "featured": false
     },
     {
+        "id": "361",
+        "code": "361",
+        "name": "Cama Europa Oxford Pequena",
+        "category": "caes",
+        "subcategory": "Casinhas & Camas",
+        "price": 35,
+        "unit": "un",
+        "image": "assets/produtos/1_caes/acessorios_camas_casas/361.png",
+        "featured": false,
+        "variationType": "color",
+        "variations": [
+            {
+                "code": "361",
+                "label": "Vermelha",
+                "colorHex": "#e11d48",
+                "price": 35,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/361.png"
+            },
+            {
+                "code": "362",
+                "label": "Azul",
+                "colorHex": "#2563eb",
+                "price": 41.6,
+                "image": "assets/produtos/1_caes/acessorios_camas_casas/362.png"
+            }
+        ]
+    },
+    {
         "id": "362",
         "code": "362",
         "name": "Cama Europa Oxford Azul Pequena",
@@ -1686,7 +1714,9 @@ const PRODUCTS = [
         "price": 41.6,
         "unit": "un",
         "image": "assets/produtos/1_caes/acessorios_camas_casas/362.png",
-        "featured": false
+        "featured": false,
+        "grouped": true,
+        "isVariantOf": "361"
     },
     {
         "id": "363",
@@ -1717,17 +1747,6 @@ const PRODUCTS = [
         "subcategory": "Casinhas & Camas",
         "price": 60,
         "unit": "un",
-        "featured": false
-    },
-    {
-        "id": "361",
-        "code": "361",
-        "name": "Cama Europa Oxford Vermelha Pequena",
-        "category": "caes",
-        "subcategory": "Casinhas & Camas",
-        "price": 35,
-        "unit": "un",
-        "image": "assets/produtos/1_caes/acessorios_camas_casas/361.png",
         "featured": false
     },
     {
