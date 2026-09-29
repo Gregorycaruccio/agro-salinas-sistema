@@ -1442,14 +1442,15 @@ function checkoutWhatsApp() {
         }
 
         fulfillmentDetailsText = 
-`🚚 *Modalidade:* Entrega a Domicílio
+`🛵 *FORMA DE RECEBIMENTO:*
+🚚 *Entrega em Domicílio*
 📍 *Bairro:* ${neighborhood}
 🏠 *Endereço:* ${address}${complement ? `\n📌 *Complemento/Ref:* ${complement}` : ''}`;
 
     } else {
         fulfillmentDetailsText = 
-`🏪 *Modalidade:* Retirada no Balcão (Loja Agro Salinas)
-📦 *Separação:* Aguardando confirmação para retirar no balcão`;
+`🛵 *FORMA DE RECEBIMENTO:*
+🏪 *Retirada no Balcão* (Cliente retira na loja)`;
     }
 
     let itemsText = "";
@@ -1471,15 +1472,15 @@ function checkoutWhatsApp() {
             const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
             const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
             if (qty > 1) {
-                itemsText += `⚖️ *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+                itemsText += `• *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n  ↳ *${packBadge}* Selado${extraInfo} | Un: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
             } else {
-                itemsText += `⚖️ *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ *${packBadge}* Fechado e Selado${extraInfo} — *R$ ${unitPriceStr}*\n`;
+                itemsText += `• *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n  ↳ *${packBadge}* Selado${extraInfo} | Valor: *R$ ${unitPriceStr}*\n`;
             }
         } else {
             if (qty > 1) {
-                itemsText += `📦 *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n   ↳ Unitário: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
+                itemsText += `• *${qty}x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n  ↳ Un: R$ ${unitPriceStr} | Subtotal: *R$ ${subtotalStr}*\n`;
             } else {
-                itemsText += `📦 *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc} — *R$ ${unitPriceStr}*\n`;
+                itemsText += `• *1x* [CÓD ${product.code}] ${prodTitle}${variantDesc}\n  ↳ Valor: *R$ ${unitPriceStr}*\n`;
             }
         }
     }
@@ -1493,19 +1494,26 @@ function checkoutWhatsApp() {
         ? VENDAS_CONFIG.lojaWhatsApp 
         : STORE_CONFIG.whatsappNumber;
 
+    const sellerTag = (currentSeller && currentSeller.code) 
+        ? `🏷️ *Indicação / Vendedor:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
+        : '';
+
     const message = 
-`*🛒 OLÁ! GOSTARIA DE FAZER ESSE PEDIDO:*
-----------------------------------
-${itemsText}----------------------------------
-*💰 TOTAL DO PEDIDO: R$ ${totalPrice.toFixed(2).replace('.', ',')}*
-💳 *Forma de Pagamento:* ${paymentMethod}
+`🐾 *NOVO PEDIDO — AGRO SALINAS*
+════════════════════════════════
+
+📋 *ITENS PARA SEPARAÇÃO:*
+${itemsText}
+────────────────────────────────
+💰 *TOTAL: R$ ${totalPrice.toFixed(2).replace('.', ',')}*
+💳 *Pagamento:* ${paymentMethod}
 
 ${fulfillmentDetailsText}
 
-🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
-📱 *Origem:* Catálogo Digital Agro Salinas
+────────────────────────────────
+${sellerTag}📱 *Origem:* Catálogo Digital Agro Salinas
 
-Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obrigado!`;
+Olá! Aguardo a confirmação do pedido para separação/entrega. Obrigado!`;
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -1528,6 +1536,9 @@ function quickBuyWhatsApp(productId) {
     const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
+    const sellerTag = (currentSeller && currentSeller.code) 
+        ? `\n🏷️ *Indicação / Vendedor:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
+        : '';
 
     let message = "";
     if (isGranel) {
@@ -1535,47 +1546,51 @@ function quickBuyWhatsApp(productId) {
         const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
         if (!isAvailable) {
             message = 
-`*👋 Olá, equipe Agro Salinas!*
-Gostaria de saber a previsão de disponibilidade deste produto a granel no catálogo Agro Salinas:
+`🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
+════════════════════════════════
+
+Olá, equipe Agro Salinas! Gostaria de saber a previsão de disponibilidade deste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
-📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
+📦 *Embalagem:* ${packBadge} Selado${extraInfo}
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
-
-🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
             message = 
-`*👋 Olá, equipe Agro Salinas!*
-Tenho interesse neste produto a granel do catálogo Agro Salinas:
+`🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
+════════════════════════════════
+
+Olá! Gostaria de pedir o seguinte produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
-📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
+📦 *Embalagem:* ${packBadge} Selado${extraInfo}
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
-
-🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
     } else {
         if (!isAvailable) {
             message = 
-`*👋 Olá, equipe Agro Salinas!*
-Gostaria de saber a previsão de disponibilidade deste produto no catálogo Agro Salinas:
+`🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
+════════════════════════════════
+
+Olá, equipe Agro Salinas! Gostaria de saber a previsão deste produto no catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
-
-🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
             message = 
-`*👋 Olá, equipe Agro Salinas!*
-Tenho interesse no seguinte produto do catálogo Agro Salinas:
+`🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
+════════════════════════════════
+
+Olá! Gostaria de pedir o seguinte produto do catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
-
-🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
     }
