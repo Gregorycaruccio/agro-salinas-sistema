@@ -1484,8 +1484,10 @@ function checkoutWhatsApp() {
     const selectedPayInput = document.querySelector('input[name="checkout_payment"]:checked');
     const paymentMethod = selectedPayInput ? selectedPayInput.value : "A combinar";
 
-    // Identifica o WhatsApp de destino: se o cliente veio por vendedor, vai para ele
-    const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
+    // Identifica o WhatsApp de destino: sempre o WhatsApp oficial da loja (William & Meire), com a identificação do consultor na mensagem
+    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
+        ? VENDAS_CONFIG.lojaWhatsApp 
+        : STORE_CONFIG.whatsappNumber;
 
     const message = 
 `*🛒 OLÁ! GOSTARIA DE FAZER ESSE PEDIDO:*
@@ -1496,7 +1498,7 @@ ${itemsText}----------------------------------
 
 ${fulfillmentDetailsText}
 
-👤 *Consultor(a) Atendente:* ${currentSeller.name} (${currentSeller.tag})
+🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
 📱 *Origem:* Catálogo Digital Agro Salinas
 
 Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obrigado!`;
@@ -1509,7 +1511,11 @@ function quickBuyWhatsApp(productId) {
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
 
-    const targetWhatsapp = currentSeller.whatsapp || (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
+    // Destino sempre oficial da Agropecuária
+    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
+        ? VENDAS_CONFIG.lojaWhatsApp 
+        : STORE_CONFIG.whatsappNumber;
+
     const isGranel = product.category === 'granel';
     const activeVar = getProductActiveVariant(product);
     const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
@@ -1525,44 +1531,48 @@ function quickBuyWhatsApp(productId) {
         const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
         if (!isAvailable) {
             message = 
-`*👋 Olá, ${currentSeller.name}!*
+`*👋 Olá, equipe Agro Salinas!*
 Gostaria de saber a previsão de disponibilidade deste produto a granel no catálogo Agro Salinas:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
 
-🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
             message = 
-`*👋 Olá, ${currentSeller.name}!*
+`*👋 Olá, equipe Agro Salinas!*
 Tenho interesse neste produto a granel do catálogo Agro Salinas:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Fechado e Selado${extraInfo}
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
 
-🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
     } else {
         if (!isAvailable) {
             message = 
-`*👋 Olá, ${currentSeller.name}!*
+`*👋 Olá, equipe Agro Salinas!*
 Gostaria de saber a previsão de disponibilidade deste produto no catálogo Agro Salinas:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
 
-🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
             message = 
-`*👋 Olá, ${currentSeller.name}!*
+`*👋 Olá, equipe Agro Salinas!*
 Tenho interesse no seguinte produto do catálogo Agro Salinas:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
 
-🏷️ *Consultor(a):* ${currentSeller.name} (${currentSeller.tag})`;
+🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag})
+📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
     }
 
