@@ -1161,14 +1161,18 @@ function openCartDrawer() {
     const floatingBar = document.getElementById("floating-cart-bar");
     if (floatingBar) floatingBar.style.setProperty("display", "none", "important");
 
-    // Atualiza o texto do botão para deixar claro quem vai receber o pedido
+    // O pedido vai sempre para a loja oficial (Agro Salinas) com a atribuição do consultor
     const btnText = document.getElementById("btn-checkout-text");
     const noticeName = document.getElementById("cart-notice-seller-name");
-    if (btnText && currentSeller) {
-        btnText.textContent = `Enviar Pedido para ${currentSeller.name}`;
+    if (btnText) {
+        btnText.textContent = "Enviar Pedido para a Agro Salinas";
     }
-    if (noticeName && currentSeller) {
-        noticeName.textContent = `${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})`;
+    if (noticeName) {
+        if (currentSeller && currentSeller.code) {
+            noticeName.innerHTML = `Indicação: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong> • Destino: <strong>Agro Salinas</strong>`;
+        } else {
+            noticeName.innerHTML = `Atendimento oficial: <strong>Agro Salinas</strong>`;
+        }
     }
 }
 
