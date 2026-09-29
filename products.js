@@ -18,7 +18,7 @@ const CATEGORIES = [
     {
         "id": "todos",
         "name": "Todos os Produtos",
-        "icon": "✨"
+        "icon": "🐾"
     },
     {
         "id": "granel",

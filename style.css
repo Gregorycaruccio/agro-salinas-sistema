@@ -654,10 +654,10 @@ body {
 }
 
 .category-pill.active {
-    background: #0E291B;
+    background: #123020;
     border: 1.5px solid #52B788;
     color: #FFFFFF;
-    box-shadow: 0 0 0 2px rgba(82, 183, 136, 0.4), 0 4px 12px rgba(14, 41, 27, 0.4);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
     transform: translateY(-1px);
 }
 

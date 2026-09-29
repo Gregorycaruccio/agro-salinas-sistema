@@ -325,7 +325,7 @@ const STORE_CONFIG = {
 };
 
 const CATEGORIES = [
-    { id: "todos", name: "Todos os Produtos", icon: "✨" },
+    { id: "todos", name: "Todos os Produtos", icon: "🐾" },
     { id: "granel", name: "Rações a Granel (Kg)", icon: "⚖️" },
     { id: "caes", name: "Cães", icon: "🐶" },
     { id: "gatos", name: "Gatos", icon: "🐱" },
