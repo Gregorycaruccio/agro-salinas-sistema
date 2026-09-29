@@ -1161,18 +1161,14 @@ function openCartDrawer() {
     const floatingBar = document.getElementById("floating-cart-bar");
     if (floatingBar) floatingBar.style.setProperty("display", "none", "important");
 
-    // O pedido vai sempre para a loja oficial (Agro Salinas) com a atribuição do consultor
+    // Atualiza o texto do botão para deixar claro quem vai receber o pedido
     const btnText = document.getElementById("btn-checkout-text");
     const noticeName = document.getElementById("cart-notice-seller-name");
-    if (btnText) {
-        btnText.textContent = "Enviar Pedido para a Agro Salinas";
+    if (btnText && currentSeller) {
+        btnText.textContent = `Enviar Pedido para ${currentSeller.name}`;
     }
-    if (noticeName) {
-        if (currentSeller && currentSeller.code) {
-            noticeName.innerHTML = `Indicação: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong> • Destino: <strong>Agro Salinas</strong>`;
-        } else {
-            noticeName.innerHTML = `Atendimento oficial: <strong>Agro Salinas</strong>`;
-        }
+    if (noticeName && currentSeller) {
+        noticeName.innerHTML = `Atendimento por: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong>`;
     }
 }
 
@@ -1489,18 +1485,24 @@ function checkoutWhatsApp() {
     const selectedPayInput = document.querySelector('input[name="checkout_payment"]:checked');
     const paymentMethod = selectedPayInput ? selectedPayInput.value : "A combinar";
 
-    // Identifica o WhatsApp de destino: sempre o WhatsApp oficial da loja (William & Meire), com a identificação do consultor na mensagem
-    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
-        ? VENDAS_CONFIG.lojaWhatsApp 
-        : STORE_CONFIG.whatsappNumber;
+    // Identifica o WhatsApp de destino: vai para o vendedor responsável pelo atendimento
+    const targetWhatsapp = (currentSeller && currentSeller.whatsapp) 
+        ? currentSeller.whatsapp 
+        : (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
 
     const sellerTag = (currentSeller && currentSeller.code) 
-        ? `🏷️ *Indicação / Vendedor:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
+        ? `🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
         : '';
+
+    const greeting = (currentSeller && currentSeller.name)
+        ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
+        : `Olá! Gostaria de fazer este pedido:`;
 
     const message = 
 `🐾 *NOVO PEDIDO — AGRO SALINAS*
 ════════════════════════════════
+
+${greeting}
 
 📋 *ITENS PARA SEPARAÇÃO:*
 ${itemsText}
@@ -1513,7 +1515,7 @@ ${fulfillmentDetailsText}
 ────────────────────────────────
 ${sellerTag}📱 *Origem:* Catálogo Digital Agro Salinas
 
-Olá! Aguardo a confirmação do pedido para separação/entrega. Obrigado!`;
+Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obrigado!`;
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
@@ -1523,10 +1525,10 @@ function quickBuyWhatsApp(productId) {
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
 
-    // Destino sempre oficial da Agropecuária
-    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
-        ? VENDAS_CONFIG.lojaWhatsApp 
-        : STORE_CONFIG.whatsappNumber;
+    // Destino: vendedor responsável ou loja
+    const targetWhatsapp = (currentSeller && currentSeller.whatsapp) 
+        ? currentSeller.whatsapp 
+        : (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
 
     const isGranel = product.category === 'granel';
     const activeVar = getProductActiveVariant(product);
@@ -1537,7 +1539,7 @@ function quickBuyWhatsApp(productId) {
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
     const sellerTag = (currentSeller && currentSeller.code) 
-        ? `\n🏷️ *Indicação / Vendedor:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
+        ? `\n🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
         : '';
 
     let message = "";
@@ -1549,7 +1551,7 @@ function quickBuyWhatsApp(productId) {
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, equipe Agro Salinas! Gostaria de saber a previsão de disponibilidade deste produto a granel:
+Olá, ${currentSeller.name}! Gostaria de saber a previsão de disponibilidade deste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1561,7 +1563,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá! Gostaria de pedir o seguinte produto a granel:
+Olá, ${currentSeller.name}! Tenho interesse neste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1575,7 +1577,7 @@ ${sellerTag}
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, equipe Agro Salinas! Gostaria de saber a previsão deste produto no catálogo:
+Olá, ${currentSeller.name}! Gostaria de saber a previsão deste produto no catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
@@ -1586,7 +1588,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá! Gostaria de pedir o seguinte produto do catálogo:
+Olá, ${currentSeller.name}! Tenho interesse no seguinte produto do catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
