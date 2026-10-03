@@ -2,6 +2,13 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <script>
+        // Migração Oficial: Redireciona acessos do GitHub Pages direto para a Vercel
+        if (typeof window !== 'undefined' && window.location.hostname.includes('github.io')) {
+            var targetPath = window.location.pathname.replace(/^\/agro-salinas-sistema/, '') || '/vendedor.html';
+            window.location.replace('https://agro-salinas-rose.vercel.app' + targetPath + window.location.search + window.location.hash);
+        }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Portal do Vendedor & Gestão | Agro Salinas</title>
@@ -1347,7 +1354,7 @@
 
             const myLink = typeof generateSellerLink === 'function'
                 ? generateSellerLink(seller.code, timeNum)
-                : (window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '') + '/?v=' + seller.code.toLowerCase());
+                : ((typeof getBaseAppUrl === 'function' ? getBaseAppUrl() : 'https://agro-salinas-rose.vercel.app') + '/?v=' + seller.code.toLowerCase());
 
             const linkEl = document.getElementById('dash-exclusive-link');
             if (linkEl) linkEl.textContent = myLink;
@@ -1707,8 +1714,9 @@ ${itemsLines}
             if (!tbody) return;
 
             tbody.innerHTML = VENDEDORES.map(v => {
-                const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
+                const fullBaseUrl = (typeof getBaseAppUrl === 'function' ? getBaseAppUrl() : 'https://agro-salinas-rose.vercel.app');
                 const sLink = fullBaseUrl + '/?v=' + v.code.toLowerCase();
+                const portalLoginUrl = fullBaseUrl + '/vendedor.html';
                 const isGestor = v.role === 'admin' || ['GREG', 'ADMIN', 'WILLIAM', 'MEIRE'].includes((v.code || '').toUpperCase());
                 return `
                     <tr>
@@ -1730,8 +1738,11 @@ ${itemsLines}
                         </td>
                         <td>
                             <div style="display:flex; gap:5px; flex-wrap:wrap;">
-                                <button class="btn-order-act" onclick="navigator.clipboard.writeText('${sLink}'); showToast('Link de ${v.name} copiado!');">
-                                    🔗 Link
+                                <button class="btn-order-act" title="Copiar link do Catálogo de Vendas" onclick="navigator.clipboard.writeText('${sLink}'); showToast('Link de vendas de ${v.name} copiado!');">
+                                    🛒 Catálogo
+                                </button>
+                                <button class="btn-order-act" title="Copiar link de Login do Portal" onclick="navigator.clipboard.writeText('${portalLoginUrl}'); showToast('Link do Portal de Acesso copiado!');">
+                                    🚪 Portal
                                 </button>
                                 <button class="btn-order-act" onclick="adminResetSellerPin('${v.code}', '${v.name}')">
                                     🔑 Resetar PIN

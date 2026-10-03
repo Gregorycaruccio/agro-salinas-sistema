@@ -1802,8 +1802,10 @@ function updateGeneratedLink() {
     if (!input || !preview) return;
 
     const name = input.value.trim().toLowerCase().replace(/\s+/g, "") || "seunome";
-    const baseUrl = window.location.origin + window.location.pathname;
-    const finalUrl = `${baseUrl}?v=${encodeURIComponent(name)}`;
+    const baseUrl = (typeof getBaseAppUrl === "function")
+        ? getBaseAppUrl()
+        : "https://agro-salinas-rose.vercel.app";
+    const finalUrl = `${baseUrl.replace(/\/$/, '')}/?v=${encodeURIComponent(name)}`;
     preview.textContent = finalUrl;
 }
 

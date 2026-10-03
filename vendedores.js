@@ -67,6 +67,20 @@ function findVendedorByCode(code) {
 }
 
 // --- CONFIGURAÇÃO DE VALIDADE DO LINK DE VENDEDOR (30 DIAS) ---
+const OFFICIAL_PRODUCTION_URL = "https://agro-salinas-rose.vercel.app";
+
+function getBaseAppUrl() {
+    if (typeof window !== "undefined") {
+        if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
+            return window.location.origin + window.location.pathname.replace("vendedor.html", "").replace(/\/$/, "");
+        }
+        if (window.location.hostname.includes("vercel.app")) {
+            return window.location.origin;
+        }
+    }
+    return OFFICIAL_PRODUCTION_URL;
+}
+
 const LINK_CONFIG = {
     validityDays: 30,
     validityMs: 30 * 24 * 60 * 60 * 1000
@@ -75,11 +89,7 @@ const LINK_CONFIG = {
 // Gera URL completa com validade de 30 dias embutida
 function generateSellerLink(sellerCode, timestampMs = Date.now(), baseUrl = "") {
     if (!baseUrl) {
-        if (typeof window !== "undefined") {
-            baseUrl = window.location.origin + window.location.pathname.replace("vendedor.html", "").replace(/\/$/, "");
-        } else {
-            baseUrl = "";
-        }
+        baseUrl = getBaseAppUrl();
     }
     const cleanCode = (sellerCode || "greg").toString().trim().toLowerCase();
     // Guardamos o timestamp em segundos codificado em base36 (ex: ?v=greg&t=m2j4xk)
