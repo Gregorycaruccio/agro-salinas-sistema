@@ -617,6 +617,59 @@
             background: #F8FAFC;
         }
 
+        /* ESTILOS DE COMISSÕES (ADMIN) */
+        .comm-input-wrap {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            padding: 4px 6px;
+            width: fit-content;
+        }
+
+        .comm-input-wrap:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 2px rgba(27, 67, 46, 0.12);
+        }
+
+        .comm-input-num {
+            width: 48px;
+            border: none;
+            outline: none;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--primary);
+            text-align: right;
+            background: transparent;
+        }
+
+        .comm-payout-badge {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 13px;
+            display: inline-block;
+            background: var(--accent-soft);
+            padding: 4px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+
+        .btn-act-whatsapp-comm {
+            background: #25D366 !important;
+            color: #FFFFFF !important;
+            border: none !important;
+            font-weight: 700 !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .btn-act-whatsapp-comm:hover {
+            background: #1EBE5D !important;
+        }
+
         /* COMPARTILHAMENTO DE LINK */
         .panel-section-title {
             font-size: 14.5px;
@@ -907,9 +960,12 @@
                         <option value="ALL">Todos os Vendedores</option>
                     </select>
                 </div>
-                <div style="display: flex; gap: 6px;">
-                    <button class="btn-refresh" onclick="exportAdminCsv()" title="Baixar planilha do mês">
-                        📥 Exportar Excel
+                <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+                    <button class="btn-refresh" onclick="exportAdminCsv()" title="Baixar relatório completo de pedidos em Excel">
+                        📥 Exportar Pedidos
+                    </button>
+                    <button class="btn-refresh" onclick="exportCommissionsCsv()" title="Baixar fechamento de comissões da equipe em Excel">
+                        💰 Exportar Comissões
                     </button>
                     <button class="btn-refresh" onclick="loadAdminDashboard()">
                         🔄 Atualizar
@@ -925,6 +981,11 @@
                     <span class="stat-sub" id="adm-stat-confirmed-cnt">0 vendas concluídas</span>
                 </div>
                 <div class="stat-card">
+                    <span class="stat-label">Comissões da Equipe</span>
+                    <span class="stat-value" id="adm-stat-comm-total" style="color: var(--orange);">R$ 0,00</span>
+                    <span class="stat-sub">Soma a pagar no mês</span>
+                </div>
+                <div class="stat-card">
                     <span class="stat-label">Pedidos Recebidos</span>
                     <span class="stat-value" id="adm-stat-total-cnt">0</span>
                     <span class="stat-sub" id="adm-stat-pending-cnt">0 pendentes</span>
@@ -936,9 +997,10 @@
                 </div>
             </div>
 
-            <!-- Ranking de Desempenho por Vendedor -->
+            <!-- Ranking de Desempenho e Fechamento de Comissões por Vendedor -->
             <div class="panel-section-title">
-                <span>🏆 Desempenho por Vendedor no Mês</span>
+                <span>🏆 Fechamento de Vendas & Comissões da Equipe</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--text-muted);">Defina a % livre e envie no WhatsApp</span>
             </div>
             <div class="ranking-table-wrap">
                 <table class="ranking-table">
@@ -947,13 +1009,14 @@
                             <th>Vendedor</th>
                             <th>Pedidos</th>
                             <th>Concluídos</th>
-                            <th>Total Confirmado</th>
-                            <th>Volume Total</th>
-                            <th>Ação</th>
+                            <th>Total Vendido</th>
+                            <th style="min-width: 100px;">Comissão (%)</th>
+                            <th>Valor a Pagar</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody id="admin-ranking-tbody">
-                        <tr><td colspan="6" style="text-align:center;">Carregando...</td></tr>
+                        <tr><td colspan="7" style="text-align:center;">Carregando...</td></tr>
                     </tbody>
                 </table>
             </div>
@@ -1635,14 +1698,128 @@ ${itemsLines}
             sel.value = current;
         }
 
+        let currentAdminRankingStats = [];
+
+        function getSellerCommPct(sellerCode) {
+            const saved = localStorage.getItem('seller_comm_pct_' + (sellerCode || '').toUpperCase());
+            if (saved !== null && saved !== '' && !isNaN(Number(saved))) {
+                return Math.max(0, Number(saved));
+            }
+            return 5.0; // Taxa padrão inicial de 5%
+        }
+
+        function onCommissionPctInput(sellerCode, valStr) {
+            let num = parseFloat(valStr);
+            if (isNaN(num) || num < 0) num = 0;
+            localStorage.setItem('seller_comm_pct_' + sellerCode.toUpperCase(), num.toString());
+
+            const item = currentAdminRankingStats.find(r => r.seller.code === sellerCode);
+            if (item) {
+                const payout = item.confirmedVal * (num / 100);
+                const valEl = document.getElementById('comm-val-' + sellerCode);
+                if (valEl) {
+                    valEl.textContent = formatCurrency(payout);
+                }
+            }
+            updateTotalCommissionsSummary();
+        }
+
+        function updateTotalCommissionsSummary() {
+            let total = 0;
+            currentAdminRankingStats.forEach(r => {
+                const pct = getSellerCommPct(r.seller.code);
+                total += (r.confirmedVal * (pct / 100));
+            });
+            const commEl = document.getElementById('adm-stat-comm-total');
+            if (commEl) commEl.textContent = formatCurrency(total);
+        }
+
+        function sendCommissionSummaryToWhatsApp(sellerCode) {
+            const item = currentAdminRankingStats.find(r => r.seller.code === sellerCode);
+            if (!item) return;
+
+            const s = item.seller;
+            const pct = getSellerCommPct(sellerCode);
+            const payout = item.confirmedVal * (pct / 100);
+
+            const monthPicker = document.getElementById('admin-month-picker');
+            let monthLabel = 'do Mês';
+            if (monthPicker && monthPicker.value) {
+                const [ano, mes] = monthPicker.value.split('-');
+                const meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+                const mesNome = meses[parseInt(mes, 10) - 1] || mes;
+                monthLabel = `${mesNome} de ${ano}`;
+            }
+
+            const msg =
+`🐾 *FECHAMENTO DE VENDAS & COMISSÃO — AGRO SALINAS*
+════════════════════════════════
+
+👤 *Consultor(a):* ${s.name} (#${s.code})
+📅 *Mês de Referência:* ${monthLabel}
+
+📊 *RESUMO DO SEU DESEMPENHO:*
+• Vendas Concluídas: *${item.confirmedCount} pedido(s)*
+• Faturamento Gerado: *${formatCurrency(item.confirmedVal)}*
+• Percentual de Comissão: *${pct.toFixed(1).replace('.', ',')}%*
+
+────────────────────────────────
+💰 *VALOR DA SUA COMISSÃO: ${formatCurrency(payout)}*
+────────────────────────────────
+
+✅ Valor conferido pela administração da Agro Salinas e liberado para acerto/PIX.
+Muito obrigado pela sua dedicação e parabéns pelas vendas deste mês! 👏🌾
+
+— Agro Salinas (William & Meire)`;
+
+            const cleanPhone = (s.whatsapp || '').replace(/\D/g, '');
+            const targetPhone = cleanPhone.startsWith('55') ? cleanPhone : ('55' + cleanPhone);
+
+            window.open(`https://wa.me/${targetPhone}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        function exportCommissionsCsv() {
+            if (currentAdminRankingStats.length === 0) {
+                showToast('Não há dados de vendedores neste mês para exportar comissões.');
+                return;
+            }
+
+            const headers = ['Vendedor', 'Codigo', 'WhatsApp', 'Pedidos Concluidos', 'Volume Confirmado (R$)', 'Comissao (%)', 'Valor Comissao (R$)'];
+            const rows = currentAdminRankingStats.map(r => {
+                const pct = getSellerCommPct(r.seller.code);
+                const commVal = r.confirmedVal * (pct / 100);
+                return [
+                    `"${(r.seller.name || '').replace(/"/g, '""')}"`,
+                    r.seller.code,
+                    `"${r.seller.whatsapp || ''}"`,
+                    r.confirmedCount,
+                    r.confirmedVal.toFixed(2).replace('.', ','),
+                    pct.toFixed(1).replace('.', ','),
+                    commVal.toFixed(2).replace('.', ',')
+                ];
+            });
+
+            const ym = document.getElementById('admin-month-picker').value || 'mes';
+            const csvContent = '\uFEFF' + [headers.join(';'), ...rows.map(row => row.join(';'))].join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `fechamento_comissoes_agro_salinas_${ym}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('💰 Planilha de comissões exportada com sucesso!');
+        }
+
         function renderAdminOrdersAndStats() {
             const filterSeller = document.getElementById('admin-seller-filter').value || 'ALL';
 
-            // 1. Renderizar Ranking de Todos os Vendedores no Mês
+            // 1. Renderizar Ranking e Fechamento de Comissões de Todos os Vendedores no Mês
             const rankingBody = document.getElementById('admin-ranking-tbody');
             const sellersList = VENDEDORES.filter(v => v.code !== 'ADMIN');
 
-            const rankingStats = sellersList.map(s => {
+            currentAdminRankingStats = sellersList.map(s => {
                 const sOrders = adminOrdersCache.filter(o => o.seller_code === s.code && o.status !== 'cancelado');
                 const sConfirmed = sOrders.filter(o => o.status === 'concluido');
                 const confirmedVal = sConfirmed.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
@@ -1656,23 +1833,44 @@ ${itemsLines}
                 };
             }).sort((a, b) => b.confirmedVal - a.confirmedVal || b.grossVal - a.grossVal);
 
-            rankingBody.innerHTML = rankingStats.map(r => `
-                <tr>
-                    <td>
-                        <strong>${r.seller.name}</strong>
-                        <div style="font-size:11px; color:var(--text-muted);">#${r.seller.code}</div>
-                    </td>
-                    <td><strong>${r.totalCount}</strong></td>
-                    <td><span style="color:var(--success); font-weight:800;">${r.confirmedCount}</span></td>
-                    <td><strong style="color:var(--primary);">${formatCurrency(r.confirmedVal)}</strong></td>
-                    <td>${formatCurrency(r.grossVal)}</td>
-                    <td>
-                        <button class="btn-order-act" onclick="filterBySellerInAdmin('${r.seller.code}')">
-                            🔍 Ver Pedidos
-                        </button>
-                    </td>
-                </tr>
-            `).join('');
+            rankingBody.innerHTML = currentAdminRankingStats.map(r => {
+                const pct = getSellerCommPct(r.seller.code);
+                const commVal = r.confirmedVal * (pct / 100);
+                return `
+                    <tr>
+                        <td>
+                            <strong>${r.seller.name}</strong>
+                            <div style="font-size:11px; color:var(--text-muted);">#${r.seller.code}</div>
+                        </td>
+                        <td><strong>${r.totalCount}</strong></td>
+                        <td><span style="color:var(--success); font-weight:800;">${r.confirmedCount}</span></td>
+                        <td><strong style="color:var(--primary);">${formatCurrency(r.confirmedVal)}</strong></td>
+                        <td>
+                            <div class="comm-input-wrap">
+                                <input type="number" class="comm-input-num" min="0" max="100" step="0.5" value="${pct}" oninput="onCommissionPctInput('${r.seller.code}', this.value)">
+                                <span style="font-size:12px; font-weight:800; color:var(--text-muted);">%</span>
+                            </div>
+                        </td>
+                        <td>
+                            <span class="comm-payout-badge" id="comm-val-${r.seller.code}">
+                                ${formatCurrency(commVal)}
+                            </span>
+                        </td>
+                        <td>
+                            <div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">
+                                <button class="btn-order-act" title="Ver lista de pedidos deste vendedor" onclick="filterBySellerInAdmin('${r.seller.code}')">
+                                    🔍 Pedidos
+                                </button>
+                                <button class="btn-order-act btn-act-whatsapp-comm" title="Enviar fechamento de comissão no WhatsApp do vendedor" onclick="sendCommissionSummaryToWhatsApp('${r.seller.code}')">
+                                    📲 Fechamento WhatsApp
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+
+            updateTotalCommissionsSummary();
 
             // 2. Filtrar Pedidos para Exibição
             const filteredOrders = filterSeller === 'ALL'
