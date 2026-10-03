@@ -1348,8 +1348,13 @@ function renderCartDrawerItems() {
             checkoutBtn.style.opacity = "0.5";
             checkoutBtn.style.cursor = "not-allowed";
         }
+        const clearBtn = document.getElementById("btn-clear-cart");
+        if (clearBtn) clearBtn.style.display = "none";
         return;
     }
+
+    const clearBtn = document.getElementById("btn-clear-cart");
+    if (clearBtn) clearBtn.style.display = "inline-flex";
 
     if (fulfillmentSection) fulfillmentSection.style.display = "block";
     if (paymentSection) paymentSection.style.display = "block";
@@ -1395,6 +1400,27 @@ function renderCartDrawerItems() {
 
     // Renderiza sugestões inteligentes para aumentar o ticket médio
     renderCartRecommendations();
+}
+
+// --- FUNÇÃO PARA ESVAZIAR O CARRINHO DE COMPRAS ---
+function confirmClearCart() {
+    const { totalCount } = getCartStats();
+    if (totalCount === 0) return;
+
+    if (confirm("Deseja realmente esvaziar todo o seu carrinho de compras?")) {
+        clearCart();
+    }
+}
+
+function clearCart() {
+    cart = {};
+    saveCart();
+    updateCartUI();
+    renderCartDrawerItems();
+    if (typeof renderProducts === "function") {
+        renderProducts();
+    }
+    showToast("🗑️ Carrinho esvaziado com sucesso!");
 }
 
 // --- SUGESTÕES INTELIGENTES NO CARRINHO (AUMENTO DE TICKET MÉDIO) ---

@@ -316,7 +316,12 @@
     <div class="modal-overlay" id="cart-modal" onclick="if(event.target === this) closeCartDrawer()">
         <div class="cart-drawer">
             <div class="drawer-header">
-                <h3 class="drawer-title">🛒 Seu Carrinho de Compras</h3>
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <h3 class="drawer-title" style="margin: 0;">🛒 Seu Carrinho</h3>
+                    <button id="btn-clear-cart" class="btn-clear-cart" onclick="confirmClearCart()" title="Limpar todos os produtos do carrinho" style="display: none;">
+                        🗑️ Limpar
+                    </button>
+                </div>
                 <button class="btn-close-drawer" onclick="closeCartDrawer()" title="Fechar carrinho">✕</button>
             </div>
             
