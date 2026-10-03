@@ -731,7 +731,7 @@
         <p class="portal-subtitle">Agro Salinas • Controle Mensal de Pedidos e Vendedores</p>
     </div>
 
-    <!-- TELA 1: LOGIN / DEFINIÇÃO DE PIN -->
+    <!-- TELA 1: LOGIN PRIVADO POR USUÁRIO + PIN -->
     <div class="card-container" id="screen-login">
         <div class="alert-box alert-error" id="login-error"></div>
         <div class="alert-box alert-success" id="login-success"></div>
@@ -740,33 +740,31 @@
             Acessar Meu Painel
         </h2>
         <p id="login-desc" style="font-size: 13px; color: var(--text-muted); margin-bottom: 18px;">
-            Selecione seu perfil e digite seu PIN de 4 dígitos.
+            Digite seu usuário de acesso e seu PIN de 4 dígitos.
         </p>
 
         <div class="form-group">
-            <label class="form-label">Quem é você?</label>
-            <select class="form-select" id="select-seller" onchange="onSellerSelectChange()">
-                <option value="">Carregando vendedores...</option>
-            </select>
+            <label class="form-label" for="input-username">Seu Usuário:</label>
+            <input type="text" class="form-input" id="input-username" placeholder="Digite seu usuário..." autocomplete="username" autocapitalize="none" spellcheck="false" oninput="onUsernameInput()">
         </div>
 
         <div class="form-group" id="pin-container">
             <label class="form-label" id="pin-label">Seu PIN (4 dígitos):</label>
             <div class="pin-inputs">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p1" onkeyup="handlePinInput(this, 'p2', '')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p2" onkeyup="handlePinInput(this, 'p3', 'p1')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p3" onkeyup="handlePinInput(this, 'p4', 'p2')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p4" onkeyup="handlePinInput(this, '', 'p3')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p1" onkeyup="handlePinInput(this, 'p2', '', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p2" onkeyup="handlePinInput(this, 'p3', 'p1', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p3" onkeyup="handlePinInput(this, 'p4', 'p2', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="p4" onkeyup="handlePinInput(this, '', 'p3', event)">
             </div>
         </div>
 
         <div class="form-group" id="pin-confirm-container" style="display: none;">
             <label class="form-label">Confirme o PIN (4 dígitos):</label>
             <div class="pin-inputs">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c1" onkeyup="handlePinInput(this, 'c2', '')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c2" onkeyup="handlePinInput(this, 'c3', 'c1')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c3" onkeyup="handlePinInput(this, 'c4', 'c2')">
-                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c4" onkeyup="handlePinInput(this, '', 'c3')">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c1" onkeyup="handlePinInput(this, 'c2', '', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c2" onkeyup="handlePinInput(this, 'c3', 'c1', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c3" onkeyup="handlePinInput(this, 'c4', 'c2', event)">
+                <input type="password" inputmode="numeric" maxlength="1" class="pin-digit" id="c4" onkeyup="handlePinInput(this, '', 'c3', event)">
             </div>
         </div>
 
@@ -774,7 +772,7 @@
             <span>Entrar no Painel</span> ➔
         </button>
 
-        <a class="link-text" id="link-forgot-pin" onclick="handleForgotPin()" style="display: none;">Esqueci meu PIN</a>
+        <a class="link-text" id="link-forgot-pin" onclick="handleForgotPin()" style="display: block;">Esqueci meu PIN</a>
         <a class="link-text" href="index.html" style="color: var(--text-muted); margin-top: 10px;">← Voltar ao Catálogo</a>
     </div>
 
@@ -957,7 +955,7 @@
                         <input type="text" id="new-seller-name" class="form-input" placeholder="Ex: Marcos Silva">
                     </div>
                     <div>
-                        <label class="form-label">Código do Link (Sem espaço) *</label>
+                        <label class="form-label">Usuário de Login / Código *</label>
                         <input type="text" id="new-seller-code" class="form-input" placeholder="Ex: MARCOS">
                     </div>
                     <div>
@@ -974,7 +972,7 @@
                 <table class="ranking-table">
                     <thead>
                         <tr>
-                            <th>Nome / Código</th>
+                            <th>Nome / Usuário</th>
                             <th>WhatsApp</th>
                             <th>PIN</th>
                             <th>Status</th>
@@ -991,7 +989,7 @@
 
     <div class="toast-notify" id="toast">Aviso</div>
 
-    <script src="vendedores.js?v=4.0"></script>
+    <script src="vendedores.js?v=4.1"></script>
     <script>
         let currentLoggedSeller = null;
         let isCreatingPinMode = false;
@@ -1001,7 +999,6 @@
         document.addEventListener('DOMContentLoaded', async () => {
             initDefaultMonths();
             await syncSellersFromSupabase();
-            populateSellerOptions();
             checkExistingSession();
             handleUrlActions();
         });
@@ -1037,21 +1034,43 @@
             return `${dia}/${mes}/${ano} às ${hora}:${min}`;
         }
 
+        function normalizeStr(str) {
+            return (str || '')
+                .toString()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim()
+                .toUpperCase();
+        }
+
+        // Busca discreta do usuário digitado (suporta código ou nome/apelido)
+        function findUserByInput(rawInput) {
+            const clean = normalizeStr(rawInput);
+            if (!clean) return null;
+
+            // Aliases convenientes para os gestores e vendedores
+            const aliasMap = {
+                'GREGORY': 'GREG',
+                'GREG': 'GREG',
+                'WILLIAM': 'ADMIN',
+                'MEIRE': 'ADMIN',
+                'LOJA': 'ADMIN',
+                'AGROSALINAS': 'ADMIN',
+                'ADMIN': 'ADMIN'
+            };
+
+            const targetCode = aliasMap[clean] || clean;
+
+            return VENDEDORES.find(v => {
+                if (v.active === false) return false;
+                if (normalizeStr(v.code) === targetCode) return true;
+                if (normalizeStr(v.name) === clean) return true;
+                return false;
+            }) || null;
+        }
+
         function populateSellerOptions() {
-            const sel = document.getElementById('select-seller');
-            if (!sel || typeof VENDEDORES === 'undefined') return;
-
-            const currentVal = sel.value;
-            sel.innerHTML = '<option value="">-- Selecione seu nome --</option>';
-
-            VENDEDORES.filter(v => v.active !== false).forEach(v => {
-                const opt = document.createElement('option');
-                opt.value = v.code;
-                opt.textContent = v.name + (v.role === 'admin' ? ' ⭐' : '');
-                sel.appendChild(opt);
-            });
-
-            if (currentVal) sel.value = currentVal;
+            // Mantido por compatibilidade (não exibe lista pública no login)
         }
 
         function handleUrlActions() {
@@ -1062,60 +1081,61 @@
                 localStorage.removeItem(`pin_${clean}`);
                 localStorage.removeItem('logged_seller_code');
                 showToast('Crie seu novo PIN de 4 dígitos.');
-                const sel = document.getElementById('select-seller');
-                if (sel) {
-                    sel.value = clean;
-                    onSellerSelectChange();
+                const inputEl = document.getElementById('input-username');
+                if (inputEl) {
+                    inputEl.value = clean;
+                    onUsernameInput();
                 }
             }
         }
 
-        function onSellerSelectChange() {
-            const sel = document.getElementById('select-seller');
-            const code = sel.value;
+        function onUsernameInput() {
+            const inputEl = document.getElementById('input-username');
+            const rawVal = inputEl ? inputEl.value : '';
             const errBox = document.getElementById('login-error');
             errBox.style.display = 'none';
 
-            if (!code) {
-                resetPinFields();
-                return;
-            }
-
-            const sellerObj = VENDEDORES.find(v => v.code === code);
-            const cloudPin = sellerObj && sellerObj.pin ? sellerObj.pin : null;
-            const localPin = localStorage.getItem(`pin_${code}`);
-            const effectivePin = cloudPin || localPin;
-
+            const sellerObj = findUserByInput(rawVal);
             const titleEl = document.getElementById('login-title');
             const descEl = document.getElementById('login-desc');
             const pinLabel = document.getElementById('pin-label');
             const confirmCont = document.getElementById('pin-confirm-container');
-            const forgotLink = document.getElementById('link-forgot-pin');
             const btnSubmit = document.getElementById('btn-submit-auth');
 
-            if (!effectivePin) {
-                isCreatingPinMode = true;
-                titleEl.textContent = 'Criar seu PIN Pessoal';
-                descEl.textContent = 'Primeiro acesso! Defina um PIN de 4 dígitos para proteger seu painel:';
-                pinLabel.textContent = 'Crie seu PIN de 4 dígitos:';
-                confirmCont.style.display = 'block';
-                forgotLink.style.display = 'none';
-                btnSubmit.innerHTML = '<span>Salvar PIN e Acessar</span> ➔';
-            } else {
-                isCreatingPinMode = false;
-                titleEl.textContent = 'Acessar Meu Painel';
-                descEl.textContent = 'Digite seu PIN de 4 dígitos para entrar:';
-                pinLabel.textContent = 'Seu PIN (4 dígitos):';
-                confirmCont.style.display = 'none';
-                forgotLink.style.display = 'block';
-                btnSubmit.innerHTML = '<span>Entrar no Painel</span> ➔';
+            if (sellerObj) {
+                const cloudPin = sellerObj.pin ? sellerObj.pin : null;
+                const localPin = localStorage.getItem(`pin_${sellerObj.code}`);
+                const effectivePin = cloudPin || localPin;
+
+                if (!effectivePin) {
+                    isCreatingPinMode = true;
+                    titleEl.textContent = 'Criar seu PIN Pessoal';
+                    descEl.textContent = 'Primeiro acesso! Defina um PIN de 4 dígitos para proteger seu painel:';
+                    pinLabel.textContent = 'Crie seu PIN de 4 dígitos:';
+                    confirmCont.style.display = 'block';
+                    btnSubmit.innerHTML = '<span>Salvar PIN e Acessar</span> ➔';
+                    return;
+                }
             }
 
-            resetPinFields();
-            document.getElementById('p1').focus();
+            isCreatingPinMode = false;
+            titleEl.textContent = 'Acessar Meu Painel';
+            descEl.textContent = 'Digite seu usuário de acesso e seu PIN de 4 dígitos.';
+            pinLabel.textContent = 'Seu PIN (4 dígitos):';
+            confirmCont.style.display = 'none';
+            btnSubmit.innerHTML = '<span>Entrar no Painel</span> ➔';
         }
 
-        function handlePinInput(current, nextId, prevId) {
+        function handlePinInput(current, nextId, prevId, evt) {
+            if (evt && evt.key === 'Backspace' && current.value.length === 0 && prevId) {
+                const prevEl = document.getElementById(prevId);
+                if (prevEl) prevEl.focus();
+                return;
+            }
+            if (evt && evt.key === 'Enter') {
+                handleAuthSubmit();
+                return;
+            }
             if (current.value.length >= 1) {
                 current.value = current.value.slice(0, 1);
                 if (nextId) {
@@ -1145,14 +1165,23 @@
             const errBox = document.getElementById('login-error');
             errBox.style.display = 'none';
 
-            const sel = document.getElementById('select-seller');
-            const code = sel.value;
-            if (!code) {
-                errBox.textContent = 'Por favor, selecione seu nome.';
+            const inputEl = document.getElementById('input-username');
+            const rawUser = inputEl ? inputEl.value.trim() : '';
+            if (!rawUser) {
+                errBox.textContent = 'Por favor, digite seu usuário de acesso.';
+                errBox.style.display = 'block';
+                if (inputEl) inputEl.focus();
+                return;
+            }
+
+            const sellerObj = findUserByInput(rawUser);
+            if (!sellerObj) {
+                errBox.textContent = 'Usuário ou PIN incorreto. Verifique seus dados.';
                 errBox.style.display = 'block';
                 return;
             }
 
+            const code = sellerObj.code;
             const enteredPin = getEnteredPin('p');
             if (enteredPin.length < 4) {
                 errBox.textContent = 'Digite os 4 dígitos do seu PIN.';
@@ -1160,16 +1189,17 @@
                 return;
             }
 
-            const sellerObj = VENDEDORES.find(v => v.code === code);
-            const cloudPin = sellerObj && sellerObj.pin ? sellerObj.pin : null;
+            const cloudPin = sellerObj.pin ? sellerObj.pin : null;
             const localPin = localStorage.getItem(`pin_${code}`);
             const effectivePin = cloudPin || localPin;
 
-            if (isCreatingPinMode) {
+            if (!effectivePin || isCreatingPinMode) {
                 const confirmPin = getEnteredPin('c');
                 if (confirmPin.length < 4) {
-                    errBox.textContent = 'Por favor, confirme os 4 dígitos do PIN.';
+                    onUsernameInput();
+                    errBox.textContent = 'Primeiro acesso detectado! Confirme os 4 dígitos do seu novo PIN abaixo.';
                     errBox.style.display = 'block';
+                    document.getElementById('c1').focus();
                     return;
                 }
                 if (enteredPin !== confirmPin) {
@@ -1184,14 +1214,13 @@
                 loginSuccess(code);
             } else {
                 if (enteredPin !== effectivePin) {
-                    errBox.textContent = 'PIN incorreto. Tente novamente ou clique em Esqueci meu PIN.';
+                    errBox.textContent = 'Usuário ou PIN incorreto. Tente novamente.';
                     errBox.style.display = 'block';
                     resetPinFields();
                     document.getElementById('p1').focus();
                     return;
                 }
 
-                // Se o PIN estava apenas no localStorage e ainda não na nuvem, sincroniza na nuvem
                 if (!cloudPin && localPin) {
                     saveSellerPinToSupabase(code, localPin);
                 }
@@ -1202,12 +1231,12 @@
         }
 
         function handleForgotPin() {
-            const sel = document.getElementById('select-seller');
-            const code = sel.value;
-            const seller = VENDEDORES.find(v => v.code === code);
-            const nome = seller ? seller.name : 'Vendedor';
+            const inputEl = document.getElementById('input-username');
+            const rawUser = inputEl ? inputEl.value.trim() : '';
+            const seller = findUserByInput(rawUser);
+            const identificacao = seller ? `${seller.name} (#${seller.code})` : (rawUser || 'Vendedor');
 
-            const msg = 'Olá Grégory! Sou ' + nome + ' (#' + code + '). Esqueci meu PIN no Portal do Vendedor da Agro Salinas. Poderia redefinir meu PIN no painel Admin?';
+            const msg = 'Olá Grégory! Sou ' + identificacao + '. Esqueci meu PIN no Portal do Vendedor da Agro Salinas. Poderia redefinir meu PIN no painel Admin?';
             const gregWhatsapp = '5551982199486';
             const url = 'https://wa.me/' + gregWhatsapp + '?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
@@ -1276,7 +1305,10 @@
             currentLoggedSeller = null;
             document.getElementById('screen-dashboard').style.display = 'none';
             document.getElementById('screen-login').style.display = 'block';
+            const inputEl = document.getElementById('input-username');
+            if (inputEl) inputEl.value = '';
             resetPinFields();
+            onUsernameInput();
             showToast('Você saiu do painel.');
         }
 
