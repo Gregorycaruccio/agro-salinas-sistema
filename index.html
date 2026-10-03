@@ -332,6 +332,20 @@
 
                 <!-- OPÇÃO DE RECEBIMENTO: ENTREGA OU RETIRADA -->
                 <div class="checkout-fulfillment-section" id="checkout-fulfillment-section">
+                    <div class="customer-ident-box" style="margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed #CBD5E1;">
+                        <label class="checkout-section-label">👤 Identificação do Cliente</label>
+                        <div class="form-row-compact" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px;">
+                            <div class="form-group-compact">
+                                <label for="checkout-customer-name">Seu Nome *</label>
+                                <input type="text" id="checkout-customer-name" placeholder="Ex: Maria Silva" autocomplete="name">
+                            </div>
+                            <div class="form-group-compact">
+                                <label for="checkout-customer-phone">Seu WhatsApp (opcional)</label>
+                                <input type="tel" id="checkout-customer-phone" placeholder="Ex: (51) 99999-9999" autocomplete="tel">
+                            </div>
+                        </div>
+                    </div>
+
                     <label class="checkout-section-label">📍 Como deseja receber seu pedido?</label>
                     <div class="fulfillment-options-grid">
                         <label class="fulfillment-option">
@@ -449,8 +463,8 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="vendedores.js?v=3.7"></script>
-    <script src="products.js?v=3.7"></script>
-    <script src="app.js?v=3.7"></script>
+    <script src="vendedores.js?v=4.0"></script>
+    <script src="products.js?v=4.0"></script>
+    <script src="app.js?v=4.0"></script>
 </body>
 </html>

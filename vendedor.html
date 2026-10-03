@@ -4,22 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
-    <title>Portal do Vendedor | Agro Salinas</title>
+    <title>Portal do Vendedor & Gestão | Agro Salinas</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1B432E;
+            --primary-dark: #123020;
             --primary-light: #2D6A4F;
             --accent: #52B788;
             --accent-soft: #D8F3DC;
+            --orange: #F35B16;
             --bg: #F4F6F8;
             --card-bg: #FFFFFF;
             --text-main: #1A202C;
-            --text-muted: #718096;
+            --text-muted: #64748B;
             --border: #E2E8F0;
             --danger: #E53E3E;
+            --warning: #D97706;
+            --success: #16A34A;
             --radius: 14px;
         }
 
@@ -38,21 +42,21 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px 14px 40px;
+            padding: 18px 12px 50px;
         }
 
         .header-brand {
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 24px;
+            margin-bottom: 18px;
             text-align: center;
         }
 
         .header-brand img {
-            max-height: 60px;
+            max-height: 56px;
             object-fit: contain;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .portal-title {
@@ -63,7 +67,7 @@
         }
 
         .portal-subtitle {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
             margin-top: 2px;
         }
@@ -75,17 +79,28 @@
             border-radius: var(--radius);
             box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             border: 1px solid var(--border);
-            padding: 24px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-container {
+            width: 100%;
+            max-width: 780px;
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid var(--border);
+            padding: 20px;
             margin-bottom: 20px;
         }
 
         .form-group {
-            margin-bottom: 16px;
+            margin-bottom: 14px;
         }
 
         .form-label {
             display: block;
-            font-size: 12px;
+            font-size: 11.5px;
             font-weight: 700;
             color: var(--text-muted);
             text-transform: uppercase;
@@ -93,12 +108,12 @@
             margin-bottom: 6px;
         }
 
-        .form-select, .form-input, .form-textarea {
+        .form-select, .form-input {
             width: 100%;
-            padding: 12px 14px;
+            padding: 11px 13px;
             border: 1.5px solid var(--border);
             border-radius: 10px;
-            font-size: 15px;
+            font-size: 14px;
             font-weight: 600;
             color: var(--text-main);
             background: #FAFAFA;
@@ -106,7 +121,7 @@
             transition: all 0.2s;
         }
 
-        .form-select:focus, .form-input:focus, .form-textarea:focus {
+        .form-select:focus, .form-input:focus {
             border-color: var(--primary);
             background: #FFF;
             box-shadow: 0 0 0 3px rgba(27, 67, 46, 0.1);
@@ -141,19 +156,19 @@
 
         .btn-primary {
             width: 100%;
-            padding: 14px;
+            padding: 13px;
             background: var(--primary);
             color: white;
             border: none;
             border-radius: 12px;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 700;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
-            box-shadow: 0 4px 12px rgba(27, 67, 46, 0.25);
+            box-shadow: 0 4px 12px rgba(27, 67, 46, 0.22);
             transition: all 0.2s;
         }
 
@@ -194,13 +209,16 @@
             width: 100%;
         }
 
+        /* HEADER DO PAINEL */
         .seller-badge-bar {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding-bottom: 16px;
-            margin-bottom: 16px;
+            padding-bottom: 14px;
+            margin-bottom: 14px;
             border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         .seller-welcome {
@@ -210,15 +228,15 @@
         }
 
         .avatar-circle {
-            width: 44px;
-            height: 44px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: var(--accent-soft);
             color: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 800;
         }
 
@@ -234,23 +252,373 @@
         }
 
         .btn-logout {
-            background: none;
+            background: #F8FAFC;
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 6px 12px;
             font-size: 12px;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--text-muted);
             cursor: pointer;
         }
 
-        .panel-section-title {
-            font-size: 14px;
-            font-weight: 800;
-            color: var(--primary);
-            margin: 18px 0 10px;
+        .btn-logout:hover {
+            background: #FEE2E2;
+            color: #DC2626;
+            border-color: #FCA5A5;
+        }
+
+        /* ABAS DE NAVEGAÇÃO */
+        .nav-tabs {
+            display: flex;
+            gap: 6px;
+            background: #F1F5F9;
+            padding: 5px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 10px 12px;
+            border: none;
+            background: transparent;
+            border-radius: 9px;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
             display: flex;
             align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+        }
+
+        .nav-tab.active {
+            background: var(--primary);
+            color: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(27, 67, 46, 0.2);
+        }
+
+        .tab-pane {
+            display: none;
+        }
+
+        .tab-pane.active {
+            display: block;
+        }
+
+        /* FILTROS E CARDS DE MÉTRICAS */
+        .filter-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: space-between;
+            background: #F8FAFC;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter-toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .month-input {
+            padding: 8px 12px;
+            border: 1.5px solid var(--border);
+            border-radius: 8px;
+            font-size: 13.5px;
+            font-weight: 700;
+            color: var(--primary);
+            background: white;
+            outline: none;
+        }
+
+        .btn-refresh {
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: white;
+            color: var(--primary);
+            font-size: 12.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .btn-refresh:hover {
+            background: var(--accent-soft);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .stat-card {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .stat-card.highlight {
+            background: linear-gradient(135deg, #1B432E 0%, #2D6A4F 100%);
+            color: white;
+            border: none;
+        }
+
+        .stat-label {
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .stat-card.highlight .stat-label {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .stat-value {
+            font-size: 21px;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .stat-card.highlight .stat-value {
+            color: #FFFFFF;
+        }
+
+        .stat-sub {
+            font-size: 11.5px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .stat-card.highlight .stat-sub {
+            color: #D8F3DC;
+        }
+
+        /* LISTA DE PEDIDOS */
+        .orders-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .order-card {
+            background: #FFFFFF;
+            border: 1.5px solid var(--border);
+            border-radius: 12px;
+            padding: 14px;
+            transition: all 0.2s;
+        }
+
+        .order-card.status-concluido {
+            border-left: 5px solid var(--success);
+        }
+
+        .order-card.status-pendente {
+            border-left: 5px solid var(--warning);
+        }
+
+        .order-card.status-cancelado {
+            border-left: 5px solid var(--danger);
+            opacity: 0.72;
+        }
+
+        .order-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .order-id-date {
+            font-size: 12px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .order-id-date strong {
+            color: var(--primary);
+            font-size: 13px;
+        }
+
+        .status-badge {
+            padding: 3px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .status-badge.pendente {
+            background: #FEF3C7;
+            color: #B45309;
+        }
+
+        .status-badge.concluido {
+            background: #DCFCE7;
+            color: #15803D;
+        }
+
+        .status-badge.cancelado {
+            background: #FEE2E2;
+            color: #B91C1C;
+        }
+
+        .order-customer-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px 14px;
+            font-size: 13px;
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .order-items-box {
+            background: #F8FAFC;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 12.5px;
+            line-height: 1.5;
+            color: #334155;
+            margin-bottom: 10px;
+        }
+
+        .order-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .order-total {
+            font-size: 15px;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .order-actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .btn-order-act {
+            padding: 6px 10px;
+            border-radius: 7px;
+            border: 1px solid var(--border);
+            font-size: 11.5px;
+            font-weight: 700;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: white;
+            transition: all 0.15s;
+        }
+
+        .btn-act-confirm {
+            background: #DCFCE7;
+            color: #166534;
+            border-color: #86EFAC;
+        }
+
+        .btn-act-confirm:hover {
+            background: #BBF7D0;
+        }
+
+        .btn-act-forward {
+            background: #EFF6FF;
+            color: #1E40AF;
+            border-color: #BFDBFE;
+        }
+
+        .btn-act-forward:hover {
+            background: #DBEAFE;
+        }
+
+        .btn-act-cancel {
+            background: #FFF5F5;
+            color: #991B1B;
+            border-color: #FECACA;
+        }
+
+        .btn-act-cancel:hover {
+            background: #FEE2E2;
+        }
+
+        /* TABELA DE RANKING DE VENDEDORES (ADMIN) */
+        .ranking-table-wrap {
+            overflow-x: auto;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin-bottom: 20px;
+        }
+
+        .ranking-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+            text-align: left;
+        }
+
+        .ranking-table th {
+            background: #F1F5F9;
+            color: var(--text-muted);
+            font-weight: 800;
+            font-size: 11px;
+            text-transform: uppercase;
+            padding: 10px 12px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .ranking-table td {
+            padding: 11px 12px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: middle;
+        }
+
+        .ranking-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ranking-table tr:hover td {
+            background: #F8FAFC;
+        }
+
+        /* COMPARTILHAMENTO DE LINK */
+        .panel-section-title {
+            font-size: 14.5px;
+            font-weight: 800;
+            color: var(--primary);
+            margin: 14px 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 6px;
         }
 
@@ -261,9 +629,9 @@
             padding: 14px;
             margin-bottom: 12px;
             word-break: break-all;
-            font-size: 13px;
+            font-size: 13.5px;
             color: var(--primary);
-            font-weight: 600;
+            font-weight: 700;
             line-height: 1.4;
         }
 
@@ -297,12 +665,29 @@
             color: white;
         }
 
-        .forward-card {
+        .empty-state {
+            text-align: center;
+            padding: 30px 16px;
+            color: var(--text-muted);
+            background: #F8FAFC;
+            border-radius: 12px;
+            border: 1px dashed var(--border);
+            font-size: 13.5px;
+        }
+
+        .new-seller-box {
             background: #F8FAFC;
             border: 1px solid var(--border);
             border-radius: 12px;
             padding: 16px;
-            margin-top: 14px;
+            margin-top: 16px;
+        }
+
+        .new-seller-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 10px;
+            margin-bottom: 12px;
         }
 
         .toast-notify {
@@ -314,7 +699,7 @@
             color: white;
             padding: 12px 24px;
             border-radius: 30px;
-            font-size: 14px;
+            font-size: 13.5px;
             font-weight: 600;
             box-shadow: 0 6px 20px rgba(0,0,0,0.25);
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -327,14 +712,23 @@
             transform: translateX(-50%) translateY(0);
             opacity: 1;
         }
+
+        @media (max-width: 560px) {
+            .dashboard-container {
+                padding: 14px;
+            }
+            .stat-value {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="header-brand">
         <img src="assets/logo.png" alt="Agro Salinas" onerror="this.style.display='none'">
-        <h1 class="portal-title">Portal do Vendedor</h1>
-        <p class="portal-subtitle">Agro Salinas • Área Restrita e Segura</p>
+        <h1 class="portal-title">Portal de Vendas & Gestão</h1>
+        <p class="portal-subtitle">Agro Salinas • Controle Mensal de Pedidos e Vendedores</p>
     </div>
 
     <!-- TELA 1: LOGIN / DEFINIÇÃO DE PIN -->
@@ -352,7 +746,7 @@
         <div class="form-group">
             <label class="form-label">Quem é você?</label>
             <select class="form-select" id="select-seller" onchange="onSellerSelectChange()">
-                <option value="">-- Selecione seu nome --</option>
+                <option value="">Carregando vendedores...</option>
             </select>
         </div>
 
@@ -384,74 +778,280 @@
         <a class="link-text" href="index.html" style="color: var(--text-muted); margin-top: 10px;">← Voltar ao Catálogo</a>
     </div>
 
-    <!-- TELA 2: PAINEL DO VENDEDOR LOGADO -->
-    <div class="card-container" id="screen-dashboard" style="display: none;">
+    <!-- TELA 2: PAINEL DO VENDEDOR & ADMIN -->
+    <div class="dashboard-container" id="screen-dashboard" style="display: none;">
+        <!-- Topo do Usuário Logado -->
         <div class="seller-badge-bar">
             <div class="seller-welcome">
                 <div class="avatar-circle" id="dash-avatar">G</div>
                 <div class="seller-details">
                     <h3 id="dash-name">Grégory</h3>
-                    <p>Consultor Oficial <span id="dash-code" style="color: var(--accent); font-weight: 700;">#GREG</span></p>
+                    <p><span id="dash-role-label">Consultor Oficial</span> <span id="dash-code" style="color: var(--primary); font-weight: 800;">#GREG</span></p>
                 </div>
             </div>
-            <button class="btn-logout" onclick="logoutSeller()">Sair</button>
+            <div style="display: flex; gap: 8px; align-items: center;">
+                <a href="index.html" class="btn-logout" style="text-decoration: none; color: var(--primary);">🛍️ Catálogo</a>
+                <button class="btn-logout" onclick="logoutSeller()">Sair</button>
+            </div>
         </div>
 
-        <div class="panel-section-title">
-            <span>🔗</span> Seu Link Exclusivo de Vendas
-        </div>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 10px;">
-            Envie este link para seus clientes. Todos os pedidos enviados por eles cairão <strong>diretamente no seu WhatsApp</strong> para você conferir e repassar à Agropecuária!
-        </p>
-
-        <div class="link-share-box" id="dash-exclusive-link">
-            Carregando...
-        </div>
-
-        <div class="action-grid">
-            <button class="btn-action-share btn-copy-url" onclick="copyMyLink()">
-                📋 Copiar Link
+        <!-- Abas de Navegação -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" id="tab-btn-sales" onclick="switchTab('sales')">
+                📊 Minhas Vendas
             </button>
-            <button class="btn-action-share btn-whatsapp-share" onclick="shareOnWhatsApp()">
-                💬 Mandar no Zap
+            <button class="nav-tab" id="tab-btn-link" onclick="switchTab('link')">
+                🔗 Meu Link
+            </button>
+            <button class="nav-tab" id="tab-btn-admin" onclick="switchTab('admin')" style="display: none;">
+                👑 Visão Geral da Loja
             </button>
         </div>
 
-        <a class="link-text" href="index.html" style="color: var(--primary); margin-top: 20px; display: block;">
-            🛍️ Ver Catálogo como Cliente
-        </a>
+        <!-- ABA 1: MINHAS VENDAS & HISTÓRICO MENSAL -->
+        <div class="tab-pane active" id="tab-sales">
+            <div class="filter-toolbar">
+                <div class="filter-toolbar-left">
+                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">📅 Mês:</label>
+                    <input type="month" id="seller-month-picker" class="month-input" onchange="loadMyOrders()">
+                </div>
+                <button class="btn-refresh" onclick="loadMyOrders()">
+                    🔄 Atualizar
+                </button>
+            </div>
+
+            <!-- Resumo Mensal do Vendedor -->
+            <div class="stats-grid">
+                <div class="stat-card highlight">
+                    <span class="stat-label">Vendas Confirmadas</span>
+                    <span class="stat-value" id="my-stat-confirmed-total">R$ 0,00</span>
+                    <span class="stat-sub" id="my-stat-confirmed-count">0 pedidos concluídos</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Total de Pedidos no Mês</span>
+                    <span class="stat-value" id="my-stat-all-count">0</span>
+                    <span class="stat-sub" id="my-stat-pending-info">0 aguardando confirmação</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Volume Total Gerado</span>
+                    <span class="stat-value" id="my-stat-all-total">R$ 0,00</span>
+                    <span class="stat-sub">Soma de pendentes + concluídos</span>
+                </div>
+            </div>
+
+            <div class="panel-section-title">
+                <span>📜 Histórico de Pedidos do Mês</span>
+                <span style="font-size: 11.5px; font-weight: 600; color: var(--text-muted);">Confirme ou repasse p/ a loja</span>
+            </div>
+
+            <div class="orders-list" id="my-orders-list">
+                <div class="empty-state">Carregando histórico de pedidos...</div>
+            </div>
+        </div>
+
+        <!-- ABA 2: MEU LINK EXCLUSIVO DE VENDAS -->
+        <div class="tab-pane" id="tab-link">
+            <div class="panel-section-title">
+                <span>🔗 Seu Link Exclusivo de Vendas</span>
+            </div>
+            <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+                Envie este link para seus clientes. Todo pedido feito por ele fica <strong>registrado automaticamente no seu histórico mensal</strong> e cai direto no seu WhatsApp para você conferir e repassar à Agropecuária!
+            </p>
+
+            <div class="link-share-box" id="dash-exclusive-link">
+                Carregando...
+            </div>
+
+            <div class="action-grid">
+                <button class="btn-action-share btn-copy-url" onclick="copyMyLink()">
+                    📋 Copiar Link
+                </button>
+                <button class="btn-action-share btn-whatsapp-share" onclick="shareOnWhatsApp()">
+                    💬 Mandar no Zap
+                </button>
+            </div>
+        </div>
+
+        <!-- ABA 3: PAINEL ADMINISTRATIVO (WILLIAM, MEIRE & GRÉGORY) -->
+        <div class="tab-pane" id="tab-admin">
+            <div class="filter-toolbar">
+                <div class="filter-toolbar-left">
+                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted);">📅 Mês:</label>
+                    <input type="month" id="admin-month-picker" class="month-input" onchange="loadAdminDashboard()">
+
+                    <label style="font-size: 12px; font-weight: 700; color: var(--text-muted); margin-left: 6px;">👤 Vendedor:</label>
+                    <select id="admin-seller-filter" class="month-input" onchange="renderAdminOrdersAndStats()">
+                        <option value="ALL">Todos os Vendedores</option>
+                    </select>
+                </div>
+                <div style="display: flex; gap: 6px;">
+                    <button class="btn-refresh" onclick="exportAdminCsv()" title="Baixar planilha do mês">
+                        📥 Exportar Excel
+                    </button>
+                    <button class="btn-refresh" onclick="loadAdminDashboard()">
+                        🔄 Atualizar
+                    </button>
+                </div>
+            </div>
+
+            <!-- Métricas Gerais da Loja -->
+            <div class="stats-grid">
+                <div class="stat-card highlight">
+                    <span class="stat-label">Total Confirmado (Loja)</span>
+                    <span class="stat-value" id="adm-stat-confirmed-val">R$ 0,00</span>
+                    <span class="stat-sub" id="adm-stat-confirmed-cnt">0 vendas concluídas</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Pedidos Recebidos</span>
+                    <span class="stat-value" id="adm-stat-total-cnt">0</span>
+                    <span class="stat-sub" id="adm-stat-pending-cnt">0 pendentes</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Volume Bruto no Mês</span>
+                    <span class="stat-value" id="adm-stat-gross-val">R$ 0,00</span>
+                    <span class="stat-sub">Concluídos + Pendentes</span>
+                </div>
+            </div>
+
+            <!-- Ranking de Desempenho por Vendedor -->
+            <div class="panel-section-title">
+                <span>🏆 Desempenho por Vendedor no Mês</span>
+            </div>
+            <div class="ranking-table-wrap">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Vendedor</th>
+                            <th>Pedidos</th>
+                            <th>Concluídos</th>
+                            <th>Total Confirmado</th>
+                            <th>Volume Total</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-ranking-tbody">
+                        <tr><td colspan="6" style="text-align:center;">Carregando...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Histórico Detalhado de Pedidos (Admin) -->
+            <div class="panel-section-title">
+                <span id="admin-orders-title">📦 Todos os Pedidos do Mês</span>
+            </div>
+            <div class="orders-list" id="admin-orders-list" style="margin-bottom: 26px;">
+                <div class="empty-state">Carregando pedidos...</div>
+            </div>
+
+            <!-- Gestão da Equipe de Vendedores (Cadastrar até 10, 20+ vendedores) -->
+            <div class="panel-section-title" style="border-top: 2px solid var(--border); padding-top: 18px;">
+                <span>👥 Equipe de Vendedores (Cadastro & PINs)</span>
+            </div>
+            <div class="new-seller-box">
+                <h4 style="font-size: 13.5px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">
+                    ➕ Cadastrar Novo Vendedor no Sistema
+                </h4>
+                <div class="new-seller-grid">
+                    <div>
+                        <label class="form-label">Nome do Vendedor *</label>
+                        <input type="text" id="new-seller-name" class="form-input" placeholder="Ex: Marcos Silva">
+                    </div>
+                    <div>
+                        <label class="form-label">Código do Link (Sem espaço) *</label>
+                        <input type="text" id="new-seller-code" class="form-input" placeholder="Ex: MARCOS">
+                    </div>
+                    <div>
+                        <label class="form-label">WhatsApp (Com DDD) *</label>
+                        <input type="tel" id="new-seller-phone" class="form-input" placeholder="Ex: 51999999999">
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="handleCreateNewSeller()" style="padding: 10px;">
+                    ➕ Salvar Novo Vendedor
+                </button>
+            </div>
+
+            <div class="ranking-table-wrap" style="margin-top: 14px;">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>Nome / Código</th>
+                            <th>WhatsApp</th>
+                            <th>PIN</th>
+                            <th>Status</th>
+                            <th>Gerenciar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-sellers-tbody">
+                        <tr><td colspan="5" style="text-align:center;">Carregando equipe...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
     <div class="toast-notify" id="toast">Aviso</div>
 
-    <script src="vendedores.js?v=3.7"></script>
+    <script src="vendedores.js?v=4.0"></script>
     <script>
         let currentLoggedSeller = null;
         let isCreatingPinMode = false;
+        let myOrdersCache = [];
+        let adminOrdersCache = [];
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            initDefaultMonths();
+            await syncSellersFromSupabase();
             populateSellerOptions();
             checkExistingSession();
             handleUrlActions();
         });
 
+        function initDefaultMonths() {
+            const now = new Date();
+            const ym = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0');
+            const m1 = document.getElementById('seller-month-picker');
+            const m2 = document.getElementById('admin-month-picker');
+            if (m1) m1.value = ym;
+            if (m2) m2.value = ym;
+        }
+
         function showToast(msg) {
             const toast = document.getElementById('toast');
             toast.textContent = msg;
             toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 2500);
+            setTimeout(() => toast.classList.remove('show'), 2800);
+        }
+
+        function formatCurrency(val) {
+            return 'R$ ' + Number(val || 0).toFixed(2).replace('.', ',');
+        }
+
+        function formatDateTime(isoStr) {
+            if (!isoStr) return '';
+            const d = new Date(isoStr);
+            const dia = String(d.getDate()).padStart(2, '0');
+            const mes = String(d.getMonth() + 1).padStart(2, '0');
+            const ano = d.getFullYear();
+            const hora = String(d.getHours()).padStart(2, '0');
+            const min = String(d.getMinutes()).padStart(2, '0');
+            return `${dia}/${mes}/${ano} às ${hora}:${min}`;
         }
 
         function populateSellerOptions() {
             const sel = document.getElementById('select-seller');
             if (!sel || typeof VENDEDORES === 'undefined') return;
 
-            VENDEDORES.forEach(v => {
+            const currentVal = sel.value;
+            sel.innerHTML = '<option value="">-- Selecione seu nome --</option>';
+
+            VENDEDORES.filter(v => v.active !== false).forEach(v => {
                 const opt = document.createElement('option');
                 opt.value = v.code;
-                opt.textContent = v.name;
+                opt.textContent = v.name + (v.role === 'admin' ? ' ⭐' : '');
                 sel.appendChild(opt);
             });
+
+            if (currentVal) sel.value = currentVal;
         }
 
         function handleUrlActions() {
@@ -461,7 +1061,7 @@
                 const clean = resetCode.trim().toUpperCase();
                 localStorage.removeItem(`pin_${clean}`);
                 localStorage.removeItem('logged_seller_code');
-                showToast('PIN redefinido! Crie seu novo PIN.');
+                showToast('Crie seu novo PIN de 4 dígitos.');
                 const sel = document.getElementById('select-seller');
                 if (sel) {
                     sel.value = clean;
@@ -481,7 +1081,11 @@
                 return;
             }
 
-            const storedPin = localStorage.getItem(`pin_${code}`);
+            const sellerObj = VENDEDORES.find(v => v.code === code);
+            const cloudPin = sellerObj && sellerObj.pin ? sellerObj.pin : null;
+            const localPin = localStorage.getItem(`pin_${code}`);
+            const effectivePin = cloudPin || localPin;
+
             const titleEl = document.getElementById('login-title');
             const descEl = document.getElementById('login-desc');
             const pinLabel = document.getElementById('pin-label');
@@ -489,10 +1093,10 @@
             const forgotLink = document.getElementById('link-forgot-pin');
             const btnSubmit = document.getElementById('btn-submit-auth');
 
-            if (!storedPin) {
+            if (!effectivePin) {
                 isCreatingPinMode = true;
                 titleEl.textContent = 'Criar seu PIN Pessoal';
-                descEl.textContent = 'Este é o seu primeiro acesso neste aparelho. Defina um PIN de 4 dígitos para proteger seu painel:';
+                descEl.textContent = 'Primeiro acesso! Defina um PIN de 4 dígitos para proteger seu painel:';
                 pinLabel.textContent = 'Crie seu PIN de 4 dígitos:';
                 confirmCont.style.display = 'block';
                 forgotLink.style.display = 'none';
@@ -537,7 +1141,7 @@
             });
         }
 
-        function handleAuthSubmit() {
+        async function handleAuthSubmit() {
             const errBox = document.getElementById('login-error');
             errBox.style.display = 'none';
 
@@ -556,6 +1160,11 @@
                 return;
             }
 
+            const sellerObj = VENDEDORES.find(v => v.code === code);
+            const cloudPin = sellerObj && sellerObj.pin ? sellerObj.pin : null;
+            const localPin = localStorage.getItem(`pin_${code}`);
+            const effectivePin = cloudPin || localPin;
+
             if (isCreatingPinMode) {
                 const confirmPin = getEnteredPin('c');
                 if (confirmPin.length < 4) {
@@ -569,18 +1178,22 @@
                     return;
                 }
 
-                localStorage.setItem(`pin_${code}`, enteredPin);
+                await saveSellerPinToSupabase(code, enteredPin);
                 localStorage.setItem('logged_seller_code', code);
-                showToast('PIN criado com sucesso!');
+                showToast('PIN salvo com sucesso!');
                 loginSuccess(code);
             } else {
-                const storedPin = localStorage.getItem(`pin_${code}`);
-                if (enteredPin !== storedPin) {
-                    errBox.textContent = 'PIN incorreto. Tente novamente ou use Esqueci meu PIN.';
+                if (enteredPin !== effectivePin) {
+                    errBox.textContent = 'PIN incorreto. Tente novamente ou clique em Esqueci meu PIN.';
                     errBox.style.display = 'block';
                     resetPinFields();
                     document.getElementById('p1').focus();
                     return;
+                }
+
+                // Se o PIN estava apenas no localStorage e ainda não na nuvem, sincroniza na nuvem
+                if (!cloudPin && localPin) {
+                    saveSellerPinToSupabase(code, localPin);
                 }
 
                 localStorage.setItem('logged_seller_code', code);
@@ -594,7 +1207,7 @@
             const seller = VENDEDORES.find(v => v.code === code);
             const nome = seller ? seller.name : 'Vendedor';
 
-            const msg = 'Olá Grégory! Sou o ' + nome + ' (' + code + '). Esqueci meu PIN no Portal do Vendedor da Agro Salinas. Poderia me enviar o link de redefinição?';
+            const msg = 'Olá Grégory! Sou ' + nome + ' (#' + code + '). Esqueci meu PIN no Portal do Vendedor da Agro Salinas. Poderia redefinir meu PIN no painel Admin?';
             const gregWhatsapp = '5551982199486';
             const url = 'https://wa.me/' + gregWhatsapp + '?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
@@ -603,7 +1216,7 @@
         function checkExistingSession() {
             const savedCode = localStorage.getItem('logged_seller_code');
             if (savedCode) {
-                const seller = VENDEDORES.find(v => v.code === savedCode && v.active);
+                const seller = VENDEDORES.find(v => v.code === savedCode && v.active !== false);
                 if (seller) {
                     loginSuccess(savedCode);
                 }
@@ -623,9 +1236,39 @@
             document.getElementById('dash-name').textContent = seller.name;
             document.getElementById('dash-code').textContent = '#' + seller.code;
 
+            const isAdmin = seller.role === 'admin' || seller.code === 'GREG' || seller.code === 'ADMIN';
+            document.getElementById('dash-role-label').textContent = isAdmin ? 'Gestor / Admin' : 'Consultor Oficial';
+
+            const adminTabBtn = document.getElementById('tab-btn-admin');
+            if (adminTabBtn) {
+                adminTabBtn.style.display = isAdmin ? 'flex' : 'none';
+            }
+
             const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
             const myLink = fullBaseUrl + '/?v=' + seller.code.toLowerCase();
             document.getElementById('dash-exclusive-link').textContent = myLink;
+
+            // Se for o perfil exclusivo da Loja (ADMIN), abre direto na aba Visão Geral da Loja
+            if (seller.code === 'ADMIN') {
+                switchTab('admin');
+            } else {
+                switchTab('sales');
+            }
+        }
+
+        function switchTab(tabName) {
+            ['sales', 'link', 'admin'].forEach(t => {
+                const btn = document.getElementById('tab-btn-' + t);
+                const pane = document.getElementById('tab-' + t);
+                if (btn) btn.classList.toggle('active', t === tabName);
+                if (pane) pane.classList.toggle('active', t === tabName);
+            });
+
+            if (tabName === 'sales') {
+                loadMyOrders();
+            } else if (tabName === 'admin') {
+                loadAdminDashboard();
+            }
         }
 
         function logoutSeller() {
@@ -649,9 +1292,416 @@
         function shareOnWhatsApp() {
             if (!currentLoggedSeller) return;
             const linkText = document.getElementById('dash-exclusive-link').textContent.trim();
-            const msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui: ' + linkText + '\n\nEscolha seus produtos e me mande seu pedido que organizo sua entrega rapidinho!';
+            const msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui: ' + linkText + '\n\nEscolha seus produtos e me mande seu pedido que organizo tudo rapidinho!';
             const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
+        }
+
+        // --- ABA 1: CARREGAR VENDAS DO PRÓPRIO VENDEDOR ---
+        async function loadMyOrders() {
+            if (!currentLoggedSeller) return;
+            const monthPicker = document.getElementById('seller-month-picker');
+            const ym = monthPicker ? monthPicker.value : '';
+            const listEl = document.getElementById('my-orders-list');
+            listEl.innerHTML = '<div class="empty-state">🔄 Buscando pedidos do mês...</div>';
+
+            try {
+                myOrdersCache = await fetchOrdersFromSupabase({
+                    yearMonth: ym,
+                    sellerCode: currentLoggedSeller.code
+                });
+                renderMyOrders();
+            } catch (err) {
+                listEl.innerHTML = '<div class="empty-state">⚠️ Erro ao carregar pedidos. Tente atualizar.</div>';
+            }
+        }
+
+        function renderMyOrders() {
+            const listEl = document.getElementById('my-orders-list');
+            const validOrders = myOrdersCache.filter(o => o.status !== 'cancelado');
+            const confirmedOrders = myOrdersCache.filter(o => o.status === 'concluido');
+            const pendingOrders = myOrdersCache.filter(o => o.status === 'pendente');
+
+            const confirmedSum = confirmedOrders.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+            const allValidSum = validOrders.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+
+            document.getElementById('my-stat-confirmed-total').textContent = formatCurrency(confirmedSum);
+            document.getElementById('my-stat-confirmed-count').textContent = `${confirmedOrders.length} pedido(s) concluído(s)`;
+            document.getElementById('my-stat-all-count').textContent = validOrders.length;
+            document.getElementById('my-stat-pending-info').textContent = `${pendingOrders.length} aguardando confirmação`;
+            document.getElementById('my-stat-all-total').textContent = formatCurrency(allValidSum);
+
+            if (myOrdersCache.length === 0) {
+                listEl.innerHTML = '<div class="empty-state">📭 Nenhum pedido registrado neste mês ainda.<br><small>Compartilhe seu link exclusivo com seus clientes para começar!</small></div>';
+                return;
+            }
+
+            listEl.innerHTML = myOrdersCache.map(order => buildOrderCardHtml(order, false)).join('');
+        }
+
+        // --- CONSTRUTOR DE CARD DE PEDIDO ---
+        function buildOrderCardHtml(order, showSellerBadge) {
+            const st = order.status || 'pendente';
+            const stLabel = st === 'concluido' ? '✅ Concluído' : (st === 'cancelado' ? '❌ Cancelado' : '⏳ Pendente');
+
+            let itemsHtml = '';
+            if (Array.isArray(order.items_json) && order.items_json.length > 0) {
+                itemsHtml = order.items_json.map(item => {
+                    const vDesc = item.variant ? ` (${item.variant})` : '';
+                    return `<div>• <strong>${item.qty}x</strong> [CÓD ${item.code}] ${item.name}${vDesc} — <strong>${formatCurrency(item.subtotal)}</strong></div>`;
+                }).join('');
+            } else {
+                itemsHtml = `<div>${order.items_summary || 'Itens do pedido'}</div>`;
+            }
+
+            const sellerBadgeHtml = showSellerBadge
+                ? `<span style="background:#E8F5EE; color:#1B432E; padding:2px 8px; border-radius:6px; font-weight:800; font-size:11.5px;">🧑‍💼 ${order.seller_name} (#${order.seller_code})</span>`
+                : '';
+
+            const phoneLink = order.customer_phone
+                ? `<a href="https://wa.me/55${order.customer_phone.replace(/\D/g, '')}" target="_blank" style="color:var(--primary); font-weight:700; text-decoration:underline;">${order.customer_phone}</a>`
+                : '';
+
+            return `
+                <div class="order-card status-${st}">
+                    <div class="order-header">
+                        <div class="order-id-date">
+                            <strong>Pedido #${order.id}</strong> • ${formatDateTime(order.created_at)}
+                            ${sellerBadgeHtml}
+                        </div>
+                        <span class="status-badge ${st}">${stLabel}</span>
+                    </div>
+
+                    <div class="order-customer-bar">
+                        <span>👤 <strong>Cliente:</strong> ${order.customer_name} ${phoneLink ? '(' + phoneLink + ')' : ''}</span>
+                        <span>🛵 <strong>${order.fulfillment_type}:</strong> ${order.address_details || 'Balcão'}</span>
+                        <span>💳 <strong>Pagto:</strong> ${order.payment_method}</span>
+                    </div>
+
+                    <div class="order-items-box">
+                        ${itemsHtml}
+                    </div>
+
+                    <div class="order-footer">
+                        <div class="order-total">
+                            Total: ${formatCurrency(order.total_price)}
+                        </div>
+                        <div class="order-actions">
+                            <button class="btn-order-act btn-act-forward" onclick="forwardOrderToStore(${order.id})">
+                                📲 Repassar p/ Loja
+                            </button>
+                            ${st !== 'concluido' ? `
+                                <button class="btn-order-act btn-act-confirm" onclick="changeOrderStatus(${order.id}, 'concluido')">
+                                    ✅ Confirmar Venda
+                                </button>
+                            ` : ''}
+                            ${st !== 'cancelado' ? `
+                                <button class="btn-order-act btn-act-cancel" onclick="changeOrderStatus(${order.id}, 'cancelado')">
+                                    ✕ Cancelar
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function changeOrderStatus(orderId, newStatus) {
+            try {
+                await updateOrderStatusInSupabase(orderId, newStatus);
+                showToast(newStatus === 'concluido' ? '✅ Venda confirmada!' : 'Pedido marcado como cancelado.');
+                if (document.getElementById('tab-admin').classList.contains('active')) {
+                    await loadAdminDashboard();
+                } else {
+                    await loadMyOrders();
+                }
+            } catch (err) {
+                showToast('⚠️ Erro ao atualizar status.');
+            }
+        }
+
+        function forwardOrderToStore(orderId) {
+            const allOrders = [...myOrdersCache, ...adminOrdersCache];
+            const order = allOrders.find(o => o.id === orderId);
+            if (!order) return;
+
+            let itemsLines = '';
+            if (Array.isArray(order.items_json) && order.items_json.length > 0) {
+                itemsLines = order.items_json.map(i => {
+                    const vDesc = i.variant ? ` (${i.variant})` : '';
+                    return `• *${i.qty}x* [CÓD ${i.code}] ${i.name}${vDesc} — *${formatCurrency(i.subtotal)}*`;
+                }).join('\n');
+            } else {
+                itemsLines = order.items_summary;
+            }
+
+            const msg =
+`🐾 *PEDIDO CONFIRMADO (#${order.id}) — AGRO SALINAS*
+════════════════════════════════
+
+👤 *Cliente:* ${order.customer_name}${order.customer_phone ? ' (' + order.customer_phone + ')' : ''}
+
+📋 *ITENS PARA SEPARAÇÃO:*
+${itemsLines}
+
+────────────────────────────────
+💰 *TOTAL: ${formatCurrency(order.total_price)}*
+💳 *Pagamento:* ${order.payment_method}
+🛵 *Recebimento:* ${order.fulfillment_type}
+📍 *Local/Endereço:* ${order.address_details || 'Retirada no Balcão'}
+
+────────────────────────────────
+🏷️ *Vendedor:* ${order.seller_name} (#${order.seller_code})`;
+
+            const storeZap = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp)
+                ? VENDAS_CONFIG.lojaWhatsApp
+                : '5551995624230';
+
+            window.open(`https://wa.me/${storeZap}?text=${encodeURIComponent(msg)}`, '_blank');
+        }
+
+        // --- ABA 3: PAINEL ADMINISTRATIVO (LOJA / GESTÃO) ---
+        async function loadAdminDashboard() {
+            const monthPicker = document.getElementById('admin-month-picker');
+            const ym = monthPicker ? monthPicker.value : '';
+
+            await syncSellersFromSupabase();
+            populateAdminSellerFilter();
+            renderAdminSellersTable();
+
+            try {
+                adminOrdersCache = await fetchOrdersFromSupabase({
+                    yearMonth: ym,
+                    sellerCode: 'ALL'
+                });
+                renderAdminOrdersAndStats();
+            } catch (err) {
+                showToast('⚠️ Erro ao carregar relatório geral.');
+            }
+        }
+
+        function populateAdminSellerFilter() {
+            const sel = document.getElementById('admin-seller-filter');
+            if (!sel) return;
+            const current = sel.value || 'ALL';
+            sel.innerHTML = '<option value="ALL">Todos os Vendedores</option>';
+            VENDEDORES.filter(v => v.code !== 'ADMIN').forEach(v => {
+                const opt = document.createElement('option');
+                opt.value = v.code;
+                opt.textContent = `${v.name} (#${v.code})`;
+                sel.appendChild(opt);
+            });
+            sel.value = current;
+        }
+
+        function renderAdminOrdersAndStats() {
+            const filterSeller = document.getElementById('admin-seller-filter').value || 'ALL';
+
+            // 1. Renderizar Ranking de Todos os Vendedores no Mês
+            const rankingBody = document.getElementById('admin-ranking-tbody');
+            const sellersList = VENDEDORES.filter(v => v.code !== 'ADMIN');
+
+            const rankingStats = sellersList.map(s => {
+                const sOrders = adminOrdersCache.filter(o => o.seller_code === s.code && o.status !== 'cancelado');
+                const sConfirmed = sOrders.filter(o => o.status === 'concluido');
+                const confirmedVal = sConfirmed.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+                const grossVal = sOrders.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+                return {
+                    seller: s,
+                    totalCount: sOrders.length,
+                    confirmedCount: sConfirmed.length,
+                    confirmedVal,
+                    grossVal
+                };
+            }).sort((a, b) => b.confirmedVal - a.confirmedVal || b.grossVal - a.grossVal);
+
+            rankingBody.innerHTML = rankingStats.map(r => `
+                <tr>
+                    <td>
+                        <strong>${r.seller.name}</strong>
+                        <div style="font-size:11px; color:var(--text-muted);">#${r.seller.code}</div>
+                    </td>
+                    <td><strong>${r.totalCount}</strong></td>
+                    <td><span style="color:var(--success); font-weight:800;">${r.confirmedCount}</span></td>
+                    <td><strong style="color:var(--primary);">${formatCurrency(r.confirmedVal)}</strong></td>
+                    <td>${formatCurrency(r.grossVal)}</td>
+                    <td>
+                        <button class="btn-order-act" onclick="filterBySellerInAdmin('${r.seller.code}')">
+                            🔍 Ver Pedidos
+                        </button>
+                    </td>
+                </tr>
+            `).join('');
+
+            // 2. Filtrar Pedidos para Exibição
+            const filteredOrders = filterSeller === 'ALL'
+                ? adminOrdersCache
+                : adminOrdersCache.filter(o => o.seller_code === filterSeller);
+
+            const validFiltered = filteredOrders.filter(o => o.status !== 'cancelado');
+            const confirmedFiltered = filteredOrders.filter(o => o.status === 'concluido');
+            const pendingFiltered = filteredOrders.filter(o => o.status === 'pendente');
+
+            const confirmedSum = confirmedFiltered.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+            const grossSum = validFiltered.reduce((acc, o) => acc + Number(o.total_price || 0), 0);
+
+            document.getElementById('adm-stat-confirmed-val').textContent = formatCurrency(confirmedSum);
+            document.getElementById('adm-stat-confirmed-cnt').textContent = `${confirmedFiltered.length} venda(s) concluída(s)`;
+            document.getElementById('adm-stat-total-cnt').textContent = validFiltered.length;
+            document.getElementById('adm-stat-pending-cnt').textContent = `${pendingFiltered.length} pendente(s)`;
+            document.getElementById('adm-stat-gross-val').textContent = formatCurrency(grossSum);
+
+            const titleEl = document.getElementById('admin-orders-title');
+            titleEl.textContent = filterSeller === 'ALL'
+                ? `📦 Todos os Pedidos do Mês (${filteredOrders.length})`
+                : `📦 Pedidos de #${filterSeller} no Mês (${filteredOrders.length})`;
+
+            const listEl = document.getElementById('admin-orders-list');
+            if (filteredOrders.length === 0) {
+                listEl.innerHTML = '<div class="empty-state">📭 Nenhum pedido encontrado para este filtro no mês selecionado.</div>';
+            } else {
+                listEl.innerHTML = filteredOrders.map(o => buildOrderCardHtml(o, true)).join('');
+            }
+        }
+
+        function filterBySellerInAdmin(code) {
+            const sel = document.getElementById('admin-seller-filter');
+            if (sel) {
+                sel.value = code;
+                renderAdminOrdersAndStats();
+                document.getElementById('admin-orders-title').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // --- GESTÃO DE EQUIPE DE VENDEDORES ---
+        function renderAdminSellersTable() {
+            const tbody = document.getElementById('admin-sellers-tbody');
+            if (!tbody) return;
+
+            tbody.innerHTML = VENDEDORES.map(v => {
+                const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
+                const sLink = fullBaseUrl + '/?v=' + v.code.toLowerCase();
+                return `
+                    <tr>
+                        <td>
+                            <strong>${v.name}</strong>
+                            <div style="font-size:11px; color:var(--primary); font-weight:700;">#${v.code}</div>
+                        </td>
+                        <td>${v.whatsapp}</td>
+                        <td>
+                            ${v.pin ? '<span style="color:var(--success); font-weight:700;">🔒 Definido</span>' : '<span style="color:var(--text-muted);">Sem PIN</span>'}
+                        </td>
+                        <td>
+                            ${v.active !== false
+                                ? '<span class="status-badge concluido">Ativo</span>'
+                                : '<span class="status-badge cancelado">Inativo</span>'}
+                        </td>
+                        <td>
+                            <div style="display:flex; gap:5px; flex-wrap:wrap;">
+                                <button class="btn-order-act" onclick="navigator.clipboard.writeText('${sLink}'); showToast('Link de ${v.name} copiado!');">
+                                    🔗 Link
+                                </button>
+                                <button class="btn-order-act" onclick="adminResetSellerPin('${v.code}', '${v.name}')">
+                                    🔑 Resetar PIN
+                                </button>
+                                ${v.code !== 'GREG' && v.code !== 'ADMIN' ? `
+                                    <button class="btn-order-act" onclick="adminToggleSeller('${v.code}', ${v.active !== false})">
+                                        ${v.active !== false ? '⏸️ Desativar' : '▶️ Ativar'}
+                                    </button>
+                                ` : ''}
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        async function handleCreateNewSeller() {
+            const nameEl = document.getElementById('new-seller-name');
+            const codeEl = document.getElementById('new-seller-code');
+            const phoneEl = document.getElementById('new-seller-phone');
+
+            const name = nameEl.value.trim();
+            const code = codeEl.value.trim().toUpperCase().replace(/[^A-Z0-9_]/g, '');
+            const whatsapp = phoneEl.value.trim();
+
+            if (!name || !code || !whatsapp) {
+                showToast('⚠️ Preencha Nome, Código e WhatsApp do vendedor!');
+                return;
+            }
+
+            try {
+                await createSellerInSupabase({ code, name, whatsapp, role: 'seller' });
+                nameEl.value = '';
+                codeEl.value = '';
+                phoneEl.value = '';
+                populateSellerOptions();
+                populateAdminSellerFilter();
+                renderAdminSellersTable();
+                renderAdminOrdersAndStats();
+                showToast(`✅ Vendedor ${name} (#${code}) cadastrado com sucesso!`);
+            } catch (err) {
+                showToast('⚠️ Erro: Código já existe ou falha na conexão.');
+            }
+        }
+
+        async function adminResetSellerPin(code, name) {
+            if (!confirm(`Deseja redefinir o PIN de ${name} (#${code})? No próximo acesso ele poderá criar um novo PIN.`)) return;
+            try {
+                localStorage.removeItem(`pin_${code}`);
+                await updateSellerInSupabase(code, { pin: null });
+                renderAdminSellersTable();
+                showToast(`🔑 PIN de ${name} redefinido!`);
+            } catch (err) {
+                showToast('⚠️ Erro ao redefinir PIN.');
+            }
+        }
+
+        async function adminToggleSeller(code, isCurrentlyActive) {
+            try {
+                await updateSellerInSupabase(code, { active: !isCurrentlyActive });
+                populateSellerOptions();
+                renderAdminSellersTable();
+                showToast(`Status de #${code} atualizado!`);
+            } catch (err) {
+                showToast('⚠️ Erro ao alterar status.');
+            }
+        }
+
+        // --- EXPORTAR RELATÓRIO EM CSV / EXCEL ---
+        function exportAdminCsv() {
+            if (adminOrdersCache.length === 0) {
+                showToast('Não há pedidos neste mês para exportar.');
+                return;
+            }
+
+            const headers = ['ID Pedido', 'Data/Hora', 'Codigo Vendedor', 'Nome Vendedor', 'Cliente', 'Telefone', 'Recebimento', 'Endereco', 'Pagamento', 'Itens', 'Valor Total (R$)', 'Status'];
+            const rows = adminOrdersCache.map(o => [
+                o.id,
+                formatDateTime(o.created_at),
+                o.seller_code,
+                `"${(o.seller_name || '').replace(/"/g, '""')}"`,
+                `"${(o.customer_name || '').replace(/"/g, '""')}"`,
+                `"${(o.customer_phone || '').replace(/"/g, '""')}"`,
+                `"${(o.fulfillment_type || '').replace(/"/g, '""')}"`,
+                `"${(o.address_details || '').replace(/"/g, '""')}"`,
+                `"${(o.payment_method || '').replace(/"/g, '""')}"`,
+                `"${(o.items_summary || '').replace(/"/g, '""')}"`,
+                String(o.total_price || 0).replace('.', ','),
+                o.status
+            ]);
+
+            const csvContent = '\uFEFF' + [headers.join(';'), ...rows.map(r => r.join(';'))].join('\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const ym = document.getElementById('admin-month-picker').value || 'mes';
+            a.href = url;
+            a.download = `relatorio_vendas_agro_salinas_${ym}.csv`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            showToast('📥 Relatório exportado com sucesso!');
         }
     </script>
 </body>

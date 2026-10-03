@@ -1145,12 +1145,20 @@ function openCartDrawer() {
     renderCartDrawerItems();
     modal.classList.add("active");
 
-    // Restaura dados salvos de entrega se existirem
+    // Restaura dados salvos do cliente e entrega se existirem
     try {
+        const savedName = localStorage.getItem("agro_salinas_customer_name");
+        const savedPhone = localStorage.getItem("agro_salinas_customer_phone");
         const savedBairro = localStorage.getItem("agro_salinas_neighborhood");
         const savedEnd = localStorage.getItem("agro_salinas_address");
+
+        const inputName = document.getElementById("checkout-customer-name");
+        const inputPhone = document.getElementById("checkout-customer-phone");
         const inputBairro = document.getElementById("checkout-neighborhood");
         const inputEnd = document.getElementById("checkout-address");
+
+        if (savedName && inputName && !inputName.value) inputName.value = savedName;
+        if (savedPhone && inputPhone && !inputPhone.value) inputPhone.value = savedPhone;
         if (savedBairro && inputBairro && !inputBairro.value) inputBairro.value = savedBairro;
         if (savedEnd && inputEnd && !inputEnd.value) inputEnd.value = savedEnd;
     } catch (e) {
@@ -1400,11 +1408,33 @@ function checkoutWhatsApp() {
         return;
     }
 
+    // Identificação do Cliente
+    const inputCustomerName = document.getElementById("checkout-customer-name");
+    const inputCustomerPhone = document.getElementById("checkout-customer-phone");
+    const customerName = inputCustomerName ? inputCustomerName.value.trim() : "";
+    const customerPhone = inputCustomerPhone ? inputCustomerPhone.value.trim() : "";
+
+    if (!customerName) {
+        showToast("⚠️ Por favor, informe seu Nome para identificarmos seu pedido!");
+        if (inputCustomerName) {
+            inputCustomerName.focus();
+            inputCustomerName.style.borderColor = "#DC2626";
+            setTimeout(() => inputCustomerName.style.borderColor = "", 2500);
+        }
+        return;
+    }
+
+    try {
+        localStorage.setItem("agro_salinas_customer_name", customerName);
+        if (customerPhone) localStorage.setItem("agro_salinas_customer_phone", customerPhone);
+    } catch (e) {}
+
     // Modalidade de Atendimento: Entrega a Domicílio vs Retirada no Balcão
     const selectedFulfillmentInput = document.querySelector('input[name="checkout_fulfillment"]:checked');
     const fulfillmentType = selectedFulfillmentInput ? selectedFulfillmentInput.value : "entrega";
 
     let fulfillmentDetailsText = "";
+    let addressSummaryForDb = "";
 
     if (fulfillmentType === "entrega") {
         const inputNeighborhood = document.getElementById("checkout-neighborhood");
@@ -1443,13 +1473,19 @@ function checkoutWhatsApp() {
 📍 *Bairro:* ${neighborhood}
 🏠 *Endereço:* ${address}${complement ? `\n📌 *Complemento/Ref:* ${complement}` : ''}`;
 
+        addressSummaryForDb = `${neighborhood} - ${address}${complement ? ' (' + complement + ')' : ''}`;
+
     } else {
         fulfillmentDetailsText = 
 `🛵 *FORMA DE RECEBIMENTO:*
 🏪 *Retirada no Balcão* (Cliente retira na loja)`;
+        addressSummaryForDb = "Retirada no Balcão";
     }
 
     let itemsText = "";
+    let itemsJsonForDb = [];
+    let itemsSummaryList = [];
+
     for (let cartKey in cart) {
         const qty = cart[cartKey];
         const itemInfo = getCartItemInfo(cartKey);
@@ -1463,6 +1499,16 @@ function checkoutWhatsApp() {
         const prodTitle = toTitleCase(product.name);
         const isSize = itemInfo.baseProduct && itemInfo.baseProduct.variationType === 'size';
         const variantDesc = variant ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${variant.label})` : '';
+
+        itemsJsonForDb.push({
+            code: product.code,
+            name: prodTitle,
+            variant: variant ? variant.label : "",
+            qty: qty,
+            unitPrice: product.price,
+            subtotal: Number(subtotal.toFixed(2))
+        });
+        itemsSummaryList.push(`${qty}x [CÓD ${product.code}] ${prodTitle}${variantDesc} (R$ ${subtotalStr})`);
 
         if (isGranel) {
             const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
@@ -1498,11 +1544,14 @@ function checkoutWhatsApp() {
         ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
         : `Olá! Gostaria de fazer este pedido:`;
 
+    const customerLine = `👤 *Cliente:* ${customerName}${customerPhone ? ' (' + customerPhone + ')' : ''}`;
+
     const message = 
 `🐾 *NOVO PEDIDO — AGRO SALINAS*
 ════════════════════════════════
 
 ${greeting}
+${customerLine}
 
 📋 *ITENS PARA SEPARAÇÃO:*
 ${itemsText}
@@ -1516,6 +1565,22 @@ ${fulfillmentDetailsText}
 ${sellerTag}📱 *Origem:* Catálogo Digital Agro Salinas
 
 Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obrigado!`;
+
+    // Registra o pedido no banco de dados (Supabase) automaticamente em segundo plano
+    if (typeof saveOrderToSupabase === "function") {
+        saveOrderToSupabase({
+            seller_code: currentSeller && currentSeller.code ? currentSeller.code : "GREG",
+            seller_name: currentSeller && currentSeller.name ? currentSeller.name : "Grégory",
+            customer_name: customerName,
+            customer_phone: customerPhone,
+            fulfillment_type: fulfillmentType === "entrega" ? "Entrega em Domicílio" : "Retirada no Balcão",
+            address_details: addressSummaryForDb,
+            payment_method: paymentMethod,
+            items_json: itemsJsonForDb,
+            items_summary: itemsSummaryList.join(" | "),
+            total_price: Number(totalPrice.toFixed(2))
+        });
+    }
 
     const whatsappUrl = `https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
