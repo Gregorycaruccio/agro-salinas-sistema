@@ -1550,7 +1550,7 @@
             }
         }
 
-        function forwardOrderToStore(orderId) {
+        async function forwardOrderToStore(orderId) {
             const allOrders = [...myOrdersCache, ...adminOrdersCache];
             const order = allOrders.find(o => o.id === orderId);
             if (!order) return;
@@ -1587,7 +1587,13 @@ ${itemsLines}
                 ? VENDAS_CONFIG.lojaWhatsApp
                 : '5551995624230';
 
+            // Abre imediatamente o WhatsApp com a mensagem pronta
             window.open(`https://wa.me/${storeZap}?text=${encodeURIComponent(msg)}`, '_blank');
+
+            // Confirma a venda automaticamente no sistema e atualiza os totais
+            if (order.status !== 'concluido') {
+                await changeOrderStatus(orderId, 'concluido');
+            }
         }
 
         // --- ABA 3: PAINEL ADMINISTRATIVO (LOJA / GESTÃO) ---
