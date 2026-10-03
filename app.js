@@ -241,9 +241,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // --- SISTEMA MULTI-VENDEDOR SEGURO (PROTEÇÃO DE COMISSÃO) ---
+let isLinkExpiredGlobal = false;
+let currentLinkValidation = null;
+
+// --- SISTEMA MULTI-VENDEDOR SEGURO COM VALIDADE DE 30 DIAS ---
 function initSeller() {
     const urlParams = new URLSearchParams(window.location.search);
     const sellerParam = urlParams.get("v") || urlParams.get("vendedor") || urlParams.get("ref");
+    const timeParam = urlParams.get("t") || urlParams.get("token") || urlParams.get("d");
 
     // Vendedor padrão caso não haja indicação (Grégory)
     const fallbackSeller = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.defaultVendedor) 
@@ -308,6 +313,26 @@ function initSeller() {
         }
     }
 
+    // --- VERIFICAÇÃO DE VALIDADE DO LINK (DURAÇÃO MÁXIMA DE 30 DIAS) ---
+    const savedLinkCreatedAt = localStorage.getItem("agro_salinas_link_time");
+    let validation = { valid: true, expired: false, remainingDays: 30 };
+    if (typeof validateSellerLink === "function") {
+        validation = validateSellerLink(timeParam, savedLinkCreatedAt);
+    }
+    currentLinkValidation = validation;
+
+    // Se o link completou os 30 dias:
+    if (validation.expired) {
+        isLinkExpiredGlobal = true;
+        showLinkExpiredScreen(currentSeller, validation);
+        return;
+    }
+
+    // Se o link estiver válido, salva o início da contagem no dispositivo
+    if (validation.createdAt) {
+        localStorage.setItem("agro_salinas_link_time", validation.createdAt.getTime().toString());
+    }
+
     // Atualizar UI do Banner (se visível)
     const bannerEl = document.getElementById("seller-banner");
     const sellerNameEl = document.getElementById("seller-name");
@@ -319,6 +344,94 @@ function initSeller() {
     if (bannerEl && currentSeller.code) {
         bannerEl.style.display = "flex";
     }
+}
+
+// --- TELA DE LINK EXPIRADO (ENCAMINHA CLIENTE PARA O WHATSAPP DA AGROPECUÁRIA) ---
+function showLinkExpiredScreen(seller, validation) {
+    // 1. Oculta os elementos da loja para que o cliente não veja o catálogo vencido
+    const hideSelectors = [
+        ".sticky-nav-wrapper",
+        "#seller-banner",
+        ".products-section",
+        "#floating-cart-bar",
+        "#cart-drawer",
+        "#cart-backdrop",
+        "#sidebar-drawer",
+        "#sidebar-overlay",
+        ".filters-container"
+    ];
+    hideSelectors.forEach(sel => {
+        const els = document.querySelectorAll(sel);
+        els.forEach(el => el.style.display = "none");
+    });
+
+    document.body.style.overflow = "auto";
+
+    // 2. Prepara contatos de WhatsApp
+    const lojaZap = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) || "5551995624230";
+    const sellerName = (seller && seller.name) ? seller.name : "Agro Salinas";
+    const sellerCode = (seller && seller.code) ? seller.code : "LOJA";
+
+    const msgLoja = `Olá! Acessei o catálogo da Agro Salinas, mas o meu link de 30 dias expirou (consultor: ${sellerName} #${sellerCode}). Gostaria de receber um novo link atualizado de compras, por favor!`;
+    const lojaUrl = `https://wa.me/${lojaZap}?text=${encodeURIComponent(msgLoja)}`;
+
+    let vendedorUrl = "";
+    if (seller && seller.whatsapp && seller.whatsapp !== lojaZap) {
+        const msgVendedor = `Olá ${sellerName}! O link do catálogo da Agro Salinas que você me enviou completou os 30 dias de validade. Poderia me mandar um novo link atualizado, por favor?`;
+        vendedorUrl = `https://wa.me/${seller.whatsapp}?text=${encodeURIComponent(msgVendedor)}`;
+    }
+
+    // 3. Injeta a tela de bloqueio
+    let screen = document.getElementById("link-expired-screen");
+    if (!screen) {
+        screen = document.createElement("div");
+        screen.id = "link-expired-screen";
+        screen.className = "link-expired-screen";
+        document.body.prepend(screen);
+    }
+
+    screen.innerHTML = `
+        <div class="expired-card">
+            <div class="expired-badge">
+                <span class="expired-badge-icon">⏳</span>
+                <span>Validade de 30 Dias Encerrada</span>
+            </div>
+            <img src="assets/logo.png" alt="Agro Salinas" class="expired-logo" onerror="this.style.display='none'">
+            <h1 class="expired-title">Este link de atendimento expirou</h1>
+            <p class="expired-desc">
+                Para sua segurança e comodidade, os links de atendimento têm duração máxima de <strong>30 dias</strong> para garantir que você sempre consulte os <strong>preços, estoque e promoções em vigor</strong>.
+            </p>
+
+            <div class="expired-seller-box">
+                <span class="expired-seller-sub">Atendimento anterior vinculado a:</span>
+                <span class="expired-seller-title">🧑‍💼 ${sellerName} <span class="expired-seller-tag">#${sellerCode}</span></span>
+            </div>
+
+            <div class="expired-actions">
+                <a href="${lojaUrl}" class="btn-expired-primary" target="_blank" rel="noopener noreferrer">
+                    <span class="btn-expired-icon">💬</span>
+                    <span class="btn-expired-content">
+                        <strong>Chamar Agro Salinas no WhatsApp</strong>
+                        <small>Solicitar novo link oficial agora</small>
+                    </span>
+                </a>
+
+                ${vendedorUrl ? `
+                <a href="${vendedorUrl}" class="btn-expired-secondary" target="_blank" rel="noopener noreferrer">
+                    <span class="btn-expired-icon">🧑‍💼</span>
+                    <span class="btn-expired-content">
+                        <strong>Falar com o consultor ${sellerName}</strong>
+                        <small>Pedir novo link para o seu vendedor</small>
+                    </span>
+                </a>` : ''}
+            </div>
+
+            <p class="expired-note">
+                Ao clicar no botão verde, uma mensagem será aberta automaticamente no seu WhatsApp para a equipe da Agro Salinas te enviar um novo link em instantes!
+            </p>
+        </div>
+    `;
+    screen.style.display = "flex";
 }
 
 // --- RENDERIZAÇÃO DAS CATEGORIAS PRINCIPAIS (DESKTOP & SIDEBAR) ---
@@ -660,6 +773,7 @@ function buildProductCardHtml(product) {
 
 // --- RENDERIZAÇÃO PROGRESSIVA & INCREMENTAL DOS PRODUTOS (PERFORMANCE MÁXIMA) ---
 function renderProducts() {
+    if (isLinkExpiredGlobal) return;
     const grid = document.getElementById("products-grid");
     const countEl = document.getElementById("products-count");
     const titleEl = document.getElementById("section-title");

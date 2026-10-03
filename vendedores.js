@@ -66,6 +66,70 @@ function findVendedorByCode(code) {
     return VENDEDORES.find(v => v.code === clean && v.active) || null;
 }
 
+// --- CONFIGURAÇÃO DE VALIDADE DO LINK DE VENDEDOR (30 DIAS) ---
+const LINK_CONFIG = {
+    validityDays: 30,
+    validityMs: 30 * 24 * 60 * 60 * 1000
+};
+
+// Gera URL completa com validade de 30 dias embutida
+function generateSellerLink(sellerCode, timestampMs = Date.now(), baseUrl = "") {
+    if (!baseUrl) {
+        if (typeof window !== "undefined") {
+            baseUrl = window.location.origin + window.location.pathname.replace("vendedor.html", "").replace(/\/$/, "");
+        } else {
+            baseUrl = "";
+        }
+    }
+    const cleanCode = (sellerCode || "greg").toString().trim().toLowerCase();
+    // Guardamos o timestamp em segundos codificado em base36 (ex: ?v=greg&t=m2j4xk)
+    const timeSec = Math.floor(timestampMs / 1000);
+    const token = timeSec.toString(36);
+    return `${baseUrl}/?v=${cleanCode}&t=${token}`;
+}
+
+// Valida a expiração do link (30 dias a partir da criação ou do primeiro acesso)
+function validateSellerLink(timeToken, firstAccessFallbackMs = null) {
+    const now = Date.now();
+    let createdAtMs = null;
+
+    if (timeToken) {
+        const parsedSec = parseInt(timeToken, 36);
+        if (!isNaN(parsedSec) && parsedSec > 1600000000) {
+            createdAtMs = parsedSec * 1000;
+        } else {
+            const parsedNum = Number(timeToken);
+            if (!isNaN(parsedNum) && parsedNum > 1600000000000) {
+                createdAtMs = parsedNum;
+            }
+        }
+    }
+
+    if (!createdAtMs && firstAccessFallbackMs) {
+        const fallbackNum = Number(firstAccessFallbackMs);
+        if (!isNaN(fallbackNum) && fallbackNum > 1600000000000) {
+            createdAtMs = fallbackNum;
+        }
+    }
+
+    if (!createdAtMs) {
+        createdAtMs = now;
+    }
+
+    const expiresAtMs = createdAtMs + LINK_CONFIG.validityMs;
+    const isExpired = now > expiresAtMs;
+    const remainingMs = Math.max(0, expiresAtMs - now);
+    const remainingDays = Math.ceil(remainingMs / (1000 * 60 * 60 * 24));
+
+    return {
+        valid: !isExpired,
+        expired: isExpired,
+        createdAt: new Date(createdAtMs),
+        expiresAt: new Date(expiresAtMs),
+        remainingDays: remainingDays
+    };
+}
+
 // --- FUNÇÕES DE COMUNICAÇÃO COM O SUPABASE ---
 
 function getSupabaseHeaders(extra = {}) {
@@ -248,6 +312,9 @@ if (typeof module !== "undefined" && module.exports) {
         updateSellerInSupabase,
         saveOrderToSupabase,
         fetchOrdersFromSupabase,
-        updateOrderStatusInSupabase
+        updateOrderStatusInSupabase,
+        LINK_CONFIG,
+        generateSellerLink,
+        validateSellerLink
     };
 }

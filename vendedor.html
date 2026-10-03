@@ -856,6 +856,20 @@
                 Envie este link para seus clientes. Todo pedido feito por ele fica <strong>registrado automaticamente no seu histórico mensal</strong> e cai direto no seu WhatsApp para você conferir e repassar à Agropecuária!
             </p>
 
+            <!-- Box Informativo de Validade de 30 Dias -->
+            <div style="background: #FFFBEB; border: 1.5px solid #FDE68A; border-radius: 12px; padding: 12px 14px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <span style="font-size: 24px;">⏳</span>
+                    <div>
+                        <strong style="font-size: 13.5px; color: #92400E; display: block;">Validade do Link: 30 Dias</strong>
+                        <span id="link-validity-text" style="font-size: 12px; color: #B45309;">Válido até: calculando...</span>
+                    </div>
+                </div>
+                <button type="button" onclick="renewMyLink()" style="background: white; border: 1.5px solid #D97706; color: #B45309; font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: 20px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); transition: all 0.2s ease;">
+                    🔄 Gerar Novo Link (+30 Dias)
+                </button>
+            </div>
+
             <div class="link-share-box" id="dash-exclusive-link">
                 Carregando...
             </div>
@@ -868,6 +882,10 @@
                     💬 Mandar no Zap
                 </button>
             </div>
+            
+            <p style="font-size: 11.5px; color: var(--text-muted); margin-top: 10px; text-align: center;">
+                ℹ️ Após 30 dias, o cliente não consegue mais acessar a página e é direcionado para chamar a Agropecuária no WhatsApp e pedir um novo link.
+            </p>
         </div>
 
         <!-- ABA 3: PAINEL ADMINISTRATIVO (WILLIAM, MEIRE & GRÉGORY) -->
@@ -1273,9 +1291,7 @@
                 adminTabBtn.style.display = isAdmin ? 'flex' : 'none';
             }
 
-            const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
-            const myLink = fullBaseUrl + '/?v=' + seller.code.toLowerCase();
-            document.getElementById('dash-exclusive-link').textContent = myLink;
+            updateDashboardLinkUI(seller);
 
             // Se for o perfil exclusivo da Loja (ADMIN), abre direto na aba Visão Geral da Loja
             if (seller.code === 'ADMIN') {
@@ -1283,6 +1299,44 @@
             } else {
                 switchTab('sales');
             }
+        }
+
+        function updateDashboardLinkUI(seller = currentLoggedSeller) {
+            if (!seller) return;
+            const storageKey = 'seller_link_t_' + seller.code.toUpperCase();
+            let savedTime = localStorage.getItem(storageKey);
+            let timeNum = savedTime ? Number(savedTime) : null;
+
+            // Se não tiver timestamp ou se já expirou (mais de 30 dias), inicia um novo
+            if (!timeNum || isNaN(timeNum) || (Date.now() - timeNum > 30 * 24 * 60 * 60 * 1000)) {
+                timeNum = Date.now();
+                localStorage.setItem(storageKey, timeNum.toString());
+            }
+
+            const myLink = typeof generateSellerLink === 'function'
+                ? generateSellerLink(seller.code, timeNum)
+                : (window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '') + '/?v=' + seller.code.toLowerCase());
+
+            const linkEl = document.getElementById('dash-exclusive-link');
+            if (linkEl) linkEl.textContent = myLink;
+
+            const expiresDate = new Date(timeNum + 30 * 24 * 60 * 60 * 1000);
+            const dateFormatted = expiresDate.toLocaleDateString('pt-BR');
+            const diffDays = Math.ceil(Math.max(0, (expiresDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24)));
+
+            const validityEl = document.getElementById('link-validity-text');
+            if (validityEl) {
+                validityEl.textContent = `Ativo até ${dateFormatted} (${diffDays} dias restantes)`;
+            }
+        }
+
+        function renewMyLink() {
+            if (!currentLoggedSeller) return;
+            const storageKey = 'seller_link_t_' + currentLoggedSeller.code.toUpperCase();
+            const newTime = Date.now();
+            localStorage.setItem(storageKey, newTime.toString());
+            updateDashboardLinkUI(currentLoggedSeller);
+            showToast('✓ Novo link gerado com sucesso! Válido por mais 30 dias.');
         }
 
         function switchTab(tabName) {
@@ -1324,7 +1378,7 @@
         function shareOnWhatsApp() {
             if (!currentLoggedSeller) return;
             const linkText = document.getElementById('dash-exclusive-link').textContent.trim();
-            const msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui: ' + linkText + '\n\nEscolha seus produtos e me mande seu pedido que organizo tudo rapidinho!';
+            const msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui:\n' + linkText + '\n\n*(Link oficial com preços e estoque atualizados válido por 30 dias)*\n\nEscolha seus produtos e me mande seu pedido que organizo tudo rapidinho para você!';
             const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
         }
