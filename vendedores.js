@@ -98,27 +98,29 @@ function generateSellerLink(sellerCode, timestampMs = Date.now(), baseUrl = "") 
     return `${baseUrl}/?v=${cleanCode}&t=${token}`;
 }
 
-// Valida a expiração do link (30 dias a partir da criação ou do primeiro acesso)
+// Valida a expiração do link (links de WhatsApp duram 30 dias; links de Bio sem &t= são permanentes)
 function validateSellerLink(timeToken, firstAccessFallbackMs = null) {
     const now = Date.now();
-    let createdAtMs = null;
 
-    if (timeToken) {
-        const parsedSec = parseInt(timeToken, 36);
-        if (!isNaN(parsedSec) && parsedSec > 1600000000) {
-            createdAtMs = parsedSec * 1000;
-        } else {
-            const parsedNum = Number(timeToken);
-            if (!isNaN(parsedNum) && parsedNum > 1600000000000) {
-                createdAtMs = parsedNum;
-            }
-        }
+    // Links diretos ou de Bio (sem token de tempo &t=) são permanentes e NUNCA expiram
+    if (!timeToken) {
+        return {
+            valid: true,
+            expired: false,
+            createdAt: new Date(now),
+            expiresAt: new Date(now + 365 * 24 * 60 * 60 * 1000),
+            remainingDays: 365
+        };
     }
 
-    if (!createdAtMs && firstAccessFallbackMs) {
-        const fallbackNum = Number(firstAccessFallbackMs);
-        if (!isNaN(fallbackNum) && fallbackNum > 1600000000000) {
-            createdAtMs = fallbackNum;
+    let createdAtMs = null;
+    const parsedSec = parseInt(timeToken, 36);
+    if (!isNaN(parsedSec) && parsedSec > 1600000000) {
+        createdAtMs = parsedSec * 1000;
+    } else {
+        const parsedNum = Number(timeToken);
+        if (!isNaN(parsedNum) && parsedNum > 1600000000000) {
+            createdAtMs = parsedNum;
         }
     }
 
