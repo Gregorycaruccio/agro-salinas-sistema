@@ -965,24 +965,31 @@
             </div>
             <div class="new-seller-box">
                 <h4 style="font-size: 13.5px; font-weight: 800; color: var(--primary); margin-bottom: 10px;">
-                    ➕ Cadastrar Novo Vendedor no Sistema
+                    ➕ Cadastrar Novo Usuário / Vendedor no Sistema
                 </h4>
                 <div class="new-seller-grid">
                     <div>
-                        <label class="form-label">Nome do Vendedor *</label>
-                        <input type="text" id="new-seller-name" class="form-input" placeholder="Ex: Marcos Silva">
+                        <label class="form-label">Nome Completo *</label>
+                        <input type="text" id="new-seller-name" class="form-input" placeholder="Ex: William & Meire">
                     </div>
                     <div>
                         <label class="form-label">Usuário de Login / Código *</label>
-                        <input type="text" id="new-seller-code" class="form-input" placeholder="Ex: MARCOS">
+                        <input type="text" id="new-seller-code" class="form-input" placeholder="Ex: WILLIAM ou ADMIN">
                     </div>
                     <div>
                         <label class="form-label">WhatsApp (Com DDD) *</label>
-                        <input type="tel" id="new-seller-phone" class="form-input" placeholder="Ex: 51999999999">
+                        <input type="tel" id="new-seller-phone" class="form-input" placeholder="Ex: 51995624230">
+                    </div>
+                    <div>
+                        <label class="form-label">Perfil de Acesso *</label>
+                        <select id="new-seller-role" class="form-input" style="background:#fff; height:42px;">
+                            <option value="seller">👤 Vendedor (Apenas suas vendas)</option>
+                            <option value="admin">👑 Gestor / Proprietário (Acesso Total)</option>
+                        </select>
                     </div>
                 </div>
                 <button class="btn-primary" onclick="handleCreateNewSeller()" style="padding: 10px;">
-                    ➕ Salvar Novo Vendedor
+                    ➕ Salvar Cadastro
                 </button>
             </div>
 
@@ -1066,7 +1073,11 @@
             const clean = normalizeStr(rawInput);
             if (!clean) return null;
 
-            // Aliases convenientes para os gestores e vendedores
+            // 1. Busca exata direta pelo código cadastrado
+            const exactCodeMatch = VENDEDORES.find(v => v.active !== false && normalizeStr(v.code) === clean);
+            if (exactCodeMatch) return exactCodeMatch;
+
+            // 2. Aliases convenientes para os gestores e vendedores
             const aliasMap = {
                 'GREGORY': 'GREG',
                 'GREG': 'GREG',
@@ -1083,6 +1094,7 @@
                 if (v.active === false) return false;
                 if (normalizeStr(v.code) === targetCode) return true;
                 if (normalizeStr(v.name) === clean) return true;
+                if (normalizeStr(v.name).includes(clean)) return true;
                 return false;
             }) || null;
         }
@@ -1272,9 +1284,12 @@
 
         function isCurrentAdmin() {
             if (!currentLoggedSeller) return false;
+            const c = (currentLoggedSeller.code || '').toUpperCase();
             return currentLoggedSeller.role === 'admin' ||
-                   currentLoggedSeller.code === 'GREG' ||
-                   currentLoggedSeller.code === 'ADMIN';
+                   c === 'GREG' ||
+                   c === 'ADMIN' ||
+                   c === 'WILLIAM' ||
+                   c === 'MEIRE';
         }
 
         function loginSuccess(code) {
@@ -1309,8 +1324,9 @@
 
             updateDashboardLinkUI(seller);
 
-            // Se for o perfil exclusivo da Loja (ADMIN), abre direto na aba Visão Geral da Loja
-            if (seller.code === 'ADMIN') {
+            // Se for gestor/proprietário da Loja (ADMIN, WILLIAM ou MEIRE), abre direto na aba Visão Geral da Loja
+            const upCode = (seller.code || '').toUpperCase();
+            if (['ADMIN', 'WILLIAM', 'MEIRE'].includes(upCode)) {
                 switchTab('admin');
             } else {
                 switchTab('sales');
@@ -1693,11 +1709,15 @@ ${itemsLines}
             tbody.innerHTML = VENDEDORES.map(v => {
                 const fullBaseUrl = window.location.origin + window.location.pathname.replace('vendedor.html', '').replace(/\/$/, '');
                 const sLink = fullBaseUrl + '/?v=' + v.code.toLowerCase();
+                const isGestor = v.role === 'admin' || ['GREG', 'ADMIN', 'WILLIAM', 'MEIRE'].includes((v.code || '').toUpperCase());
                 return `
                     <tr>
                         <td>
                             <strong>${v.name}</strong>
-                            <div style="font-size:11px; color:var(--primary); font-weight:700;">#${v.code}</div>
+                            <div style="font-size:11px; display:flex; gap:6px; align-items:center; margin-top:2px;">
+                                <span style="color:var(--primary); font-weight:800;">#${v.code}</span>
+                                ${isGestor ? '<span style="background:var(--accent-soft); color:var(--primary); font-size:10px; font-weight:800; padding:1px 6px; border-radius:4px;">👑 Gestor</span>' : '<span style="background:#E2E8F0; color:#475569; font-size:10px; font-weight:700; padding:1px 6px; border-radius:4px;">👤 Vendedor</span>'}
+                            </div>
                         </td>
                         <td>${v.whatsapp}</td>
                         <td>
@@ -1716,7 +1736,7 @@ ${itemsLines}
                                 <button class="btn-order-act" onclick="adminResetSellerPin('${v.code}', '${v.name}')">
                                     🔑 Resetar PIN
                                 </button>
-                                ${v.code !== 'GREG' && v.code !== 'ADMIN' ? `
+                                ${!isGestor ? `
                                     <button class="btn-order-act" onclick="adminToggleSeller('${v.code}', ${v.active !== false})">
                                         ${v.active !== false ? '⏸️ Desativar' : '▶️ Ativar'}
                                     </button>
@@ -1732,18 +1752,23 @@ ${itemsLines}
             const nameEl = document.getElementById('new-seller-name');
             const codeEl = document.getElementById('new-seller-code');
             const phoneEl = document.getElementById('new-seller-phone');
+            const roleEl = document.getElementById('new-seller-role');
 
             const name = nameEl.value.trim();
             const code = codeEl.value.trim().toUpperCase().replace(/[^A-Z0-9_]/g, '');
             const whatsapp = phoneEl.value.trim();
+            let role = roleEl ? roleEl.value : 'seller';
+            if (['ADMIN', 'WILLIAM', 'MEIRE', 'GREG'].includes(code)) {
+                role = 'admin';
+            }
 
             if (!name || !code || !whatsapp) {
-                showToast('⚠️ Preencha Nome, Código e WhatsApp do vendedor!');
+                showToast('⚠️ Preencha Nome, Código e WhatsApp!');
                 return;
             }
 
             try {
-                await createSellerInSupabase({ code, name, whatsapp, role: 'seller' });
+                await createSellerInSupabase({ code, name, whatsapp, role });
                 nameEl.value = '';
                 codeEl.value = '';
                 phoneEl.value = '';
@@ -1751,7 +1776,8 @@ ${itemsLines}
                 populateAdminSellerFilter();
                 renderAdminSellersTable();
                 renderAdminOrdersAndStats();
-                showToast(`✅ Vendedor ${name} (#${code}) cadastrado com sucesso!`);
+                const tipoTxt = role === 'admin' ? 'Gestor' : 'Vendedor';
+                showToast(`✅ ${tipoTxt} ${name} (#${code}) cadastrado com sucesso!`);
             } catch (err) {
                 showToast('⚠️ Erro: Código já existe ou falha na conexão.');
             }
