@@ -1270,6 +1270,13 @@
             }
         }
 
+        function isCurrentAdmin() {
+            if (!currentLoggedSeller) return false;
+            return currentLoggedSeller.role === 'admin' ||
+                   currentLoggedSeller.code === 'GREG' ||
+                   currentLoggedSeller.code === 'ADMIN';
+        }
+
         function loginSuccess(code) {
             const seller = VENDEDORES.find(v => v.code === code);
             if (!seller) return;
@@ -1283,12 +1290,21 @@
             document.getElementById('dash-name').textContent = seller.name;
             document.getElementById('dash-code').textContent = '#' + seller.code;
 
-            const isAdmin = seller.role === 'admin' || seller.code === 'GREG' || seller.code === 'ADMIN';
+            const isAdmin = isCurrentAdmin();
             document.getElementById('dash-role-label').textContent = isAdmin ? 'Gestor / Admin' : 'Consultor Oficial';
 
             const adminTabBtn = document.getElementById('tab-btn-admin');
+            const adminPane = document.getElementById('tab-admin');
             if (adminTabBtn) {
                 adminTabBtn.style.display = isAdmin ? 'flex' : 'none';
+            }
+            if (adminPane) {
+                if (!isAdmin) {
+                    adminPane.style.display = 'none';
+                    adminPane.classList.remove('active');
+                } else {
+                    adminPane.style.display = '';
+                }
             }
 
             updateDashboardLinkUI(seller);
@@ -1340,6 +1356,11 @@
         }
 
         function switchTab(tabName) {
+            // Trava de segurança: somente Grégory, William e Meire (Admins) podem acessar a aba admin
+            if (tabName === 'admin' && !isCurrentAdmin()) {
+                tabName = 'sales';
+            }
+
             ['sales', 'link', 'admin'].forEach(t => {
                 const btn = document.getElementById('tab-btn-' + t);
                 const pane = document.getElementById('tab-' + t);
@@ -1349,7 +1370,7 @@
 
             if (tabName === 'sales') {
                 loadMyOrders();
-            } else if (tabName === 'admin') {
+            } else if (tabName === 'admin' && isCurrentAdmin()) {
                 loadAdminDashboard();
             }
         }
@@ -1548,6 +1569,11 @@ ${itemsLines}
 
         // --- ABA 3: PAINEL ADMINISTRATIVO (LOJA / GESTÃO) ---
         async function loadAdminDashboard() {
+            if (!isCurrentAdmin()) {
+                switchTab('sales');
+                return;
+            }
+
             const monthPicker = document.getElementById('admin-month-picker');
             const ym = monthPicker ? monthPicker.value : '';
 
