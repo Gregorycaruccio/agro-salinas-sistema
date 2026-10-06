@@ -1658,9 +1658,20 @@ function checkoutWhatsApp() {
         return;
     }
 
+    const cleanPhoneDigits = customerPhone.replace(/\D/g, "");
+    if (!customerPhone || cleanPhoneDigits.length < 10) {
+        showToast("⚠️ Por favor, informe seu WhatsApp com DDD para contato!");
+        if (inputCustomerPhone) {
+            inputCustomerPhone.focus();
+            inputCustomerPhone.style.borderColor = "#DC2626";
+            setTimeout(() => inputCustomerPhone.style.borderColor = "", 2500);
+        }
+        return;
+    }
+
     try {
         localStorage.setItem("agro_salinas_customer_name", customerName);
-        if (customerPhone) localStorage.setItem("agro_salinas_customer_phone", customerPhone);
+        localStorage.setItem("agro_salinas_customer_phone", customerPhone);
     } catch (e) {}
 
     // Modalidade de Atendimento: Entrega a Domicílio vs Retirada no Balcão
@@ -1778,7 +1789,7 @@ function checkoutWhatsApp() {
         ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
         : `Olá! Gostaria de fazer este pedido:`;
 
-    const customerLine = `👤 *Cliente:* ${customerName}${customerPhone ? ' (' + customerPhone + ')' : ''}`;
+    const customerLine = `👤 *Cliente:* ${customerName}\n📱 *WhatsApp:* ${customerPhone}`;
 
     const message = 
 `🐾 *NOVO PEDIDO — AGRO SALINAS*
@@ -1973,6 +1984,23 @@ function setupEventListeners() {
     const inputSeller = document.getElementById("input-seller-name");
     if (inputSeller) {
         inputSeller.addEventListener("input", updateGeneratedLink);
+    }
+
+    const phoneInput = document.getElementById("checkout-customer-phone");
+    if (phoneInput) {
+        phoneInput.addEventListener("input", (e) => {
+            let v = e.target.value.replace(/\D/g, "");
+            if (v.length > 11) v = v.slice(0, 11);
+            if (v.length > 10) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 7)}-${v.slice(7)}`;
+            } else if (v.length > 6) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2, 6)}-${v.slice(6)}`;
+            } else if (v.length > 2) {
+                e.target.value = `(${v.slice(0, 2)}) ${v.slice(2)}`;
+            } else if (v.length > 0) {
+                e.target.value = `(${v}`;
+            }
+        });
     }
 }
 
