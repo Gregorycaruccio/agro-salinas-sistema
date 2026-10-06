@@ -239,7 +239,58 @@ document.addEventListener("DOMContentLoaded", () => {
     setupEventListeners();
     updateCartUI();
     updateFavoritesUI();
+    syncProductsFromSupabase();
 });
+
+// --- SINCRONIZAÇÃO EM TEMPO REAL DE ESTOQUE E PREÇOS COM O SUPABASE ---
+async function syncProductsFromSupabase() {
+    try {
+        if (typeof SUPABASE_CONFIG === 'undefined' || !SUPABASE_CONFIG.url || !Array.isArray(PRODUCTS)) return;
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/produtos?select=id,code,price,available,out_of_stock,badge,raw_data`, {
+            headers: {
+                'apikey': SUPABASE_CONFIG.anonKey,
+                'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`
+            }
+        });
+        if (!res.ok) return;
+        const dbProducts = await res.json();
+        if (!Array.isArray(dbProducts) || dbProducts.length === 0) return;
+
+        let hasChanges = false;
+        dbProducts.forEach(dbP => {
+            const local = PRODUCTS.find(p => p.id.toString() === dbP.id.toString());
+            if (local) {
+                const newPrice = Number(dbP.price);
+                const newAvail = dbP.available !== false;
+                const newOutOfStock = Boolean(dbP.out_of_stock);
+                const newBadge = dbP.badge !== null && dbP.badge !== undefined ? dbP.badge : local.badge;
+                const newStock = (dbP.raw_data && typeof dbP.raw_data.stock !== 'undefined') ? dbP.raw_data.stock : undefined;
+
+                if (
+                    local.price !== newPrice ||
+                    local.available !== newAvail ||
+                    local.outOfStock !== newOutOfStock ||
+                    (newBadge !== local.badge) ||
+                    (typeof newStock !== 'undefined' && local.stock !== newStock)
+                ) {
+                    local.price = newPrice;
+                    local.available = newAvail;
+                    local.outOfStock = newOutOfStock;
+                    local.badge = newBadge;
+                    if (typeof newStock !== 'undefined') local.stock = newStock;
+                    hasChanges = true;
+                }
+            }
+        });
+
+        if (hasChanges) {
+            renderProducts();
+            updateCartUI();
+        }
+    } catch (err) {
+        console.warn('Sincronização em segundo plano não disponível:', err);
+    }
+}
 
 // --- SISTEMA MULTI-VENDEDOR SEGURO (PROTEÇÃO DE COMISSÃO) ---
 let isLinkExpiredGlobal = false;
