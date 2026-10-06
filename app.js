@@ -321,10 +321,10 @@ function initSeller() {
     const sellerParam = urlParams.get("v") || urlParams.get("vendedor") || urlParams.get("ref");
     const timeParam = urlParams.get("t") || urlParams.get("token") || urlParams.get("d");
 
-    // Vendedor padrão caso não haja indicação (Grégory)
+    // Vendedor padrão caso não haja indicação (Loja Oficial: William & Meiri)
     const fallbackSeller = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.defaultVendedor) 
         ? VENDAS_CONFIG.defaultVendedor 
-        : { code: "GREG", name: "Grégory", whatsapp: "5551982199486" };
+        : { code: "LOJA", name: "William & Meiri (Loja)", whatsapp: "5551995624230" };
 
     if (sellerParam) {
         const inputCode = decodeURIComponent(sellerParam).trim().toUpperCase();
@@ -334,24 +334,25 @@ function initSeller() {
         if (typeof findVendedorByCode === 'function') {
             matched = findVendedorByCode(inputCode);
         } else if (typeof VENDEDORES !== 'undefined') {
-            matched = VENDEDORES.find(v => v.code === inputCode && v.active);
+            matched = VENDEDORES.find(v => v.code === inputCode && v.active !== false);
         }
 
         if (matched) {
+            const isStore = ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes(matched.code.toUpperCase());
             currentSeller = {
-                code: matched.code,
-                name: matched.name,
-                tag: `#${matched.code}`,
-                whatsapp: matched.whatsapp
+                code: isStore ? "LOJA" : matched.code,
+                name: isStore ? "William & Meiri (Loja)" : matched.name,
+                tag: isStore ? "#LOJA-OFICIAL" : (matched.tag || `#${matched.code}`),
+                whatsapp: isStore ? "5551995624230" : matched.whatsapp
             };
             // Salva na sessão do cliente para ele não perder o vendedor enquanto navega
-            localStorage.setItem("agro_salinas_seller_code", matched.code);
+            localStorage.setItem("agro_salinas_seller_code", currentSeller.code);
         } else {
-            // Código desconhecido: usa padrão
+            // Código desconhecido: usa atendimento oficial da loja
             currentSeller = {
                 code: fallbackSeller.code,
                 name: fallbackSeller.name,
-                tag: `#${fallbackSeller.code}`,
+                tag: "#LOJA-OFICIAL",
                 whatsapp: fallbackSeller.whatsapp
             };
         }
@@ -363,37 +364,43 @@ function initSeller() {
             if (typeof findVendedorByCode === 'function') {
                 matched = findVendedorByCode(savedCode);
             } else if (typeof VENDEDORES !== 'undefined') {
-                matched = VENDEDORES.find(v => v.code === savedCode && v.active);
+                matched = VENDEDORES.find(v => v.code === savedCode && v.active !== false);
             }
         }
 
         if (matched) {
+            const isStore = ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes(matched.code.toUpperCase());
             currentSeller = {
-                code: matched.code,
-                name: matched.name,
-                tag: `#${matched.code}`,
-                whatsapp: matched.whatsapp
+                code: isStore ? "LOJA" : matched.code,
+                name: isStore ? "William & Meiri (Loja)" : matched.name,
+                tag: isStore ? "#LOJA-OFICIAL" : (matched.tag || `#${matched.code}`),
+                whatsapp: isStore ? "5551995624230" : matched.whatsapp
             };
         } else {
             currentSeller = {
                 code: fallbackSeller.code,
                 name: fallbackSeller.name,
-                tag: `#${fallbackSeller.code}`,
+                tag: "#LOJA-OFICIAL",
                 whatsapp: fallbackSeller.whatsapp
             };
         }
     }
 
+    const isStoreGlobal = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+
     // --- VERIFICAÇÃO DE VALIDADE DO LINK (DURAÇÃO MÁXIMA DE 30 DIAS) ---
-    const savedLinkCreatedAt = localStorage.getItem("agro_salinas_link_time");
-    let validation = { valid: true, expired: false, remainingDays: 30 };
-    if (typeof validateSellerLink === "function") {
-        validation = validateSellerLink(timeParam, savedLinkCreatedAt);
+    // Links oficiais da Loja (William & Meiri) são fixos e permanentes, nunca expiram
+    let validation = { valid: true, expired: false, remainingDays: 365 };
+    if (!isStoreGlobal) {
+        const savedLinkCreatedAt = localStorage.getItem("agro_salinas_link_time");
+        if (typeof validateSellerLink === "function") {
+            validation = validateSellerLink(timeParam, savedLinkCreatedAt);
+        }
     }
     currentLinkValidation = validation;
 
-    // Se o link completou os 30 dias:
-    if (validation.expired) {
+    // Se o link completou os 30 dias (apenas para links temporários de vendedores externos):
+    if (!isStoreGlobal && validation.expired) {
         isLinkExpiredGlobal = true;
         showLinkExpiredScreen(currentSeller, validation);
         return;
@@ -406,13 +413,28 @@ function initSeller() {
 
     // Atualizar UI do Banner (se visível)
     const bannerEl = document.getElementById("seller-banner");
-    const sellerNameEl = document.getElementById("seller-name");
-    const sellerTagEl = document.getElementById("seller-tag");
-    if (sellerNameEl) sellerNameEl.textContent = currentSeller.name;
-    if (sellerTagEl) sellerTagEl.textContent = currentSeller.tag;
-    
-    // Se o cliente acessou por link de vendedor oficial, mostramos uma identificação elegante e discreta
-    if (bannerEl && currentSeller.code) {
+    if (bannerEl && currentSeller && currentSeller.code) {
+        if (isStoreGlobal) {
+            bannerEl.innerHTML = `
+                <div class="seller-info">
+                    <span style="font-size: 15px;">🏪</span>
+                    <div>
+                        <span>Atendimento Direto: <strong id="seller-name">Agro Salinas (William & Meiri)</strong></span>
+                        <span class="seller-badge" id="seller-tag" style="background: rgba(255,255,255,0.22); color: #fff;">#LOJA-OFICIAL</span>
+                    </div>
+                </div>
+            `;
+        } else {
+            bannerEl.innerHTML = `
+                <div class="seller-info">
+                    <span style="font-size: 15px;">🧑‍💼</span>
+                    <div>
+                        <span>Seu Consultor(a): <strong id="seller-name">${currentSeller.name}</strong></span>
+                        <span class="seller-badge" id="seller-tag">${currentSeller.tag || '#' + currentSeller.code}</span>
+                    </div>
+                </div>
+            `;
+        }
         bannerEl.style.display = "flex";
     }
 }
@@ -1380,11 +1402,15 @@ function openCartDrawer() {
     // Atualiza o texto do botão para deixar claro quem vai receber o pedido
     const btnText = document.getElementById("btn-checkout-text");
     const noticeName = document.getElementById("cart-notice-seller-name");
+    const isStoreCart = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+
     if (btnText && currentSeller) {
-        btnText.textContent = `Enviar Pedido para ${currentSeller.name}`;
+        btnText.textContent = isStoreCart ? `Enviar Pedido para a Loja` : `Enviar Pedido para ${currentSeller.name}`;
     }
     if (noticeName && currentSeller) {
-        noticeName.innerHTML = `Atendimento por: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong>`;
+        noticeName.innerHTML = isStoreCart
+            ? `Atendimento direto: <strong style="color: var(--primary);">Loja Agro Salinas (William & Meiri)</strong>`
+            : `Atendimento por: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong>`;
     }
 }
 
@@ -1826,18 +1852,24 @@ function checkoutWhatsApp() {
         }
     }
 
-    // Identifica o WhatsApp de destino: vai para o vendedor responsável pelo atendimento
-    const targetWhatsapp = (currentSeller && currentSeller.whatsapp) 
-        ? currentSeller.whatsapp 
-        : (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
+    // Identifica o WhatsApp de destino: vai para a Loja Oficial (William & Meiri) ou consultor responsável
+    const isStoreCheckout = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
 
-    const sellerTag = (currentSeller && currentSeller.code) 
-        ? `🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
-        : '';
+    const targetWhatsapp = isStoreCheckout
+        ? (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : "5551995624230")
+        : ((currentSeller && currentSeller.whatsapp) ? currentSeller.whatsapp : "5551995624230");
 
-    const greeting = (currentSeller && currentSeller.name)
-        ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
-        : `Olá! Gostaria de fazer este pedido:`;
+    const sellerTag = isStoreCheckout
+        ? `🏪 *Atendimento:* Direto da Loja Oficial (William & Meiri)\n`
+        : ((currentSeller && currentSeller.code) 
+            ? `🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
+            : '');
+
+    const greeting = isStoreCheckout
+        ? `Olá, William e Meiri! Gostaria de fazer este pedido direto com a loja:`
+        : ((currentSeller && currentSeller.name)
+            ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
+            : `Olá! Gostaria de fazer este pedido:`);
 
     const customerLine = `👤 *Cliente:* ${customerName}\n📱 *WhatsApp:* ${customerPhone}`;
 
@@ -1864,8 +1896,8 @@ Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obriga
     // Registra o pedido no banco de dados (Supabase) automaticamente em segundo plano
     if (typeof saveOrderToSupabase === "function") {
         saveOrderToSupabase({
-            seller_code: currentSeller && currentSeller.code ? currentSeller.code : "GREG",
-            seller_name: currentSeller && currentSeller.name ? currentSeller.name : "Grégory",
+            seller_code: isStoreCheckout ? "LOJA" : (currentSeller && currentSeller.code ? currentSeller.code : "LOJA"),
+            seller_name: isStoreCheckout ? "William & Meiri (Loja)" : (currentSeller && currentSeller.name ? currentSeller.name : "William & Meiri (Loja)"),
             customer_name: customerName,
             customer_phone: customerPhone,
             fulfillment_type: fulfillmentType === "entrega" ? "Entrega em Domicílio" : "Retirada no Balcão",
@@ -1885,10 +1917,12 @@ function quickBuyWhatsApp(productId) {
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
 
-    // Destino: vendedor responsável ou loja
-    const targetWhatsapp = (currentSeller && currentSeller.whatsapp) 
-        ? currentSeller.whatsapp 
-        : (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : STORE_CONFIG.whatsappNumber);
+    // Destino: Loja Oficial (William & Meiri) ou consultor responsável
+    const isStoreQuick = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+
+    const targetWhatsapp = isStoreQuick
+        ? (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : "5551995624230")
+        : ((currentSeller && currentSeller.whatsapp) ? currentSeller.whatsapp : "5551995624230");
 
     const isGranel = product.category === 'granel';
     const activeVar = getProductActiveVariant(product);
@@ -1898,9 +1932,13 @@ function quickBuyWhatsApp(productId) {
     const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
-    const sellerTag = (currentSeller && currentSeller.code) 
-        ? `\n🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
-        : '';
+    const sellerTag = isStoreQuick
+        ? `\n🏪 *Atendimento:* Direto da Loja Oficial (William & Meiri)`
+        : ((currentSeller && currentSeller.code) 
+            ? `\n🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
+            : '');
+
+    const greetingName = isStoreQuick ? "William e Meiri" : (currentSeller && currentSeller.name ? currentSeller.name : "Agro Salinas");
 
     let message = "";
     if (isGranel) {
@@ -1911,7 +1949,7 @@ function quickBuyWhatsApp(productId) {
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${currentSeller.name}! Gostaria de saber a previsão de disponibilidade deste produto a granel:
+Olá, ${greetingName}! Gostaria de saber a previsão de disponibilidade deste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1923,7 +1961,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${currentSeller.name}! Tenho interesse neste produto a granel:
+Olá, ${greetingName}! Tenho interesse neste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1937,7 +1975,7 @@ ${sellerTag}
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${currentSeller.name}! Gostaria de saber a previsão deste produto no catálogo:
+Olá, ${greetingName}! Gostaria de saber a previsão deste produto no catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
@@ -1948,7 +1986,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${currentSeller.name}! Tenho interesse no seguinte produto do catálogo:
+Olá, ${greetingName}! Tenho interesse no seguinte produto do catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}

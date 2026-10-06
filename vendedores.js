@@ -11,7 +11,7 @@ const DEFAULT_VENDEDORES = [
         code: "GREG",
         name: "Grégory",
         whatsapp: "5551982199486",
-        pin: null,
+        pin: "0806",
         role: "admin",
         active: true
     },
@@ -24,10 +24,18 @@ const DEFAULT_VENDEDORES = [
         active: true
     },
     {
-        code: "ADMIN",
-        name: "William & Meire (Loja)",
+        code: "LOJA",
+        name: "William & Meiri (Loja)",
         whatsapp: "5551995624230",
-        pin: null,
+        pin: "1985",
+        role: "admin",
+        active: true
+    },
+    {
+        code: "ADMIN",
+        name: "William & Meiri (Loja)",
+        whatsapp: "5551995624230",
+        pin: "1985",
         role: "admin",
         active: true
     }
@@ -48,22 +56,52 @@ let VENDEDORES = (function () {
 })();
 
 const VENDAS_CONFIG = {
-    // WhatsApp oficial da Agropecuária (William & Meire) para entrega
+    // WhatsApp oficial da Agropecuária (William & Meiri) para entrega e atendimento
     lojaWhatsApp: "5551995624230",
-    lojaNome: "Agro Salinas (William & Meire)",
+    lojaNome: "Agro Salinas (William & Meiri)",
 
-    // Vendedor padrão caso o cliente acesse o link sem indicação
+    // Vendedor padrão caso o cliente acesse o link sem indicação (Loja Oficial: William & Meiri)
     defaultVendedor: {
-        code: "GREG",
-        name: "Grégory",
-        whatsapp: "5551982199486"
+        code: "LOJA",
+        name: "William & Meiri (Loja)",
+        whatsapp: "5551995624230"
     }
 };
 
 function findVendedorByCode(code) {
     if (!code) return null;
     const clean = code.toString().trim().toUpperCase();
-    return VENDEDORES.find(v => v.code === clean && v.active) || null;
+
+    // Apelidos e códigos oficiais que direcionam para o atendimento direto da Loja (William & Meiri)
+    if (['LOJA', 'ADMIN', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes(clean)) {
+        const found = VENDEDORES.find(v => (v.code === 'LOJA' || v.code === 'ADMIN') && v.active !== false);
+        if (found) {
+            return {
+                ...found,
+                code: 'LOJA',
+                name: 'William & Meiri (Loja)',
+                tag: '#LOJA-OFICIAL',
+                whatsapp: '5551995624230'
+            };
+        }
+        return {
+            code: "LOJA",
+            name: "William & Meiri (Loja)",
+            tag: "#LOJA-OFICIAL",
+            whatsapp: "5551995624230",
+            role: "admin",
+            active: true
+        };
+    }
+
+    if (clean === 'GREG' || clean === 'GREGORY') {
+        return VENDEDORES.find(v => v.code === 'GREG' && v.active !== false) || null;
+    }
+    if (clean === 'RODRIGO') {
+        return VENDEDORES.find(v => v.code === 'RODRIGO' && v.active !== false) || null;
+    }
+
+    return VENDEDORES.find(v => v.code === clean && v.active !== false) || null;
 }
 
 // --- CONFIGURAÇÃO DE VALIDADE DO LINK DE VENDEDOR (30 DIAS) ---
@@ -91,8 +129,14 @@ function generateSellerLink(sellerCode, timestampMs = Date.now(), baseUrl = "") 
     if (!baseUrl) {
         baseUrl = getBaseAppUrl();
     }
-    const cleanCode = (sellerCode || "greg").toString().trim().toLowerCase();
-    // Guardamos o timestamp em segundos codificado em base36 (ex: ?v=greg&t=m2j4xk)
+    const cleanCode = (sellerCode || "loja").toString().trim().toLowerCase();
+
+    // Links da Loja Oficial (William & Meiri) são fixos e permanentes (sem expiração de 30 dias)
+    if (['admin', 'loja', 'william', 'meiri', 'meire', 'lojaoficial', 'store'].includes(cleanCode)) {
+        return `${baseUrl}/?v=loja`;
+    }
+
+    // Links de vendedores individuais usam timestamp em base36 (validade de 30 dias)
     const timeSec = Math.floor(timestampMs / 1000);
     const token = timeSec.toString(36);
     return `${baseUrl}/?v=${cleanCode}&t=${token}`;
