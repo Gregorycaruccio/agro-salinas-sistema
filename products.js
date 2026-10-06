@@ -268,7 +268,10 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,242 kg",
         "image": "assets/granel/Racao Golden Carne - 1.242kg - 21.00kg - 26.08.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "granel_real_17",
@@ -281,7 +284,10 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,218 kg",
         "image": "assets/granel/Racao Golden Carne Mini Bits Porte Pequeno - 1.218kg - 13.99kg - 17.04.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "granel_real_18",
@@ -294,7 +300,10 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,192 kg",
         "image": "assets/granel/Racao Golden Frango - 1.192kg - 21.00kg - 25.03.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "granel_real_19",
@@ -307,7 +316,10 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,290 kg",
         "image": "assets/granel/Racao Golden Frango e Arroz Mini Bits Porte Pequeno - 1.290kg - 13.99kg - 18.05.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "granel_real_20",
@@ -320,7 +332,10 @@ const PRODUCTS = [
         "featured": true,
         "badge": "Pacote 1,274 kg",
         "image": "assets/granel/Racao Golden Salmao - 1.274kg - 22.00kg - 28.03.png",
-        "extraInfo": "Embalagem Pesada e Selada (R$ 22,00/kg)"
+        "extraInfo": "Embalagem Pesada e Selada (R$ 22,00/kg)",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "granel_real_21",
@@ -3532,7 +3547,8 @@ const PRODUCTS = [
         "badge": "Destaque",
         "image": "assets/produtos/1_caes/racoes_golden/58.jpg",
         "outOfStock": true,
-        "available": false
+        "available": false,
+        "stock": 0
     },
     {
         "id": "59",
@@ -3544,7 +3560,10 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "assets/produtos/1_caes/racoes_golden/59.jpg"
+        "image": "assets/produtos/1_caes/racoes_golden/59.jpg",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "436",
@@ -3556,7 +3575,10 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "assets/produtos/1_caes/racoes_golden/436.jpg"
+        "image": "assets/produtos/1_caes/racoes_golden/436.jpg",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "63",
@@ -3567,7 +3589,10 @@ const PRODUCTS = [
         "price": 180.6,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "52",
@@ -3578,7 +3603,10 @@ const PRODUCTS = [
         "price": 194.5,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "50",
@@ -3589,7 +3617,10 @@ const PRODUCTS = [
         "price": 180.6,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "outOfStock": true,
+        "available": false,
+        "stock": 0
     },
     {
         "id": "57",
@@ -3603,7 +3634,8 @@ const PRODUCTS = [
         "badge": "Destaque",
         "image": "assets/produtos/1_caes/racoes_golden/57.jpg",
         "outOfStock": true,
-        "available": false
+        "available": false,
+        "stock": 0
     },
     {
         "id": "54",
@@ -3614,10 +3646,11 @@ const PRODUCTS = [
         "price": 187.25,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque",
+        "badge": "Apenas 1 un",
         "image": "assets/produtos/1_caes/racoes_golden/54.jpg",
-        "outOfStock": true,
-        "available": false
+        "outOfStock": false,
+        "available": true,
+        "stock": 1
     },
     {
         "id": "104",
@@ -7923,22 +7956,32 @@ const PRODUCTS = [
     {
         "id": "47",
         "code": "47",
-        "name": "Special Adulto Carne e Frango15kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "name": "Golden Special Adulto Carne e Frango 15kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
         "price": 160,
-        "unit": "kg",
-        "featured": false
+        "unit": "pct",
+        "featured": true,
+        "image": "assets/produtos/1_caes/racoes_golden/47.jpg",
+        "outOfStock": false,
+        "available": true,
+        "stock": 1,
+        "badge": "Apenas 1 un"
     },
     {
         "id": "48",
         "code": "48",
-        "name": "Special Carne e Frango 20kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "name": "Golden Special Carne e Frango 20kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
         "price": 205,
-        "unit": "kg",
-        "featured": false
+        "unit": "pct",
+        "featured": true,
+        "image": "assets/produtos/1_caes/racoes_golden/48.jpg",
+        "outOfStock": false,
+        "available": true,
+        "stock": 2,
+        "badge": "Apenas 2 un"
     },
     {
         "id": "569",

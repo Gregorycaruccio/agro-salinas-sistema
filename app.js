@@ -190,6 +190,7 @@ function getCatalogProducts() {
 function isProductAvailable(product) {
     if (!product) return false;
     if (product.outOfStock || product.available === false || product.paused) return false;
+    if (typeof product.stock === 'number' && product.stock <= 0) return false;
     if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.requireImageForPurchase) {
         return !!product.image && typeof product.image === 'string' && product.image.trim() !== '';
     }
@@ -1157,6 +1158,13 @@ function addToCart(productId, event) {
         return;
     }
     const cartKey = getActiveCartKey(productId);
+    if (product && typeof product.stock === 'number' && product.stock > 0) {
+        const currentQty = cart[cartKey] || 0;
+        if (currentQty >= product.stock) {
+            showToast(`⚠️ Temos apenas ${product.stock} un em estoque deste item.`);
+            return;
+        }
+    }
     cart[cartKey] = (cart[cartKey] || 0) + 1;
     saveCart();
     
@@ -1183,6 +1191,13 @@ function updateCartQty(cartKey, delta, event) {
     if (delta > 0 && product && !isProductAvailable(product)) {
         showToast("⚠️ Este produto está indisponível para pedidos no momento.");
         return;
+    }
+    if (delta > 0 && product && typeof product.stock === 'number' && product.stock > 0) {
+        const currentQty = cart[cartKey] || 0;
+        if (currentQty + delta > product.stock) {
+            showToast(`⚠️ Limite atingido: temos apenas ${product.stock} un deste produto.`);
+            return;
+        }
     }
     if (!cart[cartKey]) {
         if (delta > 0) cart[cartKey] = delta;
