@@ -1634,6 +1634,29 @@ function addRecommendationToCart(productId, event) {
     renderCartDrawerItems();
 }
 
+// Controle dinâmico do campo de troco ao selecionar pagamento em Dinheiro
+function handlePaymentChange(paymentValue) {
+    const changeContainer = document.getElementById("payment-change-container");
+    if (!changeContainer) return;
+    if (paymentValue === "Dinheiro") {
+        changeContainer.style.display = "block";
+    } else {
+        changeContainer.style.display = "none";
+    }
+}
+
+function toggleNeedChange(needChangeValue) {
+    const inputBox = document.getElementById("payment-change-input-box");
+    const inputAmount = document.getElementById("checkout-change-amount");
+    if (!inputBox) return;
+    if (needChangeValue === "sim") {
+        inputBox.style.display = "block";
+        if (inputAmount) setTimeout(() => inputAmount.focus(), 80);
+    } else {
+        inputBox.style.display = "none";
+    }
+}
+
 // --- GERAÇÃO DE MENSAGEM DO WHATSAPP (PRESERVA TODAS AS REGRAS DE GRANEL & ENCODE SEGURO) ---
 function checkoutWhatsApp() {
     const { totalCount, totalPrice } = getCartStats();
@@ -1776,6 +1799,33 @@ function checkoutWhatsApp() {
     const selectedPayInput = document.querySelector('input[name="checkout_payment"]:checked');
     const paymentMethod = selectedPayInput ? selectedPayInput.value : "A combinar";
 
+    let paymentDetailsText = paymentMethod;
+    let paymentSummaryForDb = paymentMethod;
+
+    if (paymentMethod === "Dinheiro") {
+        const needChangeInput = document.querySelector('input[name="checkout_need_change"]:checked');
+        const needChange = needChangeInput ? needChangeInput.value : "nao";
+        if (needChange === "sim") {
+            const inputChangeAmount = document.getElementById("checkout-change-amount");
+            const changeAmount = inputChangeAmount ? inputChangeAmount.value.trim() : "";
+            if (!changeAmount) {
+                showToast("⚠️ Por favor, informe para quanto você precisa de troco!");
+                if (inputChangeAmount) {
+                    inputChangeAmount.focus();
+                    inputChangeAmount.style.borderColor = "#DC2626";
+                    setTimeout(() => inputChangeAmount.style.borderColor = "", 2500);
+                }
+                return;
+            }
+            const cleanVal = changeAmount.replace(/^R\$\s*/i, '');
+            paymentDetailsText = `Dinheiro (Levar troco para: *R$ ${cleanVal}*)`;
+            paymentSummaryForDb = `Dinheiro (Troco p/ R$ ${cleanVal})`;
+        } else {
+            paymentDetailsText = `Dinheiro (*Não precisa de troco - valor exato*)`;
+            paymentSummaryForDb = `Dinheiro (Sem troco)`;
+        }
+    }
+
     // Identifica o WhatsApp de destino: vai para o vendedor responsável pelo atendimento
     const targetWhatsapp = (currentSeller && currentSeller.whatsapp) 
         ? currentSeller.whatsapp 
@@ -1802,7 +1852,7 @@ ${customerLine}
 ${itemsText}
 ────────────────────────────────
 💰 *TOTAL: R$ ${totalPrice.toFixed(2).replace('.', ',')}*
-💳 *Pagamento:* ${paymentMethod}
+💳 *Pagamento:* ${paymentDetailsText}
 
 ${fulfillmentDetailsText}
 
@@ -1820,7 +1870,7 @@ Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obriga
             customer_phone: customerPhone,
             fulfillment_type: fulfillmentType === "entrega" ? "Entrega em Domicílio" : "Retirada no Balcão",
             address_details: addressSummaryForDb,
-            payment_method: paymentMethod,
+            payment_method: paymentSummaryForDb,
             items_json: itemsJsonForDb,
             items_summary: itemsSummaryList.join(" | "),
             total_price: Number(totalPrice.toFixed(2))

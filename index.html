@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Catálogo Digital | Agro Salinas</title>
-    <link rel="stylesheet" href="style.css?v=4.1">
+    <link rel="stylesheet" href="style.css?v=4.8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -413,33 +413,55 @@
                     <label class="payment-selector-label">💳 Como você pretende pagar?</label>
                     <div class="payment-options-grid">
                         <label class="payment-option">
-                            <input type="radio" name="checkout_payment" value="PIX" checked>
+                            <input type="radio" name="checkout_payment" value="PIX" checked onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
                                 <span class="pay-icon">⚡</span>
                                 <span class="pay-name">Pix</span>
                             </span>
                         </label>
                         <label class="payment-option">
-                            <input type="radio" name="checkout_payment" value="Cartão de Crédito">
+                            <input type="radio" name="checkout_payment" value="Cartão de Crédito" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
                                 <span class="pay-icon">💳</span>
                                 <span class="pay-name">Crédito</span>
                             </span>
                         </label>
                         <label class="payment-option">
-                            <input type="radio" name="checkout_payment" value="Cartão de Débito">
+                            <input type="radio" name="checkout_payment" value="Cartão de Débito" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
                                 <span class="pay-icon">🏦</span>
                                 <span class="pay-name">Débito</span>
                             </span>
                         </label>
                         <label class="payment-option">
-                            <input type="radio" name="checkout_payment" value="Dinheiro">
+                            <input type="radio" name="checkout_payment" value="Dinheiro" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
                                 <span class="pay-icon">💵</span>
                                 <span class="pay-name">Dinheiro</span>
                             </span>
                         </label>
+                    </div>
+
+                    <!-- OPÇÃO DINÂMICA DE TROCO (QUANDO DINHEIRO SELECIONADO) -->
+                    <div class="payment-change-container" id="payment-change-container" style="display: none;">
+                        <span class="payment-change-title">💵 Vai precisar de troco?</span>
+                        <div class="payment-change-radios">
+                            <label class="payment-change-radio-label">
+                                <input type="radio" name="checkout_need_change" value="nao" checked onchange="toggleNeedChange(this.value)">
+                                Não preciso de troco
+                            </label>
+                            <label class="payment-change-radio-label">
+                                <input type="radio" name="checkout_need_change" value="sim" onchange="toggleNeedChange(this.value)">
+                                Sim, preciso de troco
+                            </label>
+                        </div>
+                        <div id="payment-change-input-box" style="display: none;">
+                            <label for="checkout-change-amount" style="font-size: 11px; color: #64748B; font-weight: 600; display: block; margin-top: 6px;">Troco para quanto?</label>
+                            <div class="payment-change-input-wrap">
+                                <span class="currency-prefix">R$</span>
+                                <input type="text" id="checkout-change-amount" inputmode="decimal" placeholder="Ex: 50,00 ou 100,00">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -475,8 +497,8 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="vendedores.js?v=4.7"></script>
-    <script src="products.js?v=4.7"></script>
-    <script src="app.js?v=4.7"></script>
+    <script src="vendedores.js?v=4.8"></script>
+    <script src="products.js?v=4.8"></script>
+    <script src="app.js?v=4.8"></script>
 </body>
 </html>
