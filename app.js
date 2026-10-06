@@ -864,11 +864,20 @@ function renderProducts() {
             const normName = normalizeText(p.name);
             const normCode = normalizeText(p.code);
             const normSubcat = normalizeText(p.subcategory);
+            const normCat = normalizeText(p.category);
             const normDesc = normalizeText(p.description || '');
             const graoMacioTerms = (p.graoMacio || normName.includes('allcanis')) ? 'grao macio graos macios' : '';
             const variantTerms = p.variations ? p.variations.map(v => `${v.code || ''} ${v.label || ''}`).join(' ') : '';
-            const combined = `${normName} ${normCode} ${normSubcat} ${normDesc} ${graoMacioTerms} ${variantTerms}`;
-            const matchesAllTokens = queryTokens.every(tok => combined.includes(tok));
+            const combined = `${normName} ${normCode} ${normSubcat} ${normCat} ${normDesc} ${graoMacioTerms} ${variantTerms}`;
+            const matchesAllTokens = queryTokens.every(tok => {
+                if (tok === 'cao' || tok === 'caes') {
+                    return /\b(cao|caes|cachorro|cachorros|canino|caninos)\b/i.test(combined);
+                }
+                if (tok === 'gato' || tok === 'gatos') {
+                    return /\b(gato|gatos|felino|felinos)\b/i.test(combined);
+                }
+                return combined.includes(tok);
+            });
             if (!matchesAllTokens) return false;
         }
 

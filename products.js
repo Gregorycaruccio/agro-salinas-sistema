@@ -260,23 +260,22 @@ const PRODUCTS = [
     {
         "id": "granel_real_16",
         "code": "GRA16",
-        "name": "RAÇÃO GOLDEN CARNE",
+        "name": "RAÇÃO GOLDEN GATOS CASTRADOS CARNE",
         "category": "granel",
-        "subcategory": "Cães",
+        "subcategory": "Gatos",
         "price": 26.08,
         "unit": "pct (1,242 kg)",
         "featured": true,
         "badge": "Pacote 1,242 kg",
         "image": "assets/granel/Racao Golden Carne - 1.242kg - 21.00kg - 26.08.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 21,00/kg)",
-        "outOfStock": true,
-        "available": false,
-        "stock": 0
+        "outOfStock": false,
+        "available": true
     },
     {
         "id": "granel_real_17",
         "code": "GRA17",
-        "name": "RAÇÃO GOLDEN CARNE MINI BITS PORTE PEQUENO",
+        "name": "RAÇÃO GOLDEN CÃES CARNE E ARROZ MINI BITS PORTE PEQUENO",
         "category": "granel",
         "subcategory": "Cães",
         "price": 17.04,
@@ -285,9 +284,8 @@ const PRODUCTS = [
         "badge": "Pacote 1,218 kg",
         "image": "assets/granel/Racao Golden Carne Mini Bits Porte Pequeno - 1.218kg - 13.99kg - 17.04.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)",
-        "outOfStock": true,
-        "available": false,
-        "stock": 0
+        "outOfStock": false,
+        "available": true
     },
     {
         "id": "granel_real_18",
@@ -308,7 +306,7 @@ const PRODUCTS = [
     {
         "id": "granel_real_19",
         "code": "GRA19",
-        "name": "RAÇÃO GOLDEN FRANGO E ARROZ MINI BITS PORTE PEQUENO",
+        "name": "RAÇÃO GOLDEN CÃES FRANGO E ARROZ MINI BITS PORTE PEQUENO",
         "category": "granel",
         "subcategory": "Cães",
         "price": 18.05,
@@ -317,25 +315,23 @@ const PRODUCTS = [
         "badge": "Pacote 1,290 kg",
         "image": "assets/granel/Racao Golden Frango e Arroz Mini Bits Porte Pequeno - 1.290kg - 13.99kg - 18.05.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 13,99/kg)",
-        "outOfStock": true,
-        "available": false,
-        "stock": 0
+        "outOfStock": false,
+        "available": true
     },
     {
         "id": "granel_real_20",
         "code": "GRA20",
-        "name": "RAÇÃO GOLDEN SALMAO",
+        "name": "RAÇÃO GOLDEN GATOS CASTRADOS SALMÃO",
         "category": "granel",
-        "subcategory": "Cães",
+        "subcategory": "Gatos",
         "price": 28.03,
         "unit": "pct (1,274 kg)",
         "featured": true,
         "badge": "Pacote 1,274 kg",
         "image": "assets/granel/Racao Golden Salmao - 1.274kg - 22.00kg - 28.03.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 22,00/kg)",
-        "outOfStock": true,
-        "available": false,
-        "stock": 0
+        "outOfStock": false,
+        "available": true
     },
     {
         "id": "granel_real_21",
