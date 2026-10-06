@@ -246,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
 async function syncProductsFromSupabase() {
     try {
         if (typeof SUPABASE_CONFIG === 'undefined' || !SUPABASE_CONFIG.url || !Array.isArray(PRODUCTS)) return;
-        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/produtos?select=id,code,price,available,out_of_stock,badge,raw_data`, {
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/produtos?select=*`, {
             headers: {
                 'apikey': SUPABASE_CONFIG.anonKey,
                 'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`
@@ -261,10 +261,29 @@ async function syncProductsFromSupabase() {
             const local = PRODUCTS.find(p => p.id.toString() === dbP.id.toString());
             if (local) {
                 const newPrice = Number(dbP.price);
-                const newAvail = dbP.available !== false;
-                const newOutOfStock = Boolean(dbP.out_of_stock);
-                const newBadge = dbP.badge !== null && dbP.badge !== undefined ? dbP.badge : local.badge;
-                const newStock = (dbP.raw_data && typeof dbP.raw_data.stock !== 'undefined') ? dbP.raw_data.stock : undefined;
+                let newAvail = dbP.available !== false;
+                let newOutOfStock = Boolean(dbP.out_of_stock);
+                let newBadge = dbP.badge !== null && dbP.badge !== undefined ? dbP.badge : local.badge;
+
+                // Suporte à quantidade numérica de estoque
+                let newStock = undefined;
+                if (typeof dbP.stock !== 'undefined' && dbP.stock !== null && dbP.stock !== '') {
+                    newStock = Number(dbP.stock);
+                } else if (dbP.raw_data && typeof dbP.raw_data.stock !== 'undefined' && dbP.raw_data.stock !== null) {
+                    newStock = Number(dbP.raw_data.stock);
+                }
+
+                // Se o estoque numérico for 0, marca automaticamente como esgotado
+                if (typeof newStock === 'number' && newStock <= 0) {
+                    newOutOfStock = true;
+                    newAvail = false;
+                } else if (typeof newStock === 'number' && newStock > 0) {
+                    newOutOfStock = false;
+                    newAvail = true;
+                    if (newStock <= 3 && (!newBadge || newBadge === 'Destaque' || newBadge.startsWith('Apenas'))) {
+                        newBadge = `Apenas ${newStock} un`;
+                    }
+                }
 
                 if (
                     local.price !== newPrice ||
