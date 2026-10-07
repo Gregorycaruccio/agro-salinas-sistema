@@ -8679,7 +8679,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 122.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/special_dog_cat/861.jpg"
     },
     {
         "id": "862",
@@ -8689,7 +8690,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 79.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/1_caes/special_dog_cat/862.jpg"
     },
     {
         "id": "863",
@@ -8819,7 +8821,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 13.5,
         "unit": "pct",
-        "featured": true
+        "featured": true,
+        "image": "assets/produtos/1_caes/special_dog_cat/875.jpg"
     },
     {
         "id": "876",
@@ -8829,7 +8832,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 13.5,
         "unit": "pct",
-        "featured": true
+        "featured": true,
+        "image": "assets/produtos/1_caes/special_dog_cat/876.jpg"
     },
     {
         "id": "877",
@@ -8839,7 +8843,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 23,
         "unit": "pct",
-        "featured": true
+        "featured": true,
+        "image": "assets/produtos/1_caes/special_dog_cat/877.jpg"
     }
 ];
 
