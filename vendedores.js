@@ -80,14 +80,14 @@ function findVendedorByCode(code) {
                 ...found,
                 code: 'LOJA',
                 name: 'William & Meiri (Loja)',
-                tag: '#LOJA-OFICIAL',
+                tag: '',
                 whatsapp: '5551995624230'
             };
         }
         return {
             code: "LOJA",
             name: "William & Meiri (Loja)",
-            tag: "#LOJA-OFICIAL",
+            tag: "",
             whatsapp: "5551995624230",
             role: "admin",
             active: true

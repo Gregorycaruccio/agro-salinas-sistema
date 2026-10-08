@@ -419,8 +419,7 @@ function initSeller() {
                 <div class="seller-info">
                     <span style="font-size: 15px;">🏪</span>
                     <div>
-                        <span>Atendimento Direto: <strong id="seller-name">Agro Salinas (William & Meiri)</strong></span>
-                        <span class="seller-badge" id="seller-tag" style="background: rgba(255,255,255,0.22); color: #fff;">#LOJA-OFICIAL</span>
+                        <span>Atendimento Direto: <strong id="seller-name">Agro Salinas</strong></span>
                     </div>
                 </div>
             `;
@@ -430,7 +429,7 @@ function initSeller() {
                     <span style="font-size: 15px;">🧑‍💼</span>
                     <div>
                         <span>Seu Consultor(a): <strong id="seller-name">${currentSeller.name}</strong></span>
-                        <span class="seller-badge" id="seller-tag">${currentSeller.tag || '#' + currentSeller.code}</span>
+                        <span class="seller-badge" id="seller-tag">#${currentSeller.code}</span>
                     </div>
                 </div>
             `;
@@ -1402,15 +1401,15 @@ function openCartDrawer() {
     // Atualiza o texto do botão para deixar claro quem vai receber o pedido
     const btnText = document.getElementById("btn-checkout-text");
     const noticeName = document.getElementById("cart-notice-seller-name");
-    const isStoreCart = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+    const isStoreCart = !currentSeller || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
 
-    if (btnText && currentSeller) {
-        btnText.textContent = isStoreCart ? `Enviar Pedido para a Loja` : `Enviar Pedido para ${currentSeller.name}`;
+    if (btnText) {
+        btnText.textContent = `Enviar Pedido para a Agro Salinas`;
     }
     if (noticeName && currentSeller) {
         noticeName.innerHTML = isStoreCart
-            ? `Atendimento direto: <strong style="color: var(--primary);">Loja Agro Salinas (William & Meiri)</strong>`
-            : `Atendimento por: <strong>${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})</strong>`;
+            ? `Atendimento direto: <strong style="color: var(--primary);">Agro Salinas</strong>`
+            : `Atendimento Agro Salinas • Vendedor: <strong>${currentSeller.name} (#${currentSeller.code})</strong>`;
     }
 }
 
@@ -1852,25 +1851,19 @@ function checkoutWhatsApp() {
         }
     }
 
-    // Identifica o WhatsApp de destino: vai para a Loja Oficial (William & Meiri) ou consultor responsável
-    const isStoreCheckout = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+    // Destino SEMPRE direto para o WhatsApp oficial da Agro Salinas
+    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
+        ? VENDAS_CONFIG.lojaWhatsApp 
+        : "5551995624230";
 
-    const targetWhatsapp = isStoreCheckout
-        ? (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : "5551995624230")
-        : ((currentSeller && currentSeller.whatsapp) ? currentSeller.whatsapp : "5551995624230");
+    const isStoreCheckout = !currentSeller || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
 
-    const sellerTag = isStoreCheckout
-        ? `🏪 *Atendimento:* Direto da Loja Oficial (William & Meiri)\n`
-        : ((currentSeller && currentSeller.code) 
-            ? `🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})\n` 
-            : '');
+    // Pedidos de vendedores vão com código do vendedor; pedidos da loja/Meire/William vão SEM código
+    const sellerTag = (!isStoreCheckout && currentSeller && currentSeller.code)
+        ? `🏷️ *Código do Vendedor:* #${currentSeller.code} (${currentSeller.name})\n`
+        : '';
 
-    const greeting = isStoreCheckout
-        ? `Olá, William e Meiri! Gostaria de fazer este pedido direto com a loja:`
-        : ((currentSeller && currentSeller.name)
-            ? `Olá, ${currentSeller.name}! Gostaria de fazer este pedido:`
-            : `Olá! Gostaria de fazer este pedido:`);
-
+    const greeting = `Olá, Agro Salinas! Gostaria de fazer este pedido:`;
     const customerLine = `👤 *Cliente:* ${customerName}\n📱 *WhatsApp:* ${customerPhone}`;
 
     const message = 
@@ -1897,7 +1890,7 @@ Poderia me confirmar a disponibilidade e o prazo de separação/despacho? Obriga
     if (typeof saveOrderToSupabase === "function") {
         saveOrderToSupabase({
             seller_code: isStoreCheckout ? "LOJA" : (currentSeller && currentSeller.code ? currentSeller.code : "LOJA"),
-            seller_name: isStoreCheckout ? "William & Meiri (Loja)" : (currentSeller && currentSeller.name ? currentSeller.name : "William & Meiri (Loja)"),
+            seller_name: isStoreCheckout ? "Agro Salinas (Loja)" : (currentSeller && currentSeller.name ? currentSeller.name : "Agro Salinas (Loja)"),
             customer_name: customerName,
             customer_phone: customerPhone,
             fulfillment_type: fulfillmentType === "entrega" ? "Entrega em Domicílio" : "Retirada no Balcão",
@@ -1917,12 +1910,12 @@ function quickBuyWhatsApp(productId) {
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
 
-    // Destino: Loja Oficial (William & Meiri) ou consultor responsável
-    const isStoreQuick = currentSeller && ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+    // Destino SEMPRE direto para o WhatsApp oficial da Agro Salinas
+    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
+        ? VENDAS_CONFIG.lojaWhatsApp 
+        : "5551995624230";
 
-    const targetWhatsapp = isStoreQuick
-        ? (typeof VENDAS_CONFIG !== 'undefined' ? VENDAS_CONFIG.lojaWhatsApp : "5551995624230")
-        : ((currentSeller && currentSeller.whatsapp) ? currentSeller.whatsapp : "5551995624230");
+    const isStoreQuick = !currentSeller || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
 
     const isGranel = product.category === 'granel';
     const activeVar = getProductActiveVariant(product);
@@ -1932,13 +1925,11 @@ function quickBuyWhatsApp(productId) {
     const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
-    const sellerTag = isStoreQuick
-        ? `\n🏪 *Atendimento:* Direto da Loja Oficial (William & Meiri)`
-        : ((currentSeller && currentSeller.code) 
-            ? `\n🏷️ *Consultor(a) / Indicação:* ${currentSeller.name} (${currentSeller.tag || '#' + currentSeller.code})` 
-            : '');
 
-    const greetingName = isStoreQuick ? "William e Meiri" : (currentSeller && currentSeller.name ? currentSeller.name : "Agro Salinas");
+    // Pedidos de vendedores vão com o código do vendedor; pedidos da loja/Meire/William vão SEM código
+    const sellerTag = (!isStoreQuick && currentSeller && currentSeller.code)
+        ? `\n🏷️ *Código do Vendedor:* #${currentSeller.code} (${currentSeller.name})`
+        : '';
 
     let message = "";
     if (isGranel) {
@@ -1949,7 +1940,7 @@ function quickBuyWhatsApp(productId) {
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${greetingName}! Gostaria de saber a previsão de disponibilidade deste produto a granel:
+Olá, Agro Salinas! Gostaria de saber a previsão de disponibilidade deste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1961,7 +1952,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${greetingName}! Tenho interesse neste produto a granel:
+Olá, Agro Salinas! Tenho interesse neste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
@@ -1975,7 +1966,7 @@ ${sellerTag}
 `🐾 *CONSULTA DE PRODUTO — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${greetingName}! Gostaria de saber a previsão deste produto no catálogo:
+Olá, Agro Salinas! Gostaria de saber a previsão deste produto no catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
@@ -1986,7 +1977,7 @@ ${sellerTag}
 `🐾 *NOVO PEDIDO / INTERESSE — AGRO SALINAS*
 ════════════════════════════════
 
-Olá, ${greetingName}! Tenho interesse no seguinte produto do catálogo:
+Olá, Agro Salinas! Tenho interesse no seguinte produto do catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}

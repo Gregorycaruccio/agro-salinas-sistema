@@ -8,9 +8,9 @@ const STORE_CONFIG = {
     "hideWithoutImage": false,
     "requireImageForPurchase": true,
     "defaultSeller": {
-        "code": "GREG",
-        "name": "Grégory",
-        "tag": "#GREG"
+        "code": "LOJA",
+        "name": "Agro Salinas",
+        "tag": ""
     }
 };
 
