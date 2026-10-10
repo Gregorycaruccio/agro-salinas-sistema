@@ -848,7 +848,7 @@
                 </div>
             </div>
             <div style="display: flex; gap: 8px; align-items: center;">
-                <a href="index.html" class="btn-logout" style="text-decoration: none; color: var(--primary);">🛍️ Catálogo</a>
+                <a href="index.html" id="btn-top-catalog" class="btn-logout" style="text-decoration: none; color: var(--primary);">🛍️ Catálogo</a>
                 <button class="btn-logout" onclick="logoutSeller()">Sair</button>
             </div>
         </div>
@@ -913,7 +913,7 @@
                 <span>🔗 Seu Link Exclusivo de Vendas</span>
             </div>
             <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
-                Envie este link para seus clientes. Todo pedido feito por ele fica <strong>registrado automaticamente no seu histórico mensal</strong> e cai direto no seu WhatsApp para você conferir e repassar à Agropecuária!
+                Envie este link para seus clientes. Todo pedido feito por ele fica <strong>registrado automaticamente no seu histórico mensal</strong> e vai direto para o WhatsApp da Agro Salinas identificado com o seu código de vendedor!
             </p>
 
             <!-- Box Informativo de Validade de 30 Dias -->
@@ -1408,7 +1408,7 @@
 
         function updateDashboardLinkUI(seller = currentLoggedSeller) {
             if (!seller) return;
-            const isStore = seller.role === 'admin' || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRE', 'MEIRI'].includes((seller.code || '').toUpperCase());
+            const isStore = ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRE', 'MEIRI', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((seller.code || '').toUpperCase());
 
             const bannerEl = document.getElementById('link-validity-banner');
             const iconEl = document.getElementById('link-validity-icon');
@@ -1417,11 +1417,13 @@
             const renewBtn = document.getElementById('btn-renew-link');
             const descEl = document.getElementById('link-desc-footer');
             const linkEl = document.getElementById('dash-exclusive-link');
+            const topCatBtn = document.getElementById('btn-top-catalog');
             const fullBaseUrl = (typeof getBaseAppUrl === 'function' ? getBaseAppUrl() : 'https://agro-salinas-rose.vercel.app');
 
             if (isStore) {
                 const storeLink = fullBaseUrl + '/?v=loja';
                 if (linkEl) linkEl.textContent = storeLink;
+                if (topCatBtn) topCatBtn.href = 'index.html?v=loja';
 
                 if (bannerEl) {
                     bannerEl.style.background = '#ECFDF5';
@@ -1443,7 +1445,7 @@
                 return;
             }
 
-            // Para vendedores regulares
+            // Para vendedores regulares (incluindo Grégory #GREG)
             if (bannerEl) {
                 bannerEl.style.background = '#FFFBEB';
                 bannerEl.style.borderColor = '#FDE68A';
@@ -1473,6 +1475,10 @@
                 : (fullBaseUrl + '/?v=' + seller.code.toLowerCase());
 
             if (linkEl) linkEl.textContent = myLink;
+            if (topCatBtn) {
+                const tokenParam = myLink.includes('&t=') ? '&t=' + myLink.split('&t=')[1] : '';
+                topCatBtn.href = `index.html?v=${seller.code.toLowerCase()}${tokenParam}`;
+            }
 
             const expiresDate = new Date(timeNum + 30 * 24 * 60 * 60 * 1000);
             const dateFormatted = expiresDate.toLocaleDateString('pt-BR');
@@ -1536,13 +1542,13 @@
 
         function shareOnWhatsApp() {
             if (!currentLoggedSeller) return;
-            const isStore = currentLoggedSeller.role === 'admin' || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRE', 'MEIRI'].includes((currentLoggedSeller.code || '').toUpperCase());
+            const isStore = ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRE', 'MEIRI', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentLoggedSeller.code || '').toUpperCase());
             const linkText = document.getElementById('dash-exclusive-link').textContent.trim();
             let msg = '';
             if (isStore) {
                 msg = `Olá! 🐾 Acesse o catálogo digital oficial da Agro Salinas por aqui:\n${linkText}\n\nEscolha seus produtos e faça seu pedido direto conosco! Entregamos no conforto da sua casa ou separamos para retirada no balcão da loja. 🐶🐱`;
             } else {
-                msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui:\n' + linkText + '\n\n*(Link oficial com preços e estoque atualizados válido por 30 dias)*\n\nEscolha seus produtos e me mande seu pedido que organizo tudo rapidinho para você!';
+                msg = 'Olá! 🐾 Acesse o catálogo digital completo da Agro Salinas por aqui:\n' + linkText + '\n\n*(Link oficial com preços e estoque atualizados válido por 30 dias)*\n\nEscolha seus produtos e finalize seu pedido pelo catálogo!';
             }
             const url = 'https://wa.me/?text=' + encodeURIComponent(msg);
             window.open(url, '_blank');
