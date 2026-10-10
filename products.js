@@ -7371,12 +7371,13 @@ const PRODUCTS = [
     {
         "id": "96",
         "code": "96",
-        "name": "Sache Gato Filhote Peru e Frango 85g",
+        "name": "Sachê Primogato Gato Filhote Peru e Frango 85g",
         "category": "gatos",
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "assets/produtos/2_gatos/racoes_outras_marcas/96.webp"
     },
     {
         "id": "51",
