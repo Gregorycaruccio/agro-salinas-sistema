@@ -42,6 +42,9 @@ let selectedVariants = {};
 // Ícone SVG nítido e profissional de carrinho de supermercado
 const CART_ICON_SVG = `<svg class="btn-svg-cart" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="9" cy="21" r="1.2"></circle><circle cx="19" cy="21" r="1.2"></circle><path d="M1 1h4l2.6 12.8a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6L23 6H6"></path></svg>`;
 
+// Ícone SVG nítido e profissional de compartilhamento (Web Share)
+const SHARE_ICON_SVG = `<svg class="btn-svg-share" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>`;
+
 // Funções seguras de persistência
 function saveCart() {
     try {
@@ -241,6 +244,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCartUI();
     updateFavoritesUI();
     syncProductsFromSupabase();
+    handleDirectProductUrl();
 });
 
 // --- SINCRONIZAÇÃO EM TEMPO REAL DE ESTOQUE E PREÇOS COM O SUPABASE ---
@@ -650,7 +654,7 @@ function selectCategory(catId) {
             const iconImg = document.getElementById("active-dept-icon-img");
 
             if (deptObj) {
-                if (titleEl) titleEl.textContent = `${deptObj.icon} ${deptObj.name}`;
+                if (titleEl) titleEl.textContent = deptObj.name;
                 if (iconImg) {
                     iconImg.src = deptObj.illustration;
                     iconImg.alt = deptObj.name;
@@ -763,7 +767,7 @@ function renderSubcategories() {
         chipsContainer.style.display = "grid";
         let chipsHtml = `
             <button class="dept-quick-chip ${currentSubcategory === 'todas' ? 'active' : ''}" data-subcat="todas">
-                🐾 Tudo em ${catShortName} (Ver Todos)
+                Ver Todos em ${catShortName}
             </button>
         `;
         subcats.forEach(sub => {
@@ -925,6 +929,9 @@ function buildProductCardHtml(product) {
                 <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}" aria-label="Favoritar">
                     ${isFav ? '🧡' : '🤍'}
                 </button>
+                <button class="btn-share-card" onclick="shareProduct('${product.id}', event)" title="Compartilhar link deste produto" aria-label="Compartilhar produto">
+                    ${SHARE_ICON_SVG}
+                </button>
                 <button class="btn-zap-card" onclick="quickBuyWhatsApp('${product.id}')" title="Tirar dúvidas ou pedir este item no WhatsApp" aria-label="Pedir no WhatsApp">
                     <span>💬</span>
                 </button>
@@ -956,10 +963,7 @@ function buildProductCardHtml(product) {
                     `;
                 })() : `
                     <div class="price-row">
-                        <div>
-                            <span class="price-label">PREÇO</span>
-                            <div class="price-value">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
-                        </div>
+                        <div class="price-value">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
                         <span class="price-unit">/${product.unit || 'un'}</span>
                     </div>
                 `}
@@ -967,7 +971,9 @@ function buildProductCardHtml(product) {
                 <div class="card-actions">
                     ${!isAvailable ? `
                         <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
-                            <span class="btn-cart-icon">🚫</span>
+                            <span class="btn-cart-icon">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="12" cy="12" r="10"></circle><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line></svg>
+                            </span>
                             <span class="btn-cart-text">${isEsgotado ? 'Esgotado' : 'Indisponível'}</span>
                         </button>
                     ` : qtyInCart > 0 ? `
@@ -2166,6 +2172,98 @@ function copySellerLink() {
     });
 }
 
+// --- COMPARTILHAMENTO DE PRODUTO INDIVIDUAL (LINK DIRETO COM PRESERVAÇÃO DE VENDEDOR) ---
+function buildProductShareUrl(productId) {
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return window.location.href;
+
+    const baseUrl = (typeof getBaseAppUrl === "function")
+        ? getBaseAppUrl()
+        : (window.location.origin + window.location.pathname.replace(/\/$/, ""));
+
+    const finalBase = baseUrl.replace(/\/$/, "");
+    const prodParam = encodeURIComponent(product.code || product.id);
+
+    let shareUrl = `${finalBase}/?p=${prodParam}`;
+
+    // Preserva o vendedor atual
+    if (currentSeller && currentSeller.code && currentSeller.code !== "LOJA") {
+        shareUrl += `&v=${encodeURIComponent(currentSeller.code.toLowerCase())}`;
+    }
+
+    // Preserva o token de 30 dias se houver
+    const urlParams = new URLSearchParams(window.location.search);
+    const tParam = urlParams.get("t");
+    if (tParam) {
+        shareUrl += `&t=${encodeURIComponent(tParam)}`;
+    }
+
+    return shareUrl;
+}
+
+async function shareProduct(productId, event) {
+    if (event) event.stopPropagation();
+
+    const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
+    if (!product) return;
+
+    const shareUrl = buildProductShareUrl(productId);
+    const prodName = toTitleCase(product.name);
+    const priceText = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
+
+    const shareTitle = `${prodName} | Agro Salinas`;
+    const shareText = `Olha só este produto na Agro Salinas: ${prodName} por apenas ${priceText}! Confira no catálogo digital:`;
+
+    // 1. Tenta o compartilhamento nativo do dispositivo (Mobile / Web Share API)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl
+            });
+            showToast("✓ Compartilhado com sucesso!");
+            return;
+        } catch (err) {
+            if (err && err.name === 'AbortError') return;
+        }
+    }
+
+    // 2. Fallback: Copia link para a área de transferência
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(shareUrl);
+            showToast("🔗 Link do produto copiado! Pode colar e enviar.");
+            return;
+        }
+    } catch (e) {}
+
+    // 3. Fallback alternativo para navegadores restritos
+    prompt("Copie o link do produto abaixo:", shareUrl);
+}
+
+// --- TRATAMENTO DE ACESSO DIRETO A UM PRODUTO (?p=562) ---
+function handleDirectProductUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetP = urlParams.get("p") || urlParams.get("produto") || urlParams.get("item") || urlParams.get("id");
+    if (!targetP) return;
+
+    const cleanP = decodeURIComponent(targetP).trim();
+    const product = PRODUCTS.find(p => p.id.toString() === cleanP || (p.code && p.code.toString().toLowerCase() === cleanP.toLowerCase()));
+    if (!product) return;
+
+    // Aguarda a renderização inicial e abre o produto diretamente
+    setTimeout(() => {
+        const cardEl = document.getElementById(`card-${product.id}`);
+        if (cardEl) {
+            cardEl.scrollIntoView({ behavior: "smooth", block: "center" });
+            cardEl.classList.add("highlight-pulse");
+            setTimeout(() => cardEl.classList.remove("highlight-pulse"), 4000);
+        }
+        openQuickView(product.id);
+    }, 350);
+}
+
 // --- EVENTOS & BUSCA (COM DEBOUNCE DE 300MS) ---
 function setupEventListeners() {
     const searchInput = document.getElementById("search-input");
@@ -2691,7 +2789,13 @@ function openQuickView(productId) {
     }
 
     modalContent.innerHTML = `
-        <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)">✕</button>
+        <div class="quickview-top-actions">
+            <button class="btn-quickview-share" onclick="shareProduct('${product.id}', event)" title="Compartilhar link deste produto" aria-label="Compartilhar">
+                ${SHARE_ICON_SVG}
+                <span>Compartilhar</span>
+            </button>
+            <button class="btn-close-quickview" onclick="closeQuickViewModal()" title="Fechar janela (Esc)" aria-label="Fechar">✕</button>
+        </div>
         <div class="quickview-grid">
             ${imageHtml}
             <div class="quickview-header-info">

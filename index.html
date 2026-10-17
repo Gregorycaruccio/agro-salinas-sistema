@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Catálogo Digital | Agro Salinas</title>
-    <link rel="stylesheet" href="style.css?v=5.2">
+    <link rel="stylesheet" href="style.css?v=5.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -25,7 +25,9 @@
     <!-- BANNER DE CONSULTORIA / VENDEDOR (Exibição sutil e limpa apenas com identificação do consultor) -->
     <div class="seller-banner" id="seller-banner" style="display: none;">
         <div class="seller-info">
-            <span>🧑‍💼</span>
+            <span class="seller-icon-badge">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            </span>
             <div>
                 <span>Seu Consultor(a): <strong id="seller-name">Agro Salinas</strong></span>
                 <span class="seller-badge" id="seller-tag">#OFICIAL</span>
@@ -59,13 +61,17 @@
                 <!-- BARRA DE BUSCA (DESKTOP: AO CENTRO; MOBILE: EM LINHA PRÓPRIA 100% ABAIXO) -->
                 <div class="search-box">
                     <input type="text" id="search-input" placeholder="Buscar ração, produto ou código...">
-                    <span class="search-icon">🔍</span>
+                    <span class="search-icon">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </span>
                 </div>
 
                 <!-- LINHA SUPERIOR DIREITA: FAVORITOS & CARRINHO -->
                 <div class="header-right">
                     <button id="btn-view-favorites" class="btn-favorites-toggle" onclick="toggleFavoritesFilter()" title="Ver Meus Favoritos">
-                        <span class="fav-icon">🧡</span>
+                        <span class="fav-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="#C2410C" stroke="#C2410C" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </span>
                         <span class="fav-text">Favoritos</span>
                         <span class="fav-badge" id="fav-count">0</span>
                     </button>
@@ -82,24 +88,12 @@
             <!-- FILTROS RÁPIDOS POR NECESSIDADE DO PET (DESKTOP) -->
             <div class="quick-tags-wrapper desktop-only-tags">
                 <div class="quick-tags-list">
-                    <button class="quick-tag-pill" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this)">
-                        <span>🔥</span> Mais Vendidos
-                    </button>
-                    <button class="quick-tag-pill" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this)">
-                        <span>🍼</span> Para Filhotes
-                    </button>
-                    <button class="quick-tag-pill" data-tag="castrados" onclick="toggleQuickTag('castrados', this)">
-                        <span>✂️</span> Castrados
-                    </button>
-                    <button class="quick-tag-pill" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this)">
-                        <span>🌾</span> Hipoalergênico / Sensíveis
-                    </button>
-                    <button class="quick-tag-pill" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this)">
-                        <span>🐾</span> Raças Pequenas
-                    </button>
-                    <button class="quick-tag-pill" data-tag="senior" onclick="toggleQuickTag('senior', this)">
-                        <span>👴</span> Sênior (+7 anos)
-                    </button>
+                    <button class="quick-tag-pill" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this)">Mais Vendidos</button>
+                    <button class="quick-tag-pill" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this)">Para Filhotes</button>
+                    <button class="quick-tag-pill" data-tag="castrados" onclick="toggleQuickTag('castrados', this)">Castrados</button>
+                    <button class="quick-tag-pill" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this)">Hipoalergênico / Sensíveis</button>
+                    <button class="quick-tag-pill" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this)">Raças Pequenas</button>
+                    <button class="quick-tag-pill" data-tag="senior" onclick="toggleQuickTag('senior', this)">Sênior (+7 anos)</button>
                 </div>
             </div>
         </div>
@@ -124,17 +118,17 @@
         <div class="filters-bar">
             <!-- Ordenação -->
             <div class="filter-dropdown-group">
-                <span class="filter-label">↕️ Ordenar:</span>
+                <span class="filter-label">Ordenar:</span>
                 <select id="sort-select" class="filter-select">
-                    <option value="price_asc">💲 Menor Preço</option>
-                    <option value="price_desc">💎 Maior Preço</option>
-                    <option value="name_asc">🔤 Nome (A-Z)</option>
+                    <option value="price_asc">Menor Preço</option>
+                    <option value="price_desc">Maior Preço</option>
+                    <option value="name_asc">Nome (A-Z)</option>
                 </select>
             </div>
 
             <!-- Faixa de Preço -->
             <div class="filter-dropdown-group">
-                <span class="filter-label">💰 Faixa de Valor:</span>
+                <span class="filter-label">Faixa de Valor:</span>
                 <select id="price-range-select" class="filter-select">
                     <option value="all">Todas as Faixas</option>
                     <option value="under_20">Até R$ 20,00</option>
@@ -146,7 +140,7 @@
 
             <!-- Botão Limpar Filtros -->
             <button id="btn-clear-filters" class="btn-clear-filters" style="display: none;" onclick="resetAllFilters()">
-                ✕ Limpar Filtros
+                Limpar Filtros
             </button>
         </div>
     </div>
@@ -198,49 +192,35 @@
             <!-- SEÇÃO: FILTROS RÁPIDOS DO PET -->
             <div class="sidebar-section">
                 <div class="sidebar-section-title">
-                    <span>⚡</span>
                     <span>Filtros Especiais do Pet</span>
                 </div>
                 <div class="sidebar-quick-tags" id="sidebar-quick-tags">
-                    <button class="sidebar-tag-btn" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this); closeSidebarDrawer();">
-                        <span>🔥</span> Mais Vendidos
-                    </button>
-                    <button class="sidebar-tag-btn" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this); closeSidebarDrawer();">
-                        <span>🍼</span> Para Filhotes
-                    </button>
-                    <button class="sidebar-tag-btn" data-tag="castrados" onclick="toggleQuickTag('castrados', this); closeSidebarDrawer();">
-                        <span>✂️</span> Castrados
-                    </button>
-                    <button class="sidebar-tag-btn" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this); closeSidebarDrawer();">
-                        <span>🌾</span> Hipoalergênico / Sensíveis
-                    </button>
-                    <button class="sidebar-tag-btn" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this); closeSidebarDrawer();">
-                        <span>🐾</span> Raças Pequenas
-                    </button>
-                    <button class="sidebar-tag-btn" data-tag="senior" onclick="toggleQuickTag('senior', this); closeSidebarDrawer();">
-                        <span>👴</span> Sênior (+7 anos)
-                    </button>
+                    <button class="sidebar-tag-btn" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this); closeSidebarDrawer();">Mais Vendidos</button>
+                    <button class="sidebar-tag-btn" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this); closeSidebarDrawer();">Para Filhotes</button>
+                    <button class="sidebar-tag-btn" data-tag="castrados" onclick="toggleQuickTag('castrados', this); closeSidebarDrawer();">Castrados</button>
+                    <button class="sidebar-tag-btn" data-tag="sensivel" onclick="toggleQuickTag('sensivel', this); closeSidebarDrawer();">Hipoalergênico / Sensíveis</button>
+                    <button class="sidebar-tag-btn" data-tag="porte_pequeno" onclick="toggleQuickTag('porte_pequeno', this); closeSidebarDrawer();">Raças Pequenas</button>
+                    <button class="sidebar-tag-btn" data-tag="senior" onclick="toggleQuickTag('senior', this); closeSidebarDrawer();">Sênior (+7 anos)</button>
                 </div>
             </div>
 
             <!-- SEÇÃO: ORDENAR E FAIXA DE PREÇO -->
             <div class="sidebar-section">
                 <div class="sidebar-section-title">
-                    <span>⚙️</span>
                     <span>Ajustes & Valores</span>
                 </div>
                 
                 <div class="sidebar-field-group">
-                    <label class="sidebar-field-label">↕️ Ordenação:</label>
+                    <label class="sidebar-field-label">Ordenação:</label>
                     <select id="sidebar-sort-select" class="sidebar-select" onchange="syncSortFromSidebar(this.value)">
-                        <option value="price_asc">💲 Menor Preço</option>
-                        <option value="price_desc">💎 Maior Preço</option>
-                        <option value="name_asc">🔤 Nome (A-Z)</option>
+                        <option value="price_asc">Menor Preço</option>
+                        <option value="price_desc">Maior Preço</option>
+                        <option value="name_asc">Nome (A-Z)</option>
                     </select>
                 </div>
 
                 <div class="sidebar-field-group" style="margin-top: 12px;">
-                    <label class="sidebar-field-label">💰 Faixa de Valor:</label>
+                    <label class="sidebar-field-label">Faixa de Valor:</label>
                     <select id="sidebar-price-select" class="sidebar-select" onchange="syncPriceFromSidebar(this.value)">
                         <option value="all">Todas as Faixas</option>
                         <option value="under_20">Até R$ 20,00</option>
@@ -264,8 +244,11 @@
         <!-- SEÇÃO: PRATELEIRAS DA LOJA (CARDS RETANGULARES DE DEPARTAMENTOS NA HOME) -->
         <section class="departments-shelf-section" id="departments-shelf-section">
             <div class="departments-shelf-header">
-                <span class="dept-pretitle">🐾 Prateleiras Agro Salinas</span>
-                <h2 class="dept-main-title">Escolha o Departamento</h2>
+                <div class="shelf-store-badge">
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    <span>Loja Física Agro Salinas</span>
+                </div>
+                <h1 class="dept-main-title">Prateleiras da Agro Salinas</h1>
                 <p class="dept-subtitle">Selecione o setor para ver os produtos organizados como na loja física:</p>
             </div>
             <div class="departments-grid" id="departments-grid">
@@ -300,14 +283,14 @@
         <div class="active-filters-bar" id="active-filters-bar" style="display: none;">
             <div class="active-filters-content">
                 <div class="active-filters-label">
-                    <span>⚡ Filtros:</span>
+                    <span>Filtros Ativos:</span>
                 </div>
                 <div class="active-filters-chips" id="active-filters-chips">
                     <!-- Injetado dinamicamente via JS -->
                 </div>
             </div>
             <button class="btn-clear-active-filters" onclick="resetAllFilters()" title="Redefinir filtros e exibir todos os produtos">
-                ✕ Limpar Filtros
+                Limpar Filtros
             </button>
         </div>
 
@@ -380,7 +363,7 @@
                 <!-- OPÇÃO DE RECEBIMENTO: ENTREGA OU RETIRADA -->
                 <div class="checkout-fulfillment-section" id="checkout-fulfillment-section">
                     <div class="customer-ident-box" style="margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px dashed #CBD5E1;">
-                        <label class="checkout-section-label">👤 Identificação do Cliente</label>
+                        <span class="checkout-step-title">Identificação do Cliente</span>
                         <div class="form-row-compact" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8px;">
                             <div class="form-group-compact">
                                 <label for="checkout-customer-name">Seu Nome *</label>
@@ -393,19 +376,23 @@
                         </div>
                     </div>
 
-                    <label class="checkout-section-label">📍 Como deseja receber seu pedido?</label>
+                    <span class="checkout-step-title">Como deseja receber seu pedido?</span>
                     <div class="fulfillment-options-grid">
                         <label class="fulfillment-option">
                             <input type="radio" name="checkout_fulfillment" value="entrega" checked onchange="toggleFulfillmentFields('entrega')">
                             <span class="fulfillment-pill">
-                                <span class="ful-icon">🚚</span>
+                                <span class="ful-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+                                </span>
                                 <span class="ful-text">Entrega</span>
                             </span>
                         </label>
                         <label class="fulfillment-option">
                             <input type="radio" name="checkout_fulfillment" value="retirada" onchange="toggleFulfillmentFields('retirada')">
                             <span class="fulfillment-pill">
-                                <span class="ful-icon">🏪</span>
+                                <span class="ful-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                </span>
                                 <span class="ful-text">Retirar no Balcão</span>
                             </span>
                         </label>
@@ -435,7 +422,9 @@
 
                     <!-- NOTA INFORMATIVA: RETIRADA NO BALCÃO -->
                     <div id="pickup-notice-box" class="pickup-notice-box" style="display: none;">
-                        <span class="pickup-icon">📍</span>
+                        <span class="pickup-icon">
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </span>
                         <div class="pickup-text">
                             <strong>Retirada na Loja Agro Salinas</strong>
                             <p>Seu pedido será separado e embalado para retirada rápida no balcão!</p>
@@ -445,33 +434,41 @@
 
                 <!-- FORMAS DE PAGAMENTO PREFERIDAS -->
                 <div class="payment-method-selector" id="payment-method-selector">
-                    <label class="payment-selector-label">💳 Como você pretende pagar?</label>
+                    <span class="payment-selector-label">Como você pretende pagar?</span>
                     <div class="payment-options-grid">
                         <label class="payment-option">
                             <input type="radio" name="checkout_payment" value="PIX" checked onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
-                                <span class="pay-icon">⚡</span>
+                                <span class="pay-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                </span>
                                 <span class="pay-name">Pix</span>
                             </span>
                         </label>
                         <label class="payment-option">
                             <input type="radio" name="checkout_payment" value="Cartão de Crédito" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
-                                <span class="pay-icon">💳</span>
+                                <span class="pay-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg>
+                                </span>
                                 <span class="pay-name">Crédito</span>
                             </span>
                         </label>
                         <label class="payment-option">
                             <input type="radio" name="checkout_payment" value="Cartão de Débito" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
-                                <span class="pay-icon">🏦</span>
+                                <span class="pay-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+                                </span>
                                 <span class="pay-name">Débito</span>
                             </span>
                         </label>
                         <label class="payment-option">
                             <input type="radio" name="checkout_payment" value="Dinheiro" onchange="handlePaymentChange(this.value)">
                             <span class="payment-pill">
-                                <span class="pay-icon">💵</span>
+                                <span class="pay-icon">
+                                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="2" y="6" width="20" height="12" rx="2"></rect><circle cx="12" cy="12" r="2"></circle></svg>
+                                </span>
                                 <span class="pay-name">Dinheiro</span>
                             </span>
                         </label>
@@ -479,7 +476,7 @@
 
                     <!-- OPÇÃO DINÂMICA DE TROCO (QUANDO DINHEIRO SELECIONADO) -->
                     <div class="payment-change-container" id="payment-change-container" style="display: none;">
-                        <span class="payment-change-title">💵 Vai precisar de troco?</span>
+                        <span class="payment-change-title">Vai precisar de troco?</span>
                         <div class="payment-change-radios">
                             <label class="payment-change-radio-label">
                                 <input type="radio" name="checkout_need_change" value="nao" checked onchange="toggleNeedChange(this.value)">
@@ -534,6 +531,6 @@
     <!-- SCRIPTS -->
     <script src="vendedores.js?v=5.2"></script>
     <script src="products.js?v=5.2"></script>
-    <script src="app.js?v=5.2"></script>
+    <script src="app.js?v=5.3"></script>
 </body>
 </html>
