@@ -820,6 +820,7 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 33.5,
         "unit": "pct",
+        "image": "assets/produtos/2_gatos/areias_silica_outras/408.png",
         "featured": false
     },
     {
@@ -830,6 +831,7 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 12.6,
         "unit": "pct",
+        "image": "assets/produtos/2_gatos/areias_silica_outras/407.png",
         "featured": false
     },
     {
