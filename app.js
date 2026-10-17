@@ -252,7 +252,8 @@ document.addEventListener("DOMContentLoaded", () => {
 async function syncProductsFromSupabase() {
     try {
         if (typeof SUPABASE_CONFIG === 'undefined' || !SUPABASE_CONFIG.url || !Array.isArray(PRODUCTS)) return;
-        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/produtos?select=*`, {
+        const res = await fetch(`${SUPABASE_CONFIG.url}/rest/v1/produtos?select=*&_t=${Date.now()}`, {
+            cache: 'no-store',
             headers: {
                 'apikey': SUPABASE_CONFIG.anonKey,
                 'Authorization': `Bearer ${SUPABASE_CONFIG.anonKey}`
