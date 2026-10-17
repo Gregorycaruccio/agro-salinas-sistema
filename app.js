@@ -563,11 +563,25 @@ function renderDepartmentsShelf() {
                         ${tagsHtml}
                     </div>
                 </div>
-                <div class="dept-card-arrow" aria-hidden="true">➔</div>
+                <div class="dept-card-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </div>
             </div>
         `;
     }).join("");
 }
+
+// Ícones vetoriais de categorias limpos e modernos (Anti-slop / Taste Skill)
+const CATEGORY_SVGS = {
+    todos: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>`,
+    gatos: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M12 5c-3.87 0-7 3.13-7 7 0 2.21 1.02 4.18 2.61 5.46L7 21l3.5-1.5c.48.13.98.2 1.5.2s1.02-.07 1.5-.2L17 21l-.61-3.54C17.98 16.18 19 14.21 19 12c0-3.87-3.13-7-7-7z"></path><circle cx="9" cy="11" r="1"></circle><circle cx="15" cy="11" r="1"></circle><path d="M10 15c.5.5 1.5.5 2 0"></path><path d="M7 6L4 2l1 5"></path><path d="M17 6l3-4-1 5"></path></svg>`,
+    caes: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.5 1 1.695-.69 4-3.146 4-5.828z"></path><path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.5 1-1.695-.69-4-3.146-4-5.828z"></path><path d="M8 14v.5"></path><path d="M16 14v.5"></path><path d="M11.25 16.25h1.5"></path><path d="M4.5 10c0 4.142 3.358 7.5 7.5 7.5s7.5-3.358 7.5-7.5-3.358-6.5-7.5-6.5-7.5 2.358-7.5 6.5z"></path></svg>`,
+    granel: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M6 3h12l2 6H4l2-6z"></path><path d="M4 9v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"></path><line x1="10" y1="14" x2="14" y2="14"></line></svg>`,
+    farmacia: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"></path><path d="m8.5 8.5 7 7"></path></svg>`,
+    passaros_roedores: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M16 7h.01"></path><path d="M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 14"></path><path d="m20 7 2 .5-2 .5"></path><path d="M10 18v3"></path><path d="M14 17.75V21"></path><path d="M7 18a6 6 0 0 0 3.84-10.61"></path></svg>`,
+    jardim_agro: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M12 22v-9"></path><path d="M9 13a5 5 0 0 1 5-5c1.66 0 3 1.34 3 3a5 5 0 0 1-5 5h-3z"></path><path d="M15 9a5 5 0 0 0-5-5c-1.66 0-3 1.34-3 3a5 5 0 0 0 5 5h3z"></path></svg>`,
+    pesca: `<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M6.5 12c.94-2.07 2.84-3.5 5.5-3.5 4.42 0 8 3.58 8 8 0 1.25-.29 2.43-.8 3.5"></path><path d="M18 12a6 6 0 0 0-6-6c-2.33 0-4.37 1.34-5.37 3.3"></path><circle cx="16" cy="16" r="2"></circle><path d="m2 2 20 20"></path></svg>`
+};
 
 // --- RENDERIZAÇÃO DAS CATEGORIAS PRINCIPAIS (DESKTOP & SIDEBAR) ---
 function renderCategories() {
@@ -578,7 +592,7 @@ function renderCategories() {
     if (desktopContainer) {
         desktopContainer.innerHTML = CATEGORIES.map(cat => `
             <button class="category-pill ${cat.id === currentCategory ? 'active' : ''}" data-cat="${cat.id}">
-                <span>${cat.icon}</span>
+                <span class="cat-icon">${CATEGORY_SVGS[cat.id] || ''}</span>
                 <span>${cat.name}</span>
             </button>
         `).join("");
@@ -601,7 +615,7 @@ function renderCategories() {
             return `
                 <button class="sidebar-cat-btn ${cat.id === currentCategory ? 'active' : ''}" data-cat="${cat.id}">
                     <div class="cat-left">
-                        <span class="cat-icon">${cat.icon}</span>
+                        <span class="cat-icon">${CATEGORY_SVGS[cat.id] || ''}</span>
                         <span>${cat.name}</span>
                     </div>
                     <span class="cat-count">${count}</span>

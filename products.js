@@ -18,7 +18,7 @@ const CATEGORIES = [
     {
         "id": "todos",
         "name": "Todos os Produtos",
-        "icon": "🐾",
+        "icon": "",
         "illustration": "",
         "subtitle": "Catálogo completo com todos os itens da Agro Salinas",
         "tags": []
@@ -26,7 +26,7 @@ const CATEGORIES = [
     {
         "id": "gatos",
         "name": "Gatos",
-        "icon": "🐱",
+        "icon": "",
         "illustration": "assets/illustrations/dept-gatos.svg",
         "subtitle": "Rações secas, sachês, areias, petiscos e arranhadores",
         "tags": ["Patês & Sachês", "Rações Secas", "Areias Sanitárias", "Arranhadores"]
@@ -34,7 +34,7 @@ const CATEGORIES = [
     {
         "id": "caes",
         "name": "Cães",
-        "icon": "🐶",
+        "icon": "",
         "illustration": "assets/illustrations/dept-caes.svg",
         "subtitle": "Rações secas, sachês, petiscos, camas, coleiras e brinquedos",
         "tags": ["Rações Secas", "Patês & Sachês", "Petiscos & Ossos", "Acessórios & Camas"]
@@ -42,7 +42,7 @@ const CATEGORIES = [
     {
         "id": "granel",
         "name": "Rações a Granel (Kg)",
-        "icon": "⚖️",
+        "icon": "",
         "illustration": "assets/illustrations/dept-granel.svg",
         "subtitle": "Pesadas na hora pelo melhor preço por quilo da região",
         "tags": ["Cães", "Gatos", "Pássaros & Agro"]
@@ -50,7 +50,7 @@ const CATEGORIES = [
     {
         "id": "farmacia",
         "name": "Farmácia & Antipulgas",
-        "icon": "💊",
+        "icon": "",
         "illustration": "assets/illustrations/dept-farmacia.svg",
         "subtitle": "Antipulgas, carrapaticidas, vermífugos e suplementos",
         "tags": ["Antipulgas & Carrapatos", "Medicamentos", "Vitaminas"]
@@ -58,7 +58,7 @@ const CATEGORIES = [
     {
         "id": "passaros_roedores",
         "name": "Pássaros & Roedores",
-        "icon": "🦜",
+        "icon": "",
         "illustration": "assets/illustrations/dept-passaros.svg",
         "subtitle": "Sementes selecionadas, misturas, gaiolas e rações balanceadas",
         "tags": ["Sementes & Alimentos", "Gaiolas & Viveiros", "Roedores"]
@@ -66,7 +66,7 @@ const CATEGORIES = [
     {
         "id": "jardim_agro",
         "name": "Jardim, Vasos & Casa",
-        "icon": "🪴",
+        "icon": "",
         "illustration": "assets/illustrations/dept-jardim.svg",
         "subtitle": "Vasos decorativos, mudas, plantas, terras, adubos e utilidades",
         "tags": ["Vasos & Decoração", "Terras & Adubos", "Mudas & Plantas", "Campo"]
@@ -74,7 +74,7 @@ const CATEGORIES = [
     {
         "id": "pesca",
         "name": "Pesca & Outros",
-        "icon": "🎣",
+        "icon": "",
         "illustration": "assets/illustrations/dept-pesca.svg",
         "subtitle": "Linhas, anzóis, chicotes, chumbadas e equipamentos de lazer",
         "tags": ["Linhas & Anzóis", "Chicotes", "Acessórios"]

@@ -15,9 +15,9 @@
     <link rel="stylesheet" href="style.css?v=5.3">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body { font-family: 'Outfit', sans-serif; }
     </style>
 </head>
 <body class="home-view">
@@ -118,7 +118,7 @@
         <div class="filters-bar">
             <!-- Ordenação -->
             <div class="filter-dropdown-group">
-                <span class="filter-label">Ordenar:</span>
+                <label for="sort-select" class="filter-label">Ordenar:</label>
                 <select id="sort-select" class="filter-select">
                     <option value="price_asc">Menor Preço</option>
                     <option value="price_desc">Maior Preço</option>
@@ -128,7 +128,7 @@
 
             <!-- Faixa de Preço -->
             <div class="filter-dropdown-group">
-                <span class="filter-label">Faixa de Valor:</span>
+                <label for="price-range-select" class="filter-label">Faixa de Valor:</label>
                 <select id="price-range-select" class="filter-select">
                     <option value="all">Todas as Faixas</option>
                     <option value="under_20">Até R$ 20,00</option>
@@ -244,10 +244,6 @@
         <!-- SEÇÃO: PRATELEIRAS DA LOJA (CARDS RETANGULARES DE DEPARTAMENTOS NA HOME) -->
         <section class="departments-shelf-section" id="departments-shelf-section">
             <div class="departments-shelf-header">
-                <div class="shelf-store-badge">
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                    <span>Loja Física Agro Salinas</span>
-                </div>
                 <h1 class="dept-main-title">Prateleiras da Agro Salinas</h1>
                 <p class="dept-subtitle">Selecione o setor para ver os produtos organizados como na loja física:</p>
             </div>
