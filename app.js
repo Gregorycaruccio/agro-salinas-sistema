@@ -699,6 +699,54 @@ function renderSubcategories() {
     const catObj = CATEGORIES.find(c => c.id === currentCategory);
     const catShortName = catObj ? catObj.name.split(' ')[0] : 'Categoria';
 
+    // Ordem de prioridade comercial (Rações e Sachês primeiro conforme hábitos dos clientes)
+    const SUBCATEGORY_PRIORITY = {
+        gatos: [
+            'Patês & Sachês',
+            'Rações Secas',
+            'Areias Sanitárias',
+            'Arranhadores',
+            'Bandejas & Higiene',
+            'Brinquedos',
+            'Comedouros & Bebedouros',
+            'Fontes & Bebedouros'
+        ],
+        caes: [
+            'Rações Secas',
+            'Patês & Sachês',
+            'Petiscos & Cookies',
+            'Nutrição Clínica',
+            'Higiene & Beleza',
+            'Comedouros & Bebedouros',
+            'Passeio & Guias',
+            'Brinquedos',
+            'Casinhas & Camas',
+            'Transporte'
+        ],
+        granel: [
+            'Rações para Cães',
+            'Rações para Gatos',
+            'Pássaros & Outros'
+        ],
+        farmacia: [
+            'Antipulgas & Carrapatos',
+            'Vermífugos',
+            'Higiene & Cuidados',
+            'Vitaminas & Suplementos',
+            'Dermatológicos & Alívio'
+        ]
+    };
+
+    const priorityList = SUBCATEGORY_PRIORITY[currentCategory] || [];
+    subcats.sort((a, b) => {
+        const indexA = priorityList.indexOf(a);
+        const indexB = priorityList.indexOf(b);
+        if (indexA !== -1 && indexB !== -1) return indexA - indexB;
+        if (indexA !== -1) return -1;
+        if (indexB !== -1) return 1;
+        return a.localeCompare(b);
+    });
+
     if (subcats.length <= 1) {
         if (chipsContainer) {
             chipsContainer.innerHTML = "";
@@ -709,13 +757,13 @@ function renderSubcategories() {
         return;
     }
 
-    // Exibir o bloco de subcategorias e atualizar os chips
+    // Exibir o bloco de subcategorias e atualizar os chips em grade
     if (blockEl) blockEl.style.display = "flex";
     if (chipsContainer) {
-        chipsContainer.style.display = "flex";
+        chipsContainer.style.display = "grid";
         let chipsHtml = `
             <button class="dept-quick-chip ${currentSubcategory === 'todas' ? 'active' : ''}" data-subcat="todas">
-                Tudo em ${catShortName}
+                🐾 Tudo em ${catShortName} (Ver Todos)
             </button>
         `;
         subcats.forEach(sub => {
