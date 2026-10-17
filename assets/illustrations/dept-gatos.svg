@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="cat-orb" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#E9D5FF"/>
+      <stop offset="55%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#7E22CE"/>
+    </radialGradient>
+    <linearGradient id="cat-body" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="60%" stop-color="#F3E8FF"/>
+      <stop offset="100%" stop-color="#DDD6FE"/>
+    </linearGradient>
+    <linearGradient id="cat-ear" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F472B6"/>
+      <stop offset="100%" stop-color="#DB2777"/>
+    </linearGradient>
+    <linearGradient id="cat-bowl" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F43F5E"/>
+      <stop offset="100%" stop-color="#BE123C"/>
+    </linearGradient>
+    <filter id="cat-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#7E22CE" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Background Orb with Shadow -->
+  <circle cx="60" cy="60" r="50" fill="url(#cat-orb)" filter="url(#cat-shadow)"/>
+  
+  <!-- Ambient Highlights on Orb -->
+  <ellipse cx="45" cy="32" rx="22" ry="12" fill="#FFFFFF" opacity="0.35" transform="rotate(-15 45 32)"/>
+  
+  <!-- Cat Ears -->
+  <path d="M35 34 L48 50 L26 52 Z" fill="url(#cat-body)"/>
+  <path d="M34 38 L43 49 L29 50 Z" fill="url(#cat-ear)"/>
+  <path d="M85 34 L72 50 L94 52 Z" fill="url(#cat-body)"/>
+  <path d="M86 38 L77 49 L91 50 Z" fill="url(#cat-ear)"/>
+
+  <!-- Cat Head -->
+  <ellipse cx="60" cy="58" rx="28" ry="24" fill="url(#cat-body)"/>
+  
+  <!-- Cheeks Shadow / 3D Volume -->
+  <path d="M38 60 C38 72 48 78 60 78 C72 78 82 72 82 60 C82 75 70 82 60 82 C50 82 38 75 38 60 Z" fill="#C4B5FD" opacity="0.5"/>
+
+  <!-- Eyes (3D Anime/Glossy Cat Eyes) -->
+  <ellipse cx="48" cy="54" rx="5" ry="6.5" fill="#1E1B4B"/>
+  <ellipse cx="72" cy="54" rx="5" ry="6.5" fill="#1E1B4B"/>
+  <circle cx="46.5" cy="52" r="2.2" fill="#FFFFFF"/>
+  <circle cx="70.5" cy="52" r="2.2" fill="#FFFFFF"/>
+  <circle cx="49.5" cy="56.5" r="1" fill="#FFFFFF"/>
+  <circle cx="73.5" cy="56.5" r="1" fill="#FFFFFF"/>
+
+  <!-- Cute Nose -->
+  <polygon points="60,61 57,58 63,58" fill="#F43F5E"/>
+
+  <!-- Cat Mouth -->
+  <path d="M56 63 Q60 66 60 62 Q60 66 64 63" fill="none" stroke="#6D28D9" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Whiskers -->
+  <path d="M32 58 L42 60 M30 64 L42 63 M88 58 L78 60 M90 64 L78 63" stroke="#A78BFA" stroke-width="1.8" stroke-linecap="round"/>
+
+  <!-- Cat Paw Peeking -->
+  <circle cx="44" cy="80" r="7.5" fill="#FFFFFF"/>
+  <circle cx="76" cy="80" r="7.5" fill="#FFFFFF"/>
+  <circle cx="41" cy="77" r="2" fill="#F472B6"/>
+  <circle cx="44" cy="75" r="2" fill="#F472B6"/>
+  <circle cx="47" cy="77" r="2" fill="#F472B6"/>
+  <ellipse cx="44" cy="81" rx="3.5" ry="2.5" fill="#F472B6"/>
+
+  <!-- Food Bowl in Foreground -->
+  <g filter="url(#cat-shadow)">
+    <ellipse cx="60" cy="94" rx="22" ry="7" fill="#881337" opacity="0.4"/>
+    <path d="M40 91 Q40 102 60 102 Q80 102 80 91 Z" fill="url(#cat-bowl)"/>
+    <ellipse cx="60" cy="91" rx="20" ry="5.5" fill="#FDA4AF"/>
+    <!-- Fish Silhouette in Bowl -->
+    <path d="M53 91 Q59 88 65 91 Q59 94 53 91 Z M65 91 L69 88 L69 94 Z" fill="#BE123C"/>
+  </g>
+</svg>

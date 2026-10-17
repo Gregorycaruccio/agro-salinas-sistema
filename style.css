@@ -3528,5 +3528,342 @@ footer {
     line-height: 1.45;
 }
 
+/* ==========================================================================
+   PRATELEIRAS DA LOJA / CARDS RETANGULARES DE DEPARTAMENTOS
+   ========================================================================== */
+.departments-shelf-section {
+    max-width: var(--container-max-width);
+    margin: 18px auto 26px auto;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.departments-shelf-header {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.dept-pretitle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--primary);
+    background: var(--accent-soft);
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+}
+
+.dept-main-title {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.dept-subtitle {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+.departments-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.department-card {
+    background: #FFFFFF;
+    border: 1.5px solid var(--border-color);
+    border-radius: 18px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.department-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(27, 67, 46, 0.12);
+}
+
+.department-card:active {
+    transform: scale(0.98);
+}
+
+.dept-card-illustration {
+    width: 78px;
+    height: 78px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F8FAFC;
+    border-radius: 16px;
+    padding: 5px;
+    border: 1px solid #E2E8F0;
+    transition: transform 0.25s ease;
+}
+
+.department-card:hover .dept-card-illustration {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+.dept-card-illustration img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.dept-card-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.dept-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.dept-card-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 0;
+    line-height: 1.25;
+}
+
+.dept-card-count {
+    font-size: 11px;
+    font-weight: 800;
+    background: #F1F5F9;
+    color: var(--text-muted);
+    padding: 2px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.dept-card-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.35;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.dept-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.dept-card-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--primary);
+    background: #E8F5EE;
+    padding: 2px 7px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.dept-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #F8FAFC;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 800;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.department-card:hover .dept-card-arrow {
+    background: var(--primary);
+    color: #FFFFFF;
+    transform: translateX(3px);
+}
+
+/* BANNER DE DEPARTAMENTO ATIVO QUANDO ENTRA EM GATOS, CÃES, ETC. */
+.active-dept-banner {
+    background: linear-gradient(135deg, #1B432E 0%, #2D6A4F 100%);
+    color: white;
+    border-radius: 18px;
+    padding: 16px 20px;
+    margin: 14px auto 18px auto;
+    max-width: var(--container-max-width);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(27, 67, 46, 0.2);
+}
+
+.btn-back-departments {
+    background: rgba(255, 255, 255, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: white;
+    font-size: 12.5px;
+    font-weight: 700;
+    padding: 8px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.btn-back-departments:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateX(-2px);
+}
+
+.active-dept-center {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.active-dept-badge-img {
+    width: 52px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    padding: 4px;
+    object-fit: contain;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.active-dept-title {
+    font-size: 21px;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.5px;
+    color: #FFFFFF;
+}
+
+.active-dept-count {
+    font-size: 12px;
+    color: #D8F3DC;
+    font-weight: 600;
+}
+
+.dept-quick-chips {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.dept-quick-chip {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #FFFFFF;
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.dept-quick-chip:hover, .dept-quick-chip.active {
+    background: #FFFFFF;
+    color: var(--primary);
+    border-color: #FFFFFF;
+}
+
+/* OCULTA MENUS DE PILLS POLUÍDOS DA HOMEPAGE */
+body.home-view .categories-wrapper,
+body.home-view .desktop-only-tags {
+    display: none !important;
+}
+
+/* RESPONSIVIDADE MOBILE */
+@media (max-width: 768px) {
+    .departments-shelf-section {
+        margin: 10px auto 16px auto;
+        padding: 0 10px;
+    }
+
+    .dept-main-title {
+        font-size: 19px;
+    }
+
+    .dept-subtitle {
+        font-size: 12.5px;
+    }
+
+    .departments-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .department-card {
+        padding: 12px;
+        gap: 12px;
+        border-radius: 14px;
+    }
+
+    .dept-card-illustration {
+        width: 66px;
+        height: 66px;
+        border-radius: 12px;
+    }
+
+    .dept-card-title {
+        font-size: 16px;
+    }
+
+    .dept-card-desc {
+        font-size: 11.5px;
+        margin-bottom: 6px;
+    }
+
+    .dept-card-tag {
+        font-size: 10px;
+        padding: 2px 6px;
+    }
+
+    .active-dept-banner {
+        padding: 12px 14px;
+        border-radius: 14px;
+    }
+
+    .active-dept-title {
+        font-size: 18px;
+    }
+
+    .active-dept-badge-img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
 
 

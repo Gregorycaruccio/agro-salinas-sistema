@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Catálogo Digital | Agro Salinas</title>
-    <link rel="stylesheet" href="style.css?v=4.9">
+    <link rel="stylesheet" href="style.css?v=5.2">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
     </style>
 </head>
-<body>
+<body class="home-view">
 
     <!-- BANNER DE CONSULTORIA / VENDEDOR (Exibição sutil e limpa apenas com identificação do consultor) -->
     <div class="seller-banner" id="seller-banner" style="display: none;">
@@ -261,6 +261,34 @@
 
     <!-- LISTAGEM DE PRODUTOS -->
     <main class="products-section">
+        <!-- SEÇÃO: PRATELEIRAS DA LOJA (CARDS RETANGULARES DE DEPARTAMENTOS NA HOME) -->
+        <section class="departments-shelf-section" id="departments-shelf-section">
+            <div class="departments-shelf-header">
+                <span class="dept-pretitle">🐾 Prateleiras Agro Salinas</span>
+                <h2 class="dept-main-title">Escolha o Departamento</h2>
+                <p class="dept-subtitle">Selecione o setor para ver os produtos organizados como na loja física:</p>
+            </div>
+            <div class="departments-grid" id="departments-grid">
+                <!-- Injetado dinamicamente via JS com ilustrações 3D -->
+            </div>
+        </section>
+
+        <!-- BANNER DE DEPARTAMENTO ATIVO (QUANDO O CLIENTE NAVEGA DENTRO DE UM DEPARTAMENTO) -->
+        <div class="active-dept-banner" id="active-dept-banner" style="display: none;">
+            <div class="active-dept-center">
+                <img src="" id="active-dept-icon-img" class="active-dept-badge-img" alt="Departamento">
+                <div>
+                    <h2 class="active-dept-title" id="active-dept-title">Departamento</h2>
+                    <span class="active-dept-count" id="active-dept-count">0 produtos</span>
+                </div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <button class="btn-back-departments" onclick="selectCategory('todos')" title="Voltar a ver todos os departamentos">
+                    ← Ver Todos os Departamentos
+                </button>
+            </div>
+        </div>
+
         <!-- BARRA EVIDENTE DE FILTROS ATIVOS (DESKTOP & MOBILE) -->
         <div class="active-filters-bar" id="active-filters-bar" style="display: none;">
             <div class="active-filters-content">
@@ -497,8 +525,8 @@
     </footer>
 
     <!-- SCRIPTS -->
-    <script src="vendedores.js?v=5.1"></script>
-    <script src="products.js?v=5.1"></script>
-    <script src="app.js?v=5.1"></script>
+    <script src="vendedores.js?v=5.2"></script>
+    <script src="products.js?v=5.2"></script>
+    <script src="app.js?v=5.2"></script>
 </body>
 </html>

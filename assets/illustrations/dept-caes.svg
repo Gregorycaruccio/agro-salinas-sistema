@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <radialGradient id="dog-orb" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#FED7AA"/>
+      <stop offset="50%" stop-color="#FB923C"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </radialGradient>
+    <linearGradient id="dog-face" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF3C7"/>
+      <stop offset="60%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+    <linearGradient id="dog-ear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="100%" stop-color="#92400E"/>
+    </linearGradient>
+    <linearGradient id="dog-bone" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#E2E8F0"/>
+    </linearGradient>
+    <filter id="dog-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#C2410C" flood-opacity="0.32"/>
+    </filter>
+  </defs>
+
+  <!-- 3D Orb Background -->
+  <circle cx="60" cy="60" r="50" fill="url(#dog-orb)" filter="url(#dog-shadow)"/>
+  
+  <!-- Highlight on Orb -->
+  <ellipse cx="45" cy="32" rx="22" ry="12" fill="#FFFFFF" opacity="0.4" transform="rotate(-15 45 32)"/>
+
+  <!-- Floppy Ears (Behind Head) -->
+  <path d="M30 42 C20 45 16 65 24 75 C30 82 38 72 36 58 Z" fill="url(#dog-ear)"/>
+  <path d="M90 42 C100 45 104 65 96 75 C90 82 82 72 84 58 Z" fill="url(#dog-ear)"/>
+
+  <!-- Dog Head -->
+  <ellipse cx="60" cy="56" rx="28" ry="26" fill="url(#dog-face)"/>
+
+  <!-- Spot over one eye -->
+  <path d="M46 44 C40 44 36 52 38 60 C40 68 50 68 52 60 C54 52 50 44 46 44 Z" fill="#D97706" opacity="0.85"/>
+
+  <!-- Snout / Muzzle -->
+  <ellipse cx="60" cy="67" rx="16" ry="12" fill="#FFFFFF"/>
+  <ellipse cx="60" cy="62" rx="7.5" ry="5.5" fill="#1E293B"/>
+  <circle cx="58" cy="60.5" r="1.8" fill="#FFFFFF"/>
+
+  <!-- Eyes -->
+  <ellipse cx="46" cy="53" rx="4.5" ry="6" fill="#1E293B"/>
+  <ellipse cx="74" cy="53" rx="4.5" ry="6" fill="#1E293B"/>
+  <circle cx="44.5" cy="51" r="2" fill="#FFFFFF"/>
+  <circle cx="72.5" cy="51" r="2" fill="#FFFFFF"/>
+  <circle cx="47.5" cy="55" r="0.9" fill="#FFFFFF"/>
+  <circle cx="75.5" cy="55" r="0.9" fill="#FFFFFF"/>
+
+  <!-- Tongue / Smile -->
+  <path d="M55 70 Q60 74 65 70" fill="none" stroke="#78350F" stroke-width="2" stroke-linecap="round"/>
+  <path d="M57 72 C57 78 63 78 63 72 Z" fill="#F43F5E"/>
+
+  <!-- Dog Collar -->
+  <path d="M36 78 Q60 88 84 78" stroke="#059669" stroke-width="5" stroke-linecap="round" fill="none"/>
+  <!-- Gold Medal / Tag -->
+  <circle cx="60" cy="85" r="4.5" fill="#FBBF24"/>
+  <circle cx="60" cy="85" r="3" fill="#F59E0B"/>
+
+  <!-- 3D Delicious Bone in Foreground -->
+  <g filter="url(#dog-shadow)" transform="translate(0, 4)">
+    <rect x="42" y="91" width="36" height="7" rx="3.5" fill="url(#dog-bone)"/>
+    <circle cx="41" cy="91" r="5" fill="url(#dog-bone)"/>
+    <circle cx="41" cy="98" r="5" fill="url(#dog-bone)"/>
+    <circle cx="79" cy="91" r="5" fill="url(#dog-bone)"/>
+    <circle cx="79" cy="98" r="5" fill="url(#dog-bone)"/>
+  </g>
+</svg>

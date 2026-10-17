@@ -233,6 +233,7 @@ function normalizeText(str) {
 // --- INICIALIZAÇÃO ---
 document.addEventListener("DOMContentLoaded", () => {
     initSeller();
+    renderDepartmentsShelf();
     renderCategories();
     renderSubcategories();
     renderProducts();
@@ -526,6 +527,44 @@ function showLinkExpiredScreen(seller, validation) {
     screen.style.display = "flex";
 }
 
+// --- RENDERIZAÇÃO DA PRATELEIRA DE DEPARTAMENTOS (CARDS RETANGULARES NA HOME) ---
+function renderDepartmentsShelf() {
+    const shelfGrid = document.getElementById("departments-grid");
+    if (!shelfGrid) return;
+
+    const activeList = getCatalogProducts();
+    const depts = CATEGORIES.filter(c => c.id !== "todos");
+
+    shelfGrid.innerHTML = depts.map(dept => {
+        const count = activeList.filter(p => {
+            if (p.category !== dept.id) return false;
+            if (dept.id === "granel" && (!p.image || !p.image.startsWith("assets/granel/"))) return false;
+            return true;
+        }).length;
+
+        const tagsHtml = (dept.tags || []).map(t => `<span class="dept-card-tag">${t}</span>`).join("");
+
+        return `
+            <div class="department-card" data-cat="${dept.id}" onclick="selectCategory('${dept.id}')" role="button" tabindex="0">
+                <div class="dept-card-illustration">
+                    <img src="${dept.illustration}" alt="${dept.name}" loading="lazy">
+                </div>
+                <div class="dept-card-content">
+                    <div class="dept-card-header">
+                        <h3 class="dept-card-title">${dept.name}</h3>
+                        <span class="dept-card-count">${count} itens</span>
+                    </div>
+                    <p class="dept-card-desc">${dept.subtitle || ''}</p>
+                    <div class="dept-card-tags">
+                        ${tagsHtml}
+                    </div>
+                </div>
+                <div class="dept-card-arrow" aria-hidden="true">➔</div>
+            </div>
+        `;
+    }).join("");
+}
+
 // --- RENDERIZAÇÃO DAS CATEGORIAS PRINCIPAIS (DESKTOP & SIDEBAR) ---
 function renderCategories() {
     const desktopContainer = document.getElementById("categories-list");
@@ -583,7 +622,7 @@ function selectCategory(catId) {
     currentCategory = catId;
     currentSubcategory = "todas"; // Resetar subcategoria ao trocar de categoria principal
 
-    // Sincronizar classes ativas
+    // Sincronizar classes ativas nos pills e sidebar
     document.querySelectorAll(".category-pill").forEach(p => {
         p.classList.toggle("active", p.getAttribute("data-cat") === catId);
     });
@@ -591,8 +630,51 @@ function selectCategory(catId) {
         p.classList.toggle("active", p.getAttribute("data-cat") === catId);
     });
 
+    const isHome = (catId === "todos" && !searchQuery);
+    document.body.classList.toggle("home-view", isHome);
+
+    const shelfSection = document.getElementById("departments-shelf-section");
+    const activeDeptBanner = document.getElementById("active-dept-banner");
+    const sectionTitle = document.getElementById("section-title");
+
+    if (catId === "todos") {
+        if (shelfSection) shelfSection.style.display = searchQuery ? "none" : "block";
+        if (activeDeptBanner) activeDeptBanner.style.display = "none";
+        if (sectionTitle) sectionTitle.textContent = searchQuery ? `Resultados da busca por "${searchQuery}"` : "Todos os Produtos da Agro Salinas";
+    } else {
+        if (shelfSection) shelfSection.style.display = "none";
+        if (activeDeptBanner) {
+            activeDeptBanner.style.display = "flex";
+            const deptObj = CATEGORIES.find(c => c.id === catId);
+            const titleEl = document.getElementById("active-dept-title");
+            const iconImg = document.getElementById("active-dept-icon-img");
+
+            if (deptObj) {
+                if (titleEl) titleEl.textContent = `${deptObj.icon} ${deptObj.name}`;
+                if (iconImg) {
+                    iconImg.src = deptObj.illustration;
+                    iconImg.alt = deptObj.name;
+                    iconImg.style.display = deptObj.illustration ? "block" : "none";
+                }
+            }
+            if (sectionTitle && deptObj) {
+                sectionTitle.textContent = `Prateleira: ${deptObj.name}`;
+            }
+        }
+    }
+
     renderSubcategories();
     renderProducts();
+
+    // Scroll suave para o início da seção de produtos quando seleciona um departamento
+    if (catId !== "todos") {
+        const targetEl = document.getElementById("active-dept-banner") || document.querySelector(".products-section");
+        if (targetEl) {
+            const yOffset = -120;
+            const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
+        }
+    }
 }
 
 // --- RENDERIZAÇÃO DAS SUBCATEGORIAS DINÂMICAS (DESKTOP & SIDEBAR) ---
@@ -1014,6 +1096,10 @@ function renderProducts() {
     if (countEl) {
         countEl.textContent = `${allFilteredProducts.length} produto${allFilteredProducts.length === 1 ? '' : 's'}`;
     }
+    const activeDeptCount = document.getElementById("active-dept-count");
+    if (activeDeptCount && currentCategory !== "todos") {
+        activeDeptCount.textContent = `${allFilteredProducts.length} produto${allFilteredProducts.length === 1 ? '' : 's'}`;
+    }
 
     // Estado Vazio
     if (allFilteredProducts.length === 0) {
@@ -1201,6 +1287,9 @@ function clearSearchQuery() {
     searchQuery = "";
     const input = document.getElementById("search-input");
     if (input) input.value = "";
+    const shelfSection = document.getElementById("departments-shelf-section");
+    if (shelfSection && currentCategory === "todos") shelfSection.style.display = "block";
+    document.body.classList.toggle("home-view", currentCategory === "todos");
     renderProducts();
 }
 
@@ -2038,7 +2127,12 @@ function setupEventListeners() {
         searchInput.addEventListener("input", (e) => {
             clearTimeout(searchDebounceTimer);
             searchDebounceTimer = setTimeout(() => {
-                searchQuery = e.target.value;
+                searchQuery = e.target.value.trim();
+                const shelfSection = document.getElementById("departments-shelf-section");
+                if (shelfSection) {
+                    shelfSection.style.display = (searchQuery || currentCategory !== "todos") ? "none" : "block";
+                }
+                document.body.classList.toggle("home-view", currentCategory === "todos" && !searchQuery);
                 renderProducts();
             }, 300);
         });
@@ -2162,6 +2256,12 @@ function resetAllFilters() {
 
     currentQuickTag = null;
     document.querySelectorAll(".quick-tag-pill, .sidebar-tag-btn").forEach(p => p.classList.remove("active"));
+
+    document.body.classList.add("home-view");
+    const shelfSection = document.getElementById("departments-shelf-section");
+    if (shelfSection) shelfSection.style.display = "block";
+    const activeDeptBanner = document.getElementById("active-dept-banner");
+    if (activeDeptBanner) activeDeptBanner.style.display = "none";
 
     renderCategories();
     renderSubcategories();

@@ -18,42 +18,66 @@ const CATEGORIES = [
     {
         "id": "todos",
         "name": "Todos os Produtos",
-        "icon": "🐾"
-    },
-    {
-        "id": "granel",
-        "name": "Rações a Granel (Kg)",
-        "icon": "⚖️"
-    },
-    {
-        "id": "caes",
-        "name": "Cães",
-        "icon": "🐶"
+        "icon": "🐾",
+        "illustration": "",
+        "subtitle": "Catálogo completo com todos os itens da Agro Salinas",
+        "tags": []
     },
     {
         "id": "gatos",
         "name": "Gatos",
-        "icon": "🐱"
+        "icon": "🐱",
+        "illustration": "assets/illustrations/dept-gatos.svg",
+        "subtitle": "Rações secas, sachês, areias, petiscos e arranhadores",
+        "tags": ["Patês & Sachês", "Rações Secas", "Areias Sanitárias", "Arranhadores"]
+    },
+    {
+        "id": "caes",
+        "name": "Cães",
+        "icon": "🐶",
+        "illustration": "assets/illustrations/dept-caes.svg",
+        "subtitle": "Rações secas, sachês, petiscos, camas, coleiras e brinquedos",
+        "tags": ["Rações Secas", "Patês & Sachês", "Petiscos & Ossos", "Acessórios & Camas"]
+    },
+    {
+        "id": "granel",
+        "name": "Rações a Granel (Kg)",
+        "icon": "⚖️",
+        "illustration": "assets/illustrations/dept-granel.svg",
+        "subtitle": "Pesadas na hora pelo melhor preço por quilo da região",
+        "tags": ["Cães", "Gatos", "Pássaros & Agro"]
     },
     {
         "id": "farmacia",
         "name": "Farmácia & Antipulgas",
-        "icon": "💊"
+        "icon": "💊",
+        "illustration": "assets/illustrations/dept-farmacia.svg",
+        "subtitle": "Antipulgas, carrapaticidas, vermífugos e suplementos",
+        "tags": ["Antipulgas & Carrapatos", "Medicamentos", "Vitaminas"]
     },
     {
         "id": "passaros_roedores",
         "name": "Pássaros & Roedores",
-        "icon": "🦜"
+        "icon": "🦜",
+        "illustration": "assets/illustrations/dept-passaros.svg",
+        "subtitle": "Sementes selecionadas, misturas, gaiolas e rações balanceadas",
+        "tags": ["Sementes & Alimentos", "Gaiolas & Viveiros", "Roedores"]
     },
     {
         "id": "jardim_agro",
-        "name": "Jardim, Campo & Casa",
-        "icon": "🌿"
+        "name": "Jardim, Vasos & Casa",
+        "icon": "🪴",
+        "illustration": "assets/illustrations/dept-jardim.svg",
+        "subtitle": "Vasos decorativos, mudas, plantas, terras, adubos e utilidades",
+        "tags": ["Vasos & Decoração", "Terras & Adubos", "Mudas & Plantas", "Campo"]
     },
     {
         "id": "pesca",
         "name": "Pesca & Outros",
-        "icon": "🎣"
+        "icon": "🎣",
+        "illustration": "assets/illustrations/dept-pesca.svg",
+        "subtitle": "Linhas, anzóis, chicotes, chumbadas e equipamentos de lazer",
+        "tags": ["Linhas & Anzóis", "Chicotes", "Acessórios"]
     }
 ];
 
