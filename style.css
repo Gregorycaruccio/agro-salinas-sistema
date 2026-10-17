@@ -417,25 +417,9 @@ body {
         display: none !important;
     }
 
-    /* Subcategorias com rolagem horizontal compacta */
+    /* Subcategorias migradas para dentro da prateleira ativa */
     .subcategories-wrapper {
-        display: block !important;
-        margin: 2px 0 3px 0;
-        padding: 0 10px;
-        overflow-x: auto;
-        white-space: nowrap;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .subcategories-wrapper::-webkit-scrollbar {
-        display: none;
-    }
-
-    .subcategories-list {
-        display: inline-flex;
-        flex-wrap: nowrap;
-        gap: 5px;
+        display: none !important;
     }
 
     .subcat-pill {
@@ -661,14 +645,9 @@ body {
     transform: translateY(-1px);
 }
 
-/* --- SUBCATEGORIAS DINÂMICAS --- */
+/* --- SUBCATEGORIAS DINÂMICAS (MIGRADAS PARA DENTRO DA PRATELEIRA ATIVA) --- */
 .subcategories-wrapper {
-    max-width: var(--container-max-width);
-    margin: 4px auto 6px auto;
-    padding: 0 16px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
+    display: none !important;
 }
 
 .subcategories-list {
@@ -3711,11 +3690,19 @@ footer {
     margin: 14px auto 18px auto;
     max-width: var(--container-max-width);
     display: flex;
+    flex-direction: column;
+    gap: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    scroll-margin-top: 100px;
+}
+
+.active-dept-top-row {
+    display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+    width: 100%;
 }
 
 .btn-back-departments {
@@ -3731,6 +3718,7 @@ footer {
     align-items: center;
     gap: 6px;
     transition: all 0.2s ease;
+    white-space: nowrap;
 }
 
 .btn-back-departments:hover {
@@ -3771,26 +3759,46 @@ footer {
 .dept-quick-chips {
     display: flex;
     align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
+    gap: 8px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+}
+
+.dept-quick-chips::-webkit-scrollbar {
+    display: none;
 }
 
 .dept-quick-chip {
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.14);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     color: #FFFFFF;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 14px;
+    padding: 6px 13px;
+    border-radius: 20px;
     cursor: pointer;
-    transition: all 0.15s ease;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
 }
 
-.dept-quick-chip:hover, .dept-quick-chip.active {
+.dept-quick-chip:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+.dept-quick-chip.active {
     background: #FFFFFF;
-    color: var(--primary);
+    color: #123020;
     border-color: #FFFFFF;
+    font-weight: 800;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
 /* OCULTA MENUS DE PILLS POLUÍDOS DA HOMEPAGE */
@@ -3846,8 +3854,14 @@ body.home-view .desktop-only-tags {
     }
 
     .active-dept-banner {
-        padding: 12px 14px;
+        padding: 13px 14px;
         border-radius: 14px;
+        margin: 10px auto 14px auto;
+        gap: 10px;
+    }
+
+    .active-dept-top-row {
+        gap: 10px;
     }
 
     .active-dept-title {
@@ -3857,6 +3871,21 @@ body.home-view .desktop-only-tags {
     .active-dept-badge-img {
         width: 44px;
         height: 44px;
+    }
+
+    .btn-back-departments {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .dept-quick-chips {
+        gap: 6px;
+        padding-top: 8px;
+    }
+
+    .dept-quick-chip {
+        padding: 5px 11px;
+        font-size: 12px;
     }
 }
 

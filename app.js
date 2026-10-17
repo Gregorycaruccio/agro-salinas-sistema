@@ -666,28 +666,21 @@ function selectCategory(catId) {
     renderSubcategories();
     renderProducts();
 
-    // Scroll suave para o início da seção de produtos quando seleciona um departamento
+    // Scroll suave para o topo ao selecionar um departamento (exibe o banner completo sem cortes)
     if (catId !== "todos") {
-        const targetEl = document.getElementById("active-dept-banner") || document.querySelector(".products-section");
-        if (targetEl) {
-            const yOffset = -120;
-            const y = targetEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
-            window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
-        }
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 }
 
-// --- RENDERIZAÇÃO DAS SUBCATEGORIAS DINÂMICAS (DESKTOP & SIDEBAR) ---
+// --- RENDERIZAÇÃO DAS SUBCATEGORIAS DINÂMICAS NA PRATELEIRA & SIDEBAR ---
 function renderSubcategories() {
-    const desktopWrapper = document.getElementById("subcategories-wrapper");
-    const desktopList = document.getElementById("subcategories-list");
+    const chipsContainer = document.getElementById("dept-quick-chips");
     const sidebarSection = document.getElementById("sidebar-subcategories-section");
     const sidebarList = document.getElementById("sidebar-subcategories-list");
     const sidebarTitle = document.getElementById("sidebar-subcategories-title");
 
     if (currentCategory === "todos") {
-        if (desktopWrapper) desktopWrapper.style.display = "none";
-        if (desktopList) desktopList.innerHTML = "";
+        if (chipsContainer) chipsContainer.innerHTML = "";
         if (sidebarSection) sidebarSection.style.display = "none";
         if (sidebarList) sidebarList.innerHTML = "";
         return;
@@ -705,30 +698,32 @@ function renderSubcategories() {
     const catShortName = catObj ? catObj.name.split(' ')[0] : 'Categoria';
 
     if (subcats.length <= 1) {
-        if (desktopWrapper) desktopWrapper.style.display = "none";
-        if (desktopList) desktopList.innerHTML = "";
+        if (chipsContainer) {
+            chipsContainer.innerHTML = "";
+            chipsContainer.style.display = "none";
+        }
         if (sidebarSection) sidebarSection.style.display = "none";
         if (sidebarList) sidebarList.innerHTML = "";
         return;
     }
 
-    // Atualizar no Desktop
-    if (desktopWrapper && desktopList) {
-        desktopWrapper.style.display = "block";
-        let desktopHtml = `
-            <button class="subcat-pill ${currentSubcategory === 'todas' ? 'active' : ''}" data-subcat="todas">
+    // Atualizar os chips dentro do banner do departamento
+    if (chipsContainer) {
+        chipsContainer.style.display = "flex";
+        let chipsHtml = `
+            <button class="dept-quick-chip ${currentSubcategory === 'todas' ? 'active' : ''}" data-subcat="todas">
                 Tudo em ${catShortName}
             </button>
         `;
         subcats.forEach(sub => {
-            desktopHtml += `
-                <button class="subcat-pill ${currentSubcategory === sub ? 'active' : ''}" data-subcat="${sub}">
+            chipsHtml += `
+                <button class="dept-quick-chip ${currentSubcategory === sub ? 'active' : ''}" data-subcat="${sub}">
                     ${sub}
                 </button>
             `;
         });
-        desktopList.innerHTML = desktopHtml;
-        desktopList.querySelectorAll(".subcat-pill").forEach(btn => {
+        chipsContainer.innerHTML = chipsHtml;
+        chipsContainer.querySelectorAll(".dept-quick-chip").forEach(btn => {
             btn.addEventListener("click", () => {
                 selectSubcategory(btn.getAttribute("data-subcat"));
             });
@@ -743,7 +738,7 @@ function renderSubcategories() {
         let sidebarHtml = `
             <button class="sidebar-subcat-btn ${currentSubcategory === 'todas' ? 'active' : ''}" data-subcat="todas">
                 <span>✓ Todas as subcategorias</span>
-                <span style="font-size: 11px; opacity: 0.7;">(${categoryProducts.length})</span>
+                <span style="font-size: 12px; opacity: 0.7;">(${categoryProducts.length})</span>
             </button>
         `;
         subcats.forEach(sub => {
@@ -751,7 +746,7 @@ function renderSubcategories() {
             sidebarHtml += `
                 <button class="sidebar-subcat-btn ${currentSubcategory === sub ? 'active' : ''}" data-subcat="${sub}">
                     <span>${sub}</span>
-                    <span style="font-size: 11px; opacity: 0.7;">(${subCount})</span>
+                    <span style="font-size: 12px; opacity: 0.7;">(${subCount})</span>
                 </button>
             `;
         });
@@ -769,8 +764,8 @@ function renderSubcategories() {
 function selectSubcategory(subcatName) {
     currentSubcategory = subcatName;
 
-    // Sincronizar classes ativas
-    document.querySelectorAll(".subcat-pill").forEach(p => {
+    // Sincronizar classes ativas nos chips do banner e no drawer lateral
+    document.querySelectorAll(".dept-quick-chip").forEach(p => {
         p.classList.toggle("active", p.getAttribute("data-subcat") === subcatName);
     });
     document.querySelectorAll(".sidebar-subcat-btn").forEach(p => {
