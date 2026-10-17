@@ -1912,10 +1912,30 @@ button, input, select, textarea {
 
 .payment-selector-label {
     display: block;
-    font-size: 12px;
+    font-size: 12.5px;
     font-weight: 800;
     color: var(--primary-dark);
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+}
+
+.payment-notice-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 7px 10px;
+    border-radius: 8px;
+    font-size: 11.5px;
+    color: #475569;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.payment-notice-icon {
+    font-size: 13px;
+    flex-shrink: 0;
+    line-height: 1.2;
 }
 
 .payment-options-grid {
