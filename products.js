@@ -8192,7 +8192,7 @@ const PRODUCTS = [
         "subcategory": "Adubos & Fertilizantes",
         "price": 19,
         "unit": "kg",
-        "image": "assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra/562.png?v=2",
+        "image": "assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra/562_argiplam.png",
         "featured": false
     },
     {
