@@ -245,6 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateFavoritesUI();
     syncProductsFromSupabase();
     handleDirectProductUrl();
+    handleDirectCartUrl();
 });
 
 // --- SINCRONIZAÇÃO EM TEMPO REAL DE ESTOQUE E PREÇOS COM O SUPABASE ---
@@ -1624,11 +1625,19 @@ function renderCartDrawerItems() {
         }
         const clearBtn = document.getElementById("btn-clear-cart");
         if (clearBtn) clearBtn.style.display = "none";
+        const shareBtn = document.getElementById("btn-share-cart");
+        if (shareBtn) shareBtn.style.display = "none";
+        const headerShareBtn = document.getElementById("btn-header-share-cart");
+        if (headerShareBtn) headerShareBtn.style.display = "none";
         return;
     }
 
     const clearBtn = document.getElementById("btn-clear-cart");
     if (clearBtn) clearBtn.style.display = "inline-flex";
+    const shareBtn = document.getElementById("btn-share-cart");
+    if (shareBtn) shareBtn.style.display = "flex";
+    const headerShareBtn = document.getElementById("btn-header-share-cart");
+    if (headerShareBtn) headerShareBtn.style.display = "inline-flex";
 
     if (fulfillmentSection) fulfillmentSection.style.display = "block";
     if (paymentSection) paymentSection.style.display = "block";
@@ -2276,6 +2285,175 @@ function handleDirectProductUrl() {
         }
         openQuickView(product.id);
     }, 350);
+}
+
+// --- COMPARTILHAMENTO DE CARRINHO COMPLETO (LINK COM PRODUTOS PRONTOS) ---
+function buildCartShareUrl() {
+    const { totalCount } = getCartStats();
+    if (totalCount === 0) return window.location.href;
+
+    const baseUrl = (typeof getBaseAppUrl === "function")
+        ? getBaseAppUrl()
+        : (window.location.origin + window.location.pathname.replace(/\/$/, ""));
+
+    const finalBase = baseUrl.replace(/\/$/, "");
+
+    // Serializa os itens do carrinho no formato "cartKey:qty"
+    const items = [];
+    for (const key in cart) {
+        const qty = parseInt(cart[key], 10);
+        if (qty > 0) {
+            // Substitui '__' por '~' para manter a URL amigável e limpa
+            const safeKey = key.replace(/__/g, "~");
+            items.push(`${encodeURIComponent(safeKey)}:${qty}`);
+        }
+    }
+
+    if (items.length === 0) return finalBase;
+
+    let shareUrl = `${finalBase}/?cart=${items.join(",")}`;
+
+    // Preserva o vendedor atual
+    if (currentSeller && currentSeller.code && currentSeller.code !== "LOJA") {
+        shareUrl += `&v=${encodeURIComponent(currentSeller.code.toLowerCase())}`;
+    }
+
+    // Preserva o token de 30 dias se houver
+    const urlParams = new URLSearchParams(window.location.search);
+    const tParam = urlParams.get("t");
+    if (tParam) {
+        shareUrl += `&t=${encodeURIComponent(tParam)}`;
+    }
+
+    return shareUrl;
+}
+
+async function shareCart(event) {
+    if (event) event.stopPropagation();
+
+    const { totalCount, totalPrice } = getCartStats();
+    if (totalCount === 0) {
+        showToast("⚠️ Adicione produtos ao carrinho antes de compartilhar!");
+        return;
+    }
+
+    const shareUrl = buildCartShareUrl();
+    const formattedTotal = `R$ ${totalPrice.toFixed(2).replace('.', ',')}`;
+
+    // Monta o resumo dos produtos selecionados
+    const lines = [];
+    for (const cartKey in cart) {
+        const qty = cart[cartKey];
+        if (qty <= 0) continue;
+        const itemInfo = getCartItemInfo(cartKey);
+        if (!itemInfo || !itemInfo.product) continue;
+        const p = itemInfo.product;
+        const variantText = itemInfo.variant ? ` (${itemInfo.variant.label})` : "";
+        const itemSubtotal = `R$ ${(p.price * qty).toFixed(2).replace('.', ',')}`;
+        lines.push(`• ${qty}x ${toTitleCase(p.name)}${variantText} - ${itemSubtotal}`);
+    }
+
+    const shareTitle = `Carrinho Pronto (${totalCount} ${totalCount === 1 ? 'item' : 'itens'}) | Agro Salinas`;
+    const shareText = `🛒 *CARRINHO PRONTO — AGRO SALINAS*\n\n` +
+        `Preparei este pedido para você:\n` +
+        lines.join("\n") +
+        `\n\n💰 *Total: ${formattedTotal}*` +
+        `\n\nToque no link abaixo para abrir o carrinho já montado e concluir o pedido:`;
+
+    // 1. Tenta compartilhamento nativo (WhatsApp, Telegram, etc. no celular)
+    if (navigator.share) {
+        try {
+            await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl
+            });
+            showToast("✓ Carrinho compartilhado com sucesso!");
+            return;
+        } catch (err) {
+            if (err && err.name === 'AbortError') return;
+        }
+    }
+
+    // 2. Fallback: Copia o link direto para a área de transferência
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(shareUrl);
+            showToast("🔗 Link do carrinho copiado! Pode enviar pelo WhatsApp.");
+            return;
+        }
+    } catch (e) {}
+
+    // 3. Fallback alternativo para navegadores restritos
+    prompt("Copie o link do carrinho pronto abaixo:", shareUrl);
+}
+
+// --- TRATAMENTO DE ACESSO DIRETO A UM CARRINHO PRONTO (?cart=96:2,749:1) ---
+function handleDirectCartUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const cartParam = urlParams.get("cart") || urlParams.get("c") || urlParams.get("carrinho");
+    if (!cartParam) return;
+
+    try {
+        const rawEntries = decodeURIComponent(cartParam).split(",");
+        let addedCount = 0;
+
+        rawEntries.forEach(entry => {
+            const trimmed = entry.trim();
+            if (!trimmed) return;
+
+            const parts = trimmed.split(":");
+            const rawKey = parts[0].trim();
+            const qty = parts.length > 1 ? parseInt(parts[1], 10) : 1;
+            if (isNaN(qty) || qty <= 0) return;
+
+            // Restaura chave (suporta ~ como separador de variação)
+            const safeKey = rawKey.replace(/~/g, "__");
+            let baseId = safeKey;
+            let variantLabel = null;
+
+            if (safeKey.includes("__")) {
+                const subParts = safeKey.split("__");
+                baseId = subParts[0];
+                variantLabel = subParts[1];
+            }
+
+            // Busca produto por ID ou Código
+            const product = PRODUCTS.find(p =>
+                p.id.toString() === baseId.toString() ||
+                (p.code && p.code.toString().toLowerCase() === baseId.toLowerCase())
+            );
+
+            if (!product) return;
+
+            let realKey = product.id.toString();
+            if (variantLabel && Array.isArray(product.variations)) {
+                const matchVar = product.variations.find(v =>
+                    v.label.toLowerCase() === variantLabel.toLowerCase()
+                );
+                if (matchVar) {
+                    realKey = `${product.id}__${matchVar.label}`;
+                }
+            }
+
+            cart[realKey] = qty;
+            addedCount++;
+        });
+
+        if (addedCount > 0) {
+            saveCart();
+            updateCartUI();
+            renderCartDrawerItems();
+
+            // Abre o carrinho após a carga para o cliente já ver o pedido pronto
+            setTimeout(() => {
+                openCartDrawer();
+                showToast("🛒 Carrinho carregado com sucesso!");
+            }, 400);
+        }
+    } catch (err) {
+        console.warn("Erro ao carregar carrinho compartilhado:", err);
+    }
 }
 
 // --- EVENTOS & BUSCA (COM DEBOUNCE DE 300MS) ---

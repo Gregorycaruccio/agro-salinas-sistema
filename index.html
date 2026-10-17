@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Catálogo Digital | Agro Salinas</title>
-    <link rel="stylesheet" href="style.css?v=5.6">
+    <link rel="stylesheet" href="style.css?v=5.8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -330,10 +330,14 @@
     <div class="modal-overlay" id="cart-modal" onclick="if(event.target === this) closeCartDrawer()">
         <div class="cart-drawer">
             <div class="drawer-header">
-                <div style="display: flex; align-items: center; gap: 10px;">
-                    <h3 class="drawer-title" style="margin: 0;">🛒 Seu Carrinho</h3>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <h3 class="drawer-title" style="margin: 0;">Seu Carrinho</h3>
+                    <button id="btn-header-share-cart" class="btn-header-share-cart" onclick="shareCart(event)" title="Compartilhar link com os itens deste carrinho" style="display: none;">
+                        <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        <span>Compartilhar</span>
+                    </button>
                     <button id="btn-clear-cart" class="btn-clear-cart" onclick="confirmClearCart()" title="Limpar todos os produtos do carrinho" style="display: none;">
-                        🗑️ Limpar
+                        Limpar
                     </button>
                 </div>
                 <button class="btn-close-drawer" onclick="closeCartDrawer()" title="Fechar carrinho">✕</button>
@@ -504,10 +508,20 @@
                     <span>Total Estimado:</span>
                     <span id="drawer-total-price">R$ 0,00</span>
                 </div>
-                <button class="btn-send-whatsapp" id="btn-cart-checkout" onclick="checkoutWhatsApp()">
-                    <span id="btn-checkout-text">Enviar Pedido no WhatsApp</span>
-                    <span style="font-size: 20px;">💬</span>
-                </button>
+                <div class="drawer-footer-actions">
+                    <button class="btn-send-whatsapp" id="btn-cart-checkout" onclick="checkoutWhatsApp()">
+                        <span id="btn-checkout-text">Enviar Pedido para a Agro Salinas</span>
+                        <span class="btn-checkout-icon">
+                            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display:inline-block; vertical-align:middle;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2z"/></svg>
+                        </span>
+                    </button>
+                    <button class="btn-share-cart" id="btn-share-cart" onclick="shareCart(event)" title="Compartilhar link com todos os itens do carrinho prontos">
+                        <span class="btn-share-cart-icon">
+                            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:middle;"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                        </span>
+                        <span class="btn-share-cart-text">Compartilhar Carrinho Pronto</span>
+                    </button>
+                </div>
                 <div class="cart-seller-notice" id="cart-seller-notice">
                     <span id="cart-notice-seller-name">Atendimento por: <strong style="color: var(--primary);">Agro Salinas</strong></span>
                 </div>
@@ -531,6 +545,6 @@
     <!-- SCRIPTS -->
     <script src="vendedores.js?v=5.2"></script>
     <script src="products.js?v=5.7"></script>
-    <script src="app.js?v=5.6"></script>
+    <script src="app.js?v=5.8"></script>
 </body>
 </html>
