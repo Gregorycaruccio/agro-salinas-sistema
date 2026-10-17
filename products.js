@@ -818,7 +818,7 @@ const PRODUCTS = [
         "name": "Areia Sanitaria Gato Mitzi 12kg",
         "category": "gatos",
         "subcategory": "Areias Sanitárias",
-        "price": 33.5,
+        "price": 33.99,
         "unit": "pct",
         "image": "assets/produtos/2_gatos/areias_silica_outras/408.png",
         "featured": false
