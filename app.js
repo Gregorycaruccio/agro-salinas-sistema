@@ -675,12 +675,14 @@ function selectCategory(catId) {
 // --- RENDERIZAÇÃO DAS SUBCATEGORIAS DINÂMICAS NA PRATELEIRA & SIDEBAR ---
 function renderSubcategories() {
     const chipsContainer = document.getElementById("dept-quick-chips");
+    const blockEl = document.getElementById("dept-subcategories-block");
     const sidebarSection = document.getElementById("sidebar-subcategories-section");
     const sidebarList = document.getElementById("sidebar-subcategories-list");
     const sidebarTitle = document.getElementById("sidebar-subcategories-title");
 
     if (currentCategory === "todos") {
         if (chipsContainer) chipsContainer.innerHTML = "";
+        if (blockEl) blockEl.style.display = "none";
         if (sidebarSection) sidebarSection.style.display = "none";
         if (sidebarList) sidebarList.innerHTML = "";
         return;
@@ -700,14 +702,15 @@ function renderSubcategories() {
     if (subcats.length <= 1) {
         if (chipsContainer) {
             chipsContainer.innerHTML = "";
-            chipsContainer.style.display = "none";
         }
+        if (blockEl) blockEl.style.display = "none";
         if (sidebarSection) sidebarSection.style.display = "none";
         if (sidebarList) sidebarList.innerHTML = "";
         return;
     }
 
-    // Atualizar os chips dentro do banner do departamento
+    // Exibir o bloco de subcategorias e atualizar os chips
+    if (blockEl) blockEl.style.display = "flex";
     if (chipsContainer) {
         chipsContainer.style.display = "flex";
         let chipsHtml = `

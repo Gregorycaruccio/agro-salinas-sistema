@@ -3750,46 +3750,56 @@ footer {
     color: #FFFFFF;
 }
 
-.active-dept-count {
-    font-size: 12px;
+/* BLOCO DE SUBCATEGORIAS (TODAS VISÍVEIS EM BLOCO - NUNCA ROLA PARA O LADO) */
+.dept-subcategories-block {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    padding: 12px 14px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+.dept-block-label {
+    font-size: 12.5px;
+    font-weight: 750;
     color: #D8F3DC;
-    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
 .dept-quick-chips {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    flex-wrap: wrap; /* TODOS OS ITENS VISÍVEIS EM BLOCO - NUNCA ROLA LATERALMENTE */
     width: 100%;
 }
 
-.dept-quick-chips::-webkit-scrollbar {
-    display: none;
-}
-
 .dept-quick-chip {
-    background: rgba(255, 255, 255, 0.14);
-    border: 1px solid rgba(255, 255, 255, 0.28);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
     color: #FFFFFF;
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 6px 13px;
+    padding: 8px 14px;
     border-radius: 20px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+    transition: all 0.18s ease;
     user-select: none;
-    flex-shrink: 0;
+    line-height: 1.25;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 38px; /* Fácil de clicar para clientes mais velhos */
 }
 
 .dept-quick-chip:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.28);
+    border-color: rgba(255, 255, 255, 0.6);
     transform: translateY(-1px);
 }
 
@@ -3798,7 +3808,7 @@ footer {
     color: #123020;
     border-color: #FFFFFF;
     font-weight: 800;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* OCULTA MENUS DE PILLS POLUÍDOS DA HOMEPAGE */
@@ -3878,14 +3888,25 @@ body.home-view .desktop-only-tags {
         font-size: 12px;
     }
 
+    .dept-subcategories-block {
+        padding: 10px 12px;
+        border-radius: 12px;
+        gap: 8px;
+    }
+
+    .dept-block-label {
+        font-size: 12px;
+    }
+
     .dept-quick-chips {
         gap: 6px;
-        padding-top: 8px;
+        flex-wrap: wrap;
     }
 
     .dept-quick-chip {
-        padding: 5px 11px;
-        font-size: 12px;
+        padding: 7px 12px;
+        font-size: 12.5px;
+        min-height: 36px;
     }
 }
 
