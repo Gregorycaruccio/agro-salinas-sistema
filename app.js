@@ -246,6 +246,8 @@ document.addEventListener("DOMContentLoaded", () => {
     syncProductsFromSupabase();
     handleDirectProductUrl();
     handleDirectCartUrl();
+    updateTopbarHoursUI();
+    setInterval(updateTopbarHoursUI, 60000);
 });
 
 // --- SINCRONIZAÇÃO EM TEMPO REAL DE ESTOQUE E PREÇOS COM O SUPABASE ---
@@ -420,26 +422,24 @@ function initSeller() {
 
     // Atualizar UI do Banner (se visível)
     const bannerEl = document.getElementById("seller-banner");
+    const sellerInfoEl = document.getElementById("seller-info-content");
     if (bannerEl && currentSeller && currentSeller.code) {
-        if (isStoreGlobal) {
-            bannerEl.innerHTML = `
-                <div class="seller-info">
-                    <span style="font-size: 15px;">🏪</span>
-                    <div>
-                        <span>Atendimento Direto: <strong id="seller-name">Agro Salinas</strong></span>
-                    </div>
-                </div>
-            `;
+        const infoHtml = isStoreGlobal ? `
+            <span style="font-size: 15px;">🏪</span>
+            <div>
+                <span>Atendimento Direto: <strong id="seller-name">Agro Salinas</strong></span>
+            </div>
+        ` : `
+            <span style="font-size: 15px;">🧑‍💼</span>
+            <div>
+                <span>Seu Consultor(a): <strong id="seller-name">${currentSeller.name}</strong></span>
+                <span class="seller-badge" id="seller-tag">#${currentSeller.code}</span>
+            </div>
+        `;
+        if (sellerInfoEl) {
+            sellerInfoEl.innerHTML = infoHtml;
         } else {
-            bannerEl.innerHTML = `
-                <div class="seller-info">
-                    <span style="font-size: 15px;">🧑‍💼</span>
-                    <div>
-                        <span>Seu Consultor(a): <strong id="seller-name">${currentSeller.name}</strong></span>
-                        <span class="seller-badge" id="seller-tag">#${currentSeller.code}</span>
-                    </div>
-                </div>
-            `;
+            bannerEl.innerHTML = `<div class="seller-info" id="seller-info-content">${infoHtml}</div>`;
         }
         bannerEl.style.display = "flex";
     }
@@ -3120,5 +3120,146 @@ document.addEventListener("keydown", (e) => {
         closeQuickViewModal();
         closeCartDrawer();
         closeSidebarDrawer();
+        closeHoursModal();
     }
 });
+
+// --- SISTEMA DE HORÁRIOS DE FUNCIONAMENTO & ATENDIMENTO DA LOJA ---
+function getStoreScheduleStatus() {
+    // Horário oficial no fuso de Brasília (Rio Grande do Sul / UTC-3)
+    const now = new Date();
+    const brDate = new Date(now.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }));
+    const day = brDate.getDay(); // 0: Domingo, 1: Segunda, ..., 6: Sábado
+    const mins = brDate.getHours() * 60 + brDate.getMinutes();
+
+    const mStart = 8 * 60; // 08:00
+    const mEnd = 11 * 60 + 45; // 11:45
+    const aStart = 14 * 60; // 14:00
+    const aEndWeekday = 18 * 60 + 30; // 18:30
+    const aEndSaturday = 18 * 60; // 18:00
+
+    if (day === 0) {
+        return {
+            isOpen: false,
+            isLunch: false,
+            statusText: "Fechado hoje (Domingo)",
+            shortBadge: "Fechado",
+            nextInfo: "Abre segunda-feira às 08:00",
+            statusClass: "status-closed"
+        };
+    }
+
+    const isSaturday = day === 6;
+    const aEnd = isSaturday ? aEndSaturday : aEndWeekday;
+
+    if (mins >= mStart && mins < mEnd) {
+        return {
+            isOpen: true,
+            isLunch: false,
+            statusText: "Aberto agora (Manhã até 11:45)",
+            shortBadge: "Aberto agora",
+            nextInfo: "Intervalo de almoço às 11:45",
+            statusClass: "status-open"
+        };
+    } else if (mins >= mEnd && mins < aStart) {
+        return {
+            isOpen: false,
+            isLunch: true,
+            statusText: "Intervalo de almoço",
+            shortBadge: "Almoço",
+            nextInfo: "Reabre hoje às 14:00",
+            statusClass: "status-lunch"
+        };
+    } else if (mins >= aStart && mins < aEnd) {
+        const closeTime = isSaturday ? "18:00" : "18:30";
+        return {
+            isOpen: true,
+            isLunch: false,
+            statusText: `Aberto agora (Tarde até ${closeTime})`,
+            shortBadge: "Aberto agora",
+            nextInfo: `Fecha hoje às ${closeTime}`,
+            statusClass: "status-open"
+        };
+    } else if (mins < mStart) {
+        return {
+            isOpen: false,
+            isLunch: false,
+            statusText: "Fechado no momento",
+            shortBadge: "Fechado",
+            nextInfo: "Abre hoje às 08:00",
+            statusClass: "status-closed"
+        };
+    } else {
+        const nextDay = isSaturday ? "segunda-feira às 08:00" : "amanhã às 08:00";
+        return {
+            isOpen: false,
+            isLunch: false,
+            statusText: "Fechado no momento",
+            shortBadge: "Fechado",
+            nextInfo: `Abre ${nextDay}`,
+            statusClass: "status-closed"
+        };
+    }
+}
+
+function updateTopbarHoursUI() {
+    const status = getStoreScheduleStatus();
+
+    // Atualiza o indicador e badge da barra superior
+    const dot = document.getElementById("topbar-status-dot");
+    const badge = document.getElementById("topbar-hours-status-badge");
+    const sidebarBadge = document.getElementById("sidebar-hours-status-badge");
+
+    if (dot) {
+        dot.className = `topbar-status-dot ${status.statusClass}`;
+    }
+    if (badge) {
+        badge.textContent = status.shortBadge;
+        badge.className = `topbar-hours-status-badge ${status.statusClass}`;
+    }
+    if (sidebarBadge) {
+        sidebarBadge.textContent = status.shortBadge;
+        sidebarBadge.className = `sidebar-hours-pill ${status.statusClass}`;
+    }
+}
+
+function openHoursModal() {
+    const modal = document.getElementById("hours-modal");
+    if (!modal) return;
+    renderHoursModalContent();
+    modal.classList.add("active");
+}
+
+function closeHoursModal() {
+    const modal = document.getElementById("hours-modal");
+    if (modal) modal.classList.remove("active");
+}
+
+function renderHoursModalContent() {
+    const banner = document.getElementById("hours-live-status-banner");
+    if (!banner) return;
+    const status = getStoreScheduleStatus();
+
+    let bannerIcon = "🟢";
+    let bannerTitle = "Loja Aberta Agora!";
+    let bannerDesc = status.nextInfo;
+
+    if (status.isLunch) {
+        bannerIcon = "🟡";
+        bannerTitle = "Intervalo de Almoço";
+        bannerDesc = "Fechado temporariamente. Reabrimos às 14:00!";
+    } else if (!status.isOpen) {
+        bannerIcon = "⚪";
+        bannerTitle = "Loja Fechada no Momento";
+        bannerDesc = status.nextInfo;
+    }
+
+    banner.className = `hours-live-status-banner ${status.statusClass}`;
+    banner.innerHTML = `
+        <div class="hours-live-status-icon">${bannerIcon}</div>
+        <div class="hours-live-status-details">
+            <h4 class="hours-live-status-title">${bannerTitle}</h4>
+            <p class="hours-live-status-desc">${bannerDesc}</p>
+        </div>
+    `;
+}

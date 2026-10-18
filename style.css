@@ -40,22 +40,124 @@ button, input, select, textarea {
     font-family: inherit;
 }
 
-/* --- BANNER DE VENDEDOR / CONSULTOR --- */
+/* --- BANNER DE VENDEDOR / CONSULTOR & TOPO UTILIDADES --- */
 .seller-banner {
     background: linear-gradient(135deg, var(--primary-dark), var(--primary));
     color: white;
-    padding: 10px 16px;
+    padding: 8px 16px;
     font-size: 13px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    gap: 12px;
 }
 
 .seller-info {
     display: flex;
     align-items: center;
     gap: 8px;
+    min-width: 0;
+}
+
+.seller-banner-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.topbar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.12);
+    color: white;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+}
+
+.topbar-btn:hover {
+    background: rgba(255, 255, 255, 0.24);
+    border-color: rgba(255, 255, 255, 0.45);
+    transform: translateY(-1px);
+}
+
+.topbar-btn:active {
+    transform: scale(0.97);
+}
+
+.topbar-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.topbar-status-dot.status-open {
+    background: #22C55E;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.topbar-status-dot.status-lunch {
+    background: #EAB308;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.topbar-status-dot.status-closed {
+    background: #94A3B8;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.topbar-hours-prefix {
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.topbar-hours-status-badge {
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.topbar-hours-status-badge.status-open {
+    background: #14532D;
+    color: #86EFAC;
+    border: 1px solid #22C55E;
+}
+
+.topbar-hours-status-badge.status-lunch {
+    background: #713F12;
+    color: #FEF08A;
+    border: 1px solid #EAB308;
+}
+
+.topbar-hours-status-badge.status-closed {
+    background: rgba(0, 0, 0, 0.28);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.topbar-btn-instagram {
+    background: linear-gradient(135deg, rgba(225, 48, 108, 0.35), rgba(193, 53, 132, 0.35));
+    border-color: rgba(225, 48, 108, 0.55);
+}
+
+.topbar-btn-instagram:hover {
+    background: linear-gradient(135deg, #E1306C, #C13584);
+    border-color: #E1306C;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .seller-badge {
@@ -184,6 +286,46 @@ button, input, select, textarea {
     transform: translateY(-50%);
     color: var(--text-muted);
     font-size: 17px;
+}
+
+.btn-instagram-header {
+    background: white;
+    border: 2px solid var(--border-color);
+    padding: 10px 14px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    white-space: nowrap;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.btn-instagram-header:hover {
+    border-color: #E1306C;
+    background: #FFF1F5;
+    color: #C13584;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.btn-instagram-header:active {
+    transform: scale(0.97);
+}
+
+.btn-instagram-header svg {
+    color: #E1306C;
+    transition: transform 0.2s ease;
+}
+
+.btn-instagram-header:hover svg {
+    transform: scale(1.15);
 }
 
 .btn-favorites-toggle {
@@ -370,14 +512,17 @@ button, input, select, textarea {
 
     .sidebar-toggle-text,
     .fav-text,
-    .cart-top-text {
+    .cart-top-text,
+    .ig-text,
+    .topbar-hours-full-text {
         display: none !important;
     }
 
     /* Touch Targets Mínimos de 44x44px */
     .btn-sidebar-toggle,
     .btn-favorites-toggle,
-    .btn-cart-toggle {
+    .btn-cart-toggle,
+    .btn-instagram-header {
         min-width: 44px;
         min-height: 44px;
         height: 44px;
@@ -406,6 +551,12 @@ button, input, select, textarea {
     .seller-banner {
         padding: 6px 12px;
         font-size: 12px;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .seller-banner-right {
+        gap: 6px;
     }
 
     /* Ocultamos apenas tags e dropdowns complexos do topo no mobile (disponíveis no menu) */
@@ -4092,6 +4243,288 @@ body.home-view .desktop-only-tags {
 .highlight-pulse {
     animation: pulseProductHighlight 1.5s ease-out 2;
     border-color: var(--accent) !important;
+}
+
+/* --- MODAL DE HORÁRIOS DE FUNCIONAMENTO --- */
+.hours-modal-card {
+    background: white;
+    width: 100%;
+    max-width: 460px;
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
+    animation: drawerSlide 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+.hours-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hours-modal-title-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hours-modal-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #E8F5EE;
+    color: var(--primary-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hours-modal-title {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--primary-dark);
+    margin: 0;
+    line-height: 1.25;
+}
+
+.hours-modal-subtitle {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.hours-live-status-banner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    margin-bottom: 18px;
+    border: 1.5px solid transparent;
+}
+
+.hours-live-status-banner.status-open {
+    background: #ECFDF5;
+    border-color: #A7F3D0;
+    color: #065F46;
+}
+
+.hours-live-status-banner.status-lunch {
+    background: #FEFCE8;
+    border-color: #FEF08A;
+    color: #854D0E;
+}
+
+.hours-live-status-banner.status-closed {
+    background: #F8FAFC;
+    border-color: #E2E8F0;
+    color: #334155;
+}
+
+.hours-live-status-icon {
+    font-size: 22px;
+    line-height: 1;
+}
+
+.hours-live-status-title {
+    font-size: 14.5px;
+    font-weight: 800;
+    margin: 0 0 2px 0;
+}
+
+.hours-live-status-desc {
+    font-size: 12.5px;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.hours-schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.hours-schedule-card {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: var(--radius-md);
+    padding: 12px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.hours-schedule-day {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    color: var(--text-main);
+}
+
+.hours-schedule-day strong {
+    font-weight: 700;
+}
+
+.hours-schedule-shifts {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-end;
+}
+
+.shift-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: white;
+    border: 1px solid #CBD5E1;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.shift-name {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.shift-time {
+    color: var(--text-main);
+    font-weight: 750;
+}
+
+.hours-card-closed {
+    background: #FFF1F2;
+    border-color: #FECDD3;
+}
+
+.closed-label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #BE123C;
+}
+
+.hours-modal-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.btn-hours-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 14px;
+    border-radius: var(--radius-md);
+    font-size: 13px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform 0.18s ease, filter 0.18s ease;
+    user-select: none;
+}
+
+.btn-hours-action:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+}
+
+.btn-hours-action:active {
+    transform: scale(0.97);
+}
+
+.btn-hours-ig {
+    background: linear-gradient(135deg, #581C87, #831843, #9D174D);
+    color: #FFFFFF;
+}
+
+.btn-hours-wa {
+    background: #065F46;
+    color: #FFFFFF;
+}
+
+/* SIDEBAR & FOOTER ATENDIMENTO */
+.sidebar-hours-card {
+    background: #F8FAFC;
+    border: 1.5px solid #E2E8F0;
+    border-radius: var(--radius-md);
+    padding: 12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sidebar-hours-card:hover {
+    background: #E8F5EE;
+    border-color: var(--primary);
+}
+
+.sidebar-hours-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.sidebar-hours-pill {
+    background: var(--primary-dark);
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+.sidebar-hours-text {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.sidebar-ig-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #581C87, #831843, #9D174D);
+    color: #FFFFFF;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    font-size: 13.5px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: transform 0.18s ease;
+}
+
+.sidebar-ig-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+}
+
+.footer-ig-link {
+    color: #9D174D;
+    font-weight: 750;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 13px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-ig-link:hover {
+    opacity: 0.8;
 }
 
 
