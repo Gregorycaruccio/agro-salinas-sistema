@@ -6,7 +6,7 @@ const STORE_CONFIG = {
     "slogan": "Unindo a cidade ao campo!",
     "whatsappNumber": "5551995624230",
     "hideWithoutImage": false,
-    "requireImageForPurchase": true,
+    "requireImageForPurchase": false,
     "defaultSeller": {
         "code": "LOJA",
         "name": "Agro Salinas",
@@ -29,7 +29,12 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-gatos.svg",
         "subtitle": "Rações secas, sachês, areias, petiscos e arranhadores",
-        "tags": ["Patês & Sachês", "Rações Secas", "Areias Sanitárias", "Arranhadores"]
+        "tags": [
+            "Patês & Sachês",
+            "Rações Secas",
+            "Areias Sanitárias",
+            "Arranhadores"
+        ]
     },
     {
         "id": "caes",
@@ -37,7 +42,12 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-caes.svg",
         "subtitle": "Rações secas, sachês, petiscos, camas, coleiras e brinquedos",
-        "tags": ["Rações Secas", "Patês & Sachês", "Petiscos & Ossos", "Acessórios & Camas"]
+        "tags": [
+            "Rações Secas",
+            "Patês & Sachês",
+            "Petiscos & Ossos",
+            "Acessórios & Camas"
+        ]
     },
     {
         "id": "granel",
@@ -45,7 +55,11 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-granel.svg",
         "subtitle": "Pesadas na hora pelo melhor preço por quilo da região",
-        "tags": ["Cães", "Gatos", "Pássaros & Agro"]
+        "tags": [
+            "Cães",
+            "Gatos",
+            "Pássaros & Agro"
+        ]
     },
     {
         "id": "farmacia",
@@ -53,7 +67,11 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-farmacia.svg",
         "subtitle": "Antipulgas, carrapaticidas, vermífugos e suplementos",
-        "tags": ["Antipulgas & Carrapatos", "Medicamentos", "Vitaminas"]
+        "tags": [
+            "Antipulgas & Carrapatos",
+            "Medicamentos",
+            "Vitaminas"
+        ]
     },
     {
         "id": "passaros_roedores",
@@ -61,7 +79,11 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-passaros.svg",
         "subtitle": "Sementes selecionadas, misturas, gaiolas e rações balanceadas",
-        "tags": ["Sementes & Alimentos", "Gaiolas & Viveiros", "Roedores"]
+        "tags": [
+            "Sementes & Alimentos",
+            "Gaiolas & Viveiros",
+            "Roedores"
+        ]
     },
     {
         "id": "jardim_agro",
@@ -69,7 +91,12 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-jardim.svg",
         "subtitle": "Vasos decorativos, mudas, plantas, terras, adubos e utilidades",
-        "tags": ["Vasos & Decoração", "Terras & Adubos", "Mudas & Plantas", "Campo"]
+        "tags": [
+            "Vasos & Decoração",
+            "Terras & Adubos",
+            "Mudas & Plantas",
+            "Campo"
+        ]
     },
     {
         "id": "pesca",
@@ -77,7 +104,11 @@ const CATEGORIES = [
         "icon": "",
         "illustration": "assets/illustrations/dept-pesca.svg",
         "subtitle": "Linhas, anzóis, chicotes, chumbadas e equipamentos de lazer",
-        "tags": ["Linhas & Anzóis", "Chicotes", "Acessórios"]
+        "tags": [
+            "Linhas & Anzóis",
+            "Chicotes",
+            "Acessórios"
+        ]
     }
 ];
 
@@ -750,7 +781,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 56,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "136",
@@ -760,7 +792,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 27.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "137",
@@ -770,7 +803,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 56,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "139",
@@ -780,7 +814,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 27.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "140",
@@ -790,7 +825,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 56,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "508",
@@ -800,7 +836,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 11.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "730",
@@ -810,7 +847,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 8.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "408",
@@ -842,7 +880,8 @@ const PRODUCTS = [
         "subcategory": "Areias Sanitárias",
         "price": 55.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
     },
     {
         "id": "618",
@@ -853,7 +892,8 @@ const PRODUCTS = [
         "price": 16.25,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61p-39QkZcL._AC_SL1000_.jpg"
     },
     {
         "id": "619",
@@ -864,7 +904,8 @@ const PRODUCTS = [
         "price": 23,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61p-39QkZcL._AC_SL1000_.jpg"
     },
     {
         "id": "85",
@@ -1322,7 +1363,8 @@ const PRODUCTS = [
         "price": 9.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71jCsmP4YSL._AC_SL1500_.jpg"
     },
     {
         "id": "4",
@@ -1352,7 +1394,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 19.9,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61k1qC6QzRL._AC_SL1000_.jpg"
     },
     {
         "id": "163",
@@ -1392,7 +1435,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 26,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
     },
     {
         "id": "212",
@@ -1402,7 +1446,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 25.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
     },
     {
         "id": "213",
@@ -1412,7 +1457,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 26,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
     },
     {
         "id": "167",
@@ -1921,7 +1967,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 37,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/51wXp71q08L._AC_SL1000_.jpg"
     },
     {
         "id": "432",
@@ -2121,7 +2168,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 64,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "34",
@@ -2131,7 +2179,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 64,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "590",
@@ -2471,7 +2520,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 13.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/51T9dM0a0IL._AC_SL1000_.jpg"
     },
     {
         "id": "391",
@@ -2814,7 +2864,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 18,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
     },
     {
         "id": "603",
@@ -2824,7 +2875,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 21.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
     },
     {
         "id": "604",
@@ -2834,7 +2886,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 28.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
     },
     {
         "id": "66",
@@ -2881,7 +2934,8 @@ const PRODUCTS = [
         "price": 18.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71tQe4oJzPL._AC_SL1500_.jpg"
     },
     {
         "id": "65",
@@ -2977,7 +3031,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 19.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61pD7oUf3YL._AC_SL1000_.jpg"
     },
     {
         "id": "466",
@@ -2997,7 +3052,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 34.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
     },
     {
         "id": "652",
@@ -3007,7 +3063,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 34.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
     },
     {
         "id": "405",
@@ -3017,7 +3074,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 34.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
     },
     {
         "id": "535",
@@ -3027,7 +3085,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 101,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61x0S6vXqjL._AC_SL1000_.jpg"
     },
     {
         "id": "536",
@@ -3037,7 +3096,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 117,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61x0S6vXqjL._AC_SL1000_.jpg"
     },
     {
         "id": "29",
@@ -3047,7 +3107,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 52.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
     },
     {
         "id": "506",
@@ -3614,7 +3675,8 @@ const PRODUCTS = [
         "badge": "Destaque",
         "outOfStock": true,
         "available": false,
-        "stock": 0
+        "stock": 0,
+        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
     },
     {
         "id": "52",
@@ -3628,7 +3690,8 @@ const PRODUCTS = [
         "badge": "Destaque",
         "outOfStock": true,
         "available": false,
-        "stock": 0
+        "stock": 0,
+        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
     },
     {
         "id": "50",
@@ -3642,7 +3705,8 @@ const PRODUCTS = [
         "badge": "Destaque",
         "outOfStock": true,
         "available": false,
-        "stock": 0
+        "stock": 0,
+        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
     },
     {
         "id": "57",
@@ -4002,7 +4066,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 19.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/51e39B0p5bL._AC_SL1000_.jpg"
     },
     {
         "id": "525",
@@ -4445,7 +4510,8 @@ const PRODUCTS = [
         "price": 98.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
     },
     {
         "id": "530",
@@ -4456,7 +4522,8 @@ const PRODUCTS = [
         "price": 76.5,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
     },
     {
         "id": "533",
@@ -4467,7 +4534,8 @@ const PRODUCTS = [
         "price": 116.5,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
     },
     {
         "id": "531",
@@ -4478,7 +4546,8 @@ const PRODUCTS = [
         "price": 85,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
     },
     {
         "id": "534",
@@ -4489,7 +4558,8 @@ const PRODUCTS = [
         "price": 79.9,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/61z+Fz08xYL._AC_SL1000_.jpg"
     },
     {
         "id": "183",
@@ -4589,7 +4659,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 49.9,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/51tW04p9XWL._AC_SL1000_.jpg"
     },
     {
         "id": "392",
@@ -4769,7 +4840,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 12.99,
         "unit": "lata",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "735",
@@ -4779,7 +4851,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 12.99,
         "unit": "lata",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "737",
@@ -4789,7 +4862,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 12.99,
         "unit": "lata",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "738",
@@ -4799,7 +4873,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 12.99,
         "unit": "lata",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "257",
@@ -4829,7 +4904,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 12.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
     },
     {
         "id": "605",
@@ -4839,7 +4915,8 @@ const PRODUCTS = [
         "subcategory": "Petiscos & Cookies",
         "price": 10.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
     },
     {
         "id": "172",
@@ -4929,7 +5006,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 8.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "43",
@@ -4939,7 +5017,8 @@ const PRODUCTS = [
         "subcategory": "Nutrição Animal & Campo",
         "price": 8.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "42",
@@ -4949,7 +5028,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 8.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "438",
@@ -5196,7 +5276,8 @@ const PRODUCTS = [
         "price": 47.7,
         "unit": "pct",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71tK6f6dFqL._AC_SL1500_.jpg"
     },
     {
         "id": "49",
@@ -5964,7 +6045,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 233,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "284",
@@ -5974,7 +6056,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 200.167,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "285",
@@ -5984,7 +6067,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 150,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "282",
@@ -5994,7 +6078,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 179.6,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "281",
@@ -6004,7 +6089,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 179.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "286",
@@ -6014,7 +6100,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 141.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
     },
     {
         "id": "118",
@@ -6762,7 +6849,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 24,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "677",
@@ -6772,7 +6860,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 62.5,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "220",
@@ -6782,7 +6871,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 192.9,
         "unit": "pct",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "383",
@@ -6902,7 +6992,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 24.99,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/51b95nK3QYL._AC_SL1000_.jpg"
     },
     {
         "id": "585",
@@ -7072,7 +7163,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 10,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
     },
     {
         "id": "380",
@@ -7082,7 +7174,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 8.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
     },
     {
         "id": "98",
@@ -7102,7 +7195,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
     },
     {
         "id": "216",
@@ -7152,7 +7246,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
     },
     {
         "id": "1",
@@ -7172,7 +7267,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "721",
@@ -7182,7 +7278,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "37",
@@ -7192,7 +7289,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.9,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "720",
@@ -7202,7 +7300,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
     },
     {
         "id": "30",
@@ -7212,7 +7311,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
     },
     {
         "id": "31",
@@ -7222,7 +7322,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
     },
     {
         "id": "33",
@@ -7232,7 +7333,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
     },
     {
         "id": "32",
@@ -7242,7 +7344,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
     },
     {
         "id": "715",
@@ -7252,7 +7355,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "38",
@@ -7262,7 +7366,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "717",
@@ -7272,7 +7377,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "714",
@@ -7282,7 +7388,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "39",
@@ -7292,7 +7399,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "719",
@@ -7302,7 +7410,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "718",
@@ -7312,7 +7421,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "716",
@@ -7322,7 +7432,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "41",
@@ -7332,7 +7443,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "40",
@@ -7342,7 +7454,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 3.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
     },
     {
         "id": "7",
@@ -7426,7 +7539,8 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71Y+mNlYmIL._AC_SL1500_.jpg"
     },
     {
         "id": "26",
@@ -7437,7 +7551,8 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
     },
     {
         "id": "25",
@@ -7448,7 +7563,8 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": true,
-        "badge": "Destaque"
+        "badge": "Destaque",
+        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
     },
     {
         "id": "74",
@@ -7482,7 +7598,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "651",
@@ -7492,7 +7609,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "90",
@@ -7502,7 +7620,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "648",
@@ -7512,7 +7631,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "647",
@@ -7522,7 +7642,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "646",
@@ -7532,7 +7653,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "649",
@@ -7542,7 +7664,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "92",
@@ -7552,7 +7675,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "93",
@@ -7562,7 +7686,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
     },
     {
         "id": "673",
@@ -7582,7 +7707,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
     },
     {
         "id": "211",
@@ -7592,7 +7718,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
     },
     {
         "id": "548",
@@ -7602,7 +7729,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
     },
     {
         "id": "549",
@@ -7612,7 +7740,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
     },
     {
         "id": "97",
@@ -7674,7 +7803,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "219",
@@ -7684,7 +7814,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "217",
@@ -7694,7 +7825,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "674",
@@ -7704,7 +7836,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "218",
@@ -7714,7 +7847,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 3.5,
         "unit": "un",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
     },
     {
         "id": "635",
@@ -7904,7 +8038,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 20.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
     },
     {
         "id": "658",
@@ -7914,7 +8049,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 20.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
     },
     {
         "id": "656",
@@ -7924,7 +8060,8 @@ const PRODUCTS = [
         "subcategory": "Geral",
         "price": 22.5,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
     },
     {
         "id": "332",
@@ -7954,7 +8091,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 226.5,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
     },
     {
         "id": "20",
@@ -7964,7 +8102,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 269,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
     },
     {
         "id": "21",
@@ -7974,7 +8113,8 @@ const PRODUCTS = [
         "subcategory": "Antipulgas & Carrapatos",
         "price": 333,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
     },
     {
         "id": "47",
@@ -8024,7 +8164,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 25,
         "unit": "frasco",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61KqJzC2W0L._AC_SL1000_.jpg"
     },
     {
         "id": "496",
@@ -8645,7 +8786,8 @@ const PRODUCTS = [
         "subcategory": "Medicamentos",
         "price": 5,
         "unit": "comp",
-        "featured": false
+        "featured": false,
+        "image": "https://m.media-amazon.com/images/I/61Tf-Z9FqLL._AC_SL1000_.jpg"
     },
     {
         "id": "149",
@@ -8729,7 +8871,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "864",
@@ -8739,7 +8882,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "865",
@@ -8749,7 +8893,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "866",
@@ -8759,7 +8904,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "867",
@@ -8769,7 +8915,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "868",
@@ -8779,7 +8926,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
     },
     {
         "id": "869",
@@ -8789,7 +8937,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "870",
@@ -8799,7 +8948,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "871",
@@ -8809,7 +8959,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "872",
@@ -8819,7 +8970,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "873",
@@ -8829,7 +8981,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "874",
@@ -8839,7 +8992,8 @@ const PRODUCTS = [
         "subcategory": "Patês & Sachês",
         "price": 2.99,
         "unit": "un",
-        "featured": true
+        "featured": true,
+        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
     },
     {
         "id": "875",
@@ -8876,6 +9030,6 @@ const PRODUCTS = [
     }
 ];
 
-if (typeof module !== 'undefined') {
+if (typeof module !== 'undefined' && module.exports) {
     module.exports = { STORE_CONFIG, CATEGORIES, PRODUCTS };
 }

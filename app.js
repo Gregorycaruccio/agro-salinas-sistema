@@ -189,12 +189,12 @@ function getCatalogProducts() {
 }
 
 // Verifica se o item pode ser escolhido/comprado no site
-// Itens sem foto ficam com botão "Indisponível" (ativam sozinhos assim que adicionada a imagem)
+// Itens sem foto exibem o placeholder da categoria e estão 100% liberados para compra
 function isProductAvailable(product) {
     if (!product) return false;
     if (product.outOfStock || product.available === false || product.paused) return false;
     if (typeof product.stock === 'number' && product.stock <= 0) return false;
-    if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.requireImageForPurchase) {
+    if (typeof STORE_CONFIG !== 'undefined' && STORE_CONFIG.requireImageForPurchase === true) {
         return !!product.image && typeof product.image === 'string' && product.image.trim() !== '';
     }
     return true;
@@ -231,6 +231,107 @@ function normalizeText(str) {
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase()
         .trim();
+}
+
+// Gerador de Placeholders Visuais Elegantes e Padronizados por Categoria
+function getCategoryPlaceholderSvg(category, catName) {
+    const cleanCat = (category || "").toLowerCase();
+    const cleanLabel = catName || "Agro Salinas";
+
+    if (cleanCat === "caes" || cleanCat.includes("cao") || cleanCat.includes("cão")) {
+        return `
+            <div class="product-placeholder-box placeholder-caes">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="15" r="4" fill="currentColor" fill-opacity="0.12"/>
+                    <circle cx="6.5" cy="10" r="2.2" fill="currentColor" fill-opacity="0.12"/>
+                    <circle cx="10" cy="6" r="2.2" fill="currentColor" fill-opacity="0.12"/>
+                    <circle cx="14" cy="6" r="2.2" fill="currentColor" fill-opacity="0.12"/>
+                    <circle cx="17.5" cy="10" r="2.2" fill="currentColor" fill-opacity="0.12"/>
+                </svg>
+                <span class="product-placeholder-tag">🐶 ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    if (cleanCat === "gatos" || cleanCat.includes("cat") || cleanCat.includes("felino")) {
+        return `
+            <div class="product-placeholder-box placeholder-gatos">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 6 L7 12 C8.5 11.5 10.2 11.2 12 11.2 C13.8 11.2 15.5 11.5 17 12 L20 6 L18 16 C17 19.5 14.5 21 12 21 C9.5 21 7 19.5 6 16 Z" fill="currentColor" fill-opacity="0.1"/>
+                    <circle cx="9" cy="14.5" r="1.2" fill="currentColor"/>
+                    <circle cx="15" cy="14.5" r="1.2" fill="currentColor"/>
+                    <path d="M11 17 L12 18 L13 17" stroke-width="1.5"/>
+                </svg>
+                <span class="product-placeholder-tag">🐱 ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    if (cleanCat === "farmacia" || cleanCat.includes("medic") || cleanCat.includes("vet")) {
+        return `
+            <div class="product-placeholder-box placeholder-farmacia">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="currentColor" fill-opacity="0.08"/>
+                    <line x1="12" y1="8" x2="12" y2="16" stroke-width="2.5"/>
+                    <line x1="8" y1="12" x2="16" y2="12" stroke-width="2.5"/>
+                </svg>
+                <span class="product-placeholder-tag">💊 ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    if (cleanCat === "granel") {
+        return `
+            <div class="product-placeholder-box placeholder-granel">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 3v18M6 8l6-2 6 2M6 8L3 14c0 1.5 1.5 2 3 2s3-.5 3-2L6 8zM18 8l-3 6c0 1.5 1.5 2 3 2s3-.5 3-2l-3-6zM4 21h16" fill="currentColor" fill-opacity="0.08"/>
+                </svg>
+                <span class="product-placeholder-tag">⚖️ ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    if (cleanCat === "passaros_roedores" || cleanCat.includes("passaro") || cleanCat.includes("ave") || cleanCat.includes("roedor")) {
+        return `
+            <div class="product-placeholder-box placeholder-passaros">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 18c6 0 10-3 12-8 2-5 6-7 6-7s-3 4-3 7c0 4-3 8-7 9-3 1-6 0-8-1z" fill="currentColor" fill-opacity="0.1"/>
+                    <path d="M13 10c-3 1-5 3-6 6"/>
+                </svg>
+                <span class="product-placeholder-tag">🦜 ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    if (cleanCat === "pesca" || cleanCat.includes("peixe") || cleanCat.includes("camping")) {
+        return `
+            <div class="product-placeholder-box placeholder-pesca">
+                <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 16s9-14 20-3c-4 3-7 4-11 4-3.5 0-6-1-9-1z" fill="currentColor" fill-opacity="0.1"/>
+                    <path d="M2 16l4-5m-4 5l4 5"/>
+                    <circle cx="18" cy="11" r="1.2" fill="currentColor"/>
+                </svg>
+                <span class="product-placeholder-tag">🎣 ${cleanLabel}</span>
+            </div>
+        `;
+    }
+
+    return `
+        <div class="product-placeholder-box placeholder-default">
+            <svg class="placeholder-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 3h12l2 4v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7l2-4z" fill="currentColor" fill-opacity="0.08"/>
+                <line x1="4" y1="7" x2="20" y2="7"/>
+                <path d="M9 12h6"/>
+                <path d="M9 16h4"/>
+            </svg>
+            <span class="product-placeholder-tag">📦 ${cleanLabel}</span>
+        </div>
+    `;
+}
+
+function handleImageError(imgEl, category, catName) {
+    if (!imgEl || !imgEl.parentElement) return;
+    imgEl.parentElement.innerHTML = getCategoryPlaceholderSvg(category, catName);
 }
 
 // --- INICIALIZAÇÃO ---
@@ -873,23 +974,11 @@ function buildProductCardHtml(product) {
     const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
     const displayImage = activeVar && activeVar.image ? activeVar.image : product.image;
 
-    // Placeholder Vetorial Minimalista e Limpo (sem emojis infantis gigantes)
-    const placeholderSvg = `
-        <div class="product-placeholder-box">
-            <svg class="placeholder-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20 12 L24 8 L40 8 L44 12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 22 L48 22" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="32" cy="38" r="8" stroke-width="2" opacity="0.35"/>
-                <path d="M29 38 L35 38 M32 35 L32 41" stroke-width="1.8" stroke-linecap="round" opacity="0.45"/>
-            </svg>
-            <span class="product-placeholder-tag">${catName}</span>
-        </div>
-    `;
+    const placeholderSvg = getCategoryPlaceholderSvg(product.category, catName);
 
     const imageHtml = displayImage ? `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
-            <img src="${displayImage}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\\'product-placeholder-box\\'><svg class=\\'placeholder-svg\\' viewBox=\\'0 0 64 64\\' fill=\\'none\\' stroke=\\'currentColor\\' xmlns=\\'http://www.w3.org/2000/svg\\'><path d=\\'M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M20 12 L24 8 L40 8 L44 12\\' stroke-width=\\'2.2\\' stroke-linecap=\\'round\\' stroke-linejoin=\\'round\\'/><path d=\\'M16 22 L48 22\\' stroke-width=\\'2\\' stroke-linecap=\\'round\\'/><circle cx=\\'32\\' cy=\\'38\\' r=\\'8\\' stroke-width=\\'2\\' opacity=\\'0.35\\'/></svg><span class=\\'product-placeholder-tag\\'>${catName}</span></div>';">
+            <img src="${displayImage}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="handleImageError(this, '${product.category}', '${catName}')">
         </div>
     ` : `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
@@ -2721,24 +2810,11 @@ function openQuickView(productId) {
     const granelBadge = isGranel && product.badge ? `<span style="font-size: 12px; background: #E8F5EE; color: var(--primary); padding: 2px 8px; border-radius: 6px; font-weight: 800;">⚖️ ${product.badge}</span>` : '';
 
     // Imagem do produto com fallback limpo
-    const placeholderSvg = `
-        <div class="product-placeholder-box" style="padding: 20px;">
-            <svg class="placeholder-svg" viewBox="0 0 64 64" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg" style="width: 54px; height: 54px;">
-                <path d="M20 12 L44 12 L48 22 L48 54 C48 56.2 46.2 58 44 58 L20 58 C17.8 58 16 56.2 16 54 L16 22 Z" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M20 12 L24 8 L40 8 L44 12" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 22 L48 22" stroke-width="2" stroke-linecap="round"/>
-                <circle cx="32" cy="38" r="8" stroke-width="2" opacity="0.35"/>
-            </svg>
-            <span class="product-placeholder-tag" style="margin-top: 6px;">${catName}</span>
-        </div>
-    `;
+    const placeholderSvg = getCategoryPlaceholderSvg(product.category, catName);
 
     const imageHtml = product.image ? `
         <div class="quickview-image-wrap">
-            <img src="${product.image}" alt="${title}" class="quickview-img" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="quickview-fallback-wrap" style="display:none; width:100%; height:100%; align-items:center; justify-content:center;">
-                ${placeholderSvg}
-            </div>
+            <img src="${product.image}" alt="${title}" class="quickview-img" onerror="handleImageError(this, '${product.category}', '${catName}')">
         </div>
     ` : `
         <div class="quickview-image-wrap">

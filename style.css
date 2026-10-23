@@ -1172,30 +1172,79 @@ button, input, select, textarea {
     background: linear-gradient(145deg, #F8FAFC 0%, #EDF2F7 100%);
     user-select: none;
     padding: 14px;
+    transition: all 0.25s ease;
+}
+
+.product-placeholder-box.placeholder-caes {
+    background: linear-gradient(145deg, #FFFBEB 0%, #FEF3C7 100%);
+    color: #92400E;
+}
+.product-placeholder-box.placeholder-caes .placeholder-svg {
+    color: #B45309;
+}
+
+.product-placeholder-box.placeholder-gatos {
+    background: linear-gradient(145deg, #F5F3FF 0%, #EDE9FE 100%);
+    color: #5B21B6;
+}
+.product-placeholder-box.placeholder-gatos .placeholder-svg {
+    color: #6D28D9;
+}
+
+.product-placeholder-box.placeholder-farmacia {
+    background: linear-gradient(145deg, #ECFDF5 0%, #D1FAE5 100%);
+    color: #065F46;
+}
+.product-placeholder-box.placeholder-farmacia .placeholder-svg {
+    color: #059669;
+}
+
+.product-placeholder-box.placeholder-granel {
+    background: linear-gradient(145deg, #F0FDF4 0%, #DCFCE7 100%);
+    color: #14532D;
+}
+.product-placeholder-box.placeholder-granel .placeholder-svg {
+    color: #15803D;
+}
+
+.product-placeholder-box.placeholder-passaros {
+    background: linear-gradient(145deg, #FEFCE8 0%, #FEF9C3 100%);
+    color: #854D0E;
+}
+.product-placeholder-box.placeholder-passaros .placeholder-svg {
+    color: #CA8A04;
+}
+
+.product-placeholder-box.placeholder-pesca {
+    background: linear-gradient(145deg, #F0F9FF 0%, #E0F2FE 100%);
+    color: #075985;
+}
+.product-placeholder-box.placeholder-pesca .placeholder-svg {
+    color: #0284C7;
 }
 
 .placeholder-svg {
-    width: 48px;
-    height: 48px;
-    color: #94A3B8;
+    width: 44px;
+    height: 44px;
+    color: #64748B;
     transition: all 0.3s ease;
-    filter: drop-shadow(0 2px 4px rgba(148, 163, 184, 0.2));
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.06));
 }
 
 .product-card:hover .placeholder-svg {
-    color: var(--primary);
-    transform: scale(1.08) translateY(-2px);
+    transform: scale(1.1) translateY(-2px);
 }
 
 .product-placeholder-tag {
-    font-size: 10.5px;
+    font-size: 12px;
     font-weight: 700;
-    color: #64748B;
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2px 9px;
+    color: #1E293B;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 3px 10px;
     border-radius: 12px;
-    border: 1px solid #E2E8F0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
     letter-spacing: 0.3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 /* LINHA DE METADADOS DISCRETA (CÓDIGO • SUBCATEGORIA) */
