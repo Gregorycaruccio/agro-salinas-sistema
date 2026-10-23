@@ -782,7 +782,7 @@ const PRODUCTS = [
         "price": 56,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "136",
@@ -793,7 +793,7 @@ const PRODUCTS = [
         "price": 27.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "137",
@@ -804,7 +804,7 @@ const PRODUCTS = [
         "price": 56,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "139",
@@ -815,7 +815,7 @@ const PRODUCTS = [
         "price": 27.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "140",
@@ -826,7 +826,7 @@ const PRODUCTS = [
         "price": 56,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "508",
@@ -837,7 +837,7 @@ const PRODUCTS = [
         "price": 11.5,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "730",
@@ -848,7 +848,7 @@ const PRODUCTS = [
         "price": 8.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "408",
@@ -881,7 +881,7 @@ const PRODUCTS = [
         "price": 55.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61PjK2sQ0HL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "618",
@@ -893,7 +893,7 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61p-39QkZcL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "619",
@@ -905,7 +905,7 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61p-39QkZcL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "85",
@@ -1364,7 +1364,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71jCsmP4YSL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "4",
@@ -1395,7 +1395,7 @@ const PRODUCTS = [
         "price": 19.9,
         "unit": "comp",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61k1qC6QzRL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "163",
@@ -1436,7 +1436,7 @@ const PRODUCTS = [
         "price": 26,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "212",
@@ -1447,7 +1447,7 @@ const PRODUCTS = [
         "price": 25.9,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "213",
@@ -1458,7 +1458,7 @@ const PRODUCTS = [
         "price": 26,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w-h4U9KIL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "167",
@@ -1968,7 +1968,7 @@ const PRODUCTS = [
         "price": 37,
         "unit": "comp",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/51wXp71q08L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "432",
@@ -2169,7 +2169,7 @@ const PRODUCTS = [
         "price": 64,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "34",
@@ -2180,7 +2180,7 @@ const PRODUCTS = [
         "price": 64,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "590",
@@ -2521,7 +2521,7 @@ const PRODUCTS = [
         "price": 13.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/51T9dM0a0IL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "391",
@@ -2865,7 +2865,7 @@ const PRODUCTS = [
         "price": 18,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "603",
@@ -2876,7 +2876,7 @@ const PRODUCTS = [
         "price": 21.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "604",
@@ -2887,7 +2887,7 @@ const PRODUCTS = [
         "price": 28.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71YvUvC0FGL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "66",
@@ -2935,7 +2935,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71tQe4oJzPL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "65",
@@ -3032,7 +3032,7 @@ const PRODUCTS = [
         "price": 19.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61pD7oUf3YL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "466",
@@ -3053,7 +3053,7 @@ const PRODUCTS = [
         "price": 34.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "652",
@@ -3064,7 +3064,7 @@ const PRODUCTS = [
         "price": 34.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "405",
@@ -3075,7 +3075,7 @@ const PRODUCTS = [
         "price": 34.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61iV2s-PffL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "535",
@@ -3086,7 +3086,7 @@ const PRODUCTS = [
         "price": 101,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61x0S6vXqjL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "536",
@@ -3097,7 +3097,7 @@ const PRODUCTS = [
         "price": 117,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61x0S6vXqjL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "29",
@@ -3108,7 +3108,7 @@ const PRODUCTS = [
         "price": 52.5,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "506",
@@ -3676,7 +3676,7 @@ const PRODUCTS = [
         "outOfStock": true,
         "available": false,
         "stock": 0,
-        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "52",
@@ -3691,7 +3691,7 @@ const PRODUCTS = [
         "outOfStock": true,
         "available": false,
         "stock": 0,
-        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "50",
@@ -3706,7 +3706,7 @@ const PRODUCTS = [
         "outOfStock": true,
         "available": false,
         "stock": 0,
-        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "57",
@@ -4067,7 +4067,7 @@ const PRODUCTS = [
         "price": 19.9,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/51e39B0p5bL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "525",
@@ -4511,7 +4511,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "530",
@@ -4523,7 +4523,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "533",
@@ -4535,7 +4535,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "531",
@@ -4547,7 +4547,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61r58yZ-3-L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "534",
@@ -4559,7 +4559,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/61z+Fz08xYL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "183",
@@ -4660,7 +4660,7 @@ const PRODUCTS = [
         "price": 49.9,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/51tW04p9XWL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "392",
@@ -4841,7 +4841,7 @@ const PRODUCTS = [
         "price": 12.99,
         "unit": "lata",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "735",
@@ -4852,7 +4852,7 @@ const PRODUCTS = [
         "price": 12.99,
         "unit": "lata",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "737",
@@ -4863,7 +4863,7 @@ const PRODUCTS = [
         "price": 12.99,
         "unit": "lata",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "738",
@@ -4874,7 +4874,7 @@ const PRODUCTS = [
         "price": 12.99,
         "unit": "lata",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "257",
@@ -4905,7 +4905,7 @@ const PRODUCTS = [
         "price": 12.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "605",
@@ -4916,7 +4916,7 @@ const PRODUCTS = [
         "price": 10.9,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "172",
@@ -5007,7 +5007,7 @@ const PRODUCTS = [
         "price": 8.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "43",
@@ -5018,7 +5018,7 @@ const PRODUCTS = [
         "price": 8.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "42",
@@ -5029,7 +5029,7 @@ const PRODUCTS = [
         "price": 8.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "438",
@@ -5277,7 +5277,7 @@ const PRODUCTS = [
         "unit": "pct",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71tK6f6dFqL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "49",
@@ -6046,7 +6046,7 @@ const PRODUCTS = [
         "price": 233,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "284",
@@ -6057,7 +6057,7 @@ const PRODUCTS = [
         "price": 200.167,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "285",
@@ -6068,7 +6068,7 @@ const PRODUCTS = [
         "price": 150,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "282",
@@ -6079,7 +6079,7 @@ const PRODUCTS = [
         "price": 179.6,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "281",
@@ -6090,7 +6090,7 @@ const PRODUCTS = [
         "price": 179.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "286",
@@ -6101,7 +6101,7 @@ const PRODUCTS = [
         "price": 141.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71Xm34wFv+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "118",
@@ -6850,7 +6850,7 @@ const PRODUCTS = [
         "price": 24,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "677",
@@ -6861,7 +6861,7 @@ const PRODUCTS = [
         "price": 62.5,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "220",
@@ -6872,7 +6872,7 @@ const PRODUCTS = [
         "price": 192.9,
         "unit": "pct",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "383",
@@ -6993,7 +6993,7 @@ const PRODUCTS = [
         "price": 24.99,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/51b95nK3QYL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "585",
@@ -7164,7 +7164,7 @@ const PRODUCTS = [
         "price": 10,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "380",
@@ -7175,7 +7175,7 @@ const PRODUCTS = [
         "price": 8.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "98",
@@ -7196,7 +7196,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "216",
@@ -7247,7 +7247,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71H2lU0X8ML._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "1",
@@ -7268,7 +7268,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "721",
@@ -7279,7 +7279,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "37",
@@ -7290,7 +7290,7 @@ const PRODUCTS = [
         "price": 3.9,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "720",
@@ -7301,7 +7301,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71V2x-7hVvL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "30",
@@ -7312,7 +7312,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "31",
@@ -7323,7 +7323,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "33",
@@ -7334,7 +7334,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "32",
@@ -7345,7 +7345,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71P4oD33rLL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "715",
@@ -7356,7 +7356,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "38",
@@ -7367,7 +7367,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "717",
@@ -7378,7 +7378,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "714",
@@ -7389,7 +7389,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "39",
@@ -7400,7 +7400,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "719",
@@ -7411,7 +7411,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "718",
@@ -7422,7 +7422,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "716",
@@ -7433,7 +7433,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "41",
@@ -7444,7 +7444,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "40",
@@ -7455,7 +7455,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71L5T4F2B+L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "7",
@@ -7540,7 +7540,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71Y+mNlYmIL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "26",
@@ -7552,7 +7552,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "25",
@@ -7564,7 +7564,7 @@ const PRODUCTS = [
         "unit": "un",
         "featured": true,
         "badge": "Destaque",
-        "image": "https://m.media-amazon.com/images/I/71tT142k1fL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "74",
@@ -7599,7 +7599,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "651",
@@ -7610,7 +7610,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "90",
@@ -7621,7 +7621,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "648",
@@ -7632,7 +7632,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "647",
@@ -7643,7 +7643,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "646",
@@ -7654,7 +7654,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "649",
@@ -7665,7 +7665,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "92",
@@ -7676,7 +7676,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "93",
@@ -7687,7 +7687,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71w3nC3s-kL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "673",
@@ -7708,7 +7708,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "211",
@@ -7719,7 +7719,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "548",
@@ -7730,7 +7730,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "549",
@@ -7741,7 +7741,7 @@ const PRODUCTS = [
         "price": 3,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/71e6PqY2g1L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "97",
@@ -7804,7 +7804,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "219",
@@ -7815,7 +7815,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "217",
@@ -7826,7 +7826,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "674",
@@ -7837,7 +7837,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "218",
@@ -7848,7 +7848,7 @@ const PRODUCTS = [
         "price": 3.5,
         "unit": "un",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61r4V4L+a7L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "635",
@@ -8039,7 +8039,7 @@ const PRODUCTS = [
         "price": 20.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "658",
@@ -8050,7 +8050,7 @@ const PRODUCTS = [
         "price": 20.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "656",
@@ -8061,7 +8061,7 @@ const PRODUCTS = [
         "price": 22.5,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61HqB10uFCL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "332",
@@ -8090,9 +8090,9 @@ const PRODUCTS = [
         "category": "farmacia",
         "subcategory": "Antipulgas & Carrapatos",
         "price": 226.5,
-        "unit": "comp",
+        "unit": "cx",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
+        "image": "assets/produtos/19.jpg"
     },
     {
         "id": "20",
@@ -8101,9 +8101,9 @@ const PRODUCTS = [
         "category": "farmacia",
         "subcategory": "Antipulgas & Carrapatos",
         "price": 269,
-        "unit": "comp",
+        "unit": "cx",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
+        "image": "assets/produtos/20.png"
     },
     {
         "id": "21",
@@ -8112,9 +8112,9 @@ const PRODUCTS = [
         "category": "farmacia",
         "subcategory": "Antipulgas & Carrapatos",
         "price": 333,
-        "unit": "comp",
+        "unit": "cx",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/610j1Xv4QNL._AC_SL1000_.jpg"
+        "image": "assets/produtos/21.jpg"
     },
     {
         "id": "47",
@@ -8165,7 +8165,7 @@ const PRODUCTS = [
         "price": 25,
         "unit": "frasco",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61KqJzC2W0L._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "496",
@@ -8335,7 +8335,7 @@ const PRODUCTS = [
         "subcategory": "Adubos & Fertilizantes",
         "price": 19,
         "unit": "kg",
-        "image": "assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra/562_argiplam.png",
+        "image": "assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra/562.png",
         "featured": false
     },
     {
@@ -8787,7 +8787,7 @@ const PRODUCTS = [
         "price": 5,
         "unit": "comp",
         "featured": false,
-        "image": "https://m.media-amazon.com/images/I/61Tf-Z9FqLL._AC_SL1000_.jpg"
+        "image": ""
     },
     {
         "id": "149",
@@ -8872,7 +8872,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "864",
@@ -8883,7 +8883,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "865",
@@ -8894,7 +8894,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "866",
@@ -8905,7 +8905,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "867",
@@ -8916,7 +8916,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "868",
@@ -8927,7 +8927,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71SgH23r3qL._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "869",
@@ -8938,7 +8938,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "870",
@@ -8949,7 +8949,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "871",
@@ -8960,7 +8960,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "872",
@@ -8971,7 +8971,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "873",
@@ -8982,7 +8982,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "874",
@@ -8993,7 +8993,7 @@ const PRODUCTS = [
         "price": 2.99,
         "unit": "un",
         "featured": true,
-        "image": "https://m.media-amazon.com/images/I/71Uqg1qKz9L._AC_SL1500_.jpg"
+        "image": ""
     },
     {
         "id": "875",
@@ -9030,6 +9030,6 @@ const PRODUCTS = [
     }
 ];
 
-if (typeof module !== 'undefined' && module.exports) {
+if (typeof module !== 'undefined') {
     module.exports = { STORE_CONFIG, CATEGORIES, PRODUCTS };
 }
