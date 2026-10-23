@@ -1160,6 +1160,43 @@ button, input, select, textarea {
     transform: scale(1.06);
 }
 
+/* SELO DE IMAGEM MERAMENTE ILUSTRATIVA (PRODUTOS COM FOTO DA INTERNET) */
+.image-illustrative-notice {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.94);
+    border: 1px solid rgba(226, 232, 240, 0.95);
+    color: #475569;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 4px;
+    border-radius: 4px;
+    line-height: 1.2;
+    pointer-events: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    letter-spacing: -0.2px;
+    z-index: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.quickview-illustrative-notice {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #475569;
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    text-align: center;
+    line-height: 1.35;
+    font-weight: 500;
+}
+
 /* PLACEHOLDER VETORIAL MODERNO E ELEGANTE */
 .product-placeholder-box {
     display: flex;

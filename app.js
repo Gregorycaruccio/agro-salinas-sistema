@@ -334,6 +334,19 @@ function handleImageError(imgEl, category, catName) {
     imgEl.parentElement.innerHTML = getCategoryPlaceholderSvg(category, catName);
 }
 
+// Verifica se a imagem é meramente ilustrativa (puxada da internet / catálogo de fabricante)
+// Fotos reais da loja física (como rações a granel pesadas e seladas) NÃO recebem o aviso
+function isIllustrativeImage(product) {
+    if (!product || !product.image) return false;
+    const img = product.image.trim();
+    if (!img) return false;
+    // Fotos reais da loja física (rações a granel pesadas e fotografadas no balcão)
+    if (img.startsWith('assets/granel/') || product.category === 'granel' || product.realPhoto === true) {
+        return false;
+    }
+    return true;
+}
+
 // --- INICIALIZAÇÃO ---
 document.addEventListener("DOMContentLoaded", () => {
     initSeller();
@@ -975,10 +988,12 @@ function buildProductCardHtml(product) {
     const displayImage = activeVar && activeVar.image ? activeVar.image : product.image;
 
     const placeholderSvg = getCategoryPlaceholderSvg(product.category, catName);
+    const isIllustrative = isIllustrativeImage(product);
 
     const imageHtml = displayImage ? `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
             <img src="${displayImage}" alt="${productName}" class="product-img" loading="lazy" decoding="async" onerror="handleImageError(this, '${product.category}', '${catName}')">
+            ${isIllustrative ? `<span class="image-illustrative-notice" title="Imagem meramente ilustrativa">Imagem meramente ilustrativa</span>` : ''}
         </div>
     ` : `
         <div class="product-image-container" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes rápidos do produto">
@@ -2811,10 +2826,12 @@ function openQuickView(productId) {
 
     // Imagem do produto com fallback limpo
     const placeholderSvg = getCategoryPlaceholderSvg(product.category, catName);
+    const isIllustrative = isIllustrativeImage(product);
 
     const imageHtml = product.image ? `
         <div class="quickview-image-wrap">
             <img src="${product.image}" alt="${title}" class="quickview-img" onerror="handleImageError(this, '${product.category}', '${catName}')">
+            ${isIllustrative ? `<div class="quickview-illustrative-notice">ℹ️ Imagem meramente ilustrativa. A embalagem pode variar conforme o lote do fabricante.</div>` : ''}
         </div>
     ` : `
         <div class="quickview-image-wrap">
