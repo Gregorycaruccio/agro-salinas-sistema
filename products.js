@@ -18,7 +18,23 @@ const WEEKLY_OFFERS_CONFIG = {
     active: true,
     title: "Ofertas da Semana 🔥",
     subtitle: "Preços especiais válidos enquanto durarem os estoques de balcão!",
+    campaignBanner: {
+        active: true,
+        image: "assets/banners/banner_tutano_balde_18l.jpg",
+        badge: "🎁 BRINDE EXCLUSIVO • RESTAM APENAS 4 UNIDADES!",
+        title: "Na compra de uma saca Tutano Gatos 10,1kg, ganhe um Balde de 18L!",
+        description: "Promoção especial de balcão por tempo limitado. Leve o balde oficial Tutano de 18L com tampa para armazenar a ração com total proteção e frescor.",
+        ctaText: "Garantir Balde no WhatsApp",
+        whatsappMessage: "Olá, Agro Salinas! Vi a promoção da Tutano no catálogo: na compra da saca Tutano Gatos 10,1kg, quero garantir meu Balde de 18L de brinde! Ainda tem disponibilidade das 4 unidades?",
+        productCode: "314"
+    },
     items: [
+        {
+            code: "314",
+            highlightBadge: "🎁 GANHE BALDE 18L",
+            promoPrice: 175.00,
+            originalPrice: 175.00
+        },
         {
             code: "747",
             highlightBadge: "SUPER OFERTA",
@@ -6787,8 +6803,11 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 175,
         "unit": "pct",
-        "featured": false,
-        "image": "assets/produtos/2_gatos/racoes_tutano/314.jpg"
+        "featured": true,
+        "badge": "🎁 Ganhe Balde 18L",
+        "image": "assets/produtos/2_gatos/racoes_tutano/314.jpg",
+        "extraInfo": "Na compra ganhe 1 Balde Tutano 18L! (Restam 4 un)",
+        "description": "Alimento Premium Plus completo para gatos com pH urinário controlado e fórmula indoor. Promoção especial: na compra desta saca de 10,1kg ganhe um Balde Tutano de 18L! Restam apenas 4 unidades disponíveis."
     },
     {
         "id": "322",

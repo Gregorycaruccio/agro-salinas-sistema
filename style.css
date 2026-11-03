@@ -4038,6 +4038,213 @@ footer {
     box-shadow: 0 3px 10px rgba(194, 65, 12, 0.25);
 }
 
+/* Banner de Campanha Especial em Destaque nas Ofertas da Semana */
+.weekly-offers-campaign-banner {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.campaign-banner-card {
+    background: linear-gradient(135deg, #0b0f19 0%, #171529 55%, #0d1117 100%);
+    border: 1.5px solid rgba(236, 72, 153, 0.4);
+    box-shadow: 0 12px 32px -6px rgba(236, 72, 153, 0.22), 0 4px 16px rgba(0, 0, 0, 0.35);
+    border-radius: 18px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.campaign-banner-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -20%;
+    width: 140%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.campaign-banner-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(236, 72, 153, 0.75);
+    box-shadow: 0 16px 40px -4px rgba(236, 72, 153, 0.32), 0 6px 20px rgba(0, 0, 0, 0.45);
+}
+
+.campaign-banner-visual {
+    width: 190px;
+    min-width: 190px;
+    height: 190px;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    background: #000000;
+}
+
+.campaign-banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.campaign-banner-card:hover .campaign-banner-img {
+    transform: scale(1.05);
+}
+
+.campaign-banner-zoom-hint {
+    position: absolute;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: #F8FAFC;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 10px;
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+    pointer-events: none;
+}
+
+.campaign-banner-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.campaign-banner-badge-row {
+    margin-bottom: 8px;
+}
+
+.campaign-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, #EC4899 0%, #E11D48 100%);
+    color: #FFFFFF;
+    font-size: 11px;
+    font-weight: 850;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 20px;
+    box-shadow: 0 2px 8px rgba(236, 72, 153, 0.45);
+}
+
+.campaign-banner-headline {
+    font-size: clamp(18px, 2.3vw, 22px);
+    font-weight: 850;
+    color: #FFFFFF;
+    line-height: 1.25;
+    margin: 0 0 8px 0;
+    letter-spacing: -0.01em;
+}
+
+.campaign-banner-text {
+    font-size: 13.5px;
+    color: #CBD5E1;
+    line-height: 1.5;
+    margin: 0 0 14px 0;
+}
+
+.campaign-banner-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn-campaign-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #22C55E 0%, #16A34A 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 13.5px;
+    font-weight: 750;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(34, 197, 94, 0.35);
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+.btn-campaign-cta:hover {
+    filter: brightness(1.1);
+    transform: scale(1.02);
+}
+
+.btn-cta-zap {
+    font-size: 15px;
+}
+
+.btn-cta-arrow {
+    transition: transform 0.2s ease;
+}
+
+.btn-campaign-cta:hover .btn-cta-arrow {
+    transform: translateX(3px);
+}
+
+.campaign-urgency-note {
+    font-size: 12px;
+    font-weight: 750;
+    color: #FBBF24;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .campaign-banner-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px 14px;
+        gap: 14px;
+    }
+
+    .campaign-banner-visual {
+        width: 100%;
+        max-width: 260px;
+        height: 260px;
+        margin: 0 auto;
+    }
+
+    .campaign-banner-headline {
+        font-size: 18px;
+    }
+
+    .campaign-banner-text {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+
+    .campaign-banner-cta-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .btn-campaign-cta {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 14px;
+    }
+}
+
 .weekly-offers-carousel-wrapper {
     position: relative;
     width: 100%;

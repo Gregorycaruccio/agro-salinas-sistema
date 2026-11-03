@@ -696,6 +696,41 @@ function renderWeeklyOffersCarousel() {
     const isHomeClean = (currentCategory === "todos" && !searchQuery && !currentQuickTag && !showOnlyFavorites);
     section.style.display = isHomeClean ? "block" : "none";
 
+    // Renderiza banner promocional da campanha da semana, se ativo
+    const bannerContainer = document.getElementById("weekly-offers-campaign-banner");
+    if (bannerContainer) {
+        if (cfg.campaignBanner && cfg.campaignBanner.active && isHomeClean) {
+            const b = cfg.campaignBanner;
+            bannerContainer.style.display = "block";
+            bannerContainer.innerHTML = `
+                <div class="campaign-banner-card" onclick="openWeeklyOffersCampaignWhatsApp(event)" title="Clique para garantir o brinde pelo WhatsApp!">
+                    <div class="campaign-banner-visual">
+                        <img src="${b.image}" alt="${b.title || 'Campanha Especial'}" class="campaign-banner-img" loading="lazy">
+                        <span class="campaign-banner-zoom-hint">🔍 Toque para pedir</span>
+                    </div>
+                    <div class="campaign-banner-body">
+                        <div class="campaign-banner-badge-row">
+                            <span class="campaign-pill-badge">${b.badge || '🎁 EDIÇÃO LIMITADA'}</span>
+                        </div>
+                        <h3 class="campaign-banner-headline">${b.title}</h3>
+                        <p class="campaign-banner-text">${b.description}</p>
+                        <div class="campaign-banner-cta-row">
+                            <button type="button" class="btn-campaign-cta" onclick="openWeeklyOffersCampaignWhatsApp(event)">
+                                <span class="btn-cta-zap">💬</span>
+                                <span>${b.ctaText || 'Garantir Balde no WhatsApp'}</span>
+                                <span class="btn-cta-arrow">➔</span>
+                            </button>
+                            <span class="campaign-urgency-note">⚡ Restam apenas 4 unidades!</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        } else {
+            bannerContainer.style.display = "none";
+            bannerContainer.innerHTML = "";
+        }
+    }
+
     track.innerHTML = offerItems.map(({ product, offer }) => {
         const prodTitle = toTitleCase(product.name);
         const cartKey = getActiveCartKey(product.id);
@@ -777,6 +812,34 @@ function filterByWeeklyOffers() {
         const offsetPosition = elemPosition - offset;
         window.scrollTo({ top: offsetPosition, behavior: "smooth" });
     }
+}
+
+// Dispara o pedido/reserva da Campanha Especial da Semana direto para o WhatsApp oficial
+function openWeeklyOffersCampaignWhatsApp(event) {
+    if (event) {
+        event.stopPropagation();
+    }
+    const cfg = (typeof WEEKLY_OFFERS_CONFIG !== 'undefined') ? WEEKLY_OFFERS_CONFIG : (window.WEEKLY_OFFERS_CONFIG || null);
+    const banner = cfg && cfg.campaignBanner;
+    const targetWhatsapp = (typeof VENDAS_CONFIG !== 'undefined' && VENDAS_CONFIG.lojaWhatsApp) 
+        ? VENDAS_CONFIG.lojaWhatsApp 
+        : "5551995624230";
+
+    const isStoreQuick = !currentSeller || ['ADMIN', 'LOJA', 'WILLIAM', 'MEIRI', 'MEIRE', 'AGROSALINAS', 'LOJAOFICIAL', 'STORE'].includes((currentSeller.code || '').toUpperCase());
+    const sellerTag = (!isStoreQuick && currentSeller && currentSeller.code)
+        ? `\n🏷️ *Código do Vendedor:* #${currentSeller.code} (${currentSeller.name})`
+        : '';
+
+    const defaultMsg = "Olá, Agro Salinas! Vi a promoção da Tutano no catálogo: na compra da saca Tutano Gatos 10,1kg, quero garantir meu Balde de 18L de brinde! Ainda tem disponibilidade das 4 unidades?";
+    const text = (banner && banner.whatsappMessage) ? banner.whatsappMessage : defaultMsg;
+    const fullMessage = 
+`🐾 *PROMOÇÃO EXCLUSIVA — AGRO SALINAS*
+════════════════════════════════
+
+${text}${sellerTag}
+📱 *Origem:* Catálogo Digital Agro Salinas (Ofertas da Semana)`;
+
+    window.open(`https://wa.me/${targetWhatsapp}?text=${encodeURIComponent(fullMessage)}`, '_blank');
 }
 
 // --- RENDERIZAÇÃO DA PRATELEIRA DE DEPARTAMENTOS (CARDS RETANGULARES NA HOME) ---
