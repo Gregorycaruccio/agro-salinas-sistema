@@ -36,6 +36,45 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 175.00
         },
         {
+            code: "106",
+            highlightBadge: "ECONOMIZE R$ 39,90",
+            promoPrice: 139.90,
+            originalPrice: 179.80
+        },
+        {
+            code: "105",
+            highlightBadge: "ECONOMIZE R$ 39,90",
+            promoPrice: 139.90,
+            originalPrice: 179.80,
+            hideInCarousel: true
+        },
+        {
+            code: "107",
+            highlightBadge: "ECONOMIZE R$ 39,90",
+            promoPrice: 139.90,
+            originalPrice: 180.80,
+            hideInCarousel: true
+        },
+        {
+            code: "104",
+            highlightBadge: "PACOTÃO 20KG",
+            promoPrice: 189.90,
+            originalPrice: 205.90
+        },
+        {
+            code: "100",
+            highlightBadge: "PORTE PEQUENO",
+            promoPrice: 129.90,
+            originalPrice: 140.00
+        },
+        {
+            code: "102",
+            highlightBadge: "PORTE PEQUENO",
+            promoPrice: 129.90,
+            originalPrice: 140.00,
+            hideInCarousel: true
+        },
+        {
             code: "747",
             highlightBadge: "SUPER OFERTA",
             promoPrice: 149.90,
@@ -3877,92 +3916,124 @@ const PRODUCTS = [
     {
         "id": "104",
         "code": "104",
-        "name": "Gp Adulto Choice Carne e Arroz 20kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "name": "Ração Gran Plus Choice Cães Adultos Carne e Arroz 20kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
         "price": 205.9,
-        "unit": "kg",
-        "featured": false
+        "unit": "saca (20kg)",
+        "featured": true,
+        "badge": "Pacotão 20kg",
+        "image": "assets/produtos/1_caes/racoes_granplus/granplus_choice_caes_20kg.png",
+        "extraInfo": "Pacotão Econômico 20kg",
+        "description": "Alimento completo High Premium para cães adultos de porte médio e grande. Fórmula Choice sabor Carne e Arroz que oferece excelente nutrição, saúde e ótimo rendimento."
     },
     {
         "id": "100",
         "code": "100",
-        "name": "Gp Adulto Porte Mini Carne e Arroz 10.1kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
-        "price": 137.5,
-        "unit": "kg",
-        "featured": false
+        "name": "Ração Gran Plus Menu Cães Adultos Porte Pequeno 10.1kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
+        "price": 140.0,
+        "unit": "pct (10,1kg)",
+        "featured": true,
+        "badge": "Porte Pequeno",
+        "image": "assets/produtos/1_caes/racoes_granplus/granplus_caes_porte_pequeno_10kg.png",
+        "extraInfo": "Sabores: Carne e Arroz | Frango e Arroz",
+        "variationType": "flavor",
+        "variations": [
+            { "label": "Carne e Arroz", "code": "100", "price": 129.90, "image": "assets/produtos/1_caes/racoes_granplus/granplus_caes_porte_pequeno_10kg.png" },
+            { "label": "Frango e Arroz", "code": "102", "price": 129.90, "image": "assets/produtos/1_caes/racoes_granplus/granplus_caes_porte_pequeno_10kg.png" }
+        ],
+        "description": "Alimento High Premium completo especialmente desenvolvido para cães adultos de porte mini e pequeno. Grãos adaptados, digestão equilibrada e alta absorção."
     },
     {
         "id": "102",
         "code": "102",
-        "name": "Gp Adulto Porte Mini Frango e Arroz 10.1kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
-        "price": 137.5,
-        "unit": "kg",
-        "featured": false
+        "name": "Ração Gran Plus Menu Cães Adultos Porte Pequeno Frango e Arroz 10.1kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
+        "price": 140.0,
+        "unit": "pct (10,1kg)",
+        "featured": true,
+        "badge": "Porte Pequeno",
+        "image": "assets/produtos/1_caes/racoes_granplus/granplus_caes_porte_pequeno_10kg.png",
+        "description": "Alimento High Premium completo para cães adultos de porte mini e pequeno sabor Frango e Arroz. Pacote de 10,1kg."
     },
     {
         "id": "103",
         "code": "103",
-        "name": "Gp Adulto Porte Mini Ovelha 10.1kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
-        "price": 159.698,
-        "unit": "kg",
+        "name": "Ração Gran Plus Menu Cães Adultos Porte Mini Ovelha e Arroz 10.1kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
+        "price": 159.7,
+        "unit": "pct (10,1kg)",
         "featured": false
     },
     {
         "id": "101",
         "code": "101",
-        "name": "Gp Adulto R Med e Grandes Carne a Arroz 10.1kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
+        "name": "Ração Gran Plus Menu Cães Adultos Raças Médias e Grandes Carne e Arroz 10.1kg",
+        "category": "caes",
+        "subcategory": "Rações Secas",
         "price": 119.8,
-        "unit": "kg",
+        "unit": "pct (10,1kg)",
         "featured": false
     },
     {
         "id": "99",
         "code": "99",
-        "name": "Gp Filhote R Med e Grandes Carne e Arroz 15kg",
-        "category": "jardim_agro",
-        "subcategory": "Geral",
-        "price": 183.8,
-        "unit": "kg",
-        "featured": false
-    },
-    {
-        "id": "105",
-        "code": "105",
-        "name": "Gp Gato Castrado Carne 10.1kg",
-        "category": "gatos",
+        "name": "Ração Gran Plus Menu Cães Filhotes Raças Médias e Grandes Carne e Arroz 15kg",
+        "category": "caes",
         "subcategory": "Rações Secas",
-        "price": 179.8,
-        "unit": "pct",
+        "price": 183.8,
+        "unit": "pct (15kg)",
         "featured": false
     },
     {
         "id": "106",
         "code": "106",
-        "name": "Gp Gato Castrado Frango e Arroz 10.1kg",
+        "name": "Ração Gran Plus Menu Gatos Adultos Castrados 10.1kg",
         "category": "gatos",
         "subcategory": "Rações Secas",
         "price": 179.8,
-        "unit": "pct",
-        "featured": false
+        "unit": "pct (10,1kg)",
+        "featured": true,
+        "badge": "Castrados 10,1kg",
+        "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png",
+        "extraInfo": "Sabores: Carne, Frango ou Salmão",
+        "variationType": "flavor",
+        "variations": [
+            { "label": "Frango e Arroz", "code": "106", "price": 139.90, "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png" },
+            { "label": "Carne e Arroz", "code": "105", "price": 139.90, "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png" },
+            { "label": "Salmão e Arroz", "code": "107", "price": 139.90, "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png" }
+        ],
+        "description": "Alimento High Premium formulado especialmente para gatos adultos castrados. Auxilia no controle de peso ideal com calorias reduzidas e L-carnitina, e saúde do trato urinário com minerais equilibrados."
+    },
+    {
+        "id": "105",
+        "code": "105",
+        "name": "Ração Gran Plus Menu Gatos Adultos Castrados Carne e Arroz 10.1kg",
+        "category": "gatos",
+        "subcategory": "Rações Secas",
+        "price": 179.8,
+        "unit": "pct (10,1kg)",
+        "featured": true,
+        "badge": "Castrados 10,1kg",
+        "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png",
+        "description": "Alimento High Premium completo para gatos adultos castrados sabor Carne e Arroz. Pacote de 10,1kg."
     },
     {
         "id": "107",
         "code": "107",
-        "name": "Gp Gato Castrado Salmão e Arroz 10.1kg",
+        "name": "Ração Gran Plus Menu Gatos Adultos Castrados Salmão e Arroz 10.1kg",
         "category": "gatos",
         "subcategory": "Rações Secas",
         "price": 180.8,
-        "unit": "pct",
-        "featured": false
+        "unit": "pct (10,1kg)",
+        "featured": true,
+        "badge": "Castrados 10,1kg",
+        "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_promo_10kg.png",
+        "description": "Alimento High Premium completo para gatos adultos castrados sabor Salmão e Arroz. Pacote de 10,1kg."
     },
     {
         "id": "732",

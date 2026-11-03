@@ -681,6 +681,7 @@ function renderWeeklyOffersCarousel() {
     const allProducts = getCatalogProducts();
     const offerItems = [];
     cfg.items.forEach(item => {
+        if (item.hideInCarousel) return;
         const prod = allProducts.find(p => String(p.code || p.id).trim() === String(item.code).trim());
         if (prod && isProductAvailable(prod)) {
             offerItems.push({ product: prod, offer: item });
@@ -1220,10 +1221,11 @@ function buildProductCardHtml(product) {
     let variationsHtml = '';
     if (product.variations && product.variations.length > 0) {
         const isSize = product.variationType === 'size';
+        const isFlavor = product.variationType === 'flavor' || product.variationType === 'sabor';
         variationsHtml = `
             <div class="product-variants-container">
                 <div class="variants-header-title">
-                    <span>${isSize ? '📏 Tamanho:' : '🎨 Cor:'}</span>
+                    <span>${isSize ? '📏 Tamanho:' : (isFlavor ? '🍖 Sabor:' : '🎨 Cor:')}</span>
                     <span class="variants-selected-val">${activeVar ? activeVar.label : ''}</span>
                 </div>
                 <div class="variant-options-group">
@@ -1232,7 +1234,7 @@ function buildProductCardHtml(product) {
                         const dotHtml = v.colorHex ? `<span class="variant-color-dot" style="background-color: ${v.colorHex};"></span>` : '';
                         return `
                             <button type="button" 
-                                    class="variant-pill-btn ${isSize ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
+                                    class="variant-pill-btn ${(isSize || isFlavor) ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
                                     data-product-id="${product.id}" 
                                     data-variant="${v.label}" 
                                     onclick="selectProductVariant('${product.id}', '${v.label}', event)" 
@@ -2011,7 +2013,9 @@ function renderCartDrawerItems() {
         const title = toTitleCase(product.name);
         const granelBadge = isGranel && product.badge ? `<span style="font-size: 11px; background: #E8F5EE; color: var(--primary); padding: 1px 6px; border-radius: 4px; font-weight: 700; margin-left: 4px;">⚖️ ${product.badge}</span>` : '';
         const isSize = itemInfo.baseProduct && itemInfo.baseProduct.variationType === 'size';
-        const variantTag = variant ? `<span class="cart-variant-tag">${isSize ? '📏 ' : '🎨 '}${variant.label}</span>` : '';
+        const isFlavor = itemInfo.baseProduct && (itemInfo.baseProduct.variationType === 'flavor' || itemInfo.baseProduct.variationType === 'sabor');
+        const varIcon = isSize ? '📏 ' : (isFlavor ? '🍖 ' : '🎨 ');
+        const variantTag = variant ? `<span class="cart-variant-tag">${varIcon}${variant.label}</span>` : '';
 
         itemsHtml += `
             <div class="cart-item">
@@ -2305,7 +2309,9 @@ function checkoutWhatsApp() {
         const subtotalStr = subtotal.toFixed(2).replace('.', ',');
         const prodTitle = toTitleCase(product.name);
         const isSize = itemInfo.baseProduct && itemInfo.baseProduct.variationType === 'size';
-        const variantDesc = variant ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${variant.label})` : '';
+        const isFlavor = itemInfo.baseProduct && (itemInfo.baseProduct.variationType === 'flavor' || itemInfo.baseProduct.variationType === 'sabor');
+        const varLabelName = isSize ? 'Tamanho' : (isFlavor ? 'Sabor' : 'Cor');
+        const variantDesc = variant ? ` (${varLabelName}: ${variant.label})` : '';
 
         itemsJsonForDb.push({
             code: product.code,
@@ -2436,11 +2442,13 @@ function quickBuyWhatsApp(productId) {
     const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
     const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
     const isSize = product.variationType === 'size';
+    const isFlavor = product.variationType === 'flavor' || product.variationType === 'sabor';
+    const varLabelName = isSize ? 'Tamanho' : (isFlavor ? 'Sabor' : 'Cor');
 
     const offer = getWeeklyOfferData(product);
     const hasOffer = !!offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0;
     const qvFinalPrice = hasOffer ? offer.promoPrice : displayPrice;
-    const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
+    const variantDesc = activeVar ? ` (${varLabelName}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
 
@@ -3298,6 +3306,7 @@ function openQuickView(productId) {
     const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
     const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
     const isSize = product.variationType === 'size';
+    const isFlavor = product.variationType === 'flavor' || product.variationType === 'sabor';
 
     const offer = getWeeklyOfferData(product);
     const hasOffer = !!offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0;
@@ -3308,7 +3317,7 @@ function openQuickView(productId) {
         variationsHtml = `
             <div class="quickview-variants-box">
                 <div class="variants-header-title" style="margin-bottom: 8px;">
-                    <span>${isSize ? '📏 Selecione o Tamanho:' : '🎨 Selecione a Cor:'}</span>
+                    <span>${isSize ? '📏 Selecione o Tamanho:' : (isFlavor ? '🍖 Selecione o Sabor:' : '🎨 Selecione a Cor:')}</span>
                     <span class="qv-variant-selected-val variants-selected-val">${activeVar ? activeVar.label : ''}</span>
                 </div>
                 <div class="variant-options-group">
@@ -3317,7 +3326,7 @@ function openQuickView(productId) {
                         const dotHtml = v.colorHex ? `<span class="variant-color-dot" style="background-color: ${v.colorHex};"></span>` : '';
                         return `
                             <button type="button" 
-                                    class="variant-pill-btn ${isSize ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
+                                    class="variant-pill-btn ${(isSize || isFlavor) ? 'variant-pill-size' : ''} ${isActive ? 'active' : ''}" 
                                     data-product-id="${product.id}" 
                                     data-variant="${v.label}" 
                                     onclick="selectProductVariant('${product.id}', '${v.label}', event)" 
