@@ -32,6 +32,12 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 149.90
         },
         {
+            code: "687",
+            highlightBadge: "SUPER OFERTA",
+            promoPrice: 59.90,
+            originalPrice: 65.00
+        },
+        {
             code: "59",
             highlightBadge: "SUPER OFERTA",
             promoPrice: 169.90,
@@ -6120,7 +6126,8 @@ const PRODUCTS = [
         "subcategory": "Rações Secas",
         "price": 65,
         "unit": "pct",
-        "featured": false
+        "featured": true,
+        "image": "assets/produtos/1_caes/racoes_outras_marcas/687.png"
     },
     {
         "id": "686",
