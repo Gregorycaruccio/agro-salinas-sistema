@@ -109,54 +109,6 @@ const WEEKLY_OFFERS_CONFIG = {
             highlightBadge: "JARDIM & HORTA",
             promoPrice: 19.00,
             originalPrice: 19.00
-        },
-        {
-            code: "59",
-            highlightBadge: "SUPER OFERTA",
-            promoPrice: 169.90,
-            originalPrice: 175.25
-        },
-        {
-            code: "408",
-            highlightBadge: "MAIS VENDIDO",
-            promoPrice: 29.90,
-            originalPrice: 33.99
-        },
-        {
-            code: "66",
-            highlightBadge: "PETISCO",
-            promoPrice: 17.50,
-            originalPrice: 19.99
-        },
-        {
-            code: "898",
-            highlightBadge: "PROTEÇÃO",
-            promoPrice: 249.90,
-            originalPrice: 263.70
-        },
-        {
-            code: "GRA07",
-            highlightBadge: "GRÃO MACIO",
-            promoPrice: 18.90,
-            originalPrice: 20.13
-        },
-        {
-            code: "GRA10",
-            highlightBadge: "GATOS",
-            promoPrice: 19.90,
-            originalPrice: 22.01
-        },
-        {
-            code: "350",
-            highlightBadge: "HIGIENE",
-            promoPrice: 44.90,
-            originalPrice: 49.90
-        },
-        {
-            code: "377",
-            highlightBadge: "CASA LIMPA",
-            promoPrice: 25.90,
-            originalPrice: 29.90
         }
     ]
 };
