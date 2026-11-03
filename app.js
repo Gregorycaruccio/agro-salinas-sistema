@@ -733,7 +733,7 @@ function renderWeeklyOffersCarousel() {
                     <div class="offer-card-prices">
                         ${originalPrice > promoPrice ? `<span class="offer-old-price">De R$ ${originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}
                         <div class="offer-final-price-row">
-                            <span class="offer-price-prefix">Por</span>
+                            ${originalPrice > promoPrice ? '<span class="offer-price-prefix">Por</span> ' : ''}
                             <span class="offer-price-val">R$ ${promoPrice.toFixed(2).replace('.', ',')}</span>
                             <span class="offer-price-unit">/${product.unit || 'un'}</span>
                         </div>
@@ -1218,18 +1218,18 @@ function buildProductCardHtml(product) {
                     const subText = `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
                     return `
                         <div class="granel-compact-price">
-                            ${hasOffer && offer.originalPrice ? `<div class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</div>` : ''}
-                            <div class="granel-main-price ${hasOffer ? 'price-promo' : ''}">
-                                ${hasOffer ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
+                            ${hasOffer && offer.originalPrice && offer.originalPrice > offer.promoPrice ? `<div class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</div>` : ''}
+                            <div class="granel-main-price ${hasOffer && offer.originalPrice > offer.promoPrice ? 'price-promo' : ''}">
+                                ${hasOffer && offer.originalPrice > offer.promoPrice ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
                             </div>
                             <div class="granel-sub-text">${subText}</div>
                         </div>
                     `;
                 })() : `
                     <div class="price-row">
-                        ${hasOffer && offer.originalPrice ? `<span class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}
-                        <div class="price-value ${hasOffer ? 'price-promo' : ''}">
-                            ${hasOffer ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
+                        ${hasOffer && offer.originalPrice && offer.originalPrice > offer.promoPrice ? `<span class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}
+                        <div class="price-value ${hasOffer && offer.originalPrice > offer.promoPrice ? 'price-promo' : ''}">
+                            ${hasOffer && offer.originalPrice > offer.promoPrice ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
                         </div>
                         <span class="price-unit">/${product.unit || 'un'}</span>
                     </div>

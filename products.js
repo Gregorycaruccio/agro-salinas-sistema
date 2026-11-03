@@ -38,6 +38,12 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 65.00
         },
         {
+            code: "562",
+            highlightBadge: "JARDIM & HORTA",
+            promoPrice: 19.00,
+            originalPrice: 19.00
+        },
+        {
             code: "59",
             highlightBadge: "SUPER OFERTA",
             promoPrice: 169.90,
@@ -8302,7 +8308,7 @@ const PRODUCTS = [
         "price": 19,
         "unit": "kg",
         "image": "assets/produtos/5_jardim_campo_casa/vasos_jardinagem_terra/562.png",
-        "featured": false
+        "featured": true
     },
     {
         "id": "537",
