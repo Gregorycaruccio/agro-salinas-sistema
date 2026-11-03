@@ -38,6 +38,12 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 65.00
         },
         {
+            code: "GRA44",
+            highlightBadge: "OFERTA GRANEL",
+            promoPrice: 8.90,
+            originalPrice: 9.90
+        },
+        {
             code: "562",
             highlightBadge: "JARDIM & HORTA",
             promoPrice: 19.00,
@@ -766,6 +772,20 @@ const PRODUCTS = [
         "badge": "Pacote 1,112 kg",
         "image": "assets/granel/Racao Whiskas Carne - 1.112kg - 22.50kg - 25.02.png",
         "extraInfo": "Embalagem Pesada e Selada (R$ 22,50/kg)"
+    },
+    {
+        "id": "granel_real_44",
+        "code": "GRA44",
+        "name": "RAÇÃO SNOW CAT NATURAL PREMIUM PEIXE (A GRANEL)",
+        "category": "granel",
+        "subcategory": "Gatos",
+        "price": 9.90,
+        "unit": "kg",
+        "featured": true,
+        "badge": "A Granel (Kg)",
+        "image": "assets/produtos/2_gatos/racoes_outras_marcas/snow_cat_peixe.png",
+        "extraInfo": "Vendido a granel por kg",
+        "description": "Alimento completo 100% natural para gatos adultos sabor peixe e batata doce. Rico em proteínas nobres e ômegas. Vendido a granel por kg no balcão."
     },
     {
         "id": "467",

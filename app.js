@@ -1212,15 +1212,16 @@ function buildProductCardHtml(product) {
             
             <div class="product-footer">
                 ${isGranel ? (() => {
+                    const isKgBulk = (product.unit && product.unit.toLowerCase() === 'kg') || (product.badge && product.badge.toLowerCase().includes('granel'));
                     const pkgWeight = product.badge ? product.badge.replace(/^Pacote\s+/i, '') : (product.unit || 'Kg');
                     const matchKg = product.extraInfo ? product.extraInfo.match(/R\$\s*[\d,.]+\/kg/i) : null;
                     const kgRate = matchKg ? matchKg[0] : (product.extraInfo ? product.extraInfo.replace(/.*?\(/, '').replace(')', '') : '');
-                    const subText = `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
+                    const subText = isKgBulk ? (product.extraInfo || 'Vendido a granel por kg') : `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
                     return `
                         <div class="granel-compact-price">
                             ${hasOffer && offer.originalPrice && offer.originalPrice > offer.promoPrice ? `<div class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</div>` : ''}
                             <div class="granel-main-price ${hasOffer && offer.originalPrice > offer.promoPrice ? 'price-promo' : ''}">
-                                ${hasOffer && offer.originalPrice > offer.promoPrice ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
+                                ${hasOffer && offer.originalPrice > offer.promoPrice ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}${isKgBulk ? '<span style="font-size:0.75rem;font-weight:600;color:var(--text-muted);margin-left:3px;">/kg</span>' : ''}
                             </div>
                             <div class="granel-sub-text">${subText}</div>
                         </div>
@@ -2372,6 +2373,10 @@ function quickBuyWhatsApp(productId) {
     const displayCode = activeVar && activeVar.code ? activeVar.code : product.code;
     const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
     const isSize = product.variationType === 'size';
+
+    const offer = getWeeklyOfferData(product);
+    const hasOffer = !!offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0;
+    const qvFinalPrice = hasOffer ? offer.promoPrice : displayPrice;
     const variantDesc = activeVar ? ` (${isSize ? 'Tamanho' : 'Cor'}: ${activeVar.label})` : '';
     const prodTitle = toTitleCase(product.name);
     const isAvailable = isProductAvailable(product);
@@ -2382,8 +2387,13 @@ function quickBuyWhatsApp(productId) {
         : '';
 
     let message = "";
+    const isKgBulk = (product.unit && product.unit.toLowerCase() === 'kg') || (product.badge && product.badge.toLowerCase().includes('granel'));
+    const priceText = (hasOffer && offer.originalPrice > offer.promoPrice)
+        ? `R$ ${qvFinalPrice.toFixed(2).replace('.', ',')} *(Oferta da Semana: De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')})*`
+        : `R$ ${displayPrice.toFixed(2).replace('.', ',')}`;
+
     if (isGranel) {
-        const packBadge = product.badge || `Pacote ${product.unit || 'Kg'}`;
+        const packBadge = isKgBulk ? (product.badge || 'A Granel (Kg)') : (product.badge || `Pacote ${product.unit || 'Kg'}`);
         const extraInfo = product.extraInfo ? ` (${product.extraInfo})` : '';
         if (!isAvailable) {
             message = 
@@ -2394,7 +2404,7 @@ Olá, Agro Salinas! Gostaria de saber a previsão de disponibilidade deste produ
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
-💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
+💰 *Preço de referência:* ${priceText}
 ${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
@@ -2406,7 +2416,7 @@ Olá, Agro Salinas! Tenho interesse neste produto a granel:
 
 ⚖️ *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
 📦 *Embalagem:* ${packBadge} Selado${extraInfo}
-💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')}
+💰 *Preço:* ${priceText}
 ${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
@@ -2419,7 +2429,7 @@ ${sellerTag}
 Olá, Agro Salinas! Gostaria de saber a previsão deste produto no catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
-💰 *Preço de referência:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+💰 *Preço de referência:* ${priceText} / ${product.unit || 'un'}
 ${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         } else {
@@ -2430,7 +2440,7 @@ ${sellerTag}
 Olá, Agro Salinas! Tenho interesse no seguinte produto do catálogo:
 
 📦 *[CÓD ${displayCode}] ${prodTitle}${variantDesc}*
-💰 *Preço:* R$ ${displayPrice.toFixed(2).replace('.', ',')} / ${product.unit || 'un'}
+💰 *Preço:* ${priceText} / ${product.unit || 'un'}
 ${sellerTag}
 📱 *Origem:* Catálogo Digital Agro Salinas`;
         }
@@ -3226,6 +3236,10 @@ function openQuickView(productId) {
     const displayPrice = activeVar && activeVar.price ? activeVar.price : product.price;
     const isSize = product.variationType === 'size';
 
+    const offer = getWeeklyOfferData(product);
+    const hasOffer = !!offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0;
+    const qvFinalPrice = hasOffer ? offer.promoPrice : displayPrice;
+
     let variationsHtml = '';
     if (product.variations && product.variations.length > 0) {
         variationsHtml = `
@@ -3278,10 +3292,16 @@ function openQuickView(productId) {
 
             <div class="quickview-price-box">
                 <div>
-                    <span style="font-size: 11px; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.5px;">Preço Agro Salinas:</span>
+                    <span style="font-size: 11px; font-weight: 700; color: ${hasOffer ? '#DC2626' : '#64748B'}; text-transform: uppercase; letter-spacing: 0.5px;">${hasOffer ? '🔥 Oferta da Semana (' + (offer.highlightBadge || 'OFERTA') + '):' : 'Preço Agro Salinas:'}</span>
+                    ${hasOffer && offer.originalPrice && offer.originalPrice > offer.promoPrice ? `
+                        <div style="font-size: 13px; color: #94A3B8; text-decoration: line-through; font-weight: 600; margin-top: 2px;">
+                            De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}
+                        </div>
+                    ` : ''}
                     <div class="quickview-price-main">
+                        ${hasOffer && offer.originalPrice > offer.promoPrice ? '<span style="font-size: 14px; font-weight: 800; color: #DC2626; margin-right: 4px;">Por</span>' : ''}
                         <span class="quickview-curr">R$</span>
-                        <span class="quickview-price-val">${displayPrice.toFixed(2).replace('.', ',')}</span>
+                        <span class="quickview-price-val" style="${hasOffer ? 'color: #DC2626;' : ''}">${qvFinalPrice.toFixed(2).replace('.', ',')}</span>
                         <span class="quickview-unit">${unitText}</span>
                     </div>
                 </div>
