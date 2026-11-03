@@ -44,6 +44,12 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 9.90
         },
         {
+            code: "GRA45",
+            highlightBadge: "GRANEL CASTRADOS",
+            promoPrice: 13.99,
+            originalPrice: 18.99
+        },
+        {
             code: "562",
             highlightBadge: "JARDIM & HORTA",
             promoPrice: 19.00,
@@ -786,6 +792,20 @@ const PRODUCTS = [
         "image": "assets/produtos/2_gatos/racoes_outras_marcas/snow_cat_peixe.png",
         "extraInfo": "Vendido a granel por kg",
         "description": "Alimento completo 100% natural para gatos adultos sabor peixe e batata doce. Rico em proteínas nobres e ômegas. Vendido a granel por kg no balcão."
+    },
+    {
+        "id": "granel_real_45",
+        "code": "GRA45",
+        "name": "RAÇÃO GRAN PLUS MENU GATOS ADULTOS CASTRADOS FRANGO E ARROZ (A GRANEL)",
+        "category": "granel",
+        "subcategory": "Gatos",
+        "price": 18.99,
+        "unit": "kg",
+        "featured": true,
+        "badge": "A Granel (Kg)",
+        "image": "assets/produtos/2_gatos/racoes_granplus/granplus_gato_castrado_frango_arroz.jpg",
+        "extraInfo": "Vendido a granel por kg",
+        "description": "Alimento High Premium sabor Frango e Arroz formulado especialmente para gatos adultos castrados. Auxilia no controle de peso com calorias reduzidas e L-carnitina, além de cuidar da saúde do trato urinário. Vendido a granel por kg no balcão."
     },
     {
         "id": "467",
