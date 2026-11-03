@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#1B432E">
     <title>Catálogo Digital | Agro Salinas</title>
-    <link rel="stylesheet" href="style.css?v=6.7">
+    <link rel="stylesheet" href="style.css?v=6.8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -119,6 +119,7 @@
             <!-- FILTROS RÁPIDOS POR NECESSIDADE DO PET (DESKTOP) -->
             <div class="quick-tags-wrapper desktop-only-tags">
                 <div class="quick-tags-list">
+                    <button class="quick-tag-pill quick-tag-pill-offer" data-tag="ofertas_semana" onclick="toggleQuickTag('ofertas_semana', this)">🔥 Ofertas da Semana</button>
                     <button class="quick-tag-pill" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this)">Mais Vendidos</button>
                     <button class="quick-tag-pill" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this)">Para Filhotes</button>
                     <button class="quick-tag-pill" data-tag="castrados" onclick="toggleQuickTag('castrados', this)">Castrados</button>
@@ -226,6 +227,7 @@
                     <span>Filtros Especiais do Pet</span>
                 </div>
                 <div class="sidebar-quick-tags" id="sidebar-quick-tags">
+                    <button class="sidebar-tag-btn sidebar-tag-offer" data-tag="ofertas_semana" onclick="toggleQuickTag('ofertas_semana', this); closeSidebarDrawer();">🔥 Ofertas da Semana</button>
                     <button class="sidebar-tag-btn" data-tag="mais_vendidos" onclick="toggleQuickTag('mais_vendidos', this); closeSidebarDrawer();">Mais Vendidos</button>
                     <button class="sidebar-tag-btn" data-tag="filhotes" onclick="toggleQuickTag('filhotes', this); closeSidebarDrawer();">Para Filhotes</button>
                     <button class="sidebar-tag-btn" data-tag="castrados" onclick="toggleQuickTag('castrados', this); closeSidebarDrawer();">Castrados</button>
@@ -295,6 +297,31 @@
 
     <!-- LISTAGEM DE PRODUTOS -->
     <main class="products-section">
+        <!-- SEÇÃO: OFERTAS DA SEMANA (CARROSSEL DE DESTAQUE NA HOME) -->
+        <section class="weekly-offers-section" id="weekly-offers-section" aria-label="Ofertas da Semana">
+            <div class="weekly-offers-header">
+                <div class="weekly-offers-title-box">
+                    <span class="weekly-offers-badge-pill">
+                        <span class="fire-anim">🔥</span> OFERTAS DA SEMANA
+                    </span>
+                    <h2 class="weekly-offers-title">Preços Especiais de Balcão</h2>
+                    <p class="weekly-offers-subtitle">Produtos com descontos exclusivos válidos por tempo limitado</p>
+                </div>
+                <button type="button" class="btn-all-offers" onclick="filterByWeeklyOffers()" title="Ver todas as ofertas da semana no catálogo">
+                    <span>Ver Todas as Ofertas</span>
+                    <span class="offers-arrow" aria-hidden="true">➔</span>
+                </button>
+            </div>
+            
+            <div class="weekly-offers-carousel-wrapper">
+                <button type="button" class="carousel-nav-btn prev" onclick="scrollOffersCarousel(-1)" aria-label="Ofertas anteriores" title="Anterior">‹</button>
+                <div class="weekly-offers-carousel" id="weekly-offers-carousel">
+                    <!-- Injetado dinamicamente via JS -->
+                </div>
+                <button type="button" class="carousel-nav-btn next" onclick="scrollOffersCarousel(1)" aria-label="Próximas ofertas" title="Próximo">›</button>
+            </div>
+        </section>
+
         <!-- SEÇÃO: PRATELEIRAS DA LOJA (CARDS RETANGULARES DE DEPARTAMENTOS NA HOME) -->
         <section class="departments-shelf-section" id="departments-shelf-section">
             <div class="departments-shelf-header">
@@ -700,7 +727,7 @@
 
     <!-- SCRIPTS -->
     <script src="vendedores.js?v=5.2"></script>
-    <script src="products.js?v=6.7"></script>
-    <script src="app.js?v=6.7"></script>
+    <script src="products.js?v=6.8"></script>
+    <script src="app.js?v=6.8"></script>
 </body>
 </html>

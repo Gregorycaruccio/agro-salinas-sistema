@@ -84,6 +84,15 @@ function getActiveCartKey(productId) {
     return product.id.toString();
 }
 
+// Obtém dados de Oferta da Semana do produto, se ativo em WEEKLY_OFFERS_CONFIG
+function getWeeklyOfferData(product) {
+    if (!product) return null;
+    const cfg = (typeof WEEKLY_OFFERS_CONFIG !== 'undefined') ? WEEKLY_OFFERS_CONFIG : (window.WEEKLY_OFFERS_CONFIG || null);
+    if (!cfg || !cfg.active || !Array.isArray(cfg.items) || cfg.items.length === 0) return null;
+    const pCode = String(product.code || product.id).trim();
+    return cfg.items.find(item => String(item.code).trim() === pCode) || null;
+}
+
 // Extrai informações do item a partir da chave do carrinho (ex: "342__Vermelha" ou "58")
 function getCartItemInfo(cartKey) {
     if (!cartKey) return null;
@@ -109,6 +118,15 @@ function getCartItemInfo(cartKey) {
             product.variantLabel = variant.label;
         }
     }
+
+    // Se o produto estiver em oferta da semana, aplica o preço promocional oficial
+    const offer = getWeeklyOfferData(baseProduct);
+    if (offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0 && (!variant || !variant.price)) {
+        product.price = offer.promoPrice;
+        product.originalPrice = offer.originalPrice || baseProduct.price;
+        product.isWeeklyOffer = true;
+    }
+
     return { product, variant, baseProduct, cartKey };
 }
 
@@ -350,6 +368,7 @@ function isIllustrativeImage(product) {
 // --- INICIALIZAÇÃO ---
 document.addEventListener("DOMContentLoaded", () => {
     initSeller();
+    renderWeeklyOffersCarousel();
     renderDepartmentsShelf();
     renderCategories();
     renderSubcategories();
@@ -647,6 +666,119 @@ function showLinkExpiredScreen(seller, validation) {
     screen.style.display = "flex";
 }
 
+// --- CARROSSEL DE OFERTAS DA SEMANA (VITRINE HORIZONTAL NA HOME) ---
+function renderWeeklyOffersCarousel() {
+    const section = document.getElementById("weekly-offers-section");
+    const track = document.getElementById("weekly-offers-carousel");
+    if (!section || !track) return;
+
+    const cfg = (typeof WEEKLY_OFFERS_CONFIG !== 'undefined') ? WEEKLY_OFFERS_CONFIG : (window.WEEKLY_OFFERS_CONFIG || null);
+    if (!cfg || !cfg.active || !Array.isArray(cfg.items) || cfg.items.length === 0) {
+        section.style.display = "none";
+        return;
+    }
+
+    const allProducts = getCatalogProducts();
+    const offerItems = [];
+    cfg.items.forEach(item => {
+        const prod = allProducts.find(p => String(p.code || p.id).trim() === String(item.code).trim());
+        if (prod && isProductAvailable(prod)) {
+            offerItems.push({ product: prod, offer: item });
+        }
+    });
+
+    if (offerItems.length === 0) {
+        section.style.display = "none";
+        return;
+    }
+
+    // Visível exclusivamente na Home pura
+    const isHomeClean = (currentCategory === "todos" && !searchQuery && !currentQuickTag && !showOnlyFavorites);
+    section.style.display = isHomeClean ? "block" : "none";
+
+    track.innerHTML = offerItems.map(({ product, offer }) => {
+        const prodTitle = toTitleCase(product.name);
+        const cartKey = getActiveCartKey(product.id);
+        const qtyInCart = cart[cartKey] || 0;
+        const catName = CATEGORIES.find(c => c.id === product.category)?.name.split(' ')[0] || 'Agro';
+        const displayImage = product.image;
+        const placeholderSvg = getCategoryPlaceholderSvg(product.category, catName);
+        const isIllustrative = isIllustrativeImage(product);
+        const promoPrice = offer.promoPrice || product.price;
+        const originalPrice = offer.originalPrice || product.price;
+        const discountPct = (originalPrice > promoPrice) ? Math.round(((originalPrice - promoPrice) / originalPrice) * 100) : 0;
+
+        const imgHtml = displayImage ? `
+            <div class="offer-card-img-wrap" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes de ${prodTitle}">
+                <img src="${displayImage}" alt="${prodTitle}" class="offer-card-img" loading="lazy" decoding="async" onerror="handleImageError(this, '${product.category}', '${catName}')">
+                ${isIllustrative ? `<span class="image-illustrative-notice" title="Imagem meramente ilustrativa">Ilustrativa</span>` : ''}
+            </div>
+        ` : `
+            <div class="offer-card-img-wrap" onclick="openQuickView('${product.id}')" title="Clique para ver detalhes de ${prodTitle}">
+                ${placeholderSvg}
+            </div>
+        `;
+
+        return `
+            <div class="weekly-offer-card" id="offer-card-${product.id}">
+                <div class="offer-card-badge-row">
+                    <span class="offer-badge-pill">🔥 ${offer.highlightBadge || 'OFERTA'}</span>
+                    ${discountPct > 0 ? `<span class="offer-discount-chip">-${discountPct}%</span>` : ''}
+                </div>
+                ${imgHtml}
+                <div class="offer-card-info">
+                    <span class="offer-card-cat">${product.subcategory || catName}</span>
+                    <h3 class="offer-card-name" onclick="openQuickView('${product.id}')" title="${prodTitle}">${prodTitle}</h3>
+                    
+                    <div class="offer-card-prices">
+                        ${originalPrice > promoPrice ? `<span class="offer-old-price">De R$ ${originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}
+                        <div class="offer-final-price-row">
+                            <span class="offer-price-prefix">Por</span>
+                            <span class="offer-price-val">R$ ${promoPrice.toFixed(2).replace('.', ',')}</span>
+                            <span class="offer-price-unit">/${product.unit || 'un'}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card-action">
+                    ${qtyInCart > 0 ? `
+                        <div class="offer-qty-selector">
+                            <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" aria-label="Diminuir quantidade">−</button>
+                            <span class="card-qty-display"><span class="card-qty-val">${qtyInCart}</span></span>
+                            <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" aria-label="Aumentar quantidade">+</button>
+                        </div>
+                    ` : `
+                        <button class="btn-offer-add" onclick="addToCart('${product.id}', event)" title="Adicionar ${prodTitle} ao carrinho">
+                            <span class="btn-offer-icon">${CART_ICON_SVG}</span>
+                            <span>Adicionar</span>
+                        </button>
+                    `}
+                </div>
+            </div>
+        `;
+    }).join("");
+}
+
+function scrollOffersCarousel(direction) {
+    const track = document.getElementById("weekly-offers-carousel");
+    if (!track) return;
+    const scrollAmount = 300 * direction;
+    track.scrollBy({ left: scrollAmount, behavior: "smooth" });
+}
+
+function filterByWeeklyOffers() {
+    toggleQuickTag('ofertas_semana');
+    const target = document.getElementById("products-grid");
+    if (target) {
+        const offset = 140;
+        const bodyRect = document.body.getBoundingClientRect().top;
+        const elemRect = target.getBoundingClientRect().top;
+        const elemPosition = elemRect - bodyRect;
+        const offsetPosition = elemPosition - offset;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+    }
+}
+
 // --- RENDERIZAÇÃO DA PRATELEIRA DE DEPARTAMENTOS (CARDS RETANGULARES NA HOME) ---
 function renderDepartmentsShelf() {
     const shelfGrid = document.getElementById("departments-grid");
@@ -770,12 +902,15 @@ function selectCategory(catId) {
     const shelfSection = document.getElementById("departments-shelf-section");
     const activeDeptBanner = document.getElementById("active-dept-banner");
     const sectionTitle = document.getElementById("section-title");
+    const weeklyOffersSection = document.getElementById("weekly-offers-section");
 
     if (catId === "todos") {
+        if (weeklyOffersSection) weeklyOffersSection.style.display = (searchQuery || currentQuickTag) ? "none" : "block";
         if (shelfSection) shelfSection.style.display = searchQuery ? "none" : "block";
         if (activeDeptBanner) activeDeptBanner.style.display = "none";
         if (sectionTitle) sectionTitle.textContent = searchQuery ? `Resultados da busca por "${searchQuery}"` : "Todos os Produtos da Agro Salinas";
     } else {
+        if (weeklyOffersSection) weeklyOffersSection.style.display = "none";
         if (shelfSection) shelfSection.style.display = "none";
         if (activeDeptBanner) {
             activeDeptBanner.style.display = "flex";
@@ -1004,9 +1139,15 @@ function buildProductCardHtml(product) {
     const isAvailable = isProductAvailable(product);
     const isEsgotado = product.outOfStock || product.available === false;
     const isAllcanis = (product.name && product.name.toLowerCase().includes('allcanis')) || !!product.graoMacio;
+    const offer = getWeeklyOfferData(product);
+    const hasOffer = !!offer && typeof offer.promoPrice === 'number' && offer.promoPrice > 0;
+    const finalPrice = hasOffer ? offer.promoPrice : displayPrice;
+
     let badgeHtml = '';
     if (!isAvailable) {
         badgeHtml = `<span class="product-badge badge-unavailable">${isEsgotado ? '🚫 Esgotado' : '🚫 Indisponível'}</span>`;
+    } else if (hasOffer) {
+        badgeHtml = `<span class="product-badge badge-weekly-offer">🔥 ${offer.highlightBadge || 'OFERTA'}</span>`;
     } else if (product.badge) {
         badgeHtml = `<span class="product-badge ${isGranel ? 'badge-granel' : ''}">${isGranel ? '⚖️ ' + product.badge : product.badge}</span>`;
     } else if (isAllcanis) {
@@ -1044,7 +1185,7 @@ function buildProductCardHtml(product) {
     }
 
     return `
-        <div class="product-card ${isGranel ? 'product-card-granel' : ''} ${!isAvailable ? 'card-unavailable' : ''}" id="card-${product.id}">
+        <div class="product-card ${isGranel ? 'product-card-granel' : ''} ${hasOffer ? 'product-card-offer' : ''} ${!isAvailable ? 'card-unavailable' : ''}" id="card-${product.id}">
             <div class="card-top-actions">
                 <button class="btn-fav-card ${isFav ? 'active' : ''}" onclick="toggleFavorite('${product.id}', event)" title="${isFav ? 'Remover dos favoritos' : 'Favoritar produto'}" aria-label="Favoritar">
                     ${isFav ? '🧡' : '🤍'}
@@ -1077,13 +1218,19 @@ function buildProductCardHtml(product) {
                     const subText = `Pacote ${pkgWeight}${kgRate ? ' • ' + kgRate : ''}`;
                     return `
                         <div class="granel-compact-price">
-                            <div class="granel-main-price">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
+                            ${hasOffer && offer.originalPrice ? `<div class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</div>` : ''}
+                            <div class="granel-main-price ${hasOffer ? 'price-promo' : ''}">
+                                ${hasOffer ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
+                            </div>
                             <div class="granel-sub-text">${subText}</div>
                         </div>
                     `;
                 })() : `
                     <div class="price-row">
-                        <div class="price-value">R$ ${displayPrice.toFixed(2).replace('.', ',')}</div>
+                        ${hasOffer && offer.originalPrice ? `<span class="price-strikethrough">De R$ ${offer.originalPrice.toFixed(2).replace('.', ',')}</span>` : ''}
+                        <div class="price-value ${hasOffer ? 'price-promo' : ''}">
+                            ${hasOffer ? '<span class="price-promo-prefix">Por</span> ' : ''}R$ ${finalPrice.toFixed(2).replace('.', ',')}
+                        </div>
                         <span class="price-unit">/${product.unit || 'un'}</span>
                     </div>
                 `}
@@ -1124,7 +1271,14 @@ function renderProducts() {
     const countEl = document.getElementById("products-count");
     const titleEl = document.getElementById("section-title");
     const clearBtn = document.getElementById("btn-clear-filters");
+    const weeklyOffersSec = document.getElementById("weekly-offers-section");
     if (!grid) return;
+
+    // Controlar visibilidade da vitrine de ofertas da semana na Home
+    if (weeklyOffersSec) {
+        const isHomeClean = (currentCategory === "todos" && !searchQuery && !currentQuickTag && !showOnlyFavorites);
+        weeklyOffersSec.style.display = isHomeClean ? "block" : "none";
+    }
 
     // Atualizar Título da Seção
     if (titleEl) {
@@ -1132,6 +1286,7 @@ function renderProducts() {
             titleEl.textContent = "🧡 Meus Produtos Favoritos";
         } else if (currentQuickTag) {
             const tagLabels = {
+                ofertas_semana: "🔥 Ofertas da Semana — Agro Salinas",
                 mais_vendidos: "🔥 Produtos Mais Vendidos",
                 filhotes: "🍼 Especial Para Filhotes",
                 castrados: "✂️ Rações Para Pets Castrados",
@@ -1168,7 +1323,9 @@ function renderProducts() {
         // Filtro Rápido por Necessidade do Pet
         if (currentQuickTag) {
             const fullText = normalizeText(p.name + " " + (p.subcategory || "") + " " + (p.badge || ""));
-            if (currentQuickTag === "mais_vendidos") {
+            if (currentQuickTag === "ofertas_semana") {
+                if (!getWeeklyOfferData(p)) return false;
+            } else if (currentQuickTag === "mais_vendidos") {
                 if (!p.featured && p.price < 50 && !p.id.toString().startsWith("granel")) return false;
             } else if (currentQuickTag === "filhotes") {
                 if (!fullText.includes("filhote") && !fullText.includes("puppy") && !fullText.includes("junior")) return false;
@@ -1467,46 +1624,70 @@ function clearSearchQuery() {
 
 // Atualização pontual do botão de um card sem re-renderizar todo o catálogo
 function updateCardActionUI(productId) {
-    const card = document.getElementById(`card-${productId}`);
-    if (!card) return;
     const product = PRODUCTS.find(p => p.id.toString() === productId.toString());
     if (!product) return;
-    const actionsContainer = card.querySelector('.card-actions');
-    if (!actionsContainer) return;
-
-    if (!isProductAvailable(product)) {
-        const isEsgotado = product.outOfStock || product.available === false;
-        actionsContainer.innerHTML = `
-            <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
-                <span class="btn-cart-icon">🚫</span>
-                <span class="btn-cart-text">${isEsgotado ? 'Esgotado' : 'Indisponível'}</span>
-            </button>
-        `;
-        return;
-    }
-
     const cartKey = getActiveCartKey(productId);
     const qtyInCart = cart[cartKey] || 0;
     const isGranel = product.category === 'granel';
+    const isAvailable = isProductAvailable(product);
+    const isEsgotado = product.outOfStock || product.available === false;
 
-    if (qtyInCart > 0) {
-        actionsContainer.innerHTML = `
-            <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
-                <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
-                <span class="card-qty-display">
-                    <span class="card-qty-val">${qtyInCart}</span>
-                    <span class="card-qty-label">${isGranel ? 'no carrinho' : 'no carrinho'}</span>
-                </span>
-                <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
-            </div>
-        `;
-    } else {
-        actionsContainer.innerHTML = `
-            <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
-                <span class="btn-cart-icon">${CART_ICON_SVG}</span>
-                <span class="btn-cart-text">Adicionar</span>
-            </button>
-        `;
+    // 1. Atualizar no card principal do catálogo
+    const card = document.getElementById(`card-${productId}`);
+    if (card) {
+        const actionsContainer = card.querySelector('.card-actions');
+        if (actionsContainer) {
+            if (!isAvailable) {
+                actionsContainer.innerHTML = `
+                    <button class="btn-add-cart btn-unavailable" id="btn-add-${product.id}" disabled title="Item ${isEsgotado ? 'esgotado' : 'indisponível'} para pedidos no momento">
+                        <span class="btn-cart-icon">🚫</span>
+                        <span class="btn-cart-text">${isEsgotado ? 'Esgotado' : 'Indisponível'}</span>
+                    </button>
+                `;
+            } else if (qtyInCart > 0) {
+                actionsContainer.innerHTML = `
+                    <div class="card-qty-selector ${isGranel ? 'granel-qty-selector' : ''}" id="qty-selector-${product.id}">
+                        <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" title="Diminuir quantidade" aria-label="Diminuir quantidade">−</button>
+                        <span class="card-qty-display">
+                            <span class="card-qty-val">${qtyInCart}</span>
+                            <span class="card-qty-label">${isGranel ? 'no carrinho' : 'no carrinho'}</span>
+                        </span>
+                        <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" title="Aumentar quantidade" aria-label="Aumentar quantidade">+</button>
+                    </div>
+                `;
+            } else {
+                actionsContainer.innerHTML = `
+                    <button class="btn-add-cart ${isGranel ? 'btn-add-cart-granel' : ''}" id="btn-add-${product.id}" onclick="addToCart('${product.id}', event)">
+                        <span class="btn-cart-icon">${CART_ICON_SVG}</span>
+                        <span class="btn-cart-text">Adicionar</span>
+                    </button>
+                `;
+            }
+        }
+    }
+
+    // 2. Atualizar no card do carrossel de ofertas da semana
+    const offerCard = document.getElementById(`offer-card-${productId}`);
+    if (offerCard) {
+        const offerAction = offerCard.querySelector('.offer-card-action');
+        if (offerAction) {
+            if (qtyInCart > 0) {
+                offerAction.innerHTML = `
+                    <div class="offer-qty-selector">
+                        <button class="card-qty-btn minus" onclick="updateCartQty('${cartKey}', -1, event)" aria-label="Diminuir quantidade">−</button>
+                        <span class="card-qty-display"><span class="card-qty-val">${qtyInCart}</span></span>
+                        <button class="card-qty-btn plus" onclick="updateCartQty('${cartKey}', 1, event)" aria-label="Aumentar quantidade">+</button>
+                    </div>
+                `;
+            } else {
+                offerAction.innerHTML = `
+                    <button class="btn-offer-add" onclick="addToCart('${product.id}', event)" title="Adicionar ao carrinho">
+                        <span class="btn-offer-icon">${CART_ICON_SVG}</span>
+                        <span>Adicionar</span>
+                    </button>
+                `;
+            }
+        }
     }
 }
 
