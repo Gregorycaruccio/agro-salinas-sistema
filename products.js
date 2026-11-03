@@ -796,7 +796,7 @@ const PRODUCTS = [
         "unit": "kg",
         "featured": true,
         "badge": "A Granel (Kg)",
-        "image": "assets/produtos/2_gatos/racoes_outras_marcas/snow_cat_peixe.png",
+        "image": "assets/produtos/2_gatos/racoes_outras_marcas/snow_cat_natural_peixe_oficial.png",
         "extraInfo": "Vendido a granel por kg",
         "description": "Alimento completo 100% natural para gatos adultos sabor peixe e batata doce. Rico em proteínas nobres e ômegas. Vendido a granel por kg no balcão."
     },
