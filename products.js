@@ -26,6 +26,12 @@ const WEEKLY_OFFERS_CONFIG = {
             originalPrice: 179.90
         },
         {
+            code: "907",
+            highlightBadge: "SUPER OFERTA",
+            promoPrice: 139.90,
+            originalPrice: 149.90
+        },
+        {
             code: "59",
             highlightBadge: "SUPER OFERTA",
             promoPrice: 169.90,
@@ -10513,13 +10519,13 @@ const PRODUCTS = [
     {
         "id": "907",
         "code": "907",
-        "name": "Racao Canister Almondega 25k",
+        "name": "Ração Canister Almôndega 25kg",
         "category": "caes",
         "subcategory": "Rações Secas",
         "price": 149.9,
-        "unit": "un",
-        "featured": false,
-        "image": ""
+        "unit": "pct",
+        "featured": true,
+        "image": "assets/produtos/1_caes/racoes_outras_marcas/907.jpg"
     },
     {
         "id": "911",
