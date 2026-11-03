@@ -20,12 +20,12 @@ const WEEKLY_OFFERS_CONFIG = {
     subtitle: "Preços especiais válidos enquanto durarem os estoques de balcão!",
     campaignBanner: {
         active: true,
-        image: "assets/banners/banner_tutano_balde_18l.jpg",
+        image: "assets/banners/banner_tutano_balde_18l_v2.jpg",
         badge: "🎁 BRINDE EXCLUSIVO • RESTAM APENAS 4 UNIDADES!",
-        title: "Na compra de uma saca Tutano Gatos 10,1kg, ganhe um Balde de 18L!",
+        title: "Na compra de 1 Pacote Tutano Gatos 10,1kg, ganhe um Balde de 18L!",
         description: "Promoção especial de balcão por tempo limitado. Leve o balde oficial Tutano de 18L com tampa para armazenar a ração com total proteção e frescor.",
         ctaText: "Garantir Balde no WhatsApp",
-        whatsappMessage: "Olá, Agro Salinas! Vi a promoção da Tutano no catálogo: na compra da saca Tutano Gatos 10,1kg, quero garantir meu Balde de 18L de brinde! Ainda tem disponibilidade das 4 unidades?",
+        whatsappMessage: "Olá, Agro Salinas! Vi a promoção da Tutano no catálogo: na compra do pacote Tutano Gatos 10,1kg, quero garantir meu Balde de 18L de brinde! Ainda tem disponibilidade das 4 unidades?",
         productCode: "314"
     },
     items: [
