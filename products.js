@@ -20,6 +20,12 @@ const WEEKLY_OFFERS_CONFIG = {
     subtitle: "Preços especiais válidos enquanto durarem os estoques de balcão!",
     items: [
         {
+            code: "747",
+            highlightBadge: "SUPER OFERTA",
+            promoPrice: 149.90,
+            originalPrice: 179.90
+        },
+        {
             code: "59",
             highlightBadge: "SUPER OFERTA",
             promoPrice: 169.90,
@@ -5657,9 +5663,10 @@ const PRODUCTS = [
         "name": "Ração Cão Kocker 25kg",
         "category": "caes",
         "subcategory": "Rações Secas",
-        "price": 169.99,
+        "price": 179.9,
         "unit": "pct",
-        "featured": false
+        "featured": true,
+        "image": "assets/produtos/1_caes/racoes_outras_marcas/747.jpg"
     },
     {
         "id": "288",
